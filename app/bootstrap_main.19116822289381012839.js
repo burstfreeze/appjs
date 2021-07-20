@@ -297,6 +297,7 @@
                 value: !0
             }), t.sendTextMsgToChat = function(e, t) {
                 var a = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : {};
+                console.log("sendTextMsgToChat :)", e, t)
                 return C((0, E.unproxy)(e), t, a)
             };
             var l = r(a(96486)),
@@ -4280,6 +4281,7 @@
                     }))
                 }, this.write = (0, o.promiseWrapSync)((function(e) {
                     var t = new u;
+                    console.log("writeNode call l4284")
                     return s.writeNode(t, e), f.encrypt(t.toBuffer())
                 })), this.dropAllBecauseLogout = function() {
                     return f.dropAllBecauseLogout()
@@ -4475,6 +4477,7 @@ ${e.debugInfoWithPadding()}`, new Error("invalid string " + n)
                 for (t = 0; t < e.singleByte.length; t++) e.singleByte[t] && (a[e.singleByte[t]] = t);
                 for (t = 0; t < e.doubleByte.length; t++) e.doubleByte[t] && (a[e.doubleByte[t]] = t + l.default.SINGLE_BYTE_MAX);
                 this.writeNode = function(e, t) {
+                    console.log("writeNode l4480")
                     if (t) {
                         if (3 !== t.length) throw new Error("invalid node");
                         var a = t[1] ? 2 * Object.keys(t[1]).filter((function(e) {
@@ -4988,6 +4991,7 @@ ${e.debugInfoWithPadding()}`, new Error("invalid string " + n)
                 for (t = 0; t < e.singleByte.length; t++) e.singleByte[t] && (a[e.singleByte[t]] = t);
                 for (t = 0; t < e.doubleByte.length; t++) e.doubleByte[t] && (a[e.doubleByte[t]] = t + l.default.SINGLE_BYTE_MAX);
                 this.writeNode = function(e, t) {
+                    console.log("writeNode call l4994")
                     if (t) {
                         if (3 !== t.length) throw new Error("invalid node");
                         var a = t[1] ? 2 * Object.keys(t[1]).filter((function(e) {

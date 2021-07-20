@@ -1,0 +1,1 @@
+asar extract /Applications/WhatsApp.app/Contents/Resources/app.asar ./app

@@ -22323,14 +22323,14 @@
                         MAC: "mac os",
                         CHROMEOS: "chromium os"
                     },
-                    LATEST_HASH: "c2f27916312364b6d71159b8c3c0d45bad1df9b1",
+                    LATEST_HASH: "02973273ef78990fc23068c7f8638ff47efdef26",
                     VERSION: {
                         p: Number("2"),
                         s: Number("2126"),
-                        t: Number("11")
+                        t: Number("15")
                     },
-                    VERSION_BASE: "2.2126.11",
-                    VERSION_STR: "2.2126.11",
+                    VERSION_BASE: "2.2126.15",
+                    VERSION_STR: "2.2126.15",
                     DYN_ORIGIN: "https://web.whatsapp.com/",
                     PP_URL: "https://web.whatsapp.com/pp",
                     LOGOUT_URL: "https://web.whatsapp.com/logout",
@@ -24930,8 +24930,8 @@ listener from browserWindow: ${e}`
                     o = n(58933),
                     s = n(12087),
                     u = o.crashReporter,
-                    c = "WhatsApp/2.2126.11 Web/" + [s.type(), s.release().slice(0, 5), s.arch()].join("-") + " Device/Electron",
-                    l = "WhatsApp/2.2126.11 Web/Unknown Device/Electron",
+                    c = "WhatsApp/2.2126.15 Web/" + [s.type(), s.release().slice(0, 5), s.arch()].join("-") + " Device/Electron",
+                    l = "WhatsApp/2.2126.15 Web/Unknown Device/Electron",
                     d = {
                         from: "",
                         type: "crashlog",
@@ -25873,11 +25873,11 @@ listener from browserWindow: ${e}`
                             value: function(e, t) {
                                 if ("darwin" === process.platform) {
                                     var n = i({}, Object.freeze({}));
-                                    return t && (n.version = "2.2126.11"), e && (n.beta = !0), c.isUpgradeTest && (n.upgrade_test = !0), n
+                                    return t && (n.version = "2.2126.15"), e && (n.beta = !0), c.isUpgradeTest && (n.upgrade_test = !0), n
                                 }
                                 if ("win32" === process.platform) {
                                     var r = i({}, Object.freeze({}));
-                                    return t && (r.version = "2.2126.11"), e && (r.beta = !0), r
+                                    return t && (r.version = "2.2126.15"), e && (r.beta = !0), r
                                 }
                             }
                         }, {
@@ -26876,7 +26876,7 @@ listener from browserWindow: ${e}`
                                     Windows_NT: "win_desktop",
                                     Linux: "linux_desktop"
                                 } [o.default.type()],
-                                s = ["WhatsApp/2.2126.11", "webclient/" + o.default.release(), "Device/" + a].join(" ");
+                                s = ["WhatsApp/2.2126.15", "webclient/" + o.default.release(), "Device/" + a].join(" ");
                             this.webContents.session.webRequest.onBeforeSendHeaders(c, (function(e, t) {
                                 e.requestHeaders.Origin = "whatsapp_darwin", r.isMediaRequest(e.url) && (e.requestHeaders["User-Agent"] = s), t({
                                     cancel: !1,
@@ -32011,7 +32011,7 @@ window update failed: ${n.t0}`, a("voip-window-manager-update-failed"), t._isDes
                     i.initializePromise.then((function() {
                         return o.setLocale(s.getLocale(), t.default.L10N_PRIORITY.BROWSER)
                     })).then((function() {
-                        e(2)`WhatsApp Desktop ${"2.2126.11"} Ready`;
+                        e(2)`WhatsApp Desktop ${"2.2126.15"} Ready`;
                         var t = !0;
                         if ("darwin" === process.platform && !process.mas && !i.get("hasLoaded") && !d.isUpgradeTest) {
                             var n = s.getAppPath(),
@@ -32086,11 +32086,11 @@ window update failed: ${n.t0}`, a("voip-window-manager-update-failed"), t._isDes
                     })).catch((function(t) {
                         e(2)`Got exception: ${t}`
                     })), d.isUpgradeTest && setTimeout((function() {
-                        l.write("main_2.2126.11\n", "utf8")
+                        l.write("main_2.2126.15\n", "utf8")
                     }), 15e3)
                 })), "darwin" === process.platform && (process.versions.electron, s.setAboutPanelOptions({
                     applicationName: "WhatsApp ",
-                    applicationVersion: "2.2126.11",
+                    applicationVersion: "2.2126.15",
                     version: "",
                     copyright: " "
                 })), s.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required"))

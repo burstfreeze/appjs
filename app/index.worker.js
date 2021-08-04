@@ -11813,8 +11813,9 @@
                     f = u(n(9484)),
                     D = u(n(8784)),
                     E = u(n(8267)),
-                    d = n(3209),
-                    h = function(e) {
+                    d = u(n(3957)),
+                    h = n(3209),
+                    p = function(e) {
                         (0, l.default)(u, e);
                         var t, n = (0, f.default)(u);
 
@@ -11839,7 +11840,7 @@
                             key: "_filterAndSortResults",
                             value: function(e, t) {
                                 return e.map((function(e) {
-                                    return (0, d.parseId)(e)
+                                    return (0, h.parseId)(e)
                                 })).filter((function(e) {
                                     var n = e.chatId;
                                     return null == t.remote || n === t.remote
@@ -11872,7 +11873,9 @@
                                 return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
-                                            return n = f.length > 1 && void 0 !== f[1] ? f[1] : {}, u = Array.from(this.tokenizer.tokenize(t)), e.next = 4, r.all(u.map((function(e) {
+                                            return n = f.length > 1 && void 0 !== f[1] ? f[1] : {}, u = Array.from(this.tokenizer.tokenize(t)), e.next = 4, d.default.acquire();
+                                        case 4:
+                                            return o = e.sent, e.prev = 5, e.next = 8, r.all(u.map((function(e) {
                                                 return l.blindIndexGenerator.computeBlindIndex(e).then(function() {
                                                     var e = (0, i.default)(a.default.mark((function e(t) {
                                                         var n;
@@ -11893,21 +11896,23 @@
                                                     }
                                                 }())
                                             })));
-                                        case 4:
-                                            return o = e.sent, s = this._filterAndSortResults(this._normalizeResults(o), n), c = [], s.forEach((function(e) {
-                                                l.messageSource.isIndexingInProgressForMsgId(e.id) || c.push(e)
-                                            })), e.abrupt("return", this._prepareResult(c, n));
-                                        case 9:
+                                        case 8:
+                                            return s = e.sent, c = this._filterAndSortResults(this._normalizeResults(s), n), e.abrupt("return", this._prepareResult(c, n));
+                                        case 11:
+                                            return e.prev = 11, o.release(), e.finish(11);
+                                        case 14:
                                         case "end":
                                             return e.stop()
                                     }
-                                }), e, this)
+                                }), e, this, [
+                                    [5, , 11, 14]
+                                ])
                             }))), function() {
                                 return t.apply(this, arguments)
                             })
                         }]), u
                     }(E.default);
-                t.default = h
+                t.default = p
             },
             3209: (e, t, n) => {
                 "use strict";
@@ -17194,19 +17199,25 @@
                                 case 2:
                                     return e.next = 4, (0, E.getTable)().postflightDecryptSingleRecord(t);
                                 case 4:
-                                    if (y = e.sent, F = (0, s.decodeProto)(D.MsgRowOpaqueDataSpec, y.msgRowOpaqueData), g = [null === (n = F.currentMsg) || void 0 === n ? void 0 : n.title, null === (r = F.currentMsg) || void 0 === r ? void 0 : r.description, null === (a = F.currentMsg) || void 0 === a ? void 0 : a.caption, null === (i = F.currentMsg) || void 0 === i ? void 0 : i.vcardFormattedName, null === (o = F.currentMsg) || void 0 === o || null === (l = o.list) || void 0 === l ? void 0 : l.title, null === (f = F.currentMsg) || void 0 === f || null === (d = f.list) || void 0 === d ? void 0 : d.description, y.vcardFormattedName, null === (v = y.list) || void 0 === v ? void 0 : v.title, null === (A = y.list) || void 0 === A ? void 0 : A.description].filter(Boolean), !_.has(t.type) && (null === (S = F.currentMsg) || void 0 === S ? void 0 : S.body) && g.push(F.currentMsg.body), 0 !== g.length) {
-                                        e.next = 10;
+                                    if (y = e.sent, F = (0, c.default)((0, h.default)(y.id), "parseMsgKeyString(decryptedMsg.id)"), "status@broadcast" !== (g = F.remote)) {
+                                        e.next = 9;
                                         break
                                     }
                                     return e.abrupt("return", null);
-                                case 10:
-                                    return C = (0, c.default)((0, h.default)(y.id), "parseMsgKeyString(decryptedMsg.id)"), T = C.remote, e.abrupt("return", {
+                                case 9:
+                                    if (C = (0, s.decodeProto)(D.MsgRowOpaqueDataSpec, y.msgRowOpaqueData), T = [null === (n = C.currentMsg) || void 0 === n ? void 0 : n.title, null === (r = C.currentMsg) || void 0 === r ? void 0 : r.description, null === (a = C.currentMsg) || void 0 === a ? void 0 : a.caption, null === (i = C.currentMsg) || void 0 === i ? void 0 : i.vcardFormattedName, null === (o = C.currentMsg) || void 0 === o || null === (l = o.list) || void 0 === l ? void 0 : l.title, null === (f = C.currentMsg) || void 0 === f || null === (d = f.list) || void 0 === d ? void 0 : d.description, y.vcardFormattedName, null === (v = y.list) || void 0 === v ? void 0 : v.title, null === (A = y.list) || void 0 === A ? void 0 : A.description].filter(Boolean), !_.has(t.type) && (null === (S = C.currentMsg) || void 0 === S ? void 0 : S.body) && T.push(C.currentMsg.body), 0 !== T.length) {
+                                        e.next = 14;
+                                        break
+                                    }
+                                    return e.abrupt("return", null);
+                                case 14:
+                                    return e.abrupt("return", {
                                         id: String(y.rowId),
-                                        chatId: T,
+                                        chatId: g,
                                         timestamp: y.t,
-                                        textFragments: g
+                                        textFragments: T
                                     });
-                                case 13:
+                                case 15:
                                 case "end":
                                     return e.stop()
                             }
@@ -17247,15 +17258,10 @@
                 }
                 var g = function() {
                     function e() {
-                        (0, a.default)(this, e), this.indexingInProgressMsgs = new Set
+                        (0, a.default)(this, e)
                     }
                     var t, n, r, s, c;
                     return (0, i.default)(e, [{
-                        key: "isIndexingInProgressForMsgId",
-                        value: function(e) {
-                            return this.indexingInProgressMsgs.has(e)
-                        }
-                    }, {
                         key: "getBacklogged",
                         value: (c = (0, o.default)(u.default.mark((function e(t) {
                             var n, r, a, i, o, s;
@@ -17274,24 +17280,23 @@
                                         return e.abrupt("return", null);
                                     case 5:
                                         return r = n.map((function(e) {
-                                            return e.id
-                                        })), e.next = 8, (0, E.getTable)().anyOf(["rowId"], r.map((function(e) {
-                                            return +e
-                                        })), {
+                                            return +e.id
+                                        })), a = new Set(r), e.next = 9, (0, E.getTable)().anyOf(["rowId"], r, {
                                             shouldDecrypt: !1
                                         });
-                                    case 8:
-                                        return a = e.sent, e.next = 11, y(a);
-                                    case 11:
-                                        return i = e.sent, o = i.map((function(e, t) {
-                                            return null == e ? r[t] : null
-                                        })).filter(Boolean), e.next = 15, this.removeFromBacklog(o);
+                                    case 9:
+                                        return i = e.sent, e.next = 12, y(i);
+                                    case 12:
+                                        return o = e.sent, e.next = 15, v(o);
                                     case 15:
-                                        return e.next = 17, v(i);
-                                    case 17:
-                                        return s = e.sent, this.indexingInProgressMsgs = new Set(s.map((function(e) {
-                                            return e.id
-                                        }))), e.abrupt("return", s);
+                                        return (s = e.sent).forEach((function(e) {
+                                            var t = e.id;
+                                            return a.delete(+t)
+                                        })), e.next = 19, this.removeFromBacklog(Array.from(a.values(), (function(e) {
+                                            return "" + e
+                                        })));
+                                    case 19:
+                                        return e.abrupt("return", s);
                                     case 20:
                                     case "end":
                                         return e.stop()
@@ -17321,14 +17326,11 @@
                     }, {
                         key: "removeFromBacklog",
                         value: (r = (0, o.default)(u.default.mark((function e(t) {
-                            var n = this;
                             return u.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
-                                        return t.forEach((function(e) {
-                                            return n.indexingInProgressMsgs.delete(e)
-                                        })), e.next = 3, (0, f.getTable)().bulkRemove(t);
-                                    case 3:
+                                        return e.next = 2, (0, f.getTable)().bulkRemove(t);
+                                    case 2:
                                     case "end":
                                         return e.stop()
                                 }

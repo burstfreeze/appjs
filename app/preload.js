@@ -6484,11 +6484,11 @@
                 var n = r(8933),
                     i = r(2087),
                     o = n.crashReporter,
-                    a = "WhatsApp/2.2126.11 Web/" + [i.type(), i.release().slice(0, 5), i.arch()].join("-") + " Device/Electron",
+                    a = "WhatsApp/2.2126.15 Web/" + [i.type(), i.release().slice(0, 5), i.arch()].join("-") + " Device/Electron",
                     u = {
                         from: "",
                         type: "crashlog",
-                        agent: a.length <= 63 ? a : "WhatsApp/2.2126.11 Web/Unknown Device/Electron",
+                        agent: a.length <= 63 ? a : "WhatsApp/2.2126.15 Web/Unknown Device/Electron",
                         tags: "electron_native"
                     };
                 u.tags += ",renderer_process";

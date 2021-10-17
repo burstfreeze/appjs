@@ -1,7 +1,17 @@
 /*! Copyright (c) 2021 WhatsApp Inc. All Rights Reserved. */
 (() => {
     var __webpack_modules__ = {
-            927: module => {
+            220: module => {
+                /**
+                 * (c) Facebook, Inc. and its affiliates. Confidential and proprietary.
+                 *
+                 * @emails oncall+wa_corejs
+                 * @noflow
+                 * @lightSyntaxTransform
+                 * @preserve-whitespace
+                 * @generated
+                 * sync WAJS core/media/WAMedia.compiled.js
+                 */
                 var e = {},
                     aa = {},
                     l;
@@ -37204,7 +37214,7 @@
                 var Bd = !0;
                 e.noInitialRun && (Bd = !1), zd(), module.exports = e
             },
-            425: (e, r, i) => {
+            507: (e, r, i) => {
                 "use strict";
                 r.LO = c, r.Df = function(e) {
                     var r = e.split("/"),
@@ -37259,7 +37269,7 @@
                         for (var n in i) a._free(i[n])
                     }
                 }, r.bk = r.lA = void 0;
-                var a = i(927),
+                var a = i(220),
                     f = {};
                 r.lA = f;
                 var n = {};
@@ -37370,8 +37380,8 @@
     var __webpack_exports__ = {};
     (() => {
         "use strict";
-        var e = __webpack_require__(425);
-        const r = __webpack_require__(927);
+        var e = __webpack_require__(507);
+        const r = __webpack_require__(220);
         let i = 0;
 
         function a(r) {

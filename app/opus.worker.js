@@ -1,4 +1,4 @@
-/*! Copyright (c) 2021 WhatsApp Inc. All Rights Reserved. */
+/*! Copyright (c) 2022 WhatsApp Inc. All Rights Reserved. */
 (() => {
     var __webpack_modules__ = {
             588: function(module, __unused_webpack_exports, __webpack_require__) {
@@ -34013,7 +34013,7 @@
                     return e && e.__esModule ? e : {
                         default: e
                     }
-                }
+                }, e.exports.default = e.exports, e.exports.__esModule = !0
             },
             470: e => {
                 "use strict";
@@ -34198,14 +34198,14 @@
                     a = t(r(759)),
                     l = function(e) {
                         var i, r, t;
-                        this.bufferLength = null !== (i = e.bufferLength) && void 0 !== i ? i : 4096, this.decoderSampleRate = null !== (r = e.decoderSampleRate) && void 0 !== r ? r : 48e3, this.outputBufferSampleRate = null !== (t = e.outputBufferSampleRate) && void 0 !== t ? t : 48e3, this.outputBuffers = []
+                        this.bufferLength = null !== (i = e.bufferLength) && void 0 !== i ? i : 4096, this.decoderSampleRate = null !== (r = e.decoderSampleRate) && void 0 !== r ? r : 48e3, this.outputBufferSampleRate = null !== (t = e.outputBufferSampleRate) && void 0 !== t ? t : 48e3, this.outputBuffers = [], this._sawHeader = !1
                     };
                 l.prototype.decode = function(e) {
                     var i = new DataView(e.buffer);
                     this.getPageBoundaries(i).map((function(r) {
                         var t = i.getUint8(r + 5, !0),
                             f = i.getUint32(r + 18, !0);
-                        if (2 & t && (this.numberOfChannels = i.getUint8(r + 37, !0), this.init()), f > 1)
+                        if (!this._sawHeader && 2 & t && (this._sawHeader = !0, this.numberOfChannels = i.getUint8(r + 37, !0), this.init()), f > 1)
                             for (var a = i.getUint8(r + 26, !0), l = r + 27 + a, u = 0; u < a; u++) {
                                 var s = i.getUint8(r + 27 + u, !0);
                                 if (this.decoderBuffer.set(e.subarray(l, l += s), this.decoderBufferIndex), this.decoderBufferIndex += s, s < 255) {
@@ -34303,7 +34303,10 @@
                         i = new ArrayBuffer(27 + this.segmentTableIndex + this.segmentDataIndex),
                         r = new DataView(i),
                         t = new Uint8Array(i);
-                    r.setUint32(0, 1399285583, !0), r.setUint8(4, 0, !0), r.setUint8(5, this.headerType, !0), r.setUint32(6, e, !0), (e > 4294967296 || e < 0) && r.setUint32(10, Math.floor(e / 4294967296), !0), r.setUint32(14, this.serial, !0), r.setUint32(18, this.pageIndex++, !0), r.setUint8(26, this.segmentTableIndex, !0), t.set(this.segmentTable.subarray(0, this.segmentTableIndex), 27), t.set(this.segmentData.subarray(0, this.segmentDataIndex), 27 + this.segmentTableIndex), r.setUint32(22, this.getChecksum(t), !0), postMessage(t, [t.buffer]), this.segmentTableIndex = 0, this.segmentDataIndex = 0, this.buffersInPage = 0, e > 0 && (this.lastPositiveGranulePosition = e)
+                    r.setUint32(0, 1399285583, !0), r.setUint8(4, 0, !0), r.setUint8(5, this.headerType, !0), r.setUint32(6, e, !0), (e > 4294967296 || e < 0) && r.setUint32(10, Math.floor(e / 4294967296), !0), r.setUint32(14, this.serial, !0), r.setUint32(18, this.pageIndex++, !0), r.setUint8(26, this.segmentTableIndex, !0), t.set(this.segmentTable.subarray(0, this.segmentTableIndex), 27), t.set(this.segmentData.subarray(0, this.segmentDataIndex), 27 + this.segmentTableIndex), r.setUint32(22, this.getChecksum(t), !0), postMessage({
+                        message: "page",
+                        page: t
+                    }, [t.buffer]), this.segmentTableIndex = 0, this.segmentDataIndex = 0, this.buffersInPage = 0, e > 0 && (this.lastPositiveGranulePosition = e)
                 }, l.prototype.initChecksumTable = function() {
                     this.checksumTable = [];
                     for (var e = 0; e < 256; e++) {
@@ -34330,6 +34333,11 @@
                         this.segmentTable[this.segmentTableIndex++] = t, this.segmentData.set(this.encoderOutputBuffer.subarray(r, r + t), this.segmentDataIndex), this.segmentDataIndex += t, r += t, i -= 255
                     }
                     this.granulePosition += 48 * this.encoderFrameSize, 255 === this.segmentTableIndex && (this.generatePage(), this.headerType = 0)
+                }, l.prototype.flush = function(e) {
+                    this.buffersInPage > 0 && this.generatePage(), postMessage({
+                        message: "flushed",
+                        requestId: e
+                    })
                 };
                 var u = {
                     init: function(e) {
@@ -34337,6 +34345,9 @@
                     },
                     encode: function(e) {
                         f.encode(e)
+                    },
+                    flush: function(e) {
+                        f.flush(e)
                     },
                     done: function() {
                         f && f.encodeFinalFrame()
@@ -34400,6 +34411,9 @@
                     break;
                 case "encode-done":
                     r.default.done();
+                    break;
+                case "flush":
+                    r.default.flush(e.data.requestId);
                     break;
                 case "decode-init":
                     i.default.init(e.data.config);

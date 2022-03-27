@@ -851,6 +851,7 @@
                     }),
                     b = f.size / 1024;
                 if (0 !== _.ServerProps.vcardAsDocumentSizeKb && b > _.ServerProps.vcardAsDocumentSizeKb) return void
+
                 function() {
                     E.apply(this, arguments)
                 }(f, e.length, t, a, n);

@@ -13778,6 +13778,7 @@
                                 "keyIdentifier" in t.parsedValue ? a = t.parsedValue.keyIdentifier : ("authorityCertIssuer" in t.parsedValue && (n = t.parsedValue.authorityCertIssuer), "authorityCertSerialNumber" in t.parsedValue && (i = t.parsedValue.authorityCertSerialNumber));
                                 break
                             }
+
                     function o(t) {
                         if (null !== a && "extensions" in t) {
                             let e = !1;

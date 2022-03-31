@@ -2767,15 +2767,15 @@
                     j = s++,
                     U = s++,
                     W = s++,
-                    F = s++,
                     B = s++,
+                    F = s++,
                     V = s++,
                     q = s++,
                     G = s++,
                     z = s++,
                     $ = s++,
-                    H = s++,
                     Y = s++,
+                    H = s++,
                     K = s++,
                     Z = s++,
                     J = s++,
@@ -2869,12 +2869,12 @@
                 }, me.prototype._stateAfterCdata2 = function(e) {
                     ">" === e ? (this._cbs.oncdata(this._buffer.substring(this._sectionStart, this._index - 2)), this._state = u, this._sectionStart = this._index + 1) : "]" !== e && (this._state = I)
                 }, me.prototype._stateBeforeSpecial = function(e) {
-                    "c" === e || "C" === e ? this._state = F : "t" === e || "T" === e ? this._state = Z : (this._state = l, this._index--)
+                    "c" === e || "C" === e ? this._state = B : "t" === e || "T" === e ? this._state = Z : (this._state = l, this._index--)
                 }, me.prototype._stateBeforeSpecialEnd = function(e) {
                     this._special !== de || "c" !== e && "C" !== e ? this._special !== fe || "t" !== e && "T" !== e ? this._state = u : this._state = ee : this._state = z
-                }, me.prototype._stateBeforeScript1 = _e("R", B), me.prototype._stateBeforeScript2 = _e("I", V), me.prototype._stateBeforeScript3 = _e("P", q), me.prototype._stateBeforeScript4 = _e("T", G), me.prototype._stateBeforeScript5 = function(e) {
+                }, me.prototype._stateBeforeScript1 = _e("R", F), me.prototype._stateBeforeScript2 = _e("I", V), me.prototype._stateBeforeScript3 = _e("P", q), me.prototype._stateBeforeScript4 = _e("T", G), me.prototype._stateBeforeScript5 = function(e) {
                     ("/" === e || ">" === e || pe(e)) && (this._special = de), this._state = l, this._index--
-                }, me.prototype._stateAfterScript1 = he("R", $, u), me.prototype._stateAfterScript2 = he("I", H, u), me.prototype._stateAfterScript3 = he("P", Y, u), me.prototype._stateAfterScript4 = he("T", K, u), me.prototype._stateAfterScript5 = function(e) {
+                }, me.prototype._stateAfterScript1 = he("R", $, u), me.prototype._stateAfterScript2 = he("I", Y, u), me.prototype._stateAfterScript3 = he("P", H, u), me.prototype._stateAfterScript4 = he("T", K, u), me.prototype._stateAfterScript5 = function(e) {
                     ">" === e || pe(e) ? (this._special = le, this._state = p, this._sectionStart = this._index - 6, this._index--) : this._state = u
                 }, me.prototype._stateBeforeStyle1 = _e("Y", J), me.prototype._stateBeforeStyle2 = _e("L", Q), me.prototype._stateBeforeStyle3 = _e("E", X), me.prototype._stateBeforeStyle4 = function(e) {
                     ("/" === e || ">" === e || pe(e)) && (this._special = fe), this._state = l, this._index--
@@ -2915,7 +2915,7 @@
                 }, me.prototype._parse = function() {
                     for (; this._index < this._buffer.length && this._running;) {
                         var e = this._buffer.charAt(this._index);
-                        this._state === u ? this._stateText(e) : this._state === c ? this._stateBeforeTagName(e) : this._state === l ? this._stateInTagName(e) : this._state === f ? this._stateBeforeCloseingTagName(e) : this._state === p ? this._stateInCloseingTagName(e) : this._state === h ? this._stateAfterCloseingTagName(e) : this._state === d ? this._stateInSelfClosingTag(e) : this._state === _ ? this._stateBeforeAttributeName(e) : this._state === m ? this._stateInAttributeName(e) : this._state === g ? this._stateAfterAttributeName(e) : this._state === v ? this._stateBeforeAttributeValue(e) : this._state === b ? this._stateInAttributeValueDoubleQuotes(e) : this._state === y ? this._stateInAttributeValueSingleQuotes(e) : this._state === w ? this._stateInAttributeValueNoQuotes(e) : this._state === E ? this._stateBeforeDeclaration(e) : this._state === S ? this._stateInDeclaration(e) : this._state === x ? this._stateInProcessingInstruction(e) : this._state === A ? this._stateBeforeComment(e) : this._state === k ? this._stateInComment(e) : this._state === O ? this._stateAfterComment1(e) : this._state === T ? this._stateAfterComment2(e) : this._state === C ? this._stateBeforeCdata1(e) : this._state === N ? this._stateBeforeCdata2(e) : this._state === D ? this._stateBeforeCdata3(e) : this._state === M ? this._stateBeforeCdata4(e) : this._state === L ? this._stateBeforeCdata5(e) : this._state === R ? this._stateBeforeCdata6(e) : this._state === I ? this._stateInCdata(e) : this._state === P ? this._stateAfterCdata1(e) : this._state === j ? this._stateAfterCdata2(e) : this._state === U ? this._stateBeforeSpecial(e) : this._state === W ? this._stateBeforeSpecialEnd(e) : this._state === F ? this._stateBeforeScript1(e) : this._state === B ? this._stateBeforeScript2(e) : this._state === V ? this._stateBeforeScript3(e) : this._state === q ? this._stateBeforeScript4(e) : this._state === G ? this._stateBeforeScript5(e) : this._state === z ? this._stateAfterScript1(e) : this._state === $ ? this._stateAfterScript2(e) : this._state === H ? this._stateAfterScript3(e) : this._state === Y ? this._stateAfterScript4(e) : this._state === K ? this._stateAfterScript5(e) : this._state === Z ? this._stateBeforeStyle1(e) : this._state === J ? this._stateBeforeStyle2(e) : this._state === Q ? this._stateBeforeStyle3(e) : this._state === X ? this._stateBeforeStyle4(e) : this._state === ee ? this._stateAfterStyle1(e) : this._state === te ? this._stateAfterStyle2(e) : this._state === re ? this._stateAfterStyle3(e) : this._state === ne ? this._stateAfterStyle4(e) : this._state === ie ? this._stateBeforeEntity(e) : this._state === ae ? this._stateBeforeNumericEntity(e) : this._state === oe ? this._stateInNamedEntity(e) : this._state === se ? this._stateInNumericEntity(e) : this._state === ue ? this._stateInHexEntity(e) : this._cbs.onerror(Error("unknown _state"), this._state), this._index++
+                        this._state === u ? this._stateText(e) : this._state === c ? this._stateBeforeTagName(e) : this._state === l ? this._stateInTagName(e) : this._state === f ? this._stateBeforeCloseingTagName(e) : this._state === p ? this._stateInCloseingTagName(e) : this._state === h ? this._stateAfterCloseingTagName(e) : this._state === d ? this._stateInSelfClosingTag(e) : this._state === _ ? this._stateBeforeAttributeName(e) : this._state === m ? this._stateInAttributeName(e) : this._state === g ? this._stateAfterAttributeName(e) : this._state === v ? this._stateBeforeAttributeValue(e) : this._state === b ? this._stateInAttributeValueDoubleQuotes(e) : this._state === y ? this._stateInAttributeValueSingleQuotes(e) : this._state === w ? this._stateInAttributeValueNoQuotes(e) : this._state === E ? this._stateBeforeDeclaration(e) : this._state === S ? this._stateInDeclaration(e) : this._state === x ? this._stateInProcessingInstruction(e) : this._state === A ? this._stateBeforeComment(e) : this._state === k ? this._stateInComment(e) : this._state === O ? this._stateAfterComment1(e) : this._state === T ? this._stateAfterComment2(e) : this._state === C ? this._stateBeforeCdata1(e) : this._state === N ? this._stateBeforeCdata2(e) : this._state === D ? this._stateBeforeCdata3(e) : this._state === M ? this._stateBeforeCdata4(e) : this._state === L ? this._stateBeforeCdata5(e) : this._state === R ? this._stateBeforeCdata6(e) : this._state === I ? this._stateInCdata(e) : this._state === P ? this._stateAfterCdata1(e) : this._state === j ? this._stateAfterCdata2(e) : this._state === U ? this._stateBeforeSpecial(e) : this._state === W ? this._stateBeforeSpecialEnd(e) : this._state === B ? this._stateBeforeScript1(e) : this._state === F ? this._stateBeforeScript2(e) : this._state === V ? this._stateBeforeScript3(e) : this._state === q ? this._stateBeforeScript4(e) : this._state === G ? this._stateBeforeScript5(e) : this._state === z ? this._stateAfterScript1(e) : this._state === $ ? this._stateAfterScript2(e) : this._state === Y ? this._stateAfterScript3(e) : this._state === H ? this._stateAfterScript4(e) : this._state === K ? this._stateAfterScript5(e) : this._state === Z ? this._stateBeforeStyle1(e) : this._state === J ? this._stateBeforeStyle2(e) : this._state === Q ? this._stateBeforeStyle3(e) : this._state === X ? this._stateBeforeStyle4(e) : this._state === ee ? this._stateAfterStyle1(e) : this._state === te ? this._stateAfterStyle2(e) : this._state === re ? this._stateAfterStyle3(e) : this._state === ne ? this._stateAfterStyle4(e) : this._state === ie ? this._stateBeforeEntity(e) : this._state === ae ? this._stateBeforeNumericEntity(e) : this._state === oe ? this._stateInNamedEntity(e) : this._state === se ? this._stateInNumericEntity(e) : this._state === ue ? this._stateInHexEntity(e) : this._cbs.onerror(Error("unknown _state"), this._state), this._index++
                     }
                     this._cleanup()
                 }, me.prototype.pause = function() {
@@ -5718,16 +5718,16 @@
                         }
                     }
                     M || (M = new n);
-                    var F = M.get(t);
-                    if (F) return F;
+                    var B = M.get(t);
+                    if (B) return B;
                     M.set(t, L), E(t) ? t.forEach((function(n) {
                         L.add(e(n, r, C, n, t, M))
                     })) : y(t) && t.forEach((function(n, i) {
                         L.set(i, e(n, r, C, i, t, M))
                     }));
-                    var B = j ? void 0 : (P ? I ? p : f : I ? x : S)(t);
-                    return i(B || t, (function(n, i) {
-                        B && (n = t[i = n]), a(L, i, e(n, r, C, i, t, M))
+                    var F = j ? void 0 : (P ? I ? p : f : I ? x : S)(t);
+                    return i(F || t, (function(n, i) {
+                        F && (n = t[i = n]), a(L, i, e(n, r, C, i, t, M))
                     })), L
                 }
             },
@@ -7538,11 +7538,11 @@
                     }(e);
                     var W = r.nocase ? "i" : "";
                     try {
-                        var F = new RegExp("^" + a + "$", W)
+                        var B = new RegExp("^" + a + "$", W)
                     } catch (e) {
                         return new RegExp("$.")
                     }
-                    return F._glob = e, F._src = a, F
+                    return B._glob = e, B._src = a, B
                 };
                 var _ = {};
                 f.makeRe = function(e, t) {
@@ -8929,7 +8929,7 @@
                     }
                 }
 
-                function F(e, t) {
+                function B(e, t) {
                     for (var r = 0, n = e.length; r < n; r++)
                         if (e[r] === t) return r;
                     return -1
@@ -8980,7 +8980,7 @@
                     function d(t) {
                         u("ondata");
                         var i = e.write(t);
-                        u("dest.write", i), !1 === i && ((1 === n.pipesCount && n.pipes === e || n.pipesCount > 1 && -1 !== F(n.pipes, e)) && !l && (u("false write response, pause", n.awaitDrain), n.awaitDrain++), r.pause())
+                        u("dest.write", i), !1 === i && ((1 === n.pipesCount && n.pipes === e || n.pipesCount > 1 && -1 !== B(n.pipes, e)) && !l && (u("false write response, pause", n.awaitDrain), n.awaitDrain++), r.pause())
                     }
 
                     function f(t) {
@@ -9019,7 +9019,7 @@
                         });
                         return this
                     }
-                    var o = F(t.pipes, e);
+                    var o = B(t.pipes, e);
                     return -1 === o || (t.pipes.splice(o, 1), t.pipesCount -= 1, 1 === t.pipesCount && (t.pipes = t.pipes[0]), e.emit("unpipe", this, r)), this
                 }, x.prototype.on = function(e, t) {
                     var r = a.prototype.on.call(this, e, t),
@@ -11720,15 +11720,15 @@
                     j = r(12134),
                     U = r(6438),
                     W = r(44547),
-                    F = r(8561),
-                    B = r(12638),
+                    B = r(8561),
+                    F = r(12638),
                     V = r(62324),
                     q = r(85343),
                     G = r(19932),
                     z = r(72954),
                     $ = r(20184),
-                    H = r(65118),
-                    Y = r(53370),
+                    Y = r(65118),
+                    H = r(53370),
                     K = r(89380),
                     Z = {
                         pt_PT: s
@@ -11954,16 +11954,16 @@
                         co: W,
                         ht: W,
                         quc: W,
-                        mi: F,
-                        tg: F,
-                        tt: B,
+                        mi: B,
+                        tg: B,
+                        tt: F,
                         sa: V,
                         qu: q,
                         ay: G,
                         szl: z,
                         bho: $,
-                        ik: H,
-                        rup: Y,
+                        ik: Y,
+                        rup: H,
                         tob: K
                     },
                     Q = r(11841);
@@ -14516,6 +14516,22 @@
                     }) : e[t] = r
                 }
             },
+            89881: (e, t, r) => {
+                var n = r(47816),
+                    i = r(99291)(n);
+                e.exports = i
+            },
+            28483: (e, t, r) => {
+                var n = r(25063)();
+                e.exports = n
+            },
+            47816: (e, t, r) => {
+                var n = r(28483),
+                    i = r(3674);
+                e.exports = function(e, t) {
+                    return e && n(e, t, i)
+                }
+            },
             97786: (e, t, r) => {
                 var n = r(71811),
                     i = r(40327);
@@ -14683,6 +14699,17 @@
                     return r
                 }
             },
+            69199: (e, t, r) => {
+                var n = r(89881),
+                    i = r(98612);
+                e.exports = function(e, t) {
+                    var r = -1,
+                        a = i(e) ? Array(e.length) : [];
+                    return n(e, (function(e, n, i) {
+                        a[++r] = t(e, n, i)
+                    })), a
+                }
+            },
             91573: (e, t, r) => {
                 var n = r(2958),
                     i = r(1499),
@@ -14826,6 +14853,29 @@
             14429: (e, t, r) => {
                 var n = r(55639)["__core-js_shared__"];
                 e.exports = n
+            },
+            99291: (e, t, r) => {
+                var n = r(98612);
+                e.exports = function(e, t) {
+                    return function(r, i) {
+                        if (null == r) return r;
+                        if (!n(r)) return e(r, i);
+                        for (var a = r.length, o = t ? a : -1, s = Object(r);
+                            (t ? o-- : ++o < a) && !1 !== i(s[o], o, s););
+                        return r
+                    }
+                }
+            },
+            25063: e => {
+                e.exports = function(e) {
+                    return function(t, r, n) {
+                        for (var i = -1, a = Object(t), o = n(t), s = o.length; s--;) {
+                            var u = o[e ? s : ++i];
+                            if (!1 === r(a[u], u, a)) break
+                        }
+                        return t
+                    }
+                }
             },
             98805: (e, t, r) => {
                 var n = r(40180),
@@ -15638,6 +15688,15 @@
                     return a(e) ? n(e, !0) : i(e)
                 }
             },
+            35161: (e, t, r) => {
+                var n = r(29932),
+                    i = r(67206),
+                    a = r(69199),
+                    o = r(1469);
+                e.exports = function(e, t) {
+                    return (o(e) ? n : a)(e, i(t, 3))
+                }
+            },
             88306: (e, t, r) => {
                 var n = r(83369);
 
@@ -15970,9 +16029,9 @@
                             return e.slice(1)
                         })), this._longDateFormat[e])
                     }
-                    var F = "Invalid date";
+                    var B = "Invalid date";
 
-                    function B() {
+                    function F() {
                         return this._invalidDate
                     }
                     var V = "%d",
@@ -16003,19 +16062,19 @@
                         return M(i) ? i(e, t, r, n) : i.replace(/%d/i, e)
                     }
 
-                    function H(e, t) {
+                    function Y(e, t) {
                         var r = this._relativeTime[e > 0 ? "future" : "past"];
                         return M(r) ? r(t) : r.replace(/%s/i, t)
                     }
-                    var Y = {};
+                    var H = {};
 
                     function K(e, t) {
                         var r = e.toLowerCase();
-                        Y[r] = Y[r + "s"] = Y[t] = e
+                        H[r] = H[r + "s"] = H[t] = e
                     }
 
                     function Z(e) {
-                        return "string" == typeof e ? Y[e] || Y[e.toLowerCase()] : void 0
+                        return "string" == typeof e ? H[e] || H[e.toLowerCase()] : void 0
                     }
 
                     function J(e) {
@@ -16147,18 +16206,18 @@
                     var je = 0,
                         Ue = 1,
                         We = 2,
-                        Fe = 3,
-                        Be = 4,
+                        Be = 3,
+                        Fe = 4,
                         Ve = 5,
                         qe = 6,
                         Ge = 7,
                         ze = 8;
 
                     function $e(e) {
-                        return He(e) ? 366 : 365
+                        return Ye(e) ? 366 : 365
                     }
 
-                    function He(e) {
+                    function Ye(e) {
                         return e % 4 == 0 && e % 100 != 0 || e % 400 == 0
                     }
                     oe("Y", 0, 0, (function() {
@@ -16175,10 +16234,10 @@
                     })), n.parseTwoDigitYear = function(e) {
                         return A(e) + (A(e) > 68 ? 1900 : 2e3)
                     };
-                    var Ye, Ke = Je("FullYear", !0);
+                    var He, Ke = Je("FullYear", !0);
 
                     function Ze() {
-                        return He(this.year())
+                        return Ye(this.year())
                     }
 
                     function Je(e, t) {
@@ -16192,7 +16251,7 @@
                     }
 
                     function Xe(e, t, r) {
-                        e.isValid() && !isNaN(r) && ("FullYear" === t && He(e.year()) && 1 === e.month() && 29 === e.date() ? e._d["set" + (e._isUTC ? "UTC" : "") + t](r, e.month(), nt(r, e.month())) : e._d["set" + (e._isUTC ? "UTC" : "") + t](r))
+                        e.isValid() && !isNaN(r) && ("FullYear" === t && Ye(e.year()) && 1 === e.month() && 29 === e.date() ? e._d["set" + (e._isUTC ? "UTC" : "") + t](r, e.month(), nt(r, e.month())) : e._d["set" + (e._isUTC ? "UTC" : "") + t](r))
                     }
 
                     function et(e) {
@@ -16213,9 +16272,9 @@
                     function nt(e, t) {
                         if (isNaN(e) || isNaN(t)) return NaN;
                         var r = rt(t, 12);
-                        return e += (t - r) / 12, 1 === r ? He(e) ? 29 : 28 : 31 - r % 7 % 2
+                        return e += (t - r) / 12, 1 === r ? Ye(e) ? 29 : 28 : 31 - r % 7 % 2
                     }
-                    Ye = Array.prototype.indexOf ? Array.prototype.indexOf : function(e) {
+                    He = Array.prototype.indexOf ? Array.prototype.indexOf : function(e) {
                         var t;
                         for (t = 0; t < this.length; ++t)
                             if (this[t] === e) return t;
@@ -16252,7 +16311,7 @@
                         var n, i, a, o = e.toLocaleLowerCase();
                         if (!this._monthsParse)
                             for (this._monthsParse = [], this._longMonthsParse = [], this._shortMonthsParse = [], n = 0; n < 12; ++n) a = h([2e3, n]), this._shortMonthsParse[n] = this.monthsShort(a, "").toLocaleLowerCase(), this._longMonthsParse[n] = this.months(a, "").toLocaleLowerCase();
-                        return r ? "MMM" === t ? -1 !== (i = Ye.call(this._shortMonthsParse, o)) ? i : null : -1 !== (i = Ye.call(this._longMonthsParse, o)) ? i : null : "MMM" === t ? -1 !== (i = Ye.call(this._shortMonthsParse, o)) || -1 !== (i = Ye.call(this._longMonthsParse, o)) ? i : null : -1 !== (i = Ye.call(this._longMonthsParse, o)) || -1 !== (i = Ye.call(this._shortMonthsParse, o)) ? i : null
+                        return r ? "MMM" === t ? -1 !== (i = He.call(this._shortMonthsParse, o)) ? i : null : -1 !== (i = He.call(this._longMonthsParse, o)) ? i : null : "MMM" === t ? -1 !== (i = He.call(this._shortMonthsParse, o)) || -1 !== (i = He.call(this._longMonthsParse, o)) ? i : null : -1 !== (i = He.call(this._longMonthsParse, o)) || -1 !== (i = He.call(this._shortMonthsParse, o)) ? i : null
                     }
 
                     function lt(e, t, r) {
@@ -16422,16 +16481,16 @@
                         return !0 === e ? Lt(this._weekdaysMin, this._week.dow) : e ? this._weekdaysMin[e.day()] : this._weekdaysMin
                     }
 
-                    function Ft(e, t, r) {
+                    function Bt(e, t, r) {
                         var n, i, a, o = e.toLocaleLowerCase();
                         if (!this._weekdaysParse)
                             for (this._weekdaysParse = [], this._shortWeekdaysParse = [], this._minWeekdaysParse = [], n = 0; n < 7; ++n) a = h([2e3, 1]).day(n), this._minWeekdaysParse[n] = this.weekdaysMin(a, "").toLocaleLowerCase(), this._shortWeekdaysParse[n] = this.weekdaysShort(a, "").toLocaleLowerCase(), this._weekdaysParse[n] = this.weekdays(a, "").toLocaleLowerCase();
-                        return r ? "dddd" === t ? -1 !== (i = Ye.call(this._weekdaysParse, o)) ? i : null : "ddd" === t ? -1 !== (i = Ye.call(this._shortWeekdaysParse, o)) ? i : null : -1 !== (i = Ye.call(this._minWeekdaysParse, o)) ? i : null : "dddd" === t ? -1 !== (i = Ye.call(this._weekdaysParse, o)) || -1 !== (i = Ye.call(this._shortWeekdaysParse, o)) || -1 !== (i = Ye.call(this._minWeekdaysParse, o)) ? i : null : "ddd" === t ? -1 !== (i = Ye.call(this._shortWeekdaysParse, o)) || -1 !== (i = Ye.call(this._weekdaysParse, o)) || -1 !== (i = Ye.call(this._minWeekdaysParse, o)) ? i : null : -1 !== (i = Ye.call(this._minWeekdaysParse, o)) || -1 !== (i = Ye.call(this._weekdaysParse, o)) || -1 !== (i = Ye.call(this._shortWeekdaysParse, o)) ? i : null
+                        return r ? "dddd" === t ? -1 !== (i = He.call(this._weekdaysParse, o)) ? i : null : "ddd" === t ? -1 !== (i = He.call(this._shortWeekdaysParse, o)) ? i : null : -1 !== (i = He.call(this._minWeekdaysParse, o)) ? i : null : "dddd" === t ? -1 !== (i = He.call(this._weekdaysParse, o)) || -1 !== (i = He.call(this._shortWeekdaysParse, o)) || -1 !== (i = He.call(this._minWeekdaysParse, o)) ? i : null : "ddd" === t ? -1 !== (i = He.call(this._shortWeekdaysParse, o)) || -1 !== (i = He.call(this._weekdaysParse, o)) || -1 !== (i = He.call(this._minWeekdaysParse, o)) ? i : null : -1 !== (i = He.call(this._minWeekdaysParse, o)) || -1 !== (i = He.call(this._weekdaysParse, o)) || -1 !== (i = He.call(this._shortWeekdaysParse, o)) ? i : null
                     }
 
-                    function Bt(e, t, r) {
+                    function Ft(e, t, r) {
                         var n, i, a;
-                        if (this._weekdaysParseExact) return Ft.call(this, e, t, r);
+                        if (this._weekdaysParseExact) return Bt.call(this, e, t, r);
                         for (this._weekdaysParse || (this._weekdaysParse = [], this._minWeekdaysParse = [], this._shortWeekdaysParse = [], this._fullWeekdaysParse = []), n = 0; n < 7; n++) {
                             if (i = h([2e3, 1]).day(n), r && !this._fullWeekdaysParse[n] && (this._fullWeekdaysParse[n] = new RegExp("^" + this.weekdays(i, "").replace(".", "\\.?") + "$", "i"), this._shortWeekdaysParse[n] = new RegExp("^" + this.weekdaysShort(i, "").replace(".", "\\.?") + "$", "i"), this._minWeekdaysParse[n] = new RegExp("^" + this.weekdaysMin(i, "").replace(".", "\\.?") + "$", "i")), this._weekdaysParse[n] || (a = "^" + this.weekdays(i, "") + "|^" + this.weekdaysShort(i, "") + "|^" + this.weekdaysMin(i, ""), this._weekdaysParse[n] = new RegExp(a.replace(".", ""), "i")), r && "dddd" === t && this._fullWeekdaysParse[n].test(e)) return n;
                             if (r && "ddd" === t && this._shortWeekdaysParse[n].test(e)) return n;
@@ -16465,10 +16524,10 @@
                     function $t(e) {
                         return this._weekdaysParseExact ? (f(this, "_weekdaysRegex") || Jt.call(this), e ? this._weekdaysStrictRegex : this._weekdaysRegex) : (f(this, "_weekdaysRegex") || (this._weekdaysRegex = zt), this._weekdaysStrictRegex && e ? this._weekdaysStrictRegex : this._weekdaysRegex)
                     }
-                    var Ht = Oe;
+                    var Yt = Oe;
 
-                    function Yt(e) {
-                        return this._weekdaysParseExact ? (f(this, "_weekdaysRegex") || Jt.call(this), e ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex) : (f(this, "_weekdaysShortRegex") || (this._weekdaysShortRegex = Ht), this._weekdaysShortStrictRegex && e ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex)
+                    function Ht(e) {
+                        return this._weekdaysParseExact ? (f(this, "_weekdaysRegex") || Jt.call(this), e ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex) : (f(this, "_weekdaysShortRegex") || (this._weekdaysShortRegex = Yt), this._weekdaysShortStrictRegex && e ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex)
                     }
                     var Kt = Oe;
 
@@ -16518,27 +16577,27 @@
                         return "" + this.hours() + te(this.minutes(), 2)
                     })), oe("Hmmss", 0, 0, (function() {
                         return "" + this.hours() + te(this.minutes(), 2) + te(this.seconds(), 2)
-                    })), er("a", !0), er("A", !1), K("hour", "h"), X("hour", 13), Ce("a", tr), Ce("A", tr), Ce("H", me), Ce("h", me), Ce("k", me), Ce("HH", me, fe), Ce("hh", me, fe), Ce("kk", me, fe), Ce("hmm", ge), Ce("hmmss", ve), Ce("Hmm", ge), Ce("Hmmss", ve), Re(["H", "HH"], Fe), Re(["k", "kk"], (function(e, t, r) {
+                    })), er("a", !0), er("A", !1), K("hour", "h"), X("hour", 13), Ce("a", tr), Ce("A", tr), Ce("H", me), Ce("h", me), Ce("k", me), Ce("HH", me, fe), Ce("hh", me, fe), Ce("kk", me, fe), Ce("hmm", ge), Ce("hmmss", ve), Ce("Hmm", ge), Ce("Hmmss", ve), Re(["H", "HH"], Be), Re(["k", "kk"], (function(e, t, r) {
                         var n = A(e);
-                        t[Fe] = 24 === n ? 0 : n
+                        t[Be] = 24 === n ? 0 : n
                     })), Re(["a", "A"], (function(e, t, r) {
                         r._isPm = r._locale.isPM(e), r._meridiem = e
                     })), Re(["h", "hh"], (function(e, t, r) {
-                        t[Fe] = A(e), m(r).bigHour = !0
+                        t[Be] = A(e), m(r).bigHour = !0
                     })), Re("hmm", (function(e, t, r) {
                         var n = e.length - 2;
-                        t[Fe] = A(e.substr(0, n)), t[Be] = A(e.substr(n)), m(r).bigHour = !0
+                        t[Be] = A(e.substr(0, n)), t[Fe] = A(e.substr(n)), m(r).bigHour = !0
                     })), Re("hmmss", (function(e, t, r) {
                         var n = e.length - 4,
                             i = e.length - 2;
-                        t[Fe] = A(e.substr(0, n)), t[Be] = A(e.substr(n, 2)), t[Ve] = A(e.substr(i)), m(r).bigHour = !0
+                        t[Be] = A(e.substr(0, n)), t[Fe] = A(e.substr(n, 2)), t[Ve] = A(e.substr(i)), m(r).bigHour = !0
                     })), Re("Hmm", (function(e, t, r) {
                         var n = e.length - 2;
-                        t[Fe] = A(e.substr(0, n)), t[Be] = A(e.substr(n))
+                        t[Be] = A(e.substr(0, n)), t[Fe] = A(e.substr(n))
                     })), Re("Hmmss", (function(e, t, r) {
                         var n = e.length - 4,
                             i = e.length - 2;
-                        t[Fe] = A(e.substr(0, n)), t[Be] = A(e.substr(n, 2)), t[Ve] = A(e.substr(i))
+                        t[Be] = A(e.substr(0, n)), t[Fe] = A(e.substr(n, 2)), t[Ve] = A(e.substr(i))
                     }));
                     var nr = /[ap]\.?m?\.?/i;
 
@@ -16549,7 +16608,7 @@
                         sr = {
                             calendar: P,
                             longDateFormat: U,
-                            invalidDate: F,
+                            invalidDate: B,
                             ordinal: V,
                             dayOfMonthOrdinalParse: q,
                             relativeTime: z,
@@ -16639,7 +16698,7 @@
 
                     function vr(e) {
                         var t, r = e._a;
-                        return r && -2 === m(e).overflow && (t = r[Ue] < 0 || r[Ue] > 11 ? Ue : r[We] < 1 || r[We] > nt(r[je], r[Ue]) ? We : r[Fe] < 0 || r[Fe] > 24 || 24 === r[Fe] && (0 !== r[Be] || 0 !== r[Ve] || 0 !== r[qe]) ? Fe : r[Be] < 0 || r[Be] > 59 ? Be : r[Ve] < 0 || r[Ve] > 59 ? Ve : r[qe] < 0 || r[qe] > 999 ? qe : -1, m(e)._overflowDayOfYear && (t < je || t > We) && (t = We), m(e)._overflowWeeks && -1 === t && (t = Ge), m(e)._overflowWeekday && -1 === t && (t = ze), m(e).overflow = t), e
+                        return r && -2 === m(e).overflow && (t = r[Ue] < 0 || r[Ue] > 11 ? Ue : r[We] < 1 || r[We] > nt(r[je], r[Ue]) ? We : r[Be] < 0 || r[Be] > 24 || 24 === r[Be] && (0 !== r[Fe] || 0 !== r[Ve] || 0 !== r[qe]) ? Be : r[Fe] < 0 || r[Fe] > 59 ? Fe : r[Ve] < 0 || r[Ve] > 59 ? Ve : r[qe] < 0 || r[qe] > 999 ? qe : -1, m(e)._overflowDayOfYear && (t < je || t > We) && (t = We), m(e)._overflowWeeks && -1 === t && (t = Ge), m(e)._overflowWeekday && -1 === t && (t = ze), m(e).overflow = t), e
                     }
 
                     function br(e, t, r) {
@@ -16656,16 +16715,16 @@
                         if (!e._d) {
                             for (n = yr(e), e._w && null == e._a[We] && null == e._a[Ue] && Er(e), null != e._dayOfYear && (a = br(e._a[je], n[je]), (e._dayOfYear > $e(a) || 0 === e._dayOfYear) && (m(e)._overflowDayOfYear = !0), r = yt(a, 0, e._dayOfYear), e._a[Ue] = r.getUTCMonth(), e._a[We] = r.getUTCDate()), t = 0; t < 3 && null == e._a[t]; ++t) e._a[t] = o[t] = n[t];
                             for (; t < 7; t++) e._a[t] = o[t] = null == e._a[t] ? 2 === t ? 1 : 0 : e._a[t];
-                            24 === e._a[Fe] && 0 === e._a[Be] && 0 === e._a[Ve] && 0 === e._a[qe] && (e._nextDay = !0, e._a[Fe] = 0), e._d = (e._useUTC ? yt : bt).apply(null, o), i = e._useUTC ? e._d.getUTCDay() : e._d.getDay(), null != e._tzm && e._d.setUTCMinutes(e._d.getUTCMinutes() - e._tzm), e._nextDay && (e._a[Fe] = 24), e._w && void 0 !== e._w.d && e._w.d !== i && (m(e).weekdayMismatch = !0)
+                            24 === e._a[Be] && 0 === e._a[Fe] && 0 === e._a[Ve] && 0 === e._a[qe] && (e._nextDay = !0, e._a[Be] = 0), e._d = (e._useUTC ? yt : bt).apply(null, o), i = e._useUTC ? e._d.getUTCDay() : e._d.getDay(), null != e._tzm && e._d.setUTCMinutes(e._d.getUTCMinutes() - e._tzm), e._nextDay && (e._a[Be] = 24), e._w && void 0 !== e._w.d && e._w.d !== i && (m(e).weekdayMismatch = !0)
                         }
                     }
 
                     function Er(e) {
                         var t, r, n, i, a, o, s, u;
-                        if (null != (t = e._w).GG || null != t.W || null != t.E) a = 1, o = 4, r = br(t.GG, e._a[je], St(Hr(), 1, 4).year), n = br(t.W, 1), ((i = br(t.E, 1)) < 1 || i > 7) && (u = !0);
+                        if (null != (t = e._w).GG || null != t.W || null != t.E) a = 1, o = 4, r = br(t.GG, e._a[je], St(Yr(), 1, 4).year), n = br(t.W, 1), ((i = br(t.E, 1)) < 1 || i > 7) && (u = !0);
                         else {
                             a = e._locale._week.dow, o = e._locale._week.doy;
-                            var c = St(Hr(), a, o);
+                            var c = St(Yr(), a, o);
                             r = br(t.gg, e._a[je], c.year), n = br(t.w, c.week), null != t.d ? ((i = t.d) < 0 || i > 6) && (u = !0) : null != t.e ? (i = t.e + a, (t.e < 0 || t.e > 6) && (u = !0)) : i = a
                         }
                         n < 1 || n > xt(r, a, o) ? m(e)._overflowWeeks = !0 : null != u ? m(e)._overflowWeekday = !0 : (s = Et(r, n, i, a, o), e._a[je] = s.year, e._dayOfYear = s.dayOfYear)
@@ -16785,17 +16844,17 @@
                                     u = s.length,
                                     c = 0;
                                 for (i = le(e._f, e._locale).match(re) || [], t = 0; t < i.length; t++) a = i[t], (r = (s.match(Ne(a, e)) || [])[0]) && ((o = s.substr(0, s.indexOf(r))).length > 0 && m(e).unusedInput.push(o), s = s.slice(s.indexOf(r) + r.length), c += r.length), ae[a] ? (r ? m(e).empty = !1 : m(e).unusedTokens.push(a), Pe(a, r, e)) : e._strict && !r && m(e).unusedTokens.push(a);
-                                m(e).charsLeftOver = u - c, s.length > 0 && m(e).unusedInput.push(s), e._a[Fe] <= 12 && !0 === m(e).bigHour && e._a[Fe] > 0 && (m(e).bigHour = void 0), m(e).parsedDateParts = e._a.slice(0), m(e).meridiem = e._meridiem, e._a[Fe] = Fr(e._locale, e._a[Fe], e._meridiem), wr(e), vr(e)
+                                m(e).charsLeftOver = u - c, s.length > 0 && m(e).unusedInput.push(s), e._a[Be] <= 12 && !0 === m(e).bigHour && e._a[Be] > 0 && (m(e).bigHour = void 0), m(e).parsedDateParts = e._a.slice(0), m(e).meridiem = e._meridiem, e._a[Be] = Br(e._locale, e._a[Be], e._meridiem), wr(e), vr(e)
                             } else jr(e);
                         else Cr(e)
                     }
 
-                    function Fr(e, t, r) {
+                    function Br(e, t, r) {
                         var n;
                         return null == r ? t : null != e.meridiemHour ? e.meridiemHour(t, r) : null != e.isPM ? ((n = e.isPM(r)) && t < 12 && (t += 12), n || 12 !== t || (t = 0), t) : t
                     }
 
-                    function Br(e) {
+                    function Fr(e) {
                         var t, r, n, i, a;
                         if (0 === e._f.length) return m(e).invalidFormat = !0, void(e._d = new Date(NaN));
                         for (i = 0; i < e._f.length; i++) a = 0, t = y({}, e), null != e._useUTC && (t._useUTC = e._useUTC), t._f = e._f[i], Wr(t), g(t) && (a += m(t).charsLeftOver, a += 10 * m(t).unusedTokens.length, m(t).score = a, (null == n || a < n) && (n = a, r = t));
@@ -16821,7 +16880,7 @@
                             r = e._f;
                         return e._locale = e._locale || mr(e._l), null === t || void 0 === r && "" === t ? v({
                             nullInput: !0
-                        }) : ("string" == typeof t && (e._i = t = e._locale.preparse(t)), S(t) ? new E(vr(t)) : (l(t) ? e._d = t : a(r) ? Br(e) : r ? Wr(e) : zr(e), g(e) || (e._d = null), e))
+                        }) : ("string" == typeof t && (e._i = t = e._locale.preparse(t)), S(t) ? new E(vr(t)) : (l(t) ? e._d = t : a(r) ? Fr(e) : r ? Wr(e) : zr(e), g(e) || (e._d = null), e))
                     }
 
                     function zr(e) {
@@ -16836,24 +16895,24 @@
                         return !0 !== r && !1 !== r || (n = r, r = void 0), (o(e) && s(e) || a(e) && 0 === e.length) && (e = void 0), u._isAMomentObject = !0, u._useUTC = u._isUTC = i, u._l = r, u._i = e, u._f = t, u._strict = n, qr(u)
                     }
 
-                    function Hr(e, t, r, n) {
+                    function Yr(e, t, r, n) {
                         return $r(e, t, r, n, !1)
                     }
                     n.createFromInputFallback = T("value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.", (function(e) {
                         e._d = new Date(e._i + (e._useUTC ? " UTC" : ""))
                     })), n.ISO_8601 = function() {}, n.RFC_2822 = function() {};
-                    var Yr = T("moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/", (function() {
-                            var e = Hr.apply(null, arguments);
+                    var Hr = T("moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/", (function() {
+                            var e = Yr.apply(null, arguments);
                             return this.isValid() && e.isValid() ? e < this ? this : e : v()
                         })),
                         Kr = T("moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/", (function() {
-                            var e = Hr.apply(null, arguments);
+                            var e = Yr.apply(null, arguments);
                             return this.isValid() && e.isValid() ? e > this ? this : e : v()
                         }));
 
                     function Zr(e, t) {
                         var r, n;
-                        if (1 === t.length && a(t[0]) && (t = t[0]), !t.length) return Hr();
+                        if (1 === t.length && a(t[0]) && (t = t[0]), !t.length) return Yr();
                         for (r = t[0], n = 1; n < t.length; ++n) t[n].isValid() && !t[n][e](r) || (r = t[n]);
                         return r
                     }
@@ -16872,7 +16931,7 @@
 
                     function tn(e) {
                         for (var t in e)
-                            if (-1 === Ye.call(en, t) || null != e[t] && isNaN(e[t])) return !1;
+                            if (-1 === He.call(en, t) || null != e[t] && isNaN(e[t])) return !1;
                         for (var r = !1, n = 0; n < en.length; ++n)
                             if (e[en[n]]) {
                                 if (r) return !1;
@@ -16932,7 +16991,7 @@
 
                     function dn(e, t) {
                         var r, i;
-                        return t._isUTC ? (r = t.clone(), i = (S(e) || l(e) ? e.valueOf() : Hr(e).valueOf()) - r.valueOf(), r._d.setTime(r._d.valueOf() + i), n.updateOffset(r, !1), r) : Hr(e).local()
+                        return t._isUTC ? (r = t.clone(), i = (S(e) || l(e) ? e.valueOf() : Yr(e).valueOf()) - r.valueOf(), r._d.setTime(r._d.valueOf() + i), n.updateOffset(r, !1), r) : Yr(e).local()
                     }
 
                     function fn(e) {
@@ -16973,7 +17032,7 @@
                     }
 
                     function vn(e) {
-                        return !!this.isValid() && (e = e ? Hr(e).utcOffset() : 0, (this.utcOffset() - e) % 60 == 0)
+                        return !!this.isValid() && (e = e ? Yr(e).utcOffset() : 0, (this.utcOffset() - e) % 60 == 0)
                     }
 
                     function bn() {
@@ -16984,7 +17043,7 @@
                         if (!u(this._isDSTShifted)) return this._isDSTShifted;
                         var e = {};
                         if (y(e, this), (e = Gr(e))._a) {
-                            var t = e._isUTC ? h(e._a) : Hr(e._a);
+                            var t = e._isUTC ? h(e._a) : Yr(e._a);
                             this._isDSTShifted = this.isValid() && k(e._a, t.toArray()) > 0
                         } else this._isDSTShifted = !1;
                         return this._isDSTShifted
@@ -17015,8 +17074,8 @@
                         } : c(e) ? (a = {}, t ? a[t] = e : a.milliseconds = e) : (o = xn.exec(e)) ? (r = "-" === o[1] ? -1 : 1, a = {
                             y: 0,
                             d: A(o[We]) * r,
-                            h: A(o[Fe]) * r,
-                            m: A(o[Be]) * r,
+                            h: A(o[Be]) * r,
+                            m: A(o[Fe]) * r,
                             s: A(o[Ve]) * r,
                             ms: A(sn(1e3 * o[qe])) * r
                         }) : (o = An.exec(e)) ? (r = "-" === o[1] ? -1 : 1, a = {
@@ -17027,7 +17086,7 @@
                             h: On(o[6], r),
                             m: On(o[7], r),
                             s: On(o[8], r)
-                        }) : null == a ? a = {} : "object" == typeof a && ("from" in a || "to" in a) && (i = Cn(Hr(a.from), Hr(a.to)), (a = {}).ms = i.milliseconds, a.M = i.months), n = new an(a), on(e) && f(e, "_locale") && (n._locale = e._locale), n
+                        }) : null == a ? a = {} : "object" == typeof a && ("from" in a || "to" in a) && (i = Cn(Yr(a.from), Yr(a.to)), (a = {}).ms = i.milliseconds, a.M = i.months), n = new an(a), on(e) && f(e, "_locale") && (n._locale = e._locale), n
                     }
 
                     function On(e, t) {
@@ -17071,11 +17130,11 @@
                     }
 
                     function In(e, t) {
-                        var r = e || Hr(),
+                        var r = e || Yr(),
                             i = dn(r, this).startOf("day"),
                             a = n.calendarFormat(this, i) || "sameElse",
                             o = t && (M(t[a]) ? t[a].call(this, r) : t[a]);
-                        return this.format(o || this.localeData().calendar(a, this, Hr(r)))
+                        return this.format(o || this.localeData().calendar(a, this, Yr(r)))
                     }
 
                     function Pn() {
@@ -17083,27 +17142,27 @@
                     }
 
                     function jn(e, t) {
-                        var r = S(e) ? e : Hr(e);
+                        var r = S(e) ? e : Yr(e);
                         return !(!this.isValid() || !r.isValid()) && ("millisecond" === (t = Z(t) || "millisecond") ? this.valueOf() > r.valueOf() : r.valueOf() < this.clone().startOf(t).valueOf())
                     }
 
                     function Un(e, t) {
-                        var r = S(e) ? e : Hr(e);
+                        var r = S(e) ? e : Yr(e);
                         return !(!this.isValid() || !r.isValid()) && ("millisecond" === (t = Z(t) || "millisecond") ? this.valueOf() < r.valueOf() : this.clone().endOf(t).valueOf() < r.valueOf())
                     }
 
                     function Wn(e, t, r, n) {
-                        var i = S(e) ? e : Hr(e),
-                            a = S(t) ? t : Hr(t);
+                        var i = S(e) ? e : Yr(e),
+                            a = S(t) ? t : Yr(t);
                         return !!(this.isValid() && i.isValid() && a.isValid()) && ("(" === (n = n || "()")[0] ? this.isAfter(i, r) : !this.isBefore(i, r)) && (")" === n[1] ? this.isBefore(a, r) : !this.isAfter(a, r))
                     }
 
-                    function Fn(e, t) {
-                        var r, n = S(e) ? e : Hr(e);
+                    function Bn(e, t) {
+                        var r, n = S(e) ? e : Yr(e);
                         return !(!this.isValid() || !n.isValid()) && ("millisecond" === (t = Z(t) || "millisecond") ? this.valueOf() === n.valueOf() : (r = n.valueOf(), this.clone().startOf(t).valueOf() <= r && r <= this.clone().endOf(t).valueOf()))
                     }
 
-                    function Bn(e, t) {
+                    function Fn(e, t) {
                         return this.isSame(e, t) || this.isAfter(e, t)
                     }
 
@@ -17163,7 +17222,7 @@
                         return r.year() < 0 || r.year() > 9999 ? ce(r, t ? "YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]" : "YYYYYY-MM-DD[T]HH:mm:ss.SSSZ") : M(Date.prototype.toISOString) ? t ? this.toDate().toISOString() : new Date(this.valueOf() + 60 * this.utcOffset() * 1e3).toISOString().replace("Z", ce(r, "Z")) : ce(r, t ? "YYYY-MM-DD[T]HH:mm:ss.SSS[Z]" : "YYYY-MM-DD[T]HH:mm:ss.SSSZ")
                     }
 
-                    function Hn() {
+                    function Yn() {
                         if (!this.isValid()) return "moment.invalid(/* " + this._i + " */)";
                         var e = "moment",
                             t = "";
@@ -17175,32 +17234,32 @@
                         return this.format(r + n + i + a)
                     }
 
-                    function Yn(e) {
+                    function Hn(e) {
                         e || (e = this.isUtc() ? n.defaultFormatUtc : n.defaultFormat);
                         var t = ce(this, e);
                         return this.localeData().postformat(t)
                     }
 
                     function Kn(e, t) {
-                        return this.isValid() && (S(e) && e.isValid() || Hr(e).isValid()) ? kn({
+                        return this.isValid() && (S(e) && e.isValid() || Yr(e).isValid()) ? kn({
                             to: this,
                             from: e
                         }).locale(this.locale()).humanize(!t) : this.localeData().invalidDate()
                     }
 
                     function Zn(e) {
-                        return this.from(Hr(), e)
+                        return this.from(Yr(), e)
                     }
 
                     function Jn(e, t) {
-                        return this.isValid() && (S(e) && e.isValid() || Hr(e).isValid()) ? kn({
+                        return this.isValid() && (S(e) && e.isValid() || Yr(e).isValid()) ? kn({
                             from: this,
                             to: e
                         }).locale(this.locale()).humanize(!t) : this.localeData().invalidDate()
                     }
 
                     function Qn(e) {
-                        return this.to(Hr(), e)
+                        return this.to(Yr(), e)
                     }
 
                     function Xn(e) {
@@ -17418,7 +17477,7 @@
                     }
                     oe("DDD", ["DDDD", 3], "DDDo", "dayOfYear"), K("dayOfYear", "DDD"), X("dayOfYear", 4), Ce("DDD", be), Ce("DDDD", pe), Re(["DDD", "DDDD"], (function(e, t, r) {
                         r._dayOfYear = A(e)
-                    })), oe("m", ["mm", 2], 0, "minute"), K("minute", "m"), X("minute", 14), Ce("m", me), Ce("mm", me, fe), Re(["m", "mm"], Be);
+                    })), oe("m", ["mm", 2], 0, "minute"), K("minute", "m"), X("minute", 14), Ce("m", me), Ce("mm", me, fe), Re(["m", "mm"], Fe);
                     var Di = Je("Minutes", !1);
                     oe("s", ["ss", 2], 0, "second"), K("second", "s"), X("second", 15), Ce("s", me), Ce("ss", me, fe), Re(["s", "ss"], Ve);
                     var Mi, Li = Je("Seconds", !1);
@@ -17457,17 +17516,17 @@
                     var Ui = E.prototype;
 
                     function Wi(e) {
-                        return Hr(1e3 * e)
+                        return Yr(1e3 * e)
                     }
 
-                    function Fi() {
-                        return Hr.apply(null, arguments).parseZone()
+                    function Bi() {
+                        return Yr.apply(null, arguments).parseZone()
                     }
 
-                    function Bi(e) {
+                    function Fi(e) {
                         return e
                     }
-                    Ui.add = Mn, Ui.calendar = In, Ui.clone = Pn, Ui.diff = qn, Ui.endOf = li, Ui.format = Yn, Ui.from = Kn, Ui.fromNow = Zn, Ui.to = Jn, Ui.toNow = Qn, Ui.get = et, Ui.invalidAt = bi, Ui.isAfter = jn, Ui.isBefore = Un, Ui.isBetween = Wn, Ui.isSame = Fn, Ui.isSameOrAfter = Bn, Ui.isSameOrBefore = Vn, Ui.isValid = gi, Ui.lang = ei, Ui.locale = Xn, Ui.localeData = ti, Ui.max = Kr, Ui.min = Yr, Ui.parsingFlags = vi, Ui.set = tt, Ui.startOf = ci, Ui.subtract = Ln, Ui.toArray = hi, Ui.toObject = _i, Ui.toDate = pi, Ui.toISOString = $n, Ui.inspect = Hn, Ui.toJSON = mi, Ui.toString = zn, Ui.unix = fi, Ui.valueOf = di, Ui.creationData = yi, Ui.year = Ke, Ui.isLeapYear = Ze, Ui.weekYear = Ei, Ui.isoWeekYear = Si, Ui.quarter = Ui.quarters = Ti, Ui.month = ft, Ui.daysInMonth = pt, Ui.week = Ui.weeks = Ct, Ui.isoWeek = Ui.isoWeeks = Nt, Ui.weeksInYear = Ai, Ui.isoWeeksInYear = xi, Ui.date = Ci, Ui.day = Ui.days = Vt, Ui.weekday = qt, Ui.isoWeekday = Gt, Ui.dayOfYear = Ni, Ui.hour = Ui.hours = or, Ui.minute = Ui.minutes = Di, Ui.second = Ui.seconds = Li, Ui.millisecond = Ui.milliseconds = Ii, Ui.utcOffset = pn, Ui.utc = _n, Ui.local = mn, Ui.parseZone = gn, Ui.hasAlignedHourOffset = vn, Ui.isDST = bn, Ui.isLocal = wn, Ui.isUtcOffset = En, Ui.isUtc = Sn, Ui.isUTC = Sn, Ui.zoneAbbr = Pi, Ui.zoneName = ji, Ui.dates = T("dates accessor is deprecated. Use date instead.", Ci), Ui.months = T("months accessor is deprecated. Use month instead", ft), Ui.years = T("years accessor is deprecated. Use year instead", Ke), Ui.zone = T("moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/", hn), Ui.isDSTShifted = T("isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information", yn);
+                    Ui.add = Mn, Ui.calendar = In, Ui.clone = Pn, Ui.diff = qn, Ui.endOf = li, Ui.format = Hn, Ui.from = Kn, Ui.fromNow = Zn, Ui.to = Jn, Ui.toNow = Qn, Ui.get = et, Ui.invalidAt = bi, Ui.isAfter = jn, Ui.isBefore = Un, Ui.isBetween = Wn, Ui.isSame = Bn, Ui.isSameOrAfter = Fn, Ui.isSameOrBefore = Vn, Ui.isValid = gi, Ui.lang = ei, Ui.locale = Xn, Ui.localeData = ti, Ui.max = Kr, Ui.min = Hr, Ui.parsingFlags = vi, Ui.set = tt, Ui.startOf = ci, Ui.subtract = Ln, Ui.toArray = hi, Ui.toObject = _i, Ui.toDate = pi, Ui.toISOString = $n, Ui.inspect = Yn, Ui.toJSON = mi, Ui.toString = zn, Ui.unix = fi, Ui.valueOf = di, Ui.creationData = yi, Ui.year = Ke, Ui.isLeapYear = Ze, Ui.weekYear = Ei, Ui.isoWeekYear = Si, Ui.quarter = Ui.quarters = Ti, Ui.month = ft, Ui.daysInMonth = pt, Ui.week = Ui.weeks = Ct, Ui.isoWeek = Ui.isoWeeks = Nt, Ui.weeksInYear = Ai, Ui.isoWeeksInYear = xi, Ui.date = Ci, Ui.day = Ui.days = Vt, Ui.weekday = qt, Ui.isoWeekday = Gt, Ui.dayOfYear = Ni, Ui.hour = Ui.hours = or, Ui.minute = Ui.minutes = Di, Ui.second = Ui.seconds = Li, Ui.millisecond = Ui.milliseconds = Ii, Ui.utcOffset = pn, Ui.utc = _n, Ui.local = mn, Ui.parseZone = gn, Ui.hasAlignedHourOffset = vn, Ui.isDST = bn, Ui.isLocal = wn, Ui.isUtcOffset = En, Ui.isUtc = Sn, Ui.isUTC = Sn, Ui.zoneAbbr = Pi, Ui.zoneName = ji, Ui.dates = T("dates accessor is deprecated. Use date instead.", Ci), Ui.months = T("months accessor is deprecated. Use month instead", ft), Ui.years = T("years accessor is deprecated. Use year instead", Ke), Ui.zone = T("moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/", hn), Ui.isDSTShifted = T("isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information", yn);
                     var Vi = I.prototype;
 
                     function qi(e, t, r, n) {
@@ -17497,11 +17556,11 @@
                         return Gi(e, t, "months")
                     }
 
-                    function Hi(e, t) {
+                    function Yi(e, t) {
                         return Gi(e, t, "monthsShort")
                     }
 
-                    function Yi(e, t, r) {
+                    function Hi(e, t, r) {
                         return zi(e, t, r, "weekdays")
                     }
 
@@ -17512,7 +17571,7 @@
                     function Zi(e, t, r) {
                         return zi(e, t, r, "weekdaysMin")
                     }
-                    Vi.calendar = j, Vi.longDateFormat = W, Vi.invalidDate = B, Vi.ordinal = G, Vi.preparse = Bi, Vi.postformat = Bi, Vi.relativeTime = $, Vi.pastFuture = H, Vi.set = L, Vi.months = ot, Vi.monthsShort = ut, Vi.monthsParse = lt, Vi.monthsRegex = gt, Vi.monthsShortRegex = _t, Vi.week = At, Vi.firstDayOfYear = Tt, Vi.firstDayOfWeek = Ot, Vi.weekdays = It, Vi.weekdaysMin = Wt, Vi.weekdaysShort = jt, Vi.weekdaysParse = Bt, Vi.weekdaysRegex = $t, Vi.weekdaysShortRegex = Yt, Vi.weekdaysMinRegex = Zt, Vi.isPM = rr, Vi.meridiem = ir, pr("en", {
+                    Vi.calendar = j, Vi.longDateFormat = W, Vi.invalidDate = F, Vi.ordinal = G, Vi.preparse = Fi, Vi.postformat = Fi, Vi.relativeTime = $, Vi.pastFuture = Y, Vi.set = L, Vi.months = ot, Vi.monthsShort = ut, Vi.monthsParse = lt, Vi.monthsRegex = gt, Vi.monthsShortRegex = _t, Vi.week = At, Vi.firstDayOfYear = Tt, Vi.firstDayOfWeek = Ot, Vi.weekdays = It, Vi.weekdaysMin = Wt, Vi.weekdaysShort = jt, Vi.weekdaysParse = Ft, Vi.weekdaysRegex = $t, Vi.weekdaysShortRegex = Ht, Vi.weekdaysMinRegex = Zt, Vi.isPM = rr, Vi.meridiem = ir, pr("en", {
                         dayOfMonthOrdinalParse: /\d{1,2}(th|st|nd|rd)/,
                         ordinal: function(e) {
                             var t = e % 10;
@@ -17701,7 +17760,7 @@
                         r._d = new Date(1e3 * parseFloat(e, 10))
                     })), Re("x", (function(e, t, r) {
                         r._d = new Date(A(e))
-                    })), n.version = "2.24.0", i(Hr), n.fn = Ui, n.min = Jr, n.max = Qr, n.now = Xr, n.utc = h, n.unix = Wi, n.months = $i, n.isDate = l, n.locale = pr, n.invalid = v, n.duration = kn, n.isMoment = S, n.weekdays = Yi, n.parseZone = Fi, n.localeData = mr, n.isDuration = on, n.monthsShort = Hi, n.weekdaysMin = Zi, n.defineLocale = hr, n.updateLocale = _r, n.locales = gr, n.weekdaysShort = Ki, n.normalizeUnits = Z, n.relativeTimeRounding = La, n.relativeTimeThreshold = Ra, n.calendarFormat = Rn, n.prototype = Ui, n.HTML5_FMT = {
+                    })), n.version = "2.24.0", i(Yr), n.fn = Ui, n.min = Jr, n.max = Qr, n.now = Xr, n.utc = h, n.unix = Wi, n.months = $i, n.isDate = l, n.locale = pr, n.invalid = v, n.duration = kn, n.isMoment = S, n.weekdays = Hi, n.parseZone = Bi, n.localeData = mr, n.isDuration = on, n.monthsShort = Yi, n.weekdaysMin = Zi, n.defineLocale = hr, n.updateLocale = _r, n.locales = gr, n.weekdaysShort = Ki, n.normalizeUnits = Z, n.relativeTimeRounding = La, n.relativeTimeThreshold = Ra, n.calendarFormat = Rn, n.prototype = Ui, n.HTML5_FMT = {
                         DATETIME_LOCAL: "YYYY-MM-DDTHH:mm",
                         DATETIME_LOCAL_SECONDS: "YYYY-MM-DDTHH:mm:ss",
                         DATETIME_LOCAL_MS: "YYYY-MM-DDTHH:mm:ss.SSS",
@@ -19176,12 +19235,12 @@
                             return t
                         },
                         W = function(e, t) {
-                            return typeof e === c && -1 !== F(t).indexOf(F(e))
+                            return typeof e === c && -1 !== B(t).indexOf(B(e))
                         },
-                        F = function(e) {
+                        B = function(e) {
                             return e.toLowerCase()
                         },
-                        B = function(e, t) {
+                        F = function(e, t) {
                             if (typeof e === c) return e = e.replace(/^\s\s*/, "").replace(/\s\s*$/, ""), typeof t === s ? e : e.substring(0, 255)
                         },
                         V = function(e, t) {
@@ -19326,7 +19385,7 @@
                                 ],
                                 [/(ia32(?=;))/i],
                                 [
-                                    [_, F]
+                                    [_, B]
                                 ],
                                 [/((?:i[346]|x)86)[;\)]/i],
                                 [
@@ -19346,7 +19405,7 @@
                                 ],
                                 [/((?:ppc|powerpc)(?:64)?)(?: mac|;|\))/i],
                                 [
-                                    [_, /ower/, "", F]
+                                    [_, /ower/, "", B]
                                 ],
                                 [/(sun4\w)[;\)]/i],
                                 [
@@ -19354,7 +19413,7 @@
                                 ],
                                 [/((?:avr32|ia64(?=;))|68k(?=\))|\barm(?=v(?:[1-7]|[5-7]1)l?|;|eabi)|(?=atmel )avr|(?:irix|mips|sparc)(?:64)?\b|pa-risc)/i],
                                 [
-                                    [_, F]
+                                    [_, B]
                                 ]
                             ],
                             device: [
@@ -19661,8 +19720,8 @@
                                 ],
                                 [/\b(roku)[\dx]*[\)\/]((?:dvp-)?[\d\.]*)/i, /hbbtv\/\d+\.\d+\.\d+ +\([\w ]*; *(\w[^;]*);([^;]*)/i],
                                 [
-                                    [p, B],
-                                    [l, B],
+                                    [p, F],
+                                    [l, F],
                                     [f, b]
                                 ],
                                 [/\b(android tv|smart[- ]?tv|opera tv|tv; rv:)\b/i],
@@ -19793,21 +19852,21 @@
                             }, this.getUA = function() {
                                 return r
                             }, this.setUA = function(e) {
-                                return r = typeof e === c && e.length > 255 ? B(e, 255) : e, this
+                                return r = typeof e === c && e.length > 255 ? F(e, 255) : e, this
                             }, this.setUA(r), this
                         };
                     $.VERSION = "0.7.31", $.BROWSER = U([d, h, "major"]), $.CPU = U([_]), $.DEVICE = U([l, p, f, m, g, b, v, y, w]), $.ENGINE = $.OS = U([d, h]), typeof t !== s ? (e.exports && (t = e.exports = $), t.UAParser = $) : r.amdO ? (n = function() {
                         return $
                     }.call(t, r, t, e)) === a || (e.exports = n) : typeof i !== s && (i.UAParser = $);
-                    var H = typeof i !== s && (i.jQuery || i.Zepto);
-                    if (H && !H.ua) {
-                        var Y = new $;
-                        H.ua = Y.getResult(), H.ua.get = function() {
-                            return Y.getUA()
-                        }, H.ua.set = function(e) {
-                            Y.setUA(e);
-                            var t = Y.getResult();
-                            for (var r in t) H.ua[r] = t[r]
+                    var Y = typeof i !== s && (i.jQuery || i.Zepto);
+                    if (Y && !Y.ua) {
+                        var H = new $;
+                        Y.ua = H.getResult(), Y.ua.get = function() {
+                            return H.getUA()
+                        }, Y.ua.set = function(e) {
+                            H.setUA(e);
+                            var t = H.getResult();
+                            for (var r in t) Y.ua[r] = t[r]
                         }
                     }
                 }("object" == typeof window ? window : this)
@@ -19818,7 +19877,7 @@
                     default: () => n
                 });
                 const n = [
-                    ["", "Open the product context menu", "Turn off send as sticker", "Turn on send as sticker", "__count__ @ message", "Changing __count__ label", "The label could not be updated", "__count__ label changed", "Couldn't block __participant__", "__participant__ blocked", "Blocking __participant__", "Couldn't delete broadcast list.", "Broadcast list deleted", "Deleting broadcast list", "Couldn't archive chat.", "Chat archived", "Archiving chat", "Couldn't clear chat.", "Chat cleared", "Clearing chat", "Couldn't delete chat.", "Chat deleted", "Deleting chat", "Couldn't mark chat as read.", "Couldn't mark chat as unread.", "Marked as read", "Marked as unread", "Marking as read", "Marking as unread", "Couldn't mute chat.", "Chat muted", "Muting chat", "Couldn't pin chat", "You can only pin up to 3 chats.", "Chat pinned", "Pinning chat", "Couldn't unarchive chat.", "Chat unarchived", "Unarchiving chat", "Unmute", "Couldn't unmute chat.", "Chat unmuted", "Unmuting chat", "Couldn't unpin chat", "Chat unpinned", "Unpinning chat", "Deleting label: __labelName__", "Couldn't create group.", "Please enter a shorter subject.", "Can't add more than __max__ participants", "Created group", "Creating group", "Couldn't delete group.", "Group deleted", "Deleting group", "Couldn't exit group.", "Exited group", "Exiting group", "Couldn't remove group icon.", "Group icon removed", "Removing group icon", "Group icon set", "Couldn't set group icon.", "Setting group icon", "Couldn't mute group.", "Group muted", "Muting group", "Couldn't rename group.", "Group renamed to __subject__", "Renaming group", "Group subject can't be empty", "Couldn't unmute group.", "Group unmuted", "Unmuting group", "Stop sharing live location with __name__?", "Stop sharing live location with __name__?", "Marking as not spam", "Couldn't mark as not spam", "Marked as not spam", "Couldn't delete message because the message may have expired", "Couldn't delete message", "__count__ message deleted", "Deleting message", "Couldn't star message because the message may have expired", "Couldn't star message", "__count__ message starred", "Starring message", "Couldn't unstar all messages", "Couldn't unstar message because the message may have expired", "Couldn't unstar message", "__count__ message unstarred", "All messages unstarred", "Unstarring message", "Unstarring all messages", "Failed to add label: __labelName__", "Label: __labelName__ added successfully", "Couldn't add __participantNames__.", "You added __participantNames__.", "Adding __participantNames__.", "Removing __participantNames__ as an admin failed.", "You can't dismiss __participant__ as admin because they created this group.", "__participantNames__ is no longer a group admin.", "Removing __participantNames__ as a group admin.", "They are no longer in this group.", "You can't add this participant because they left the group recently.", "Couldn't make __participantNames__ an admin.", "__participantNames__ is now a group admin.", "Making __participantNames__ a group admin.", "Couldn't remove __participantNames__.", "You can't remove __participant__ because they created this group.", "You removed __participantNames__.", "Removing __participantNames__.", "Couldn't remove profile photo.", "Profile photo removed", "Removing profile photo", "Profile photo set", "Couldn't set profile photo.", "Setting profile photo", "Your name can't be empty", "Your name changed", "Couldn't change your name.", "Changing your name", "Reporting spam", "Couldn't report spam", "Reported spam", "About can't be empty", "About changed", "Couldn't change About.", "Changing About…", "Try again.", "Couldn't unblock __participant__", "__participant__ unblocked", "Unblocking __participant__", "Undo", "Add a caption…", "Blocked contacts will no longer be able to call you or send you messages", "Add blocked contact", "Add to a group", "Add group icon", "Add profile photo", "Drag the image to adjust", "Only __admins__ can send messages", "Archive chat", "No archived chats", "Archived chats", "Document", "__count__ Page", "Contact", "__number__ audio file you tried adding has no content.", "Your browser doesn’t support audio playback.", "__number__ audio you tried adding is larger than the __maxSize__ limit.", "Using __deviceName__ as your __deviceType__ for your WhatsApp calls", '"__businessName__" registered as a business account, but WhatsApp hasn’t verified their name yet.', 'This chat is with the official business account of "__businessName__". Click for more info.', 'WhatsApp has verified that this is the official business account of "__businessName__".', 'WhatsApp has verified that this is the official business account of "__businessName__". This account is saved with a different name in your address book.', 'This official business account changed its name to "__businessName__". Click for more info.', 'WhatsApp has verified that this official business account changed its name and now uses the name "__businessName__".', "__businessName__ used other companies to store and manage this message.", "__businessName__ used Facebook and other companies to store and manage this message.", "This message was delivered directly from __businessName__.", "This message was delivered directly to __businessName__.", "__businessName__ used Facebook to store and manage this message.", '"__businessName__" registered as a business account, but WhatsApp hasn’t verified their name yet.', 'This chat is with the official business account of "__businessName__". Click for more info.', 'WhatsApp has verified that this is the official business account of "__businessName__".', 'WhatsApp has verified that this is the official business account of "__businessName__". This account is saved with a different name in your address book.', 'This chat is now with the official business account of "__businessName__". Click for more info.', 'WhatsApp has verified that this is the official business account of "__businessName__".', 'This chat is no longer with the official business account of "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the official business account of "__businessName__".', "Block", "Block __contact__? Blocked contacts will no longer be able to call you or send you messages.", "List of contacts that you have blocked", "No blocked contacts yet", "Blocked contacts", "WhatsApp secures messages while they're being delivered to and from the companies that store and manage this chat for __businessName__. Contact __businessName__ for more information on their privacy practices.", "WhatsApp secures messages while they're being delivered to and from Facebook, where this chat is stored and managed for __businessName__. Contact __businessName__ for more information on their privacy practices.", "WhatsApp secures messages while they're being delivered to and from Facebook, where this chat is stored and managed for __businessName__.", "__businessName__ is registered as a business account.", "__businessName__ is registered as an official business account.", "__businessName__ is registered as an official business account. The business is saved as a different name in your contacts.", "This chat is with the official business account of __businessName__.", "This chat is with the official business account of __businessName__. The business is saved as a different name in your contacts.", "__businessName__ is now registered as a business account, instead of an official business account.", "__businessName__ no longer uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ now only uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ no longer uses Facebook or other companies to manage its WhatsApp conversations.", "__businessName__ is now registered as an official business account. This business no longer uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business no longer uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account that only uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business only uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account. This business no longer uses Facebook or other companies to manage its WhatsApp conversations. Click to learn more.", "This chat is with the official business account of __businessName__. This business uses Facebook and other companies to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official business account of __businessName__, but it's saved as a different name in your contacts. This business uses Facebook and other companies to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "__businessName__ is no longer an official business account and it no longer uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it now only uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it no longer uses Facebook or other companies to manage its WhatsApp conversations. Click to learn more.", "__businessName__ no longer uses other companies to manage its WhatsApp conversations.", "__businessName__ is now registered as an official business account. This business no longer uses other companies to manage its WhatsApp conversations. Click to learn more.", "This chat is with the official business account of __businessName__. This business uses other companies to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official business account of __businessName__, but it's saved as a different name in your contacts. This business uses other companies to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "__businessName__ is no longer an official business account and it no longer uses other companies to manage its WhatsApp conversations. Click to learn more.", "__businessName__ is now registered as a business account that uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as a business account that uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as a business account that uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as a business account. Click to learn more.", "__businessName__ now uses other companies instead of Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ no longer uses Facebook to manage its WhatsApp conversations.", "__businessName__ is now registered as an official business account. This business now uses other companies instead of Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business now uses other companies instead of Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account. This business no longer uses Facebook to manage its WhatsApp conversations. Click to learn more.", "This chat is with the official business account of __businessName__. This business uses Facebook to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official business account of __businessName__, but it's saved as a different name in your contacts. This business uses Facebook to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official account of __businessName__, but it's saved as a different name in your contacts. This account uses Facebook to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official account of __businessName__. This account uses Facebook to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "__businessName__ is no longer an official business account. This business uses other companies instead of Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it no longer uses Facebook to manage its WhatsApp conversations. Click to learn more.", "__businessName__ now uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "This chat is with the official business account of __businessName__. Click to learn more.", "__businessName__ now uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer registered as a business account.", "__businessName__ now uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account that uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account that uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account that uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account. Click to learn more.", "__businessName__ is no longer an official business account. This business now uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it now uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it now uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer registered as an official business account. Click to learn more.", "Broadcast list deleted", "Browser not supported", "__closed__, opens at __time__", "End Time", "Start Time", "__open__ 24 hours", "__openTime__ - __closeTime__ and __additionalOpenTime__ - __additionalCloseTime__", "__open__ by appointment only", "__open__ until __time__", "__open__ until __time__, __additionalOpenTime__ - __additionalCloseTime__", "This verified business is not in your contact list.", "__streetAddress__, __city__", "__streetAddress__, __city__ __zipCode__", "Confirmed as __businessName__", "End Time", "This name will be visible to your WhatsApp customers and can be edited from the app on your mobile device.", "Something went wrong", "An error occurred while saving.  Please try again.", "__verified__ as __businessName__", "Use Here", "__count__ message couldn't be forwarded because __contact__ is on a version of WhatsApp that doesn't support it.", "No messages could be forwarded because __contact__ is on a version of WhatsApp that doesn't support them.", "__count__ message couldn't be forwarded because the file is missing.", "__count__ message couldn't be forwarded because the file is missing or __contact__ is on a version of WhatsApp that doesn't support it.", "No messages could be forwarded because the file is missing or __contact__ is on a version of WhatsApp that doesn't support them.", "Can't Load WhatsApp", "Qty __quantity__", "Received cart", "__updated__ Item Updated", "By using this feature, you're using a __fb_product_link__ and agree that the __fb_commerce_link__ and __wa_commerce_policy_link__ apply.", "If you feel this is not correct, you can __request_review_link__.", "We reviewed this item again and found it didn't follow product or service guidelines. __learn_more_link__.", "This item wasn't approved because it doesn't follow our product or service guidelines. __learn_more_link__.", "This item is being reviewed. If it’s been approved, your customers will be able to see it on your profile. __learn_more_link__.", "This item is being reviewed. You hid it, so customers won’t see it in your catalog when it’s approved. __learn_more_link__.", "Turn this on to let customers add items to a cart when shopping in your catalog. Turning this off won't affect carts you've already received. __learn_more_link__", "View __catalogOwnerName__'s Catalog on WhatsApp", "__productName__ from __catalogOwnerName__ on WhatsApp.", "View all", "Change group icon", "__name__ changed their phone number. You're currently chatting with their new number.", "__name__ changed their phone number to a new number.", "__name__ changed their phone number to a new number. Click to message the new number.", "Change profile photo", "Charge your phone to keep using WhatsApp", "Archived", "You are not an admin", "Search for messages within __chatName__.", "No Internet connection", "Clear messages", "click here for group info", "click here for contact info", "Update WhatsApp", "Click to reload QR code", "Click to save, ESC to cancel", "Click to update WhatsApp", "Close chat", "__count__ item", "This collection wasn't approved because its name violates __collections_rejected_policy_adult__", "This collection wasn't approved because its name violates __collections_rejected_policy_alcohol__", "This collection wasn't approved because its name violates __collections_rejected_policy_animals__", "This collection wasn't approved because its name violates __collections_rejected_policy_body_parts_fluids__", "This collection wasn't approved because its name violates __collections_rejected_policy_community_standards__", "This collection wasn't approved because its name violates __collections_rejected_policy_digital_services_products__", "This collection wasn't approved because its name violates __collections_rejected_policy_discrimination__", "This collection wasn't approved because its name violates __collections_rejected_policy_drugs__", "This collection wasn't approved because its name violates __collections_rejected_policy_gambling__", "This collection wasn't approved because its name violates __collections_rejected_policy_hazardous_goods_and_materials__", "This collection wasn't approved because its name violates __collections_rejected_policy_healthcare__", "This collection wasn't approved because its name violates __collections_rejected_policy_human_exploitation_and_sexual_services__", "This collection wasn't approved because its name violates __collections_rejected_policy_illegal_products__", "This collection wasn't approved because its name violates __collections_rejected_policy_misleading__", "You can __rename_collection_link__ or __request_another_review_link__.", "This collection wasn't approved because its name violates __collections_rejected_policy_other_violation__", "This collection wasn't approved because its name violates __collections_rejected_policy_overtly_sexualized_positioning__", "This collection wasn't approved because its name violates __collections_rejected_policy_real_fake_currency__", "This collection wasn't approved because its name violates __collections_rejected_policy_stolen_goods__", "This collection wasn't approved because its name violates __collections_rejected_policy_supplements__", "This collection wasn't approved because its name violates __collections_rejected_policy_thrid_party_infringements__", "This collection wasn't approved because its name violates __collections_rejected_policy_tobacco__", "This collection wasn't approved because its name violates __collections_rejected_policy_unauthorized_media__", "This collection wasn't approved because its name violates __collections_rejected_policy_weapons__", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_adult__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_alcohol__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_animals__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_body_parts_fluids__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_community_standards__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_digital_services_products__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_discrimination__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_drugs__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_gambling__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_hazardous_goods_and_materials__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_healthcare__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_human_exploitation_and_sexual_services__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_illegal_products__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_misleading__.", "You can __rename_collection_link__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_other_violation__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_overtly_sexualized_positioning__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_real_fake_currency__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_stolen_goods__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_supplements__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_thrid_party_infringements__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_tobacco__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_unauthorized_media__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_weapons__.", "", "Add __participant__ to “__subject__” group?", "Add __participants__ to “__subject__” group?", "You are closing WhatsApp.", "Some messages can’t be forwarded, do you want to forward rest of the messages?", "Can't forward all messages", "Forward to __chat__?", "Log out?", "Make __participant__ an admin for “__subject__” group?", "Remove __participant__ from “__subject__” group?", "Send __count__ contact to “__chat__”?", "Send __count__ contact to “__chat__”?", "Send __count__ contact to “__chat__”?", "Unblock __chat__ and forward messages?", "Unblock __contact__", "Unmute this chat?", "Unmute this group?", "Connecting…", "Connecting to WhatsApp", "Connecting", "Block __contact__", "__number__ group in common", "About and phone number", "Unblock __contact__", "Loading About…", "View contact", "__number__ contact that you tried to add has no content.", "The contact that you tried to add is larger than the __maxSize__ limit.", "Older messages may be available", "Use WhatsApp on your phone to search messages from before __date__.", "Use WhatsApp on your phone to see the complete chat history.", "Search for messages with __chatName__.", "WhatsApp message", "Default", "Delete chat", "Deleting a label removes it from all messages, contacts, and from the list of labels. Are you sure you want to delete this label?", "Delete message", "Delete message?", "Tell us about your issue", "Please Update WhatsApp", "New version available", "Desktop Settings", "Update", "To continue using WhatsApp, click Update and install the latest version.", "Couldn't Update Automatically", "Downloading an update to WhatsApp. This may take several minutes. WhatsApp will automatically update and restart when the download finishes.", "Updating WhatsApp", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they’re sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they’re sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they’re sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they’re sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they’re sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they’re sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they’re sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they’re sent. Click to learn more.", "Dismiss", "Docs", "__count__ Doc", "“__name__” downloaded.", "__number__ document you tried adding has no content.", "__number__ document you tried adding is larger than the __maxSize__ limit.", "End-to-end encrypted", "Edit", "Add text to your image…", "Turn on desktop notifications", "& ", " • ", ", ", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "__name__ turned off disappearing messages.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "__name__ turned off disappearing messages. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "Turning on this setting will make new messages disappear from this chat after 7 days. Recipients can still save these messages elsewhere.", "Turning on this setting will make new messages disappear from this chat after a selected amount of time. Recipients can still save these messages elsewhere.", "All new messages will disappear from this chat __number__ day after they're sent.", "All new messages will disappear from this chat __number__ hour after they're sent.", "All new messages will disappear from this chat __number__ minute after they're sent.", "All new messages will disappear from this chat __number__ second after they're sent.", "Anyone in this chat can change this setting.", "Group admins control who can change this setting.", "This message will disappear from this chat __number__ day after they're sent.", "This message will disappear from this chat __number__ hour after they're sent.", "This message will disappear from this chat __number__ minute after they're sent.", "This message will disappear from this chat __number__ second after they're sent.", "Off", "On", "__number__ day", "__number__ hour", "__number__ minute", "__number__ second", "Wait until the message finishes sending and displays a checkmark before forwarding.", "Wait until this message is fully delivered before forwarding.", "Unable to forward unsent message.", "Can’t Forward", "__number__ file you tried adding has no content.", "__count__ file failed to be downloaded because it's no longer on your phone.", "__number__ file could not be added.", "__number__ file you tried adding is not supported.", "__number__ file you tried adding is larger than the __maxSize__ limit.", "B", "GB", "kB", "MB", "Forward", "You can only share with up to __count__ chat", "Forwarded many times. You can only share with up to __count__ chat.", "Forward message", "Forward message to", "Forwarded __count__ time", "Found a contact card for this number. View contact card?", "Older results may be available", "Microsoft Edge", "Google Chrome", "Mozilla Firefox", "Opera", "Safari (macOS 11+ Only)", "Custom GIF animations are currently not supported. Please use provided GIF selection feature.", "Incoming calls off. Click to restore.", "Alerts and sounds off. Click to restore.", "Notifications enabled", "You were added by someone who's not in your contacts", "Group deleted", "Cancel", "Checking invite link", "__count__ contact", "Join group", "Anyone with WhatsApp can follow this link to join this group. Only share it with people you trust.", "__count__ participant", "You can't view this group's invite link because you're not an admin.", "This invite link doesn't match any WhatsApp groups.", "Are you sure you want to reset the invite link for __groupName__? If you reset the link, no one will be able to use it to join this group.", "Resetting the invite link for __groupName__.", "Send link to", "Joining group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Joining group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't join group", "Viewing and revoking group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Viewing and revoking group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't view group invite details", '"__A__"', '__A__"__B__" & "__C__"', '"__A__," __B__', '"__A__" & "__B__"', "Group muted", "Type contact name", "__count__ other", "View all (__more__)", "__count__ more", "Group Subject", "__number__ invited", "Couldn't add __participant__. You can invite them privately to join this group.", "Reset invite for __participant__? If you reset the invite, __participant__ won't be able to use it to join this group.", "To take photos, WhatsApp needs access to your computer's camera. Click __chrome_media_error__ in the URL bar and choose “Always allow web.whatsapp.com to access your camera.”", "To take photos, WhatsApp needs access to your computer’s camera. Click __firefox_lock__ in the URL bar and set “Use the Camera” to “Allow.”", "To take photos, WhatsApp needs access to your computer’s camera. Click __opera_media__ in the URL bar and click “Clear This Setting and Reload.”", "You can’t take a photo because it looks like your computer doesn’t have a camera. Try connecting one or if you have one connected, try restarting your browser.", "Camera Not Found", "Allow camera", "To record Voice Messages, WhatsApp needs access to your microphone. Click __chrome_media_error__ in the URL bar and choose “Always allow web.whatsapp.com to access your microphone.”", "To record Voice Messages, WhatsApp needs access to your computer’s microphone. Click __firefox_lock__ in the URL bar and set “Use the Microphone” to “Allow.”", "To record Voice Messages, WhatsApp needs access to your computer’s microphone. Click __opera_media__ in the URL bar and click “Clear This Setting and Reload.”", "You can’t record a Voice Message because it looks like your computer doesn’t have a microphone. Try connecting one or if you have one connected, try restarting your browser.", "Microphone Not Found", "Allow microphone", "Help", "Message from __author__", "__unreadCount__ New Message", "You'll be logged out after several minutes of inactivity", "__number__ image you tried adding has no content.", "__number__ image you tried adding is larger than the __maxSize__ limit.", "Check your phone to answer", "WhatsApp group video call from __name__", "WhatsApp group voice call from __name__", "WhatsApp video call from __name__", "WhatsApp voice call from __name__", "WhatsApp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.", "With this update, your phone won’t need to stay online to use WhatsApp on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "With this update, your phone won’t need to stay online to use WhatsApp Business on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won’t need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won’t need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won’t need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won’t need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "WhatsApp is available for Mac. __get_it_here__.", "Make calls from desktop with WhatsApp for Mac. __get_it_here__.", "WhatsApp is available for Windows. __get_it_here__.", "Make calls from desktop with WhatsApp for Windows. __get_it_here__.", "Keep your phone connected", "Expires at __time__", "Expires in __number__ day", "__count__ item", "Price __currencySymbol__ (Optional)", "Search in __labelName__...", "Learn more", "Links", "__count__ Link", "Accurate to __accuracy__ M", "__count__ people", "Last updated __date__ at __time__", "Last updated today at __time__", "Last updated __date__ at __time__", "Last updated yesterday at __time__", "Live until __time__", "__hours__h left", "__hours__h __minutes__m left", "__minutes__m left", "__sharers__ is sharing live location", "__name__ is sharing live location", "__count__ person is sharing live location", "You are sharing live location", "You and __name__ are sharing live location", "You and __count__ other person are sharing live location", "__name__ stopped sharing", "Updated __hours__h ago", "Updated __hours__h __minutes__m ago", "Updated __minutes__m ago", "load earlier messages…", "load recent messages…", "Loading…", "loading messages…", "Log in", "Menu __android_menu_icon__", "Need help to get started?", "Settings __iphone_settings_icon__", "Tap __android_menu__ or __iphone_settings__ and select __whatsapp_web_menu_item__", "Tap on __login_step_3_md_link_device__", "WhatsApp Web", "More than 1GB storage usage detected. Please be aware that remaining storage is low.", "Low storage warning", "Make sure your computer has an active Internet connection.", "Manage", "Mark as read", "Mark as unread", "Downloading messages: __progress__%", "This version will expire today at __time__. Update to use WhatsApp Web without keeping your phone online.", "This version will expire today at __time__. Update to use WhatsApp Desktop without keeping your phone online.", "Media", "Add a caption", "This file was changed from original.", "Blocked", "Help", "Keep me signed in", "Log out", "Make group admin", "Notifications", "Profile", "Profile", "Remove", "Settings", "Attach", "Menu", "This audio is too large. You can send audio up to __maxSize__.", "Message __author__", "This document is too large. You can send documents up to __maxSize__.", "This file is too large. You can send files up to __maxSize__.", "This image is too large. You can send images up to __maxSize__.", "Message info", "Delivered", "Delivered to", "Played", "Played by", "Read", "Read by", "__count__ remaining", "Couldn't find message", "The message you’re pasting is too long. Try shortening it or sending it in multiple parts.", "Message Too Long", "This video is too large. You can send videos up to __maxSize__.", "Can’t play this Voice Message because it's no longer on your phone.", "Voice Message Unavailable", "Can’t download this document because it's no longer on your phone.", "Document Unavailable", "Can’t view this GIF because it's no longer on your phone.", "GIF Unavailable", "Media Message Unavailable", "Can’t view this photo because it's no longer on your phone.", "Photo Unavailable", "Can’t play this video because it's no longer on your phone.", "Video Unavailable", "Phone number shared via url is invalid.", "Send message to", "__contactName__ and __count__ other contact", "__count__ contact", "You can only send up to __count__ contact", "Mute “__name__” for…", "__A__, __B__", "__A__, and __B__", "__A__, __B__", "__A__ and __B__", "Archive Chat", "WhatsApp needed to restart because of a problem.", "Problem Detected", "Delete Chat", "Delete Group", "Exit Group", "Log Out", "Mark as Read", "Mark as Unread", "Chat", "Help", "Terms and Privacy Policy", "Next Chat", "Previous Chat", "Window", "Bring All to Front", "Minimize", "Zoom", "Mute", "New Chat", "New Group", "Profile and About", "Unarchive Chat", "Cancel Mute", "This video is unavailable. Please try again.", "New chat", "New group", "Next", "No contacts", "No Docs", "No groups", "No Links", "No Media", "No result found for '__labelName__'", "No starred messages", "Not spam", "Notifications", "__number__ of __totalNumber__", "+__number__", "OK, got it", "Start WhatsApp at Login", "Desktop Alerts", "Show Previews", "Display message text in desktop alerts", "Sounds", "Order Detail", "Your Order", "__subtotal__ (estimated)", "Qty __quantity__", "__total__ (estimated total)", "Already blocked", "Order #__order__", "Update now to use WhatsApp Web on other devices without keeping your phone online.", "WhatsApp is open on another computer or browser. Click “Use Here” to use WhatsApp in this window.", "Pin chat", "Waiting for this message. This may take a while.", "Previous", "__count__ contact excluded", "__count__ Product", "This photo is too small. Please select a photo with height and width of at least __size__ pixel.", "Couldn't send this Voice Message.", "…", "This is not your username or pin. This name will be visible to your WhatsApp contacts.", "__pinEmoji__ __address__", "Group • __groupName__", "All", "Reconnect", "Remove", "Remove this group's icon?", 'Remove label "__labelName__" from __count__ item', "Remove photo", "Remove your profile photo?", "Report __contactInfo__", "Report spam", "Click to resend", "Retry Now", "Retrying…", "Retrying in __duration__…", "Retrying in __number__ second…", "Save", "Scan Database Usage", "Search…", "Search contacts", "Search Emoji", "Search GIFs via __service__", "Search groups", "Search Messages", "No chats, contacts or messages found", "No contacts found", "No groups found", "No messages found", "No results found for '__keyword__'", "Search or start new chat", "Looking for chats, contacts or messages…", "Looking for messages…", "Learn which chats are end to end encrypted", "Show security notifications", "See __count__ archived chat", "__count__ selected", "Photo set to send as sticker", "Send contact", "Send contacts", "send", "Feedback/Question about WhatsApp", "Email address", "Confirm email address", "Please enter a valid email address", "The email addresses do not match", "Subject", "Feedback sent", "Please enter a subject.", "Contact us", "__count__ Screenshot Maximum", "Please add more to your description", "To verify, send a message to __name__ and try again.", "The sender is not in your contact list", "Settings", "__days__d", "__hours__h", "__minutes__m", "__seconds__s", "Some of your messages are still sending.", "Star message", "No starred messages", "Starred messages", "Created by __name__", "Subject", "This group is no longer available. Please contact __support__ for help.", "__count__ suspicious link", "Take photo", "You'll be able to use WhatsApp again in __duration__", "You're temporarily banned from WhatsApp because you sent too many messages to people who don’t have __phone__ in their address books.", "You're temporarily banned from WhatsApp because you created too many groups with people who don’t have __phone__ in their address books.", "__time__ left", "Maximum number of files uploaded. __number__ file has been ignored.", "Trying to reach phone", "Turn off all desktop notifications for:", "Unarchive chat", "Unblock", "Unblock __contact__?", "Unblock Contact", "Unpin chat", "__count__ @ message not synced", "__count__ unread message", "Unstar", "Unstar all messages?", "Unstar message", "Until __date__ at __time__", "Until today at __time__", "Until tomorrow at __time__", "Until __day__ at __time__", "Untitled", "Download Microsoft Edge", "Update Google Chrome", "Update Mozilla Firefox", "Update Safari", "WhatsApp is out of date. Updating now…", "Updating", "Your phone will no longer need to stay online to use WhatsApp on web, desktop or other devices. __learn_more__", "Your phone will no longer need to stay online to use WhatsApp Business on web, desktop or other devices. __learn_more__", "Upload photo", "__participants__ joined using your invite", "You invited __participants__", "Version __version__", "__number__ video you tried adding has no content.", "Your browser doesn’t support video playback.", "__number__ video you tried adding is larger than the __maxSize__ limit.", "View Contact Card", "This view once photo has expired. Please ask __name__ to re-send it.", "This view once video has expired. Please ask __name__ to re-send it.", "View photo", "Viewed by __count__", "Stop screen sharing", "Start screen sharing", "You can turn on your camera after __callee__ answers", "Your call will end in a few seconds because your microphone and sound output device were disconnected.", "Your call will end in a few seconds because your microphone was disconnected.", "__name__'s camera and mic are off", "__name__'s camera is off", "__name__'s mic is muted", "__name__ is requesting to switch to a video call", "Your call will end in a few seconds because your sound output device was disconnected.", "You can turn off your camera after __callee__ answers", "Please contact us with the make and model of your camera. ", "Call cannot be placed for more than __count__ participant", "You can only call up to __count__ contact", "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.", "__count__ others", "__callee__ is in a country where WhatsApp Calling is unavailable", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls at this time.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is not registered on WhatsApp", "Couldn't place call: __callee__ is unable to receive WhatsApp video calls at this time.", "WhatsApp will use your computer's camera for video calls and taking photos. You can always change this later in your computer's settings.", "WhatsApp will use your computer's microphone for calls and voice messages. You can always change this later in your computer's settings.", "__contactName__ - WhatsApp voice call", "__contactName__ - WhatsApp video call", "Chat wallpaper set", "Set Chat Wallpaper", "Your security code with __contactName__ changed because there was a login on a new device of theirs.", "Your security code with __contactName__ changed because you logged into a new device.", "Your security code with __contactName__ changed because there was a login on a new device of yours.", "Your security code with __contactName__ changed because there was a login on this device.", 'WhatsApp has verified that this is the official business account of "__businessName__".', "WhatsApp has verified that this is the official business account of __businessName__. This account is saved with a different name in your contacts.", "Your security code could not be verified with __contactName__. Click to learn more.", "Verify your security code with __contactName__ because there was an error with their list of linked devices.", "You can't send messages to this group because you're no longer a participant.", "Can't send a message to blocked contact __contact__.", "Your security code with __contactName__ changed because there was a login or logout from one or more of their devices.", "Your security code with __contactName__ changed because there was a login or logout from one or more of your devices.", "Muted", "Messages to this chat are secured with end-to-end encryption. __businessName__ may use another company to store, read and respond to your messages. Click to learn more.", "online", "last seen __date__ at __time__", "last seen today at __time__", "last seen __date__ at __time__", "last seen yesterday at __time__", "__participant__ is typing…", "__participant__ is recording audio…", "Audio", "Contact", "__count__ page", "Document", "Photo", "Location", "Video", "Voice message", "Delete group", "Delete broadcast list", "Download “__name__”", "Exit", "Frequently Contacted", "__name__ changed this group's settings to allow all participants to send messages to this group.", "__name__ changed this group's settings to allow only admins to send messages to this group.", "__name__ created group “__subject__”", "__name__ created this group", "An admin created group “__subject__”", "You created group “__subject__”", "You created this group", "Created __date__ at __time__", "Created __date__ at __time__", "Group created by __name__, on __date__ at __time__", "Group created by you, on __date__ at __time__", "Created today at __time__", "Created today at __time__", "Group created by __name__, today at __time__", "Group created by you, today at __time__", "Created __day__ at __time__", "Created __day__ at __time__", "Created yesterday at __time__", "Created yesterday at __time__", "Group created by __name__, yesterday at __time__", "Group created by you, yesterday at __time__", "__name__ changed the group description. Click to view.", "__name__ changed the group description.", "__name__ reset this group's invite link. Click to view the new invite link.", "__name__ changed this group's settings to allow messages that have been forwarded many times.", "__name__ changed this group's settings to not allow messages that have been forwarded many times.", "__name__ was added", "__name__ changed their phone number to a new number.", "__name__ changed to __new_number__", "__participants__ is no longer an admin", "__name__ joined via an invite link", "You joined via an invite link", "__name__ left", "__participants__ is now an admin", "__name__ was removed", "__name__ added __participants__", "__name__ added you", "__name__ removed __participants__", "__name__ removed you", "A participant added __participants__", "A participant removed __participants__", "You added __participants__", "You removed __participants__", "__name__ changed this group's settings to allow all participants to edit this group's info.", "__name__ changed this group's settings to allow only admins to edit this group's info.", "__name__ changed the subject to “__subject__”", "A participant changed the subject to “__subject__”", "You changed the subject to “__subject__”", "__num__ invite sent", "Groups", "Groups in common", "Messages to this chat and calls are secured with end-to-end encryption, which means that WhatsApp and third parties can’t read or listen to them. __businessName__ may use a service to store, read and respond to your messages and calls. Contact __businessName__ for information on their privacy practices.", "__name__ added to the list", "__name__ removed from the list", "__name__ and possibly other group participants are using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message this group.", "__name__ is using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message them.", "This happened likely because __contactName__ or you recently changed which devices you use WhatsApp on. Please verify the security code again.", "Your security code with __contactName__ changed", "To verify that messages and calls with __contactName__ are end-to-end encrypted, open this screen on your phone, and follow the instructions.", "To verify that messages and calls with __contactName__ are end-to-end encrypted, scan or upload this code on their device. You can also compare the number above instead.", "About", "Messages", "Missed group video call at __time__", "Missed group voice call at __time__", "Missed video call", "Missed video call at __time__", "Missed voice call", "Missed voice call at __time__", "The business account for __businessName__ has registered as a standard user account and may no longer belong to the business.", "Other contacts", "__count__ participant", "To receive a payment from __senderName__, set up your payment account on your phone.", "__contactName__ canceled their payment request for __currencyAndAmount__", "You canceled your payment request to __contactName__ for __currencyAndAmount__", "__contactName__ declined your payment request for __currencyAndAmount__.", "You declined __contactName__'s payment request for __currencyAndAmount__.", "__senderName__'s payment request for __currencyAndAmount__ to you expired.", "Your payment request to __receiverName__ for __currencyAndAmount__ expired.", "You notified __receiverName__ that you are trying to send a payment.", "You can now send __receiverName__ a payment.", "__invitee__ has set up payments", "You invited __otherUser__ to use payments", "__otherUser__ invited you to use payments", "Requested from __receiverName__", "Requested __amount__ from You", "__senderName__ requested __amount__ from You", "__senderName__ requested __amount__ from __receiverName__", "Sent __amount__ to You", "__senderName__ sent __amount__ to You", "__senderName__ sent __amount__ to __receiverName__", "Sent to __receiverName__", "Pending (expires __timeSpan__)", "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.", "__senderName__'s payment __relativeTime__ is complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__  was refunded __relativeTime__.", "on __date__", "__name__ changed this group's icon", "You changed this group's icon", "__name__ deleted this group's icon", "You deleted this group's icon", "Preview", "OFFICIAL ANNOUNCEMENTS", "Recent chats", "__count__ recipient", "Your security code with __contactName__ changed because there was a logout from one of their devices.", "Your security code with __contactName__ changed because there was a logout from one of your devices.", "Your security code with __contactName__ changed. Click to learn more.", "Your security code with __name__ changed because there was a registration on a new device of theirs.", "Your security code with __name__ changed because there was a registration on a new device of yours.", "Select messages", 'WhatsApp has verified that this is the official business account of "__businessName__". This business uses WhatsApp Business, which allows them to add their opening hours, address, website and catalog of products or services.', 'This chat is with the verified business account for "__businessName__". Click for more info.', 'This chat is with the business account for "__businessName__". Click for more info.', "__businessName__ may be a business account, but WhatsApp hasn’t verified their name yet.", 'The business account you’re chatting with is now verified as "__businessName__". Click for more info.', 'The business account you’re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you’re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you’re chatting with is no longer confirmed as "__businessName__". Click for more info.', 'WhatsApp is no longer able to confirm that this is the account for "__businessName__".', 'This account has registered as a business account and WhatsApp has confirmed that this is the account for "__businessName__".', "__businessName__ registered as a business account, but WhatsApp hasn’t verified their name yet.", 'The business account you\'re chatting with belongs to "__businessName__".', "To chat with __contact__, review and accept WhatsApp’s updated terms and privacy policy on your phone.", "__date__ at __time__", "today at __time__", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", 'You opened "Verify security code" for the wrong phone number. Open it for the correct number to verify __contact__.', '__contact__ opened "Verify security code" for the wrong phone number. Ask __contact__ to open it for your phone number.', "yesterday at __time__", "You", "You created a broadcast list with __count__ recipient", "To use WhatsApp, update __chrome_update__ or use __firefox_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Google Chrome __min_version_chrome__+", "To use WhatsApp, update __edge_homepage__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Microsoft Edge __min_version_edge__+", "To use WhatsApp, update __firefox_update__ or use __chrome_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Mozilla Firefox __min_version_firefox__+", "WhatsApp group invite", "WhatsApp", "To use WhatsApp, update __safari_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "To use all of WhatsApp's features like photo capturing and Voice Message recording, we recommend using __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "Using Safari", "WhatsApp works with Safari __min_version_safari__+", "WhatsApp", "Send and receive WhatsApp messages right from your computer.", "WhatsApp is open in another window. Click “Use Here” to use WhatsApp in this window.", "Quickly send and receive WhatsApp messages right from your computer.", "We recommend using WhatsApp with one of the following browsers:", "WhatsApp also supports:", "You can't add more than __count__ labels", "Go to Commerce Manager to update your shop."], {
+                    ["", "Open the product context menu", "Turn off send as sticker", "Turn on send as sticker", "__count__ @ message", "Changing __count__ label", "The label could not be updated", "__count__ label changed", "Couldn't block __participant__", "__participant__ blocked", "Blocking __participant__", "Couldn't delete broadcast list.", "Broadcast list deleted", "Deleting broadcast list", "Couldn't archive chat.", "Chat archived", "Archiving chat", "Couldn't clear chat.", "Chat cleared", "Clearing chat", "Couldn't delete chat.", "Chat deleted", "Deleting chat", "Couldn't mark chat as read.", "Couldn't mark chat as unread.", "Marked as read", "Marked as unread", "Marking as read", "Marking as unread", "Couldn't mute chat.", "Chat muted", "Muting chat", "Couldn't pin chat", "You can only pin up to 3 chats.", "Chat pinned", "Pinning chat", "Couldn't unarchive chat.", "Chat unarchived", "Unarchiving chat", "Unmute", "Couldn't unmute chat.", "Chat unmuted", "Unmuting chat", "Couldn't unpin chat", "Chat unpinned", "Unpinning chat", "Deleting label: __labelName__", "Couldn't create group.", "Please enter a shorter subject.", "Can't add more than __max__ participants", "Created group", "Creating group", "Couldn't delete group.", "Group deleted", "Deleting group", "Couldn't exit group.", "Exited group", "Exiting group", "Couldn't remove group icon.", "Group icon removed", "Removing group icon", "Group icon set", "Couldn't set group icon.", "Setting group icon", "Couldn't mute group.", "Group muted", "Muting group", "Couldn't rename group.", "Group renamed to __subject__", "Renaming group", "Group subject can't be empty", "Couldn't unmute group.", "Group unmuted", "Unmuting group", "Stop sharing live location with __name__?", "Stop sharing live location with __name__?", "Marking as not spam", "Couldn't mark as not spam", "Marked as not spam", "Couldn't delete message because the message may have expired", "Couldn't delete message", "__count__ message deleted", "Deleting message", "Couldn't star message because the message may have expired", "Couldn't star message", "__count__ message starred", "Starring message", "Couldn't unstar all messages", "Couldn't unstar message because the message may have expired", "Couldn't unstar message", "__count__ message unstarred", "All messages unstarred", "Unstarring message", "Unstarring all messages", "Failed to add label: __labelName__", "Label: __labelName__ added successfully", "Couldn't add __participantNames__.", "You added __participantNames__.", "Adding __participantNames__.", "Removing __participantNames__ as an admin failed.", "You can't dismiss __participant__ as admin because they created this group.", "__participantNames__ is no longer a group admin.", "Removing __participantNames__ as a group admin.", "They are no longer in this group.", "You can't add this participant because they left the group recently.", "Couldn't make __participantNames__ an admin.", "__participantNames__ is now a group admin.", "Making __participantNames__ a group admin.", "Couldn't remove __participantNames__.", "You can't remove __participant__ because they created this group.", "You removed __participantNames__.", "Removing __participantNames__.", "Couldn't remove profile photo.", "Profile photo removed", "Removing profile photo", "Profile photo set", "Couldn't set profile photo.", "Setting profile photo", "Your name can't be empty", "Your name changed", "Couldn't change your name.", "Changing your name", "Reporting spam", "Couldn't report spam", "Reported spam", "About can't be empty", "About changed", "Couldn't change About.", "Changing About…", "Try again.", "Couldn't unblock __participant__", "__participant__ unblocked", "Unblocking __participant__", "Undo", "Add a caption…", "Blocked contacts will no longer be able to call you or send you messages", "Add blocked contact", "Add to a group", "Add group icon", "Add profile photo", "Drag the image to adjust", "Only __admins__ can send messages", "Archive chat", "No archived chats", "Archived chats", "Document", "__count__ Page", "Contact", "__number__ audio file you tried adding has no content.", "Your browser doesn’t support audio playback.", "__number__ audio you tried adding is larger than the __maxSize__ limit.", "Using __deviceName__ as your __deviceType__ for your WhatsApp calls", '"__businessName__" registered as a business account, but WhatsApp hasn’t verified their name yet.', 'This chat is with the official business account of "__businessName__". Click for more info.', 'WhatsApp has verified that this is the official business account of "__businessName__".', 'WhatsApp has verified that this is the official business account of "__businessName__". This account is saved with a different name in your address book.', 'This official business account changed its name to "__businessName__". Click for more info.', 'WhatsApp has verified that this official business account changed its name and now uses the name "__businessName__".', "__businessName__ used other companies to store and manage this message.", "__businessName__ used Facebook and other companies to store and manage this message.", "This message was delivered directly from __businessName__.", "This message was delivered directly to __businessName__.", "__businessName__ used Facebook to store and manage this message.", '"__businessName__" registered as a business account, but WhatsApp hasn’t verified their name yet.', 'This chat is with the official business account of "__businessName__". Click for more info.', 'WhatsApp has verified that this is the official business account of "__businessName__".', 'WhatsApp has verified that this is the official business account of "__businessName__". This account is saved with a different name in your address book.', 'This chat is now with the official business account of "__businessName__". Click for more info.', 'WhatsApp has verified that this is the official business account of "__businessName__".', 'This chat is no longer with the official business account of "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the official business account of "__businessName__".', "Block", "Block __contact__? Blocked contacts will no longer be able to call you or send you messages.", "List of contacts that you have blocked", "No blocked contacts yet", "Blocked contacts", "WhatsApp secures messages while they're being delivered to and from the companies that store and manage this chat for __businessName__. Contact __businessName__ for more information on their privacy practices.", "WhatsApp secures messages while they're being delivered to and from Facebook, where this chat is stored and managed for __businessName__. Contact __businessName__ for more information on their privacy practices.", "WhatsApp secures messages while they're being delivered to and from Facebook, where this chat is stored and managed for __businessName__.", "__businessName__ is registered as a business account.", "__businessName__ is registered as an official business account.", "__businessName__ is registered as an official business account. The business is saved as a different name in your contacts.", "This chat is with the official business account of __businessName__.", "This chat is with the official business account of __businessName__. The business is saved as a different name in your contacts.", "__businessName__ is now registered as a business account, instead of an official business account.", "__businessName__ no longer uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ now only uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ no longer uses Facebook or other companies to manage its WhatsApp conversations.", "__businessName__ is now registered as an official business account. This business no longer uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business no longer uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account that only uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business only uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account. This business no longer uses Facebook or other companies to manage its WhatsApp conversations. Click to learn more.", "This chat is with the official business account of __businessName__. This business uses Facebook and other companies to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official business account of __businessName__, but it's saved as a different name in your contacts. This business uses Facebook and other companies to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "__businessName__ is no longer an official business account and it no longer uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it now only uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it no longer uses Facebook or other companies to manage its WhatsApp conversations. Click to learn more.", "__businessName__ no longer uses other companies to manage its WhatsApp conversations.", "__businessName__ is now registered as an official business account. This business no longer uses other companies to manage its WhatsApp conversations. Click to learn more.", "This chat is with the official business account of __businessName__. This business uses other companies to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official business account of __businessName__, but it's saved as a different name in your contacts. This business uses other companies to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "__businessName__ is no longer an official business account and it no longer uses other companies to manage its WhatsApp conversations. Click to learn more.", "__businessName__ is now registered as a business account that uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as a business account that uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as a business account that uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as a business account. Click to learn more.", "__businessName__ now uses other companies instead of Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ no longer uses Facebook to manage its WhatsApp conversations.", "__businessName__ is now registered as an official business account. This business now uses other companies instead of Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business now uses other companies instead of Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account. This business no longer uses Facebook to manage its WhatsApp conversations. Click to learn more.", "This chat is with the official business account of __businessName__. This business uses Facebook to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official business account of __businessName__, but it's saved as a different name in your contacts. This business uses Facebook to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official account of __businessName__, but it's saved as a different name in your contacts. This account uses Facebook to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "This chat is with the official account of __businessName__. This account uses Facebook to manage its WhatsApp conversations. Click to learn more about privacy in this chat.", "__businessName__ is no longer an official business account. This business uses other companies instead of Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it no longer uses Facebook to manage its WhatsApp conversations. Click to learn more.", "__businessName__ now uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "This chat is with the official business account of __businessName__. Click to learn more.", "__businessName__ now uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer registered as a business account.", "__businessName__ now uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account that uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account that uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account that uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account, but it's saved as a different name in your contacts. This business uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is now registered as an official business account. Click to learn more.", "__businessName__ is no longer an official business account. This business now uses Facebook and other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it now uses other companies to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer an official business account and it now uses Facebook to manage its WhatsApp conversations. Click to learn how this changes privacy in this chat.", "__businessName__ is no longer registered as an official business account. Click to learn more.", "Broadcast list deleted", "Browser not supported", "__closed__, opens at __time__", "End Time", "Start Time", "__open__ 24 hours", "__openTime__ - __closeTime__ and __additionalOpenTime__ - __additionalCloseTime__", "__open__ by appointment only", "__open__ until __time__", "__open__ until __time__, __additionalOpenTime__ - __additionalCloseTime__", "This verified business is not in your contact list.", "__streetAddress__, __city__", "__streetAddress__, __city__ __zipCode__", "Confirmed as __businessName__", "End Time", "This name will be visible to your WhatsApp customers and can be edited from the app on your mobile device.", "Something went wrong", "An error occurred while saving.  Please try again.", "__verified__ as __businessName__", "Use Here", "__count__ message couldn't be forwarded because __contact__ is on a version of WhatsApp that doesn't support it.", "No messages could be forwarded because __contact__ is on a version of WhatsApp that doesn't support them.", "__count__ message couldn't be forwarded because the file is missing.", "__count__ message couldn't be forwarded because the file is missing or __contact__ is on a version of WhatsApp that doesn't support it.", "No messages could be forwarded because the file is missing or __contact__ is on a version of WhatsApp that doesn't support them.", "Can't Load WhatsApp", "Qty __quantity__", "Received cart", "__updated__ Item Updated", "By using this feature, you're using a __fb_product_link__ and agree that the __fb_commerce_link__ and __wa_commerce_policy_link__ apply.", "If you feel this is not correct, you can __request_review_link__.", "We reviewed this item again and found it didn't follow product or service guidelines. __learn_more_link__.", "This item wasn't approved because it doesn't follow our product or service guidelines. __learn_more_link__.", "This item is being reviewed. If it’s been approved, your customers will be able to see it on your profile. __learn_more_link__.", "This item is being reviewed. You hid it, so customers won’t see it in your catalog when it’s approved. __learn_more_link__.", "Turn this on to let customers add items to a cart when shopping in your catalog. Turning this off won't affect carts you've already received. __learn_more_link__", "View __catalogOwnerName__'s Catalog on WhatsApp", "__productName__ from __catalogOwnerName__ on WhatsApp.", "View all", "Change group icon", "__name__ changed their phone number. You're currently chatting with their new number.", "__name__ changed their phone number to a new number.", "__name__ changed their phone number to a new number. Click to message the new number.", "Change profile photo", "Charge your phone to keep using WhatsApp", "Archived", "You are not an admin", "Search for messages within __chatName__.", "No Internet connection", "Clear messages", "click here for group info", "click here for contact info", "Update WhatsApp", "Click to reload QR code", "Click to save, ESC to cancel", "Click to update WhatsApp", "Close chat", "__count__ item", "This collection wasn't approved because its name violates __collections_rejected_policy_adult__", "This collection wasn't approved because its name violates __collections_rejected_policy_alcohol__", "This collection wasn't approved because its name violates __collections_rejected_policy_animals__", "This collection wasn't approved because its name violates __collections_rejected_policy_body_parts_fluids__", "This collection wasn't approved because its name violates __collections_rejected_policy_community_standards__", "This collection wasn't approved because its name violates __collections_rejected_policy_digital_services_products__", "This collection wasn't approved because its name violates __collections_rejected_policy_discrimination__", "This collection wasn't approved because its name violates __collections_rejected_policy_drugs__", "This collection wasn't approved because its name violates __collections_rejected_policy_gambling__", "This collection wasn't approved because its name violates __collections_rejected_policy_hazardous_goods_and_materials__", "This collection wasn't approved because its name violates __collections_rejected_policy_healthcare__", "This collection wasn't approved because its name violates __collections_rejected_policy_human_exploitation_and_sexual_services__", "This collection wasn't approved because its name violates __collections_rejected_policy_illegal_products__", "This collection wasn't approved because its name violates __collections_rejected_policy_misleading__", "You can __rename_collection_link__ or __request_another_review_link__.", "This collection wasn't approved because its name violates __collections_rejected_policy_other_violation__", "This collection wasn't approved because its name violates __collections_rejected_policy_overtly_sexualized_positioning__", "This collection wasn't approved because its name violates __collections_rejected_policy_real_fake_currency__", "This collection wasn't approved because its name violates __collections_rejected_policy_stolen_goods__", "This collection wasn't approved because its name violates __collections_rejected_policy_supplements__", "This collection wasn't approved because its name violates __collections_rejected_policy_thrid_party_infringements__", "This collection wasn't approved because its name violates __collections_rejected_policy_tobacco__", "This collection wasn't approved because its name violates __collections_rejected_policy_unauthorized_media__", "This collection wasn't approved because its name violates __collections_rejected_policy_weapons__", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_adult__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_alcohol__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_animals__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_body_parts_fluids__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_community_standards__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_digital_services_products__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_discrimination__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_drugs__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_gambling__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_hazardous_goods_and_materials__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_healthcare__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_human_exploitation_and_sexual_services__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_illegal_products__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_misleading__.", "You can __rename_collection_link__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_other_violation__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_overtly_sexualized_positioning__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_real_fake_currency__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_stolen_goods__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_supplements__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_thrid_party_infringements__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_tobacco__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_unauthorized_media__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_weapons__.", "", "Add __participant__ to “__subject__” group?", "Add __participants__ to “__subject__” group?", "You are closing WhatsApp.", "Some messages can’t be forwarded, do you want to forward rest of the messages?", "Can't forward all messages", "Forward to __chat__?", "Log out?", "Make __participant__ an admin for “__subject__” group?", "Remove __participant__ from “__subject__” group?", "Send __count__ contact to “__chat__”?", "Send __count__ contact to “__chat__”?", "Send __count__ contact to “__chat__”?", "Unblock __chat__ and forward messages?", "Unblock __contact__", "Unmute this chat?", "Unmute this group?", "Connecting…", "Connecting to WhatsApp", "Connecting", "Block __contact__", "__number__ group in common", "About and phone number", "Unblock __contact__", "Loading About…", "View contact", "__number__ contact that you tried to add has no content.", "The contact that you tried to add is larger than the __maxSize__ limit.", "Older messages may be available", "Use WhatsApp on your phone to search messages from before __date__.", "Use WhatsApp on your phone to see the complete chat history.", "Search for messages with __chatName__.", "WhatsApp message", "Default", "Delete chat", "Deleting a label removes it from all messages, contacts, and from the list of labels. Are you sure you want to delete this label?", "Delete message", "Delete message?", "Tell us about your issue", "Please Update WhatsApp", "New version available", "Desktop Settings", "Update", "To continue using WhatsApp, click Update and install the latest version.", "Couldn't Update Automatically", "Downloading an update to WhatsApp. This may take several minutes. WhatsApp will automatically update and restart when the download finishes.", "Updating WhatsApp", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they’re sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they’re sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they’re sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they’re sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they’re sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they’re sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they’re sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they’re sent. Click to learn more.", "Dismiss", "Docs", "__count__ Doc", "“__name__” downloaded.", "__number__ document you tried adding has no content.", "__number__ document you tried adding is larger than the __maxSize__ limit.", "End-to-end encrypted", "Edit", "Add text to your image…", "Turn on desktop notifications", "& ", " • ", ", ", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "__name__ turned off disappearing messages.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "__name__ turned off disappearing messages. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "Turning on this setting will make new messages disappear from this chat after 7 days. Recipients can still save these messages elsewhere.", "Turning on this setting will make new messages disappear from this chat after a selected amount of time. Recipients can still save these messages elsewhere.", "All new messages will disappear from this chat __number__ day after they're sent.", "All new messages will disappear from this chat __number__ hour after they're sent.", "All new messages will disappear from this chat __number__ minute after they're sent.", "All new messages will disappear from this chat __number__ second after they're sent.", "Anyone in this chat can change this setting.", "Group admins control who can change this setting.", "This message will disappear from this chat __number__ day after they're sent.", "This message will disappear from this chat __number__ hour after they're sent.", "This message will disappear from this chat __number__ minute after they're sent.", "This message will disappear from this chat __number__ second after they're sent.", "Off", "On", "__number__ day", "__number__ hour", "__number__ minute", "__number__ second", "Wait until the message finishes sending and displays a checkmark before forwarding.", "Wait until this message is fully delivered before forwarding.", "Unable to forward unsent message.", "Can’t Forward", "__number__ file you tried adding has no content.", "__count__ file failed to be downloaded because it's no longer on your phone.", "__number__ file could not be added.", "__number__ file you tried adding is not supported.", "__number__ file you tried adding is larger than the __maxSize__ limit.", "B", "GB", "kB", "MB", "Forward", "You can only share with up to __count__ chat", "Forwarded many times. You can only share with up to __count__ chat.", "Forward message", "Forward message to", "Forwarded __count__ time", "Found a contact card for this number. View contact card?", "Older results may be available", "Microsoft Edge", "Google Chrome", "Mozilla Firefox", "Opera", "Safari (macOS 11+ Only)", "Custom GIF animations are currently not supported. Please use provided GIF selection feature.", "Incoming calls off. Click to restore.", "Alerts and sounds off. Click to restore.", "Notifications enabled", "You were added by someone who's not in your contacts", "Group deleted", "Cancel", "Checking invite link", "__count__ contact", "Join group", "Anyone with WhatsApp can follow this link to join this group. Only share it with people you trust.", "__count__ participant", "You can't view this group's invite link because you're not an admin.", "This invite link doesn't match any WhatsApp groups.", "Are you sure you want to reset the invite link for __groupName__? If you reset the link, no one will be able to use it to join this group.", "Resetting the invite link for __groupName__.", "Send link to", "Joining group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Joining group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't join group", "Viewing and revoking group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Viewing and revoking group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't view group invite details", '"__A__"', '__A__"__B__" & "__C__"', '"__A__," __B__', '"__A__" & "__B__"', "Group muted", "Type contact name", "__count__ other", "View all (__more__)", "__count__ more", "Group Subject", "__number__ invited", "Couldn't add __participant__. You can invite them privately to join this group.", "Reset invite for __participant__? If you reset the invite, __participant__ won't be able to use it to join this group.", "You can’t take a photo because it looks like your computer doesn’t have a camera. Try connecting one or if you have one connected, try restarting your browser.", "Camera Not Found", "Allow camera", "You can’t record a Voice Message because it looks like your computer doesn’t have a microphone. Try connecting one or if you have one connected, try restarting your browser.", "Microphone Not Found", "Allow microphone", "Help", "Message from __author__", "__unreadCount__ New Message", "You'll be logged out after several minutes of inactivity", "__number__ image you tried adding has no content.", "__number__ image you tried adding is larger than the __maxSize__ limit.", "Check your phone to answer", "WhatsApp group video call from __name__", "WhatsApp group voice call from __name__", "WhatsApp video call from __name__", "WhatsApp voice call from __name__", "WhatsApp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.", "With this update, your phone won’t need to stay online to use WhatsApp on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "With this update, your phone won’t need to stay online to use WhatsApp Business on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won’t need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won’t need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won’t need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won’t need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "WhatsApp is available for Mac. __get_it_here__.", "Make calls from desktop with WhatsApp for Mac. __get_it_here__.", "WhatsApp is available for Windows. __get_it_here__.", "Make calls from desktop with WhatsApp for Windows. __get_it_here__.", "Keep your phone connected", "Expires at __time__", "Expires in __number__ day", "__count__ item", "Search in __labelName__...", "Learn more", "Links", "__count__ Link", "Accurate to __accuracy__ M", "__count__ people", "Last updated __date__ at __time__", "Last updated today at __time__", "Last updated __date__ at __time__", "Last updated yesterday at __time__", "Live until __time__", "__hours__h left", "__hours__h __minutes__m left", "__minutes__m left", "__sharers__ is sharing live location", "__name__ is sharing live location", "__count__ person is sharing live location", "You are sharing live location", "You and __name__ are sharing live location", "You and __count__ other person are sharing live location", "__name__ stopped sharing", "Updated __hours__h ago", "Updated __hours__h __minutes__m ago", "Updated __minutes__m ago", "load earlier messages…", "load recent messages…", "Loading…", "loading messages…", "Log in", "Menu __android_menu_icon__", "Need help to get started?", "Settings __iphone_settings_icon__", "Tap __android_menu__ or __iphone_settings__ and select __whatsapp_web_menu_item__", "Tap on __login_step_3_md_link_device__", "WhatsApp Web", "More than 1GB storage usage detected. Please be aware that remaining storage is low.", "Low storage warning", "Make sure your computer has an active Internet connection.", "Manage", "Mark as read", "Mark as unread", "Downloading messages: __progress__%", "This version will expire today at __time__. Update to use WhatsApp Web without keeping your phone online.", "This version will expire today at __time__. Update to use WhatsApp Desktop without keeping your phone online.", "Media", "Add a caption", "This file was changed from original.", "Blocked", "Help", "Keep me signed in", "Log out", "Make group admin", "Notifications", "Profile", "Profile", "Remove", "Settings", "Attach", "Menu", "This audio is too large. You can send audio up to __maxSize__.", "Message __author__", "This document is too large. You can send documents up to __maxSize__.", "This file is too large. You can send files up to __maxSize__.", "This image is too large. You can send images up to __maxSize__.", "Message info", "Delivered", "Delivered to", "Played", "Played by", "Read", "Read by", "__count__ remaining", "Couldn't find message", "The message you’re pasting is too long. Try shortening it or sending it in multiple parts.", "Message Too Long", "This video is too large. You can send videos up to __maxSize__.", "Can’t play this Voice Message because it's no longer on your phone.", "Voice Message Unavailable", "Can’t download this document because it's no longer on your phone.", "Document Unavailable", "Can’t view this GIF because it's no longer on your phone.", "GIF Unavailable", "Media Message Unavailable", "Can’t view this photo because it's no longer on your phone.", "Photo Unavailable", "Can’t play this video because it's no longer on your phone.", "Video Unavailable", "Phone number shared via url is invalid.", "Send message to", "__contactName__ and __count__ other contact", "__count__ contact", "You can only send up to __count__ contact", "Mute “__name__” for…", "__A__, __B__", "__A__, and __B__", "__A__, __B__", "__A__ and __B__", "Archive Chat", "WhatsApp needed to restart because of a problem.", "Problem Detected", "Delete Chat", "Delete Group", "Exit Group", "Log Out", "Mark as Read", "Mark as Unread", "Chat", "Help", "Terms and Privacy Policy", "Next Chat", "Previous Chat", "Window", "Bring All to Front", "Minimize", "Zoom", "Mute", "New Chat", "New Group", "Profile and About", "Unarchive Chat", "Cancel Mute", "This video is unavailable. Please try again.", "New chat", "New group", "Next", "No contacts", "No Docs", "No groups", "No Links", "No Media", "No result found for '__labelName__'", "No starred messages", "Not spam", "Notifications", "__number__ of __totalNumber__", "+__number__", "OK, got it", "Start WhatsApp at Login", "Desktop Alerts", "Show Previews", "Display message text in desktop alerts", "Sounds", "Order Detail", "Your Order", "__subtotal__ (estimated)", "Qty __quantity__", "__total__ (estimated total)", "Already blocked", "Order #__order__", "Update now to use WhatsApp Web on other devices without keeping your phone online.", "WhatsApp is open on another computer or browser. Click “Use Here” to use WhatsApp in this window.", "Pin chat", "Waiting for this message. This may take a while.", "Previous", "__count__ contact excluded", "__count__ Product", "This photo is too small. Please select a photo with height and width of at least __size__ pixel.", "Couldn't send this Voice Message.", "…", "This is not your username or pin. This name will be visible to your WhatsApp contacts.", "Group • __groupName__", "All", "__count__ reactions weren't sent", "Reconnect", "Remove", "Remove this group's icon?", 'Remove label "__labelName__" from __count__ item', "Remove photo", "Remove your profile photo?", "Report __contactInfo__", "Report spam", "Click to resend", "Retry Now", "Retrying…", "Retrying in __duration__…", "Retrying in __number__ second…", "Save", "Scan Database Usage", "Search…", "Search contacts", "Search Emoji", "Search GIFs via __service__", "Search groups", "Search Messages", "No chats, contacts or messages found", "No contacts found", "No groups found", "No messages found", "No results found for '__keyword__'", "Search or start new chat", "Looking for chats, contacts or messages…", "Looking for messages…", "Learn which chats are end to end encrypted", "Show security notifications", "See __count__ archived chat", "__count__ selected", "Photo set to send as sticker", "Send contact", "Send contacts", "send", "Feedback/Question about WhatsApp", "Email address", "Confirm email address", "Please enter a valid email address", "The email addresses do not match", "Subject", "Feedback sent", "Please enter a subject.", "Contact us", "__count__ Screenshot Maximum", "Please add more to your description", "To verify, send a message to __name__ and try again.", "The sender is not in your contact list", "Settings", "__days__d", "__hours__h", "__minutes__m", "__seconds__s", "Some of your messages are still sending.", "Star message", "No starred messages", "Starred messages", "Created by __name__", "Subject", "This group is no longer available. Please contact __support__ for help.", "__count__ suspicious link", "Take photo", "You'll be able to use WhatsApp again in __duration__", "You're temporarily banned from WhatsApp because you sent too many messages to people who don’t have __phone__ in their address books.", "You're temporarily banned from WhatsApp because you created too many groups with people who don’t have __phone__ in their address books.", "__time__ left", "Maximum number of files uploaded. __number__ file has been ignored.", "Trying to reach phone", "Turn off all desktop notifications for:", "Unarchive chat", "Unblock", "Unblock __contact__?", "Unblock Contact", "Unpin chat", "__count__ @ message not synced", "__count__ unread message", "Unstar", "Unstar all messages?", "Unstar message", "Until __date__ at __time__", "Until today at __time__", "Until tomorrow at __time__", "Until __day__ at __time__", "Untitled", "Download Microsoft Edge", "Update Google Chrome", "Update Mozilla Firefox", "Update Safari", "WhatsApp is out of date. Updating now…", "Updating", "Your phone will no longer need to stay online to use WhatsApp on web, desktop or other devices. __learn_more__", "Your phone will no longer need to stay online to use WhatsApp Business on web, desktop or other devices. __learn_more__", "Upload photo", "__participants__ joined using your invite", "You invited __participants__", "Version __version__", "__number__ video you tried adding has no content.", "Your browser doesn’t support video playback.", "__number__ video you tried adding is larger than the __maxSize__ limit.", "View Contact Card", "This view once photo has expired. Please ask __name__ to re-send it.", "This view once video has expired. Please ask __name__ to re-send it.", "View photo", "Viewed by __count__", "Stop screen sharing", "Start screen sharing", "You can turn on your camera after __callee__ answers", "Your call will end in a few seconds because your microphone and sound output device were disconnected.", "Your call will end in a few seconds because your microphone was disconnected.", "__name__'s camera and mic are off", "__name__'s camera is off", "__name__'s mic is muted", "__name__ is requesting to switch to a video call", "Your call will end in a few seconds because your sound output device was disconnected.", "You can turn off your camera after __callee__ answers", "Please contact us with the make and model of your camera. ", "Call cannot be placed for more than __count__ participant", "You can only call up to __count__ contact", "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.", "__count__ others", "__callee__ is in a country where WhatsApp Calling is unavailable", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls at this time.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is not registered on WhatsApp", "Couldn't place call: __callee__ is unable to receive WhatsApp video calls at this time.", "WhatsApp will use your computer's camera for video calls and taking photos. You can always change this later in your computer's settings.", "WhatsApp will use your computer's microphone for calls and voice messages. You can always change this later in your computer's settings.", "__contactName__ - WhatsApp voice call", "__contactName__ - WhatsApp video call", "Chat wallpaper set", "Set Chat Wallpaper", "Your security code with __contactName__ changed because there was a login on a new device of theirs.", "Your security code with __contactName__ changed because you logged into a new device.", "Your security code with __contactName__ changed because there was a login on a new device of yours.", "Your security code with __contactName__ changed because there was a login on this device.", 'WhatsApp has verified that this is the official business account of "__businessName__".', "WhatsApp has verified that this is the official business account of __businessName__. This account is saved with a different name in your contacts.", "Your security code could not be verified with __contactName__. Click to learn more.", "Verify your security code with __contactName__ because there was an error with their list of linked devices.", "You can't send messages to this group because you're no longer a participant.", "Can't send a message to blocked contact __contact__.", "Your security code with __contactName__ changed because there was a login or logout from one or more of their devices.", "Your security code with __contactName__ changed because there was a login or logout from one or more of your devices.", "Muted", "Messages to this chat are secured with end-to-end encryption. __businessName__ may use another company to store, read and respond to your messages. Click to learn more.", "online", "last seen __date__ at __time__", "last seen today at __time__", "last seen __date__ at __time__", "last seen yesterday at __time__", "__participant__ is typing…", "__participant__ is recording audio…", "Audio", "Contact", "__count__ page", "Document", "Photo", "Location", "Video", "Voice message", "Delete group", "Delete broadcast list", "Download “__name__”", "Exit", "Frequently Contacted", "__name__ changed this group's settings to allow all participants to send messages to this group.", "__name__ changed this group's settings to allow only admins to send messages to this group.", "__name__ created group “__subject__”", "__name__ created this group", "An admin created group “__subject__”", "You created group “__subject__”", "You created this group", "Created __date__ at __time__", "Created __date__ at __time__", "Group created by __name__, on __date__ at __time__", "Group created by you, on __date__ at __time__", "Created today at __time__", "Created today at __time__", "Group created by __name__, today at __time__", "Group created by you, today at __time__", "Created __day__ at __time__", "Created __day__ at __time__", "Created yesterday at __time__", "Created yesterday at __time__", "Group created by __name__, yesterday at __time__", "Group created by you, yesterday at __time__", "__name__ changed the group description. Click to view.", "__name__ changed the group description.", "__name__ reset this group's invite link. Click to view the new invite link.", "__name__ changed this group's settings to allow messages that have been forwarded many times.", "__name__ changed this group's settings to not allow messages that have been forwarded many times.", "__name__ was added", "__name__ changed their phone number to a new number.", "__name__ changed to __new_number__", "__participants__ is no longer an admin", "__name__ joined via an invite link", "You joined via an invite link", "__name__ left", "__participants__ is now an admin", "__name__ was removed", "__name__ added __participants__", "__name__ added you", "__name__ removed __participants__", "__name__ removed you", "A participant added __participants__", "A participant removed __participants__", "You added __participants__", "You removed __participants__", "__name__ changed this group's settings to allow all participants to edit this group's info.", "__name__ changed this group's settings to allow only admins to edit this group's info.", "__name__ changed the subject to “__subject__”", "A participant changed the subject to “__subject__”", "You changed the subject to “__subject__”", "__num__ invite sent", "Groups", "Groups in common", "Messages to this chat and calls are secured with end-to-end encryption, which means that WhatsApp and third parties can’t read or listen to them. __businessName__ may use a service to store, read and respond to your messages and calls. Contact __businessName__ for information on their privacy practices.", "__name__ added to the list", "__name__ removed from the list", "__name__ and possibly other group participants are using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message this group.", "__name__ is using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message them.", "This happened likely because __contactName__ or you recently changed which devices you use WhatsApp on. Please verify the security code again.", "Your security code with __contactName__ changed", "To verify that messages and calls with __contactName__ are end-to-end encrypted, open this screen on your phone, and follow the instructions.", "To verify that messages and calls with __contactName__ are end-to-end encrypted, scan or upload this code on their device. You can also compare the number above instead.", "About", "Messages", "Missed group video call at __time__", "Missed group voice call at __time__", "Missed video call", "Missed video call at __time__", "Missed voice call", "Missed voice call at __time__", "The business account for __businessName__ has registered as a standard user account and may no longer belong to the business.", "Other contacts", "__count__ participant", "To receive a payment from __senderName__, set up your payment account on your phone.", "__contactName__ canceled their payment request for __currencyAndAmount__", "You canceled your payment request to __contactName__ for __currencyAndAmount__", "__contactName__ declined your payment request for __currencyAndAmount__.", "You declined __contactName__'s payment request for __currencyAndAmount__.", "__senderName__'s payment request for __currencyAndAmount__ to you expired.", "Your payment request to __receiverName__ for __currencyAndAmount__ expired.", "You notified __receiverName__ that you are trying to send a payment.", "You can now send __receiverName__ a payment.", "__invitee__ has set up payments", "You invited __otherUser__ to use payments", "__otherUser__ invited you to use payments", "Requested from __receiverName__", "Requested __amount__ from You", "__senderName__ requested __amount__ from You", "__senderName__ requested __amount__ from __receiverName__", "Sent __amount__ to You", "__senderName__ sent __amount__ to You", "__senderName__ sent __amount__ to __receiverName__", "Sent to __receiverName__", "Pending (expires __timeSpan__)", "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.", "__senderName__'s payment __relativeTime__ is complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__  was refunded __relativeTime__.", "on __date__", "__name__ changed this group's icon", "You changed this group's icon", "__name__ deleted this group's icon", "You deleted this group's icon", "Preview", "OFFICIAL ANNOUNCEMENTS", "Recent chats", "__count__ recipient", "Your security code with __contactName__ changed because there was a logout from one of their devices.", "Your security code with __contactName__ changed because there was a logout from one of your devices.", "Your security code with __contactName__ changed. Click to learn more.", "Your security code with __name__ changed because there was a registration on a new device of theirs.", "Your security code with __name__ changed because there was a registration on a new device of yours.", "Select messages", 'WhatsApp has verified that this is the official business account of "__businessName__". This business uses WhatsApp Business, which allows them to add their opening hours, address, website and catalog of products or services.', 'This chat is with the verified business account for "__businessName__". Click for more info.', 'This chat is with the business account for "__businessName__". Click for more info.', "__businessName__ may be a business account, but WhatsApp hasn’t verified their name yet.", 'The business account you’re chatting with is now verified as "__businessName__". Click for more info.', 'The business account you’re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you’re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you’re chatting with is no longer confirmed as "__businessName__". Click for more info.', 'WhatsApp is no longer able to confirm that this is the account for "__businessName__".', 'This account has registered as a business account and WhatsApp has confirmed that this is the account for "__businessName__".', "__businessName__ registered as a business account, but WhatsApp hasn’t verified their name yet.", 'The business account you\'re chatting with belongs to "__businessName__".', "To chat with __contact__, review and accept WhatsApp’s updated terms and privacy policy on your phone.", "__date__ at __time__", "today at __time__", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", 'You opened "Verify security code" for the wrong phone number. Open it for the correct number to verify __contact__.', '__contact__ opened "Verify security code" for the wrong phone number. Ask __contact__ to open it for your phone number.', "yesterday at __time__", "You", "You created a broadcast list with __count__ recipient", "To use WhatsApp, update __chrome_update__ or use __firefox_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Google Chrome __min_version_chrome__+", "To use WhatsApp, update __edge_homepage__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Microsoft Edge __min_version_edge__+", "To use WhatsApp, update __firefox_update__ or use __chrome_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Mozilla Firefox __min_version_firefox__+", "WhatsApp group invite", "WhatsApp", "To use WhatsApp, update __safari_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "To use all of WhatsApp's features like photo capturing and Voice Message recording, we recommend using __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "Using Safari", "WhatsApp works with Safari __min_version_safari__+", "WhatsApp", "Send and receive WhatsApp messages right from your computer.", "WhatsApp is open in another window. Click “Use Here” to use WhatsApp in this window.", "Quickly send and receive WhatsApp messages right from your computer.", "We recommend using WhatsApp with one of the following browsers:", "WhatsApp also supports:", "You can't add more than __count__ labels", "Go to Commerce Manager to update your shop."], {
                         4: "__count__ @ messages",
                         5: "Changing __count__ labels",
                         6: "Some labels could not be updated",
@@ -19930,83 +19989,84 @@
                         507: "__count__ others",
                         509: "__count__ more",
                         512: "Couldn't add __participant__. You can invite them privately to join this group.",
-                        528: "__unreadCount__ New Messages",
-                        530: "__number__ images you tried adding have no content.",
-                        531: "__number__ images you tried adding are larger than the __maxSize__ limit.",
-                        540: "This version expires in __num_days__ days. With the update, your phone won’t need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__",
-                        541: "This version expires in __num_days__ days. With the update, your phone won’t need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__",
-                        550: "Expires in __number__ days",
-                        551: "__count__ items",
-                        556: "__count__ Links",
-                        557: "Accurate to __accuracy__ M",
-                        558: "__count__ people",
-                        563: "Live until __time__",
-                        564: "__hours__h left",
-                        566: "__minutes__m left",
-                        567: "__sharers__ are sharing live location",
-                        569: "__count__ people are sharing live location",
-                        572: "You and __count__ others are sharing live location",
-                        574: "Updated __hours__h ago",
-                        576: "Updated __minutes__m ago",
-                        624: "__count__ remaining",
-                        642: "__contactName__ and __count__ other contacts",
-                        643: "__count__ contacts",
-                        644: "You can only send up to __count__ contacts",
-                        707: "__count__ contacts excluded",
-                        708: "__count__ Products",
-                        709: "This photo is too small. Please select a photo with height and width of at least __size__ pixels.",
-                        715: "All",
-                        719: 'Remove label "__labelName__" from __count__ items',
-                        728: "Retrying in __number__ seconds…",
-                        747: "See __count__ archived chats",
-                        748: "__count__ selected",
-                        762: "__count__ Screenshots Maximum",
-                        767: "__days__d",
-                        768: "__hours__h",
-                        769: "__minutes__m",
-                        770: "__seconds__s",
-                        772: "Star messages",
-                        778: "__count__ suspicious links",
-                        783: "__time__ left",
-                        784: "Maximum number of files uploaded. __number__ files have been ignored.",
-                        792: "__count__ @ messages not synced",
-                        793: "__count__ unread messages",
-                        796: "Unstar messages",
-                        811: "__participants__ joined using your invite",
-                        812: "You invited __participants__",
-                        814: "__number__ videos you tried adding have no content.",
-                        816: "__number__ videos you tried adding are larger than the __maxSize__ limit.",
-                        817: "View Contact Cards",
-                        834: "Call cannot be placed for more than __count__ participants",
-                        835: "You can only call up to __count__ contacts",
-                        836: "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.",
-                        837: "__count__ others",
-                        873: "__count__ pages",
-                        913: "__participants__ are no longer admins",
-                        917: "__participants__ are now admins",
-                        932: "__num__ invites sent",
-                        936: "__name__ were added to the list",
-                        937: "__name__ were removed from the list",
-                        946: "Missed group video call at __time__",
-                        947: "Missed group voice call at __time__",
-                        949: "Missed video call at __time__",
-                        951: "Missed voice call at __time__",
-                        954: "__count__ participants",
-                        956: "__contactName__ canceled their payment request for __currencyAndAmount__",
-                        957: "You canceled your payment request to __contactName__ for __currencyAndAmount__",
-                        958: "__contactName__ declined your payment request for __currencyAndAmount__.",
-                        959: "You declined __contactName__'s payment request for __currencyAndAmount__.",
-                        960: "__senderName__'s payment request for __currencyAndAmount__ to you expired.",
-                        961: "Your payment request to __receiverName__ for __currencyAndAmount__ expired.",
-                        968: "Requested __amount__ from You",
-                        969: "__senderName__ requested __amount__ from You",
-                        970: "__senderName__ requested __amount__ from __receiverName__",
-                        971: "Sent __amount__ to You",
-                        972: "__senderName__ sent __amount__ to You",
-                        973: "__senderName__ sent __amount__ to __receiverName__",
-                        976: "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.",
-                        989: "__count__ recipients",
-                        1021: "You created a broadcast list with __count__ recipients"
+                        522: "__unreadCount__ New Messages",
+                        524: "__number__ images you tried adding have no content.",
+                        525: "__number__ images you tried adding are larger than the __maxSize__ limit.",
+                        534: "This version expires in __num_days__ days. With the update, your phone won’t need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__",
+                        535: "This version expires in __num_days__ days. With the update, your phone won’t need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__",
+                        544: "Expires in __number__ days",
+                        545: "__count__ items",
+                        549: "__count__ Links",
+                        550: "Accurate to __accuracy__ M",
+                        551: "__count__ people",
+                        556: "Live until __time__",
+                        557: "__hours__h left",
+                        559: "__minutes__m left",
+                        560: "__sharers__ are sharing live location",
+                        562: "__count__ people are sharing live location",
+                        565: "You and __count__ others are sharing live location",
+                        567: "Updated __hours__h ago",
+                        569: "Updated __minutes__m ago",
+                        617: "__count__ remaining",
+                        635: "__contactName__ and __count__ other contacts",
+                        636: "__count__ contacts",
+                        637: "You can only send up to __count__ contacts",
+                        700: "__count__ contacts excluded",
+                        701: "__count__ Products",
+                        702: "This photo is too small. Please select a photo with height and width of at least __size__ pixels.",
+                        707: "All",
+                        708: "__count__ reactions weren't sent",
+                        712: 'Remove label "__labelName__" from __count__ items',
+                        721: "Retrying in __number__ seconds…",
+                        740: "See __count__ archived chats",
+                        741: "__count__ selected",
+                        755: "__count__ Screenshots Maximum",
+                        760: "__days__d",
+                        761: "__hours__h",
+                        762: "__minutes__m",
+                        763: "__seconds__s",
+                        765: "Star messages",
+                        771: "__count__ suspicious links",
+                        776: "__time__ left",
+                        777: "Maximum number of files uploaded. __number__ files have been ignored.",
+                        785: "__count__ @ messages not synced",
+                        786: "__count__ unread messages",
+                        789: "Unstar messages",
+                        804: "__participants__ joined using your invite",
+                        805: "You invited __participants__",
+                        807: "__number__ videos you tried adding have no content.",
+                        809: "__number__ videos you tried adding are larger than the __maxSize__ limit.",
+                        810: "View Contact Cards",
+                        827: "Call cannot be placed for more than __count__ participants",
+                        828: "You can only call up to __count__ contacts",
+                        829: "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.",
+                        830: "__count__ others",
+                        866: "__count__ pages",
+                        906: "__participants__ are no longer admins",
+                        910: "__participants__ are now admins",
+                        925: "__num__ invites sent",
+                        929: "__name__ were added to the list",
+                        930: "__name__ were removed from the list",
+                        939: "Missed group video call at __time__",
+                        940: "Missed group voice call at __time__",
+                        942: "Missed video call at __time__",
+                        944: "Missed voice call at __time__",
+                        947: "__count__ participants",
+                        949: "__contactName__ canceled their payment request for __currencyAndAmount__",
+                        950: "You canceled your payment request to __contactName__ for __currencyAndAmount__",
+                        951: "__contactName__ declined your payment request for __currencyAndAmount__.",
+                        952: "You declined __contactName__'s payment request for __currencyAndAmount__.",
+                        953: "__senderName__'s payment request for __currencyAndAmount__ to you expired.",
+                        954: "Your payment request to __receiverName__ for __currencyAndAmount__ expired.",
+                        961: "Requested __amount__ from You",
+                        962: "__senderName__ requested __amount__ from You",
+                        963: "__senderName__ requested __amount__ from __receiverName__",
+                        964: "Sent __amount__ to You",
+                        965: "__senderName__ sent __amount__ to You",
+                        966: "__senderName__ sent __amount__ to __receiverName__",
+                        969: "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.",
+                        982: "__count__ recipients",
+                        1014: "You created a broadcast list with __count__ recipients"
                     }
                 ]
             },
@@ -20297,12 +20357,12 @@
                 function L() {
                     var e, t;
                     0 === h && (m.length || S.length) && (h = 1, o || (t = 0, o = "undefined" == typeof MutationObserver || O && O.navigator && O.navigator.standalone ? f ? function() {
-                        f.resolve().then(H)
+                        f.resolve().then(Y)
                     } : "function" == typeof p ? function() {
-                        p(H)
+                        p(Y)
                     } : function() {
-                        setTimeout(H, 0)
-                    } : (e = document.createTextNode(""), new MutationObserver(H).observe(e, {
+                        setTimeout(Y, 0)
+                    } : (e = document.createTextNode(""), new MutationObserver(Y).observe(e, {
                         characterData: !0
                     }), function() {
                         e.data = t = 1 - t
@@ -20378,11 +20438,11 @@
                     }
                 }
 
-                function F(e, t, r, n, i) {
-                    t === e._resolveLevel && (B(e), W(e, t, r, n, i))
+                function B(e, t, r, n, i) {
+                    t === e._resolveLevel && (F(e), W(e, t, r, n, i))
                 }
 
-                function B(e) {
+                function F(e) {
                     if (e._parent) {
                         var t = e._parent;
                         if (e._parent = void 0, t._child === e) t._child = void 0;
@@ -20444,7 +20504,7 @@
                     for (; 0 !== e.length;) t.push(e.pop())
                 }
 
-                function H() {
+                function Y() {
                     for (; 0 !== _.length || 0 !== m.length;) {
                         0 === _.length && $(m, _);
                         var e = _.pop(),
@@ -20566,10 +20626,10 @@
                     if (t)
                         if (void 0 === e && (e = new M), J(t, !1)) {
                             var n = new T;
-                            B(t), R(n, t), F(n, 0, !1, !1, e)
-                        } else F(t, t._resolveLevel, !1, !1, e)
+                            F(t), R(n, t), B(n, 0, !1, !1, e)
+                        } else B(t, t._resolveLevel, !1, !1, e)
                 };
-                var Y = null == (null == O ? void 0 : O.dispatchEvent) ? null : function(e) {
+                var H = null == (null == O ? void 0 : O.dispatchEvent) ? null : function(e) {
                     (0, c.default)(r, e);
                     var t = (0, l.default)(r);
 
@@ -20593,7 +20653,7 @@
 
                 function K(e, t) {
                     if (null != (null == O ? void 0 : O.dispatchEvent)) {
-                        var r = new Y("unhandledrejection", {
+                        var r = new H("unhandledrejection", {
                             promise: e,
                             reason: t
                         });
@@ -20734,6 +20794,20 @@
                     return e
                 }
             },
+            45996: (e, t) => {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.isBoolean = function(e) {
+                    return "boolean" == typeof e
+                }, t.isFunction = function(e) {
+                    return "function" == typeof e
+                }, t.isNumber = function(e) {
+                    return "number" == typeof e
+                }, t.isString = function(e) {
+                    return "string" == typeof e
+                }
+            },
             80736: (e, t) => {
                 "use strict";
                 Object.defineProperty(t, "__esModule", {
@@ -20742,6 +20816,119 @@
                     for (var r = [], n = e.length, i = t.length, a = Math.max(n, i), o = 0; o < a; o++) o < n && r.push(e[o]), o < i && r.push(t[o]);
                     return r
                 }
+            },
+            14203: (e, t, r) => {
+                "use strict";
+                var n = r(7914);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = void 0;
+                var i = n(r(5816)),
+                    a = n(r(89372)),
+                    o = n(r(83996)),
+                    s = function e(t, r, n) {
+                        (0, a.default)(this, e), this.key = t, this.value = r, this.timestamp = null != n ? n : Date.now(), this.prev = void 0, this.next = void 0
+                    },
+                    u = function() {
+                        function e() {
+                            (0, a.default)(this, e), this.start = new s(null, null), this.end = new s(null, null), this.start.next = this.end, this.end.prev = this.start
+                        }
+                        return (0, i.default)(e, [{
+                            key: "append",
+                            value: function(e, t) {
+                                var r = new s(e, t),
+                                    n = this.end,
+                                    i = (0, o.default)(this.end.prev, "this.end.prev");
+                                return r.next = n, r.prev = i, n.prev = r, i.next = r, r
+                            }
+                        }, {
+                            key: "prepend",
+                            value: function(e, t) {
+                                var r = new s(e, t),
+                                    n = this.start,
+                                    i = (0, o.default)(this.start.next, "this.start.next");
+                                return r.prev = n, r.next = i, n.next = r, i.prev = r, r
+                            }
+                        }, {
+                            key: "popEnd",
+                            value: function() {
+                                var e = (0, o.default)(this.end.prev, "this.end.prev");
+                                if (e !== this.start) {
+                                    var t = (0, o.default)(e.prev, "entry.prev"),
+                                        r = (0, o.default)(e.next, "entry.next");
+                                    return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
+                                }
+                            }
+                        }, {
+                            key: "popFront",
+                            value: function() {
+                                var e = (0, o.default)(this.start.next, "this.start.next");
+                                if (e !== this.end) {
+                                    var t = (0, o.default)(e.prev, "entry.prev"),
+                                        r = (0, o.default)(e.next, "entry.next");
+                                    return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
+                                }
+                            }
+                        }, {
+                            key: "peekFront",
+                            value: function() {
+                                var e = (0, o.default)(this.start.next, "this.start.next");
+                                if (e !== this.end) return e
+                            }
+                        }, {
+                            key: "peekEnd",
+                            value: function() {
+                                var e = (0, o.default)(this.end.prev, "this.end.prev");
+                                if (e !== this.start) return e
+                            }
+                        }, {
+                            key: "remove",
+                            value: function(e) {
+                                var t = (0, o.default)(e.prev, "entry.prev"),
+                                    r = (0, o.default)(e.next, "entry.next");
+                                return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
+                            }
+                        }, {
+                            key: "stats",
+                            value: function() {
+                                for (var e = this.start, t = 0; e !== this.end;) e = (0, o.default)(e.next, "entry.next"), t += 1;
+                                return t - 1
+                            }
+                        }]), e
+                    }(),
+                    c = function() {
+                        function e() {
+                            (0, a.default)(this, e), this.keyMap = new Map, this.entryList = new u
+                        }
+                        return (0, i.default)(e, [{
+                            key: "lookup",
+                            value: function(e) {
+                                var t = this.keyMap.get(e);
+                                if (t) {
+                                    this.entryList.remove(t);
+                                    var r = this.entryList.append(t.key, t.value);
+                                    return this.keyMap.set(r.key, r), t.value
+                                }
+                            }
+                        }, {
+                            key: "add",
+                            value: function(e, t) {
+                                var r = this.keyMap.get(e);
+                                return r ? r.value = t : (r = this.entryList.append(e, t), this.keyMap.set(e, r)), t
+                            }
+                        }, {
+                            key: "expireKeys",
+                            value: function(e) {
+                                for (var t = this.entryList.peekFront(); t && t.timestamp < e;) this.entryList.popFront(), this.keyMap.delete(t.key), t = this.entryList.peekFront()
+                            }
+                        }, {
+                            key: "printStats",
+                            value: function() {
+                                console.log("========================== STATS ============================="), console.log("entry list: ", this.entryList.stats()), console.log("map keys: ", this.keyMap.size)
+                            }
+                        }]), e
+                    }();
+                t.default = c
             },
             96091: (e, t) => {
                 "use strict";
@@ -20815,11 +21002,35 @@
                     d = r(26625),
                     f = r(23144),
                     p = o(r(21077)),
-                    h = o(r(41006)),
+                    h = function(e, t) {
+                        if (!t && e && e.__esModule) return e;
+                        if (null === e || "object" != typeof e && "function" != typeof e) return {
+                            default: e
+                        };
+                        var r = g(t);
+                        if (r && r.has(e)) return r.get(e);
+                        var n = {},
+                            i = Object.defineProperty && Object.getOwnPropertyDescriptor;
+                        for (var a in e)
+                            if ("default" !== a && Object.prototype.hasOwnProperty.call(e, a)) {
+                                var o = i ? Object.getOwnPropertyDescriptor(e, a) : null;
+                                o && (o.get || o.set) ? Object.defineProperty(n, a, o) : n[a] = e[a]
+                            } n.default = e, r && r.set(e, n);
+                        return n
+                    }(r(41006)),
                     _ = r(92162),
-                    m = o(r(52176)),
-                    g = [f.AVDeviceStatusCode.VideoDeviceInUse, f.AVDeviceStatusCode.AudioDeviceInUse, f.AVDeviceStatusCode.AudioCaptureDeviceInUse, f.AVDeviceStatusCode.AudioPlaybackDeviceInUse, f.AVDeviceStatusCode.VideoDeviceOther, f.AVDeviceStatusCode.AudioCaptureDeviceOther, f.AVDeviceStatusCode.AudioPlaybackDeviceOther, f.AVDeviceStatusCode.AudioDeviceOther],
-                    v = function() {
+                    m = o(r(52176));
+
+                function g(e) {
+                    if ("function" != typeof WeakMap) return null;
+                    var t = new WeakMap,
+                        r = new WeakMap;
+                    return (g = function(e) {
+                        return e ? r : t
+                    })(e)
+                }
+                var v = [f.AVDeviceStatusCode.VideoDeviceInUse, f.AVDeviceStatusCode.AudioDeviceInUse, f.AVDeviceStatusCode.AudioCaptureDeviceInUse, f.AVDeviceStatusCode.AudioPlaybackDeviceInUse, f.AVDeviceStatusCode.VideoDeviceOther, f.AVDeviceStatusCode.AudioCaptureDeviceOther, f.AVDeviceStatusCode.AudioPlaybackDeviceOther, f.AVDeviceStatusCode.AudioDeviceOther],
+                    b = function() {
                         function e() {
                             var t = this;
                             (0, c.default)(this, e), this._devices = [], this._queue = new d.PromiseQueue, this._handleDeviceStatusChanged = function() {
@@ -20828,7 +21039,7 @@
                                     return s.default.wrap((function(e) {
                                         for (;;) switch (e.prev = e.next) {
                                             case 0:
-                                                if (i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`DeviceId: ${a}, Type: ${r}, Code: ${n}, Context: ${o}`, (u = h.default.getSelectedDevice(t._devices, r)) && u.uid === a) {
+                                                if (i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`DeviceId: ${a}, Type: ${r}, Code: ${n}, Context: ${o}`, (u = h.getSelectedDevice(t._devices, r)) && u.uid === a) {
                                                     e.next = 5;
                                                     break
                                                 }
@@ -20840,7 +21051,7 @@
                                                 }
                                                 return i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`ignoring status code: ${n} as not critical`, e.abrupt("return");
                                             case 8:
-                                                g.some((function(e) {
+                                                v.some((function(e) {
                                                     return e === n
                                                 })) && t._deviceStatusChangeToast(a, r, n), e.t0 = o, e.next = e.t0 === f.AVDeviceStatusContext.DeviceSelection ? 12 : e.t0 === f.AVDeviceStatusContext.DeviceMidstream || e.t0 === f.AVDeviceStatusContext.DeviceSetup || e.t0 === f.AVDeviceStatusContext.DeviceStop ? 15 : e.t0 === f.AVDeviceStatusContext.DeviceOther ? 17 : 18;
                                                 break;
@@ -20867,7 +21078,7 @@
                                 }))
                             }
                         }
-                        var t, o, v, b, y;
+                        var t, o, g, b, y;
                         return (0, l.default)(e, [{
                             key: "init",
                             value: function() {
@@ -20929,7 +21140,7 @@
                                     return s.default.wrap((function(a) {
                                         for (;;) switch (a.prev = a.next) {
                                             case 0:
-                                                return i(2, void 0, void 0, void 0, ["device-manager"])`user selected audio with uid: ${t} and type: ${e}`, o = e === f.AVDeviceType.AudioInput ? t : h.default.getSelectedDeviceIdOrDefault(n._devices, f.AVDeviceType.AudioInput), u = e === f.AVDeviceType.AudioOutput ? t : h.default.getSelectedDeviceIdOrDefault(n._devices, f.AVDeviceType.AudioOutput), a.next = 5, n._selectAudioDevices(n._devices, o, u);
+                                                return i(2, void 0, void 0, void 0, ["device-manager"])`user selected audio with uid: ${t} and type: ${e}`, o = e === f.AVDeviceType.AudioInput ? t : h.getSelectedDeviceIdOrDefault(n._devices, f.AVDeviceType.AudioInput), u = e === f.AVDeviceType.AudioOutput ? t : h.getSelectedDeviceIdOrDefault(n._devices, f.AVDeviceType.AudioOutput), a.next = 5, n._selectAudioDevices(n._devices, o, u);
                                             case 5:
                                                 a.sent ? (e === f.AVDeviceType.AudioInput ? (n._isDefaultMicrophoneOverriden = !!r, n.isDefaultMicrophoneOverriden() ? p.default.selectDevice(e, t) : p.default.clearPreferences(e)) : e === f.AVDeviceType.AudioOutput && (n._isDefaultSpeakerOverriden = !!r, n.isDefaultSpeakerOverriden() ? p.default.selectDevice(e, t) : p.default.clearPreferences(e)), n._notify()) : n._requestDeviceListRefreshAndNotify();
                                             case 7:
@@ -20977,7 +21188,7 @@
                                         case 10:
                                             return e.abrupt("break", 17);
                                         case 11:
-                                            if (o = r === f.AVDeviceType.AudioOutput ? a : h.default.getSelectedDevice(this._devices, f.AVDeviceType.AudioOutput), !(u = r === f.AVDeviceType.AudioInput ? a : h.default.getSelectedDevice(this._devices, f.AVDeviceType.AudioInput)) || !o) {
+                                            if (o = r === f.AVDeviceType.AudioOutput ? a : h.getSelectedDevice(this._devices, f.AVDeviceType.AudioOutput), !(u = r === f.AVDeviceType.AudioInput ? a : h.getSelectedDevice(this._devices, f.AVDeviceType.AudioInput)) || !o) {
                                                 e.next = 16;
                                                 break
                                             }
@@ -21029,7 +21240,7 @@
                                 return s.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
-                                            return a || (this._prevSelectedMicrophone = h.default.getSelectedDevice(t, f.AVDeviceType.AudioInput), this._prevSelectedSpeaker = h.default.getSelectedDevice(t, f.AVDeviceType.AudioOutput)), e.next = 3, this._selectAudioWrapper(r, n);
+                                            return a || (this._prevSelectedMicrophone = h.getSelectedDevice(t, f.AVDeviceType.AudioInput), this._prevSelectedSpeaker = h.getSelectedDevice(t, f.AVDeviceType.AudioOutput)), e.next = 3, this._selectAudioWrapper(r, n);
                                         case 3:
                                             return o = e.sent, i(2, void 0, void 0, void 0, ["device-manager"])`select_audio_device: (${r}), (${n}) finished: ${String(o)}`, u = !1, o && (u = this._updateSelectedAudioDevices(t, r, n)), i(2, void 0, void 0, void 0, ["device-manager"])`select_audio_device: (${r}), (${n}) updated: ${String(u)}`, e.abrupt("return", u);
                                         case 9:
@@ -21042,12 +21253,12 @@
                             })
                         }, {
                             key: "_selectCameraDevice",
-                            value: (v = (0, u.default)(s.default.mark((function e(t, r, n) {
+                            value: (g = (0, u.default)(s.default.mark((function e(t, r, n) {
                                 var a, o;
                                 return s.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
-                                            return n || (this._prevSelectedCamera = h.default.getSelectedDevice(t, f.AVDeviceType.Video)), e.next = 3, this._selectCameraWrapper(r);
+                                            return n || (this._prevSelectedCamera = h.getSelectedDevice(t, f.AVDeviceType.Video)), e.next = 3, this._selectCameraWrapper(r);
                                         case 3:
                                             return a = e.sent, o = !1, i(2, void 0, void 0, void 0, ["device-manager"])`select_camera: (${r}), finished: ${String(a)}`, a && (o = this._updateSelectedDevice(t, f.AVDeviceType.Video, r)), i(2, void 0, void 0, void 0, ["device-manager"])`select_camera: (${r}), updated: ${String(o)}`, e.abrupt("return", o);
                                         case 9:
@@ -21056,7 +21267,7 @@
                                     }
                                 }), e, this)
                             }))), function() {
-                                return v.apply(this, arguments)
+                                return g.apply(this, arguments)
                             })
                         }, {
                             key: "_selectCameraWrapper",
@@ -21088,7 +21299,7 @@
                                     i = e.find((function(e) {
                                         return e.uid === r && e.isConnected && e.deviceType === t
                                     }));
-                                return !(!i && r !== h.default.DEFAULT_AV_DEVICE_ID) && (n && (n.isSelected = !1), i && (i.isSelected = !0, this._deviceChangeToast(i)), !0)
+                                return !(!i && r !== h.DEFAULT_AV_DEVICE_ID) && (n && (n.isSelected = !1), i && (i.isSelected = !0, this._deviceChangeToast(i)), !0)
                             }
                         }, {
                             key: "_refreshDeviceListAndNotify",
@@ -21127,7 +21338,7 @@
                             value: function() {
                                 var e = this._findDevicePerUserPref(f.AVDeviceType.AudioInput, this._devices),
                                     t = this._findDevicePerUserPref(f.AVDeviceType.AudioOutput, this._devices);
-                                return null == e && null == t ? a.resolve(!1) : (null != e ? this._isDefaultMicrophoneOverriden = !0 : e = h.default.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioInput), null != t ? this._isDefaultSpeakerOverriden = !0 : t = h.default.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioOutput), i(2, void 0, void 0, void 0, ["device-manager"])`initializing audio with (${e}  ${t})`, this._selectAudioDevices(this._devices, e, t))
+                                return null == e && null == t ? a.resolve(!1) : (null != e ? this._isDefaultMicrophoneOverriden = !0 : e = h.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioInput), null != t ? this._isDefaultSpeakerOverriden = !0 : t = h.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioOutput), i(2, void 0, void 0, void 0, ["device-manager"])`initializing audio with (${e}  ${t})`, this._selectAudioDevices(this._devices, e, t))
                             }
                         }, {
                             key: "_autoSelectCameraIfNeeded",
@@ -21140,7 +21351,7 @@
                             value: function(e, t) {
                                 var r, n, i = this._getAutoSelectDeviceId(f.AVDeviceType.AudioInput, e, t),
                                     o = this._getAutoSelectDeviceId(f.AVDeviceType.AudioOutput, e, t);
-                                return null != i || null != o ? (i = null !== (r = i) && void 0 !== r ? r : h.default.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioInput), o = null !== (n = o) && void 0 !== n ? n : h.default.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioOutput), this._selectAudioDevices(e, i, o)) : a.resolve(!0)
+                                return null != i || null != o ? (i = null !== (r = i) && void 0 !== r ? r : h.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioInput), o = null !== (n = o) && void 0 !== n ? n : h.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioOutput), this._selectAudioDevices(e, i, o)) : a.resolve(!0)
                             }
                         }, {
                             key: "_refreshDeviceList",
@@ -21155,7 +21366,7 @@
                                                 e.next = 8;
                                                 break
                                             }
-                                            return n = h.default.getDiff(this._devices, r), e.next = 8, a.all([this._autoSelectCameraIfNeeded(r, n), this._autoSelectAudioIfNeeded(r, n)]);
+                                            return n = h.getDiff(this._devices, r), e.next = 8, a.all([this._autoSelectCameraIfNeeded(r, n), this._autoSelectAudioIfNeeded(r, n)]);
                                         case 8:
                                             this._devices = r;
                                         case 9:
@@ -21179,8 +21390,8 @@
                                     var t;
                                     null === (t = n) || void 0 === t || t.getAVDevices((function(t) {
                                         if (t) {
-                                            var r = h.default.getSanitizedDevices(t);
-                                            e(r.sort(h.default.deviceInfoComparator))
+                                            var r = h.getSanitizedDevices(t);
+                                            e(r.sort(h.deviceInfoComparator))
                                         } else e([])
                                     }))
                                 }))
@@ -21190,9 +21401,9 @@
                             value: function(e, t, r) {
                                 var n = this._devices,
                                     a = t,
-                                    o = h.default.getSelectedDevice(n, e),
-                                    s = h.default.getSystemDefaultDevice(n, e),
-                                    u = h.default.getSystemDefaultDevice(a, e);
+                                    o = h.getSelectedDevice(n, e),
+                                    s = h.getSystemDefaultDevice(n, e),
+                                    u = h.getSystemDefaultDevice(a, e);
                                 if (u && (!o || !a.some((function(e) {
                                         return e.uid === o.uid && e.isConnected && e.isSelected
                                     })))) return i(2, void 0, void 0, void 0, ["device-manager", "ads"])`prev device unavailable. Switching to: ${u.uid}-${u.name}`, u.uid;
@@ -21207,7 +21418,7 @@
                                 }
                                 return a.some((function(t) {
                                     return t.isConnected && t.deviceType === e
-                                })) ? (i(2, void 0, void 0, void 0, ["device-manager", "ads"])`no changes for ${e}`, null) : (i(2, void 0, void 0, void 0, ["device-manager", "ads"])`no other device detected. Switching to EMPTY`, h.default.DEFAULT_AV_DEVICE_ID)
+                                })) ? (i(2, void 0, void 0, void 0, ["device-manager", "ads"])`no changes for ${e}`, null) : (i(2, void 0, void 0, void 0, ["device-manager", "ads"])`no other device detected. Switching to EMPTY`, h.DEFAULT_AV_DEVICE_ID)
                             }
                         }, {
                             key: "_deviceChangeToast",
@@ -21228,7 +21439,7 @@
                             }
                         }]), e
                     }();
-                e.exports = new v
+                e.exports = new b
             },
             21077: (e, t, r) => {
                 "use strict";
@@ -21292,83 +21503,71 @@
                 "use strict";
                 Object.defineProperty(t, "__esModule", {
                     value: !0
-                }), t.default = void 0;
+                }), t.DEFAULT_AV_DEVICE_ID = void 0, t.deviceInfoComparator = function(e, t) {
+                    if (e.deviceType !== t.deviceType) return e.deviceType - t.deviceType;
+                    if (e.isSystemDefault || t.isSystemDefault) return e.isSystemDefault ? -1 : 1;
+                    return e.isConnected === t.isConnected ? 0 : e.isConnected ? -1 : 1
+                }, t.getAvailableDevices = function(e, t) {
+                    var r;
+                    return null !== (r = null == e ? void 0 : e.filter((function(e) {
+                        return e.deviceType === t && e.isConnected
+                    }))) && void 0 !== r ? r : []
+                }, t.getDiff = function(e, t) {
+                    var r = t.filter((function(t) {
+                            return !e.some((function(e) {
+                                return e.uid === t.uid
+                            }))
+                        })),
+                        n = e.filter((function(e) {
+                            return !t.some((function(t) {
+                                return t.uid === e.uid
+                            }))
+                        }));
+                    return {
+                        added: r,
+                        removed: n
+                    }
+                }, t.getSanitizedDevices = function(e) {
+                    var t = null == e ? void 0 : e.map((function(e) {
+                            return function(e) {
+                                return {
+                                    uid: e.uid,
+                                    name: e.name,
+                                    deviceType: Number(e.deviceType),
+                                    isConnected: Boolean(e.connected),
+                                    isSelected: Boolean(e.isSelected),
+                                    isSystemDefault: Boolean(e.isDefault)
+                                }
+                            }(e)
+                        })),
+                        r = null == t ? void 0 : t.filter((function(e) {
+                            return e.deviceType !== n.AVDeviceType.NotIdentified && e.isConnected
+                        }));
+                    return null != r ? r : []
+                }, t.getSelectedDevice = a, t.getSelectedDeviceIdOrDefault = function(e, t) {
+                    var r, n;
+                    return null !== (r = null === (n = a(e, t)) || void 0 === n ? void 0 : n.uid) && void 0 !== r ? r : ""
+                }, t.getSystemDefaultCamera = function(e) {
+                    return i(e, n.AVDeviceType.Video)
+                }, t.getSystemDefaultDevice = i, t.getSystemDefaultMicrophone = function(e) {
+                    return i(e, n.AVDeviceType.AudioInput)
+                }, t.getSystemDefaultSpeaker = function(e) {
+                    return i(e, n.AVDeviceType.AudioOutput)
+                };
                 var n = r(23144);
 
-                function i(e) {
-                    return {
-                        uid: e.uid,
-                        name: e.name,
-                        deviceType: Number(e.deviceType),
-                        isConnected: Boolean(e.connected),
-                        isSelected: Boolean(e.isSelected),
-                        isSystemDefault: Boolean(e.isDefault)
-                    }
-                }
-
-                function a(e, t) {
+                function i(e, t) {
                     return null == e ? void 0 : e.find((function(e) {
                         return e.isConnected && e.isSystemDefault && e.deviceType === t
                     }))
                 }
 
-                function o(e, t) {
+                function a(e, t) {
                     return null == e ? void 0 : e.find((function(e) {
                         return e.isConnected && e.isSelected && e.deviceType === t
                     }))
                 }
-                var s = {
-                    parseDeviceInfo: i,
-                    getAvailableDevices: function(e, t) {
-                        var r;
-                        return null !== (r = null == e ? void 0 : e.filter((function(e) {
-                            return e.deviceType === t && e.isConnected
-                        }))) && void 0 !== r ? r : []
-                    },
-                    getSanitizedDevices: function(e) {
-                        var t = null == e ? void 0 : e.map((function(e) {
-                                return i(e)
-                            })),
-                            r = null == t ? void 0 : t.filter((function(e) {
-                                return e.deviceType !== n.AVDeviceType.NotIdentified && e.isConnected
-                            }));
-                        return null != r ? r : []
-                    },
-                    deviceInfoComparator: function(e, t) {
-                        return e.deviceType !== t.deviceType ? e.deviceType - t.deviceType : e.isSystemDefault || t.isSystemDefault ? e.isSystemDefault ? -1 : 1 : e.isConnected === t.isConnected ? 0 : e.isConnected ? -1 : 1
-                    },
-                    getSystemDefaultDevice: a,
-                    getSelectedDevice: o,
-                    getSelectedDeviceIdOrDefault: function(e, t) {
-                        var r, n;
-                        return null !== (r = null === (n = o(e, t)) || void 0 === n ? void 0 : n.uid) && void 0 !== r ? r : ""
-                    },
-                    getSystemDefaultCamera: function(e) {
-                        return a(e, n.AVDeviceType.Video)
-                    },
-                    getSystemDefaultMicrophone: function(e) {
-                        return a(e, n.AVDeviceType.AudioInput)
-                    },
-                    getSystemDefaultSpeaker: function(e) {
-                        return a(e, n.AVDeviceType.AudioOutput)
-                    },
-                    getDiff: function(e, t) {
-                        return {
-                            added: t.filter((function(t) {
-                                return !e.some((function(e) {
-                                    return e.uid === t.uid
-                                }))
-                            })),
-                            removed: e.filter((function(e) {
-                                return !t.some((function(t) {
-                                    return t.uid === e.uid
-                                }))
-                            }))
-                        }
-                    },
-                    DEFAULT_AV_DEVICE_ID: ""
-                };
-                t.default = s
+                t.DEFAULT_AV_DEVICE_ID = ""
             },
             88487: (e, t, r) => {
                 "use strict";
@@ -21384,6 +21583,1838 @@
                 };
                 var i = n(r(83996)),
                     a = null
+            },
+            59980: (e, t, r) => {
+                "use strict";
+                var n = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.PLATFORM = t.FAQ_BASE_URL = void 0, t.getBusinessFaqUrl = function() {
+                    return s("general/chats/about-chatting-with-businesses")
+                }, t.getCannotConnectFaqUrl = function() {
+                    return s("web/troubleshooting/cant-connect-to-whatsapp-web-or-desktop")
+                }, t.getCatalogCartOnOffFaqUrl = function() {
+                    return s("general/account-and-profile/about-cart")
+                }, t.getCiphertextFaqUrl = function() {
+                    return s("general/security-and-privacy/seeing-waiting-for-this-message-this-may-take-a-while")
+                }, t.getCodeChangeFaqUrl = function() {
+                    return s("general/security-and-privacy/security-code-change-notification")
+                }, t.getCommunityHomeNuxUrl = function() {
+                    return s("general/about-community")
+                }, t.getE2EEnterpriseFaqUrl = function() {
+                    return s("general/security-and-privacy/end-to-end-encryption-for-business-messages")
+                }, t.getE2EFaqUrl = function() {
+                    return s("general/security-and-privacy/end-to-end-encryption")
+                }, t.getEphemeralFaqUrl = function() {
+                    return s("general/chats/about-disappearing-messages")
+                }, t.getFanoutPlaceholderFaqUrl = function() {
+                    return s("general/security-and-privacy/seeing-waiting-for-this-message-check-your-phone")
+                }, t.getFaqUrl = function() {
+                    return `${a}/web?lang=${i.default.getLocale()}`
+                }, t.getFrequentlyForwardedFaqUrl = function() {
+                    return s("general/chats/about-forwarding-limits")
+                }, t.getGroupInviteGrowthLockedFaqUrl = function() {
+                    return s("cxt/?entrypointid=invite-via-link-unavailable", !0)
+                }, t.getLinkDeviceFaqUrl = function() {
+                    return s("web/download-and-installation/how-to-link-a-device")
+                }, t.getLoginFaqUrl = function() {
+                    return s("web/download-and-installation/how-to-log-in-or-out")
+                }, t.getMDCodeChangeFaqUrl = function() {
+                    return `${a}/${i.default.getLocale()}/web/26000361`
+                }, t.getMdOptInFaqUrl = function() {
+                    return s("general/download-and-installation/about-linked-devices")
+                }, t.getNonVerifiedTransitionFaqUrl = function() {
+                    return s("general/business-account-becomes-a-standard-account")
+                }, t.getNotificationChromeFaqUrl = function() {
+                    return s("web/troubleshooting/cant-receive-notifications-on-chrome")
+                }, t.getNotificationEdgeFaqUrl = function() {
+                    return s("web/troubleshooting/cant-receive-notifications-on-microsoft-edge")
+                }, t.getNotificationFirefoxFaqUrl = function() {
+                    return s("web/troubleshooting/cant-receive-notifications-on-firefox")
+                }, t.getNotificationOperaFaqUrl = function() {
+                    return s("web/troubleshooting/cant-receive-notifications-on-opera")
+                }, t.getNotificationSafariFaqUrl = function() {
+                    return s("web/troubleshooting/cant-receive-notifications-on-safari")
+                }, t.getRevokeFaqUrl = function() {
+                    return s("web/chats/how-to-delete-messages")
+                }, t.getSupportChatFaqUrl = function() {
+                    return s("general/what-information-does-whatsapp-collect-when-you-contact-support")
+                }, t.getSupportChatSafetyFaqUrl = function() {
+                    return s("general/about-safely-communicating-with-whatsapp-support")
+                }, t.getSuspiciousLinkFaqUrl = function() {
+                    return s("web/chats/suspicious-links")
+                }, t.getUnverifiedTransitionFaqUrl = function() {
+                    return s("general/business-account-becomes-unverified")
+                }, t.getVerifiedHighFaqUrl = function() {
+                    return s("general/verified-business-account")
+                }, t.getVerifiedLowUnknownFaqUrl = function() {
+                    return s("general/unverified-business-account")
+                }, t.getVerifiedTransitionFaqUrl = function() {
+                    return s("general/business-account-becomes-verified")
+                }, t.getViewOnceFaqUrl = function() {
+                    return s("general/chats/about-view-once")
+                };
+                var i = n(r(6210)),
+                    a = "https://faq.whatsapp.com";
+                t.FAQ_BASE_URL = a;
+                var o = "web";
+
+                function s(e) {
+                    var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+                    return t ? `${a}/${e}&platform=web&lang=${i.default.getLocale()}` : `${a}/${e}?lang=${i.default.getLocale()}`
+                }
+                t.PLATFORM = o
+            },
+            19167: (e, t, r) => {
+                "use strict";
+                var n = r(17885).log,
+                    i = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.L10n = void 0;
+                var a = i(r(63038)),
+                    o = i(r(34575)),
+                    s = i(r(93913)),
+                    u = i(r(19793)),
+                    c = i(r(99842)),
+                    l = i(r(83046)),
+                    d = i(r(42317)),
+                    f = i(r(97331)),
+                    p = i(r(30381)),
+                    h = r(32940),
+                    _ = r(85823),
+                    m = i(r(4966)),
+                    g = i(r(22488)),
+                    v = i(r(57487)),
+                    b = new Set(["⁦", "‪"]),
+                    y = new Set(["ar", "ar-XB", "fa", "ur", "he", "dv", "ku"]),
+                    w = new Set(["ar", "ar-XB", "fa"]),
+                    E = "٠١٢٣٤٥٦٧٨٩".split("");
+
+                function S(e) {
+                    return E[parseInt(e, 10)]
+                }
+                var x = new Error("Unimplemented method"),
+                    A = function(e) {
+                        (0, u.default)(r, e);
+                        var t = (0, c.default)(r);
+
+                        function r(e, n, i) {
+                            var a;
+                            if ((0, o.default)(this, r), a = t.call(this), !e || !n) throw x;
+                            return a._locale = e, a.localeStrings = {}, a.localeStrings[_.DEFAULT_LOCALE] = n, a.fbtStrings = {}, a.fbtStrings[_.DEFAULT_LOCALE] = {
+                                en_GB: {}
+                            }, a.markTranslations = i, a.customizeMoment(), a
+                        }
+                        return (0, s.default)(r, [{
+                            key: "getLocale",
+                            value: function() {
+                                throw x
+                            }
+                        }, {
+                            key: "getFbtTranslations",
+                            value: function() {
+                                throw x
+                            }
+                        }, {
+                            key: "setLocale",
+                            value: function() {
+                                throw x
+                            }
+                        }, {
+                            key: "normalizeLocale",
+                            value: function(e) {
+                                var t = e.replace(/-/g, "_").toLowerCase(),
+                                    r = this._getTranslationFilename(t);
+                                if (r) return r;
+                                for (var n = t; n;) {
+                                    var i = (n = n.split("_").slice(0, -1).join("_")) && this._getTranslationFilename(n);
+                                    if (i) return i
+                                }
+                            }
+                        }, {
+                            key: "isLocaleSupported",
+                            value: function(e) {
+                                return !!e && !!this.normalizeLocale(e)
+                            }
+                        }, {
+                            key: "_getTranslationFilename",
+                            value: function(e) {
+                                var t = m.default[e] || e;
+                                return v.default[t]
+                            }
+                        }, {
+                            key: "isRTL",
+                            value: function() {
+                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : this.getLocale();
+                                return y.has(e)
+                            }
+                        }, {
+                            key: "LR",
+                            value: function(e, t) {
+                                return this.isRTL() ? t : e
+                            }
+                        }, {
+                            key: "embedDir",
+                            value: function(e) {
+                                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : this.isRTL();
+                                return t ? this.embedRTL(e) : this.embedLTR(e)
+                            }
+                        }, {
+                            key: "forceDir",
+                            value: function(e) {
+                                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : this.isRTL();
+                                return t ? this.forceRTL(e) : this.forceLTR(e)
+                            }
+                        }, {
+                            key: "embedLTR",
+                            value: function(e) {
+                                return "‪" + e + "‬"
+                            }
+                        }, {
+                            key: "embedRTL",
+                            value: function(e) {
+                                return "‫" + e + "‬"
+                            }
+                        }, {
+                            key: "isolateLTR",
+                            value: function(e) {
+                                return "⁦" + e + "⁩"
+                            }
+                        }, {
+                            key: "isolateRTL",
+                            value: function(e) {
+                                return "⁧" + e + "⁩"
+                            }
+                        }, {
+                            key: "forceLTR",
+                            value: function(e) {
+                                return "‎" + e
+                            }
+                        }, {
+                            key: "forceRTL",
+                            value: function(e) {
+                                return "‏" + e
+                            }
+                        }, {
+                            key: "t",
+                            value: function(e, t, r) {
+                                "number" != typeof e && n(3)`l10n.t was called with an unprocessed id (${e}). If you just added a string on local, restarting your build may address the issue.`;
+                                var i = e,
+                                    a = null != t ? t._plural : null,
+                                    o = r || this.getLocale();
+                                this.localeStrings[o] || (o = _.DEFAULT_LOCALE);
+                                var s = this._getString(i, o, a);
+                                for (var u in this.markTranslations && (s ? o === _.DEFAULT_LOCALE && (s = "[" + s + "]") : (s = "!!" + i + "!!", n(2)`l10n:t string key "${i}" not found`)), s || (s = this._getString(i, _.DEFAULT_LOCALE, a)), s || n(2)`l10n:t string key "${i}" fallback failed`, t)
+                                    if (t.hasOwnProperty(u) && "_plural" !== u) {
+                                        var c = new RegExp("__" + u + "__", "g"),
+                                            l = void 0;
+                                        l = "string" == typeof t[u] && b.has(t[u].slice(0, 1)) ? t[u] : this.n(t[u], o), s = s.replace(c, l)
+                                    } return s
+                            }
+                        }, {
+                            key: "_getString",
+                            value: function(e, t, r) {
+                                var n = this.localeStrings[t] || this.localeStrings[_.DEFAULT_LOCALE];
+                                if (null == n) throw new Error(`Couldn't find translations for locale ${t} or default (${_.DEFAULT_LOCALE})`);
+                                if (!Array.isArray(n)) throw new Error("Unexpected locale format.");
+                                var i = (0, a.default)(n, 2),
+                                    o = i[0],
+                                    s = i[1],
+                                    u = o[e] || "";
+                                if (null == r) return u;
+                                var c = g.default[t];
+                                if (null == c) return u;
+                                var l = c.numbers[c.plurals(r)];
+                                return 1 === l ? u : s[2 === c.numbers.length && 2 === l ? e.toString() : `${e}_${l}`] || u
+                            }
+                        }, {
+                            key: "useArabicScriptDigits",
+                            value: function(e) {
+                                return w.has(e || this.getLocale())
+                            }
+                        }, {
+                            key: "isLatinAlphabetLanguage",
+                            value: function(e) {
+                                return f.default.isLatin(this.removeAccents(e))
+                            }
+                        }, {
+                            key: "n",
+                            value: function(e, t) {
+                                var r = e;
+                                return isNaN(r) || (r = r.toString()), this.useArabicScriptDigits(t) ? r.toString().replace(/[0-9]/g, S) : r
+                            }
+                        }, {
+                            key: "filesize",
+                            value: function(e) {
+                                var t = this;
+                                return this.n((0, d.default)(e, {
+                                    base: 2,
+                                    round: 0,
+                                    suffixes: {
+                                        B: t.t(461),
+                                        kB: t.t(463),
+                                        MB: t.t(464),
+                                        GB: t.t(462)
+                                    }
+                                }))
+                            }
+                        }, {
+                            key: "normalizeForm",
+                            value: function() {
+                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+                                return (0, h.normalizeForm)(e)
+                            }
+                        }, {
+                            key: "removeAccents",
+                            value: function() {
+                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+                                return (0, h.removeAccents)(e)
+                            }
+                        }, {
+                            key: "accentFold",
+                            value: function() {
+                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+                                return this.removeAccents(e).toLowerCase()
+                            }
+                        }, {
+                            key: "customizeMoment",
+                            value: function() {
+                                p.default.relativeTimeRounding(Math.floor), p.default.relativeTimeThreshold("s", 60), p.default.relativeTimeThreshold("m", 60), p.default.relativeTimeThreshold("h", 24)
+                            }
+                        }]), r
+                    }(l.default);
+                t.L10n = A
+            },
+            32940: (e, t, r) => {
+                "use strict";
+                var n = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.getLanguageCodeFromLocale = function(e) {
+                    return e.replace(/_/g, "-").split("-")[0].toLowerCase()
+                }, t.getRegionCodeFromLocale = function(e) {
+                    var t = e.replace(/_/g, "-").split("-");
+                    if (t.length <= 1) return null;
+                    return t[t.length - 1].toUpperCase()
+                }, t.normalizeForm = a, t.removeAccents = function() {
+                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+                    return (0, i.default)(a(e).replace(/(?:[\^`\xA8\xAF\xB4\xB7\xB8\u02B0-\u034E\u0350-\u0357\u035D-\u0362\u0374\u0375\u037A\u0384\u0385\u0483-\u0487\u0559\u0591-\u05A1\u05A3-\u05BD\u05BF\u05C1\u05C2\u05C4\u064B-\u0652\u0657\u0658\u06DF\u06E0\u06E5\u06E6\u06EA-\u06EC\u0730-\u074A\u07A6-\u07B0\u07EB-\u07F5\u0818\u0819\u08E3-\u08FE\u093C\u094D\u0951-\u0954\u0971\u09BC\u09CD\u0A3C\u0A4D\u0ABC\u0ACD\u0AFD-\u0AFF\u0B3C\u0B4D\u0B55\u0BCD\u0C4D\u0CBC\u0CCD\u0D3B\u0D3C\u0D4D\u0DCA\u0E47-\u0E4C\u0E4E\u0EBA\u0EC8-\u0ECC\u0F18\u0F19\u0F35\u0F37\u0F39\u0F3E\u0F3F\u0F82-\u0F84\u0F86\u0F87\u0FC6\u1037\u1039\u103A\u1063\u1064\u1069-\u106D\u1087-\u108D\u108F\u109A\u109B\u135D-\u135F\u17C9-\u17D3\u17DD\u1939-\u193B\u1A75-\u1A7C\u1A7F\u1AB0-\u1ABD\u1B34\u1B44\u1B6B-\u1B73\u1BAA\u1BAB\u1C36\u1C37\u1C78-\u1C7D\u1CD0-\u1CE8\u1CED\u1CF4\u1CF7-\u1CF9\u1D2C-\u1D6A\u1DC4-\u1DCF\u1DF5-\u1DF9\u1DFD-\u1DFF\u1FBD\u1FBF-\u1FC1\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FED-\u1FEF\u1FFD\u1FFE\u2CEF-\u2CF1\u2E2F\u302A-\u302F\u3099-\u309C\u30FC\uA66F\uA67C\uA67D\uA67F\uA69C\uA69D\uA6F0\uA6F1\uA700-\uA721\uA788-\uA78A\uA7F8\uA7F9\uA8C4\uA8E0-\uA8F1\uA92B-\uA92E\uA953\uA9B3\uA9C0\uA9E5\uAA7B-\uAA7D\uAABF-\uAAC2\uAAF6\uAB5B-\uAB5F\uAB69-\uAB6B\uABEC\uABED\uFB1E\uFE20-\uFE2F\uFF3E\uFF40\uFF70\uFF9E\uFF9F\uFFE3]|\uD800\uDEE0|\uD802[\uDEE5\uDEE6]|\uD803[\uDD22-\uDD27\uDF46-\uDF50]|\uD804[\uDCB9\uDCBA\uDD33\uDD34\uDD73\uDDC0\uDDCA-\uDDCC\uDE35\uDE36\uDEE9\uDEEA\uDF3C\uDF4D\uDF66-\uDF6C\uDF70-\uDF74]|\uD805[\uDC42\uDC46\uDCC2\uDCC3\uDDBF\uDDC0\uDE3F\uDEB6\uDEB7\uDF2B]|\uD806[\uDC39\uDC3A\uDD3D\uDD3E\uDD43\uDDE0\uDE34\uDE47\uDE99]|\uD807[\uDC3F\uDD42\uDD44\uDD45\uDD97]|\uD81A[\uDEF0-\uDEF4\uDF30-\uDF36]|\uD81B[\uDF8F-\uDF9F\uDFF0\uDFF1]|\uD834[\uDD67-\uDD69\uDD6D-\uDD72\uDD7B-\uDD82\uDD85-\uDD8B\uDDAA-\uDDAD]|\uD838[\uDD30-\uDD36\uDEEC-\uDEEF]|\uD83A[\uDCD0-\uDCD6\uDD44-\uDD46\uDD48-\uDD4A])/g, ""))
+                };
+                var i = n(r(97331));
+
+                function a() {
+                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+                    return e.normalize("NFKD")
+                }
+            },
+            6210: (e, t, r) => {
+                "use strict";
+                var n = r(17885).log,
+                    i = r(37471).default,
+                    a = r(17885).sendLogs,
+                    o = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = void 0;
+                var s = o(r(319)),
+                    u = o(r(87757)),
+                    c = o(r(63038)),
+                    l = o(r(48926)),
+                    d = o(r(34575)),
+                    f = o(r(93913)),
+                    p = o(r(16525)),
+                    h = o(r(29754)),
+                    _ = o(r(19793)),
+                    m = o(r(99842)),
+                    g = (o(r(35161)), o(r(14203)), r(84165)),
+                    v = r(43143),
+                    b = r(43460),
+                    y = r(48360),
+                    w = o(r(30381)),
+                    E = r(19167),
+                    S = r(88487),
+                    x = r(32940),
+                    A = r(85823),
+                    k = o(r(34381)),
+                    O = function(e, t) {
+                        if (!t && e && e.__esModule) return e;
+                        if (null === e || "object" != typeof e && "function" != typeof e) return {
+                            default: e
+                        };
+                        var r = C(t);
+                        if (r && r.has(e)) return r.get(e);
+                        var n = {},
+                            i = Object.defineProperty && Object.getOwnPropertyDescriptor;
+                        for (var a in e)
+                            if ("default" !== a && Object.prototype.hasOwnProperty.call(e, a)) {
+                                var o = i ? Object.getOwnPropertyDescriptor(e, a) : null;
+                                o && (o.get || o.set) ? Object.defineProperty(n, a, o) : n[a] = e[a]
+                            } n.default = e, r && r.set(e, n);
+                        return n
+                    }(r(75352)),
+                    T = r(6195);
+
+                function C(e) {
+                    if ("function" != typeof WeakMap) return null;
+                    var t = new WeakMap,
+                        r = new WeakMap;
+                    return (C = function(e) {
+                        return e ? r : t
+                    })(e)
+                }
+                var N = "en-GB",
+                    D = {
+                        LTR: "LTR",
+                        RTL: "RTL"
+                    },
+                    M = {
+                        LTR: "style",
+                        RTL: "style_rtl"
+                    },
+                    L = A.L10N_PRIORITY;
+                var R = function(e) {
+                    (0, _.default)(C, e);
+                    var t, o, E = (0, m.default)(C);
+
+                    function C() {
+                        var e;
+                        (0, d.default)(this, C);
+                        var t = {
+                            l: A.DEFAULT_LOCALE,
+                            priority: L.DEFAULT,
+                            loc: A.DEFAULT_LOCALE
+                        };
+                        return (e = E.call(this, t, r(38097).default, A.MARK_TRANSLATIONS))._locale = t, r(58933).ipcMain.on("change:locale", (function(t, r) {
+                            n(2)`Setting Locale: ${r}`, e.setLocale(r, L.DEFAULT)
+                        })), e
+                    }
+                    return (0, f.default)(C, [{
+                        key: "getLocale",
+                        value: function() {
+                            return this._locale.l
+                        }
+                    }, {
+                        key: "getFbtTranslations",
+                        value: function() {
+                            return this.fbtStrings[this._locale.l]
+                        }
+                    }, {
+                        key: "getFullLocale",
+                        value: function() {
+                            return this._locale.loc.replace("_", "-")
+                        }
+                    }, {
+                        key: "_getFBTLocale",
+                        value: function() {
+                            return (0, T.normalizeLocaleToFBTLocale)(this.getLocale())
+                        }
+                    }, {
+                        key: "getLanguage",
+                        value: function() {
+                            return (0, x.getLanguageCodeFromLocale)(this.getFullLocale())
+                        }
+                    }, {
+                        key: "getRegion",
+                        value: function() {
+                            return (0, x.getRegionCodeFromLocale)(this.getFullLocale())
+                        }
+                    }, {
+                        key: "normalizeForm",
+                        value: function() {
+                            var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
+                            if (!b.UA.isTrident) return e.normalize("NFKD");
+                            try {
+                                return e.normalize("NFKD")
+                            } catch (t) {
+                                return e
+                            }
+                        }
+                    }, {
+                        key: "setLocale",
+                        value: (o = (0, l.default)(u.default.mark((function e(t) {
+                            var n, a, o = this;
+                            return u.default.wrap((function(e) {
+                                for (;;) switch (e.prev = e.next) {
+                                    case 0:
+                                        if (n = null == t ? null : this.normalizeLocale(t), t && n && this.isLocaleSupported(n) && t !== this.getLocale()) {
+                                            e.next = 3;
+                                            break
+                                        }
+                                        return e.abrupt("return", i.resolve());
+                                    case 3:
+                                        return e.next = 5, r(26299)(`./${n}`);
+                                    case 5:
+                                        return a = e.sent, e.abrupt("return", i.resolve(a.default()).then(function() {
+                                            var e = (0, l.default)(u.default.mark((function e(r) {
+                                                var i, a, s;
+                                                return u.default.wrap((function(e) {
+                                                    for (;;) switch (e.prev = e.next) {
+                                                        case 0:
+                                                            return i = (0, c.default)(r, 2), a = i[0], s = i[1], o._locale = {
+                                                                l: n,
+                                                                loc: t,
+                                                                priority: 1
+                                                            }, o.localeStrings[n] = a, e.next = 5, o.downloadFbtLocaleAndSetCache(n);
+                                                        case 5:
+                                                            o.updateFbtContext(s), o.trigger("locale_change", {
+                                                                l: n,
+                                                                loc: t
+                                                            });
+                                                        case 7:
+                                                        case "end":
+                                                            return e.stop()
+                                                    }
+                                                }), e)
+                                            })));
+                                            return function() {
+                                                return e.apply(this, arguments)
+                                            }
+                                        }()));
+                                    case 10:
+                                        return e.abrupt("return", this.downloadAndSetTranslation(void 0));
+                                    case 11:
+                                    case "end":
+                                        return e.stop()
+                                }
+                            }), e, this)
+                        }))), function() {
+                            return o.apply(this, arguments)
+                        })
+                    }, {
+                        key: "isLocaleSupported",
+                        value: function(e) {
+                            try {
+                                return (0, p.default)((0, h.default)(C.prototype), "isLocaleSupported", this).call(this, e)
+                            } catch (e) {
+                                return !1
+                            }
+                        }
+                    }, {
+                        key: "init",
+                        value: function(e) {
+                            return this._initFbt(), this.setLocale(e, A.L10N_PRIORITY.BROWSER)
+                        }
+                    }, {
+                        key: "_initFbt",
+                        value: function() {
+                            var e = this,
+                                t = A.MARK_TRANSLATIONS ? function(t) {
+                                    return e.getLocale() === A.DEFAULT_LOCALE ? new y.FbtResult(["{"].concat((0, s.default)(t.contents), ["}"])) : new y.FbtResult(t.contents)
+                                } : void 0;
+                            (0, y.init)({
+                                translations: this.getFbtTranslations(),
+                                hooks: {
+                                    getViewerContext: function() {
+                                        return {
+                                            locale: e._getFBTLocale()
+                                        }
+                                    },
+                                    getFbtResult: t
+                                }
+                            })
+                        }
+                    }, {
+                        key: "_considerLocale",
+                        value: function(e, t, r) {
+                            if (!(null != e.priority && r < e.priority) && null != t && t !== this.getLocale()) {
+                                var n = this.normalizeLocale(t);
+                                return n ? (e.l = n, e.priority = r, e.loc = t, e) : void 0
+                            }
+                        }
+                    }, {
+                        key: "downloadAppLocale",
+                        value: function(e) {
+                            return this.localeStrings[e] ? i.resolve(this.localeStrings[e]) : (0, v.promiseLoop)(function() {
+                                var t = (0, l.default)(u.default.mark((function t(i, o, s) {
+                                    var l, d, f, p, h;
+                                    return u.default.wrap((function(t) {
+                                        for (;;) switch (t.prev = t.next) {
+                                            case 0:
+                                                return l = (0, g.delayMs)(O.expBackoff(s, 12e4, 1e3, .1)), t.next = 3, r(26299)(`./${e}`);
+                                            case 3:
+                                                return d = t.sent, t.prev = 4, t.next = 7, d.default();
+                                            case 7:
+                                                return f = t.sent, p = (0, c.default)(f, 1), h = p[0], t.abrupt("return", i(h));
+                                            case 13:
+                                                return t.prev = 13, t.t0 = t.catch(4), 10 === s && (n(4, void 0, new Error, !0)`${s} times, locale is ${e}`, a("downadAppLocale failure")), t.abrupt("return", l);
+                                            case 17:
+                                            case "end":
+                                                return t.stop()
+                                        }
+                                    }), t, null, [
+                                        [4, 13]
+                                    ])
+                                })));
+                                return function() {
+                                    return t.apply(this, arguments)
+                                }
+                            }())
+                        }
+                    }, {
+                        key: "downloadFbtLocaleAndSetCache",
+                        value: function(e) {
+                            var t = this;
+                            return this.fbtStrings[e] ? i.resolve(this.fbtStrings[e]) : (0, v.promiseLoop)(function() {
+                                var i = (0, l.default)(u.default.mark((function i(o, s, l) {
+                                    var d, f, p, h, _;
+                                    return u.default.wrap((function(i) {
+                                        for (;;) switch (i.prev = i.next) {
+                                            case 0:
+                                                return d = (0, g.delayMs)(O.expBackoff(l, 12e4, 1e3, .1)), i.next = 3, r(26299)(`./${e}`);
+                                            case 3:
+                                                return f = i.sent, i.prev = 4, i.next = 7, f.default();
+                                            case 7:
+                                                return p = i.sent, h = (0, c.default)(p, 2), _ = h[1], t.fbtStrings[e] = _, i.abrupt("return", o(_));
+                                            case 14:
+                                                return i.prev = 14, i.t0 = i.catch(4), 10 === l && (n(4, void 0, new Error, !0)`${l} times, locale is ${e}`, a("downadAppLocale failure")), i.abrupt("return", d);
+                                            case 18:
+                                            case "end":
+                                                return i.stop()
+                                        }
+                                    }), i, null, [
+                                        [4, 14]
+                                    ])
+                                })));
+                                return function() {
+                                    return i.apply(this, arguments)
+                                }
+                            }())
+                        }
+                    }, {
+                        key: "_downloadMomentResourceFile",
+                        value: (t = (0, l.default)(u.default.mark((function e(t) {
+                            var i;
+                            return u.default.wrap((function(e) {
+                                for (;;) switch (e.prev = e.next) {
+                                    case 0:
+                                        return e.prev = 0, e.next = 3, r(19922)(`./${t}`);
+                                    case 3:
+                                        return i = e.sent, e.abrupt("return", i.default);
+                                    case 7:
+                                        e.prev = 7, e.t0 = e.catch(0), n(2)`l10n:_downloadMomentResourceFile failed to download resource ${t}`;
+                                    case 10:
+                                    case "end":
+                                        return e.stop()
+                                }
+                            }), e, null, [
+                                [0, 7]
+                            ])
+                        }))), function() {
+                            return t.apply(this, arguments)
+                        })
+                    }, {
+                        key: "downloadMomentLocale",
+                        value: function(e) {
+                            var t = this,
+                                r = e.l,
+                                o = e.loc;
+                            return w.default.locale() === o ? i.resolve() : (0, v.promiseLoop)(function() {
+                                var e = (0, l.default)(u.default.mark((function e(s, c, l) {
+                                    var d, f, p, h, _, m, v;
+                                    return u.default.wrap((function(e) {
+                                        for (;;) switch (e.prev = e.next) {
+                                            case 0:
+                                                if (d = (0, g.delayMs)(O.expBackoff(l, 12e4, 1e3, .1)), (f = o.replace(/_/g, "-")) !== A.DEFAULT_MOMENT_LOCALE) {
+                                                    e.next = 7;
+                                                    break
+                                                }
+                                                p = function() {
+                                                    return i.resolve()
+                                                }, h = A.DEFAULT_MOMENT_LOCALE, e.next = 23;
+                                                break;
+                                            case 7:
+                                                (_ = []).push(f), r === A.DEFAULT_LOCALE ? _.push(N) : (m = r.replace(/_/g, "-"), _.push(m), null != k.default[m] && _.push(k.default[m])), _.push(N), v = 0;
+                                            case 12:
+                                                if (!(v < _.length)) {
+                                                    e.next = 22;
+                                                    break
+                                                }
+                                                return e.next = 15, t._downloadMomentResourceFile(_[v]);
+                                            case 15:
+                                                if (null == (p = e.sent)) {
+                                                    e.next = 19;
+                                                    break
+                                                }
+                                                return h = _[v], e.abrupt("break", 22);
+                                            case 19:
+                                                ++v, e.next = 12;
+                                                break;
+                                            case 22:
+                                                null == p && (n(3)`Could not fetch moment locales, using default en-US`, p = function() {
+                                                    return i.resolve()
+                                                }, h = A.DEFAULT_MOMENT_LOCALE);
+                                            case 23:
+                                                return e.prev = 23, e.next = 26, p();
+                                            case 26:
+                                                return e.abrupt("return", s(h));
+                                            case 29:
+                                                return e.prev = 29, e.t0 = e.catch(23), 10 === l && (n(4, void 0, new Error, !0)`${l} times, locale is (${r}, ${o})`, a("downloadMomentLocale failure")), e.abrupt("return", d);
+                                            case 33:
+                                            case "end":
+                                                return e.stop()
+                                        }
+                                    }), e, null, [
+                                        [23, 29]
+                                    ])
+                                })));
+                                return function() {
+                                    return e.apply(this, arguments)
+                                }
+                            }())
+                        }
+                    }, {
+                        key: "updateFbtContext",
+                        value: function(e) {
+                            null != e && y.FbtTranslations.registerTranslations(e)
+                        }
+                    }, {
+                        key: "downloadAndSetTranslation",
+                        value: function(e) {
+                            var t = this,
+                                r = this._locale,
+                                a = r.l,
+                                o = r.loc,
+                                s = e.l,
+                                u = e.loc,
+                                l = this.isRTL(s) ? D.RTL : D.LTR;
+                            if ((0, S.isConnectedToPage)() && document.getElementById(M[l]) && u === o) return i.resolve();
+                            var d, f, p = self.performance.now();
+                            return this._fetchPromise = i.all([this.downloadAppLocale(s), this.downloadFbtLocaleAndSetCache(s), this.downloadMomentLocale(e)]).then((function(r) {
+                                var i = (0, c.default)(r, 3),
+                                    a = i[0],
+                                    o = i[1],
+                                    f = i[2];
+                                d = self.performance.now(), t.localeStrings[s] = a, t._locale = e, t.trigger("set_collator", s), f && (w.default.locale(f), n(2)`l10n:moment locale updated to: ${f}`), t.customizeMomentLocale(w.default.locale()), (0, S.isConnectedToPage)() && (document.documentElement && document.documentElement.setAttribute("lang", e.l), document.documentElement && document.documentElement.setAttribute("dir", l)), t.updateFbtContext(o), t.trigger("locale_change", {
+                                    l: s,
+                                    loc: u
+                                })
+                            })).then((function() {
+                                f = self.performance.now(), n(2)`l10n:locale updated: (${a}, ${o}) > (${s}, ${u}), Fetch: ${d-p}ms, Apply: ${f-d}ms`
+                            })).catch((function() {
+                                return n(2)`l10n:locale update error: (${a}, ${o}) > (${s}, ${u})`, t.downloadAndSetTranslation({
+                                    l: A.DEFAULT_LOCALE,
+                                    priority: L.DEFAULT,
+                                    loc: A.DEFAULT_LOCALE
+                                })
+                            }))
+                        }
+                    }, {
+                        key: "_updateSpellChecker",
+                        value: function() {}
+                    }, {
+                        key: "_updateElectronMain",
+                        value: function() {}
+                    }, {
+                        key: "customizeMomentLocale",
+                        value: function(e) {
+                            var t = A.LOCALE_CUSTOMIZATIONS[e];
+                            t && w.default.locale(e, t)
+                        }
+                    }]), C
+                }(E.L10n);
+                R.Dir = D;
+                var I = new R;
+                t.default = I
+            },
+            85823: (e, t, r) => {
+                "use strict";
+                var n = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.SHOULD_USE_MOMENT_LOCALE_FORMAT = t.MARK_TRANSLATIONS = t.LOCALE_DATE_TIME_CUSTOMIZATIONS = t.LOCALE_CUSTOMIZATIONS = t.LOCALES_THAT_PREFER_24HOUR_TIME = t.L10N_PRIORITY = t.DEFAULT_MOMENT_LOCALE = t.DEFAULT_LOCALE = void 0;
+                var i = n(r(81109));
+                t.L10N_PRIORITY = {
+                    SAVED: 6,
+                    PHONE: 5,
+                    PREVIOUS: 4,
+                    URL: 3,
+                    BROWSER: 2,
+                    DEFAULT: 1
+                };
+                t.DEFAULT_LOCALE = "en";
+                t.DEFAULT_MOMENT_LOCALE = "en-US";
+                var a = new Set(["ur"]);
+                t.SHOULD_USE_MOMENT_LOCALE_FORMAT = a;
+                var o = new Set(["af", "az", "ca", "cs", "da", "de", "el", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "kk", "lt", "mk", "nb", "pl", "pt", "pt-BR", "ro", "ru", "sk", "sl", "sr", "sv", "tr", "uk"]);
+                t.LOCALES_THAT_PREFER_24HOUR_TIME = o;
+                var s = {
+                    "zh-tw": {
+                        longDateFormat: {
+                            LT: "Ah:mm",
+                            LTS: "Ah:m:s",
+                            L: "YYYY年MMMD日",
+                            LL: "YYYY年MMMD日",
+                            LLL: "YYYY年MMMD日LT",
+                            LLLL: "YYYY年MMMD日ddddLT",
+                            l: "YYYY年MMMD日",
+                            ll: "YYYY年MMMD日",
+                            lll: "YYYY年MMMD日LT",
+                            llll: "YYYY年MMMD日ddddLT"
+                        }
+                    },
+                    "zh-cn": {
+                        longDateFormat: {
+                            LT: "Ah:mm",
+                            LTS: "Ah:m:s",
+                            L: "YYYY-MM-DD",
+                            LL: "YYYY年MMMD日",
+                            LLL: "YYYY年MMMD日LT",
+                            LLLL: "YYYY年MMMD日ddddLT",
+                            l: "YYYY年MMMD日",
+                            ll: "YYYY年MMMD日",
+                            lll: "YYYY年MMMD日LT",
+                            llll: "YYYY年MMMD日ddddLT"
+                        }
+                    },
+                    ar: {
+                        longDateFormat: {
+                            LT: "h:mm A",
+                            LTS: "HH:mm:ss",
+                            L: "YYYY/MM/DD",
+                            LL: "D MMMM YYYY",
+                            LLL: "D MMMM YYYY LT",
+                            LLLL: "dddd D MMMM YYYY LT"
+                        }
+                    },
+                    ta: {
+                        longDateFormat: {
+                            LT: "h:mm A",
+                            LTS: "h:mm:ss A",
+                            L: "DD/MM/YYYY",
+                            LL: "D MMMM YYYY",
+                            LLL: "D MMMM YYYY h:mm A",
+                            LLLL: "dddd, D MMMM YYYY, h:mm A"
+                        },
+                        preparse: null,
+                        postformat: null,
+                        meridiem: null,
+                        meridiemHour: null
+                    },
+                    nl: {
+                        longDateFormat: {
+                            l: "DD-MM-YYYY",
+                            L: "DD-MM-YYYY"
+                        }
+                    },
+                    "en-ie": {
+                        longDateFormat: {
+                            l: "DD/MM/YYYY",
+                            L: "DD/MM/YYYY"
+                        }
+                    },
+                    hi: {
+                        preparse: null,
+                        postformat: null,
+                        longDateFormat: {
+                            LT: "A h:mm बजे",
+                            LTS: "A h:mm:ss बजे",
+                            LLL: "D MMMM YYYY A h:mm बजे",
+                            LLLL: "dddd, D MMMM YYYY, A h:mm बजे"
+                        },
+                        meridiem: function(e, t) {
+                            return 0 === e && 0 === t ? "मध्यरात्रि" : e >= 20 || e < 4 ? "रात" : e >= 4 && e < 12 ? "सुबह" : e >= 12 && e < 16 ? "दोपहर" : "शाम"
+                        }
+                    }
+                };
+                t.LOCALE_DATE_TIME_CUSTOMIZATIONS = s;
+                var u = (0, i.default)((0, i.default)({}, s), {
+                    "pt-pt": {
+                        weekdays: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
+                    }
+                });
+                t.LOCALE_CUSTOMIZATIONS = u;
+                t.MARK_TRANSLATIONS = !1
+            },
+            6195: (e, t) => {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.normalizeLocaleToFBTLocale = function(e) {
+                    var t = r[e];
+                    if (null != t) return t;
+                    return e
+                };
+                var r = {
+                    af: "af_ZA",
+                    ar: "ar_AR",
+                    az: "az_AZ",
+                    bg: "bg_BG",
+                    bn: "bn_IN",
+                    ca: "ca_ES",
+                    cs: "cs_CZ",
+                    da: "da_DK",
+                    de: "de_DE",
+                    el: "el_GR",
+                    en: "en_GB",
+                    es: "es_MX",
+                    et: "et_EE",
+                    fa: "fa_IR",
+                    fi: "fi_FI",
+                    fil: "tl_PH",
+                    fr: "fr_FR",
+                    gu: "gu_IN",
+                    he: "he_IL",
+                    hi: "hi_IN",
+                    hr: "hr_HR",
+                    hu: "hu_HU",
+                    id: "id_ID",
+                    it: "it_IT",
+                    ja: "ja_JP",
+                    kk: "kk_KZ",
+                    kn: "kn_IN",
+                    ko: "ko_KR",
+                    lt: "lt_LT",
+                    lv: "lv_LV",
+                    mk: "mk_MK",
+                    ml: "ml_IN",
+                    mr: "mr_IN",
+                    ms: "ms_MY",
+                    nb: "nb_NO",
+                    nl: "nl_NL",
+                    pa: "pa_IN",
+                    pl: "pl_PL",
+                    pt: "pt_PT",
+                    "pt-BR": "pt_BR",
+                    ro: "ro_RO",
+                    ru: "ru_RU",
+                    sk: "sk_SK",
+                    sl: "sl_SI",
+                    sq: "sq_AL",
+                    sr: "sr_RS",
+                    sv: "sv_SE",
+                    sw: "sw_KE",
+                    ta: "ta_IN",
+                    te: "te_IN",
+                    th: "th_TH",
+                    tr: "tr_TR",
+                    uk: "uk_UA",
+                    ur: "ur_PK",
+                    uz: "uz_UZ",
+                    vi: "vi_VN",
+                    "zh-CN": "zh_CN",
+                    "zh-HK": "zh_HK",
+                    "zh-TW": "zh_TW"
+                }
+            },
+            22488: (e, t) => {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = void 0;
+                var r = {
+                    ach: {
+                        name: "Acholi",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    af: {
+                        name: "Afrikaans",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ak: {
+                        name: "Akan",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    am: {
+                        name: "Amharic",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    an: {
+                        name: "Aragonese",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ar: {
+                        name: "Arabic",
+                        numbers: [0, 1, 2, 3, 11, 100],
+                        plurals: function(e) {
+                            return Number(0 === e ? 0 : 1 == e ? 1 : 2 == e ? 2 : e % 100 >= 3 && e % 100 <= 10 ? 3 : e % 100 >= 11 ? 4 : 5)
+                        }
+                    },
+                    arn: {
+                        name: "Mapudungun",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    ast: {
+                        name: "Asturian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ay: {
+                        name: "Aymará",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    az: {
+                        name: "Azerbaijani",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    be: {
+                        name: "Belarusian",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    bg: {
+                        name: "Bulgarian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    bn: {
+                        name: "Bengali",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    bo: {
+                        name: "Tibetan",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    br: {
+                        name: "Breton",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    bs: {
+                        name: "Bosnian",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    ca: {
+                        name: "Catalan",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    cgg: {
+                        name: "Chiga",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    cs: {
+                        name: "Czech",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : e >= 2 && e <= 4 ? 1 : 2)
+                        }
+                    },
+                    csb: {
+                        name: "Kashubian",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    cy: {
+                        name: "Welsh",
+                        numbers: [1, 2, 3, 8],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : 2 == e ? 1 : 8 != e && 11 != e ? 2 : 3)
+                        }
+                    },
+                    da: {
+                        name: "Danish",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    de: {
+                        name: "German",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    dz: {
+                        name: "Dzongkha",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    el: {
+                        name: "Greek",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    en: {
+                        name: "English",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    eo: {
+                        name: "Esperanto",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    es: {
+                        name: "Spanish",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    es_ar: {
+                        name: "Argentinean Spanish",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    et: {
+                        name: "Estonian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    eu: {
+                        name: "Basque",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    fa: {
+                        name: "Persian",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    fi: {
+                        name: "Finnish",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    fil: {
+                        name: "Filipino",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    fo: {
+                        name: "Faroese",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    fr: {
+                        name: "French",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    fur: {
+                        name: "Friulian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    fy: {
+                        name: "Frisian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ga: {
+                        name: "Irish",
+                        numbers: [1, 2, 3, 7, 11],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : 2 == e ? 1 : e < 7 ? 2 : e < 11 ? 3 : 4)
+                        }
+                    },
+                    gd: {
+                        name: "Scottish Gaelic",
+                        numbers: [1, 2, 3, 20],
+                        plurals: function(e) {
+                            return Number(1 == e || 11 == e ? 0 : 2 == e || 12 == e ? 1 : e > 2 && e < 20 ? 2 : 3)
+                        }
+                    },
+                    gl: {
+                        name: "Galician",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    gu: {
+                        name: "Gujarati",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    gun: {
+                        name: "Gun",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    ha: {
+                        name: "Hausa",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    he: {
+                        name: "Hebrew",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    hi: {
+                        name: "Hindi",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    hr: {
+                        name: "Croatian",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    hu: {
+                        name: "Hungarian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    hy: {
+                        name: "Armenian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ia: {
+                        name: "Interlingua",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    id: {
+                        name: "Indonesian",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    is: {
+                        name: "Icelandic",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e % 10 != 1 || e % 100 == 11)
+                        }
+                    },
+                    it: {
+                        name: "Italian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ja: {
+                        name: "Japanese",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    jbo: {
+                        name: "Lojban",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    jv: {
+                        name: "Javanese",
+                        numbers: [0, 1],
+                        plurals: function(e) {
+                            return Number(0 !== e)
+                        }
+                    },
+                    ka: {
+                        name: "Georgian",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    kk: {
+                        name: "Kazakh",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    km: {
+                        name: "Khmer",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    kn: {
+                        name: "Kannada",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ko: {
+                        name: "Korean",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    ku: {
+                        name: "Kurdish",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    kw: {
+                        name: "Cornish",
+                        numbers: [1, 2, 3, 4],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : 2 == e ? 1 : 3 == e ? 2 : 3)
+                        }
+                    },
+                    ky: {
+                        name: "Kyrgyz",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    lb: {
+                        name: "Letzeburgesch",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ln: {
+                        name: "Lingala",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    lo: {
+                        name: "Lao",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    lt: {
+                        name: "Lithuanian",
+                        numbers: [1, 2, 10],
+                        plurals: function(e) {
+                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    lv: {
+                        name: "Latvian",
+                        numbers: [0, 1, 2],
+                        plurals: function(e) {
+                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : 0 !== e ? 1 : 2)
+                        }
+                    },
+                    mai: {
+                        name: "Maithili",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    mfe: {
+                        name: "Mauritian Creole",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    mg: {
+                        name: "Malagasy",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    mi: {
+                        name: "Maori",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    mk: {
+                        name: "Macedonian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 == e || e % 10 == 1 ? 0 : 1)
+                        }
+                    },
+                    ml: {
+                        name: "Malayalam",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    mn: {
+                        name: "Mongolian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    mnk: {
+                        name: "Mandinka",
+                        numbers: [0, 1, 2],
+                        plurals: function(e) {
+                            return Number(0 === e ? 0 : 1 == e ? 1 : 2)
+                        }
+                    },
+                    mr: {
+                        name: "Marathi",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ms: {
+                        name: "Malay",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    mt: {
+                        name: "Maltese",
+                        numbers: [1, 2, 11, 20],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : 0 === e || e % 100 > 1 && e % 100 < 11 ? 1 : e % 100 > 10 && e % 100 < 20 ? 2 : 3)
+                        }
+                    },
+                    nah: {
+                        name: "Nahuatl",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    nap: {
+                        name: "Neapolitan",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    nb: {
+                        name: "Norwegian Bokmal",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ne: {
+                        name: "Nepali",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    nl: {
+                        name: "Dutch",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    nn: {
+                        name: "Norwegian Nynorsk",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    no: {
+                        name: "Norwegian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    nso: {
+                        name: "Northern Sotho",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    oc: {
+                        name: "Occitan",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    or: {
+                        name: "Oriya",
+                        numbers: [2, 1],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    pa: {
+                        name: "Punjabi",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    pap: {
+                        name: "Papiamento",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    pl: {
+                        name: "Polish",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    pms: {
+                        name: "Piemontese",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ps: {
+                        name: "Pashto",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    pt: {
+                        name: "Portuguese",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    "pt-BR": {
+                        name: "Brazilian Portuguese",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    rm: {
+                        name: "Romansh",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ro: {
+                        name: "Romanian",
+                        numbers: [1, 2, 20],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : 0 === e || e % 100 > 0 && e % 100 < 20 ? 1 : 2)
+                        }
+                    },
+                    ru: {
+                        name: "Russian",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    sah: {
+                        name: "Yakut",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    sco: {
+                        name: "Scots",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    se: {
+                        name: "Northern Sami",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    si: {
+                        name: "Sinhala",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    sk: {
+                        name: "Slovak",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(1 == e ? 0 : e >= 2 && e <= 4 ? 1 : 2)
+                        }
+                    },
+                    sl: {
+                        name: "Slovenian",
+                        numbers: [5, 1, 2, 3],
+                        plurals: function(e) {
+                            return Number(e % 100 == 1 ? 1 : e % 100 == 2 ? 2 : e % 100 == 3 || e % 100 == 4 ? 3 : 0)
+                        }
+                    },
+                    so: {
+                        name: "Somali",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    son: {
+                        name: "Songhay",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    sq: {
+                        name: "Albanian",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    sr: {
+                        name: "Serbian",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    su: {
+                        name: "Sundanese",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    sv: {
+                        name: "Swedish",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    sw: {
+                        name: "Swahili",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    ta: {
+                        name: "Tamil",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    te: {
+                        name: "Telugu",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    tg: {
+                        name: "Tajik",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    th: {
+                        name: "Thai",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    ti: {
+                        name: "Tigrinya",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    tk: {
+                        name: "Turkmen",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    tr: {
+                        name: "Turkish",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    tt: {
+                        name: "Tatar",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    ug: {
+                        name: "Uyghur",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    uk: {
+                        name: "Ukrainian",
+                        numbers: [1, 2, 5],
+                        plurals: function(e) {
+                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
+                        }
+                    },
+                    ur: {
+                        name: "Urdu",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    uz: {
+                        name: "Uzbek",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    vi: {
+                        name: "Vietnamese",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    wa: {
+                        name: "Walloon",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(e > 1)
+                        }
+                    },
+                    wo: {
+                        name: "Wolof",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    },
+                    yo: {
+                        name: "Yoruba",
+                        numbers: [1, 2],
+                        plurals: function(e) {
+                            return Number(1 != e)
+                        }
+                    },
+                    zh: {
+                        name: "Chinese",
+                        numbers: [1],
+                        plurals: function() {
+                            return 0
+                        }
+                    }
+                };
+                t.default = r
             },
             34381: (e, t) => {
                 "use strict";
@@ -21503,26 +23534,26 @@
                     value: !0
                 }), t.default = function(e) {
                     try {
-                        var t = e ? JSON.parse(e) : i.default,
+                        var t = null != e && "" !== e ? JSON.parse(e) : a.default,
                             r = {};
                         return o(t, r, "", ""), r
                     } catch (e) {
                         return null
                     }
                 };
-                var i = n(r(47466)),
-                    a = r(9907);
+                var i = r(45996),
+                    a = n(r(47466));
 
                 function o(e, t, r, n) {
-                    var i = e;
-                    if (Array.isArray(i) || (0, a.isString)(i)) {
-                        (0, a.isString)(i) && (i = [i]);
-                        for (var s = 0; s < i.length; s++) {
-                            var u = i[s];
-                            (0, a.isString)(u) && (t[u] = n + r)
+                    var a = e;
+                    if (Array.isArray(a) || (0, i.isString)(a)) {
+                        (0, i.isString)(a) && (a = [a]);
+                        for (var s = 0; s < a.length; s++) {
+                            var u = a[s];
+                            (0, i.isString)(u) && (t[u] = n + r)
                         }
-                    } else if ("object" == typeof i)
-                        for (var c in i) o(i[c], t, c, n + r)
+                    } else if ("object" == typeof a)
+                        for (var c in a) o(a[c], t, c, n + r)
                 }
             },
             36295: (e, t, r) => {
@@ -21554,6 +23585,8 @@
                     return null != e ? e : "application/octet-stream"
                 }, t.isMsCompoundFileBinaryFormat = function(e) {
                     return (0, a.default)(e, l)
+                }, t.isOpus = function(e) {
+                    return !!e && e.includes("audio/ogg")
                 }, t.previewType = function(e) {
                     var t = d[e];
                     return null == t ? void 0 : t.previewType
@@ -21577,7 +23610,7 @@
                                 o && (o.get || o.set) ? Object.defineProperty(n, a, o) : n[a] = e[a]
                             } n.default = e, r && r.set(e, n);
                         return n
-                    }(r(97334));
+                    }(r(46587));
 
                 function c(e) {
                     if ("function" != typeof WeakMap) return null;
@@ -21720,228 +23753,35 @@
                     return "document" === (null == e ? void 0 : e.msgType) && !0 === e.canSend && null != e.ext
                 }))
             },
-            7105: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), Object.defineProperty(t, "AbortError", {
-                    enumerable: !0,
-                    get: function() {
-                        return u.AbortError
-                    }
-                }), t.NoMediaHostsError = void 0;
-                var i = n(r(34575)),
-                    a = n(r(19793)),
-                    o = n(r(99842)),
-                    s = r(84486),
-                    u = r(67559),
-                    c = function(e) {
-                        (0, a.default)(r, e);
-                        var t = (0, o.default)(r);
-
-                        function r() {
-                            return (0, i.default)(this, r), t.apply(this, arguments)
-                        }
-                        return r
-                    }((0, s.customError)("NoMediaHostsError"));
-                t.NoMediaHostsError = c
-            },
-            78249: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), Object.defineProperty(t, "AbortError", {
-                    enumerable: !0,
-                    get: function() {
-                        return s.AbortError
-                    }
-                }), Object.defineProperty(t, "HttpInvalidResponseError", {
-                    enumerable: !0,
-                    get: function() {
-                        return s.HttpInvalidResponseError
-                    }
-                }), Object.defineProperty(t, "HttpNetworkError", {
-                    enumerable: !0,
-                    get: function() {
-                        return s.HttpNetworkError
-                    }
-                }), Object.defineProperty(t, "HttpStatusCodeError", {
-                    enumerable: !0,
-                    get: function() {
-                        return s.HttpStatusCodeError
-                    }
-                }), t.MediaTooLargeError = t.MediaNotFoundError = t.MediaInvalidError = t.MMSUnauthorizedError = t.MMSThrottleError = t.MMSForbiddenError = void 0, Object.defineProperty(t, "MmsDownloadFilehashMismatchError", {
-                    enumerable: !0,
-                    get: function() {
-                        return s.MmsDownloadFilehashMismatchError
-                    }
-                }), Object.defineProperty(t, "NoMediaHostsError", {
-                    enumerable: !0,
-                    get: function() {
-                        return u.NoMediaHostsError
-                    }
-                });
-                var i = n(r(34575)),
-                    a = n(r(19793)),
-                    o = n(r(99842)),
-                    s = r(67695),
-                    u = r(7105),
-                    c = function(e) {
-                        (0, a.default)(r, e);
-                        var t = (0, o.default)(r);
-
-                        function r(e) {
-                            var n;
-                            return (0, i.default)(this, r), (n = t.call(this, 404, e)).name = "MediaNotFoundError", n
-                        }
-                        return r
-                    }(s.HttpStatusCodeError);
-                t.MediaNotFoundError = c;
-                var l = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        return (0, i.default)(this, r), (n = t.call(this, 413, e)).name = "MediaTooLargeError", n
-                    }
-                    return r
-                }(s.HttpStatusCodeError);
-                t.MediaTooLargeError = l;
-                var d = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        return (0, i.default)(this, r), (n = t.call(this, 415, e)).name = "MediaInvalidError", n
-                    }
-                    return r
-                }(s.HttpStatusCodeError);
-                t.MediaInvalidError = d;
-                var f = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        return (0, i.default)(this, r), (n = t.call(this, 401, e)).name = "MMSUnauthorizedError", n
-                    }
-                    return r
-                }(s.HttpStatusCodeError);
-                t.MMSUnauthorizedError = f;
-                var p = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        return (0, i.default)(this, r), (n = t.call(this, 403, e)).name = "MMSForbiddenError", n
-                    }
-                    return r
-                }(s.HttpStatusCodeError);
-                t.MMSForbiddenError = p;
-                var h = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        return (0, i.default)(this, r), (n = t.call(this, 507, e)).name = "MMSThrottleError", n
-                    }
-                    return r
-                }(s.HttpStatusCodeError);
-                t.MMSThrottleError = h
-            },
-            9697: (e, t, r) => {
-                "use strict";
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), Object.defineProperty(t, "AbortError", {
-                    enumerable: !0,
-                    get: function() {
-                        return n.AbortError
-                    }
-                }), Object.defineProperty(t, "FileNotReadableError", {
-                    enumerable: !0,
-                    get: function() {
-                        return i.FileNotReadableError
-                    }
-                }), Object.defineProperty(t, "HttpNetworkError", {
-                    enumerable: !0,
-                    get: function() {
-                        return n.HttpNetworkError
-                    }
-                }), Object.defineProperty(t, "HttpStatusCodeError", {
-                    enumerable: !0,
-                    get: function() {
-                        return n.HttpStatusCodeError
-                    }
-                }), Object.defineProperty(t, "MMSUnauthorizedError", {
-                    enumerable: !0,
-                    get: function() {
-                        return n.MMSUnauthorizedError
-                    }
-                }), Object.defineProperty(t, "MediaEncryptionError", {
-                    enumerable: !0,
-                    get: function() {
-                        return i.MediaEncryptionError
-                    }
-                }), Object.defineProperty(t, "MediaInvalidError", {
-                    enumerable: !0,
-                    get: function() {
-                        return n.MediaInvalidError
-                    }
-                }), Object.defineProperty(t, "MediaNotFoundError", {
-                    enumerable: !0,
-                    get: function() {
-                        return n.MediaNotFoundError
-                    }
-                }), Object.defineProperty(t, "MediaTooLargeError", {
-                    enumerable: !0,
-                    get: function() {
-                        return n.MediaTooLargeError
-                    }
-                }), Object.defineProperty(t, "NoMediaHostsError", {
-                    enumerable: !0,
-                    get: function() {
-                        return a.NoMediaHostsError
-                    }
-                });
-                var n = r(78249),
-                    i = r(97334),
-                    a = r(7105)
-            },
             48739: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
                 t.Z = void 0;
-                var i = n(r(87757)),
-                    a = n(r(48926)),
-                    o = n(r(34575)),
-                    s = n(r(93913)),
-                    u = r(77752),
-                    c = r(12087),
-                    l = new(function() {
+                var i = n(r(63038)),
+                    a = n(r(87757)),
+                    o = n(r(48926)),
+                    s = n(r(34575)),
+                    u = n(r(93913)),
+                    c = r(77752),
+                    l = r(12087),
+                    d = new(function() {
                         function e() {
-                            (0, o.default)(this, e)
+                            (0, s.default)(this, e)
                         }
                         var t;
-                        return (0, s.default)(e, [{
+                        return (0, u.default)(e, [{
                             key: "getInfoAsync",
-                            value: (t = (0, a.default)(i.default.mark((function e() {
+                            value: (t = (0, o.default)(a.default.mark((function e() {
                                 var t;
-                                return i.default.wrap((function(e) {
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
-                                            return e.next = 2, u.system();
+                                            return e.next = 2, c.system();
                                         case 2:
                                             return t = e.sent, e.abrupt("return", {
-                                                arch: c.arch(),
-                                                osRelease: c.release(),
-                                                osPlatform: c.platform(),
+                                                arch: l.arch(),
+                                                osRelease: l.release(),
+                                                osPlatform: l.platform(),
                                                 deviceManufacturer: t.manufacturer,
                                                 deviceModel: t.model
                                             });
@@ -21953,95 +23793,31 @@
                             }))), function() {
                                 return t.apply(this, arguments)
                             })
+                        }, {
+                            key: "getDeviceInfoSync",
+                            value: function() {
+                                var e = c.getDeviceModelAndOsRelease(),
+                                    t = (0, i.default)(e, 2);
+                                return {
+                                    deviceModel: t[0],
+                                    osRelease: t[1]
+                                }
+                            }
                         }]), e
                     }());
-                t.Z = l
+                t.Z = d
             },
-            67695: (e, t, r) => {
+            46587: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
-                }), Object.defineProperty(t, "AbortError", {
-                    enumerable: !0,
-                    get: function() {
-                        return i.AbortError
-                    }
-                }), Object.defineProperty(t, "HttpInvalidResponseError", {
-                    enumerable: !0,
-                    get: function() {
-                        return a.HttpInvalidResponseError
-                    }
-                }), Object.defineProperty(t, "HttpNetworkError", {
-                    enumerable: !0,
-                    get: function() {
-                        return o.default
-                    }
-                }), Object.defineProperty(t, "HttpStatusCodeError", {
-                    enumerable: !0,
-                    get: function() {
-                        return s.default
-                    }
-                }), Object.defineProperty(t, "HttpTimedOutError", {
-                    enumerable: !0,
-                    get: function() {
-                        return u.default
-                    }
-                }), Object.defineProperty(t, "MmsDownloadFilehashMismatchError", {
-                    enumerable: !0,
-                    get: function() {
-                        return a.MmsDownloadFilehashMismatchError
-                    }
-                });
-                var i = r(67559),
-                    a = r(39585),
-                    o = n(r(30934)),
-                    s = n(r(5939)),
-                    u = n(r(25028))
-            },
-            39585: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.MmsDownloadFilehashMismatchError = t.HttpInvalidResponseError = void 0;
+                }), t.UpdateImmediately = t.Unmount = t.UnableToPlayVideoError = t.UnableToGetContentLengthError = t.TranscodeBlobTooLargeError = t.SourceUnavailableError = t.SocketNotOpen = t.SocketError = t.SocketClosed = t.ShouldLoop = t.ServerStatusError = t.QueryDrop = t.ProtoVersionUndefined = t.OverconstrainedError = t.Offline = t.NotSupportedError = t.NotFoundError = t.NotAllowedError = t.ModelError = t.ModelCreateError = t.MediaUnsupportedError = t.MediaNeedsReupload = t.MediaMissing = t.MediaLoadError = t.MediaFileFailedLoad = t.MediaFileError = t.MediaFileEmpty = t.MediaEncryptionError = t.MediaDragDropError = t.MediaDecryptionError = t.InvalidServerResponseError = t.InvalidMediaFileType = t.InvalidImageFileType = t.ImageError = t.GaveUpRetry = t.GUMError = t.GUM = t.FileNotReadableError = t.EncodeWebpError = t.Disconnected = t.DeprecatedProtocolVersion = t.DecodeWebpResultsError = t.DbOnLogoutAbort = t.DbMsgEncKeyNotLoaded = t.DbEncKeyNotLoaded = t.DBInvalidFtsHMACKey = t.ConstraintNotSatisfiedError = t.CatalogImageDownloadError = t.CapabilityUnknown = t.CapabilityInvalid = t.CapabilityError = t.CanNotSendUnencrypted = t.BlockedByProxy = t.BingServerError = t.ActiveChatChanged = t.ActionError = void 0;
                 var i = n(r(34575)),
                     a = n(r(19793)),
                     o = n(r(99842)),
-                    s = function(e) {
-                        (0, a.default)(r, e);
-                        var t = (0, o.default)(r);
-
-                        function r(e, n) {
-                            (0, i.default)(this, r);
-                            var a = e;
-                            return t.call(this, a)
-                        }
-                        return r
-                    }((0, r(84486).customError)("HttpInvalidResponseError"));
-                t.HttpInvalidResponseError = s;
-                var u = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        return (0, i.default)(this, r), (n = t.call(this, "mmsDownload: filehash mismatch", e)).name = "MmsDownloadFilehashMismatchError", n
-                    }
-                    return r
-                }(s);
-                t.MmsDownloadFilehashMismatchError = u
-            },
-            30934: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.default = void 0;
-                var i = n(r(34575)),
-                    a = n(r(19793)),
-                    o = n(r(99842)),
-                    s = function(e) {
+                    s = r(84486),
+                    u = function(e) {
                         (0, a.default)(r, e);
                         var t = (0, o.default)(r);
 
@@ -22049,60 +23825,1083 @@
                             return (0, i.default)(this, r), t.apply(this, arguments)
                         }
                         return r
-                    }((0, r(84486).customError)("HttpNetworkError"));
-                t.default = s
+                    }((0, s.customError)("QueryDrop"));
+                t.QueryDrop = u;
+                var c = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("Disconnected"));
+                t.Disconnected = c;
+                var l = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("Offline"));
+                t.Offline = l;
+                var d = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("ShouldLoop"));
+                t.ShouldLoop = d;
+                var f = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("GaveUpRetry"));
+                t.GaveUpRetry = f;
+                var p = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("CatalogImageDownloadError"));
+                t.CatalogImageDownloadError = p;
+                var h = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaFileError"));
+                t.MediaFileError = h;
+                var _ = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("InvalidImageFileType", !0, h));
+                t.InvalidImageFileType = _;
+                var m = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("InvalidMediaFileType", !0, h));
+                t.InvalidMediaFileType = m;
+                var g = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaEncryptionError", !0, h));
+                t.MediaEncryptionError = g;
+                var v = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaDecryptionError", !0, h));
+                t.MediaDecryptionError = v;
+                var b = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaFileFailedLoad", !0, h));
+                t.MediaFileFailedLoad = b;
+                var y = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaFileEmpty", !0, h));
+
+                function w(e) {
+                    try {
+                        return JSON.stringify(e)
+                    } catch (t) {
+                        return e.toString()
+                    }
+                }
+                t.MediaFileEmpty = y;
+                var E = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e) {
+                        var n;
+                        (0, i.default)(this, r);
+                        var a = "string" == typeof e ? e : w(e);
+                        return (n = t.call(this, a)).event = e, n
+                    }
+                    return r
+                }((0, s.customError)("SocketError"));
+                t.SocketError = E;
+                var S = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e) {
+                        var n;
+                        (0, i.default)(this, r);
+                        var a = "string" == typeof e ? e : w(e);
+                        return (n = t.call(this, a)).event = e, n
+                    }
+                    return r
+                }((0, s.customError)("SocketClosed"));
+                t.SocketClosed = S;
+                var x = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e) {
+                        return (0, i.default)(this, r), t.call(this, `socket not open, is ${e}`)
+                    }
+                    return r
+                }((0, s.customError)("SocketNotOpen"));
+                t.SocketNotOpen = x;
+                var A = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("BlockedByProxy"));
+                t.BlockedByProxy = A;
+                var k = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e, n) {
+                        var a;
+                        return (0, i.default)(this, r), (a = t.call(this, "Image failed to load.")).src = e, a.status = n, a.target = {
+                            src: e,
+                            status: n
+                        }, a
+                    }
+                    return r
+                }((0, s.customError)("ImageError"));
+                t.ImageError = k;
+                var O = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e, n) {
+                        var a;
+                        return (0, i.default)(this, r), (a = t.call(this, e)).event = n, a
+                    }
+                    return r
+                }((0, s.customError)("DecodeWebpResultsError"));
+                t.DecodeWebpResultsError = O;
+                var T = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e, n) {
+                        var a;
+                        return (0, i.default)(this, r), (a = t.call(this, e)).event = n, a
+                    }
+                    return r
+                }((0, s.customError)("DecodeWebpError"));
+                t.EncodeWebpError = T;
+                var C = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e, n, a) {
+                        var o;
+                        return (0, i.default)(this, r), (o = t.call(this, `${e||"Server replied with a failed status code"}: ${a}`)).url = n, o.status = a, o
+                    }
+                    return r
+                }((0, s.customError)("ServerStatusError"));
+                t.ServerStatusError = C;
+                var N = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e, n, a) {
+                        (0, i.default)(this, r);
+                        var o = `Invalid response for ${e}, with status ${n}`;
+                        return a && (o = `${o}: ${a}`), t.call(this, o)
+                    }
+                    return r
+                }((0, s.customError)("InvalidServerResponseError"));
+                t.InvalidServerResponseError = N;
+                var D = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e, n, a) {
+                        (0, i.default)(this, r);
+                        var o = `Error ${n} for ${e}: ${JSON.stringify(a)}`;
+                        return t.call(this, o, e, n)
+                    }
+                    return r
+                }((0, s.customError)("BingServerError", !0, C));
+                t.BingServerError = D;
+                var M = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaNeedsReupload"));
+                t.MediaNeedsReupload = M;
+                var L = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaMissing"));
+                t.MediaMissing = L, L.message = "Media is no longer available on your phone";
+                var R = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("FileNotReadableError", !0, Error));
+                t.FileNotReadableError = R;
+                var I = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e) {
+                        var n;
+                        return (0, i.default)(this, r), (n = t.call(this, e)).src = e, n
+                    }
+                    return r
+                }((0, s.customError)("MediaLoadError"));
+                t.MediaLoadError = I;
+                var P = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.call(this, "Transcode blob too large")
+                    }
+                    return r
+                }((0, s.customError)("TranscodeBlobTooLargeError"));
+                t.TranscodeBlobTooLargeError = P;
+                var j = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e) {
+                        return (0, i.default)(this, r), t.call(this, `Unable to play video. Reason: ${String(e)}`)
+                    }
+                    return r
+                }((0, s.customError)("UnableToPlayVideoError"));
+                t.UnableToPlayVideoError = j;
+                var U = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaDragDropError", !0, I));
+                t.MediaDragDropError = U;
+                var W = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaUnsupportedError"));
+                t.MediaUnsupportedError = W, W.message = "Media format is unsupported";
+                var B = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("ModelError"));
+                t.ModelError = B;
+                var F = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e, n) {
+                        var a;
+                        return (0, i.default)(this, r), (a = t.call(this, e)).model = n, a
+                    }
+                    return r
+                }((0, s.customError)("ModelCreateError"));
+                t.ModelCreateError = F;
+                var V = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e) {
+                        return (0, i.default)(this, r), t.call(this, `MasterDatabaseEncryptionKey.${e} was accessed before init`)
+                    }
+                    return r
+                }((0, s.customError)("DbEncKeyNotLoadedError"));
+                t.DbEncKeyNotLoaded = V;
+                var q = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e) {
+                        return (0, i.default)(this, r), t.call(this, `MasterDatabaseMessageEncryptionKey.${e} was accessed before init`)
+                    }
+                    return r
+                }((0, s.customError)("DbMsgEncKeyNotLoadedError"));
+                t.DbMsgEncKeyNotLoaded = q;
+                var G = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("DbOnLogoutAbortError"));
+                t.DbOnLogoutAbort = G, G.message = "DB operation was dropped due to logout activity";
+                var z = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("DBExpiredFtsHMACKey"));
+                t.DBInvalidFtsHMACKey = z, z.message = "MasterDatabaseEncryptionKey.fts_hmac_keys is in an invalid state";
+                var $ = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("ProtoVersionUndefined"));
+                t.ProtoVersionUndefined = $;
+                var Y = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("UpdateImmediately"));
+                t.UpdateImmediately = Y;
+                var H = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("DeprecatedProtocolVersion"));
+                t.DeprecatedProtocolVersion = H;
+                var K = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("CapabilityError"));
+                t.CapabilityError = K;
+                var Z = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("CapabilityInvalid", !0, K));
+                t.CapabilityInvalid = Z;
+                var J = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("CapabilityUnknown", !0, K));
+                t.CapabilityUnknown = J;
+                var Q = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("CanNotSendUnencrypted"));
+                t.CanNotSendUnencrypted = Q;
+                var X = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("ActionError"));
+                t.ActionError = X, X.message = "Could not perform action.";
+                var ee = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("Unmount"));
+                t.Unmount = ee;
+                var te = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("ActiveChatChanged"));
+                t.ActiveChatChanged = te;
+                var re = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("GUMError"));
+                t.GUMError = re;
+                var ne = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("NotSupportedError", !0, re));
+                t.NotSupportedError = ne, ne.message = "The operation is not supported.";
+                var ie = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("NotAllowedError", !0, re));
+                t.NotAllowedError = ie, ie.message = "The user did not grant permission for the operation";
+                var ae = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("ConstraintNotSatisfiedError", !0, re));
+                t.ConstraintNotSatisfiedError = ae, ae.message = "One of the mandatory Constraints could not be satisfied.";
+                var oe = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("OverconstrainedError", !0, re));
+                t.OverconstrainedError = oe, oe.message = "Due to changes in the environment, one or more mandatory constraints can no longer be satisfied.";
+                var se = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("NotFoundError", !0, re));
+                t.NotFoundError = se, se.message = "The object can not be found here.";
+                var ue = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("SourceUnavailableError", !0, re));
+                t.SourceUnavailableError = ue, ue.message = "The source of the MediaStream could not be accessed due to a hardware error (e.g. lock from another process).";
+                var ce = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("UnableToGetContentLengthError"));
+                t.UnableToGetContentLengthError = ce, ce.message = "Failed to get media contentLength from mms";
+                var le = {
+                    GUMError: re,
+                    NotSupportedError: ne,
+                    NotAllowedError: ie,
+                    ConstraintNotSatisfiedError: ae,
+                    OverconstrainedError: oe,
+                    NotFoundError: se,
+                    SourceUnavailableError: ue
+                };
+                t.GUM = le
             },
-            5939: (e, t, r) => {
+            41426: (e, t, r) => {
+                "use strict";
+                var n = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.normalizeError = s, t.normalizeStack = function(e) {
+                    var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
+                        r = s(e),
+                        n = r.name,
+                        i = r.message,
+                        a = r.stack,
+                        u = a.indexOf("\n"),
+                        c = a.slice(0, u),
+                        l = c.match(new RegExp(`(${(0,o.default)(n)}|Error)(:|$)`));
+                    if (null != l) {
+                        if (!t) return a;
+                        var d = l.index + l[0].length,
+                            f = null == i ? -1 : a.indexOf(i, d),
+                            p = null == i || -1 === f ? -1 : f + i.length,
+                            h = Math.max(0, u, d, p);
+                        return a.slice(h).replace(/^\n+/, "")
+                    }
+                    if (t) return a;
+                    var _ = "" === a ? "" : `\n${a}`;
+                    return i ? `${n}: ${i}${_}` : `${n}${_}`
+                };
+                var i = n(r(81109)),
+                    a = n(r(48403)),
+                    o = n(r(3522));
+
+                function s(e) {
+                    var t, r, n = "object" == typeof e && "string" == typeof(null == e ? void 0 : e.name) ? e.name : `Thrown${(0,a.default)(typeof e)}Error`;
+                    if (t = null != e && "string" == typeof e.message ? e.message : void 0 === e ? "" : String(e), null != e && "string" == typeof e.stack) r = e.stack;
+                    else {
+                        var o = new Error;
+                        o.name = n, o.message = t, r = "string" == typeof o.stack ? o.stack : ""
+                    }
+                    var s = "object" == typeof e ? (0, i.default)({}, e) : null;
+                    return (0, i.default)((0, i.default)({}, s), {}, {
+                        name: n,
+                        message: t,
+                        stack: r
+                    })
+                }
+            },
+            83046: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.default = void 0;
-                var i = n(r(34575)),
-                    a = n(r(19793)),
-                    o = n(r(99842)),
-                    s = function(e) {
-                        (0, a.default)(r, e);
-                        var t = (0, o.default)(r);
-
-                        function r(e, n, a) {
-                            var o;
-                            (0, i.default)(this, r);
-                            var s = `${n}: ${e}`;
-                            return (o = t.call(this, s)).status = e, o
+                var i = n(r(59713)),
+                    a = n(r(34575)),
+                    o = n(r(93913)),
+                    s = n(r(73955)),
+                    u = n(r(41609)),
+                    c = n(r(51463)),
+                    l = /\s+/,
+                    d = function() {
+                        function e() {
+                            (0, a.default)(this, e)
                         }
-                        return r
-                    }((0, r(84486).customError)("HttpStatusCodeError"));
-                t.default = s
+                        return (0, o.default)(e, [{
+                            key: "on",
+                            value: function(e, t, r) {
+                                if (!t) return this;
+                                if ("function" != typeof t) throw new Error("Callback parameter passed is not a function");
+                                return this._multiEvent.apply(this, [this.on].concat(Array.prototype.slice.call(arguments))) || this._getOrCreateEvents(e).push({
+                                    callback: t,
+                                    context: r,
+                                    ctx: r || this
+                                }), this
+                            }
+                        }, {
+                            key: "once",
+                            value: function(e, t, r) {
+                                if (!t) return this;
+                                if (this._multiEvent.apply(this, [this.once].concat(Array.prototype.slice.call(arguments)))) return this;
+                                var n = this,
+                                    i = (0, c.default)((function() {
+                                        n.off(e, i), t.apply(this, arguments)
+                                    }));
+                                return i._callback = t, this.on(e, i, r)
+                            }
+                        }, {
+                            key: "off",
+                            value: function(e, t, r) {
+                                var n = this._events;
+                                if (!n) return this;
+                                if (this._multiEvent.apply(this, [this.off].concat(Array.prototype.slice.call(arguments)))) return this;
+                                if (!e && !t && !r) return this._events = void 0, this;
+                                for (var i = e ? [e] : Object.keys(n), a = 0; a < i.length; a++) {
+                                    var o = i[a],
+                                        s = n[o];
+                                    if (s) {
+                                        if (n[o] = [], t || r)
+                                            for (var u = 0; u < s.length; u++) {
+                                                var c = s[u];
+                                                (t && t !== c.callback && t !== c.callback._callback || r && c.context !== r) && n[o].push(c)
+                                            }
+                                        n[o].length || delete n[o]
+                                    }
+                                }
+                                return this
+                            }
+                        }, {
+                            key: "trigger",
+                            value: function(e) {
+                                for (var t = arguments.length, r = new Array(t > 1 ? t - 1 : 0), n = 1; n < t; n++) r[n - 1] = arguments[n];
+                                if (!this._events) return this;
+                                if (this._multiEvent.apply(this, [this.trigger].concat(Array.prototype.slice.call(arguments)))) return this;
+                                var i = this._getEvents(e),
+                                    a = this._getEvents("all");
+                                return i && this._triggerEvents(i, r), a && this._triggerEvents(a, arguments), this
+                            }
+                        }, {
+                            key: "stopListening",
+                            value: function(e, t, r) {
+                                var n = this._listeningTo;
+                                if (!n) return this;
+                                var a = null == e ? void 0 : e._listenId,
+                                    o = a ? (0, i.default)({}, a, e) : n;
+                                for (var s in o) {
+                                    var c = o[s];
+                                    c.off(t, r, this), (!t && !r || (0, u.default)(c._events)) && delete n[s]
+                                }
+                                return (0, u.default)(this._listeningTo) && delete this._listeningTo, this
+                            }
+                        }, {
+                            key: "listenTo",
+                            value: function(e, t, r) {
+                                return r ? (this._addListeningTo(e), e.on(t, r, this), this) : this
+                            }
+                        }, {
+                            key: "listenToOnce",
+                            value: function(e, t, r) {
+                                return this._addListeningTo(e), e.once(t, r, this), this
+                            }
+                        }, {
+                            key: "listenToAndRun",
+                            value: function(e, t, r) {
+                                return this.listenTo.apply(this, arguments), r.apply(this), this
+                            }
+                        }, {
+                            key: "isListening",
+                            value: function(e) {
+                                var t = this._events;
+                                return !!t && ("string" == typeof e ? !!t[e] : (0, u.default)(t))
+                            }
+                        }, {
+                            key: "_addListeningTo",
+                            value: function(e) {
+                                (this._listeningTo || (this._listeningTo = {}))[e._listenId || (e._listenId = (0, s.default)("l"))] = e
+                            }
+                        }, {
+                            key: "_getOrCreateEvents",
+                            value: function(e) {
+                                var t = this._events || (this._events = {});
+                                return t[e] || (t[e] = [])
+                            }
+                        }, {
+                            key: "_getEvents",
+                            value: function(e) {
+                                if (e) {
+                                    var t = this._events;
+                                    if (t) return t[e]
+                                }
+                            }
+                        }, {
+                            key: "_multiEvent",
+                            value: function(e, t) {
+                                if (l.test(t)) {
+                                    for (var r = t.split(l), n = arguments.length, i = new Array(n > 2 ? n - 2 : 0), a = 2; a < n; a++) i[a - 2] = arguments[a];
+                                    for (var o = 0; o < r.length; o++) e.call.apply(e, [this, r[o]].concat(i));
+                                    return !0
+                                }
+                                return !1
+                            }
+                        }, {
+                            key: "_triggerEvents",
+                            value: function(e, t) {
+                                var r, n = -1,
+                                    i = e.length,
+                                    a = t[0],
+                                    o = t[1],
+                                    s = t[2];
+                                switch (t.length) {
+                                    case 0:
+                                        for (; ++n < i;)(r = e[n]).callback.call(r.ctx);
+                                        return;
+                                    case 1:
+                                        for (; ++n < i;)(r = e[n]).callback.call(r.ctx, a);
+                                        return;
+                                    case 2:
+                                        for (; ++n < i;)(r = e[n]).callback.call(r.ctx, a, o);
+                                        return;
+                                    case 3:
+                                        for (; ++n < i;)(r = e[n]).callback.call(r.ctx, a, o, s);
+                                        return;
+                                    default:
+                                        for (; ++n < i;)(r = e[n]).callback.apply(r.ctx, t)
+                                }
+                            }
+                        }, {
+                            key: "bind",
+                            value: function() {
+                                return this.on.apply(this, arguments)
+                            }
+                        }, {
+                            key: "unbind",
+                            value: function() {
+                                return this.off.apply(this, arguments)
+                            }
+                        }, {
+                            key: "removeListener",
+                            value: function() {
+                                return this.off.apply(this, arguments)
+                            }
+                        }, {
+                            key: "removeAllListeners",
+                            value: function() {
+                                return this.off()
+                            }
+                        }, {
+                            key: "emit",
+                            value: function() {
+                                for (var e = arguments.length, t = new Array(e > 1 ? e - 1 : 0), r = 1; r < e; r++) t[r - 1] = arguments[r];
+                                return this.trigger(arguments)
+                            }
+                        }]), e
+                    }();
+                t.default = d
             },
-            25028: (e, t, r) => {
+            43460: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
-                }), t.default = void 0;
-                var i = n(r(34575)),
-                    a = n(r(19793)),
-                    o = n(r(99842)),
-                    s = function(e) {
-                        (0, a.default)(r, e);
-                        var t = (0, o.default)(r);
+                }), t.UA = t.OS_TYPE = t.BROWSER_TYPE = void 0, t.gteVersion = o, t.ltVersion = s, t.parseUA = u;
+                var i = n(r(42238));
+                t.BROWSER_TYPE = {
+                    CHROME: "chrome",
+                    CHROMIUM: "chromium",
+                    FIREFOX: "firefox",
+                    SAFARI: "safari",
+                    IE: "ie",
+                    OPERA: "opera",
+                    EDGE: "edge"
+                };
 
-                        function r() {
+                function a(e, t) {
+                    var r, n, i = /(\.0)+[^\.]*$/,
+                        a = (e + "").replace(i, "").split("."),
+                        o = (t + "").replace(i, "").split("."),
+                        s = Math.min(a.length, o.length);
+                    for (r = 0; r < s; r++)
+                        if (0 !== (n = parseInt(a[r], 10) - parseInt(o[r], 10))) return n;
+                    return a.length - o.length
+                }
+
+                function o(e, t) {
+                    return a(e, t) >= 0
+                }
+
+                function s(e, t) {
+                    return a(e, t) < 0
+                }
+
+                function u(e) {
+                    var t = new i.default;
+                    t.setUA(e || "");
+                    var r = (t.getBrowser().name || "").toUpperCase(),
+                        n = t.getBrowser().version || "0.0.0",
+                        a = (t.getEngine().name || "").toUpperCase(),
+                        u = (t.getOS().name || "").toUpperCase(),
+                        c = t.getOS().version || "0.0.0",
+                        l = "SAFARI" === r,
+                        d = "CHROME" === r,
+                        f = "GECKO" === a,
+                        p = "BLINK" === a,
+                        h = !1;
+                    switch (u) {
+                        case "MAC OS":
+                            d ? h = o(c, "10.10") && o(n, "41.0.0") : o(c, "10.7") && (h = !0);
+                            break;
+                        case "WINDOWS":
+                            o(c, "8.1") && (f || d && o(n, "41.0.0")) && (h = !0)
+                    }
+                    var _ = l || d && s(n, "76");
+                    return {
+                        isWebkit: !a || "WEBKIT" === a,
+                        isGecko: f,
+                        isTrident: "TRIDENT" === a || "EDGEHTML" === a,
+                        isSafari: l,
+                        isElectron: !1,
+                        isBlink: p,
+                        isBuggyVideoLoad: d && o(n, "76") || p && !d,
+                        hasEmoji: h,
+                        troublesWithLotsOfVideos: d,
+                        supportsEmojiEllipsification: !_,
+                        isBrokenGetUserMedia: d && s(n, "50"),
+                        isLocalStorageBroken: l && o(n, "14.1") && s(n, "14.1.2"),
+                        os: u.toLowerCase(),
+                        osVersion: c,
+                        browser: r.toLowerCase(),
+                        browserVersion: n,
+                        parser: t,
+                        isChrome: d
+                    }
+                }
+                t.OS_TYPE = {
+                    WINDOWS: "windows",
+                    MAC: "mac os",
+                    CHROMEOS: "chromium os"
+                };
+                var c = u("undefined" != typeof self ? self.navigator.userAgent : null);
+                t.UA = c
+            },
+            13987: (e, t, r) => {
+                "use strict";
+                var n = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = function(e, t, r) {
+                    var n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : String,
+                        a = (0, i.default)(e, t.map(n)).join(""),
+                        o = r ? 4e3 : Number.POSITIVE_INFINITY;
+                    a.length > o && (a = a.slice(0, o).replace(/\s+$/, " [truncated]"));
+                    return a
+                };
+                var i = n(r(80736))
+            },
+            78922: (e, t) => {
+                "use strict";
+
+                function r(e, t) {
+                    var n = function() {
+                        for (var r = arguments.length, i = new Array(r), a = 0; a < r; a++) i[a] = arguments[a];
+                        var o = t ? t.apply(this, i) : i[0];
+                        if (!o) return e.apply(this, i);
+                        var s = n.cache;
+                        if (s.has(o)) return s.get(o);
+                        var u = e.apply(this, i);
+                        return n.cache = s.set(o, u) || s, u
+                    };
+                    return n.cache = new(r.Cache || Map), n
+                }
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = void 0, r.Cache = Map;
+                var n = r;
+                t.default = n
+            },
+            63344: (e, t, r) => {
+                "use strict";
+                var n = r(37471).default,
+                    i = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.FILETYPE = void 0, t.blobToArrayBuffer = d, t.blobToText = function() {
+                    return h.apply(this, arguments)
+                }, t.createFile = function(e, t, r) {
+                    var n = new Blob(e, r || {});
+                    return n.name = t, n
+                }, t.getAudioDuration = function(e) {
+                    var t, r;
+                    return new n((function(n, i) {
+                        (t = document.createElement("audio")).addEventListener("loadeddata", n), t.addEventListener("error", (function() {
+                            i(new Error("getAudioDuration: error loading audio"))
+                        })), t.src = r = URL.createObjectURL(e)
+                    })).then((function() {
+                        return ~~t.seekable.end(0)
+                    })).finally((function() {
+                        r && URL.revokeObjectURL(r)
+                    }))
+                }, t.getFileExtension = p, t.getMimeTypeForFilepath = function(e) {
+                    var t = p(e),
+                        r = (0, u.isAllowedDocumentMimetype)(u.EXT_TO_MIME && t && u.EXT_TO_MIME[t], e, !1);
+                    if (r) return r
+                }, t.removeTrailingDots = f, t.typeFromMimetype = function(e) {
+                    var t = e.split("/")[0];
+                    switch (t) {
+                        case c.IMAGE:
+                        case c.VIDEO:
+                        case c.AUDIO:
+                            return t;
+                        default:
+                            return c.DOCUMENT
+                    }
+                }, t.validateBlob = function(e) {
+                    return d(e.webkitSlice ? e.webkitSlice(0, 1) : e.slice(0, 1)).then((function(e) {
+                        return 1 === e.byteLength
+                    })).catch((function() {
+                        return !1
+                    }))
+                };
+                var a = i(r(87757)),
+                    o = i(r(48926)),
+                    s = r(46587),
+                    u = r(36295),
+                    c = Object.freeze({
+                        IMAGE: "image",
+                        VIDEO: "video",
+                        AUDIO: "audio",
+                        DOCUMENT: "document",
+                        STICKER: "sticker"
+                    });
+                t.FILETYPE = c;
+                var l = function(e) {
+                    var t;
+                    return null !== (t = null == e ? void 0 : e.message) && void 0 !== t ? t : ""
+                };
+
+                function d(e) {
+                    var t;
+                    return new n((function(r, n) {
+                        (t = new FileReader).onload = r, t.onerror = function() {
                             var e;
-                            (0, i.default)(this, r);
-                            for (var n = arguments.length, a = new Array(n), o = 0; o < n; o++) a[o] = arguments[o];
-                            return (e = t.call.apply(t, [this].concat(a))).name = "HttpTimedOutError", e
-                        }
-                        return r
-                    }(n(r(30934)).default);
-                t.default = s
+                            n("NotReadableError" === (null === (e = t.error) || void 0 === e ? void 0 : e.name) ? new s.FileNotReadableError(`blobToArrayBuffer error: ${l(t.error)}`) : new Error(`blobToArrayBuffer error: ${l(t.error)}`))
+                        }, t.onabort = function() {
+                            n(new Error(`blobToArrayBuffer abort: ${l(t.error)}`))
+                        }, t.readAsArrayBuffer(e)
+                    })).then((function() {
+                        return t.result
+                    }))
+                }
+
+                function f(e) {
+                    return e.replace(/\.+$/, "")
+                }
+
+                function p(e) {
+                    var t = f(e.trimRight()).split(".");
+                    return t.length > 1 ? t[t.length - 1].toLowerCase() : null
+                }
+
+                function h() {
+                    return (h = (0, o.default)(a.default.mark((function e(t) {
+                        var r;
+                        return a.default.wrap((function(e) {
+                            for (;;) switch (e.prev = e.next) {
+                                case 0:
+                                    if ("function" != typeof t.text) {
+                                        e.next = 2;
+                                        break
+                                    }
+                                    return e.abrupt("return", t.text());
+                                case 2:
+                                    return r = new FileReader, e.next = 5, new n((function(e, n) {
+                                        r.onload = e, r.onerror = function(e) {
+                                            n(new Error(`blobToText error: ${String(e)}`))
+                                        }, r.onabort = function(e) {
+                                            n(new Error(`blobToText abort: ${String(e)}`))
+                                        }, r.readAsText(t)
+                                    }));
+                                case 5:
+                                    if (!(r.result instanceof ArrayBuffer)) {
+                                        e.next = 7;
+                                        break
+                                    }
+                                    throw new TypeError("blobToText error: Invalid result type: ArrayBuffer");
+                                case 7:
+                                    if (null != r.result) {
+                                        e.next = 9;
+                                        break
+                                    }
+                                    throw new TypeError("blobToText: Invalid result type: null");
+                                case 9:
+                                    return e.abrupt("return", r.result);
+                                case 10:
+                                case "end":
+                                    return e.stop()
+                            }
+                        }), e)
+                    })))).apply(this, arguments)
+                }
+            },
+            75352: (e, t, r) => {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.expBackoff = i, t.expDelaySec = function(e, t, r) {
+                    var a = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : .1;
+                    return (0, n.delayMs)(Math.floor(1e3 * i(e, t, r, a)))
+                };
+                var n = r(84165);
+
+                function i(e, t, r) {
+                    var n, i = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : .1;
+                    return n = 0 === e ? r || 0 : Math.pow(2, e), Number.isFinite(t) && n > t && (n = t), "number" == typeof r && Number.isFinite(r) && n < r && (n = r), i && (n *= 1 + i * Math.random()), n
+                }
             },
             92162: (e, t) => {
                 "use strict";
                 Object.defineProperty(t, "__esModule", {
                     value: !0
-                }), t.WEB_CALL_STATES = t.WEB_CALL_EVENTS = t.WAVideoCodecScheme = t.WACallState = t.WACallEvent = t.WACallEndReason = t.VoipSettingsType = t.VideoUpgradeRequestEndedReason = t.VideoState = t.VOIP_WINDOW_IPC_EVENTS = t.RENDERER_IPC_EVENTS = t.RELAY_INFO = t.PlatformTypeMapping = t.ParticipantState = t.MAIN_IPC_EVENTS = t.CallNetworkMedium = t.CALL_UI_STATES = t.CALL_STATES = t.CALL_RESULT_TYPE = t.CALL_LOG_RESULT_TYPE = t.CALL_LOG_RESULT = void 0;
+                }), t.WEB_CALL_UI_STATES = t.WEB_CALL_STATES = t.WEB_CALL_EVENTS = t.WAVideoCodecScheme = t.WACallState = t.WACallEvent = t.WACallEndReason = t.VoipSettingsType = t.VideoUpgradeRequestEndedReason = t.VideoState = t.VOIP_WINDOW_IPC_EVENTS = t.RENDERER_IPC_EVENTS = t.RELAY_INFO = t.PlatformTypeMapping = t.ParticipantState = t.MAIN_IPC_EVENTS = t.CallNetworkMedium = t.CALL_STATES = t.CALL_RESULT_TYPE = t.CALL_LOG_RESULT_TYPE = t.CALL_LOG_RESULT = void 0;
                 t.WACallEvent = {
                     WANone: 0,
                     CallOfferSent: 1,
@@ -22232,7 +25031,7 @@
                     WACallStateCallActiveElseWhere: 7,
                     WACallStateReceivedCallWithoutOffer: 8
                 };
-                t.CALL_UI_STATES = {
+                t.WEB_CALL_UI_STATES = {
                     NONE: "NONE",
                     OUTGOING_RING: "OUTGOING_RING",
                     INCOMING_RING: "INCOMING_RING",
@@ -22456,7 +25255,7 @@
                                 o && (o.get || o.set) ? Object.defineProperty(n, a, o) : n[a] = e[a]
                             } n.default = e, r && r.set(e, n);
                         return n
-                    }(r(60822)),
+                    }(r(75352)),
                     E = a(r(11182));
 
                 function S(e) {
@@ -22481,7 +25280,7 @@
                         return (0, c.default)(e, [{
                             key: "init",
                             value: function(e, t) {
-                                (this._webContents || this._whatsappWindow) && this.destructor(), this._webContents = e, this._whatsappWindow = t, this._onErrorHandler = this.onError.bind(this), this._onCheckingHandler = this.onChecking.bind(this), this._onAvailableHandler = this.onAvailable.bind(this), this._onNotAvailableHandler = this.onNotAvailable.bind(this), this._onDownloadedHandler = this.onDownloaded.bind(this), _.autoUpdater.on("error", this._onErrorHandler), _.autoUpdater.on("checking-for-update", this._onCheckingHandler), _.autoUpdater.on("update-available", this._onAvailableHandler), _.autoUpdater.on("update-not-available", this._onNotAvailableHandler), _.autoUpdater.on("update-downloaded", this._onDownloadedHandler), n(2)`Update from ${_.autoUpdater.getFeedURL()}`, this._mode = A, this._updateVersion = void 0, this.setUpdateInterval(x)
+                                (this._webContents || this._whatsappWindow) && this.destructor(), this._webContents = e, this._whatsappWindow = t, this._onErrorHandler = this._handleError.bind(this), this._onCheckingHandler = this._handleChecking.bind(this), this._onAvailableHandler = this._handleAvailable.bind(this), this._onNotAvailableHandler = this._handleNotAvailable.bind(this), this._onDownloadedHandler = this._handleDownloaded.bind(this), _.autoUpdater.on("error", this._onErrorHandler), _.autoUpdater.on("checking-for-update", this._onCheckingHandler), _.autoUpdater.on("update-available", this._onAvailableHandler), _.autoUpdater.on("update-not-available", this._onNotAvailableHandler), _.autoUpdater.on("update-downloaded", this._onDownloadedHandler), n(2)`Update from ${_.autoUpdater.getFeedURL()}`, this._mode = A, this._updateVersion = void 0, this.setUpdateInterval(x)
                             }
                         }, {
                             key: "destructor",
@@ -22505,27 +25304,27 @@
                                 this._mode !== e && (this._mode = e, this._webContents && this._webContents.send("autoUpdater:mode", e))
                             }
                         }, {
-                            key: "onError",
+                            key: "_handleError",
                             value: function(e) {
                                 n(3)`Auto updater: error ${e}`, this.mode = C, this.updateVersion = void 0
                             }
                         }, {
-                            key: "onChecking",
+                            key: "_handleChecking",
                             value: function() {
                                 n(2)`Auto updater: checking for update`, this.mode = k
                             }
                         }, {
-                            key: "onAvailable",
+                            key: "_handleAvailable",
                             value: function() {
                                 n(2)`Auto updater: update available`, this.mode = O
                             }
                         }, {
-                            key: "onNotAvailable",
+                            key: "_handleNotAvailable",
                             value: function() {
                                 n(2)`Auto updater: update not available`, this.updateVersion ? this.mode = T : this.mode = A
                             }
                         }, {
-                            key: "onDownloaded",
+                            key: "_handleDownloaded",
                             value: function(e, t, r, i, a) {
                                 var o = this;
                                 n(2)`Auto updater: update downloaded ${e}`, n(2)`releaseNotes ${t}`, n(2)`releaseName ${r}`, n(2)`releaseDate ${i}`, n(2)`updateURL ${a}`, this.updateVersion = r, this.mode = T, E.default.isUpgradeTest && setTimeout((function() {
@@ -22799,45 +25598,45 @@
                     a = n(r(93913)),
                     o = r(58933),
                     s = r(48360),
-                    u = n(r(24409)),
-                    c = n(r(58568)),
-                    l = n(r(65496)),
-                    d = r(27258),
+                    u = n(r(51104)),
+                    c = n(r(88846)),
+                    l = n(r(6210)),
+                    d = r(43424),
                     f = function() {
                         function e(t, r) {
                             var n = this;
-                            (0, i.default)(this, e), this.onChatKind = function(e, t, r, i, a, o, s) {
+                            (0, i.default)(this, e), this._handleChatKind = function(e, t, r, i, a, o, s) {
                                 n._kind = t, n._isArchived = r, n._isReadOnly = i, n._isRead = a, n._isMuted = o, n._isPinned = s
-                            }, this.onReadOnly = function(e, t) {
+                            }, this._handleReadOnly = function(e, t) {
                                 n._isReadOnly !== t && (n._isReadOnly = t)
-                            }, this.onArchive = function(e, t) {
+                            }, this._handleArchive = function(e, t) {
                                 n._isArchived !== t && (n._isArchived = t)
-                            }, this.onRead = function(e, t) {
+                            }, this._handleRead = function(e, t) {
                                 n._isRead !== t && (n._isRead = t)
-                            }, this.onMute = function(e, t) {
+                            }, this._handleMute = function(e, t) {
                                 n._isMuted !== t && (n._isMuted = t)
-                            }, this.onPin = function(e, t) {
+                            }, this._handlePin = function(e, t) {
                                 n._isPinned !== t && (n._isPinned = t)
-                            }, this.webContents = t, this.requestRender = r, this._kind = null, this._isArchived = null, this._isRead = null, this._isReadOnly = null, this._isMuted = null, this._isPinned = null, o.ipcMain.on(`${c.default.Event}:${c.default.Events.CHAT_KIND}`, this.onChatKind), o.ipcMain.on(`${c.default.Event}:${c.default.Events.READ_ONLY}`, this.onReadOnly), o.ipcMain.on(`${c.default.Event}:${c.default.Events.ARCHIVE}`, this.onArchive), o.ipcMain.on(`${c.default.Event}:${c.default.Events.READ}`, this.onRead), o.ipcMain.on(`${c.default.Event}:${c.default.Events.MUTE}`, this.onMute), o.ipcMain.on(`${c.default.Event}:${c.default.Events.PIN}`, this.onPin)
+                            }, this.webContents = t, this.requestRender = r, this._kind = null, this._isArchived = null, this._isRead = null, this._isReadOnly = null, this._isMuted = null, this._isPinned = null, o.ipcMain.on(`${c.default.Event}:${c.default.Events.CHAT_KIND}`, this._handleChatKind), o.ipcMain.on(`${c.default.Event}:${c.default.Events.READ_ONLY}`, this._handleReadOnly), o.ipcMain.on(`${c.default.Event}:${c.default.Events.ARCHIVE}`, this._handleArchive), o.ipcMain.on(`${c.default.Event}:${c.default.Events.READ}`, this._handleRead), o.ipcMain.on(`${c.default.Event}:${c.default.Events.MUTE}`, this._handleMute), o.ipcMain.on(`${c.default.Event}:${c.default.Events.PIN}`, this._handlePin)
                         }
                         return (0, a.default)(e, [{
                             key: "destructor",
                             value: function() {
-                                o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.CHAT_KIND}`, this.onChatKind), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.READ_ONLY}`, this.onReadOnly), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.ARCHIVE}`, this.onArchive), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.READ}`, this.onRead), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.MUTE}`, this.onMute), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.PIN}`, this.onPin)
+                                o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.CHAT_KIND}`, this._handleChatKind), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.READ_ONLY}`, this._handleReadOnly), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.ARCHIVE}`, this._handleArchive), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.READ}`, this._handleRead), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.MUTE}`, this._handleMute), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.PIN}`, this._handlePin)
                             }
                         }, {
                             key: "render",
                             value: function() {
                                 var e = this,
                                     t = [{
-                                        label: this._isArchived ? l.default.t(672) : l.default.t(650),
+                                        label: this._isArchived ? l.default.t(665) : l.default.t(643),
                                         accelerator: (0, d.getKey)(u.default.TOGGLE_ARCHIVE),
                                         click: function() {
                                             e.webContents.send(c.default.Action, u.default.TOGGLE_ARCHIVE)
                                         },
                                         enabled: !!this._kind
                                     }, {
-                                        label: this._isMuted ? l.default.t(673) : l.default.t(668),
+                                        label: this._isMuted ? l.default.t(666) : l.default.t(661),
                                         accelerator: (0, d.getKey)(u.default.TOGGLE_MUTE),
                                         click: function() {
                                             e.webContents.send(c.default.Action, u.default.TOGGLE_MUTE)
@@ -22853,14 +25652,14 @@
                                         },
                                         enabled: !!this._kind
                                     }, {
-                                        label: "group" === this._kind ? this._isReadOnly ? l.default.t(654) : l.default.t(655) : l.default.t(653),
+                                        label: "group" === this._kind ? this._isReadOnly ? l.default.t(647) : l.default.t(648) : l.default.t(646),
                                         accelerator: (0, d.getKey)(u.default.DELETE_OR_EXIT_CHAT),
                                         click: function() {
                                             e.webContents.send(c.default.Action, u.default.DELETE_OR_EXIT_CHAT)
                                         },
                                         enabled: !!this._kind
                                     }, {
-                                        label: this._isRead ? l.default.t(658) : l.default.t(657),
+                                        label: this._isRead ? l.default.t(651) : l.default.t(650),
                                         accelerator: (0, d.getKey)(u.default.TOGGLE_UNREAD),
                                         click: function() {
                                             e.webContents.send(c.default.Action, u.default.TOGGLE_UNREAD)
@@ -22906,7 +25705,7 @@
                                         enabled: !!this._kind
                                     }];
                                 return new o.MenuItem({
-                                    label: l.default.t(659),
+                                    label: l.default.t(652),
                                     submenu: t
                                 })
                             }
@@ -22922,9 +25721,9 @@
                     o = n(r(93913)),
                     s = r(58933),
                     u = r(48360),
-                    c = n(r(24409)),
-                    l = n(r(58568)),
-                    d = r(27258),
+                    c = n(r(51104)),
+                    l = n(r(88846)),
+                    d = r(43424),
                     f = function() {
                         function e(t, r) {
                             var n = this;
@@ -23012,30 +25811,30 @@
                     o = i(r(93913)),
                     s = r(58933),
                     u = r(48360),
-                    c = i(r(24409)),
-                    l = i(r(58568)),
-                    d = i(r(65496)),
-                    f = r(27258),
+                    c = i(r(51104)),
+                    l = i(r(88846)),
+                    d = i(r(6210)),
+                    f = r(43424),
                     p = function() {
                         function e(t, r, i) {
                             var o = this;
-                            (0, a.default)(this, e), this.onLoggedIn = function() {
+                            (0, a.default)(this, e), this._handleLoggedIn = function() {
                                 o.loggedIn = !0, o.requestRender()
-                            }, this.onLoggedOut = function() {
+                            }, this._handleLoggedOut = function() {
                                 o.loggedIn = !1, o.requestRender()
-                            }, this.onShow = function() {
+                            }, this._handleShow = function() {
                                 o.isClosed = !1, o.requestRender()
-                            }, this.onHide = function() {
+                            }, this._handleHide = function() {
                                 o.isClosed = !0, o.requestRender()
-                            }, this.browserWindow = t, this.webContents = r, this.requestRender = i, this.loggedIn = !1, this.isClosed = !1, s.ipcMain.on(`${l.default.Event}:${l.default.Events.LOGGED_IN}`, this.onLoggedIn), s.ipcMain.on(`${l.default.Event}:${l.default.Events.LOGGED_OUT}`, this.onLoggedOut);
+                            }, this.browserWindow = t, this.webContents = r, this.requestRender = i, this.loggedIn = !1, this.isClosed = !1, s.ipcMain.on(`${l.default.Event}:${l.default.Events.LOGGED_IN}`, this._handleLoggedIn), s.ipcMain.on(`${l.default.Event}:${l.default.Events.LOGGED_OUT}`, this._handleLoggedOut);
                             try {
-                                this.browserWindow.on("show", this.onShow)
+                                this.browserWindow.on("show", this._handleShow)
                             } catch (e) {
                                 n(4, void 0, new Error)`Menu:File:constructor(): failed to attach 'show' listener to \
 browserWindow: ${e}`
                             }
                             try {
-                                this.browserWindow.on("hide", this.onHide)
+                                this.browserWindow.on("hide", this._handleHide)
                             } catch (e) {
                                 n(4, void 0, new Error)`Menu:File:constructor(): failed to attach 'hide' listener to \
 browserWindow: ${e}`
@@ -23044,15 +25843,15 @@ browserWindow: ${e}`
                         return (0, o.default)(e, [{
                             key: "destructor",
                             value: function() {
-                                s.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.LOGGED_IN}`, this.onLoggedIn), s.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.LOGGED_OUT}`, this.onLoggedOut);
+                                s.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.LOGGED_IN}`, this._handleLoggedIn), s.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.LOGGED_OUT}`, this._handleLoggedOut);
                                 try {
-                                    this.browserWindow.removeListener("show", this.onShow)
+                                    this.browserWindow.removeListener("show", this._handleShow)
                                 } catch (e) {
                                     n(4, void 0, new Error)`Menu:File:destructor(): failed to remove 'show' listener from \
 browserWindow: ${e}`
                                 }
                                 try {
-                                    this.browserWindow.removeListener("hide", this.onShow)
+                                    this.browserWindow.removeListener("hide", this._handleShow)
                                 } catch (e) {
                                     n(4, void 0, new Error)`Menu:File:destructor(): failed to remove 'hide' listener from \
 browserWindow: ${e}`
@@ -23068,21 +25867,21 @@ browserWindow: ${e}`
                             value: function() {
                                 var e = this,
                                     t = [{
-                                        label: d.default.t(669),
+                                        label: d.default.t(662),
                                         accelerator: (0, f.getKey)(c.default.OPEN_NEW_CHAT),
                                         click: function() {
                                             e.webContents.send(l.default.Action, c.default.OPEN_NEW_CHAT), e.maybeForegroundWindow()
                                         },
                                         enabled: this.loggedIn
                                     }, {
-                                        label: d.default.t(670),
+                                        label: d.default.t(663),
                                         accelerator: (0, f.getKey)(c.default.OPEN_NEW_GROUP),
                                         click: function() {
                                             e.webContents.send(l.default.Action, c.default.OPEN_NEW_GROUP), e.maybeForegroundWindow()
                                         },
                                         enabled: this.loggedIn
                                     }, {
-                                        label: d.default.t(671),
+                                        label: d.default.t(664),
                                         accelerator: (0, f.getKey)(c.default.OPEN_PROFILE),
                                         click: function() {
                                             e.webContents.send(l.default.Action, c.default.OPEN_PROFILE), e.maybeForegroundWindow()
@@ -23091,7 +25890,7 @@ browserWindow: ${e}`
                                     }, {
                                         type: "separator"
                                     }, {
-                                        label: d.default.t(656),
+                                        label: d.default.t(649),
                                         click: function() {
                                             e.webContents.send(l.default.Action, c.default.LOGOUT), e.maybeForegroundWindow()
                                         },
@@ -23124,12 +25923,12 @@ browserWindow: ${e}`
                     a = n(r(93913)),
                     o = r(58933),
                     s = r(48360),
-                    u = n(r(24409)),
+                    u = n(r(51104)),
                     c = r(8957),
-                    l = n(r(58568)),
-                    d = n(r(65496)),
+                    l = n(r(88846)),
+                    d = n(r(6210)),
                     f = r(24773),
-                    p = r(27258),
+                    p = r(43424),
                     h = function() {
                         function e(t, r) {
                             (0, i.default)(this, e), this.webContents = t, this.requestRender = r
@@ -23149,13 +25948,13 @@ browserWindow: ${e}`
                                             (0, f.openExternal)((0, c.getFaqUrl)())
                                         }
                                     }, {
-                                        label: d.default.t(761),
+                                        label: d.default.t(754),
                                         accelerator: (0, p.getKey)(u.default.CONTACT_US),
                                         click: function() {
                                             e.webContents.send(l.default.Action, u.default.CONTACT_US)
                                         }
                                     }, {
-                                        label: d.default.t(661),
+                                        label: d.default.t(654),
                                         click: function() {
                                             (0, f.openExternal)((0, c.getTosUrl)())
                                         }
@@ -23168,7 +25967,7 @@ browserWindow: ${e}`
                                         }
                                     }];
                                 return new o.MenuItem({
-                                    label: d.default.t(660),
+                                    label: d.default.t(653),
                                     role: "help",
                                     submenu: t
                                 })
@@ -23184,22 +25983,22 @@ browserWindow: ${e}`
                     a = n(r(93913)),
                     o = r(58933),
                     s = r(48360),
-                    u = n(r(24409)),
-                    c = n(r(58568)),
-                    l = r(27258),
+                    u = n(r(51104)),
+                    c = n(r(88846)),
+                    l = r(43424),
                     d = function() {
                         function e(t, r, n) {
                             var a = this;
-                            (0, i.default)(this, e), this.onLoggedIn = function() {
+                            (0, i.default)(this, e), this._handleLoggedIn = function() {
                                 a.loggedIn = !0, a.requestRender()
-                            }, this.onLoggedOut = function() {
+                            }, this._handleLoggedOut = function() {
                                 a.loggedIn = !1, a.requestRender()
-                            }, this.browserWindow = t, this.webContents = r, this.requestRender = n, this.loggedIn = !1, o.ipcMain.on(`${c.default.Event}:${c.default.Events.LOGGED_IN}`, this.onLoggedIn), o.ipcMain.on(`${c.default.Event}:${c.default.Events.LOGGED_OUT}`, this.onLoggedOut)
+                            }, this.browserWindow = t, this.webContents = r, this.requestRender = n, this.loggedIn = !1, o.ipcMain.on(`${c.default.Event}:${c.default.Events.LOGGED_IN}`, this._handleLoggedIn), o.ipcMain.on(`${c.default.Event}:${c.default.Events.LOGGED_OUT}`, this._handleLoggedOut)
                         }
                         return (0, a.default)(e, [{
                             key: "destructor",
                             value: function() {
-                                o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.LOGGED_IN}`, this.onLoggedIn), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.LOGGED_OUT}`, this.onLoggedOut)
+                                o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.LOGGED_IN}`, this._handleLoggedIn), o.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.LOGGED_OUT}`, this._handleLoggedOut)
                             }
                         }, {
                             key: "maybeForegroundWindow",
@@ -23290,14 +26089,14 @@ browserWindow: ${e}`
                     _ = r(53284),
                     m = r(58933).Menu,
                     g = r(58933).ipcMain,
-                    v = r(58568),
+                    v = r(88846),
                     b = r(94795),
                     y = function() {
                         function e(t, i) {
                             var s = this;
-                            (0, o.default)(this, e), this.handleRender = function() {
+                            (0, o.default)(this, e), this._handleRender = function() {
                                 s.renderMenu()
-                            }, this.handleEnableVoipFeatures = function(e, t) {
+                            }, this._handleEnableVoipFeatures = function(e, t) {
                                 if (t !== s.voipFeaturesEnabled) {
                                     s.voipFeaturesEnabled = t;
                                     var n = (0, a.default)(s.baseMenuTemplates);
@@ -23318,14 +26117,14 @@ browserWindow: ${e}`
                                     var n = r.render(e);
                                     t.append(n)
                                 })), m.setApplicationMenu(t)
-                            }, this.voipFeaturesEnabled = !1, this.browserWindow = t, this.getVoipBrowserWindow = i, this.webContents = this.browserWindow.webContents, this.handleRender = this.handleRender.bind(this), this.handleEnableVoipFeatures = this.handleEnableVoipFeatures.bind(this), this.renderMenu = this.renderMenu.bind(this);
+                            }, this.voipFeaturesEnabled = !1, this.browserWindow = t, this.getVoipBrowserWindow = i, this.webContents = this.browserWindow.webContents, this._handleRender = this._handleRender.bind(this), this._handleEnableVoipFeatures = this._handleEnableVoipFeatures.bind(this), this.renderMenu = this.renderMenu.bind(this);
                             var y = [new c(this.browserWindow, this.webContents, this.renderMenu), new l(this.browserWindow, this.webContents, this.renderMenu), new d(this.webContents, this.renderMenu), new f(this.browserWindow, this.webContents, this.renderMenu), new p(this.webContents, this.renderMenu), new h(this.browserWindow, this.webContents, this.renderMenu), new _(this.webContents, this.renderMenu)];
-                            this.menuTemplates = y, this.baseMenuTemplates = y, g.on(`${v.Event}:${v.Events.BATCH_RENDER}`, this.handleRender), g.on(u.RENDERER_IPC_EVENTS.ENABLE_VOIP_FEATURES, this.handleEnableVoipFeatures)
+                            this.menuTemplates = y, this.baseMenuTemplates = y, g.on(`${v.Event}:${v.Events.BATCH_RENDER}`, this._handleRender), g.on(u.RENDERER_IPC_EVENTS.ENABLE_VOIP_FEATURES, this._handleEnableVoipFeatures)
                         }
                         return (0, s.default)(e, [{
                             key: "destructor",
                             value: function() {
-                                g.removeListener(`${v.Event}:${v.Events.BATCH_RENDER}`, this.handleRender), g.removeListener(u.RENDERER_IPC_EVENTS.ENABLE_VOIP_FEATURES, this.handleEnableVoipFeatures), this.menuTemplates.forEach((function(e) {
+                                g.removeListener(`${v.Event}:${v.Events.BATCH_RENDER}`, this._handleRender), g.removeListener(u.RENDERER_IPC_EVENTS.ENABLE_VOIP_FEATURES, this._handleEnableVoipFeatures), this.menuTemplates.forEach((function(e) {
                                     e.destructor()
                                 }))
                             }
@@ -23349,9 +26148,9 @@ browserWindow: ${e}`
                     o = i(r(93913)),
                     s = r(58933),
                     u = r(48360),
-                    c = i(r(24409)),
-                    l = i(r(58568)),
-                    d = r(27258),
+                    c = i(r(51104)),
+                    l = i(r(88846)),
+                    d = r(43424),
                     f = function() {
                         function e(t, r, i) {
                             var o = this;
@@ -23459,46 +26258,46 @@ listener from browserWindow: ${e}`
                     i = n(r(34575)),
                     a = n(r(93913)),
                     o = r(58933),
-                    s = n(r(24409)),
-                    u = n(r(58568)),
-                    c = n(r(65496)),
-                    l = r(27258),
+                    s = n(r(51104)),
+                    u = n(r(88846)),
+                    c = n(r(6210)),
+                    l = r(43424),
                     d = function() {
                         function e(t, r, n) {
                             var a = this;
-                            (0, i.default)(this, e), this.onLoggedIn = function() {
+                            (0, i.default)(this, e), this._handleLoggedIn = function() {
                                 a.loggedIn = !0, a.requestRender()
-                            }, this.onLoggedOut = function() {
+                            }, this._handleLoggedOut = function() {
                                 a.loggedIn = !1, a.requestRender()
-                            }, this.browserWindow = t, this.webContents = r, this.requestRender = n, this.loggedIn = !1, o.ipcMain.on(`${u.default.Event}:${u.default.Events.LOGGED_IN}`, this.onLoggedIn), o.ipcMain.on(`${u.default.Event}:${u.default.Events.LOGGED_OUT}`, this.onLoggedOut)
+                            }, this.browserWindow = t, this.webContents = r, this.requestRender = n, this.loggedIn = !1, o.ipcMain.on(`${u.default.Event}:${u.default.Events.LOGGED_IN}`, this._handleLoggedIn), o.ipcMain.on(`${u.default.Event}:${u.default.Events.LOGGED_OUT}`, this._handleLoggedOut)
                         }
                         return (0, a.default)(e, [{
                             key: "destructor",
                             value: function() {
-                                o.ipcMain.removeListener(`${u.default.Event}:${u.default.Events.LOGGED_IN}`, this.onLoggedIn), o.ipcMain.removeListener(`${u.default.Event}:${u.default.Events.LOGGED_OUT}`, this.onLoggedOut)
+                                o.ipcMain.removeListener(`${u.default.Event}:${u.default.Events.LOGGED_IN}`, this._handleLoggedIn), o.ipcMain.removeListener(`${u.default.Event}:${u.default.Events.LOGGED_OUT}`, this._handleLoggedOut)
                             }
                         }, {
                             key: "render",
                             value: function() {
                                 var e = this,
                                     t = [{
-                                        label: c.default.t(666),
+                                        label: c.default.t(659),
                                         accelerator: "CmdOrCtrl+M",
                                         role: "minimize"
                                     }, {
-                                        label: c.default.t(667),
+                                        label: c.default.t(660),
                                         role: "zoom"
                                     }, {
                                         type: "separator"
                                     }, {
-                                        label: c.default.t(662),
+                                        label: c.default.t(655),
                                         accelerator: (0, l.getKey)(s.default.GO_TO_NEXT_CHAT),
                                         enabled: this.loggedIn,
                                         click: function() {
                                             e.webContents.send(u.default.Action, s.default.GO_TO_NEXT_CHAT)
                                         }
                                     }, {
-                                        label: c.default.t(663),
+                                        label: c.default.t(656),
                                         accelerator: (0, l.getKey)(s.default.GO_TO_PREV_CHAT),
                                         enabled: this.loggedIn,
                                         click: function() {
@@ -23507,7 +26306,7 @@ listener from browserWindow: ${e}`
                                     }, {
                                         type: "separator"
                                     }, {
-                                        label: c.default.t(1034),
+                                        label: c.default.t(1027),
                                         enabled: !0,
                                         click: function() {
                                             e.browserWindow.show()
@@ -23515,11 +26314,11 @@ listener from browserWindow: ${e}`
                                     }, {
                                         type: "separator"
                                     }, {
-                                        label: c.default.t(665),
+                                        label: c.default.t(658),
                                         role: "front"
                                     }];
                                 return new o.MenuItem({
-                                    label: c.default.t(664),
+                                    label: c.default.t(657),
                                     role: "window",
                                     submenu: t
                                 })
@@ -23550,20 +26349,20 @@ listener from browserWindow: ${e}`
                     a = i(r(34575)),
                     o = i(r(93913)),
                     s = r(58933),
-                    u = i(r(24409)),
-                    c = i(r(58568)),
+                    u = i(r(51104)),
+                    c = i(r(88846)),
                     l = i(r(94795)),
-                    d = r(27258),
+                    d = r(43424),
                     f = function() {
                         function e(t) {
                             var r = this;
-                            (0, a.default)(this, e), this.handleBatchRender = function() {
+                            (0, a.default)(this, e), this._handleBatchRender = function() {
                                 r.renderMenu()
-                            }, this.handleLoggedIn = function() {
+                            }, this._handleLoggedIn = function() {
                                 r._isLoggedIn = !0, r.renderMenu()
-                            }, this.handleLoggedOut = function() {
+                            }, this._handleLoggedOut = function() {
                                 r._isLoggedIn = !1, r.renderMenu()
-                            }, this.handleChatKind = function(e, t) {
+                            }, this._handleChatKind = function(e, t) {
                                 r._isChatOpen = !!t, r.renderMenu()
                             }, this.createMenu = function() {
                                 for (var e = [{
@@ -23700,12 +26499,12 @@ listener from browserWindow: ${e}`
                                 }
                                 var e = r.createMenu();
                                 r._browserWindow.setAutoHideMenuBar(!0), s.Menu.setApplicationMenu(e)
-                            }, this._browserWindow = t, this._webContents = t.webContents, this._isLoggedIn = !1, this._isChatOpen = !1, s.ipcMain.on(`${c.default.Event}:${c.default.Events.BATCH_RENDER}`, this.handleBatchRender), s.ipcMain.on(`${c.default.Event}:${c.default.Events.LOGGED_IN}`, this.handleLoggedIn), s.ipcMain.on(`${c.default.Event}:${c.default.Events.LOGGED_OUT}`, this.handleLoggedOut), s.ipcMain.on(`${c.default.Event}:${c.default.Events.CHAT_KIND}`, this.handleChatKind)
+                            }, this._browserWindow = t, this._webContents = t.webContents, this._isLoggedIn = !1, this._isChatOpen = !1, s.ipcMain.on(`${c.default.Event}:${c.default.Events.BATCH_RENDER}`, this._handleBatchRender), s.ipcMain.on(`${c.default.Event}:${c.default.Events.LOGGED_IN}`, this._handleLoggedIn), s.ipcMain.on(`${c.default.Event}:${c.default.Events.LOGGED_OUT}`, this._handleLoggedOut), s.ipcMain.on(`${c.default.Event}:${c.default.Events.CHAT_KIND}`, this._handleChatKind)
                         }
                         return (0, o.default)(e, [{
                             key: "destructor",
                             value: function() {
-                                s.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.BATCH_RENDER}`, this.handleBatchRender), s.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.LOGGED_IN}`, this.handleLoggedIn), s.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.LOGGED_OUT}`, this.handleLoggedOut), s.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.CHAT_KIND}`, this.handleChatKind)
+                                s.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.BATCH_RENDER}`, this._handleBatchRender), s.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.LOGGED_IN}`, this._handleLoggedIn), s.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.LOGGED_OUT}`, this._handleLoggedOut), s.ipcMain.removeListener(`${c.default.Event}:${c.default.Events.CHAT_KIND}`, this._handleChatKind)
                             }
                         }]), e
                     }();
@@ -23717,7 +26516,7 @@ listener from browserWindow: ${e}`
                     i = n(r(34575)),
                     a = n(r(93913)),
                     o = n(r(56003)),
-                    s = n(r(58568)),
+                    s = n(r(88846)),
                     u = function() {
                         function e(t, r, n) {
                             var a = this;
@@ -23862,13 +26661,13 @@ listener from browserWindow: ${e}`
                             (0, u.default)(this, e), p.app.addListener("browser-window-created", (function(e, r) {
                                 r.webContents.on("context-menu", (function() {
                                     for (var e = arguments.length, n = new Array(e), i = 0; i < e; i++) n[i] = arguments[i];
-                                    return t.onContextMenu.apply(t, [r].concat(n))
+                                    return t._handleContextMenu.apply(t, [r].concat(n))
                                 }))
                             }))
                         }
                         var t, r, i, m;
                         return (0, c.default)(e, [{
-                            key: "onContextMenu",
+                            key: "_handleContextMenu",
                             value: function(e, t, r) {
                                 t.preventDefault(), this.buildMenu(e, r).then((function(t) {
                                     var n = t.filter((function(e) {
@@ -23939,13 +26738,13 @@ listener from browserWindow: ${e}`
                                                 hk: "4mfnD0"
                                             }), e.next = 5, this.loadImage(t, r.srcURL);
                                         case 5:
-                                            return a = e.sent, e.abrupt("return", [{
+                                            return a = e.sent, e.abrupt("return", {
                                                 label: i.toString(),
                                                 click: function() {
                                                     p.clipboard.writeImage(a)
                                                 },
                                                 visible: !0
-                                            }]);
+                                            });
                                         case 7:
                                         case "end":
                                             return e.stop()
@@ -24107,7 +26906,7 @@ listener from browserWindow: ${e}`
                     a = r(85622),
                     o = r(58933),
                     s = r(12087),
-                    u = "WhatsApp/2.2208.15 Web/" + [s.type(), s.release().slice(0, 5), s.arch()].join("-") + " Device/Electron",
+                    u = "WhatsApp/2.2210.9 Web/" + [s.type(), s.release().slice(0, 5), s.arch()].join("-") + " Device/Electron",
                     c = {
                         from_jid: "",
                         type: "crashlog",
@@ -24248,7 +27047,7 @@ listener from browserWindow: ${e}`
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.default = void 0;
-                t.default = {
+                var r = {
                     title: "title",
                     "og:title": "ogTitle",
                     "og:site_name": "ogSiteName",
@@ -24268,7 +27067,8 @@ listener from browserWindow: ${e}`
                     image_src: "relIcon",
                     "apple-touch-icon-precomposed": "relIcon",
                     "apple-touch-icon": "relIcon"
-                }
+                };
+                t.default = r
             },
             43670: (e, t, r) => {
                 "use strict";
@@ -24279,7 +27079,7 @@ listener from browserWindow: ${e}`
                     s = a(r(48926)),
                     u = a(r(34575)),
                     c = a(r(93913)),
-                    l = r(28934),
+                    l = r(63344),
                     d = r(58933),
                     f = d.app,
                     p = d.dialog,
@@ -24295,7 +27095,7 @@ listener from browserWindow: ${e}`
                     S = function() {
                         function e() {
                             var t = this;
-                            (0, u.default)(this, e), this.onWillDownload = function(e, r) {
+                            (0, u.default)(this, e), this._handleWillDownload = function(e, r) {
                                 var i = r.getFilename().split(".")[0],
                                     a = t.paths[i];
                                 if (!a) return e.preventDefault(), void r.cancel();
@@ -24306,7 +27106,7 @@ listener from browserWindow: ${e}`
                                 })), delete t.paths[i]
                             }, this.paths = {};
                             var r = g.getWindow();
-                            r && r.getBrowserWindow().webContents.session.on("will-download", this.onWillDownload)
+                            r && r.getBrowserWindow().webContents.session.on("will-download", this._handleWillDownload)
                         }
                         var t, r, a, d;
                         return (0, c.default)(e, [{
@@ -24504,11 +27304,11 @@ listener from browserWindow: ${e}`
             17885: (e, t, r) => {
                 "use strict";
                 var n = r(95318),
-                    i = n(r(35747)),
-                    a = r(17179),
-                    o = n(r(24826)),
-                    s = n(r(73551)),
-                    u = r(91416),
+                    i = n(r(13987)),
+                    a = r(41426),
+                    o = n(r(35747)),
+                    s = r(17179),
+                    u = n(r(78922)),
                     c = r(85622),
                     l = r(61348),
                     d = r(58933).app,
@@ -24531,19 +27331,19 @@ listener from browserWindow: ${e}`
                         src: !1,
                         streams: m
                     }),
-                    v = (0, s.default)((function(e) {
+                    v = (0, u.default)((function(e) {
                         var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
                             r = arguments.length > 2 ? arguments[2] : void 0,
                             n = arguments.length > 3 ? arguments[3] : void 0,
-                            i = arguments.length > 4 ? arguments[4] : void 0;
-                        return function(s) {
+                            o = arguments.length > 4 ? arguments[4] : void 0;
+                        return function(u) {
                             for (var c = arguments.length, l = new Array(c > 1 ? c - 1 : 0), d = 1; d < c; d++) l[d - 1] = arguments[d];
-                            var f = (0, o.default)(s, l, !t, b),
-                                p = (0, a.getBunyanLoggerMethod)(e),
-                                h = r ? `\n${(0,u.normalizeStack)(r,!0)}` : "";
+                            var f = (0, i.default)(u, l, !t, b),
+                                p = (0, s.getBunyanLoggerMethod)(e),
+                                h = r ? `\n${(0,a.normalizeStack)(r,!0)}` : "";
                             return g[p]({
                                 attachedToSendLogs: !!n,
-                                extraTags: null != i ? i : []
+                                extraTags: null != o ? o : []
                             }, `${f}${h}`), f
                         }
                     }), (function(e, t, r, n, i) {
@@ -24564,7 +27364,7 @@ listener from browserWindow: ${e}`
                     clearLogContent: function() {
                         for (var e = [h], t = 0; t < 14; t++) e.push(`${h}.${t}`);
                         e.forEach((function(e) {
-                            i.default.truncate(e, 0, (function() {}))
+                            o.default.truncate(e, 0, (function() {}))
                         }))
                     }
                 }
@@ -24680,9 +27480,9 @@ listener from browserWindow: ${e}`
                 }, t.getTosUrl = function() {
                     return `${o.TOS_BASE_URL}?lg=${a.default.getLocale()}`
                 };
-                var i = r(23433),
-                    a = n(r(65496)),
-                    o = r(11256)
+                var i = r(59980),
+                    a = n(r(6210)),
+                    o = r(82113)
             },
             22010: (e, t, r) => {
                 "use strict";
@@ -25130,11 +27930,11 @@ listener from browserWindow: ${e}`
                             value: function(e, t) {
                                 if ("darwin" === process.platform) {
                                     var r = (0, a.default)({}, Object.freeze({}));
-                                    return t && (r.version = "2.2208.15"), e && (r.beta = !0), l.isUpgradeTest && (r.upgrade_test = !0), r
+                                    return t && (r.version = "2.2210.9"), e && (r.beta = !0), l.isUpgradeTest && (r.upgrade_test = !0), r
                                 }
                                 if ("win32" === process.platform) {
                                     var n = (0, a.default)({}, Object.freeze({}));
-                                    return t && (n.version = "2.2208.15"), e && (n.beta = !0), n
+                                    return t && (n.version = "2.2210.9"), e && (n.beta = !0), n
                                 }
                             }
                         }, {
@@ -26143,7 +28943,7 @@ listener from browserWindow: ${e}`
                                     Windows_NT: "win_desktop",
                                     Linux: "linux_desktop"
                                 } [o.default.type()],
-                                s = ["WhatsApp/2.2208.15", "webclient/" + o.default.release(), "Device/" + a].join(" ");
+                                s = ["WhatsApp/2.2210.9", "webclient/" + o.default.release(), "Device/" + a].join(" ");
                             this.webContents.session.webRequest.onBeforeSendHeaders(u, (function(e, t) {
                                 e.requestHeaders.Origin = "whatsapp_darwin", n.isMediaRequest(e.url) && (e.requestHeaders["User-Agent"] = s), t({
                                     cancel: !1,
@@ -26529,7 +29329,7 @@ listener from browserWindow: ${e}`
             },
             77752: (e, t, r) => {
                 var n = r(32364);
-                t.system = n.system
+                t.system = n.system, t.getDeviceModelAndOsRelease = n.getDeviceModelAndOsRelease
             },
             32364: (e, t, r) => {
                 var n = r(37471).default,
@@ -26594,6 +29394,15 @@ listener from browserWindow: ${e}`
                             }
                         }))
                     }))
+                }, t.getDeviceModelAndOsRelease = function() {
+                    var e = "Unknown",
+                        t = "Unknown";
+                    if (l) try {
+                        a("sysctl hw.model kern.osrelease").toString().split("\n").forEach((function(r) {
+                            r.includes("hw.model:") ? e = r.replace("hw.model:", "").trim().toLowerCase() : r.includes("kern.osrelease:") && (t = r.replace("kern.osrelease:", "").trim().toLowerCase())
+                        }))
+                    } catch (e) {}
+                    return [e, t]
                 }
             },
             32713: (e, t, r) => {
@@ -26657,7 +29466,7 @@ listener from browserWindow: ${e}`
                     i = r(95318),
                     a = i(r(34575)),
                     o = i(r(93913)),
-                    s = i(r(65496)),
+                    s = i(r(6210)),
                     u = function() {
                         function e() {
                             var t = this;
@@ -26782,7 +29591,7 @@ listener from browserWindow: ${e}`
                 var i = r(58933),
                     a = r(48360),
                     o = r(23144),
-                    s = n(r(41006)),
+                    s = r(41006),
                     u = n(r(52176)),
                     c = r(30628);
 
@@ -26793,7 +29602,7 @@ listener from browserWindow: ${e}`
                         r > 0 && "separator" !== e.items[r - 1].type && e.append(new i.MenuItem({
                             type: "separator"
                         }));
-                        var n = s.default.getAvailableDevices(t, o.AVDeviceType.Video);
+                        var n = (0, s.getAvailableDevices)(t, o.AVDeviceType.Video);
                         n.length > 0 && (e.append(new i.MenuItem({
                             type: "checkbox",
                             label: a.fbt._("Camera", null, {
@@ -26811,7 +29620,7 @@ listener from browserWindow: ${e}`
                             }).toString(),
                             enabled: !1
                         }));
-                        var u = s.default.getAvailableDevices(t, o.AVDeviceType.AudioInput),
+                        var u = (0, s.getAvailableDevices)(t, o.AVDeviceType.AudioInput),
                             l = u.length > 0,
                             p = d(t, o.AVDeviceType.AudioInput, l);
                         p && e.append(p), u.forEach((function(t) {
@@ -26825,7 +29634,7 @@ listener from browserWindow: ${e}`
                             }).toString(),
                             enabled: !1
                         }));
-                        var h = s.default.getAvailableDevices(t, o.AVDeviceType.AudioOutput),
+                        var h = (0, s.getAvailableDevices)(t, o.AVDeviceType.AudioOutput),
                             _ = h.length > 0,
                             m = d(t, o.AVDeviceType.AudioOutput, _);
                         m && e.append(m), h.forEach((function(t) {
@@ -26847,7 +29656,7 @@ listener from browserWindow: ${e}`
                         enabled: !1,
                         checked: !1
                     });
-                    var u = s.default.getSystemDefaultDevice(e, t);
+                    var u = (0, s.getSystemDefaultDevice)(e, t);
                     if (!u || t === o.AVDeviceType.Video) return null;
                     var l = !0;
                     return u.deviceType === o.AVDeviceType.AudioOutput ? l = c.isDefaultSpeakerOverriden() : u.deviceType === o.AVDeviceType.AudioInput && (l = c.isDefaultMicrophoneOverriden()), new i.MenuItem({
@@ -27535,7 +30344,7 @@ state: '${this.state}'`, this._panel) {
                     d = r(58933),
                     f = r(45716),
                     p = o(r(85622)),
-                    h = o(r(65496)),
+                    h = o(r(6210)),
                     _ = r(48874),
                     m = r(92162),
                     g = o(r(52176));
@@ -27754,7 +30563,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                     v = i(r(68278)),
                     b = r(17885),
                     y = i(r(22010)),
-                    w = i(r(58568)),
+                    w = i(r(88846)),
                     E = r(24773),
                     S = i(r(75724)),
                     x = i(r(86434)),
@@ -27773,7 +30582,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                                 o && (o.get || o.set) ? Object.defineProperty(n, a, o) : n[a] = e[a]
                             } n.default = e, r && r.set(e, n);
                         return n
-                    }(r(27258));
+                    }(r(43424));
 
                 function k(e) {
                     if ("function" != typeof WeakMap) return null;
@@ -27819,7 +30628,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                                 var t, r
                             })) && a.browserWindow.center();
                             var _ = S.default.get("windowState");
-                            return (null == _ ? void 0 : _.isMaximized) && "win32" === process.platform && a.browserWindow.maximize(), (null == _ ? void 0 : _.isFullScreen) && a.browserWindow.setFullScreen(!0), a.requestInterceptor = new x.default(a._webContents, (0, u.default)(a)), b.rendererStream.setWebContents(a._webContents), process.mas || process.windowsStore || (a.autoUpdater = r(89994), a.autoUpdater.init(a._webContents, (0, u.default)(a))), a.onUpdateBounds = (0, f.default)(a._onUpdateBounds.bind((0, u.default)(a)), 1e3), a.onBeforeQuit = a._onBeforeQuit.bind((0, u.default)(a)), a.onOpenUrl = a._onOpenUrl.bind((0, u.default)(a)), a.onLaunch = a._onLaunch.bind((0, u.default)(a)), a.onLoggedOut = a._onLoggedOut.bind((0, u.default)(a)), a._addListeners(), a.additionalShortcuts = new v.default(a.browserWindow, a._webContents, A.getAdditionalShortcuts()), a.browserWindow.loadURL(`file://${__dirname}/index.html`), a._initRefreshWindowOnlogOutListener(), a._initRefreshWindowOnRefreshRequestListener(), n(2)`windowState: ${S.default.get("windowState")}`, a
+                            return (null == _ ? void 0 : _.isMaximized) && "win32" === process.platform && a.browserWindow.maximize(), (null == _ ? void 0 : _.isFullScreen) && a.browserWindow.setFullScreen(!0), a.requestInterceptor = new x.default(a._webContents, (0, u.default)(a)), b.rendererStream.setWebContents(a._webContents), process.mas || process.windowsStore || (a.autoUpdater = r(89994), a.autoUpdater.init(a._webContents, (0, u.default)(a))), a.onUpdateBounds = (0, f.default)(a._handleUpdateBounds.bind((0, u.default)(a)), 1e3), a.onBeforeQuit = a._handleBeforeQuit.bind((0, u.default)(a)), a.onOpenUrl = a._handleOpenUrl.bind((0, u.default)(a)), a.onLaunch = a._handleLaunch.bind((0, u.default)(a)), a.onLoggedOut = a._handleLoggedOut.bind((0, u.default)(a)), a._addListeners(), a.additionalShortcuts = new v.default(a.browserWindow, a._webContents, A.getAdditionalShortcuts()), a.browserWindow.loadURL(`file://${__dirname}/index.html`), a._initRefreshWindowOnlogOutListener(), a._initRefreshWindowOnRefreshRequestListener(), n(2)`windowState: ${S.default.get("windowState")}`, a
                         }
                         return (0, s.default)(i, [{
                             key: "destructor",
@@ -27879,7 +30688,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                                 var e = this;
                                 this.browserWindow.on("page-title-updated", (function(e) {
                                     e.preventDefault()
-                                })), this.browserWindow.on("resize", this.onUpdateBounds), this.browserWindow.on("move", this.onUpdateBounds), this.browserWindow.on("show", this._onShow), this.browserWindow.on("hide", this._onHide), C.on(`${w.default.Event}:${w.default.Events.LAUNCH}`, this.onLaunch), C.on(`${w.default.Event}:${w.default.Events.LOGGED_OUT}`, this.onLoggedOut), this.browserWindow.on("close", (function(t) {
+                                })), this.browserWindow.on("resize", this.onUpdateBounds), this.browserWindow.on("move", this.onUpdateBounds), this.browserWindow.on("show", this._handleShow), this.browserWindow.on("hide", this._handleHide), C.on(`${w.default.Event}:${w.default.Events.LAUNCH}`, this.onLaunch), C.on(`${w.default.Event}:${w.default.Events.LOGGED_OUT}`, this.onLoggedOut), this.browserWindow.on("close", (function(t) {
                                     S.default.flush(), e._forceQuit ? e.destructor() : (t.preventDefault(), e.browserWindow.isFullScreen() && e.browserWindow.setFullScreen(!1), e.browserWindow.hide())
                                 })), this.browserWindow.on("closed", (function(t) {
                                     n(2)`App closed`, e._webContents.removeAllListeners(), e.browserWindow.removeAllListeners(), e.emit("closed", t)
@@ -27899,27 +30708,27 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                                 }))
                             }
                         }, {
-                            key: "_onShow",
+                            key: "_handleShow",
                             value: function() {
                                 this.isClosed = !1
                             }
                         }, {
-                            key: "_onHide",
+                            key: "_handleHide",
                             value: function() {
                                 this.isClosed = !0
                             }
                         }, {
-                            key: "_onBeforeQuit",
+                            key: "_handleBeforeQuit",
                             value: function() {
                                 n(2)`App will quit`, this.setForceQuit(!0)
                             }
                         }, {
-                            key: "_onLaunch",
+                            key: "_handleLaunch",
                             value: function() {
                                 this._webContents.send(`${w.default.Event}:${w.default.Events.LAUNCH}`, this.launchURL), this.launchURL = void 0
                             }
                         }, {
-                            key: "_onLoggedOut",
+                            key: "_handleLoggedOut",
                             value: function() {
                                 n(2)`Logged Out: clearing cache and logs`, this._webContents.session.clearCache().then((function() {
                                     n(2)`Logged out: cleared cache`
@@ -27928,17 +30737,17 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                                 }))
                             }
                         }, {
-                            key: "_onOpenUrl",
+                            key: "_handleOpenUrl",
                             value: function(e, t) {
                                 this._webContents.send("open-url", t)
                             }
                         }, {
                             key: "urlOpened",
                             value: function(e) {
-                                this._onOpenUrl(void 0, e)
+                                this._handleOpenUrl(void 0, e)
                             }
                         }, {
-                            key: "_onUpdateBounds",
+                            key: "_handleUpdateBounds",
                             value: function() {
                                 if (this.browserWindow && !this.browserWindow.isDestroyed()) {
                                     var e = S.default.get("windowState"),
@@ -27954,7 +30763,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                     }(_.default.EventEmitter);
                 e.exports = D
             },
-            50409: (e, t) => {
+            38303: (e, t) => {
                 "use strict";
                 Object.defineProperty(t, "__esModule", {
                     value: !0
@@ -27970,1019 +30779,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                 };
                 var r = /^whatsapp:\/\/.*/i
             },
-            50162: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.default = void 0;
-                var i = n(r(59713)),
-                    a = n(r(34575)),
-                    o = n(r(93913)),
-                    s = n(r(73955)),
-                    u = n(r(41609)),
-                    c = n(r(51463)),
-                    l = /\s+/,
-                    d = function() {
-                        function e() {
-                            (0, a.default)(this, e)
-                        }
-                        return (0, o.default)(e, [{
-                            key: "on",
-                            value: function(e, t, r) {
-                                if (!t) return this;
-                                if ("function" != typeof t) throw new Error("Callback parameter passed is not a function");
-                                return this._multiEvent.apply(this, [this.on].concat(Array.prototype.slice.call(arguments))) || this._getOrCreateEvents(e).push({
-                                    callback: t,
-                                    context: r,
-                                    ctx: r || this
-                                }), this
-                            }
-                        }, {
-                            key: "once",
-                            value: function(e, t, r) {
-                                if (!t) return this;
-                                if (this._multiEvent.apply(this, [this.once].concat(Array.prototype.slice.call(arguments)))) return this;
-                                var n = this,
-                                    i = (0, c.default)((function() {
-                                        n.off(e, i), t.apply(this, arguments)
-                                    }));
-                                return i._callback = t, this.on(e, i, r)
-                            }
-                        }, {
-                            key: "off",
-                            value: function(e, t, r) {
-                                var n = this._events;
-                                if (!n) return this;
-                                if (this._multiEvent.apply(this, [this.off].concat(Array.prototype.slice.call(arguments)))) return this;
-                                if (!e && !t && !r) return this._events = void 0, this;
-                                for (var i = e ? [e] : Object.keys(n), a = 0; a < i.length; a++) {
-                                    var o = i[a],
-                                        s = n[o];
-                                    if (s) {
-                                        if (n[o] = [], t || r)
-                                            for (var u = 0; u < s.length; u++) {
-                                                var c = s[u];
-                                                (t && t !== c.callback && t !== c.callback._callback || r && c.context !== r) && n[o].push(c)
-                                            }
-                                        n[o].length || delete n[o]
-                                    }
-                                }
-                                return this
-                            }
-                        }, {
-                            key: "trigger",
-                            value: function(e) {
-                                for (var t = arguments.length, r = new Array(t > 1 ? t - 1 : 0), n = 1; n < t; n++) r[n - 1] = arguments[n];
-                                if (!this._events) return this;
-                                if (this._multiEvent.apply(this, [this.trigger].concat(Array.prototype.slice.call(arguments)))) return this;
-                                var i = this._getEvents(e),
-                                    a = this._getEvents("all");
-                                return i && this._triggerEvents(i, r), a && this._triggerEvents(a, arguments), this
-                            }
-                        }, {
-                            key: "stopListening",
-                            value: function(e, t, r) {
-                                var n = this._listeningTo;
-                                if (!n) return this;
-                                var a = null == e ? void 0 : e._listenId,
-                                    o = a ? (0, i.default)({}, a, e) : n;
-                                for (var s in o) {
-                                    var c = o[s];
-                                    c.off(t, r, this), (!t && !r || (0, u.default)(c._events)) && delete n[s]
-                                }
-                                return (0, u.default)(this._listeningTo) && delete this._listeningTo, this
-                            }
-                        }, {
-                            key: "listenTo",
-                            value: function(e, t, r) {
-                                return r ? (this._addListeningTo(e), e.on(t, r, this), this) : this
-                            }
-                        }, {
-                            key: "listenToOnce",
-                            value: function(e, t, r) {
-                                return this._addListeningTo(e), e.once(t, r, this), this
-                            }
-                        }, {
-                            key: "listenToAndRun",
-                            value: function(e, t, r) {
-                                return this.listenTo.apply(this, arguments), r.apply(this), this
-                            }
-                        }, {
-                            key: "isListening",
-                            value: function(e) {
-                                var t = this._events;
-                                return !!t && ("string" == typeof e ? !!t[e] : (0, u.default)(t))
-                            }
-                        }, {
-                            key: "_addListeningTo",
-                            value: function(e) {
-                                (this._listeningTo || (this._listeningTo = {}))[e._listenId || (e._listenId = (0, s.default)("l"))] = e
-                            }
-                        }, {
-                            key: "_getOrCreateEvents",
-                            value: function(e) {
-                                var t = this._events || (this._events = {});
-                                return t[e] || (t[e] = [])
-                            }
-                        }, {
-                            key: "_getEvents",
-                            value: function(e) {
-                                if (e) {
-                                    var t = this._events;
-                                    if (t) return t[e]
-                                }
-                            }
-                        }, {
-                            key: "_multiEvent",
-                            value: function(e, t) {
-                                if (l.test(t)) {
-                                    for (var r = t.split(l), n = arguments.length, i = new Array(n > 2 ? n - 2 : 0), a = 2; a < n; a++) i[a - 2] = arguments[a];
-                                    for (var o = 0; o < r.length; o++) e.call.apply(e, [this, r[o]].concat(i));
-                                    return !0
-                                }
-                                return !1
-                            }
-                        }, {
-                            key: "_triggerEvents",
-                            value: function(e, t) {
-                                var r, n = -1,
-                                    i = e.length,
-                                    a = t[0],
-                                    o = t[1],
-                                    s = t[2];
-                                switch (t.length) {
-                                    case 0:
-                                        for (; ++n < i;)(r = e[n]).callback.call(r.ctx);
-                                        return;
-                                    case 1:
-                                        for (; ++n < i;)(r = e[n]).callback.call(r.ctx, a);
-                                        return;
-                                    case 2:
-                                        for (; ++n < i;)(r = e[n]).callback.call(r.ctx, a, o);
-                                        return;
-                                    case 3:
-                                        for (; ++n < i;)(r = e[n]).callback.call(r.ctx, a, o, s);
-                                        return;
-                                    default:
-                                        for (; ++n < i;)(r = e[n]).callback.apply(r.ctx, t)
-                                }
-                            }
-                        }, {
-                            key: "bind",
-                            value: function() {
-                                return this.on.apply(this, arguments)
-                            }
-                        }, {
-                            key: "unbind",
-                            value: function() {
-                                return this.off.apply(this, arguments)
-                            }
-                        }, {
-                            key: "removeListener",
-                            value: function() {
-                                return this.off.apply(this, arguments)
-                            }
-                        }, {
-                            key: "removeAllListeners",
-                            value: function() {
-                                return this.off()
-                            }
-                        }, {
-                            key: "emit",
-                            value: function() {
-                                for (var e = arguments.length, t = new Array(e > 1 ? e - 1 : 0), r = 1; r < e; r++) t[r - 1] = arguments[r];
-                                return this.trigger(arguments)
-                            }
-                        }]), e
-                    }();
-                t.default = d
-            },
-            97334: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.UpdateImmediately = t.Unmount = t.UnableToPlayVideoError = t.UnableToGetContentLengthError = t.TranscodeBlobTooLargeError = t.SourceUnavailableError = t.SocketNotOpen = t.SocketError = t.SocketClosed = t.ShouldLoop = t.ServerStatusError = t.QueryDrop = t.ProtoVersionUndefined = t.OverconstrainedError = t.Offline = t.NotSupportedError = t.NotFoundError = t.NotAllowedError = t.ModelError = t.ModelCreateError = t.MediaUnsupportedError = t.MediaNeedsReupload = t.MediaMissing = t.MediaLoadError = t.MediaFileFailedLoad = t.MediaFileError = t.MediaFileEmpty = t.MediaEncryptionError = t.MediaDragDropError = t.MediaDecryptionError = t.InvalidServerResponseError = t.InvalidMediaFileType = t.InvalidImageFileType = t.ImageError = t.GaveUpRetry = t.GUMError = t.GUM = t.FileNotReadableError = t.EncodeWebpError = t.Disconnected = t.DeprecatedProtocolVersion = t.DecodeWebpResultsError = t.DbOnLogoutAbort = t.DbMsgEncKeyNotLoaded = t.DbEncKeyNotLoaded = t.DBInvalidFtsHMACKey = t.ConstraintNotSatisfiedError = t.CatalogImageDownloadError = t.CapabilityUnknown = t.CapabilityInvalid = t.CapabilityError = t.CanNotSendUnencrypted = t.BlockedByProxy = t.BingServerError = t.ActiveChatChanged = t.ActionError = t.AbortError = void 0;
-                var i = n(r(34575)),
-                    a = n(r(19793)),
-                    o = n(r(99842)),
-                    s = r(84486),
-                    u = function(e) {
-                        (0, a.default)(r, e);
-                        var t = (0, o.default)(r);
-
-                        function r() {
-                            return (0, i.default)(this, r), t.apply(this, arguments)
-                        }
-                        return r
-                    }((0, s.customError)("QueryDrop"));
-                t.QueryDrop = u;
-                var c = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("Disconnected"));
-                t.Disconnected = c;
-                var l = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("Offline"));
-                t.Offline = l;
-                var d = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("ShouldLoop"));
-                t.ShouldLoop = d;
-                var f = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("GaveUpRetry"));
-                t.GaveUpRetry = f;
-                var p = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("CatalogImageDownloadError"));
-                t.CatalogImageDownloadError = p;
-                var h = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaFileError"));
-                t.MediaFileError = h;
-                var _ = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("InvalidImageFileType", !0, h));
-                t.InvalidImageFileType = _;
-                var m = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("InvalidMediaFileType", !0, h));
-                t.InvalidMediaFileType = m;
-                var g = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaEncryptionError", !0, h));
-                t.MediaEncryptionError = g;
-                var v = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaDecryptionError", !0, h));
-                t.MediaDecryptionError = v;
-                var b = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaFileFailedLoad", !0, h));
-                t.MediaFileFailedLoad = b;
-                var y = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaFileEmpty", !0, h));
-
-                function w(e) {
-                    try {
-                        return JSON.stringify(e)
-                    } catch (t) {
-                        return e.toString()
-                    }
-                }
-                t.MediaFileEmpty = y;
-                var E = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        (0, i.default)(this, r);
-                        var a = "string" == typeof e ? e : w(e);
-                        return (n = t.call(this, a)).event = e, n
-                    }
-                    return r
-                }((0, s.customError)("SocketError"));
-                t.SocketError = E;
-                var S = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        (0, i.default)(this, r);
-                        var a = "string" == typeof e ? e : w(e);
-                        return (n = t.call(this, a)).event = e, n
-                    }
-                    return r
-                }((0, s.customError)("SocketClosed"));
-                t.SocketClosed = S;
-                var x = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        return (0, i.default)(this, r), t.call(this, `socket not open, is ${e}`)
-                    }
-                    return r
-                }((0, s.customError)("SocketNotOpen"));
-                t.SocketNotOpen = x;
-                var A = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("BlockedByProxy"));
-                t.BlockedByProxy = A;
-                var k = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e, n) {
-                        var a;
-                        return (0, i.default)(this, r), (a = t.call(this, "Image failed to load.")).src = e, a.status = n, a.target = {
-                            src: e,
-                            status: n
-                        }, a
-                    }
-                    return r
-                }((0, s.customError)("ImageError"));
-                t.ImageError = k;
-                var O = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e, n) {
-                        var a;
-                        return (0, i.default)(this, r), (a = t.call(this, e)).event = n, a
-                    }
-                    return r
-                }((0, s.customError)("DecodeWebpResultsError"));
-                t.DecodeWebpResultsError = O;
-                var T = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e, n) {
-                        var a;
-                        return (0, i.default)(this, r), (a = t.call(this, e)).event = n, a
-                    }
-                    return r
-                }((0, s.customError)("DecodeWebpError"));
-                t.EncodeWebpError = T;
-                var C = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e, n, a) {
-                        var o;
-                        return (0, i.default)(this, r), (o = t.call(this, `${e||"Server replied with a failed status code"}: ${a}`)).url = n, o.status = a, o
-                    }
-                    return r
-                }((0, s.customError)("ServerStatusError"));
-                t.ServerStatusError = C;
-                var N = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e, n, a) {
-                        (0, i.default)(this, r);
-                        var o = `Invalid response for ${e}, with status ${n}`;
-                        return a && (o = `${o}: ${a}`), t.call(this, o)
-                    }
-                    return r
-                }((0, s.customError)("InvalidServerResponseError"));
-                t.InvalidServerResponseError = N;
-                var D = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e, n, a) {
-                        (0, i.default)(this, r);
-                        var o = `Error ${n} for ${e}: ${JSON.stringify(a)}`;
-                        return t.call(this, o, e, n)
-                    }
-                    return r
-                }((0, s.customError)("BingServerError", !0, C));
-                t.BingServerError = D;
-                var M = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaNeedsReupload"));
-                t.MediaNeedsReupload = M;
-                var L = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaMissing"));
-                t.MediaMissing = L, L.message = "Media is no longer available on your phone";
-                var R = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("FileNotReadableError", !0, Error));
-                t.FileNotReadableError = R;
-                var I = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        return (0, i.default)(this, r), (n = t.call(this, e)).src = e, n
-                    }
-                    return r
-                }((0, s.customError)("MediaLoadError"));
-                t.MediaLoadError = I;
-                var P = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.call(this, "Transcode blob too large")
-                    }
-                    return r
-                }((0, s.customError)("TranscodeBlobTooLargeError"));
-                t.TranscodeBlobTooLargeError = P;
-                var j = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        return (0, i.default)(this, r), t.call(this, `Unable to play video. Reason: ${String(e)}`)
-                    }
-                    return r
-                }((0, s.customError)("UnableToPlayVideoError"));
-                t.UnableToPlayVideoError = j;
-                var U = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaDragDropError", !0, I));
-                t.MediaDragDropError = U;
-                var W = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaUnsupportedError"));
-                t.MediaUnsupportedError = W, W.message = "Media format is unsupported";
-                var F = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("ModelError"));
-                t.ModelError = F;
-                var B = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e, n) {
-                        var a;
-                        return (0, i.default)(this, r), (a = t.call(this, e)).model = n, a
-                    }
-                    return r
-                }((0, s.customError)("ModelCreateError"));
-                t.ModelCreateError = B;
-                var V = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        return (0, i.default)(this, r), t.call(this, `MasterDatabaseEncryptionKey.${e} was accessed before init`)
-                    }
-                    return r
-                }((0, s.customError)("DbEncKeyNotLoadedError"));
-                t.DbEncKeyNotLoaded = V;
-                var q = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        return (0, i.default)(this, r), t.call(this, `MasterDatabaseMessageEncryptionKey.${e} was accessed before init`)
-                    }
-                    return r
-                }((0, s.customError)("DbMsgEncKeyNotLoadedError"));
-                t.DbMsgEncKeyNotLoaded = q;
-                var G = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("DbOnLogoutAbortError"));
-                t.DbOnLogoutAbort = G, G.message = "DB operation was dropped due to logout activity";
-                var z = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("DBExpiredFtsHMACKey"));
-                t.DBInvalidFtsHMACKey = z, z.message = "MasterDatabaseEncryptionKey.fts_hmac_keys is in an invalid state";
-                var $ = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("ProtoVersionUndefined"));
-                t.ProtoVersionUndefined = $;
-                var H = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("UpdateImmediately"));
-                t.UpdateImmediately = H;
-                var Y = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("DeprecatedProtocolVersion"));
-                t.DeprecatedProtocolVersion = Y;
-                var K = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("CapabilityError"));
-                t.CapabilityError = K;
-                var Z = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("CapabilityInvalid", !0, K));
-                t.CapabilityInvalid = Z;
-                var J = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("CapabilityUnknown", !0, K));
-                t.CapabilityUnknown = J;
-                var Q = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("CanNotSendUnencrypted"));
-                t.CanNotSendUnencrypted = Q;
-                var X = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("ActionError"));
-                t.ActionError = X, X.message = "Could not perform action.";
-                var ee = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("Unmount"));
-                t.Unmount = ee;
-                var te = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("ActiveChatChanged"));
-                t.ActiveChatChanged = te;
-                var re = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("GUMError"));
-                t.GUMError = re;
-                var ne = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("NotSupportedError", !0, re));
-                t.NotSupportedError = ne, ne.message = "The operation is not supported.";
-                var ie = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("NotAllowedError", !0, re));
-                t.NotAllowedError = ie, ie.message = "The user did not grant permission for the operation";
-                var ae = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("ConstraintNotSatisfiedError", !0, re));
-                t.ConstraintNotSatisfiedError = ae, ae.message = "One of the mandatory Constraints could not be satisfied.";
-                var oe = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("OverconstrainedError", !0, re));
-                t.OverconstrainedError = oe, oe.message = "Due to changes in the environment, one or more mandatory constraints can no longer be satisfied.";
-                var se = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("NotFoundError", !0, re));
-                t.NotFoundError = se, se.message = "The object can not be found here.";
-                var ue = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("AbortError", !0, re));
-                t.AbortError = ue, ue.message = "The operation was aborted.";
-                var ce = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("SourceUnavailableError", !0, re));
-                t.SourceUnavailableError = ce, ce.message = "The source of the MediaStream could not be accessed due to a hardware error (e.g. lock from another process).";
-                var le = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("UnableToGetContentLengthError"));
-                t.UnableToGetContentLengthError = le, le.message = "Failed to get media contentLength from mms";
-                var de = {
-                    GUMError: re,
-                    NotSupportedError: ne,
-                    NotAllowedError: ie,
-                    ConstraintNotSatisfiedError: ae,
-                    OverconstrainedError: oe,
-                    NotFoundError: se,
-                    AbortError: ue,
-                    SourceUnavailableError: ce
-                };
-                t.GUM = de
-            },
-            23433: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.PLATFORM = t.FAQ_BASE_URL = void 0, t.getBusinessFaqUrl = function() {
-                    return s("general/chats/about-chatting-with-businesses")
-                }, t.getCannotConnectFaqUrl = function() {
-                    return s("web/troubleshooting/cant-connect-to-whatsapp-web-or-desktop")
-                }, t.getCatalogCartOnOffFaqUrl = function() {
-                    return s("general/account-and-profile/about-cart")
-                }, t.getCiphertextFaqUrl = function() {
-                    return s("general/security-and-privacy/seeing-waiting-for-this-message-this-may-take-a-while")
-                }, t.getCodeChangeFaqUrl = function() {
-                    return s("general/security-and-privacy/security-code-change-notification")
-                }, t.getE2EEnterpriseFaqUrl = function() {
-                    return s("general/security-and-privacy/end-to-end-encryption-for-business-messages")
-                }, t.getE2EFaqUrl = function() {
-                    return s("general/security-and-privacy/end-to-end-encryption")
-                }, t.getEphemeralFaqUrl = function() {
-                    return s("general/chats/about-disappearing-messages")
-                }, t.getFanoutPlaceholderFaqUrl = function() {
-                    return s("general/security-and-privacy/seeing-waiting-for-this-message-check-your-phone")
-                }, t.getFaqUrl = function() {
-                    return `${a}/web?lang=${i.default.getLocale()}`
-                }, t.getFrequentlyForwardedFaqUrl = function() {
-                    return s("general/chats/about-forwarding-limits")
-                }, t.getGroupInviteGrowthLockedFaqUrl = function() {
-                    return s("cxt/?entrypointid=invite-via-link-unavailable", !0)
-                }, t.getLoginFaqUrl = function() {
-                    return s("web/download-and-installation/how-to-log-in-or-out")
-                }, t.getMDCodeChangeFaqUrl = function() {
-                    return `${a}/${i.default.getLocale()}/web/26000361`
-                }, t.getMdOptInFaqUrl = function() {
-                    return s("general/download-and-installation/about-linked-devices")
-                }, t.getNonVerifiedTransitionFaqUrl = function() {
-                    return s("general/business-account-becomes-a-standard-account")
-                }, t.getNotificationChromeFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-chrome")
-                }, t.getNotificationEdgeFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-microsoft-edge")
-                }, t.getNotificationFirefoxFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-firefox")
-                }, t.getNotificationOperaFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-opera")
-                }, t.getNotificationSafariFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-safari")
-                }, t.getRevokeFaqUrl = function() {
-                    return s("web/chats/how-to-delete-messages")
-                }, t.getSupportChatFaqUrl = function() {
-                    return s("general/what-information-does-whatsapp-collect-when-you-contact-support")
-                }, t.getSupportChatSafetyFaqUrl = function() {
-                    return s("general/about-safely-communicating-with-whatsapp-support")
-                }, t.getSuspiciousLinkFaqUrl = function() {
-                    return s("web/chats/suspicious-links")
-                }, t.getUnverifiedTransitionFaqUrl = function() {
-                    return s("general/business-account-becomes-unverified")
-                }, t.getVerifiedHighFaqUrl = function() {
-                    return s("general/verified-business-account")
-                }, t.getVerifiedLowUnknownFaqUrl = function() {
-                    return s("general/unverified-business-account")
-                }, t.getVerifiedTransitionFaqUrl = function() {
-                    return s("general/business-account-becomes-verified")
-                }, t.getViewOnceFaqUrl = function() {
-                    return s("general/chats/about-view-once")
-                };
-                var i = n(r(65496)),
-                    a = "https://faq.whatsapp.com";
-                t.FAQ_BASE_URL = a;
-                var o = "web";
-
-                function s(e) {
-                    var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-                    return t ? `${a}/${e}&platform=web&lang=${i.default.getLocale()}` : `${a}/${e}?lang=${i.default.getLocale()}`
-                }
-                t.PLATFORM = o
-            },
-            28934: (e, t, r) => {
-                "use strict";
-                var n = r(37471).default,
-                    i = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.FILETYPE = void 0, t.blobToArrayBuffer = d, t.blobToText = function() {
-                    return h.apply(this, arguments)
-                }, t.createFile = function(e, t, r) {
-                    var n = new Blob(e, r || {});
-                    return n.name = t, n
-                }, t.getAudioDuration = function(e) {
-                    var t, r;
-                    return new n((function(n, i) {
-                        (t = document.createElement("audio")).addEventListener("loadeddata", n), t.addEventListener("error", (function() {
-                            i(new Error("getAudioDuration: error loading audio"))
-                        })), t.src = r = URL.createObjectURL(e)
-                    })).then((function() {
-                        return ~~t.seekable.end(0)
-                    })).finally((function() {
-                        r && URL.revokeObjectURL(r)
-                    }))
-                }, t.getFileExtension = p, t.getMimeTypeForFilepath = function(e) {
-                    var t = p(e),
-                        r = (0, u.isAllowedDocumentMimetype)(u.EXT_TO_MIME && t && u.EXT_TO_MIME[t], e, !1);
-                    if (r) return r
-                }, t.removeTrailingDots = f, t.typeFromMimetype = function(e) {
-                    var t = e.split("/")[0];
-                    switch (t) {
-                        case c.IMAGE:
-                        case c.VIDEO:
-                        case c.AUDIO:
-                            return t;
-                        default:
-                            return c.DOCUMENT
-                    }
-                }, t.validateBlob = function(e) {
-                    return d(e.webkitSlice ? e.webkitSlice(0, 1) : e.slice(0, 1)).then((function(e) {
-                        return 1 === e.byteLength
-                    })).catch((function() {
-                        return !1
-                    }))
-                };
-                var a = i(r(87757)),
-                    o = i(r(48926)),
-                    s = r(9697),
-                    u = r(36295),
-                    c = Object.freeze({
-                        IMAGE: "image",
-                        VIDEO: "video",
-                        AUDIO: "audio",
-                        DOCUMENT: "document",
-                        STICKER: "sticker"
-                    });
-                t.FILETYPE = c;
-                var l = function(e) {
-                    var t;
-                    return null !== (t = null == e ? void 0 : e.message) && void 0 !== t ? t : ""
-                };
-
-                function d(e) {
-                    var t;
-                    return new n((function(r, n) {
-                        (t = new FileReader).onload = r, t.onerror = function() {
-                            var e;
-                            n("NotReadableError" === (null === (e = t.error) || void 0 === e ? void 0 : e.name) ? new s.FileNotReadableError(`blobToArrayBuffer error: ${l(t.error)}`) : new Error(`blobToArrayBuffer error: ${l(t.error)}`))
-                        }, t.onabort = function() {
-                            n(new Error(`blobToArrayBuffer abort: ${l(t.error)}`))
-                        }, t.readAsArrayBuffer(e)
-                    })).then((function() {
-                        return t.result
-                    }))
-                }
-
-                function f(e) {
-                    return e.replace(/\.+$/, "")
-                }
-
-                function p(e) {
-                    var t = f(e.trimRight()).split(".");
-                    return t.length > 1 ? t[t.length - 1].toLowerCase() : null
-                }
-
-                function h() {
-                    return (h = (0, o.default)(a.default.mark((function e(t) {
-                        var r;
-                        return a.default.wrap((function(e) {
-                            for (;;) switch (e.prev = e.next) {
-                                case 0:
-                                    if ("function" != typeof t.text) {
-                                        e.next = 2;
-                                        break
-                                    }
-                                    return e.abrupt("return", t.text());
-                                case 2:
-                                    return r = new FileReader, e.next = 5, new n((function(e, n) {
-                                        r.onload = e, r.onerror = function(e) {
-                                            n(new Error(`blobToText error: ${String(e)}`))
-                                        }, r.onabort = function(e) {
-                                            n(new Error(`blobToText abort: ${String(e)}`))
-                                        }, r.readAsText(t)
-                                    }));
-                                case 5:
-                                    if (!(r.result instanceof ArrayBuffer)) {
-                                        e.next = 7;
-                                        break
-                                    }
-                                    throw new TypeError("blobToText error: Invalid result type: ArrayBuffer");
-                                case 7:
-                                    if (null != r.result) {
-                                        e.next = 9;
-                                        break
-                                    }
-                                    throw new TypeError("blobToText: Invalid result type: null");
-                                case 9:
-                                    return e.abrupt("return", r.result);
-                                case 10:
-                                case "end":
-                                    return e.stop()
-                            }
-                        }), e)
-                    })))).apply(this, arguments)
-                }
-            },
-            24826: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.default = function(e, t, r) {
-                    var n = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : String,
-                        a = (0, i.default)(e, t.map(n)).join(""),
-                        o = r ? 4e3 : Number.POSITIVE_INFINITY;
-                    a.length > o && (a = a.slice(0, o).replace(/\s+$/, " [truncated]"));
-                    return a
-                };
-                var i = n(r(80736))
-            },
-            24409: (e, t, r) => {
+            51104: (e, t, r) => {
                 "use strict";
                 Object.defineProperty(t, "__esModule", {
                     value: !0
@@ -28990,7 +30787,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                 var n = r(76672).Mirrored(["CONTACT_US", "LICENSES", "DECREASE_PTT_SPEED", "DELETE_OR_EXIT_CHAT", "GO_TO_NEXT_CHAT", "GO_TO_PREV_CHAT", "INCREASE_PTT_SPEED", "LOGOUT", "OPEN_NEW_CHAT", "OPEN_NEW_GROUP", "OPEN_PROFILE", "OPEN_SETTINGS", "SEARCH", "SEARCH_IN_CHAT", "TOGGLE_ARCHIVE", "TOGGLE_MUTE", "TOGGLE_PIN", "TOGGLE_UNREAD", "ZOOM_IN", "ZOOM_OUT", "ZOOM_RESET", "OPEN_EMOJI_PANEL", "OPEN_GIF_PANEL", "OPEN_STICKER_PANEL", "TOGGLE_STICKER_MAKER"]);
                 t.default = n
             },
-            58568: e => {
+            88846: e => {
                 e.exports = {
                     Action: "keyboard_action",
                     Event: "keyboard_event",
@@ -29009,7 +30806,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                     }
                 }
             },
-            27258: (e, t, r) => {
+            43424: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
@@ -29057,7 +30854,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                     return
                 };
                 var i = n(r(11700)),
-                    a = n(r(24409));
+                    a = n(r(51104));
 
                 function o(e) {
                     switch (e) {
@@ -29186,1762 +30983,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                     return a ? `${t}+${(0,i.default)(r)}` : `Shift+${t}+${r}`
                 }
             },
-            8059: (e, t, r) => {
-                "use strict";
-                var n = r(17885).log,
-                    i = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.L10n = void 0;
-                var a = i(r(63038)),
-                    o = i(r(34575)),
-                    s = i(r(93913)),
-                    u = i(r(19793)),
-                    c = i(r(99842)),
-                    l = i(r(42317)),
-                    d = i(r(97331)),
-                    f = i(r(30381)),
-                    p = i(r(50162)),
-                    h = r(76290),
-                    _ = r(214),
-                    m = i(r(4966)),
-                    g = i(r(97524)),
-                    v = i(r(57487)),
-                    b = new Set(["⁦", "‪"]),
-                    y = new Set(["ar", "ar-XB", "fa", "ur", "he", "dv", "ku"]),
-                    w = new Set(["ar", "ar-XB", "fa"]),
-                    E = "٠١٢٣٤٥٦٧٨٩".split("");
-
-                function S(e) {
-                    return E[parseInt(e, 10)]
-                }
-                var x = new Error("Unimplemented method"),
-                    A = function(e) {
-                        (0, u.default)(r, e);
-                        var t = (0, c.default)(r);
-
-                        function r(e, n, i) {
-                            var a;
-                            if ((0, o.default)(this, r), a = t.call(this), !e || !n) throw x;
-                            return a._locale = e, a.localeStrings = {}, a.localeStrings[_.DEFAULT_LOCALE] = n, a.fbtStrings = {}, a.fbtStrings[_.DEFAULT_LOCALE] = {
-                                en: {}
-                            }, a.markTranslations = i, a.customizeMoment(), a
-                        }
-                        return (0, s.default)(r, [{
-                            key: "getLocale",
-                            value: function() {
-                                throw x
-                            }
-                        }, {
-                            key: "getFbtTranslations",
-                            value: function() {
-                                throw x
-                            }
-                        }, {
-                            key: "setLocale",
-                            value: function() {
-                                throw x
-                            }
-                        }, {
-                            key: "normalizeLocale",
-                            value: function(e) {
-                                var t = e.replace(/-/g, "_").toLowerCase(),
-                                    r = this._getTranslationFilename(t);
-                                if (r) return r;
-                                for (var n = t; n;) {
-                                    var i = (n = n.split("_").slice(0, -1).join("_")) && this._getTranslationFilename(n);
-                                    if (i) return i
-                                }
-                            }
-                        }, {
-                            key: "isLocaleSupported",
-                            value: function(e) {
-                                return !!e && !!this.normalizeLocale(e)
-                            }
-                        }, {
-                            key: "_getTranslationFilename",
-                            value: function(e) {
-                                var t = m.default[e] || e;
-                                return v.default[t]
-                            }
-                        }, {
-                            key: "isRTL",
-                            value: function() {
-                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : this.getLocale();
-                                return y.has(e)
-                            }
-                        }, {
-                            key: "LR",
-                            value: function(e, t) {
-                                return this.isRTL() ? t : e
-                            }
-                        }, {
-                            key: "embedDir",
-                            value: function(e) {
-                                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : this.isRTL();
-                                return t ? this.embedRTL(e) : this.embedLTR(e)
-                            }
-                        }, {
-                            key: "forceDir",
-                            value: function(e) {
-                                var t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : this.isRTL();
-                                return t ? this.forceRTL(e) : this.forceLTR(e)
-                            }
-                        }, {
-                            key: "embedLTR",
-                            value: function(e) {
-                                return "‪" + e + "‬"
-                            }
-                        }, {
-                            key: "embedRTL",
-                            value: function(e) {
-                                return "‫" + e + "‬"
-                            }
-                        }, {
-                            key: "isolateLTR",
-                            value: function(e) {
-                                return "⁦" + e + "⁩"
-                            }
-                        }, {
-                            key: "isolateRTL",
-                            value: function(e) {
-                                return "⁧" + e + "⁩"
-                            }
-                        }, {
-                            key: "forceLTR",
-                            value: function(e) {
-                                return "‎" + e
-                            }
-                        }, {
-                            key: "forceRTL",
-                            value: function(e) {
-                                return "‏" + e
-                            }
-                        }, {
-                            key: "t",
-                            value: function(e, t, r) {
-                                "number" != typeof e && n(3)`l10n.t was called with an unprocessed id (${e}). If you just added a string on local, restarting your build may address the issue.`;
-                                var i = e,
-                                    a = null != t ? t._plural : null,
-                                    o = r || this.getLocale();
-                                this.localeStrings[o] || (o = _.DEFAULT_LOCALE);
-                                var s = this._getString(i, o, a);
-                                for (var u in this.markTranslations && (s ? o === _.DEFAULT_LOCALE && (s = "[" + s + "]") : (s = "!!" + i + "!!", n(2)`l10n:t string key "${i}" not found`)), s || (s = this._getString(i, _.DEFAULT_LOCALE, a)), s || n(2)`l10n:t string key "${i}" fallback failed`, t)
-                                    if (t.hasOwnProperty(u) && "_plural" !== u) {
-                                        var c = new RegExp("__" + u + "__", "g"),
-                                            l = void 0;
-                                        l = "string" == typeof t[u] && b.has(t[u].slice(0, 1)) ? t[u] : this.n(t[u], o), s = s.replace(c, l)
-                                    } return s
-                            }
-                        }, {
-                            key: "_getString",
-                            value: function(e, t, r) {
-                                var n = this.localeStrings[t] || this.localeStrings[_.DEFAULT_LOCALE];
-                                if (null == n) throw new Error(`Couldn't find translations for locale ${t} or default (${_.DEFAULT_LOCALE})`);
-                                if (!Array.isArray(n)) throw new Error("Unexpected locale format.");
-                                var i = (0, a.default)(n, 2),
-                                    o = i[0],
-                                    s = i[1],
-                                    u = o[e] || "";
-                                if (null == r) return u;
-                                var c = g.default[t];
-                                if (null == c) return u;
-                                var l = c.numbers[c.plurals(r)];
-                                return 1 === l ? u : s[2 === c.numbers.length && 2 === l ? e.toString() : `${e}_${l}`] || u
-                            }
-                        }, {
-                            key: "useArabicScriptDigits",
-                            value: function(e) {
-                                return w.has(e || this.getLocale())
-                            }
-                        }, {
-                            key: "isLatinAlphabetLanguage",
-                            value: function(e) {
-                                return d.default.isLatin(this.removeAccents(e))
-                            }
-                        }, {
-                            key: "n",
-                            value: function(e, t) {
-                                var r = e;
-                                return isNaN(r) || (r = r.toString()), this.useArabicScriptDigits(t) ? r.toString().replace(/[0-9]/g, S) : r
-                            }
-                        }, {
-                            key: "filesize",
-                            value: function(e) {
-                                var t = this;
-                                return this.n((0, l.default)(e, {
-                                    base: 2,
-                                    round: 0,
-                                    suffixes: {
-                                        B: t.t(461),
-                                        kB: t.t(463),
-                                        MB: t.t(464),
-                                        GB: t.t(462)
-                                    }
-                                }))
-                            }
-                        }, {
-                            key: "normalizeForm",
-                            value: function() {
-                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
-                                return (0, h.normalizeForm)(e)
-                            }
-                        }, {
-                            key: "removeAccents",
-                            value: function() {
-                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
-                                return (0, h.removeAccents)(e)
-                            }
-                        }, {
-                            key: "accentFold",
-                            value: function() {
-                                var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
-                                return this.removeAccents(e).toLowerCase()
-                            }
-                        }, {
-                            key: "customizeMoment",
-                            value: function() {
-                                f.default.relativeTimeRounding(Math.floor), f.default.relativeTimeThreshold("s", 60), f.default.relativeTimeThreshold("m", 60), f.default.relativeTimeThreshold("h", 24)
-                            }
-                        }]), r
-                    }(p.default);
-                t.L10n = A
-            },
-            76290: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.getLanguageCodeFromLocale = function(e) {
-                    return e.replace(/_/g, "-").split("-")[0].toLowerCase()
-                }, t.getRegionCodeFromLocale = function(e) {
-                    var t = e.replace(/_/g, "-").split("-");
-                    if (t.length <= 1) return null;
-                    return t[t.length - 1].toUpperCase()
-                }, t.normalizeForm = a, t.removeAccents = function() {
-                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
-                    return (0, i.default)(a(e).replace(/(?:[\^`\xA8\xAF\xB4\xB7\xB8\u02B0-\u034E\u0350-\u0357\u035D-\u0362\u0374\u0375\u037A\u0384\u0385\u0483-\u0487\u0559\u0591-\u05A1\u05A3-\u05BD\u05BF\u05C1\u05C2\u05C4\u064B-\u0652\u0657\u0658\u06DF\u06E0\u06E5\u06E6\u06EA-\u06EC\u0730-\u074A\u07A6-\u07B0\u07EB-\u07F5\u0818\u0819\u08E3-\u08FE\u093C\u094D\u0951-\u0954\u0971\u09BC\u09CD\u0A3C\u0A4D\u0ABC\u0ACD\u0AFD-\u0AFF\u0B3C\u0B4D\u0B55\u0BCD\u0C4D\u0CBC\u0CCD\u0D3B\u0D3C\u0D4D\u0DCA\u0E47-\u0E4C\u0E4E\u0EBA\u0EC8-\u0ECC\u0F18\u0F19\u0F35\u0F37\u0F39\u0F3E\u0F3F\u0F82-\u0F84\u0F86\u0F87\u0FC6\u1037\u1039\u103A\u1063\u1064\u1069-\u106D\u1087-\u108D\u108F\u109A\u109B\u135D-\u135F\u17C9-\u17D3\u17DD\u1939-\u193B\u1A75-\u1A7C\u1A7F\u1AB0-\u1ABD\u1B34\u1B44\u1B6B-\u1B73\u1BAA\u1BAB\u1C36\u1C37\u1C78-\u1C7D\u1CD0-\u1CE8\u1CED\u1CF4\u1CF7-\u1CF9\u1D2C-\u1D6A\u1DC4-\u1DCF\u1DF5-\u1DF9\u1DFD-\u1DFF\u1FBD\u1FBF-\u1FC1\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FED-\u1FEF\u1FFD\u1FFE\u2CEF-\u2CF1\u2E2F\u302A-\u302F\u3099-\u309C\u30FC\uA66F\uA67C\uA67D\uA67F\uA69C\uA69D\uA6F0\uA6F1\uA700-\uA721\uA788-\uA78A\uA7F8\uA7F9\uA8C4\uA8E0-\uA8F1\uA92B-\uA92E\uA953\uA9B3\uA9C0\uA9E5\uAA7B-\uAA7D\uAABF-\uAAC2\uAAF6\uAB5B-\uAB5F\uAB69-\uAB6B\uABEC\uABED\uFB1E\uFE20-\uFE2F\uFF3E\uFF40\uFF70\uFF9E\uFF9F\uFFE3]|\uD800\uDEE0|\uD802[\uDEE5\uDEE6]|\uD803[\uDD22-\uDD27\uDF46-\uDF50]|\uD804[\uDCB9\uDCBA\uDD33\uDD34\uDD73\uDDC0\uDDCA-\uDDCC\uDE35\uDE36\uDEE9\uDEEA\uDF3C\uDF4D\uDF66-\uDF6C\uDF70-\uDF74]|\uD805[\uDC42\uDC46\uDCC2\uDCC3\uDDBF\uDDC0\uDE3F\uDEB6\uDEB7\uDF2B]|\uD806[\uDC39\uDC3A\uDD3D\uDD3E\uDD43\uDDE0\uDE34\uDE47\uDE99]|\uD807[\uDC3F\uDD42\uDD44\uDD45\uDD97]|\uD81A[\uDEF0-\uDEF4\uDF30-\uDF36]|\uD81B[\uDF8F-\uDF9F\uDFF0\uDFF1]|\uD834[\uDD67-\uDD69\uDD6D-\uDD72\uDD7B-\uDD82\uDD85-\uDD8B\uDDAA-\uDDAD]|\uD838[\uDD30-\uDD36\uDEEC-\uDEEF]|\uD83A[\uDCD0-\uDCD6\uDD44-\uDD46\uDD48-\uDD4A])/g, ""))
-                };
-                var i = n(r(97331));
-
-                function a() {
-                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
-                    return e.normalize("NFKD")
-                }
-            },
-            65496: (e, t, r) => {
-                "use strict";
-                var n = r(17885).log,
-                    i = r(37471).default,
-                    a = r(17885).sendLogs,
-                    o = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.default = void 0;
-                var s = o(r(319)),
-                    u = o(r(87757)),
-                    c = o(r(63038)),
-                    l = o(r(48926)),
-                    d = o(r(34575)),
-                    f = o(r(93913)),
-                    p = o(r(16525)),
-                    h = o(r(29754)),
-                    _ = o(r(19793)),
-                    m = o(r(99842)),
-                    g = r(84165),
-                    v = r(43143),
-                    b = r(48360),
-                    y = o(r(30381)),
-                    w = r(8059),
-                    E = r(88487),
-                    S = r(76290),
-                    x = r(214),
-                    A = o(r(34381)),
-                    k = function(e, t) {
-                        if (!t && e && e.__esModule) return e;
-                        if (null === e || "object" != typeof e && "function" != typeof e) return {
-                            default: e
-                        };
-                        var r = T(t);
-                        if (r && r.has(e)) return r.get(e);
-                        var n = {},
-                            i = Object.defineProperty && Object.getOwnPropertyDescriptor;
-                        for (var a in e)
-                            if ("default" !== a && Object.prototype.hasOwnProperty.call(e, a)) {
-                                var o = i ? Object.getOwnPropertyDescriptor(e, a) : null;
-                                o && (o.get || o.set) ? Object.defineProperty(n, a, o) : n[a] = e[a]
-                            } n.default = e, r && r.set(e, n);
-                        return n
-                    }(r(60822)),
-                    O = r(63692);
-
-                function T(e) {
-                    if ("function" != typeof WeakMap) return null;
-                    var t = new WeakMap,
-                        r = new WeakMap;
-                    return (T = function(e) {
-                        return e ? r : t
-                    })(e)
-                }
-                var C = "en-GB",
-                    N = {
-                        LTR: "LTR",
-                        RTL: "RTL"
-                    },
-                    D = {
-                        LTR: "style",
-                        RTL: "style_rtl"
-                    },
-                    M = x.L10N_PRIORITY;
-                var L = function(e) {
-                    (0, _.default)(T, e);
-                    var t, o, w = (0, m.default)(T);
-
-                    function T() {
-                        var e;
-                        (0, d.default)(this, T);
-                        var t = {
-                            l: x.DEFAULT_LOCALE,
-                            priority: M.DEFAULT,
-                            loc: x.DEFAULT_LOCALE
-                        };
-                        return (e = w.call(this, t, r(38097).default, x.MARK_TRANSLATIONS))._locale = t, r(58933).ipcMain.on("change:locale", (function(t, r) {
-                            n(2)`Setting Locale: ${r}`, e.setLocale(r, M.DEFAULT)
-                        })), e
-                    }
-                    return (0, f.default)(T, [{
-                        key: "getLocale",
-                        value: function() {
-                            return this._locale.l
-                        }
-                    }, {
-                        key: "getFbtTranslations",
-                        value: function() {
-                            return this.fbtStrings[this._locale.l]
-                        }
-                    }, {
-                        key: "getFullLocale",
-                        value: function() {
-                            return this._locale.loc.replace("_", "-")
-                        }
-                    }, {
-                        key: "getLanguage",
-                        value: function() {
-                            return (0, S.getLanguageCodeFromLocale)(this.getFullLocale())
-                        }
-                    }, {
-                        key: "getRegion",
-                        value: function() {
-                            return (0, S.getRegionCodeFromLocale)(this.getFullLocale())
-                        }
-                    }, {
-                        key: "normalizeForm",
-                        value: function() {
-                            var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : "";
-                            if (!O.UA.isTrident) return e.normalize("NFKD");
-                            try {
-                                return e.normalize("NFKD")
-                            } catch (t) {
-                                return e
-                            }
-                        }
-                    }, {
-                        key: "setLocale",
-                        value: (o = (0, l.default)(u.default.mark((function e(t) {
-                            var n, a, o = this;
-                            return u.default.wrap((function(e) {
-                                for (;;) switch (e.prev = e.next) {
-                                    case 0:
-                                        if (n = null == t ? null : this.normalizeLocale(t), t && n && this.isLocaleSupported(n) && t !== this.getLocale()) {
-                                            e.next = 3;
-                                            break
-                                        }
-                                        return e.abrupt("return", i.resolve());
-                                    case 3:
-                                        return e.next = 5, r(26299)(`./${n}`);
-                                    case 5:
-                                        return a = e.sent, e.abrupt("return", i.resolve(a.default()).then(function() {
-                                            var e = (0, l.default)(u.default.mark((function e(r) {
-                                                var i, a, s;
-                                                return u.default.wrap((function(e) {
-                                                    for (;;) switch (e.prev = e.next) {
-                                                        case 0:
-                                                            return i = (0, c.default)(r, 2), a = i[0], s = i[1], o._locale = {
-                                                                l: n,
-                                                                loc: t,
-                                                                priority: 1
-                                                            }, o.localeStrings[n] = a, e.next = 5, o.downloadFbtLocaleAndSetCache(n);
-                                                        case 5:
-                                                            o.updateFbtContext(n, s), o.trigger("locale_change", {
-                                                                l: n,
-                                                                loc: t
-                                                            });
-                                                        case 7:
-                                                        case "end":
-                                                            return e.stop()
-                                                    }
-                                                }), e)
-                                            })));
-                                            return function() {
-                                                return e.apply(this, arguments)
-                                            }
-                                        }()));
-                                    case 10:
-                                        return e.abrupt("return", this.downloadAndSetTranslation(void 0));
-                                    case 11:
-                                    case "end":
-                                        return e.stop()
-                                }
-                            }), e, this)
-                        }))), function() {
-                            return o.apply(this, arguments)
-                        })
-                    }, {
-                        key: "isLocaleSupported",
-                        value: function(e) {
-                            try {
-                                return (0, p.default)((0, h.default)(T.prototype), "isLocaleSupported", this).call(this, e)
-                            } catch (e) {
-                                return !1
-                            }
-                        }
-                    }, {
-                        key: "init",
-                        value: function(e) {
-                            return this._initFbt(), this.setLocale(e, x.L10N_PRIORITY.BROWSER)
-                        }
-                    }, {
-                        key: "_initFbt",
-                        value: function() {
-                            var e = this,
-                                t = x.MARK_TRANSLATIONS ? function(t) {
-                                    return e.getLocale() === x.DEFAULT_LOCALE ? new b.FbtResult(["{"].concat((0, s.default)(t.contents), ["}"])) : new b.FbtResult(t.contents)
-                                } : void 0;
-                            (0, b.init)({
-                                translations: this.getFbtTranslations(),
-                                hooks: {
-                                    getViewerContext: function() {
-                                        return {
-                                            locale: e.getLocale()
-                                        }
-                                    },
-                                    getFbtResult: t
-                                }
-                            })
-                        }
-                    }, {
-                        key: "_considerLocale",
-                        value: function(e, t, r) {
-                            if (!(null != e.priority && r < e.priority) && null != t && t !== this.getLocale()) {
-                                var n = this.normalizeLocale(t);
-                                return n ? (e.l = n, e.priority = r, e.loc = t, e) : void 0
-                            }
-                        }
-                    }, {
-                        key: "downloadAppLocale",
-                        value: function(e) {
-                            return this.localeStrings[e] ? i.resolve(this.localeStrings[e]) : (0, v.promiseLoop)(function() {
-                                var t = (0, l.default)(u.default.mark((function t(i, o, s) {
-                                    var l, d, f, p, h;
-                                    return u.default.wrap((function(t) {
-                                        for (;;) switch (t.prev = t.next) {
-                                            case 0:
-                                                return l = (0, g.delayMs)(k.expBackoff(s, 12e4, 1e3, .1)), t.next = 3, r(26299)(`./${e}`);
-                                            case 3:
-                                                return d = t.sent, t.prev = 4, t.next = 7, d.default();
-                                            case 7:
-                                                return f = t.sent, p = (0, c.default)(f, 1), h = p[0], t.abrupt("return", i(h));
-                                            case 13:
-                                                return t.prev = 13, t.t0 = t.catch(4), 10 === s && (n(4, void 0, new Error, !0)`${s} times, locale is ${e}`, a("downadAppLocale failure")), t.abrupt("return", l);
-                                            case 17:
-                                            case "end":
-                                                return t.stop()
-                                        }
-                                    }), t, null, [
-                                        [4, 13]
-                                    ])
-                                })));
-                                return function() {
-                                    return t.apply(this, arguments)
-                                }
-                            }())
-                        }
-                    }, {
-                        key: "downloadFbtLocaleAndSetCache",
-                        value: function(e) {
-                            var t = this;
-                            return this.fbtStrings[e] ? i.resolve(this.fbtStrings[e]) : (0, v.promiseLoop)(function() {
-                                var i = (0, l.default)(u.default.mark((function i(o, s, l) {
-                                    var d, f, p, h, _;
-                                    return u.default.wrap((function(i) {
-                                        for (;;) switch (i.prev = i.next) {
-                                            case 0:
-                                                return d = (0, g.delayMs)(k.expBackoff(l, 12e4, 1e3, .1)), i.next = 3, r(26299)(`./${e}`);
-                                            case 3:
-                                                return f = i.sent, i.prev = 4, i.next = 7, f.default();
-                                            case 7:
-                                                return p = i.sent, h = (0, c.default)(p, 2), _ = h[1], t.fbtStrings[e] = _, i.abrupt("return", o(_));
-                                            case 14:
-                                                return i.prev = 14, i.t0 = i.catch(4), 10 === l && (n(4, void 0, new Error, !0)`${l} times, locale is ${e}`, a("downadAppLocale failure")), i.abrupt("return", d);
-                                            case 18:
-                                            case "end":
-                                                return i.stop()
-                                        }
-                                    }), i, null, [
-                                        [4, 14]
-                                    ])
-                                })));
-                                return function() {
-                                    return i.apply(this, arguments)
-                                }
-                            }())
-                        }
-                    }, {
-                        key: "_downloadMomentResourceFile",
-                        value: (t = (0, l.default)(u.default.mark((function e(t) {
-                            var i;
-                            return u.default.wrap((function(e) {
-                                for (;;) switch (e.prev = e.next) {
-                                    case 0:
-                                        return e.prev = 0, e.next = 3, r(19922)(`./${t}`);
-                                    case 3:
-                                        return i = e.sent, e.abrupt("return", i.default);
-                                    case 7:
-                                        e.prev = 7, e.t0 = e.catch(0), n(2)`l10n:_downloadMomentResourceFile failed to download resource ${t}`;
-                                    case 10:
-                                    case "end":
-                                        return e.stop()
-                                }
-                            }), e, null, [
-                                [0, 7]
-                            ])
-                        }))), function() {
-                            return t.apply(this, arguments)
-                        })
-                    }, {
-                        key: "downloadMomentLocale",
-                        value: function(e) {
-                            var t = this,
-                                r = e.l,
-                                o = e.loc;
-                            return y.default.locale() === o ? i.resolve() : (0, v.promiseLoop)(function() {
-                                var e = (0, l.default)(u.default.mark((function e(s, c, l) {
-                                    var d, f, p, h, _, m, v;
-                                    return u.default.wrap((function(e) {
-                                        for (;;) switch (e.prev = e.next) {
-                                            case 0:
-                                                if (d = (0, g.delayMs)(k.expBackoff(l, 12e4, 1e3, .1)), (f = o.replace(/_/g, "-")) !== x.DEFAULT_MOMENT_LOCALE) {
-                                                    e.next = 7;
-                                                    break
-                                                }
-                                                p = function() {
-                                                    return i.resolve()
-                                                }, h = x.DEFAULT_MOMENT_LOCALE, e.next = 23;
-                                                break;
-                                            case 7:
-                                                (_ = []).push(f), r === x.DEFAULT_LOCALE ? _.push(C) : (m = r.replace(/_/g, "-"), _.push(m), null != A.default[m] && _.push(A.default[m])), _.push(C), v = 0;
-                                            case 12:
-                                                if (!(v < _.length)) {
-                                                    e.next = 22;
-                                                    break
-                                                }
-                                                return e.next = 15, t._downloadMomentResourceFile(_[v]);
-                                            case 15:
-                                                if (null == (p = e.sent)) {
-                                                    e.next = 19;
-                                                    break
-                                                }
-                                                return h = _[v], e.abrupt("break", 22);
-                                            case 19:
-                                                ++v, e.next = 12;
-                                                break;
-                                            case 22:
-                                                null == p && (n(3)`Could not fetch moment locales, using default en-US`, p = function() {
-                                                    return i.resolve()
-                                                }, h = x.DEFAULT_MOMENT_LOCALE);
-                                            case 23:
-                                                return e.prev = 23, e.next = 26, p();
-                                            case 26:
-                                                return e.abrupt("return", s(h));
-                                            case 29:
-                                                return e.prev = 29, e.t0 = e.catch(23), 10 === l && (n(4, void 0, new Error, !0)`${l} times, locale is (${r}, ${o})`, a("downloadMomentLocale failure")), e.abrupt("return", d);
-                                            case 33:
-                                            case "end":
-                                                return e.stop()
-                                        }
-                                    }), e, null, [
-                                        [23, 29]
-                                    ])
-                                })));
-                                return function() {
-                                    return e.apply(this, arguments)
-                                }
-                            }())
-                        }
-                    }, {
-                        key: "updateFbtContext",
-                        value: function(e, t) {
-                            b.FbtTranslations.registerTranslations(t)
-                        }
-                    }, {
-                        key: "downloadAndSetTranslation",
-                        value: function(e) {
-                            var t = this,
-                                r = this._locale,
-                                a = r.l,
-                                o = r.loc,
-                                s = e.l,
-                                u = e.loc,
-                                l = this.isRTL(s) ? N.RTL : N.LTR;
-                            if ((0, E.isConnectedToPage)() && document.getElementById(D[l]) && u === o) return i.resolve();
-                            var d, f, p = self.performance.now();
-                            return this._fetchPromise = i.all([this.downloadAppLocale(s), this.downloadFbtLocaleAndSetCache(s), this.downloadMomentLocale(e)]).then((function(r) {
-                                var i = (0, c.default)(r, 3),
-                                    a = i[0],
-                                    o = i[1],
-                                    f = i[2];
-                                d = self.performance.now(), t.localeStrings[s] = a, t._locale = e, t.trigger("set_collator", s), f && (y.default.locale(f), n(2)`l10n:moment locale updated to: ${f}`), t.customizeMomentLocale(y.default.locale()), (0, E.isConnectedToPage)() && (document.documentElement && document.documentElement.setAttribute("lang", e.l), document.documentElement && document.documentElement.setAttribute("dir", l)), t.updateFbtContext(s, o), t.trigger("locale_change", {
-                                    l: s,
-                                    loc: u
-                                })
-                            })).then((function() {
-                                f = self.performance.now(), n(2)`l10n:locale updated: (${a}, ${o}) > (${s}, ${u}), Fetch: ${d-p}ms, Apply: ${f-d}ms`
-                            })).catch((function() {
-                                return n(2)`l10n:locale update error: (${a}, ${o}) > (${s}, ${u})`, t.downloadAndSetTranslation({
-                                    l: x.DEFAULT_LOCALE,
-                                    priority: M.DEFAULT,
-                                    loc: x.DEFAULT_LOCALE
-                                })
-                            }))
-                        }
-                    }, {
-                        key: "_updateSpellChecker",
-                        value: function() {}
-                    }, {
-                        key: "_updateElectronMain",
-                        value: function() {}
-                    }, {
-                        key: "customizeMomentLocale",
-                        value: function(e) {
-                            var t = x.LOCALE_CUSTOMIZATIONS[e];
-                            t && y.default.locale(e, t)
-                        }
-                    }]), T
-                }(w.L10n);
-                L.Dir = N;
-                var R = new L;
-                t.default = R
-            },
-            214: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.SHOULD_USE_MOMENT_LOCALE_FORMAT = t.MARK_TRANSLATIONS = t.LOCALE_DATE_TIME_CUSTOMIZATIONS = t.LOCALE_CUSTOMIZATIONS = t.LOCALES_THAT_PREFER_24HOUR_TIME = t.L10N_PRIORITY = t.DEFAULT_MOMENT_LOCALE = t.DEFAULT_LOCALE = void 0;
-                var i = n(r(81109));
-                t.L10N_PRIORITY = {
-                    SAVED: 6,
-                    PHONE: 5,
-                    PREVIOUS: 4,
-                    URL: 3,
-                    BROWSER: 2,
-                    DEFAULT: 1
-                };
-                t.DEFAULT_LOCALE = "en";
-                t.DEFAULT_MOMENT_LOCALE = "en-US";
-                var a = new Set(["ur"]);
-                t.SHOULD_USE_MOMENT_LOCALE_FORMAT = a;
-                var o = new Set(["af", "az", "ca", "cs", "da", "de", "el", "et", "fi", "fr", "he", "hr", "hu", "id", "it", "kk", "lt", "mk", "nb", "pl", "pt", "pt-BR", "ro", "ru", "sk", "sl", "sr", "sv", "tr", "uk"]);
-                t.LOCALES_THAT_PREFER_24HOUR_TIME = o;
-                var s = {
-                    "zh-tw": {
-                        longDateFormat: {
-                            LT: "Ah:mm",
-                            LTS: "Ah:m:s",
-                            L: "YYYY年MMMD日",
-                            LL: "YYYY年MMMD日",
-                            LLL: "YYYY年MMMD日LT",
-                            LLLL: "YYYY年MMMD日ddddLT",
-                            l: "YYYY年MMMD日",
-                            ll: "YYYY年MMMD日",
-                            lll: "YYYY年MMMD日LT",
-                            llll: "YYYY年MMMD日ddddLT"
-                        }
-                    },
-                    "zh-cn": {
-                        longDateFormat: {
-                            LT: "Ah:mm",
-                            LTS: "Ah:m:s",
-                            L: "YYYY-MM-DD",
-                            LL: "YYYY年MMMD日",
-                            LLL: "YYYY年MMMD日LT",
-                            LLLL: "YYYY年MMMD日ddddLT",
-                            l: "YYYY年MMMD日",
-                            ll: "YYYY年MMMD日",
-                            lll: "YYYY年MMMD日LT",
-                            llll: "YYYY年MMMD日ddddLT"
-                        }
-                    },
-                    ar: {
-                        longDateFormat: {
-                            LT: "h:mm A",
-                            LTS: "HH:mm:ss",
-                            L: "YYYY/MM/DD",
-                            LL: "D MMMM YYYY",
-                            LLL: "D MMMM YYYY LT",
-                            LLLL: "dddd D MMMM YYYY LT"
-                        }
-                    },
-                    ta: {
-                        longDateFormat: {
-                            LT: "h:mm A",
-                            LTS: "h:mm:ss A",
-                            L: "DD/MM/YYYY",
-                            LL: "D MMMM YYYY",
-                            LLL: "D MMMM YYYY h:mm A",
-                            LLLL: "dddd, D MMMM YYYY, h:mm A"
-                        },
-                        preparse: null,
-                        postformat: null,
-                        meridiem: null,
-                        meridiemHour: null
-                    },
-                    nl: {
-                        longDateFormat: {
-                            l: "DD-MM-YYYY",
-                            L: "DD-MM-YYYY"
-                        }
-                    },
-                    "en-ie": {
-                        longDateFormat: {
-                            l: "DD/MM/YYYY",
-                            L: "DD/MM/YYYY"
-                        }
-                    },
-                    hi: {
-                        preparse: null,
-                        postformat: null,
-                        longDateFormat: {
-                            LT: "A h:mm बजे",
-                            LTS: "A h:mm:ss बजे",
-                            LLL: "D MMMM YYYY A h:mm बजे",
-                            LLLL: "dddd, D MMMM YYYY, A h:mm बजे"
-                        },
-                        meridiem: function(e, t) {
-                            return 0 === e && 0 === t ? "मध्यरात्रि" : e >= 20 || e < 4 ? "रात" : e >= 4 && e < 12 ? "सुबह" : e >= 12 && e < 16 ? "दोपहर" : "शाम"
-                        }
-                    }
-                };
-                t.LOCALE_DATE_TIME_CUSTOMIZATIONS = s;
-                var u = (0, i.default)((0, i.default)({}, s), {
-                    "pt-pt": {
-                        weekdays: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"]
-                    }
-                });
-                t.LOCALE_CUSTOMIZATIONS = u;
-                t.MARK_TRANSLATIONS = !1
-            },
-            97524: (e, t) => {
-                "use strict";
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.default = void 0;
-                var r = {
-                    ach: {
-                        name: "Acholi",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    af: {
-                        name: "Afrikaans",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ak: {
-                        name: "Akan",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    am: {
-                        name: "Amharic",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    an: {
-                        name: "Aragonese",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ar: {
-                        name: "Arabic",
-                        numbers: [0, 1, 2, 3, 11, 100],
-                        plurals: function(e) {
-                            return Number(0 === e ? 0 : 1 == e ? 1 : 2 == e ? 2 : e % 100 >= 3 && e % 100 <= 10 ? 3 : e % 100 >= 11 ? 4 : 5)
-                        }
-                    },
-                    arn: {
-                        name: "Mapudungun",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    ast: {
-                        name: "Asturian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ay: {
-                        name: "Aymará",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    az: {
-                        name: "Azerbaijani",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    be: {
-                        name: "Belarusian",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    bg: {
-                        name: "Bulgarian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    bn: {
-                        name: "Bengali",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    bo: {
-                        name: "Tibetan",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    br: {
-                        name: "Breton",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    bs: {
-                        name: "Bosnian",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    ca: {
-                        name: "Catalan",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    cgg: {
-                        name: "Chiga",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    cs: {
-                        name: "Czech",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : e >= 2 && e <= 4 ? 1 : 2)
-                        }
-                    },
-                    csb: {
-                        name: "Kashubian",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    cy: {
-                        name: "Welsh",
-                        numbers: [1, 2, 3, 8],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : 2 == e ? 1 : 8 != e && 11 != e ? 2 : 3)
-                        }
-                    },
-                    da: {
-                        name: "Danish",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    de: {
-                        name: "German",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    dz: {
-                        name: "Dzongkha",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    el: {
-                        name: "Greek",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    en: {
-                        name: "English",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    eo: {
-                        name: "Esperanto",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    es: {
-                        name: "Spanish",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    es_ar: {
-                        name: "Argentinean Spanish",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    et: {
-                        name: "Estonian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    eu: {
-                        name: "Basque",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    fa: {
-                        name: "Persian",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    fi: {
-                        name: "Finnish",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    fil: {
-                        name: "Filipino",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    fo: {
-                        name: "Faroese",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    fr: {
-                        name: "French",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    fur: {
-                        name: "Friulian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    fy: {
-                        name: "Frisian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ga: {
-                        name: "Irish",
-                        numbers: [1, 2, 3, 7, 11],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : 2 == e ? 1 : e < 7 ? 2 : e < 11 ? 3 : 4)
-                        }
-                    },
-                    gd: {
-                        name: "Scottish Gaelic",
-                        numbers: [1, 2, 3, 20],
-                        plurals: function(e) {
-                            return Number(1 == e || 11 == e ? 0 : 2 == e || 12 == e ? 1 : e > 2 && e < 20 ? 2 : 3)
-                        }
-                    },
-                    gl: {
-                        name: "Galician",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    gu: {
-                        name: "Gujarati",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    gun: {
-                        name: "Gun",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    ha: {
-                        name: "Hausa",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    he: {
-                        name: "Hebrew",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    hi: {
-                        name: "Hindi",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    hr: {
-                        name: "Croatian",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    hu: {
-                        name: "Hungarian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    hy: {
-                        name: "Armenian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ia: {
-                        name: "Interlingua",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    id: {
-                        name: "Indonesian",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    is: {
-                        name: "Icelandic",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e % 10 != 1 || e % 100 == 11)
-                        }
-                    },
-                    it: {
-                        name: "Italian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ja: {
-                        name: "Japanese",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    jbo: {
-                        name: "Lojban",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    jv: {
-                        name: "Javanese",
-                        numbers: [0, 1],
-                        plurals: function(e) {
-                            return Number(0 !== e)
-                        }
-                    },
-                    ka: {
-                        name: "Georgian",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    kk: {
-                        name: "Kazakh",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    km: {
-                        name: "Khmer",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    kn: {
-                        name: "Kannada",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ko: {
-                        name: "Korean",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    ku: {
-                        name: "Kurdish",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    kw: {
-                        name: "Cornish",
-                        numbers: [1, 2, 3, 4],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : 2 == e ? 1 : 3 == e ? 2 : 3)
-                        }
-                    },
-                    ky: {
-                        name: "Kyrgyz",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    lb: {
-                        name: "Letzeburgesch",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ln: {
-                        name: "Lingala",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    lo: {
-                        name: "Lao",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    lt: {
-                        name: "Lithuanian",
-                        numbers: [1, 2, 10],
-                        plurals: function(e) {
-                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    lv: {
-                        name: "Latvian",
-                        numbers: [0, 1, 2],
-                        plurals: function(e) {
-                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : 0 !== e ? 1 : 2)
-                        }
-                    },
-                    mai: {
-                        name: "Maithili",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    mfe: {
-                        name: "Mauritian Creole",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    mg: {
-                        name: "Malagasy",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    mi: {
-                        name: "Maori",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    mk: {
-                        name: "Macedonian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 == e || e % 10 == 1 ? 0 : 1)
-                        }
-                    },
-                    ml: {
-                        name: "Malayalam",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    mn: {
-                        name: "Mongolian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    mnk: {
-                        name: "Mandinka",
-                        numbers: [0, 1, 2],
-                        plurals: function(e) {
-                            return Number(0 === e ? 0 : 1 == e ? 1 : 2)
-                        }
-                    },
-                    mr: {
-                        name: "Marathi",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ms: {
-                        name: "Malay",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    mt: {
-                        name: "Maltese",
-                        numbers: [1, 2, 11, 20],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : 0 === e || e % 100 > 1 && e % 100 < 11 ? 1 : e % 100 > 10 && e % 100 < 20 ? 2 : 3)
-                        }
-                    },
-                    nah: {
-                        name: "Nahuatl",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    nap: {
-                        name: "Neapolitan",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    nb: {
-                        name: "Norwegian Bokmal",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ne: {
-                        name: "Nepali",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    nl: {
-                        name: "Dutch",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    nn: {
-                        name: "Norwegian Nynorsk",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    no: {
-                        name: "Norwegian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    nso: {
-                        name: "Northern Sotho",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    oc: {
-                        name: "Occitan",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    or: {
-                        name: "Oriya",
-                        numbers: [2, 1],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    pa: {
-                        name: "Punjabi",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    pap: {
-                        name: "Papiamento",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    pl: {
-                        name: "Polish",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    pms: {
-                        name: "Piemontese",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ps: {
-                        name: "Pashto",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    pt: {
-                        name: "Portuguese",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    "pt-BR": {
-                        name: "Brazilian Portuguese",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    rm: {
-                        name: "Romansh",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ro: {
-                        name: "Romanian",
-                        numbers: [1, 2, 20],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : 0 === e || e % 100 > 0 && e % 100 < 20 ? 1 : 2)
-                        }
-                    },
-                    ru: {
-                        name: "Russian",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    sah: {
-                        name: "Yakut",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    sco: {
-                        name: "Scots",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    se: {
-                        name: "Northern Sami",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    si: {
-                        name: "Sinhala",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    sk: {
-                        name: "Slovak",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(1 == e ? 0 : e >= 2 && e <= 4 ? 1 : 2)
-                        }
-                    },
-                    sl: {
-                        name: "Slovenian",
-                        numbers: [5, 1, 2, 3],
-                        plurals: function(e) {
-                            return Number(e % 100 == 1 ? 1 : e % 100 == 2 ? 2 : e % 100 == 3 || e % 100 == 4 ? 3 : 0)
-                        }
-                    },
-                    so: {
-                        name: "Somali",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    son: {
-                        name: "Songhay",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    sq: {
-                        name: "Albanian",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    sr: {
-                        name: "Serbian",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    su: {
-                        name: "Sundanese",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    sv: {
-                        name: "Swedish",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    sw: {
-                        name: "Swahili",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    ta: {
-                        name: "Tamil",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    te: {
-                        name: "Telugu",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    tg: {
-                        name: "Tajik",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    th: {
-                        name: "Thai",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    ti: {
-                        name: "Tigrinya",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    tk: {
-                        name: "Turkmen",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    tr: {
-                        name: "Turkish",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    tt: {
-                        name: "Tatar",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    ug: {
-                        name: "Uyghur",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    uk: {
-                        name: "Ukrainian",
-                        numbers: [1, 2, 5],
-                        plurals: function(e) {
-                            return Number(e % 10 == 1 && e % 100 != 11 ? 0 : e % 10 >= 2 && e % 10 <= 4 && (e % 100 < 10 || e % 100 >= 20) ? 1 : 2)
-                        }
-                    },
-                    ur: {
-                        name: "Urdu",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    uz: {
-                        name: "Uzbek",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    vi: {
-                        name: "Vietnamese",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    wa: {
-                        name: "Walloon",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(e > 1)
-                        }
-                    },
-                    wo: {
-                        name: "Wolof",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    },
-                    yo: {
-                        name: "Yoruba",
-                        numbers: [1, 2],
-                        plurals: function(e) {
-                            return Number(1 != e)
-                        }
-                    },
-                    zh: {
-                        name: "Chinese",
-                        numbers: [1],
-                        plurals: function() {
-                            return 0
-                        }
-                    }
-                };
-                t.default = r
-            },
-            73551: (e, t) => {
-                "use strict";
-
-                function r(e, t) {
-                    var n = function() {
-                        for (var r = arguments.length, i = new Array(r), a = 0; a < r; a++) i[a] = arguments[a];
-                        var o = t ? t.apply(this, i) : i[0];
-                        if (!o) return e.apply(this, i);
-                        var s = n.cache;
-                        if (s.has(o)) return s.get(o);
-                        var u = e.apply(this, i);
-                        return n.cache = s.set(o, u) || s, u
-                    };
-                    return n.cache = new(r.Cache || Map), n
-                }
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.default = void 0, r.Cache = Map;
-                var n = r;
-                t.default = n
-            },
-            91416: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.normalizeError = s, t.normalizeStack = function(e) {
-                    var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
-                        r = s(e),
-                        n = r.name,
-                        i = r.message,
-                        a = r.stack,
-                        u = a.indexOf("\n"),
-                        c = a.slice(0, u),
-                        l = c.match(new RegExp(`(${(0,o.default)(n)}|Error)(:|$)`));
-                    if (null != l) {
-                        if (!t) return a;
-                        var d = l.index + l[0].length,
-                            f = null == i ? -1 : a.indexOf(i, d),
-                            p = null == i || -1 === f ? -1 : f + i.length,
-                            h = Math.max(0, u, d, p);
-                        return a.slice(h).replace(/^\n+/, "")
-                    }
-                    if (t) return a;
-                    var _ = "" === a ? "" : `\n${a}`;
-                    return i ? `${n}: ${i}${_}` : `${n}${_}`
-                };
-                var i = n(r(81109)),
-                    a = n(r(48403)),
-                    o = n(r(3522));
-
-                function s(e) {
-                    var t, r, n = "object" == typeof e && "string" == typeof(null == e ? void 0 : e.name) ? e.name : `Thrown${(0,a.default)(typeof e)}Error`;
-                    if (t = null != e && "string" == typeof e.message ? e.message : void 0 === e ? "" : String(e), null != e && "string" == typeof e.stack) r = e.stack;
-                    else {
-                        var o = new Error;
-                        o.name = n, o.message = t, r = "string" == typeof o.stack ? o.stack : ""
-                    }
-                    var s = "object" == typeof e ? (0, i.default)({}, e) : null;
-                    return (0, i.default)((0, i.default)({}, s), {}, {
-                        name: n,
-                        message: t,
-                        stack: r
-                    })
-                }
-            },
-            60822: (e, t, r) => {
-                "use strict";
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.expBackoff = i, t.expDelaySec = function(e, t, r) {
-                    var a = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : .1;
-                    return (0, n.delayMs)(Math.floor(1e3 * i(e, t, r, a)))
-                };
-                var n = r(84165);
-
-                function i(e, t, r) {
-                    var n, i = arguments.length > 3 && void 0 !== arguments[3] ? arguments[3] : .1;
-                    return n = 0 === e ? r || 0 : Math.pow(2, e), Number.isFinite(t) && n > t && (n = t), "number" == typeof r && Number.isFinite(r) && n < r && (n = r), i && (n *= 1 + i * Math.random()), n
-                }
-            },
-            11256: (e, t, r) => {
+            82113: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
@@ -30949,113 +30991,9 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                 }), t.TOS_BASE_URL = void 0, t.getTosUrl = function() {
                     return `${a}?lg=${i.default.getLocale()}`
                 };
-                var i = n(r(65496)),
+                var i = n(r(6210)),
                     a = "https://www.whatsapp.com/legal/";
                 t.TOS_BASE_URL = a
-            },
-            9907: (e, t, r) => {
-                "use strict";
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.isBoolean = function(e) {
-                    return "boolean" == typeof e
-                }, t.isFunction = function(e) {
-                    return "function" == typeof e
-                }, t.isNumber = function(e) {
-                    return "number" == typeof e
-                }, t.isString = i, t.isStringOrFbt = function(e) {
-                    return i(e) || n.fbt.isFbtInstance(e)
-                };
-                var n = r(48360);
-
-                function i(e) {
-                    return "string" == typeof e
-                }
-            },
-            63692: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.UA = t.OS_TYPE = t.BROWSER_TYPE = void 0, t.gteVersion = o, t.ltVersion = s, t.parseUA = u;
-                var i = n(r(42238));
-                t.BROWSER_TYPE = {
-                    CHROME: "chrome",
-                    CHROMIUM: "chromium",
-                    FIREFOX: "firefox",
-                    SAFARI: "safari",
-                    IE: "ie",
-                    OPERA: "opera",
-                    EDGE: "edge"
-                };
-
-                function a(e, t) {
-                    var r, n, i = /(\.0)+[^\.]*$/,
-                        a = (e + "").replace(i, "").split("."),
-                        o = (t + "").replace(i, "").split("."),
-                        s = Math.min(a.length, o.length);
-                    for (r = 0; r < s; r++)
-                        if (0 !== (n = parseInt(a[r], 10) - parseInt(o[r], 10))) return n;
-                    return a.length - o.length
-                }
-
-                function o(e, t) {
-                    return a(e, t) >= 0
-                }
-
-                function s(e, t) {
-                    return a(e, t) < 0
-                }
-
-                function u(e) {
-                    var t = new i.default;
-                    t.setUA(e || "");
-                    var r = (t.getBrowser().name || "").toUpperCase(),
-                        n = t.getBrowser().version || "0.0.0",
-                        a = (t.getEngine().name || "").toUpperCase(),
-                        u = (t.getOS().name || "").toUpperCase(),
-                        c = t.getOS().version || "0.0.0",
-                        l = "SAFARI" === r,
-                        d = "CHROME" === r,
-                        f = "GECKO" === a,
-                        p = "BLINK" === a,
-                        h = !1;
-                    switch (u) {
-                        case "MAC OS":
-                            d ? h = o(c, "10.10") && o(n, "41.0.0") : o(c, "10.7") && (h = !0);
-                            break;
-                        case "WINDOWS":
-                            o(c, "8.1") && (f || d && o(n, "41.0.0")) && (h = !0)
-                    }
-                    var _ = l || d && s(n, "76");
-                    return {
-                        isWebkit: !a || "WEBKIT" === a,
-                        isGecko: f,
-                        isTrident: "TRIDENT" === a || "EDGEHTML" === a,
-                        isSafari: l,
-                        isElectron: !1,
-                        isBlink: p,
-                        isBuggyVideoLoad: d && o(n, "76") || p && !d,
-                        hasEmoji: h,
-                        troublesWithLotsOfVideos: d,
-                        supportsEmojiEllipsification: !_,
-                        isBrokenGetUserMedia: d && s(n, "50"),
-                        isLocalStorageBroken: l && o(n, "14.1") && s(n, "14.1.2"),
-                        os: u.toLowerCase(),
-                        osVersion: c,
-                        browser: r.toLowerCase(),
-                        browserVersion: n,
-                        parser: t,
-                        isChrome: d
-                    }
-                }
-                t.OS_TYPE = {
-                    WINDOWS: "windows",
-                    MAC: "mac os",
-                    CHROMEOS: "chromium os"
-                };
-                var c = u("undefined" != typeof self ? self.navigator.userAgent : null);
-                t.UA = c
             },
             7667: e => {
                 "use strict";
@@ -31315,38 +31253,38 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
         9995: "locales/ar-XB",
         9999: "locales/fa"
     } [e] + "." + {
-        155: "987fbfe27e6651de4760",
-        165: "086efed60d7fa33492a2",
-        248: "719c7a6f2757e0b85f5a",
+        155: "31029843d7691ab04ef1",
+        165: "8edbe6f88083538d1a9e",
+        248: "2c57f0da0e4040a305e7",
         319: "12e00ec496b161cd2c78",
-        673: "a1a73ac16fc64a5b1cc9",
-        792: "6177106d1348b6ac6617",
-        820: "5f332d5fcd4cc5e2806c",
-        906: "04fdb8f34e7ee6bb6716",
-        907: "2dde89b72ebfbca442e8",
+        673: "133de97db40153324317",
+        792: "771b2df3ab8107708e1a",
+        820: "aed5d2dd7685e44f4e30",
+        906: "59c9bb03a9ab5f0bd31d",
+        907: "13f05b606e792b30748c",
         951: "feafcd24b03c7d02ab59",
         1055: "aa2bf73d1ff49b87ecf5",
         1069: "007bc1fb12b1350efef5",
-        1081: "e452e8841fa843d7d529",
-        1204: "85029cb5481b4b6f5b48",
-        1248: "e518bb5bb1c6b7d41503",
+        1081: "6f6057b827983bdda6ad",
+        1204: "025a53ee09970944e20f",
+        1248: "559290407b51518edff9",
         1381: "82eb19ae883abf08e471",
         1473: "550548a5b8ccf785658a",
         1520: "830081ca4c64aaab19d0",
-        1529: "c9773e0ced6b539bca35",
-        1628: "741d64db5488d2abdb6c",
-        1770: "32a136d6db7987764d1d",
+        1529: "d50329a1294b4ab9ab8c",
+        1628: "2b70b47ab63921398539",
+        1770: "8501a1dec8173951638b",
         1791: "a95adb3df3b304774892",
         2017: "bebcd403ae8e68921929",
         2023: "522104b8d00cd95a5140",
-        2091: "8067ca2fb2801b64c9f3",
-        2135: "3697965a98f4861dc350",
+        2091: "1f6b6a0ccb6a51659591",
+        2135: "e1e54f75dd417e2dd9fd",
         2394: "2ae774904669fafaa919",
         2445: "beb6be06f091f6567ee8",
-        2556: "1c1f40e488d58dccceb7",
-        2739: "add69b96485ec0648fd5",
-        2830: "e9fc2dc27855dc0ff4d4",
-        2944: "1060ddc8daa40d94c602",
+        2556: "cce2690e5c705dfefd89",
+        2739: "baaf8b46a73f18d9c4ef",
+        2830: "e1204700e25756eb1644",
+        2944: "d0c32993a71dc83deb2b",
         2957: "fed68091a9df71d91ccd",
         2966: "05b2cc0e9a0a64109e66",
         2979: "ec0fddbc1ac7a4985305",
@@ -31357,94 +31295,94 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
         3422: "51c8054873874625d313",
         3501: "3a14a78cc9a7fee95d3f",
         3569: "73228d23e9f609fdf4b9",
-        3722: "c7068b4a9f7f956f885a",
+        3722: "7acdf1f4f26b11e32142",
         3748: "25fbda8607dea8e43cbf",
         3892: "05ca3453eb3b7f492092",
         3934: "daffd83d2e6e3d982453",
-        3998: "c75eb8c995e5c8d21db9",
-        4259: "4385b9ce052e747c1f8a",
+        3998: "c42f33609e3988bd6939",
+        4259: "67fc6f48c64893d19c8f",
         4339: "685b58494aa22b1fdebe",
-        4361: "e5c24c117fcc90e1d338",
+        4361: "070d5789d8a9d4a50b5b",
         4468: "02faaaa80bf4caf75245",
         4473: "fe321d3fe8c2cff749ac",
         4616: "a44ad2761e9b42a8b3b2",
-        4708: "92018dd37b24b356daba",
-        4818: "177f9f89cc17de6f88d7",
-        4873: "aa12598e8dd8ccdcedeb",
+        4708: "9f5be562f69f1dc14953",
+        4818: "c12ec99af8639ccdfd89",
+        4873: "126dbd7ab45f7b4b899a",
         4980: "34f1a86054594ab8fd2f",
         5027: "9cad17c2b4cfb112ea8b",
         5125: "4ced299ed31c04f08c5d",
-        5128: "a5eadd0566133ebf74d4",
+        5128: "19b19026a7afa5ff4e77",
         5170: "f623a86a18d581ac3654",
-        5182: "041c7c692f10c69946f3",
+        5182: "2dea1557405fc463a225",
         5247: "787bd9e1a2196265d351",
-        5443: "fc2ff15273689b4e9387",
-        5632: "fa0e1f68f5d977c59351",
-        5650: "88c28313a99bba716ac4",
+        5443: "b7008b3aeb01f5023bcf",
+        5632: "562c855571efa670f3cd",
+        5650: "4d3f28398f6dcac5eb04",
         5671: "0a685150789ca51d4a7e",
-        5708: "ef5ddcac836981d118eb",
-        5729: "87fbb661d3d363df193a",
+        5708: "37665ac3b5eb8aab1579",
+        5729: "37e931ada6dae231b4d7",
         5740: "871a1a6e786b555e0b82",
         5790: "3f399d592a70c0a8f18f",
         5862: "776d7c443bd03617fe1e",
         5959: "58abd179408720eb6c33",
         5965: "0f992c6ccb6900aa5e75",
-        6038: "e901ff3f9c74ad8ea718",
+        6038: "179d74354fa4e6f1de1e",
         6163: "61975a4c1973ab9ea6ad",
         6282: "66a8333f8edef48604b0",
-        6293: "85e5a7aabed49150acd7",
-        6331: "e4530986b6ec90158aa3",
-        6365: "b3caaccfcdebd2a4da65",
-        6483: "a1fba691255a8e690bdc",
-        6496: "3e4cb7a2fe9876756377",
+        6293: "1488d4093d918ba3f9f8",
+        6331: "dccc0a1ceeb05fa63847",
+        6365: "08e1ca29e2858fccc1c4",
+        6483: "59f36fa2a44cb51dd4d6",
+        6496: "53ede16d1aa43ec1ef8b",
         6511: "7b5298dafda14b0e8bb1",
         6547: "539174b01840cd6b9655",
         6568: "796d6eb57112fdec138d",
-        6651: "c97064578e9d34398660",
-        6655: "06c3a88755c7223300af",
+        6651: "816ed6da081e916ca11d",
+        6655: "ebdd5f6f836a5f3225bc",
         6709: "a80fc20e34ca83855af2",
         6884: "9b444d4c3c575d72652d",
         6920: "e958c604024ca6896c8f",
-        6933: "22865cb30b0bc29cc6a9",
-        6953: "8eedd4dfde3a62e15cdb",
-        7072: "23c1caab8ea0c8364c38",
+        6933: "56bcb69d773550de1031",
+        6953: "8694e14bf6958c4aa20b",
+        7072: "80de534fc76e2848ed2c",
         7074: "4144f05d234b25f5f979",
-        7102: "8ab7f003a2f4579d7dca",
-        7162: "d72989047ae894c63fbb",
-        7216: "7906bfb32578caa6b441",
+        7102: "da8f34c668c4df4f2f79",
+        7162: "baffbba20ac077cfbdeb",
+        7216: "7af8b410651b379949c5",
         7315: "cc3caf34b8b58eae60ac",
         7386: "c9a3b98bbed75e83c65f",
-        7542: "618eabda03c92ab8c645",
+        7542: "b233802a7b6d043f0fe6",
         7662: "941a53e2d76b2417ab16",
         7728: "f694a08197dd19b5eb9c",
         7739: "391528cc6ac2b8396fb5",
-        7749: "87ff32e10ef8f3c0b860",
-        8054: "7cfbb337b538de5920d0",
+        7749: "2796a63a04c030c893ee",
+        8054: "0015b3b009ff7434f4bb",
         8117: "22c064afee4ccd2b27a8",
         8132: "4705ac7dc4746703ae5a",
-        8292: "e710c3741fc34b77146c",
-        8598: "6f19a62dd58f115541c1",
-        8628: "27fbfcb7a56b97de4372",
+        8292: "c21486f24c4547003ad7",
+        8598: "bdb7a3e25e17245fb630",
+        8628: "dfc805e8ad2913e28453",
         8634: "1b5b7f738b6379440a56",
         8678: "01c52bc2ba7084aa8eb1",
-        8700: "9c554d12d670928d58fc",
+        8700: "59528cf692bd662b6263",
         8799: "94ff28d4ef90467cd8dc",
         9116: "0b93ad99d55055ebf12c",
         9227: "0033de416ef56da63be8",
         9289: "f5139f9ca5a1c3c3958d",
         9313: "927524926afb3e1ba254",
         9545: "d8eb9007f9761f076cbe",
-        9613: "6ffc5de4d713749f97b1",
+        9613: "68abc8ce1c40ebdfc700",
         9646: "3d5599d5b172c57c1463",
         9682: "0f3ed47f140d79537455",
-        9719: "005e6899f00e70d03497",
-        9737: "29819e30e532c43fa1ee",
-        9750: "09371f6bf8658b0b88ed",
+        9719: "f17c160c6c788e068015",
+        9737: "b7945059a08b8e8cb3fd",
+        9750: "a2a60204830ef3faef99",
         9765: "07409428b6175228e0f1",
-        9815: "3dd220edcb7a71616eff",
+        9815: "5a34a508d4fa71075a05",
         9817: "7b18cf6a5537d8e8caec",
-        9995: "33fa374c64036d068718",
-        9999: "42edd47fc71646f5540f"
+        9995: "dbf6a4351b8e88e386c0",
+        9999: "3e942aeec5098cbe438a"
     } [e] + ".js"), n.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), n.r = e => {
         "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
             value: "Module"
@@ -31466,81 +31404,93 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
         "use strict";
         var e = n(17885).log,
             t = (n(95318)(n(83996)), n(48360)),
-            r = n(3672);
+            r = n(3672),
+            i = ["macbookair6,1", "macbookair6,2"],
+            a = ["20.2.0", "20.3.0"];
         ! function() {
             try {
                 n(37813).initialize();
-                var i = n(75724);
-                i.initialize().then((function() {
-                    (i.set("betaUpdate", !1), n(99333), process.mas || process.windowsStore) || n(62716).initialize()
+                var o = n(75724);
+                o.initialize().then((function() {
+                    (o.set("betaUpdate", !1), n(99333), process.mas || process.windowsStore) || n(62716).initialize()
                 })), n(6173);
-                var a = n(58933),
-                    o = a.protocol,
-                    s = a.app,
-                    u = n(9519),
-                    c = n(45610);
+                var s = n(58933),
+                    u = s.protocol,
+                    c = s.app,
+                    l = n(9519),
+                    d = n(45610);
                 n(10326), n(4685), n(59306), n(22990), n(64549);
-                var l, d = n(11182);
-                if (d.isUpgradeTest) {
-                    var f = n(11631);
-                    (l = f.createConnection(2519, (function() {
+                var f, p = n(11182);
+                if (p.isUpgradeTest) {
+                    var h = n(11631);
+                    (f = h.createConnection(2519, (function() {
                         console.log("connection established for upgrade test")
                     }))).on("error", (function(e) {
                         console.log("upgrade test connection error: ", e)
                     }))
                 }
-                var p, h = null,
-                    _ = void 0,
-                    m = !1;
-                if ("win32" === process.platform && (process.windowsStore ? s.setAppUserModelId("WhatsAppDesktop") : s.setAppUserModelId("com.squirrel.WhatsApp.WhatsApp")), process.mas || (m = s.requestSingleInstanceLock()), s.on("second-instance", (function(e, t) {
+                var _, m = null,
+                    g = void 0,
+                    v = !1;
+                if ("win32" === process.platform && (process.windowsStore ? c.setAppUserModelId("WhatsAppDesktop") : c.setAppUserModelId("com.squirrel.WhatsApp.WhatsApp")), process.mas) {
+                    var b = n(48739).Z.getDeviceInfoSync(),
+                        y = b.deviceModel,
+                        w = b.osRelease;
+                    e(2)`Model Identifier: ${y}`, e(2)`OS Release: ${w}`, i.some((function(e) {
+                        return y.startsWith(e)
+                    })) && a.some((function(e) {
+                        return w.startsWith(e)
+                    })) && (e(2)`Disabling hardware acceleration`, c.disableHardwareAcceleration())
+                } else v = c.requestSingleInstanceLock();
+                if (c.on("second-instance", (function(e, t) {
                         var r = t.find((function(e) {
                             return e.startsWith("whatsapp://")
                         }));
-                        if (r && h && h.urlOpened(r), ("darwin" === process.platform || "win32" === process.platform && !r) && h) {
-                            var n = h;
-                            h.browserWindow.isMinimized() && n.browserWindow.restore(), "darwin" === process.platform && n.browserWindow.show(), n.browserWindow.focus()
+                        if (r && m && m.urlOpened(r), ("darwin" === process.platform || "win32" === process.platform && !r) && m) {
+                            var n = m;
+                            m.browserWindow.isMinimized() && n.browserWindow.restore(), "darwin" === process.platform && n.browserWindow.show(), n.browserWindow.focus()
                         }
-                    })), !process.mas && !m) return s.quit();
+                    })), !process.mas && !v) return c.quit();
                 if ("win32" === process.platform) {
-                    var g = process.argv[1];
-                    n(50409).isWAURL(g) && (p = g, g = void 0), m || g ? _ = n(12677).shouldQuit : (_ = !0, s.quit())
+                    var E = process.argv[1];
+                    n(38303).isWAURL(E) && (_ = E, E = void 0), v || E ? g = n(12677).shouldQuit : (g = !0, c.quit())
                 }
-                _ ? setTimeout((function() {
-                    s.quit()
-                }), 15e3) : (s.on("window-all-closed", (function() {
-                    "darwin" !== process.platform && h && h.getForceQuit() && (c.clearTemp(), s.quit())
-                })), s.on("will-finish-launching", (function() {
+                g ? setTimeout((function() {
+                    c.quit()
+                }), 15e3) : (c.on("window-all-closed", (function() {
+                    "darwin" !== process.platform && m && m.getForceQuit() && (d.clearTemp(), c.quit())
+                })), c.on("will-finish-launching", (function() {
                     var t = function(r, n) {
-                        e(2)`App Opened from url: open-url ${n}`, p = n, s.removeListener("open-url", t)
+                        e(2)`App Opened from url: open-url ${n}`, _ = n, c.removeListener("open-url", t)
                     };
-                    s.on("open-url", t)
-                })), o.registerSchemesAsPrivileged([{
+                    c.on("open-url", t)
+                })), u.registerSchemesAsPrivileged([{
                     scheme: "whatsapp",
                     privileges: {
                         standard: !0,
                         secure: !0
                     }
-                }]), s.setAsDefaultProtocolClient("whatsapp"), s.on("ready", (function() {
-                    a.powerMonitor.on("suspend", (function() {
+                }]), c.setAsDefaultProtocolClient("whatsapp"), c.on("ready", (function() {
+                    s.powerMonitor.on("suspend", (function() {
                         e(2)`system going to sleep`
-                    })), a.powerMonitor.on("resume", (function() {
+                    })), s.powerMonitor.on("resume", (function() {
                         e(2)`system resumed`
-                    })), (0, r.installFileHandler)(s.getPath("userData"), s.getAppPath(), "win32" === process.platform), (0, r.installWebHandler)();
-                    var o = n(65496).default;
-                    i.initializePromise.then((function() {
-                        o.init(s.getLocale())
+                    })), (0, r.installFileHandler)(c.getPath("userData"), c.getAppPath(), "win32" === process.platform), (0, r.installWebHandler)();
+                    var i = n(6210).default;
+                    o.initializePromise.then((function() {
+                        i.init(c.getLocale())
                     })).then((function() {
-                        e(2)`WhatsApp Desktop ${"2.2208.15"} Ready`;
+                        e(2)`WhatsApp Desktop ${"2.2210.9"} Ready`;
                         var r = !0;
-                        if ("darwin" === process.platform && !process.mas && !i.get("hasLoaded") && !d.isUpgradeTest) {
-                            var c = s.getAppPath(),
-                                l = c.indexOf("/Contents/Resources/app.asar");
-                            if (l > -1) {
-                                c = c.slice(0, l);
-                                var f = n(85622),
-                                    _ = f.basename(c),
-                                    m = f.join("/Applications", _);
-                                if (c !== m) r = !1, a.dialog.showMessageBox({
+                        if ("darwin" === process.platform && !process.mas && !o.get("hasLoaded") && !p.isUpgradeTest) {
+                            var a = c.getAppPath(),
+                                u = a.indexOf("/Contents/Resources/app.asar");
+                            if (u > -1) {
+                                a = a.slice(0, u);
+                                var d = n(85622),
+                                    f = d.basename(a),
+                                    h = d.join("/Applications", f);
+                                if (a !== h) r = !1, s.dialog.showMessageBox({
                                     type: "question",
                                     title: t.fbt._("Move WhatsApp to Applications?", null, {
                                         hk: "zoOTq"
@@ -31555,9 +31505,9 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                                     }).toString()]
                                 }).then((function(e) {
                                     if (0 === e.response) {
-                                        s.quit();
+                                        c.quit();
                                         var t = n(63129).spawnSync;
-                                        return t("rm", ["-r", m]), t("ditto", [c, m]), t("open", ["-n", m]), void t("rm", ["-r", c])
+                                        return t("rm", ["-r", h]), t("ditto", [a, h]), t("open", ["-n", h]), void t("rm", ["-r", a])
                                     }
                                     v()
                                 }))
@@ -31565,74 +31515,74 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed"), t._isDes
                         }
 
                         function g() {
-                            s.relaunch({
+                            c.relaunch({
                                 args: process.argv.slice(1).concat(["--relaunch"])
-                            }), s.exit(0)
+                            }), c.exit(0)
                         }
 
                         function v() {
-                            var r = h = new u({
+                            var r = m = new l({
                                 titleBarStyle: "hidden",
                                 trafficLightPosition: {
                                     x: 12,
                                     y: 42
                                 },
-                                launchURL: p,
+                                launchURL: _,
                                 title: "WhatsApp"
                             });
-                            p = void 0, h.on("unresponsive", (function() {
-                                var e = a.dialog;
-                                h && e.showMessageBox(h.browserWindow, {
+                            _ = void 0, m.on("unresponsive", (function() {
+                                var e = s.dialog;
+                                m && e.showMessageBox(m.browserWindow, {
                                     type: "error",
-                                    title: o.t(652),
-                                    message: o.t(651),
+                                    title: i.t(645),
+                                    message: i.t(644),
                                     buttons: [t.fbt._("OK", null, {
                                         hk: "2KEeHb"
                                     }).toString()]
                                 }).then((function() {
-                                    h && (r.setForceQuit(!1), r.destroy(), h = null, g())
+                                    m && (r.setForceQuit(!1), r.destroy(), m = null, g())
                                 }))
                             })), r.on("render-process-gone", (function() {
-                                var n = a.dialog;
-                                h && n.showMessageBox(h.browserWindow, {
-                                    browserWindow: h.browserWindow,
+                                var n = s.dialog;
+                                m && n.showMessageBox(m.browserWindow, {
+                                    browserWindow: m.browserWindow,
                                     type: "error",
-                                    title: o.t(652),
-                                    message: o.t(651),
+                                    title: i.t(645),
+                                    message: i.t(644),
                                     buttons: [t.fbt._("OK", null, {
                                         hk: "2KEeHb"
                                     }).toString()]
                                 }).then((function() {
-                                    e(2)`Application render process is gone, restart`, h && (r.setForceQuit(!1), r.destroy(), h = null, g())
+                                    e(2)`Application render process is gone, restart`, m && (r.setForceQuit(!1), r.destroy(), m = null, g())
                                 }))
                             })), r.on("renderer_refresh_request", (function() {
-                                if (e(2)`Application got 'renderer_refresh_request', restart`, h) {
-                                    var t = h;
-                                    t.setForceQuit(!1), t.destroy(), h = null, v()
+                                if (e(2)`Application got 'renderer_refresh_request', restart`, m) {
+                                    var t = m;
+                                    t.setForceQuit(!1), t.destroy(), m = null, v()
                                 }
                             })), n(52176).setWindow(r)
                         }
-                        s.on("activate", (function() {
-                            null == h ? (e(2)`app activated, starting app..`, v()) : (e(2)`app already started, showing main window..`, h.browserWindow.show())
-                        })), i.set("hasLoaded", !0), r && v()
+                        c.on("activate", (function() {
+                            null == m ? (e(2)`app activated, starting app..`, v()) : (e(2)`app already started, showing main window..`, m.browserWindow.show())
+                        })), o.set("hasLoaded", !0), r && v()
                     })).catch((function(t) {
                         e(2)`Got exception: ${t}`
-                    })), d.isUpgradeTest && setTimeout((function() {
-                        l.write("main_2.2208.15\n", "utf8")
+                    })), p.isUpgradeTest && setTimeout((function() {
+                        f.write("main_2.2210.9\n", "utf8")
                     }), 15e3)
-                })), "darwin" === process.platform && (process.versions.electron, s.setAboutPanelOptions({
+                })), "darwin" === process.platform && (process.versions.electron, c.setAboutPanelOptions({
                     applicationName: "WhatsApp ",
-                    applicationVersion: "2.2208.15",
+                    applicationVersion: "2.2210.9",
                     version: "",
                     copyright: " "
-                })), s.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required"))
+                })), c.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required"))
             } catch (t) {
                 if (!process.windowsStore && !process.mas) n(62716).initialize();
                 if (n(11182).isUpgradeTest) {
-                    var v = n(11631).createConnection(2519, (function() {
-                        v.write("abort\n", "utf8"), console.log("connection established for upgrade test")
+                    var S = n(11631).createConnection(2519, (function() {
+                        S.write("abort\n", "utf8"), console.log("connection established for upgrade test")
                     }));
-                    v.on("error", (function(e) {
+                    S.on("error", (function(e) {
                         console.log("upgrade test connection error: ", e)
                     }))
                 }

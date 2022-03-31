@@ -1,7 +1,7 @@
 /*! Copyright (c) 2022 WhatsApp Inc. All Rights Reserved. */
 (() => {
     var __webpack_modules__ = {
-            588: function(module, __unused_webpack_exports, __webpack_require__) {
+            856: function(module, __unused_webpack_exports, __webpack_require__) {
                 var Module;
                 Module || (Module = (void 0 !== Module ? Module : null) || {});
                 var moduleOverrides = {};
@@ -34188,14 +34188,14 @@
                 };
                 t.posix = t, e.exports = t
             },
-            624: (e, i, r) => {
+            391: (e, i, r) => {
                 "use strict";
                 var t = r(318);
                 Object.defineProperty(i, "__esModule", {
                     value: !0
                 }), i.default = void 0;
-                var f, n = t(r(588)),
-                    a = t(r(759)),
+                var f, n = t(r(856)),
+                    a = t(r(662)),
                     l = function(e) {
                         var i, r, t;
                         this.bufferLength = null !== (i = e.bufferLength) && void 0 !== i ? i : 4096, this.decoderSampleRate = null !== (r = e.decoderSampleRate) && void 0 !== r ? r : 48e3, this.outputBufferSampleRate = null !== (t = e.outputBufferSampleRate) && void 0 !== t ? t : 48e3, this.outputBuffers = [], this._sawHeader = !1
@@ -34259,14 +34259,14 @@
                 };
                 i.default = u
             },
-            502: (e, i, r) => {
+            485: (e, i, r) => {
                 "use strict";
                 var t = r(318);
                 Object.defineProperty(i, "__esModule", {
                     value: !0
                 }), i.default = void 0;
-                var f, n = t(r(588)),
-                    a = t(r(759)),
+                var f, n = t(r(856)),
+                    a = t(r(662)),
                     l = function(e) {
                         var i, r, t, f, n;
                         this.numberOfChannels = null !== (i = e.numberOfChannels) && void 0 !== i ? i : 1, this.originalSampleRate = e.originalSampleRate, this.encoderSampleRate = null !== (r = e.encoderSampleRate) && void 0 !== r ? r : 48e3, this.maxBuffersPerPage = null !== (t = e.maxBuffersPerPage) && void 0 !== t ? t : 40, this.encoderApplication = null !== (f = e.encoderApplication) && void 0 !== f ? f : 2049, this.encoderFrameSize = null !== (n = e.encoderFrameSize) && void 0 !== n ? n : 20, this.bitRate = e.bitRate, this.resampler = new a.default({
@@ -34355,7 +34355,7 @@
                 };
                 i.default = u
             },
-            759: (e, i) => {
+            662: (e, i) => {
                 "use strict";
                 Object.defineProperty(i, "__esModule", {
                     value: !0
@@ -34399,8 +34399,8 @@
     (() => {
         "use strict";
         var e = __webpack_require__(318),
-            i = e(__webpack_require__(624)),
-            r = e(__webpack_require__(502));
+            i = e(__webpack_require__(391)),
+            r = e(__webpack_require__(485));
         self.onmessage = function(e) {
             switch (e.data.command) {
                 case "encode-init":

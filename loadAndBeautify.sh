@@ -1,0 +1,2 @@
+./extract.sh
+./beautify.sh

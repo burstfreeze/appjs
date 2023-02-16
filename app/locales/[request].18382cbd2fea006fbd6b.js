@@ -1,0 +1,2 @@
+/*! Copyright (c) 2023 WhatsApp Inc. All Rights Reserved. */
+(self.webpackChunkwhatsapp_web_client=self.webpackChunkwhatsapp_web_client||[]).push([[5211],{401820:e=>{"use strict";e.exports=JSON.parse('["af","ar","az","bg","bn","ca","cs","da","de","el","en","es","et","fa","fi","fil","fr","gu","he","hi","hr","hu","id","it","ja","kk","kn","ko","lt","lv","mk","ml","mr","ms","nb","nl","pa","pl","pt","ro","ru","sk","sl","sq","sr","sv","sw","ta","te","th","tr","uk","ur","uz","vi","zh-CN","zh-TW","zh-HK"]')}}]);

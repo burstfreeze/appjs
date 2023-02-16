@@ -1,16 +1,18 @@
-/*! Copyright (c) 2022 WhatsApp Inc. All Rights Reserved. */
+/*! Copyright (c) 2023 WhatsApp Inc. All Rights Reserved. */
 (() => {
     var __webpack_modules__ = {
-            220: module => {
+            46: module => {
                 /**
                  * (c) Facebook, Inc. and its affiliates. Confidential and proprietary.
                  *
-                 * @emails oncall+wa_corejs
+                 * @oncall wa_corejs
                  * @noflow
                  * @lightSyntaxTransform
                  * @preserve-whitespace
                  * @generated
-                 * sync WAJS core/media/WAMedia.compiled.js
+                 *
+                 * @codegen-command: yarn generate www-sync --project core
+                 * @generated SignedSource<<5969370d2b9ff84634460a6d79317368>>
                  */
                 var e = {},
                     aa = {},
@@ -37302,7 +37304,7 @@
                     }
                 }, e.exports.default = e.exports, e.exports.__esModule = !0
             },
-            939: (e, r, i) => {
+            290: (e, r, i) => {
                 "use strict";
                 var a = i(914);
                 Object.defineProperty(r, "__esModule", {
@@ -37362,7 +37364,7 @@
                 };
                 var f = a(i(372)),
                     n = a(i(816)),
-                    t = i(220),
+                    t = i(46),
                     o = {};
                 r.namesToDesc = o;
                 var u = {};
@@ -37480,19 +37482,20 @@
     var __webpack_exports__ = {};
     (() => {
         "use strict";
-        var e = __webpack_require__(318)(__webpack_require__(38)),
-            r = __webpack_require__(939),
-            i = __webpack_require__(220),
-            a = 0;
+        var e = __webpack_require__(318),
+            r = e(__webpack_require__(38)),
+            i = e(__webpack_require__(46)),
+            a = __webpack_require__(290),
+            f = 0;
 
-        function f(e) {
-            if (e && e in r.namesToDesc) {
-                var i = r.namesToDesc[e];
-                delete r.descToFakeFiles[i], delete r.namesToDesc[e]
+        function n(e) {
+            if (e && e in a.namesToDesc) {
+                var r = a.namesToDesc[e];
+                delete a.descToFakeFiles[r], delete a.namesToDesc[e]
             }
         }
 
-        function n(e) {
+        function t(e) {
             self.postMessage({
                 type: "log",
                 msg: e
@@ -37500,60 +37503,60 @@
         }
         self.FakeFile_exports = {
             openFile: function(e) {
-                if (e in r.namesToDesc) return r.namesToDesc[e];
-                var i = ++a;
-                return r.descToFakeFiles[i] = new r.FakeFile, r.namesToDesc[e] = i, i
+                if (e in a.namesToDesc) return a.namesToDesc[e];
+                var r = ++f;
+                return a.descToFakeFiles[r] = new a.FakeFile, a.namesToDesc[e] = r, r
             },
             fileSize: function(e) {
-                return r.descToFakeFiles[e].size
+                return a.descToFakeFiles[e].size
             },
-            fileRead: function(e, i, a, f) {
-                return r.descToFakeFiles[e].read(i, f, a)
+            fileRead: function(e, r, i, f) {
+                return a.descToFakeFiles[e].read(r, f, i)
             },
-            fileWrite: function(e, i, a, f) {
-                return r.descToFakeFiles[e].write(i, f, a)
+            fileWrite: function(e, r, i, f) {
+                return a.descToFakeFiles[e].write(r, f, i)
             },
             fileClose: function() {},
-            fileDelete: f
-        }, self.onmessage = function(t) {
-            var o = t.data,
+            fileDelete: n
+        }, self.onmessage = function(e) {
+            var o = e.data,
                 u = o.type,
                 c = o.file,
                 b = o.asGif;
-            i._attachFileHandling();
-            var l = ++a,
-                s = (0, r.uniqFilename)();
-            if (r.descToFakeFiles[l] = new r.FakeFile(c), r.namesToDesc[s] = l, "fossilize" === u) {
+            i.default._attachFileHandling();
+            var l = ++f,
+                s = (0, a.uniqFilename)();
+            if (a.descToFakeFiles[l] = new a.FakeFile(c), a.namesToDesc[s] = l, "fossilize" === u) {
                 var k = "out.fos";
-                return (0, r.raii)({
+                return (0, a.raii)({
                     in: s,
                     out: k
                 }, (function(e) {
-                    var a = i._c_fossilize(e.in, e.out);
-                    if (a) self.postMessage({
+                    var r = i.default._c_fossilize(e.in, e.out);
+                    if (r) self.postMessage({
                         type: "log",
-                        msg: `Fossilizing error (${(0,r.retrieveString)(a)})`
+                        msg: `Fossilizing error (${(0,a.retrieveString)(r)})`
                     }), self.postMessage({
                         file: null
                     });
                     else {
-                        var f = (0, r.compressByFilename)(k).file;
+                        var f = (0, a.compressByFilename)(k).file;
                         self.postMessage({
                             file: f
                         })
                     }
-                })), f(s), void f(k)
+                })), n(s), void n(k)
             }
-            var d = (0, r.raii)({
+            var d = (0, a.raii)({
                 filename: s
             }, (function(e) {
-                var a = i._c_prepFileForUpload(e.filename, b ? 1 : 0),
-                    f = (0, r.retrieveString)(a);
-                return i._free(a), f
+                var r = i.default._c_prepFileForUpload(e.filename, b ? 1 : 0),
+                    f = (0, a.retrieveString)(r);
+                return i.default._free(r), f
             }));
-            n(`result = ${JSON.stringify(d)}`), n(`remaining files = [${Object.keys(r.namesToDesc).join(", ")}]`);
+            t(`result = ${JSON.stringify(d)}`), t(`remaining files = [${Object.keys(a.namesToDesc).join(", ")}]`);
             var h = d.split("\n"),
-                w = (0, e.default)(h, 4),
+                w = (0, r.default)(h, 4),
                 v = w[0],
                 p = w[1],
                 _ = w[2],
@@ -37561,7 +37564,7 @@
             if (v) {
                 var g, y;
                 if (p) {
-                    var A = (0, r.compressByFilename)(p);
+                    var A = (0, a.compressByFilename)(p);
                     g = A.file, y = A.name
                 } else g = null, y = null;
                 self.postMessage({
@@ -37569,9 +37572,9 @@
                     error: v,
                     filename: y,
                     file: g
-                }), f(y), f(p)
+                }), n(y), n(p)
             } else {
-                var F = r.descToFakeFiles[r.namesToDesc[p]];
+                var F = a.descToFakeFiles[a.namesToDesc[p]];
                 F.type = _, self.postMessage({
                     type: "result",
                     result: {
@@ -37579,7 +37582,7 @@
                         file: F.toBlob(),
                         isGif: "true" === m
                     }
-                }), f(p)
+                }), n(p)
             }
         }
     })()

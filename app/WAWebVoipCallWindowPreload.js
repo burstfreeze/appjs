@@ -1017,7 +1017,7 @@
                 ipcRenderer: r.ipcRenderer,
                 webFrame: null,
                 nativeTheme: null,
-                appGetLocale: null,
+                appGetLocale: function() {},
                 sysPrefGetMediaAccessStatus: function() {
                     return "not-determined"
                 },

@@ -10,9 +10,6 @@
                  * @lightSyntaxTransform
                  * @preserve-whitespace
                  * @generated
-                 *
-                 * @codegen-command: yarn generate www-sync --project core
-                 * @generated SignedSource<<5969370d2b9ff84634460a6d79317368>>
                  */
                 var e = {},
                     aa = {},

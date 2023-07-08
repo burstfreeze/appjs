@@ -11397,8 +11397,327 @@
                     }
                 }, e.exports.default = e.exports, e.exports.__esModule = !0
             },
+            61553: (e, t, r) => {
+                var n = r(36953).default,
+                    i = function(e) {
+                        "use strict";
+                        var t, r = Object.prototype,
+                            i = r.hasOwnProperty,
+                            a = "function" == typeof Symbol ? Symbol : {},
+                            o = a.iterator || "@@iterator",
+                            s = a.asyncIterator || "@@asyncIterator",
+                            u = a.toStringTag || "@@toStringTag";
+
+                        function c(e, t, r) {
+                            return Object.defineProperty(e, t, {
+                                value: r,
+                                enumerable: !0,
+                                configurable: !0,
+                                writable: !0
+                            }), e[t]
+                        }
+                        try {
+                            c({}, "")
+                        } catch (e) {
+                            c = function(e, t, r) {
+                                return e[t] = r
+                            }
+                        }
+
+                        function l(e, t, r, n) {
+                            var i = t && t.prototype instanceof g ? t : g,
+                                a = Object.create(i.prototype),
+                                o = new C(n || []);
+                            return a._invoke = function(e, t, r) {
+                                var n = f;
+                                return function(i, a) {
+                                    if (n === h) throw new Error("Generator is already running");
+                                    if (n === m) {
+                                        if ("throw" === i) throw a;
+                                        return M()
+                                    }
+                                    for (r.method = i, r.arg = a;;) {
+                                        var o = r.delegate;
+                                        if (o) {
+                                            var s = k(o, r);
+                                            if (s) {
+                                                if (s === _) continue;
+                                                return s
+                                            }
+                                        }
+                                        if ("next" === r.method) r.sent = r._sent = r.arg;
+                                        else if ("throw" === r.method) {
+                                            if (n === f) throw n = m, r.arg;
+                                            r.dispatchException(r.arg)
+                                        } else "return" === r.method && r.abrupt("return", r.arg);
+                                        n = h;
+                                        var u = d(e, t, r);
+                                        if ("normal" === u.type) {
+                                            if (n = r.done ? m : p, u.arg === _) continue;
+                                            return {
+                                                value: u.arg,
+                                                done: r.done
+                                            }
+                                        }
+                                        "throw" === u.type && (n = m, r.method = "throw", r.arg = u.arg)
+                                    }
+                                }
+                            }(e, r, o), a
+                        }
+
+                        function d(e, t, r) {
+                            try {
+                                return {
+                                    type: "normal",
+                                    arg: e.call(t, r)
+                                }
+                            } catch (e) {
+                                return {
+                                    type: "throw",
+                                    arg: e
+                                }
+                            }
+                        }
+                        e.wrap = l;
+                        var f = "suspendedStart",
+                            p = "suspendedYield",
+                            h = "executing",
+                            m = "completed",
+                            _ = {};
+
+                        function g() {}
+
+                        function v() {}
+
+                        function b() {}
+                        var y = {};
+                        c(y, o, (function() {
+                            return this
+                        }));
+                        var w = Object.getPrototypeOf,
+                            E = w && w(w(N([])));
+                        E && E !== r && i.call(E, o) && (y = E);
+                        var x = b.prototype = g.prototype = Object.create(y);
+
+                        function S(e) {
+                            ["next", "throw", "return"].forEach((function(t) {
+                                c(e, t, (function(e) {
+                                    return this._invoke(t, e)
+                                }))
+                            }))
+                        }
+
+                        function A(e, t) {
+                            function r(n, a, o, s) {
+                                var u = d(e[n], e, a);
+                                if ("throw" !== u.type) {
+                                    var c = u.arg,
+                                        l = c.value;
+                                    return l && "object" == typeof l && i.call(l, "__await") ? t.resolve(l.__await).then((function(e) {
+                                        r("next", e, o, s)
+                                    }), (function(e) {
+                                        r("throw", e, o, s)
+                                    })) : t.resolve(l).then((function(e) {
+                                        c.value = e, o(c)
+                                    }), (function(e) {
+                                        return r("throw", e, o, s)
+                                    }))
+                                }
+                                s(u.arg)
+                            }
+                            var n;
+                            this._invoke = function(e, i) {
+                                function a() {
+                                    return new t((function(t, n) {
+                                        r(e, i, t, n)
+                                    }))
+                                }
+                                return n = n ? n.then(a, a) : a()
+                            }
+                        }
+
+                        function k(e, r) {
+                            var n = e.iterator[r.method];
+                            if (n === t) {
+                                if (r.delegate = null, "throw" === r.method) {
+                                    if (e.iterator.return && (r.method = "return", r.arg = t, k(e, r), "throw" === r.method)) return _;
+                                    r.method = "throw", r.arg = new TypeError("The iterator does not provide a 'throw' method")
+                                }
+                                return _
+                            }
+                            var i = d(n, e.iterator, r.arg);
+                            if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, _;
+                            var a = i.arg;
+                            return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, _) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, _)
+                        }
+
+                        function O(e) {
+                            var t = {
+                                tryLoc: e[0]
+                            };
+                            1 in e && (t.catchLoc = e[1]), 2 in e && (t.finallyLoc = e[2], t.afterLoc = e[3]), this.tryEntries.push(t)
+                        }
+
+                        function T(e) {
+                            var t = e.completion || {};
+                            t.type = "normal", delete t.arg, e.completion = t
+                        }
+
+                        function C(e) {
+                            this.tryEntries = [{
+                                tryLoc: "root"
+                            }], e.forEach(O, this), this.reset(!0)
+                        }
+
+                        function N(e) {
+                            if (e) {
+                                var r = e[o];
+                                if (r) return r.call(e);
+                                if ("function" == typeof e.next) return e;
+                                if (!isNaN(e.length)) {
+                                    var n = -1,
+                                        a = function r() {
+                                            for (; ++n < e.length;)
+                                                if (i.call(e, n)) return r.value = e[n], r.done = !1, r;
+                                            return r.value = t, r.done = !0, r
+                                        };
+                                    return a.next = a
+                                }
+                            }
+                            return {
+                                next: M
+                            }
+                        }
+
+                        function M() {
+                            return {
+                                value: t,
+                                done: !0
+                            }
+                        }
+                        return v.prototype = b, c(x, "constructor", b), c(b, "constructor", v), v.displayName = c(b, u, "GeneratorFunction"), e.isGeneratorFunction = function(e) {
+                            var t = "function" == typeof e && e.constructor;
+                            return !!t && (t === v || "GeneratorFunction" === (t.displayName || t.name))
+                        }, e.mark = function(e) {
+                            return Object.setPrototypeOf ? Object.setPrototypeOf(e, b) : (e.__proto__ = b, c(e, u, "GeneratorFunction")), e.prototype = Object.create(x), e
+                        }, e.awrap = function(e) {
+                            return {
+                                __await: e
+                            }
+                        }, S(A.prototype), c(A.prototype, s, (function() {
+                            return this
+                        })), e.AsyncIterator = A, e.async = function(t, r, i, a, o) {
+                            void 0 === o && (o = n);
+                            var s = new A(l(t, r, i, a), o);
+                            return e.isGeneratorFunction(r) ? s : s.next().then((function(e) {
+                                return e.done ? e.value : s.next()
+                            }))
+                        }, S(x), c(x, u, "Generator"), c(x, o, (function() {
+                            return this
+                        })), c(x, "toString", (function() {
+                            return "[object Generator]"
+                        })), e.keys = function(e) {
+                            var t = [];
+                            for (var r in e) t.push(r);
+                            return t.reverse(),
+                                function r() {
+                                    for (; t.length;) {
+                                        var n = t.pop();
+                                        if (n in e) return r.value = n, r.done = !1, r
+                                    }
+                                    return r.done = !0, r
+                                }
+                        }, e.values = N, C.prototype = {
+                            constructor: C,
+                            reset: function(e) {
+                                if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(T), !e)
+                                    for (var r in this) "t" === r.charAt(0) && i.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t)
+                            },
+                            stop: function() {
+                                this.done = !0;
+                                var e = this.tryEntries[0].completion;
+                                if ("throw" === e.type) throw e.arg;
+                                return this.rval
+                            },
+                            dispatchException: function(e) {
+                                if (this.done) throw e;
+                                var r = this;
+
+                                function n(n, i) {
+                                    return s.type = "throw", s.arg = e, r.next = n, i && (r.method = "next", r.arg = t), !!i
+                                }
+                                for (var a = this.tryEntries.length - 1; a >= 0; --a) {
+                                    var o = this.tryEntries[a],
+                                        s = o.completion;
+                                    if ("root" === o.tryLoc) return n("end");
+                                    if (o.tryLoc <= this.prev) {
+                                        var u = i.call(o, "catchLoc"),
+                                            c = i.call(o, "finallyLoc");
+                                        if (u && c) {
+                                            if (this.prev < o.catchLoc) return n(o.catchLoc, !0);
+                                            if (this.prev < o.finallyLoc) return n(o.finallyLoc)
+                                        } else if (u) {
+                                            if (this.prev < o.catchLoc) return n(o.catchLoc, !0)
+                                        } else {
+                                            if (!c) throw new Error("try statement without catch or finally");
+                                            if (this.prev < o.finallyLoc) return n(o.finallyLoc)
+                                        }
+                                    }
+                                }
+                            },
+                            abrupt: function(e, t) {
+                                for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+                                    var n = this.tryEntries[r];
+                                    if (n.tryLoc <= this.prev && i.call(n, "finallyLoc") && this.prev < n.finallyLoc) {
+                                        var a = n;
+                                        break
+                                    }
+                                }
+                                a && ("break" === e || "continue" === e) && a.tryLoc <= t && t <= a.finallyLoc && (a = null);
+                                var o = a ? a.completion : {};
+                                return o.type = e, o.arg = t, a ? (this.method = "next", this.next = a.finallyLoc, _) : this.complete(o)
+                            },
+                            complete: function(e, t) {
+                                if ("throw" === e.type) throw e.arg;
+                                return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg, this.method = "return", this.next = "end") : "normal" === e.type && t && (this.next = t), _
+                            },
+                            finish: function(e) {
+                                for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+                                    var r = this.tryEntries[t];
+                                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), T(r), _
+                                }
+                            },
+                            catch: function(e) {
+                                for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+                                    var r = this.tryEntries[t];
+                                    if (r.tryLoc === e) {
+                                        var n = r.completion;
+                                        if ("throw" === n.type) {
+                                            var i = n.arg;
+                                            T(r)
+                                        }
+                                        return i
+                                    }
+                                }
+                                throw new Error("illegal catch attempt")
+                            },
+                            delegateYield: function(e, r, n) {
+                                return this.delegate = {
+                                    iterator: N(e),
+                                    resultName: r,
+                                    nextLoc: n
+                                }, "next" === this.method && (this.arg = t), _
+                            }
+                        }, e
+                    }(e.exports);
+                try {
+                    regeneratorRuntime = i
+                } catch (e) {
+                    "object" == typeof globalThis ? globalThis.regeneratorRuntime = i : Function("r", "regeneratorRuntime = r")(i)
+                }
+            },
             87757: (e, t, r) => {
-                e.exports = r(35666)
+                e.exports = r(61553)
             },
             55420: e => {
                 var t = Object.prototype.toString,
@@ -18624,325 +18943,6 @@
                     return u
                 }
             },
-            35666: (e, t, r) => {
-                var n = r(36953).default,
-                    i = function(e) {
-                        "use strict";
-                        var t, r = Object.prototype,
-                            i = r.hasOwnProperty,
-                            a = "function" == typeof Symbol ? Symbol : {},
-                            o = a.iterator || "@@iterator",
-                            s = a.asyncIterator || "@@asyncIterator",
-                            u = a.toStringTag || "@@toStringTag";
-
-                        function c(e, t, r) {
-                            return Object.defineProperty(e, t, {
-                                value: r,
-                                enumerable: !0,
-                                configurable: !0,
-                                writable: !0
-                            }), e[t]
-                        }
-                        try {
-                            c({}, "")
-                        } catch (e) {
-                            c = function(e, t, r) {
-                                return e[t] = r
-                            }
-                        }
-
-                        function l(e, t, r, n) {
-                            var i = t && t.prototype instanceof g ? t : g,
-                                a = Object.create(i.prototype),
-                                o = new C(n || []);
-                            return a._invoke = function(e, t, r) {
-                                var n = f;
-                                return function(i, a) {
-                                    if (n === h) throw new Error("Generator is already running");
-                                    if (n === m) {
-                                        if ("throw" === i) throw a;
-                                        return M()
-                                    }
-                                    for (r.method = i, r.arg = a;;) {
-                                        var o = r.delegate;
-                                        if (o) {
-                                            var s = k(o, r);
-                                            if (s) {
-                                                if (s === _) continue;
-                                                return s
-                                            }
-                                        }
-                                        if ("next" === r.method) r.sent = r._sent = r.arg;
-                                        else if ("throw" === r.method) {
-                                            if (n === f) throw n = m, r.arg;
-                                            r.dispatchException(r.arg)
-                                        } else "return" === r.method && r.abrupt("return", r.arg);
-                                        n = h;
-                                        var u = d(e, t, r);
-                                        if ("normal" === u.type) {
-                                            if (n = r.done ? m : p, u.arg === _) continue;
-                                            return {
-                                                value: u.arg,
-                                                done: r.done
-                                            }
-                                        }
-                                        "throw" === u.type && (n = m, r.method = "throw", r.arg = u.arg)
-                                    }
-                                }
-                            }(e, r, o), a
-                        }
-
-                        function d(e, t, r) {
-                            try {
-                                return {
-                                    type: "normal",
-                                    arg: e.call(t, r)
-                                }
-                            } catch (e) {
-                                return {
-                                    type: "throw",
-                                    arg: e
-                                }
-                            }
-                        }
-                        e.wrap = l;
-                        var f = "suspendedStart",
-                            p = "suspendedYield",
-                            h = "executing",
-                            m = "completed",
-                            _ = {};
-
-                        function g() {}
-
-                        function v() {}
-
-                        function b() {}
-                        var y = {};
-                        c(y, o, (function() {
-                            return this
-                        }));
-                        var w = Object.getPrototypeOf,
-                            E = w && w(w(N([])));
-                        E && E !== r && i.call(E, o) && (y = E);
-                        var x = b.prototype = g.prototype = Object.create(y);
-
-                        function S(e) {
-                            ["next", "throw", "return"].forEach((function(t) {
-                                c(e, t, (function(e) {
-                                    return this._invoke(t, e)
-                                }))
-                            }))
-                        }
-
-                        function A(e, t) {
-                            function r(n, a, o, s) {
-                                var u = d(e[n], e, a);
-                                if ("throw" !== u.type) {
-                                    var c = u.arg,
-                                        l = c.value;
-                                    return l && "object" == typeof l && i.call(l, "__await") ? t.resolve(l.__await).then((function(e) {
-                                        r("next", e, o, s)
-                                    }), (function(e) {
-                                        r("throw", e, o, s)
-                                    })) : t.resolve(l).then((function(e) {
-                                        c.value = e, o(c)
-                                    }), (function(e) {
-                                        return r("throw", e, o, s)
-                                    }))
-                                }
-                                s(u.arg)
-                            }
-                            var n;
-                            this._invoke = function(e, i) {
-                                function a() {
-                                    return new t((function(t, n) {
-                                        r(e, i, t, n)
-                                    }))
-                                }
-                                return n = n ? n.then(a, a) : a()
-                            }
-                        }
-
-                        function k(e, r) {
-                            var n = e.iterator[r.method];
-                            if (n === t) {
-                                if (r.delegate = null, "throw" === r.method) {
-                                    if (e.iterator.return && (r.method = "return", r.arg = t, k(e, r), "throw" === r.method)) return _;
-                                    r.method = "throw", r.arg = new TypeError("The iterator does not provide a 'throw' method")
-                                }
-                                return _
-                            }
-                            var i = d(n, e.iterator, r.arg);
-                            if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, _;
-                            var a = i.arg;
-                            return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, _) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, _)
-                        }
-
-                        function O(e) {
-                            var t = {
-                                tryLoc: e[0]
-                            };
-                            1 in e && (t.catchLoc = e[1]), 2 in e && (t.finallyLoc = e[2], t.afterLoc = e[3]), this.tryEntries.push(t)
-                        }
-
-                        function T(e) {
-                            var t = e.completion || {};
-                            t.type = "normal", delete t.arg, e.completion = t
-                        }
-
-                        function C(e) {
-                            this.tryEntries = [{
-                                tryLoc: "root"
-                            }], e.forEach(O, this), this.reset(!0)
-                        }
-
-                        function N(e) {
-                            if (e) {
-                                var r = e[o];
-                                if (r) return r.call(e);
-                                if ("function" == typeof e.next) return e;
-                                if (!isNaN(e.length)) {
-                                    var n = -1,
-                                        a = function r() {
-                                            for (; ++n < e.length;)
-                                                if (i.call(e, n)) return r.value = e[n], r.done = !1, r;
-                                            return r.value = t, r.done = !0, r
-                                        };
-                                    return a.next = a
-                                }
-                            }
-                            return {
-                                next: M
-                            }
-                        }
-
-                        function M() {
-                            return {
-                                value: t,
-                                done: !0
-                            }
-                        }
-                        return v.prototype = b, c(x, "constructor", b), c(b, "constructor", v), v.displayName = c(b, u, "GeneratorFunction"), e.isGeneratorFunction = function(e) {
-                            var t = "function" == typeof e && e.constructor;
-                            return !!t && (t === v || "GeneratorFunction" === (t.displayName || t.name))
-                        }, e.mark = function(e) {
-                            return Object.setPrototypeOf ? Object.setPrototypeOf(e, b) : (e.__proto__ = b, c(e, u, "GeneratorFunction")), e.prototype = Object.create(x), e
-                        }, e.awrap = function(e) {
-                            return {
-                                __await: e
-                            }
-                        }, S(A.prototype), c(A.prototype, s, (function() {
-                            return this
-                        })), e.AsyncIterator = A, e.async = function(t, r, i, a, o) {
-                            void 0 === o && (o = n);
-                            var s = new A(l(t, r, i, a), o);
-                            return e.isGeneratorFunction(r) ? s : s.next().then((function(e) {
-                                return e.done ? e.value : s.next()
-                            }))
-                        }, S(x), c(x, u, "Generator"), c(x, o, (function() {
-                            return this
-                        })), c(x, "toString", (function() {
-                            return "[object Generator]"
-                        })), e.keys = function(e) {
-                            var t = [];
-                            for (var r in e) t.push(r);
-                            return t.reverse(),
-                                function r() {
-                                    for (; t.length;) {
-                                        var n = t.pop();
-                                        if (n in e) return r.value = n, r.done = !1, r
-                                    }
-                                    return r.done = !0, r
-                                }
-                        }, e.values = N, C.prototype = {
-                            constructor: C,
-                            reset: function(e) {
-                                if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(T), !e)
-                                    for (var r in this) "t" === r.charAt(0) && i.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t)
-                            },
-                            stop: function() {
-                                this.done = !0;
-                                var e = this.tryEntries[0].completion;
-                                if ("throw" === e.type) throw e.arg;
-                                return this.rval
-                            },
-                            dispatchException: function(e) {
-                                if (this.done) throw e;
-                                var r = this;
-
-                                function n(n, i) {
-                                    return s.type = "throw", s.arg = e, r.next = n, i && (r.method = "next", r.arg = t), !!i
-                                }
-                                for (var a = this.tryEntries.length - 1; a >= 0; --a) {
-                                    var o = this.tryEntries[a],
-                                        s = o.completion;
-                                    if ("root" === o.tryLoc) return n("end");
-                                    if (o.tryLoc <= this.prev) {
-                                        var u = i.call(o, "catchLoc"),
-                                            c = i.call(o, "finallyLoc");
-                                        if (u && c) {
-                                            if (this.prev < o.catchLoc) return n(o.catchLoc, !0);
-                                            if (this.prev < o.finallyLoc) return n(o.finallyLoc)
-                                        } else if (u) {
-                                            if (this.prev < o.catchLoc) return n(o.catchLoc, !0)
-                                        } else {
-                                            if (!c) throw new Error("try statement without catch or finally");
-                                            if (this.prev < o.finallyLoc) return n(o.finallyLoc)
-                                        }
-                                    }
-                                }
-                            },
-                            abrupt: function(e, t) {
-                                for (var r = this.tryEntries.length - 1; r >= 0; --r) {
-                                    var n = this.tryEntries[r];
-                                    if (n.tryLoc <= this.prev && i.call(n, "finallyLoc") && this.prev < n.finallyLoc) {
-                                        var a = n;
-                                        break
-                                    }
-                                }
-                                a && ("break" === e || "continue" === e) && a.tryLoc <= t && t <= a.finallyLoc && (a = null);
-                                var o = a ? a.completion : {};
-                                return o.type = e, o.arg = t, a ? (this.method = "next", this.next = a.finallyLoc, _) : this.complete(o)
-                            },
-                            complete: function(e, t) {
-                                if ("throw" === e.type) throw e.arg;
-                                return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg, this.method = "return", this.next = "end") : "normal" === e.type && t && (this.next = t), _
-                            },
-                            finish: function(e) {
-                                for (var t = this.tryEntries.length - 1; t >= 0; --t) {
-                                    var r = this.tryEntries[t];
-                                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), T(r), _
-                                }
-                            },
-                            catch: function(e) {
-                                for (var t = this.tryEntries.length - 1; t >= 0; --t) {
-                                    var r = this.tryEntries[t];
-                                    if (r.tryLoc === e) {
-                                        var n = r.completion;
-                                        if ("throw" === n.type) {
-                                            var i = n.arg;
-                                            T(r)
-                                        }
-                                        return i
-                                    }
-                                }
-                                throw new Error("illegal catch attempt")
-                            },
-                            delegateYield: function(e, r, n) {
-                                return this.delegate = {
-                                    iterator: N(e),
-                                    resultName: r,
-                                    nextLoc: n
-                                }, "next" === this.method && (this.arg = t), _
-                            }
-                        }, e
-                    }(e.exports);
-                try {
-                    regeneratorRuntime = i
-                } catch (e) {
-                    "object" == typeof globalThis ? globalThis.regeneratorRuntime = i : Function("r", "regeneratorRuntime = r")(i)
-                }
-            },
             76252: (e, t, r) => {
                 var n, i = r(49125).SourceMapConsumer,
                     a = r(85622);
@@ -20686,7 +20686,7 @@
                     default: () => n
                 });
                 const n = [
-                    ["", "Open the product context menu", "Turn off send as sticker", "Turn on send as sticker", "__count__ @ message", "Changing __count__ label", "The label could not be updated", "__count__ label changed", "Couldn't block __participant__", "__participant__ blocked", "Blocking __participant__", "Couldn't delete broadcast list.", "Broadcast list deleted", "Deleting broadcast list", "Couldn't archive chat.", "Chat archived", "Archiving chat", "Couldn't clear chat.", "Chat cleared", "Clearing chat", "Couldn't delete chat.", "Chat deleted", "Deleting chat", "Couldn't mark chat as read.", "Couldn't mark chat as unread.", "Marked as read", "Marked as unread", "Marking as read", "Marking as unread", "Couldn't mute chat.", "Chat muted", "Muting chat", "Couldn't pin chat", "You can only pin up to 3 chats.", "Chat pinned", "Pinning chat", "Couldn't unarchive chat.", "Chat unarchived", "Unarchiving chat", "Unmute", "Couldn't unmute chat.", "Chat unmuted", "Unmuting chat", "Couldn't unpin chat", "Chat unpinned", "Unpinning chat", "Couldn't create group.", "Please enter a shorter subject.", "Can't add more than __max__ participants", "Created group", "Creating group", "Couldn't delete group.", "Group deleted", "Deleting group", "Couldn't exit group.", "Exited group", "Exiting group", "Couldn't remove group icon.", "Group icon removed", "Removing group icon", "Group icon set", "Couldn't set group icon.", "Setting group icon", "Couldn't mute group.", "Group muted", "Muting group", "Couldn't rename group.", "Group renamed to __subject__", "Renaming group", "Group subject can't be empty", "Couldn't unmute group.", "Group unmuted", "Unmuting group", "Marking as not spam", "Couldn't mark as not spam", "Marked as not spam", "Couldn't delete message because the message may have expired", "Couldn't delete message", "__count__ message deleted", "Deleting message", "Couldn't star message because the message may have expired", "Couldn't star message", "__count__ message starred", "Starring message", "Couldn't unstar all messages", "Couldn't unstar message because the message may have expired", "Couldn't unstar message", "__count__ message unstarred", "All messages unstarred", "Unstarring message", "Unstarring all messages", "Couldn't add __participantNames__.", "You added __participantNames__.", "Adding __participantNames__.", "Removing __participantNames__ as an admin failed.", "__participantNames__ is no longer a group admin.", "Removing __participantNames__ as a group admin.", "They are no longer in this group.", "You can't add this participant because they left the group recently.", "Couldn't make __participantNames__ an admin.", "__participantNames__ is now a group admin.", "Making __participantNames__ a group admin.", "Couldn't remove __participantNames__.", "You removed __participantNames__.", "Removing __participantNames__.", "Couldn't remove profile photo.", "Profile photo removed", "Removing profile photo", "Profile photo set", "Couldn't set profile photo.", "Setting profile photo", "Your name can't be empty", "Your name changed", "Couldn't change your name.", "Changing your name", "Reporting spam", "Couldn't report spam", "Reported spam", "About can't be empty", "About changed", "Couldn't change About.", "Changing About…", "Try again.", "Couldn't unblock __participant__", "__participant__ unblocked", "Unblocking __participant__", "Undo", "Add a caption…", "Blocked contacts will no longer be able to call you or send you messages", "Add blocked contact", "Add to a group", "Add group icon", "Add profile photo", "Drag the image to adjust", "Archive chat", "No archived chats", "Archived chats", "Document", "__count__ Page", "Contact", "__number__ audio file you tried adding has no content.", "Your browser doesn't support audio playback.", "__number__ audio you tried adding is larger than the __maxSize__ limit.", "__businessName__ used other companies to store and manage this message.", "__businessName__ used Facebook and other companies to store and manage this message.", "This message was delivered directly from __businessName__.", "This message was delivered directly to __businessName__.", "__businessName__ used Facebook to store and manage this message.", "List of contacts that you have blocked", "No blocked contacts yet", "Blocked contacts", "Broadcast list deleted", "Browser not supported", "End Time", "Start Time", "This verified business is not in your contact list.", "Confirmed as __businessName__", "End Time", "This name will be visible to your WhatsApp customers and can be edited from the app on your mobile device.", "Something went wrong", "An error occurred while saving.  Please try again.", "__verified__ as __businessName__", "Use Here", "__count__ message couldn't be forwarded because __contact__ is on a version of WhatsApp that doesn't support it.", "No messages could be forwarded because __contact__ is on a version of WhatsApp that doesn't support them.", "__count__ message couldn't be forwarded because the file is missing.", "__count__ message couldn't be forwarded because the file is missing or __contact__ is on a version of WhatsApp that doesn't support it.", "Can't Load WhatsApp", "Qty __quantity__", "Received cart", "__updated__ Item Updated", "View all", "Change group icon", "Change profile photo", "Charge your phone to keep using WhatsApp", "Archived", "You are not an admin", "No Internet connection", "Clear messages", "click here for group info", "click here for contact info", "Update WhatsApp", "Click to reload QR code", "Click to save, ESC to cancel", "Click to update WhatsApp", "Close chat", "__count__ item", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_unauthorized_media__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_weapons__.", "", "", 'Add __participant__ to "__subject__" group?', 'Add __participants__ to "__subject__" group?', "You are closing WhatsApp.", "Some messages can't be forwarded, do you want to forward rest of the messages?", "Can't forward all messages", "Forward to __chat__?", "Log out?", 'Make __participant__ an admin for "__subject__" group?', 'Remove __participant__ from "__subject__" group?', 'Send __count__ contact to "__chat__"?', 'Send __count__ contact to "__chat__"?', 'Send __count__ contact to "__chat__"?', "Unblock __chat__ and forward messages?", "Unblock __contact__", "Unmute this chat?", "Unmute this group?", "Connecting…", "Connecting to WhatsApp", "Connecting", "", "About and phone number", "Loading About…", "View contact", "__number__ contact that you tried to add has no content.", "The contact that you tried to add is larger than the __maxSize__ limit.", "Older messages may be available", "Use WhatsApp on your phone to search messages from before __date__.", "Use WhatsApp on your phone to see the complete chat history.", "WhatsApp message", "Default", "Delete chat", "Deleting a label removes it from all messages, contacts, and from the list of labels. Are you sure you want to delete this label?", "Delete message", "Delete message?", "Tell us about your issue", "Please Update WhatsApp", "New version available", "Desktop Settings", "Update", "To continue using WhatsApp, click Update and install the latest version.", "Couldn't Update Automatically", "Downloading an update to WhatsApp. This may take several minutes. WhatsApp will automatically update and restart when the download finishes.", "Updating WhatsApp", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they're sent. Click to learn more.", "Dismiss", "Docs", "__count__ Doc", '"__name__" downloaded.', "__number__ document you tried adding has no content.", "__number__ document you tried adding is larger than the __maxSize__ limit.", "End-to-end encrypted", "Add text to your image…", "Turn on desktop notifications", "& ", " • ", ", ", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "__name__ turned off disappearing messages.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "__name__ turned off disappearing messages. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "Turning on this setting will make new messages disappear from this chat after 7 days. Recipients can still save these messages elsewhere.", "Turning on this setting will make new messages disappear from this chat after a selected amount of time. Recipients can still save these messages elsewhere.", "All new messages will disappear from this chat __number__ day after they're sent.", "All new messages will disappear from this chat __number__ hour after they're sent.", "All new messages will disappear from this chat __number__ minute after they're sent.", "All new messages will disappear from this chat __number__ second after they're sent.", "Anyone in this chat can change this setting.", "Group admins control who can change this setting.", "This message will disappear from this chat __number__ day after it's sent.", "This message will disappear from this chat __number__ hour after it's sent.", "This message will disappear from this chat __number__ minute after it's sent.", "This message will disappear from this chat __number__ second after it's sent.", "Off", "On", "__number__ day", "__number__ hour", "__number__ minute", "__number__ second", "Wait until the message finishes sending and displays a checkmark before forwarding.", "Wait until this message is fully delivered before forwarding.", "Unable to forward unsent message.", "Can't Forward", "__number__ file you tried adding has no content.", "__count__ file failed to be downloaded because it's no longer on your phone.", "__number__ file could not be added.", "__number__ file you tried adding is not supported.", "__number__ file you tried adding is larger than the __maxSize__ limit.", "B", "GB", "kB", "MB", "Forward", "You can only share with up to __count__ chat", "Forwarded many times. You can only share with up to __count__ chat.", "Forward message", "Forward message to", "Forwarded __count__ time", "Found a contact card for this number. View contact card?", "Older results may be available", "Microsoft Edge", "Google Chrome", "Mozilla Firefox", "Opera", "Safari (macOS 11+ Only)", "Custom GIF animations are currently not supported. Please use provided GIF selection feature.", "Incoming calls off. Click to restore.", "Alerts and sounds off. Click to restore.", "Notifications enabled", "You were added by someone who's not in your contacts", "Group deleted", "Cancel", "Checking invite link", "__count__ contact", "Join group", "Anyone with WhatsApp can follow this link to join this group. Only share it with people you trust.", "__count__ participant", "You can't view this group's invite link because you're not an admin.", "This invite link doesn't match any WhatsApp groups.", "Are you sure you want to reset the invite link for __groupName__? If you reset the link, no one will be able to use it to join this group.", "Resetting the invite link for __groupName__.", "Send link to", "Joining group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Joining group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't join group", "Viewing and revoking group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Viewing and revoking group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't view group invite details", '"__A__"', '__A__"__B__" & "__C__"', '"__A__," __B__', '"__A__" & "__B__"', "Group muted", "Type contact name", "__count__ other", "View all (__more__)", "__count__ more", "Group Subject", "__number__ invited", "Couldn't add __participant__. You can invite them privately to join this group.", "Reset invite for __participant__? If you reset the invite, __participant__ won't be able to use it to join this group.", "You can't take a photo because it looks like your computer doesn't have a camera. Try connecting one or if you have one connected, try restarting your browser.", "Camera Not Found", "Allow camera", "You can't record a Voice Message because it looks like your computer doesn't have a microphone. Try connecting one or if you have one connected, try restarting your browser.", "Microphone Not Found", "Allow microphone", "Help", "Message from __author__", "__unreadCount__ New Message", "You'll be logged out after several minutes of inactivity", "__number__ image you tried adding has no content.", "__number__ image you tried adding is larger than the __maxSize__ limit.", "Check your phone to answer", "WhatsApp group video call from __name__", "WhatsApp group voice call from __name__", "WhatsApp video call from __name__", "WhatsApp voice call from __name__", "WhatsApp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.", "With this update, your phone won't need to stay online to use WhatsApp on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "With this update, your phone won't need to stay online to use WhatsApp Business on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won't need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won't need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won't need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won't need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "WhatsApp is available for Mac. __get_it_here__.", "Make calls from desktop with WhatsApp for Mac. __get_it_here__.", "WhatsApp is available for Windows. __get_it_here__.", "Make calls from desktop with WhatsApp for Windows. __get_it_here__.", "Keep your phone connected", "Expires at __time__", "Expires in __number__ day", "__count__ item", "Search in __labelName__...", "Learn more", "Links", "__count__ Link", "load earlier messages…", "load recent messages…", "Loading…", "loading messages…", "Log in", "Menu __android_menu_icon__", "Need help to get started?", "Settings __iphone_settings_icon__", "Tap __android_menu__ or __iphone_settings__ and select __whatsapp_web_menu_item__", "Tap on __login_step_3_md_link_device__", "WhatsApp Web", "More than 1GB storage usage detected. Please be aware that remaining storage is low.", "Low storage warning", "Make sure your computer has an active Internet connection.", "Manage", "Mark as read", "Mark as unread", "Downloading messages: __progress__%", "This version will expire today at __time__. Update to use WhatsApp Web without keeping your phone online.", "This version will expire today at __time__. Update to use WhatsApp Desktop without keeping your phone online.", "Media", "Add a caption", "This file was changed from original.", "Blocked", "Help", "Keep me signed in", "Log out", "Make group admin", "Notifications", "Profile", "Profile", "Remove", "Settings", "Attach", "Menu", "This audio is too large. You can send audio up to __maxSize__.", "This document is too large. You can send documents up to __maxSize__.", "This file is too large. You can send files up to __maxSize__.", "This image is too large. You can send images up to __maxSize__.", "Message info", "Delivered", "Delivered to", "Played", "Played by", "Read", "Read by", "__count__ remaining", "Couldn't find message", "The message you're pasting is too long. Try shortening it or sending it in multiple parts.", "Message Too Long", "This video is too large. You can send videos up to __maxSize__.", "Can't play this Voice Message because it's no longer on your phone.", "Voice Message Unavailable", "Can't download this document because it's no longer on your phone.", "Document Unavailable", "Can't view this GIF because it's no longer on your phone.", "GIF Unavailable", "Media Message Unavailable", "Can't view this photo because it's no longer on your phone.", "Photo Unavailable", "Can't play this video because it's no longer on your phone.", "Video Unavailable", "Phone number shared via url is invalid.", "Send message to", "__contactName__ and __count__ other contact", "__count__ contact", "You can only send up to __count__ contact", 'Mute "__name__" for…', "__A__, __B__", "__A__, and __B__", "__A__, __B__", "__A__ and __B__", "Archive Chat", "WhatsApp needed to restart because of a problem.", "Problem Detected", "Delete Chat", "Delete Group", "Exit Group", "Log Out", "Mark as Read", "Mark as Unread", "Chat", "Help", "Terms and Privacy Policy", "Next Chat", "Previous Chat", "Window", "Bring All to Front", "Minimize", "Zoom", "Mute", "New Chat", "New Group", "Profile and About", "Unarchive Chat", "Cancel Mute", "This video is unavailable. Please try again.", "New chat", "New group", "Next", "No contacts", "No Docs", "No groups", "No Links", "No Media", "No result found for '__labelName__'", "No starred messages", "Not spam", "Notifications", "__number__ of __totalNumber__", "+__number__", "OK, got it", "Start WhatsApp at Login", "Order Detail", "Your Order", "__subtotal__ (estimated)", "Qty __quantity__", "__total__ (estimated total)", "Already blocked", "Order #__order__", "Update now to use WhatsApp Web on other devices without keeping your phone online.", 'WhatsApp is open on another computer or browser. Click "Use Here" to use WhatsApp in this window.', "Pin chat", "Waiting for this message. This may take a while.", "Previous", "__count__ contact excluded", "__count__ Product", "This photo is too small. Please select a photo with height and width of at least __size__ pixel.", "Couldn't send this Voice Message.", "…", "This is not your username or pin. This name will be visible to your WhatsApp contacts.", "Group • __groupName__", "All", "__count__ reactions weren't sent", "Reconnect", "Remove", "Remove this group's icon?", 'Remove label "__labelName__" from __count__ item', "Remove photo", "Remove your profile photo?", "Report spam", "Click to resend", "Retry Now", "Retrying…", "Retrying in __duration__…", "Retrying in __number__ second…", "Save", "Scan Database Usage", "Search…", "Search contacts", "Search Emoji", "Search GIFs via __service__", "Search groups", "Search Messages", "No chats, contacts or messages found", "No contacts found", "No groups found", "No messages found", "No results found for '__keyword__'", "Search or start new chat", "Looking for chats, contacts or messages…", "Looking for messages…", "Learn which chats are end to end encrypted", "Show security notifications", "See __count__ archived chat", "__count__ selected", "Photo set to send as sticker", "Send contact", "Send contacts", "send", "Feedback/Question about WhatsApp", "Email address", "Confirm email address", "Please enter a valid email address", "The email addresses do not match", "Subject", "Feedback sent", "Please enter a subject.", "Contact us", "__count__ Screenshot Maximum", "Please add more to your description", "To verify, send a message to __name__ and try again.", "The sender is not in your contact list", "Settings", "__days__d", "__hours__h", "__minutes__m", "__seconds__s", "Some of your messages are still sending.", "Star message", "No starred messages", "Starred messages", "Created by __name__", "Subject", "This group is no longer available. Please contact __support__ for help.", "__count__ suspicious link", "Take photo", "You'll be able to use WhatsApp again in __duration__", "You're temporarily banned from WhatsApp because you sent too many messages to people who don't have __phone__ in their address books.", "You're temporarily banned from WhatsApp because you created too many groups with people who don't have __phone__ in their address books.", "__time__ left", "Maximum number of files uploaded. __number__ file has been ignored.", "Trying to reach phone", "Turn off all desktop notifications for:", "Unarchive chat", "Unblock Contact", "Unpin chat", "__count__ @ message not synced", "__count__ unread message", "Unstar", "Unstar all messages?", "Unstar message", "Until __date__ at __time__", "Until today at __time__", "Until tomorrow at __time__", "Until __day__ at __time__", "Untitled", "Download Microsoft Edge", "Update Google Chrome", "Update Mozilla Firefox", "Update Safari", "Update Samsung Internet", "WhatsApp is out of date. Updating now…", "Updating", "Your phone will no longer need to stay online to use WhatsApp on web, desktop or other devices. __learn_more__", "Your phone will no longer need to stay online to use WhatsApp Business on web, desktop or other devices. __learn_more__", "Upload photo", "__participants__ joined using your invite", "You invited __participants__", "Version __version__", "__number__ video you tried adding has no content.", "Your browser doesn't support video playback.", "__number__ video you tried adding is larger than the __maxSize__ limit.", "View Contact Card", "This view once photo has expired. Please ask __name__ to re-send it.", "This view once video has expired. Please ask __name__ to re-send it.", "View photo", "Viewed by __count__", "Stop screen sharing", "Start screen sharing", "You can turn on your camera after __callee__ answers", "Your call will end in a few seconds because your microphone and sound output device were disconnected.", "Your call will end in a few seconds because your microphone was disconnected.", "__name__'s camera and mic are off", "__name__'s camera is off", "__name__'s mic is muted", "__name__ is requesting to switch to a video call", "Your call will end in a few seconds because your sound output device was disconnected.", "You can turn off your camera after __callee__ answers", "Please contact us with the make and model of your camera. ", "Call cannot be placed for more than __count__ participant", "You can only call up to __count__ contact", "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.", "__count__ others", "__callee__ is in a country where WhatsApp Calling is unavailable", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls at this time.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is not registered on WhatsApp", "Couldn't place call: __callee__ is unable to receive WhatsApp video calls at this time.", "WhatsApp will use your computer's camera for video calls and taking photos. You can always change this later in your computer's settings.", "WhatsApp will use your computer's microphone for calls and voice messages. You can always change this later in your computer's settings.", "__contactName__ - WhatsApp voice call", "__contactName__ - WhatsApp video call", "Chat wallpaper set", "Set Chat Wallpaper", "Your security code with __contactName__ changed because they registered WhatsApp on their phone again.", "Your security code with __contactName__ changed because you logged into a new device.", "Your security code with __contactName__ changed because there was a login on a new device of yours.", "Your security code with __contactName__ changed because there was a login on this device.", 'WhatsApp has verified that this is the official business account of "__businessName__".', "WhatsApp has verified that this is the official business account of __businessName__. This account is saved with a different name in your contacts.", "Your security code could not be verified with __contactName__. Click to learn more.", "Verify your security code with __contactName__ because there was an error with their list of linked devices.", "You can't send messages to this group because you're no longer a participant.", "Can't send a message to blocked contact __contact__.", "Your security code with __contactName__ changed because there was a login or logout from one or more of their devices.", "Your security code with __contactName__ changed because there was a login or logout from one or more of your devices.", "Muted", "Messages to this chat are secured with end-to-end encryption. __businessName__ may use another company to store, read and respond to your messages. Click to learn more.", "online", "last seen __date__ at __time__", "last seen today at __time__", "last seen __date__ at __time__", "last seen yesterday at __time__", "__participant__ is typing…", "__participant__ is recording audio…", "Audio", "Contact", "__count__ page", "Document", "Photo", "Location", "Video", "Voice message", "Delete group", "Delete broadcast list", 'Download "__name__"', "Exit", "Frequently Contacted", "Created __date__ at __time__", "Created __date__ at __time__", "Group created by __name__, on __date__ at __time__", "Group created by you, on __date__ at __time__", "Created today at __time__", "Created today at __time__", "Group created by __name__, today at __time__", "Group created by you, today at __time__", "Created __day__ at __time__", "Created __day__ at __time__", "Created yesterday at __time__", "Created yesterday at __time__", "Group created by __name__, yesterday at __time__", "Group created by you, yesterday at __time__", "__name__ reset this group's invite link. Click to view the new invite link.", "__name__ changed this group's settings to allow messages that have been forwarded many times.", "__name__ changed this group's settings to not allow messages that have been forwarded many times.", "__name__ changed their phone number to a new number.", "__name__ changed to __new_number__", "__name__ joined via an invite link", "You joined via an invite link", "__num__ invite sent", "Groups", "Groups in common", "Messages to this chat and calls are secured with end-to-end encryption, which means that WhatsApp and third parties can't read or listen to them. __businessName__ may use a service to store, read and respond to your messages and calls. Contact __businessName__ for information on their privacy practices.", "__name__ added to the list", "__name__ removed from the list", "__name__ and possibly other group participants are using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message this group.", "__name__ is using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message them.", "This happened likely because __contactName__ or you recently changed which devices you use WhatsApp on. Please verify the security code again.", "Your security code with __contactName__ changed", "To verify that messages and calls with __contactName__ are end-to-end encrypted, open this screen on your phone, and follow the instructions.", "To verify that messages and calls with __contactName__ are end-to-end encrypted, scan or upload this code on their device. You can also compare the number above instead.", "About", "Messages", "Missed group video call at __time__", "Missed group voice call at __time__", "Missed video call", "Missed video call at __time__", "Missed voice call", "Missed voice call at __time__", "The business account for __businessName__ has registered as a standard user account and may no longer belong to the business.", "Other contacts", "__count__ participant", "To receive a payment from __senderName__, set up your payment account on your phone.", "__contactName__ canceled their payment request for __currencyAndAmount__", "You canceled your payment request to __contactName__ for __currencyAndAmount__", "__contactName__ declined your payment request for __currencyAndAmount__.", "You declined __contactName__'s payment request for __currencyAndAmount__.", "__senderName__'s payment request for __currencyAndAmount__ to you expired.", "Your payment request to __receiverName__ for __currencyAndAmount__ expired.", "You notified __receiverName__ that you are trying to send a payment.", "You can now send __receiverName__ a payment.", "__invitee__ has set up payments", "You invited __otherUser__ to use payments", "__otherUser__ invited you to use payments", "Requested from __receiverName__", "Requested __amount__ from You", "__senderName__ requested __amount__ from You", "__senderName__ requested __amount__ from __receiverName__", "Sent __amount__ to You", "__senderName__ sent __amount__ to You", "__senderName__ sent __amount__ to __receiverName__", "Sent to __receiverName__", "Pending (expires __timeSpan__)", "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.", "__senderName__'s payment __relativeTime__ is complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__  was refunded __relativeTime__.", "on __date__", "Preview", "OFFICIAL ANNOUNCEMENTS", "Recent chats", "__count__ recipient", "Your security code with __contactName__ changed because there was a logout from one of their devices.", "Your security code with __contactName__ changed because there was a logout from one of your devices.", "Your security code with __contactName__ changed. Click to learn more.", "Your security code with __name__ changed because they registered WhatsApp on their phone again.", "Your security code with __name__ changed because there was a registration on a new device of yours.", "Select messages", 'WhatsApp has verified that this is the official business account of "__businessName__". This business uses WhatsApp Business, which allows them to add their opening hours, address, website and catalog of products or services.', 'This chat is with the verified business account for "__businessName__". Click for more info.', 'This chat is with the business account for "__businessName__". Click for more info.', "__businessName__ may be a business account, but WhatsApp hasn't verified their name yet.", 'The business account you\'re chatting with is now verified as "__businessName__". Click for more info.', 'The business account you\'re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you\'re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you\'re chatting with is no longer confirmed as "__businessName__". Click for more info.', 'WhatsApp is no longer able to confirm that this is the account for "__businessName__".', 'This account has registered as a business account and WhatsApp has confirmed that this is the account for "__businessName__".', "__businessName__ registered as a business account, but WhatsApp hasn't verified their name yet.", 'The business account you\'re chatting with belongs to "__businessName__".', "To chat with __contact__, review and accept WhatsApp's updated terms and privacy policy on your phone.", "__date__ at __time__", "today at __time__", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", 'You opened "Verify security code" for the wrong phone number. Open it for the correct number to verify __contact__.', '__contact__ opened "Verify security code" for the wrong phone number. Ask __contact__ to open it for your phone number.', "yesterday at __time__", "You", "You created a broadcast list with __count__ recipient", "To use WhatsApp, update __chrome_update__ or use __firefox_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Google Chrome __min_version_chrome__+", "To use WhatsApp, update __edge_homepage__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Microsoft Edge __min_version_edge__+", "To use WhatsApp, update __firefox_update__ or use __chrome_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Mozilla Firefox __min_version_firefox__+", "WhatsApp group invite", "WhatsApp", "To use WhatsApp, update __safari_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "To use all of WhatsApp's features like photo capturing and Voice Message recording, we recommend using __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "Using Safari", "WhatsApp works with Safari __min_version_safari__+", "To use WhatsApp, update __samsung_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Samsung Internet __min_version_samsung__+", "WhatsApp", "Send and receive WhatsApp messages right from your computer.", 'WhatsApp is open in another window. Click "Use Here" to use WhatsApp in this window.', "Quickly send and receive WhatsApp messages right from your computer.", "We recommend using WhatsApp with one of the following browsers:", "WhatsApp also supports:", "You can't add more than __count__ labels", "Go to Commerce Manager to update your shop."], {
+                    ["", "Open the product context menu", "Turn off send as sticker", "Turn on send as sticker", "__count__ @ message", "Changing __count__ label", "The label could not be updated", "__count__ label changed", "Couldn't block __participant__", "__participant__ blocked", "Blocking __participant__", "Couldn't delete broadcast list.", "Broadcast list deleted", "Deleting broadcast list", "Couldn't archive chat.", "Chat archived", "Archiving chat", "Couldn't clear chat.", "Chat cleared", "Clearing chat", "Couldn't delete chat.", "Chat deleted", "Deleting chat", "Couldn't mark chat as read.", "Couldn't mark chat as unread.", "Marked as read", "Marked as unread", "Marking as read", "Marking as unread", "Couldn't mute chat.", "Chat muted", "Muting chat", "Couldn't pin chat", "You can only pin up to 3 chats.", "Chat pinned", "Pinning chat", "Couldn't unarchive chat.", "Chat unarchived", "Unarchiving chat", "Unmute", "Couldn't unmute chat.", "Chat unmuted", "Unmuting chat", "Couldn't unpin chat", "Chat unpinned", "Unpinning chat", "Couldn't create group.", "Please enter a shorter subject.", "Can't add more than __max__ participants", "Created group", "Creating group", "Couldn't delete group.", "Group deleted", "Deleting group", "Couldn't exit group.", "Exited group", "Exiting group", "Couldn't remove group icon.", "Group icon removed", "Removing group icon", "Group icon set", "Couldn't set group icon.", "Setting group icon", "Couldn't mute group.", "Group muted", "Muting group", "Couldn't rename group.", "Group renamed to __subject__", "Renaming group", "Group subject can't be empty", "Couldn't unmute group.", "Group unmuted", "Unmuting group", "Marking as not spam", "Couldn't mark as not spam", "Marked as not spam", "Couldn't delete message because the message may have expired", "Couldn't delete message", "__count__ message deleted", "Deleting message", "Couldn't star message because the message may have expired", "Couldn't star message", "__count__ message starred", "Starring message", "Couldn't unstar all messages", "Couldn't unstar message because the message may have expired", "Couldn't unstar message", "__count__ message unstarred", "All messages unstarred", "Unstarring message", "Unstarring all messages", "Couldn't add __participantNames__.", "You added __participantNames__.", "Adding __participantNames__.", "Removing __participantNames__ as an admin failed.", "__participantNames__ is no longer a group admin.", "Removing __participantNames__ as a group admin.", "They are no longer in this group.", "You can't add this participant because they left the group recently.", "Couldn't make __participantNames__ an admin.", "__participantNames__ is now a group admin.", "Making __participantNames__ a group admin.", "Couldn't remove __participantNames__.", "You removed __participantNames__.", "Removing __participantNames__.", "Couldn't remove profile photo.", "Profile photo removed", "Removing profile photo", "Profile photo set", "Couldn't set profile photo.", "Setting profile photo", "Your name can't be empty", "Your name changed", "Couldn't change your name.", "Changing your name", "Reporting spam", "Couldn't report spam", "Reported spam", "About can't be empty", "About changed", "Couldn't change About.", "Changing About…", "Try again.", "Couldn't unblock __participant__", "__participant__ unblocked", "Unblocking __participant__", "Undo", "Add a caption…", "Blocked contacts will no longer be able to call you or send you messages", "Add blocked contact", "Add to a group", "Add group icon", "Add profile photo", "Drag the image to adjust", "Archive chat", "No archived chats", "Archived chats", "Document", "__count__ Page", "Contact", "__number__ audio file you tried adding has no content.", "Your browser doesn't support audio playback.", "__number__ audio you tried adding is larger than the __maxSize__ limit.", "__businessName__ used other companies to store and manage this message.", "__businessName__ used Facebook and other companies to store and manage this message.", "This message was delivered directly from __businessName__.", "This message was delivered directly to __businessName__.", "__businessName__ used Facebook to store and manage this message.", "List of contacts that you have blocked", "No blocked contacts yet", "Blocked contacts", "Broadcast list deleted", "Browser not supported", "End Time", "Start Time", "This verified business is not in your contact list.", "Confirmed as __businessName__", "End Time", "This name will be visible to your WhatsApp customers and can be edited from the app on your mobile device.", "Something went wrong", "An error occurred while saving.  Please try again.", "__verified__ as __businessName__", "Use Here", "__count__ message couldn't be forwarded because __contact__ is on a version of WhatsApp that doesn't support it.", "No messages could be forwarded because __contact__ is on a version of WhatsApp that doesn't support them.", "__count__ message couldn't be forwarded because the file is missing.", "__count__ message couldn't be forwarded because the file is missing or __contact__ is on a version of WhatsApp that doesn't support it.", "Can't Load WhatsApp", "Qty __quantity__", "Received cart", "__updated__ Item Updated", "View all", "Change group icon", "Change profile photo", "Charge your phone to keep using WhatsApp", "Archived", "You are not an admin", "No Internet connection", "Clear messages", "click here for group info", "click here for contact info", "Update WhatsApp", "Click to reload QR code", "Click to save, ESC to cancel", "Click to update WhatsApp", "Close chat", "__count__ item", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_unauthorized_media__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_weapons__.", "", "", 'Add __participant__ to "__subject__" group?', 'Add __participants__ to "__subject__" group?', "You are closing WhatsApp.", "Some messages can't be forwarded, do you want to forward rest of the messages?", "Can't forward all messages", "Forward to __chat__?", "Log out?", 'Make __participant__ an admin for "__subject__" group?', 'Remove __participant__ from "__subject__" group?', 'Send __count__ contact to "__chat__"?', 'Send __count__ contact to "__chat__"?', 'Send __count__ contact to "__chat__"?', "Unblock __chat__ and forward messages?", "Unblock __contact__", "Unmute this chat?", "Unmute this group?", "Connecting…", "Connecting to WhatsApp", "Connecting", "", "About and phone number", "Loading About…", "View contact", "__number__ contact that you tried to add has no content.", "The contact that you tried to add is larger than the __maxSize__ limit.", "Older messages may be available", "Use WhatsApp on your phone to search messages from before __date__.", "Use WhatsApp on your phone to see the complete chat history.", "WhatsApp message", "Default", "Delete chat", "Deleting a label removes it from all messages, contacts, and from the list of labels. Are you sure you want to delete this label?", "Delete message", "Delete message?", "Tell us about your issue", "Please Update WhatsApp", "New version available", "Desktop Settings", "Update", "To continue using WhatsApp, click Update and install the latest version.", "Couldn't Update Automatically", "Downloading an update to WhatsApp. This may take several minutes. WhatsApp will automatically update and restart when the download finishes.", "Updating WhatsApp", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they're sent. Click to learn more.", "Dismiss", "Docs", "__count__ Doc", '"__name__" downloaded.', "__number__ document you tried adding has no content.", "__number__ document you tried adding is larger than the __maxSize__ limit.", "End-to-end encrypted", "Add text to your image…", "Turn on desktop notifications", "& ", " • ", ", ", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "__name__ turned off disappearing messages.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "__name__ turned off disappearing messages. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "Turning on this setting will make new messages disappear from this chat after 7 days. Recipients can still save these messages elsewhere.", "Turning on this setting will make new messages disappear from this chat after a selected amount of time. Recipients can still save these messages elsewhere.", "All new messages will disappear from this chat __number__ day after they're sent.", "All new messages will disappear from this chat __number__ hour after they're sent.", "All new messages will disappear from this chat __number__ minute after they're sent.", "All new messages will disappear from this chat __number__ second after they're sent.", "Anyone in this chat can change this setting.", "Group admins control who can change this setting.", "This message will disappear from this chat __number__ day after it's sent.", "This message will disappear from this chat __number__ hour after it's sent.", "This message will disappear from this chat __number__ minute after it's sent.", "This message will disappear from this chat __number__ second after it's sent.", "Off", "On", "__number__ day", "__number__ hour", "__number__ minute", "__number__ second", "Wait until the message finishes sending and displays a checkmark before forwarding.", "Wait until this message is fully delivered before forwarding.", "Unable to forward unsent message.", "Can't Forward", "__number__ file you tried adding has no content.", "__count__ file failed to be downloaded because it's no longer on your phone.", "__number__ file could not be added.", "__number__ file you tried adding is not supported.", "__number__ file you tried adding is larger than the __maxSize__ limit.", "B", "GB", "kB", "MB", "Forward", "You can only share with up to __count__ chat", "Forwarded many times. You can only share with up to __count__ chat.", "Forward message", "Forward message to", "Forwarded __count__ time", "Found a contact card for this number. View contact card?", "Older results may be available", "Microsoft Edge", "Google Chrome", "Mozilla Firefox", "Opera", "Safari (macOS 11+ Only)", "Custom GIF animations are currently not supported. Please use provided GIF selection feature.", "Incoming calls off. Click to restore.", "Alerts and sounds off. Click to restore.", "Notifications enabled", "You were added by someone who's not in your contacts", "Group deleted", "Cancel", "Checking invite link", "__count__ contact", "Join group", "Anyone with WhatsApp can follow this link to join this group. Only share it with people you trust.", "__count__ participant", "You can't view this group's invite link because you're not an admin.", "This invite link doesn't match any WhatsApp groups.", "Are you sure you want to reset the invite link for __groupName__? If you reset the link, no one will be able to use it to join this group.", "Resetting the invite link for __groupName__.", "Send link to", "Joining group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Joining group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't join group", "Viewing and revoking group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Viewing and revoking group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't view group invite details", '"__A__"', '__A__"__B__" & "__C__"', '"__A__," __B__', '"__A__" & "__B__"', "Group muted", "Type contact name", "__count__ other", "View all (__more__)", "__count__ more", "Group Subject", "__number__ invited", "Couldn't add __participant__. You can invite them privately to join this group.", "Reset invite for __participant__? If you reset the invite, __participant__ won't be able to use it to join this group.", "You can't take a photo because it looks like your computer doesn't have a camera. Try connecting one or if you have one connected, try restarting your browser.", "Camera Not Found", "Allow camera", "You can't record a Voice Message because it looks like your computer doesn't have a microphone. Try connecting one or if you have one connected, try restarting your browser.", "Microphone Not Found", "Allow microphone", "Help", "Message from __author__", "__unreadCount__ New Message", "You'll be logged out after several minutes of inactivity", "__number__ image you tried adding has no content.", "__number__ image you tried adding is larger than the __maxSize__ limit.", "Check your phone to answer", "WhatsApp group video call from __name__", "WhatsApp group voice call from __name__", "WhatsApp video call from __name__", "WhatsApp voice call from __name__", "WhatsApp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.", "With this update, your phone won't need to stay online to use WhatsApp on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "With this update, your phone won't need to stay online to use WhatsApp Business on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won't need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won't need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won't need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won't need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "WhatsApp is available for Mac. __get_it_here__.", "Make calls from desktop with WhatsApp for Mac. __get_it_here__.", "WhatsApp is available for Windows. __get_it_here__.", "Make calls from desktop with WhatsApp for Windows. __get_it_here__.", "Keep your phone connected", "Expires at __time__", "Expires in __number__ day", "__count__ item", "Search in __labelName__...", "Learn more", "Links", "__count__ Link", "load earlier messages…", "load recent messages…", "Loading…", "loading messages…", "Log in", "Menu __android_menu_icon__", "Need help to get started?", "Settings __iphone_settings_icon__", "Tap __android_menu__ or __iphone_settings__ and select __whatsapp_web_menu_item__", "Tap on __login_step_3_md_link_device__", "WhatsApp Web", "More than 1GB storage usage detected. Please be aware that remaining storage is low.", "Low storage warning", "Make sure your computer has an active Internet connection.", "Manage", "Mark as read", "Mark as unread", "Downloading messages: __progress__%", "This version will expire today at __time__. Update to use WhatsApp Web without keeping your phone online.", "This version will expire today at __time__. Update to use WhatsApp Desktop without keeping your phone online.", "Media", "Add a caption", "This file was changed from original.", "Blocked", "Help", "Keep me signed in", "Log out", "Make group admin", "Notifications", "Profile", "Profile", "Remove", "Settings", "Attach", "Menu", "This audio is too large. You can send audio up to __maxSize__.", "This document is too large. You can send documents up to __maxSize__.", "This file is too large. You can send files up to __maxSize__.", "This image is too large. You can send images up to __maxSize__.", "Message info", "Delivered", "Delivered to", "Played", "Played by", "Read", "Read by", "__count__ remaining", "Couldn't find message", "The message you're pasting is too long. Try shortening it or sending it in multiple parts.", "Message Too Long", "This video is too large. You can send videos up to __maxSize__.", "Can't play this Voice Message because it's no longer on your phone.", "Voice Message Unavailable", "Can't download this document because it's no longer on your phone.", "Document Unavailable", "Can't view this GIF because it's no longer on your phone.", "GIF Unavailable", "Media Message Unavailable", "Can't view this photo because it's no longer on your phone.", "Photo Unavailable", "Can't play this video because it's no longer on your phone.", "Video Unavailable", "Phone number shared via url is invalid.", "Send message to", "__contactName__ and __count__ other contact", "__count__ contact", "You can only send up to __count__ contact", 'Mute "__name__" for…', "__A__, __B__", "__A__, and __B__", "__A__, __B__", "__A__ and __B__", "Archive Chat", "WhatsApp needed to restart because of a problem.", "Problem Detected", "Delete Chat", "Delete Group", "Exit Group", "Log Out", "Mark as Read", "Mark as Unread", "Chat", "Help", "Terms and Privacy Policy", "Next Chat", "Previous Chat", "Window", "Bring All to Front", "Minimize", "Zoom", "Mute", "New Chat", "New Group", "Profile and About", "Unarchive Chat", "Cancel Mute", "This video is unavailable. Please try again.", "New chat", "New group", "Next", "No contacts", "No Docs", "No groups", "No Links", "No Media", "No result found for '__labelName__'", "No starred messages", "Not spam", "Notifications", "__number__ of __totalNumber__", "+__number__", "OK, got it", "Start WhatsApp at Login", "Order Detail", "Your Order", "__subtotal__ (estimated)", "Qty __quantity__", "__total__ (estimated total)", "Already blocked", "Order #__order__", "Update now to use WhatsApp Web on other devices without keeping your phone online.", 'WhatsApp is open on another computer or browser. Click "Use Here" to use WhatsApp in this window.', "Pin chat", "Waiting for this message. This may take a while.", "Previous", "__count__ contact excluded", "__count__ Product", "This photo is too small. Please select a photo with height and width of at least __size__ pixel.", "Couldn't send this Voice Message.", "…", "This is not your username or pin. This name will be visible to your WhatsApp contacts.", "Group • __groupName__", "All", "__count__ reactions weren't sent", "Reconnect", "Remove", "Remove this group's icon?", 'Remove label "__labelName__" from __count__ item', "Remove photo", "Remove your profile photo?", "Report spam", "Click to resend", "Retry Now", "Retrying…", "Retrying in __duration__…", "Retrying in __number__ second…", "Save", "Scan Database Usage", "Search…", "Search contacts", "Search Emoji", "Search GIFs via __service__", "Search groups", "Search Messages", "No chats, contacts or messages found", "No contacts found", "No groups found", "No messages found", "No results found for '__keyword__'", "Search or start new chat", "Looking for chats, contacts or messages…", "Looking for messages…", "Learn which chats are end to end encrypted", "Show security notifications", "See __count__ archived chat", "__count__ selected", "Photo set to send as sticker", "Send contact", "Send contacts", "send", "Feedback/Question about WhatsApp", "Email address", "Confirm email address", "Please enter a valid email address", "The email addresses do not match", "Subject", "Feedback sent", "Please enter a subject.", "Contact us", "__count__ Screenshot Maximum", "Please add more to your description", "To verify, send a message to __name__ and try again.", "The sender is not in your contact list", "Settings", "__days__d", "__hours__h", "__minutes__m", "__seconds__s", "Some of your messages are still sending.", "Star message", "No starred messages", "Starred messages", "Created by __name__", "Subject", "This group is no longer available. Please contact __support__ for help.", "__count__ suspicious link", "Take photo", "You'll be able to use WhatsApp again in __duration__", "You're temporarily banned from WhatsApp because you sent too many messages to people who don't have __phone__ in their address books.", "You're temporarily banned from WhatsApp because you created too many groups with people who don't have __phone__ in their address books.", "__time__ left", "Maximum number of files uploaded. __number__ file has been ignored.", "Trying to reach phone", "Turn off all desktop notifications for:", "Unarchive chat", "Unblock Contact", "Unpin chat", "__count__ @ message not synced", "__count__ unread message", "Unstar", "Unstar all messages?", "Unstar message", "Until __date__ at __time__", "Until today at __time__", "Until tomorrow at __time__", "Until __day__ at __time__", "Untitled", "Download Microsoft Edge", "Update Google Chrome", "Update Mozilla Firefox", "Update Safari", "Update Samsung Internet", "WhatsApp is out of date. Updating now…", "Updating", "Your phone will no longer need to stay online to use WhatsApp on web, desktop or other devices. __learn_more__", "Your phone will no longer need to stay online to use WhatsApp Business on web, desktop or other devices. __learn_more__", "Upload photo", "__participants__ joined using your invite", "You invited __participants__", "Version __version__", "__number__ video you tried adding has no content.", "Your browser doesn't support video playback.", "__number__ video you tried adding is larger than the __maxSize__ limit.", "View Contact Card", "This view once photo has expired. Please ask __name__ to re-send it.", "This view once video has expired. Please ask __name__ to re-send it.", "View photo", "Viewed by __count__", "Stop screen sharing", "Start screen sharing", "You can turn on your camera after __callee__ answers", "Your call will end in a few seconds because your microphone and sound output device were disconnected.", "Your call will end in a few seconds because your microphone was disconnected.", "__name__'s camera and mic are off", "__name__'s camera is off", "__name__'s mic is muted", "__name__ is requesting to switch to a video call", "Your call will end in a few seconds because your sound output device was disconnected.", "You can turn off your camera after __callee__ answers", "Please contact us with the make and model of your camera. ", "Call cannot be placed for more than __count__ participant", "You can only call up to __count__ contact", "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.", "__count__ others", "__callee__ is in a country where WhatsApp Calling is unavailable", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls at this time.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is not registered on WhatsApp", "Couldn't place call: __callee__ is unable to receive WhatsApp video calls at this time.", "WhatsApp will use your computer's camera for video calls and taking photos. You can always change this later in your computer's settings.", "WhatsApp will use your computer's microphone for calls and voice messages. You can always change this later in your computer's settings.", "__contactName__ - WhatsApp voice call", "__contactName__ - WhatsApp video call", "Chat wallpaper set", "Your security code with __contactName__ changed because they registered WhatsApp on their phone again.", "Your security code with __contactName__ changed because you logged into a new device.", "Your security code with __contactName__ changed because there was a login on a new device of yours.", "Your security code with __contactName__ changed because there was a login on this device.", 'WhatsApp has verified that this is the official business account of "__businessName__".', "WhatsApp has verified that this is the official business account of __businessName__. This account is saved with a different name in your contacts.", "Your security code could not be verified with __contactName__. Click to learn more.", "Verify your security code with __contactName__ because there was an error with their list of linked devices.", "You can't send messages to this group because you're no longer a participant.", "Can't send a message to blocked contact __contact__.", "Your security code with __contactName__ changed because there was a login or logout from one or more of their devices.", "Your security code with __contactName__ changed because there was a login or logout from one or more of your devices.", "Muted", "Messages to this chat are secured with end-to-end encryption. __businessName__ may use another company to store, read and respond to your messages. Click to learn more.", "online", "last seen __date__ at __time__", "last seen today at __time__", "last seen __date__ at __time__", "last seen yesterday at __time__", "__participant__ is typing…", "__participant__ is recording audio…", "Audio", "Contact", "__count__ page", "Document", "Photo", "Location", "Video", "Voice message", "Delete group", "Delete broadcast list", 'Download "__name__"', "Exit", "Frequently Contacted", "Created __date__ at __time__", "Created __date__ at __time__", "Group created by __name__, on __date__ at __time__", "Group created by you, on __date__ at __time__", "Created today at __time__", "Created today at __time__", "Group created by __name__, today at __time__", "Group created by you, today at __time__", "Created __day__ at __time__", "Created __day__ at __time__", "Created yesterday at __time__", "Created yesterday at __time__", "Group created by __name__, yesterday at __time__", "Group created by you, yesterday at __time__", "__name__ reset this group's invite link. Click to view the new invite link.", "__name__ changed this group's settings to allow messages that have been forwarded many times.", "__name__ changed this group's settings to not allow messages that have been forwarded many times.", "__name__ changed their phone number to a new number.", "__name__ changed to __new_number__", "__name__ joined via an invite link", "You joined via an invite link", "__num__ invite sent", "Groups", "Groups in common", "Messages to this chat and calls are secured with end-to-end encryption, which means that WhatsApp and third parties can't read or listen to them. __businessName__ may use a service to store, read and respond to your messages and calls. Contact __businessName__ for information on their privacy practices.", "__name__ added to the list", "__name__ removed from the list", "__name__ and possibly other group participants are using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message this group.", "__name__ is using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message them.", "This happened likely because __contactName__ or you recently changed which devices you use WhatsApp on. Please verify the security code again.", "Your security code with __contactName__ changed", "To verify that messages and calls with __contactName__ are end-to-end encrypted, open this screen on your phone, and follow the instructions.", "To verify that messages and calls with __contactName__ are end-to-end encrypted, scan or upload this code on their device. You can also compare the number above instead.", "About", "Messages", "Missed group video call at __time__", "Missed group voice call at __time__", "Missed video call", "Missed video call at __time__", "Missed voice call", "Missed voice call at __time__", "The business account for __businessName__ has registered as a standard user account and may no longer belong to the business.", "Other contacts", "__count__ participant", "To receive a payment from __senderName__, set up your payment account on your phone.", "__contactName__ canceled their payment request for __currencyAndAmount__", "You canceled your payment request to __contactName__ for __currencyAndAmount__", "__contactName__ declined your payment request for __currencyAndAmount__.", "You declined __contactName__'s payment request for __currencyAndAmount__.", "__senderName__'s payment request for __currencyAndAmount__ to you expired.", "Your payment request to __receiverName__ for __currencyAndAmount__ expired.", "You notified __receiverName__ that you are trying to send a payment.", "You can now send __receiverName__ a payment.", "__invitee__ has set up payments", "You invited __otherUser__ to use payments", "__otherUser__ invited you to use payments", "Requested from __receiverName__", "Requested __amount__ from You", "__senderName__ requested __amount__ from You", "__senderName__ requested __amount__ from __receiverName__", "Sent __amount__ to You", "__senderName__ sent __amount__ to You", "__senderName__ sent __amount__ to __receiverName__", "Sent to __receiverName__", "Pending (expires __timeSpan__)", "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.", "__senderName__'s payment __relativeTime__ is complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__  was refunded __relativeTime__.", "on __date__", "Preview", "OFFICIAL ANNOUNCEMENTS", "Recent chats", "__count__ recipient", "Your security code with __contactName__ changed because there was a logout from one of their devices.", "Your security code with __contactName__ changed because there was a logout from one of your devices.", "Your security code with __contactName__ changed. Click to learn more.", "Your security code with __name__ changed because they registered WhatsApp on their phone again.", "Your security code with __name__ changed because there was a registration on a new device of yours.", "Select messages", 'WhatsApp has verified that this is the official business account of "__businessName__". This business uses WhatsApp Business, which allows them to add their opening hours, address, website and catalog of products or services.', 'This chat is with the verified business account for "__businessName__". Click for more info.', 'This chat is with the business account for "__businessName__". Click for more info.', "__businessName__ may be a business account, but WhatsApp hasn't verified their name yet.", 'The business account you\'re chatting with is now verified as "__businessName__". Click for more info.', 'The business account you\'re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you\'re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you\'re chatting with is no longer confirmed as "__businessName__". Click for more info.', 'WhatsApp is no longer able to confirm that this is the account for "__businessName__".', 'This account has registered as a business account and WhatsApp has confirmed that this is the account for "__businessName__".', "__businessName__ registered as a business account, but WhatsApp hasn't verified their name yet.", 'The business account you\'re chatting with belongs to "__businessName__".', "To chat with __contact__, review and accept WhatsApp's updated terms and privacy policy on your phone.", "__date__ at __time__", "today at __time__", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", 'You opened "Verify security code" for the wrong phone number. Open it for the correct number to verify __contact__.', '__contact__ opened "Verify security code" for the wrong phone number. Ask __contact__ to open it for your phone number.', "yesterday at __time__", "You", "You created a broadcast list with __count__ recipient", "To use WhatsApp, update __chrome_update__ or use __firefox_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Google Chrome __min_version_chrome__+", "To use WhatsApp, update __edge_homepage__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Microsoft Edge __min_version_edge__+", "To use WhatsApp, update __firefox_update__ or use __chrome_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Mozilla Firefox __min_version_firefox__+", "WhatsApp group invite", "WhatsApp", "To use WhatsApp, update __safari_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "To use all of WhatsApp's features like photo capturing and Voice Message recording, we recommend using __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "Using Safari", "WhatsApp works with Safari __min_version_safari__+", "To use WhatsApp, update __samsung_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Samsung Internet __min_version_samsung__+", "WhatsApp", "Send and receive WhatsApp messages right from your computer.", 'WhatsApp is open in another window. Click "Use Here" to use WhatsApp in this window.', "Quickly send and receive WhatsApp messages right from your computer.", "We recommend using WhatsApp with one of the following browsers:", "WhatsApp also supports:", "You can't add more than __count__ labels", "Go to Commerce Manager to update your shop."], {
                         4: "__count__ @ messages",
                         5: "Changing __count__ labels",
                         6: "Some labels could not be updated",
@@ -20840,30 +20840,30 @@
                         647: "You can only call up to __count__ contacts",
                         648: "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.",
                         649: "__count__ others",
-                        685: "__count__ pages",
-                        717: "__num__ invites sent",
-                        721: "__name__ were added to the list",
-                        722: "__name__ were removed from the list",
-                        731: "Missed group video call at __time__",
-                        732: "Missed group voice call at __time__",
-                        734: "Missed video call at __time__",
-                        736: "Missed voice call at __time__",
-                        739: "__count__ participants",
-                        741: "__contactName__ canceled their payment request for __currencyAndAmount__",
-                        742: "You canceled your payment request to __contactName__ for __currencyAndAmount__",
-                        743: "__contactName__ declined your payment request for __currencyAndAmount__.",
-                        744: "You declined __contactName__'s payment request for __currencyAndAmount__.",
-                        745: "__senderName__'s payment request for __currencyAndAmount__ to you expired.",
-                        746: "Your payment request to __receiverName__ for __currencyAndAmount__ expired.",
-                        753: "Requested __amount__ from You",
-                        754: "__senderName__ requested __amount__ from You",
-                        755: "__senderName__ requested __amount__ from __receiverName__",
-                        756: "Sent __amount__ to You",
-                        757: "__senderName__ sent __amount__ to You",
-                        758: "__senderName__ sent __amount__ to __receiverName__",
-                        761: "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.",
-                        770: "__count__ recipients",
-                        802: "You created a broadcast list with __count__ recipients"
+                        684: "__count__ pages",
+                        716: "__num__ invites sent",
+                        720: "__name__ were added to the list",
+                        721: "__name__ were removed from the list",
+                        730: "Missed group video call at __time__",
+                        731: "Missed group voice call at __time__",
+                        733: "Missed video call at __time__",
+                        735: "Missed voice call at __time__",
+                        738: "__count__ participants",
+                        740: "__contactName__ canceled their payment request for __currencyAndAmount__",
+                        741: "You canceled your payment request to __contactName__ for __currencyAndAmount__",
+                        742: "__contactName__ declined your payment request for __currencyAndAmount__.",
+                        743: "You declined __contactName__'s payment request for __currencyAndAmount__.",
+                        744: "__senderName__'s payment request for __currencyAndAmount__ to you expired.",
+                        745: "Your payment request to __receiverName__ for __currencyAndAmount__ expired.",
+                        752: "Requested __amount__ from You",
+                        753: "__senderName__ requested __amount__ from You",
+                        754: "__senderName__ requested __amount__ from __receiverName__",
+                        755: "Sent __amount__ to You",
+                        756: "__senderName__ sent __amount__ to You",
+                        757: "__senderName__ sent __amount__ to __receiverName__",
+                        760: "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.",
+                        769: "__count__ recipients",
+                        801: "You created a broadcast list with __count__ recipients"
                     }
                 ]
             },
@@ -21809,7 +21809,8 @@
                     CATALOG: "CATALOG",
                     PRODUCT: "PRODUCT",
                     PUSH_NOTIFICATION: "PUSH_NOTIFICATION",
-                    CREATE_COMMUNITY: "CREATE_COMMUNITY"
+                    CREATE_COMMUNITY: "CREATE_COMMUNITY",
+                    NEWSLETTER: "NEWSLETTER"
                 };
                 var r = /^whatsapp:\/\/.*/i
             },
@@ -22517,113 +22518,122 @@
                 var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
-                }), t.PLATFORM = t.FAQ_BASE_URL = void 0, t.getBusinessFaqUrl = function() {
-                    return s("general/chats/about-chatting-with-businesses")
+                }), t.PLATFORM = t.FAQ_BASE_URL = void 0, t.getAboutCommunitiesFaqUrl = function() {
+                    return u("495856382464992")
+                }, t.getBusinessFaqUrl = function() {
+                    return u("general/chats/about-chatting-with-businesses")
                 }, t.getCagPhoneNumberHidingFaqUrl = function() {
-                    return s("831150864932965")
+                    return u("831150864932965")
                 }, t.getCannotConnectFaqUrl = function() {
-                    return s("web/troubleshooting/cant-connect-to-whatsapp")
+                    return u("web/troubleshooting/cant-connect-to-whatsapp")
                 }, t.getCatalogCartOnOffFaqUrl = function() {
-                    return s("general/account-and-profile/about-cart")
+                    return u("general/account-and-profile/about-cart")
                 }, t.getCiphertextFaqUrl = function() {
-                    return s("general/security-and-privacy/seeing-waiting-for-this-message-this-may-take-a-while")
+                    return u("general/security-and-privacy/seeing-waiting-for-this-message-this-may-take-a-while")
                 }, t.getCodeChangeFaqUrl = function() {
-                    return s("general/security-and-privacy/security-code-change-notification")
+                    return u("general/security-and-privacy/security-code-change-notification")
                 }, t.getCommunitiesLearningCenterUrl = function() {
-                    return `https://www.whatsapp.com/communities/learning?lang=${i.default.getLocale()}`
+                    return `${a}/communities/learning?lang=${i.default.getLocale()}`
                 }, t.getCommunityCreatorPrivacyUrl = function() {
-                    return s("625069579217642")
+                    return u("625069579217642")
                 }, t.getCommunityHomeNuxUrl = function() {
-                    return s("570221114584995")
+                    return u("570221114584995")
                 }, t.getCommunityMemberPrivacyUrl = function() {
-                    return s("812356880201038")
+                    return u("812356880201038")
                 }, t.getCommunityNotAvailableFaqUrl = function() {
-                    return s("cxt/?entrypointid=community-no-longer-available", !0)
+                    return u("cxt/?entrypointid=community-no-longer-available", !0)
                 }, t.getControlsWhenMessagingBusinessFaqUrl = function() {
-                    return s("138730494968892")
+                    return u("138730494968892")
                 }, t.getDBErrorFaqUrl = function() {
-                    return s("web/about-seeing-a-database-error-occured-on-your-browser")
+                    return u("web/about-seeing-a-database-error-occured-on-your-browser")
                 }, t.getE2EEnterpriseFaqUrl = function() {
-                    return s("general/security-and-privacy/end-to-end-encryption-for-business-messages")
+                    return u("general/security-and-privacy/end-to-end-encryption-for-business-messages")
                 }, t.getE2EFaqUrl = function() {
-                    return s("general/security-and-privacy/end-to-end-encryption")
+                    return u("general/security-and-privacy/end-to-end-encryption")
                 }, t.getElectronUwpIncompatibleUsersFaqUrl = function() {
-                    return s("779581519948320")
+                    return u("779581519948320")
                 }, t.getEphemeralFaqUrl = function() {
-                    return s("general/chats/about-disappearing-messages")
+                    return u("general/chats/about-disappearing-messages")
                 }, t.getExitCommunityUrl = function() {
-                    return s("366296225670044")
+                    return u("366296225670044")
                 }, t.getFanoutPlaceholderFaqUrl = function() {
-                    return s("general/security-and-privacy/seeing-waiting-for-this-message-check-your-phone")
+                    return u("general/security-and-privacy/seeing-waiting-for-this-message-check-your-phone")
                 }, t.getFaqUrl = function() {
-                    return `${a}/web?lang=${i.default.getLocale()}`
+                    return `${o}/web?lang=${i.default.getLocale()}`
                 }, t.getFrequentlyForwardedFaqUrl = function() {
-                    return s("general/chats/about-forwarding-limits")
+                    return u("general/chats/about-forwarding-limits")
                 }, t.getGroupInviteGrowthLockedFaqUrl = function() {
-                    return s("cxt/?entrypointid=invite-via-link-unavailable", !0)
+                    return u("cxt/?entrypointid=invite-via-link-unavailable", !0)
                 }, t.getHowToExitAndDeleteGroupsFaq = function() {
-                    return s("web/chats/how-to-exit-and-delete-groups")
+                    return u("web/chats/how-to-exit-and-delete-groups")
                 }, t.getJioMartPostcodeChangeLearnMoreLink = function() {
-                    return s("general/security-and-privacy/about-sharing-your-information-with-businesses-on-whatsapp")
+                    return u("general/security-and-privacy/about-sharing-your-information-with-businesses-on-whatsapp")
+                }, t.getKICFaqUrl = function() {
+                    return u("help/whatsapp/728928448599090")
                 }, t.getLinkDeviceFaqUrl = function() {
-                    return s("web/download-and-installation/how-to-link-a-device")
+                    return u("web/download-and-installation/how-to-link-a-device")
                 }, t.getLoginFaqUrl = function() {
-                    return s("web/download-and-installation/how-to-log-in-or-out")
+                    return u("web/download-and-installation/how-to-log-in-or-out")
                 }, t.getMDCodeChangeFaqUrl = function() {
-                    return `${a}/${i.default.getLocale()}/web/26000361`
+                    return `${o}/${i.default.getLocale()}/web/26000361`
                 }, t.getMembershipApprovalModeFaqUrl = function() {
-                    return s("1110600769849613")
+                    return u("1110600769849613")
+                }, t.getMessageEditFaqUrl = function() {
+                    return u("web/chats/how-to-delete-messages")
                 }, t.getNonVerifiedTransitionFaqUrl = function() {
-                    return s("general/business-account-becomes-a-standard-account")
+                    return u("general/business-account-becomes-a-standard-account")
                 }, t.getNotificationChromeFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-chrome")
+                    return u("web/troubleshooting/cant-receive-notifications-on-chrome")
                 }, t.getNotificationEdgeFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-microsoft-edge")
+                    return u("web/troubleshooting/cant-receive-notifications-on-microsoft-edge")
                 }, t.getNotificationFirefoxFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-firefox")
+                    return u("web/troubleshooting/cant-receive-notifications-on-firefox")
                 }, t.getNotificationOperaFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-opera")
+                    return u("web/troubleshooting/cant-receive-notifications-on-opera")
                 }, t.getNotificationSafariFaqUrl = function() {
-                    return s("web/troubleshooting/cant-receive-notifications-on-safari")
+                    return u("web/troubleshooting/cant-receive-notifications-on-safari")
                 }, t.getPhoneNumberHidingFaqUrl = function() {
-                    return s("626403979060997")
+                    return u("626403979060997")
                 }, t.getRemoveFromCommunityFaqUrl = function() {
-                    return s("1874151452788882")
+                    return u("1874151452788882")
                 }, t.getRevokeFaqUrl = function() {
-                    return s("web/chats/how-to-delete-messages")
+                    return u("web/chats/how-to-delete-messages")
                 }, t.getSupportChatFaqUrl = function() {
-                    return s("general/what-information-does-whatsapp-collect-when-you-contact-support")
+                    return u("general/what-information-does-whatsapp-collect-when-you-contact-support")
                 }, t.getSupportChatSafetyFaqUrl = function() {
-                    return s("general/about-safely-communicating-with-whatsapp-support")
+                    return u("general/about-safely-communicating-with-whatsapp-support")
                 }, t.getSuspiciousLinkFaqUrl = function() {
-                    return s("web/chats/suspicious-links")
+                    return u("web/chats/suspicious-links")
+                }, t.getTermsOfServiceUrl = function() {
+                    return `${a}/legal/terms-of-service?lang=${i.default.getLocale()}`
                 }, t.getUnverifiedTransitionFaqUrl = function() {
-                    return s("general/business-account-becomes-unverified")
+                    return u("general/business-account-becomes-unverified")
                 }, t.getUpdatePrimaryDeviceFaqUrl = function() {
-                    return s("general/download-and-installation/how-to-update-whatsapp")
+                    return u("general/download-and-installation/how-to-update-whatsapp")
                 }, t.getVerifiedHighFaqUrl = function() {
-                    return s("general/verified-business-account")
+                    return u("general/verified-business-account")
                 }, t.getVerifiedLowUnknownFaqUrl = function() {
-                    return s("general/unverified-business-account")
+                    return u("general/unverified-business-account")
                 }, t.getVerifiedTransitionFaqUrl = function() {
-                    return s("general/business-account-becomes-verified")
+                    return u("general/business-account-becomes-verified")
                 }, t.getViewOnceFaqUrl = function() {
-                    return s("general/chats/about-view-once")
+                    return u("general/chats/about-view-once")
                 }, t.getViewOnceScreenshotProtectionUrl = function() {
-                    return s("2917597651792702")
+                    return u("2917597651792702")
                 }, t.getWAChatFaqUrl = function() {
-                    return s("general/chats/about-the-official-whatsapp-chat-account")
+                    return u("general/chats/about-the-official-whatsapp-chat-account")
                 };
                 var i = n(r(28929)),
-                    a = "https://faq.whatsapp.com";
-                t.FAQ_BASE_URL = a;
-                var o = "web";
+                    a = "https://www.whatsapp.com",
+                    o = "https://faq.whatsapp.com";
+                t.FAQ_BASE_URL = o;
+                var s = "web";
 
-                function s(e) {
+                function u(e) {
                     var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
-                    return t ? `${a}/${e}&platform=web&lang=${i.default.getLocale()}` : `${a}/${e}?lang=${i.default.getLocale()}`
+                    return t ? `${o}/${e}&platform=web&lang=${i.default.getLocale()}` : `${o}/${e}?lang=${i.default.getLocale()}`
                 }
-                t.PLATFORM = o
+                t.PLATFORM = s
             },
             93629: (e, t, r) => {
                 "use strict";
@@ -22796,7 +22806,7 @@
                             key: "n",
                             value: function(e, t) {
                                 var r = e;
-                                return isNaN(r) || (r = r.toString()), this.useArabicScriptDigits(t) ? r.toString().replace(/[0-9]/g, x) : r
+                                return "number" == typeof r && (r = Intl.NumberFormat(this.getLocale()).format(r)), this.useArabicScriptDigits(t) ? r.toString().replace(/[0-9]/g, x) : r
                             }
                         }, {
                             key: "filesize",
@@ -25703,6 +25713,30 @@
                         for (var c in a) o(a[c], t, c, n + r)
                 }
             },
+            26589: (e, t, r) => {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.isCurrentWebSessionInsidePwa = o, t.setAppBadge = function(e) {
+                    null != e && e
+                }, t.setDocumentTitle = function() {
+                    var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
+                    null != e && (i = e);
+                    a(i)
+                };
+                r(51949);
+                var n, i = "";
+
+                function a(e) {
+                    clearTimeout(n), document.title += " ", n = setTimeout((function() {
+                        document.title = e
+                    }), 0)
+                }
+
+                function o() {
+                    return !1
+                }
+            },
             53529: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
@@ -25759,18 +25793,22 @@
             },
             51949: (e, t) => {
                 "use strict";
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.isWorker = function() {
+
+                function r() {
                     return "undefined" != typeof WorkerGlobalScope && "function" == typeof importScripts
                 }
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.isServiceWorker = function() {
+                    return r() && "ServiceWorkerGlobalScope" in self
+                }, t.isWorker = r
             },
             79334: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
-                }), t.UpdateImmediately = t.Unmount = t.UnableToPlayVideoError = t.UnableToGetContentLengthError = t.TranscodeBlobTooLargeError = t.SourceUnavailableError = t.SocketNotOpen = t.SocketError = t.SocketClosed = t.ServerStatusError = t.OverconstrainedError = t.Offline = t.NotSupportedError = t.NotFoundError = t.NotAllowedError = t.ModelError = t.ModelCreateError = t.MediaUnsupportedError = t.MediaNeedsReupload = t.MediaMissing = t.MediaLoadError = t.MediaFileFailedLoad = t.MediaFileError = t.MediaFileEmpty = t.MediaEncryptionError = t.MediaDragDropError = t.MediaDecryptionError = t.InvalidServerResponseError = t.InvalidMediaFileType = t.InvalidImageFileType = t.ImageError = t.GetUserMediaError = t.GetUserMedia = t.GaveUpRetry = t.FileNotReadableError = t.EncodeWebpError = t.DecodeWebpResultsError = t.DbOnLogoutAbort = t.DbMsgEncKeyNotLoaded = t.DbEncKeyNotLoaded = t.DBInvalidFtsHMACKey = t.ConstraintNotSatisfiedError = t.CatalogImageDownloadError = t.CapabilityUnknown = t.CapabilityInvalid = t.CapabilityError = t.CanNotSendUnencrypted = t.BlockedByProxy = t.BingServerError = t.ActiveChatChanged = t.ActionError = void 0;
+                }), t.UpdateImmediately = t.Unmount = t.UnableToPlayVideoError = t.UnableToGetContentLengthError = t.TranscodeBlobTooLargeError = t.SourceUnavailableError = t.SocketNotOpen = t.SocketError = t.SocketClosed = t.ServerStatusError = t.OverconstrainedError = t.Offline = t.NotSupportedError = t.NotFoundError = t.NotAllowedError = t.ModelError = t.ModelCreateError = t.MediaUnsupportedError = t.MediaNeedsReupload = t.MediaMissing = t.MediaLoadError = t.MediaHashMismatch = t.MediaFileFailedLoad = t.MediaFileError = t.MediaFileEmpty = t.MediaEncryptionError = t.MediaDragDropError = t.MediaDecryptionError = t.InvalidServerResponseError = t.InvalidMediaFileType = t.InvalidImageFileType = t.ImageError = t.GetUserMediaError = t.GetUserMedia = t.GaveUpRetry = t.FileNotReadableError = t.EncodeWebpError = t.DecodeWebpResultsError = t.DbOnLogoutAbort = t.DbMsgEncKeyNotLoaded = t.DbEncKeyNotLoaded = t.DBInvalidFtsHMACKey = t.ConstraintNotSatisfiedError = t.CatalogImageDownloadError = t.CapabilityUnknown = t.CapabilityInvalid = t.CapabilityError = t.CanNotSendUnencrypted = t.BlockedByProxy = t.BingServerError = t.ActiveChatChanged = t.ActionError = void 0;
                 var i = n(r(34575)),
                     a = n(r(19793)),
                     o = n(r(99842)),
@@ -25863,9 +25901,19 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("MediaFileFailedLoad", !0, d));
-                t.MediaFileFailedLoad = _;
+                }((0, s.customError)("MediaDecryptionError", !0, d));
+                t.MediaHashMismatch = _;
                 var g = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("MediaFileFailedLoad", !0, d));
+                t.MediaFileFailedLoad = g;
+                var v = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -25875,27 +25923,14 @@
                     return r
                 }((0, s.customError)("MediaFileEmpty", !0, d));
 
-                function v(e) {
+                function b(e) {
                     try {
                         return JSON.stringify(e)
                     } catch (t) {
                         return e.toString()
                     }
                 }
-                t.MediaFileEmpty = g;
-                var b = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e) {
-                        var n;
-                        (0, i.default)(this, r);
-                        var a = "string" == typeof e ? e : v(e);
-                        return (n = t.call(this, a)).event = e, n
-                    }
-                    return r
-                }((0, s.customError)("SocketError"));
-                t.SocketError = b;
+                t.MediaFileEmpty = v;
                 var y = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -25903,13 +25938,26 @@
                     function r(e) {
                         var n;
                         (0, i.default)(this, r);
-                        var a = "string" == typeof e ? e : v(e);
+                        var a = "string" == typeof e ? e : b(e);
+                        return (n = t.call(this, a)).event = e, n
+                    }
+                    return r
+                }((0, s.customError)("SocketError"));
+                t.SocketError = y;
+                var w = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e) {
+                        var n;
+                        (0, i.default)(this, r);
+                        var a = "string" == typeof e ? e : b(e);
                         return (n = t.call(this, a)).event = e, n
                     }
                     return r
                 }((0, s.customError)("SocketClosed"));
-                t.SocketClosed = y;
-                var w = function(e) {
+                t.SocketClosed = w;
+                var E = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -25918,8 +25966,8 @@
                     }
                     return r
                 }((0, s.customError)("SocketNotOpen"));
-                t.SocketNotOpen = w;
-                var E = function(e) {
+                t.SocketNotOpen = E;
+                var x = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -25928,8 +25976,8 @@
                     }
                     return r
                 }((0, s.customError)("BlockedByProxy"));
-                t.BlockedByProxy = E;
-                var x = function(e) {
+                t.BlockedByProxy = x;
+                var S = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -25942,18 +25990,7 @@
                     }
                     return r
                 }((0, s.customError)("ImageError"));
-                t.ImageError = x;
-                var S = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r(e, n) {
-                        var a;
-                        return (0, i.default)(this, r), (a = t.call(this, e)).event = n, a
-                    }
-                    return r
-                }((0, s.customError)("DecodeWebpResultsError"));
-                t.DecodeWebpResultsError = S;
+                t.ImageError = S;
                 var A = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -25963,9 +26000,20 @@
                         return (0, i.default)(this, r), (a = t.call(this, e)).event = n, a
                     }
                     return r
-                }((0, s.customError)("DecodeWebpError"));
-                t.EncodeWebpError = A;
+                }((0, s.customError)("DecodeWebpResultsError"));
+                t.DecodeWebpResultsError = A;
                 var k = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r(e, n) {
+                        var a;
+                        return (0, i.default)(this, r), (a = t.call(this, e)).event = n, a
+                    }
+                    return r
+                }((0, s.customError)("DecodeWebpError"));
+                t.EncodeWebpError = k;
+                var O = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -25975,8 +26023,8 @@
                     }
                     return r
                 }((0, s.customError)("ServerStatusError"));
-                t.ServerStatusError = k;
-                var O = function(e) {
+                t.ServerStatusError = O;
+                var T = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -25987,8 +26035,8 @@
                     }
                     return r
                 }((0, s.customError)("InvalidServerResponseError"));
-                t.InvalidServerResponseError = O;
-                var T = function(e) {
+                t.InvalidServerResponseError = T;
+                var C = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -25998,18 +26046,8 @@
                         return t.call(this, o, e, n)
                     }
                     return r
-                }((0, s.customError)("BingServerError", !0, k));
-                t.BingServerError = T;
-                var C = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaNeedsReupload"));
-                t.MediaNeedsReupload = C;
+                }((0, s.customError)("BingServerError", !0, O));
+                t.BingServerError = C;
                 var N = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26018,8 +26056,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("MediaMissing"));
-                t.MediaMissing = N, N.message = "Media is no longer available on your phone";
+                }((0, s.customError)("MediaNeedsReupload"));
+                t.MediaNeedsReupload = N;
                 var M = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26028,9 +26066,19 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("FileNotReadableError", !0, Error));
-                t.FileNotReadableError = M;
+                }((0, s.customError)("MediaMissing"));
+                t.MediaMissing = M, M.message = "Media is no longer available on your phone";
                 var D = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("FileNotReadableError", !0, Error));
+                t.FileNotReadableError = D;
+                var L = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -26040,8 +26088,8 @@
                     }
                     return r
                 }((0, s.customError)("MediaLoadError"));
-                t.MediaLoadError = D;
-                var L = function(e) {
+                t.MediaLoadError = L;
+                var R = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -26050,8 +26098,8 @@
                     }
                     return r
                 }((0, s.customError)("TranscodeBlobTooLargeError"));
-                t.TranscodeBlobTooLargeError = L;
-                var R = function(e) {
+                t.TranscodeBlobTooLargeError = R;
+                var I = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -26060,17 +26108,7 @@
                     }
                     return r
                 }((0, s.customError)("UnableToPlayVideoError"));
-                t.UnableToPlayVideoError = R;
-                var I = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("MediaDragDropError", !0, D));
-                t.MediaDragDropError = I;
+                t.UnableToPlayVideoError = I;
                 var P = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26079,8 +26117,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("MediaUnsupportedError"));
-                t.MediaUnsupportedError = P, P.message = "Media format is unsupported";
+                }((0, s.customError)("MediaDragDropError", !0, L));
+                t.MediaDragDropError = P;
                 var j = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26089,9 +26127,19 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("ModelError"));
-                t.ModelError = j;
+                }((0, s.customError)("MediaUnsupportedError"));
+                t.MediaUnsupportedError = j, j.message = "Media format is unsupported";
                 var U = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
+                }((0, s.customError)("ModelError"));
+                t.ModelError = U;
+                var W = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -26101,8 +26149,8 @@
                     }
                     return r
                 }((0, s.customError)("ModelCreateError"));
-                t.ModelCreateError = U;
-                var W = function(e) {
+                t.ModelCreateError = W;
+                var B = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -26111,8 +26159,8 @@
                     }
                     return r
                 }((0, s.customError)("DbEncKeyNotLoadedError"));
-                t.DbEncKeyNotLoaded = W;
-                var B = function(e) {
+                t.DbEncKeyNotLoaded = B;
+                var F = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
 
@@ -26121,17 +26169,7 @@
                     }
                     return r
                 }((0, s.customError)("DbMsgEncKeyNotLoadedError"));
-                t.DbMsgEncKeyNotLoaded = B;
-                var F = function(e) {
-                    (0, a.default)(r, e);
-                    var t = (0, o.default)(r);
-
-                    function r() {
-                        return (0, i.default)(this, r), t.apply(this, arguments)
-                    }
-                    return r
-                }((0, s.customError)("DbOnLogoutAbortError"));
-                t.DbOnLogoutAbort = F, F.message = "DB operation was dropped due to logout activity";
+                t.DbMsgEncKeyNotLoaded = F;
                 var V = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26140,8 +26178,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("DBExpiredFtsHMACKey"));
-                t.DBInvalidFtsHMACKey = V, V.message = "MasterDatabaseEncryptionKey.fts_hmac_keys is in an invalid state";
+                }((0, s.customError)("DbOnLogoutAbortError"));
+                t.DbOnLogoutAbort = V, V.message = "DB operation was dropped due to logout activity";
                 var q = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26150,8 +26188,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("UpdateImmediately"));
-                t.UpdateImmediately = q;
+                }((0, s.customError)("DBExpiredFtsHMACKey"));
+                t.DBInvalidFtsHMACKey = q, q.message = "MasterDatabaseEncryptionKey.fts_hmac_keys is in an invalid state";
                 var G = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26160,8 +26198,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("CapabilityError"));
-                t.CapabilityError = G;
+                }((0, s.customError)("UpdateImmediately"));
+                t.UpdateImmediately = G;
                 var z = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26170,8 +26208,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("CapabilityInvalid", !0, G));
-                t.CapabilityInvalid = z;
+                }((0, s.customError)("CapabilityError"));
+                t.CapabilityError = z;
                 var $ = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26180,8 +26218,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("CapabilityUnknown", !0, G));
-                t.CapabilityUnknown = $;
+                }((0, s.customError)("CapabilityInvalid", !0, z));
+                t.CapabilityInvalid = $;
                 var H = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26190,8 +26228,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("CanNotSendUnencrypted"));
-                t.CanNotSendUnencrypted = H;
+                }((0, s.customError)("CapabilityUnknown", !0, z));
+                t.CapabilityUnknown = H;
                 var Y = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26200,8 +26238,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("ActionError"));
-                t.ActionError = Y, Y.message = "Could not perform action.";
+                }((0, s.customError)("CanNotSendUnencrypted"));
+                t.CanNotSendUnencrypted = Y;
                 var K = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26210,8 +26248,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("Unmount"));
-                t.Unmount = K;
+                }((0, s.customError)("ActionError"));
+                t.ActionError = K, K.message = "Could not perform action.";
                 var Z = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26220,8 +26258,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("ActiveChatChanged"));
-                t.ActiveChatChanged = Z;
+                }((0, s.customError)("Unmount"));
+                t.Unmount = Z;
                 var Q = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26230,8 +26268,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("GetUserMediaError"));
-                t.GetUserMediaError = Q;
+                }((0, s.customError)("ActiveChatChanged"));
+                t.ActiveChatChanged = Q;
                 var J = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26240,8 +26278,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("NotSupportedError", !0, Q));
-                t.NotSupportedError = J, J.message = "The operation is not supported.";
+                }((0, s.customError)("GetUserMediaError"));
+                t.GetUserMediaError = J;
                 var X = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26250,8 +26288,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("NotAllowedError", !0, Q));
-                t.NotAllowedError = X, X.message = "The user did not grant permission for the operation";
+                }((0, s.customError)("NotSupportedError", !0, J));
+                t.NotSupportedError = X, X.message = "The operation is not supported.";
                 var ee = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26260,8 +26298,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("ConstraintNotSatisfiedError", !0, Q));
-                t.ConstraintNotSatisfiedError = ee, ee.message = "One of the mandatory Constraints could not be satisfied.";
+                }((0, s.customError)("NotAllowedError", !0, J));
+                t.NotAllowedError = ee, ee.message = "The user did not grant permission for the operation";
                 var te = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26270,8 +26308,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("OverconstrainedError", !0, Q));
-                t.OverconstrainedError = te, te.message = "Due to changes in the environment, one or more mandatory constraints can no longer be satisfied.";
+                }((0, s.customError)("ConstraintNotSatisfiedError", !0, J));
+                t.ConstraintNotSatisfiedError = te, te.message = "One of the mandatory Constraints could not be satisfied.";
                 var re = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26280,8 +26318,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("NotFoundError", !0, Q));
-                t.NotFoundError = re, re.message = "The object can not be found here.";
+                }((0, s.customError)("OverconstrainedError", !0, J));
+                t.OverconstrainedError = re, re.message = "Due to changes in the environment, one or more mandatory constraints can no longer be satisfied.";
                 var ne = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26290,8 +26328,8 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
-                }((0, s.customError)("SourceUnavailableError", !0, Q));
-                t.SourceUnavailableError = ne, ne.message = "The source of the MediaStream could not be accessed due to a hardware error (e.g. lock from another process).";
+                }((0, s.customError)("NotFoundError", !0, J));
+                t.NotFoundError = ne, ne.message = "The object can not be found here.";
                 var ie = function(e) {
                     (0, a.default)(r, e);
                     var t = (0, o.default)(r);
@@ -26300,18 +26338,28 @@
                         return (0, i.default)(this, r), t.apply(this, arguments)
                     }
                     return r
+                }((0, s.customError)("SourceUnavailableError", !0, J));
+                t.SourceUnavailableError = ie, ie.message = "The source of the MediaStream could not be accessed due to a hardware error (e.g. lock from another process).";
+                var ae = function(e) {
+                    (0, a.default)(r, e);
+                    var t = (0, o.default)(r);
+
+                    function r() {
+                        return (0, i.default)(this, r), t.apply(this, arguments)
+                    }
+                    return r
                 }((0, s.customError)("UnableToGetContentLengthError"));
-                t.UnableToGetContentLengthError = ie, ie.message = "Failed to get media contentLength from mms";
-                var ae = {
-                    GetUserMediaError: Q,
-                    NotSupportedError: J,
-                    NotAllowedError: X,
-                    ConstraintNotSatisfiedError: ee,
-                    OverconstrainedError: te,
-                    NotFoundError: re,
-                    SourceUnavailableError: ne
+                t.UnableToGetContentLengthError = ae, ae.message = "Failed to get media contentLength from mms";
+                var oe = {
+                    GetUserMediaError: J,
+                    NotSupportedError: X,
+                    NotAllowedError: ee,
+                    ConstraintNotSatisfiedError: te,
+                    OverconstrainedError: re,
+                    NotFoundError: ne,
+                    SourceUnavailableError: ie
                 };
-                t.GetUserMedia = ae
+                t.GetUserMedia = oe
             },
             38319: (e, t, r) => {
                 "use strict";
@@ -27038,12 +27086,14 @@
                     RELAY_LATENCY: "relaylatency"
                 }
             },
-            14023: (e, t) => {
+            14023: (e, t, r) => {
                 "use strict";
                 Object.defineProperty(t, "__esModule", {
                     value: !0
-                }), t.WAM_PLATFORM = void 0;
-                t.WAM_PLATFORM = "DARWIN"
+                }), t.getWamPlatform = function() {
+                    return "DARWIN"
+                };
+                r(26589)
             },
             50654: (e, t, r) => {
                 "use strict";
@@ -28432,7 +28482,7 @@ listener from browserWindow: ${e}`
                                     }, {
                                         type: "separator"
                                     }, {
-                                        label: c.default.t(817),
+                                        label: c.default.t(816),
                                         enabled: !0,
                                         click: function() {
                                             e.browserWindow.show()
@@ -29040,7 +29090,7 @@ listener from browserWindow: ${e}`
                     o = i(r(58933)),
                     s = i(r(12087)),
                     u = i(r(85622)),
-                    c = "WhatsApp/2.2305.7 Web/" + [s.default.type(), s.default.release().slice(0, 5), s.default.arch()].join("-") + " Device/Electron",
+                    c = "WhatsApp/2.2313.8 Web/" + [s.default.type(), s.default.release().slice(0, 5), s.default.arch()].join("-") + " Device/Electron",
                     l = {
                         from_jid: "",
                         type: "crashlog",
@@ -29399,9 +29449,11 @@ listener from browserWindow: ${e}`
                     l = r(58933),
                     d = i(r(36183)),
                     f = i(r(12087)),
-                    p = `WhatsApp_Desktop_${r(14023).WAM_PLATFORM}`,
-                    h = !1,
-                    m = function() {
+                    p = (0, r(14023).getWamPlatform)();
+                "PWA" === p && (p = "WEB");
+                var h = `WhatsApp_Desktop_${p}`,
+                    m = !1,
+                    _ = function() {
                         function e() {
                             (0, s.default)(this, e)
                         }
@@ -29417,15 +29469,15 @@ listener from browserWindow: ${e}`
                                                 e.next = 5;
                                                 break
                                             }
-                                            return e.next = 3, d.default.getPassword(p, f.default.userInfo().username);
+                                            return e.next = 3, d.default.getPassword(h, f.default.userInfo().username);
                                         case 3:
                                             return r = e.sent, e.abrupt("return", r);
                                         case 5:
                                             return e.next = 8, c.default.randomBytes(128);
                                         case 8:
-                                            return i = e.sent.toString("hex"), e.next = 11, d.default.setPassword(p, f.default.userInfo().username, i);
+                                            return i = e.sent.toString("hex"), e.next = 11, d.default.setPassword(h, f.default.userInfo().username, i);
                                         case 11:
-                                            return e.next = 13, d.default.getPassword(p, f.default.userInfo().username);
+                                            return e.next = 13, d.default.getPassword(h, f.default.userInfo().username);
                                         case 13:
                                             if (null != (o = e.sent) && i === o) {
                                                 e.next = 17;
@@ -29446,7 +29498,7 @@ listener from browserWindow: ${e}`
                             key: "addListener",
                             value: function() {
                                 var e = this;
-                                h || (h = !0, l.ipcMain.handle("db-encryption-salt-gen", (0, o.default)(a.default.mark((function t() {
+                                m || (m = !0, l.ipcMain.handle("db-encryption-salt-gen", (0, o.default)(a.default.mark((function t() {
                                     var r;
                                     return a.default.wrap((function(t) {
                                         for (;;) switch (t.prev = t.next) {
@@ -29473,12 +29525,12 @@ listener from browserWindow: ${e}`
                                         }
                                     }), t)
                                 })))), l.ipcMain.handle("db-encryption-salt-delete", (function() {
-                                    return d.default.deletePassword(p, f.default.userInfo().username)
+                                    return d.default.deletePassword(h, f.default.userInfo().username)
                                 })))
                             }
                         }]), e
                     }();
-                e.exports = new m
+                e.exports = new _
             },
             40341: (e, t, r) => {
                 "use strict";
@@ -29905,11 +29957,11 @@ listener from browserWindow: ${e}`
                             value: function(e, t) {
                                 if ("darwin" === process.platform) {
                                     var r = (0, a.default)({}, Object.freeze({}));
-                                    return t && (r.version = "2.2305.7"), e && (r.beta = !0), u.default.isUpgradeTest && (r.upgrade_test = !0), r
+                                    return t && (r.version = "2.2313.8"), e && (r.beta = !0), u.default.isUpgradeTest && (r.upgrade_test = !0), r
                                 }
                                 if ("win32" === process.platform) {
                                     var n = (0, a.default)({}, Object.freeze({}));
-                                    return t && (n.version = "2.2305.7"), e && (n.beta = !0), n
+                                    return t && (n.version = "2.2313.8"), e && (n.beta = !0), n
                                 }
                             }
                         }, {
@@ -30508,7 +30560,7 @@ listener from browserWindow: ${e}`
                                     Windows_NT: "win_desktop",
                                     Linux: "linux_desktop"
                                 } [o.default.type()],
-                                s = ["WhatsApp/2.2305.7", "webclient/" + o.default.release(), "Device/" + a].join(" ");
+                                s = ["WhatsApp/2.2313.8", "webclient/" + o.default.release(), "Device/" + a].join(" ");
                             this.webContents.session.webRequest.onBeforeSendHeaders(u, (function(e, t) {
                                 if (e.requestHeaders.Origin = "whatsapp_darwin", n.isEmojiRequest(e.url)) {
                                     var r = "https://web.whatsapp.com/";
@@ -30889,7 +30941,7 @@ listener from browserWindow: ${e}`
                     return `${a.TOS_BASE_URL}?lg=${i.default.getLocale()}`
                 };
                 var i = n(r(28929)),
-                    a = r(83340)
+                    a = r(49192)
             },
             84508: (e, t, r) => {
                 "use strict";
@@ -33067,7 +33119,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                     return o ? `${r}+${(0,i.default)(n)}` : `Shift+${r}+${n}`
                 }
             },
-            83340: (e, t, r) => {
+            49192: (e, t, r) => {
                 "use strict";
                 var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
@@ -33341,38 +33393,38 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
         9995: "locales/ar-XB",
         9999: "locales/fa"
     } [e] + "." + {
-        155: "b11d2ef65c6873cffa75",
-        165: "ccc52696ea63ead8a853",
-        248: "db4fb75f1fd1de0df8f9",
+        155: "b9447f683e25ccc2b002",
+        165: "cd82b8aae7f52655a26a",
+        248: "01b604655a508623b590",
         319: "f111c62fcc19ccf34235",
-        673: "b9818fc16d100a049ad5",
-        792: "9bf910904e6a8a9192d9",
-        820: "3857eabfa36551178f13",
-        906: "64e107aff8abe6571ed2",
-        907: "b2b01ffd00603da72446",
+        673: "0bbeea349392abfd83c3",
+        792: "feeaa20a8d85b81aec18",
+        820: "5eab554498faa040d0ba",
+        906: "12860cf21d2ad02cd8e3",
+        907: "a3d6b8f6acf1216fe250",
         951: "8979594642e071d2f316",
         1055: "2175e8ec04a802caa0f2",
         1069: "341e75ab3709ba1773f4",
-        1081: "248a6a35e838452b5dc1",
-        1204: "9c0f78f6b40542f4ddda",
-        1248: "903b93a9900d97c5d4f2",
+        1081: "7274088ec2c803aa45ee",
+        1204: "a48e7ab5389221f3a1e0",
+        1248: "5974e3c1c9bb78cbd4d5",
         1381: "e3c5c5e79bb7c5078fc4",
         1473: "64c4d029384d250c72a9",
         1520: "8eef1f30deb8d71cb857",
-        1529: "02449c9d4c3682aa76ee",
-        1628: "7446f0b451572aa4b724",
-        1770: "5102655e58f0200fddcb",
+        1529: "20ac911500b3a38ab726",
+        1628: "50b44d0a1836d9d0c80a",
+        1770: "15d7e796b54c1fd5cd9f",
         1791: "015661e9ca3be7cd2521",
         2017: "dacdc8d80cbe60920da5",
         2023: "f16abd4d9b35f829c965",
-        2091: "930fd4e46886b6a5b6f8",
-        2135: "993f3f5ef784eb1d9d6f",
+        2091: "933d1008f4bab5a222f0",
+        2135: "b934d201aa797c495433",
         2394: "78e45eb419c1159cc535",
         2445: "9014f8db600a76434db3",
-        2556: "37047191c6e8fc56afb0",
-        2739: "d869839ae72733f2c439",
-        2830: "578bf3c66fce04e6d898",
-        2944: "a941bb5a4745a8df49db",
+        2556: "cc9dc801566926453806",
+        2739: "6569d9129eccdd9e3c04",
+        2830: "4102f2caab9a33d20c67",
+        2944: "0bfbe877f43b1619b78a",
         2957: "dff788db2cfc84afa5ce",
         2966: "4336d0dd5750be9a3b76",
         2979: "6c00647d156727519fa2",
@@ -33383,94 +33435,94 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
         3422: "7b83873022cf4496d676",
         3501: "9bab43e8a3a606c45928",
         3569: "bcc41e86db8f1b250db0",
-        3722: "85b6b8f5d6025371c2f5",
+        3722: "aa6c2c42ad58cee0334c",
         3748: "badb7bd7c912ca85dbc4",
         3892: "55933533870afa2aba82",
         3934: "6e869d38948542faab0c",
-        3998: "edf13a7e50bbedb809eb",
-        4259: "c9bd02cf4b8b32ae0a4d",
+        3998: "9f24c35318ade5a537cb",
+        4259: "13382136df8cc58d6034",
         4339: "76418638e560abb6528d",
-        4361: "6edbee7c5e348d84fd69",
+        4361: "e776e379bb2f99b96bb7",
         4468: "35014caf533c84bb68bc",
         4473: "a8ba85eeb25f841a968b",
         4616: "975e383a8f4cee276ab3",
-        4708: "a8f273522c3a33567360",
+        4708: "f6560044734f2b77474e",
         4818: "b4f3b499364eb778b6c3",
-        4873: "097d5f71aad23ccf6e6e",
+        4873: "00f1539bac7b72e69693",
         4980: "496594af75fd05fc8ea4",
         5027: "a4a1f81fbb929fd0f968",
         5125: "8b3c382460b11de6a55b",
-        5128: "fd788e80b4453ef0b084",
+        5128: "7270856b1e651ce4837f",
         5170: "c05a784affe0d67520f4",
-        5182: "28f4912144c92b2812d6",
+        5182: "2321b554c80b947a4696",
         5247: "633238a7bc85fd2612bc",
-        5443: "0e993595b3376c2cc0ed",
-        5632: "9495f1b6acbfe9d670ee",
-        5650: "923a87ae4c6b640e13b3",
+        5443: "2a5ad3d231786de81a1d",
+        5632: "eb00bdc74ad94c1de0b9",
+        5650: "daf48d9b0aa9aede6d09",
         5671: "7fb9ae24d533df585d22",
-        5708: "07ddc3298ab6c9eeee3d",
-        5729: "a18d9ad97a590143230b",
+        5708: "7ff6fc16dd66dc54e6ea",
+        5729: "ee90a3198291a1bd3e48",
         5740: "b46ae5fc782d04450e9d",
         5790: "6ab34ee6d7b9561f5a33",
         5862: "d389085191e4dc7ceb28",
         5959: "90e2f4ab5817a22f7f4e",
         5965: "8438ab92590ce20b1275",
-        6038: "3a770de85561436fc969",
+        6038: "bd5ec82e3752285e1181",
         6163: "d79d6769bff2f1e453f8",
         6282: "e45976067cd8e973dc41",
-        6293: "5922bd53cd151c6e6a36",
-        6331: "6ad95dfd0a31ad79f96a",
-        6365: "a1623d8d46ab1fc4956b",
-        6483: "5f77ac05d4f4fd863783",
+        6293: "bfd66c6f219f3210201b",
+        6331: "1cee6ca8ac5115f65dd8",
+        6365: "4fa99eac3618c78df116",
+        6483: "a5dfb505586ac158a774",
         6496: "473771829b25fcf42736",
         6511: "70a8d5c3c55f38afb181",
         6547: "f6088675c3ff41293907",
         6568: "85a9452de036405f618a",
-        6651: "39f26481e7250284b2ea",
-        6655: "c6a55b03c3b8c899db3e",
+        6651: "ea13ba44407bf97cb020",
+        6655: "132e87e1276f776ef87d",
         6709: "0fa07ca98db6427a89d2",
         6884: "d345743b20772128f79d",
         6920: "af65e571675c436778fd",
-        6933: "c624c9f93156d0263a26",
-        6953: "5110b1594c6c49fd096c",
-        7072: "eef5d39c70101dcccd92",
+        6933: "64cb38e4cad845f27824",
+        6953: "d528e8278594ea5f1e9c",
+        7072: "b793955ad84c50dd1363",
         7074: "8bdc24ef9eb89b30f3bd",
-        7102: "9d060fcb9e08e85b90ff",
-        7162: "efa3a0482d2bcdb5a8ae",
-        7216: "27f9b7389b4d5ee685be",
+        7102: "9b2fb4b29b33229fc2aa",
+        7162: "7920afe15efef8154be0",
+        7216: "a7edf34f72ba30ff2740",
         7315: "efad01254e31d3b12163",
         7386: "ff1458cf069e32a1fbaf",
-        7542: "884480eba7b872f4500e",
+        7542: "9ac9163cf7407a066e86",
         7662: "d1f1e8eef2e5d065a5c5",
         7728: "1a80c02f34d83a7b70c4",
         7739: "76dce84c6c8d22ae3a73",
-        7749: "87ae88956437b7a28e25",
-        8054: "93a73d6b4ffa98a13403",
+        7749: "e56df7ebec38cd444757",
+        8054: "d88b5e2e305558c9b8f0",
         8117: "f456216d84c69700e22c",
         8132: "1b15f885cb6dcbf40db5",
-        8292: "12fcc3213fe666563ce5",
-        8598: "115461524147c578a6cb",
-        8628: "660deedbcdd9c04e8d49",
+        8292: "5ae09a7d31693764b9e7",
+        8598: "2bacb2ec9e1e56d5170d",
+        8628: "23c98624a1dc9fb93e2d",
         8634: "e1af4a78fc66ea0aa9aa",
         8678: "004cf0cc6657e9d223ea",
-        8700: "ee3f248a235ec5f5d04b",
+        8700: "93082bb5689a6afd066f",
         8799: "8c86d1e301e341297288",
         9116: "30d821c61d3662afa86a",
         9227: "42de3a69c86356f4536f",
         9289: "e5629c23a2e7dbc70426",
         9313: "a979c64fbd2f7ed4022a",
         9545: "13886c8633b6d706da79",
-        9613: "4dd8b82617949c354b96",
+        9613: "0228e6943513e6498f96",
         9646: "fabc69ab071d15416e4e",
         9682: "17b8f1e429d5def9d8b2",
-        9719: "da87abaf91329512b01d",
-        9737: "ff8f9d9cc944364015c5",
-        9750: "9140dd3482fd56d20c69",
+        9719: "89488fc21c1780f21c7a",
+        9737: "5d06e83a39de2d195939",
+        9750: "36e01f758f27fb768509",
         9765: "ac982e958753be4927a9",
-        9815: "dabdee4464b1a712965c",
+        9815: "01825fd1d46687855963",
         9817: "ef742466979e256bedd7",
-        9995: "c5a8cad14b9334149d9a",
-        9999: "ac1029766b17438228a6"
+        9995: "a37b40671310b606971d",
+        9999: "050e22d27d1cdb4d89c0"
     } [e] + ".js"), n.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), n.r = e => {
         "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
             value: "Module"
@@ -33568,7 +33620,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                     o.initializePromise.then((function() {
                         i.init(c.getLocale())
                     })).then((function() {
-                        e(2)`WhatsApp Desktop ${"2.2305.7"} Ready`;
+                        e(2)`WhatsApp Desktop ${"2.2313.8"} Ready`;
                         var t = !0;
                         if ("darwin" === process.platform && !process.mas && !o.get("hasLoaded") && !p.isUpgradeTest) {
                             var a = c.getAppPath(),
@@ -33613,7 +33665,7 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                                 titleBarStyle: "hidden",
                                 trafficLightPosition: {
                                     x: 12,
-                                    y: 42
+                                    y: 23
                                 },
                                 launchURL: m,
                                 title: "WhatsApp"
@@ -33656,11 +33708,11 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                     })).catch((function(t) {
                         e(2)`Got exception: ${t}`
                     })), p.isUpgradeTest && setTimeout((function() {
-                        f.write("main_2.2305.7\n", "utf8")
+                        f.write("main_2.2313.8\n", "utf8")
                     }), 15e3)
                 })), "darwin" === process.platform && (process.versions.electron, c.setAboutPanelOptions({
                     applicationName: "WhatsApp ",
-                    applicationVersion: "2.2305.7",
+                    applicationVersion: "2.2313.8",
                     version: "",
                     copyright: " "
                 })), c.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required"))

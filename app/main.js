@@ -7,31 +7,29 @@
                     return e
                 }
             },
-            11504: (e, t, r) => {
-                var n = r(36953).default;
-
-                function i(e, t, r, i, a, o, s) {
+            11504: e => {
+                function t(e, t, r, n, i, a, o) {
                     try {
-                        var u = e[o](s),
-                            c = u.value
+                        var s = e[a](o),
+                            u = s.value
                     } catch (e) {
                         return void r(e)
                     }
-                    u.done ? t(c) : n.resolve(c).then(i, a)
+                    s.done ? t(u) : Promise.resolve(u).then(n, i)
                 }
                 e.exports = function(e) {
                     return function() {
-                        var t = this,
-                            r = arguments;
-                        return new n((function(n, a) {
-                            var o = e.apply(t, r);
+                        var r = this,
+                            n = arguments;
+                        return new Promise((function(i, a) {
+                            var o = e.apply(r, n);
 
                             function s(e) {
-                                i(o, n, a, s, u, "next", e)
+                                t(o, i, a, s, u, "next", e)
                             }
 
                             function u(e) {
-                                i(o, n, a, s, u, "throw", e)
+                                t(o, i, a, s, u, "throw", e)
                             }
                             s(void 0)
                         }))
@@ -188,307 +186,306 @@
             57135: (e, t, r) => {
                 e.exports = r(86248)
             },
-            86248: (e, t, r) => {
-                var n = r(36953).default,
-                    i = function(e) {
-                        "use strict";
-                        var t, r = Object.prototype,
-                            i = r.hasOwnProperty,
-                            a = "function" == typeof Symbol ? Symbol : {},
-                            o = a.iterator || "@@iterator",
-                            s = a.asyncIterator || "@@asyncIterator",
-                            u = a.toStringTag || "@@toStringTag";
+            86248: e => {
+                var t = function(e) {
+                    "use strict";
+                    var t, r = Object.prototype,
+                        n = r.hasOwnProperty,
+                        i = "function" == typeof Symbol ? Symbol : {},
+                        a = i.iterator || "@@iterator",
+                        o = i.asyncIterator || "@@asyncIterator",
+                        s = i.toStringTag || "@@toStringTag";
 
-                        function c(e, t, r, n) {
-                            var i = t && t.prototype instanceof _ ? t : _,
-                                a = Object.create(i.prototype),
-                                o = new T(n || []);
-                            return a._invoke = function(e, t, r) {
-                                var n = d;
-                                return function(i, a) {
-                                    if (n === p) throw new Error("Generator is already running");
-                                    if (n === h) {
-                                        if ("throw" === i) throw a;
-                                        return N()
-                                    }
-                                    for (r.method = i, r.arg = a;;) {
-                                        var o = r.delegate;
-                                        if (o) {
-                                            var s = A(o, r);
-                                            if (s) {
-                                                if (s === m) continue;
-                                                return s
-                                            }
-                                        }
-                                        if ("next" === r.method) r.sent = r._sent = r.arg;
-                                        else if ("throw" === r.method) {
-                                            if (n === d) throw n = h, r.arg;
-                                            r.dispatchException(r.arg)
-                                        } else "return" === r.method && r.abrupt("return", r.arg);
-                                        n = p;
-                                        var u = l(e, t, r);
-                                        if ("normal" === u.type) {
-                                            if (n = r.done ? h : f, u.arg === m) continue;
-                                            return {
-                                                value: u.arg,
-                                                done: r.done
-                                            }
-                                        }
-                                        "throw" === u.type && (n = h, r.method = "throw", r.arg = u.arg)
-                                    }
+                    function u(e, t, r, n) {
+                        var i = t && t.prototype instanceof m ? t : m,
+                            a = Object.create(i.prototype),
+                            o = new O(n || []);
+                        return a._invoke = function(e, t, r) {
+                            var n = l;
+                            return function(i, a) {
+                                if (n === f) throw new Error("Generator is already running");
+                                if (n === p) {
+                                    if ("throw" === i) throw a;
+                                    return C()
                                 }
-                            }(e, r, o), a
-                        }
-
-                        function l(e, t, r) {
-                            try {
-                                return {
-                                    type: "normal",
-                                    arg: e.call(t, r)
-                                }
-                            } catch (e) {
-                                return {
-                                    type: "throw",
-                                    arg: e
+                                for (r.method = i, r.arg = a;;) {
+                                    var o = r.delegate;
+                                    if (o) {
+                                        var s = S(o, r);
+                                        if (s) {
+                                            if (s === h) continue;
+                                            return s
+                                        }
+                                    }
+                                    if ("next" === r.method) r.sent = r._sent = r.arg;
+                                    else if ("throw" === r.method) {
+                                        if (n === l) throw n = p, r.arg;
+                                        r.dispatchException(r.arg)
+                                    } else "return" === r.method && r.abrupt("return", r.arg);
+                                    n = f;
+                                    var u = c(e, t, r);
+                                    if ("normal" === u.type) {
+                                        if (n = r.done ? p : d, u.arg === h) continue;
+                                        return {
+                                            value: u.arg,
+                                            done: r.done
+                                        }
+                                    }
+                                    "throw" === u.type && (n = p, r.method = "throw", r.arg = u.arg)
                                 }
                             }
+                        }(e, r, o), a
+                    }
+
+                    function c(e, t, r) {
+                        try {
+                            return {
+                                type: "normal",
+                                arg: e.call(t, r)
+                            }
+                        } catch (e) {
+                            return {
+                                type: "throw",
+                                arg: e
+                            }
                         }
-                        e.wrap = c;
-                        var d = "suspendedStart",
-                            f = "suspendedYield",
-                            p = "executing",
-                            h = "completed",
-                            m = {};
+                    }
+                    e.wrap = u;
+                    var l = "suspendedStart",
+                        d = "suspendedYield",
+                        f = "executing",
+                        p = "completed",
+                        h = {};
 
-                        function _() {}
+                    function m() {}
 
-                        function g() {}
+                    function _() {}
 
-                        function v() {}
-                        var b = {};
-                        b[o] = function() {
-                            return this
+                    function g() {}
+                    var v = {};
+                    v[a] = function() {
+                        return this
+                    };
+                    var b = Object.getPrototypeOf,
+                        y = b && b(b(T([])));
+                    y && y !== r && n.call(y, a) && (v = y);
+                    var w = g.prototype = m.prototype = Object.create(v);
+
+                    function E(e) {
+                        ["next", "throw", "return"].forEach((function(t) {
+                            e[t] = function(e) {
+                                return this._invoke(t, e)
+                            }
+                        }))
+                    }
+
+                    function x(e, t) {
+                        function r(i, a, o, s) {
+                            var u = c(e[i], e, a);
+                            if ("throw" !== u.type) {
+                                var l = u.arg,
+                                    d = l.value;
+                                return d && "object" == typeof d && n.call(d, "__await") ? t.resolve(d.__await).then((function(e) {
+                                    r("next", e, o, s)
+                                }), (function(e) {
+                                    r("throw", e, o, s)
+                                })) : t.resolve(d).then((function(e) {
+                                    l.value = e, o(l)
+                                }), (function(e) {
+                                    return r("throw", e, o, s)
+                                }))
+                            }
+                            s(u.arg)
+                        }
+                        var i;
+                        this._invoke = function(e, n) {
+                            function a() {
+                                return new t((function(t, i) {
+                                    r(e, n, t, i)
+                                }))
+                            }
+                            return i = i ? i.then(a, a) : a()
+                        }
+                    }
+
+                    function S(e, r) {
+                        var n = e.iterator[r.method];
+                        if (n === t) {
+                            if (r.delegate = null, "throw" === r.method) {
+                                if (e.iterator.return && (r.method = "return", r.arg = t, S(e, r), "throw" === r.method)) return h;
+                                r.method = "throw", r.arg = new TypeError("The iterator does not provide a 'throw' method")
+                            }
+                            return h
+                        }
+                        var i = c(n, e.iterator, r.arg);
+                        if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, h;
+                        var a = i.arg;
+                        return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, h) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, h)
+                    }
+
+                    function A(e) {
+                        var t = {
+                            tryLoc: e[0]
                         };
-                        var y = Object.getPrototypeOf,
-                            w = y && y(y(C([])));
-                        w && w !== r && i.call(w, o) && (b = w);
-                        var E = v.prototype = _.prototype = Object.create(b);
+                        1 in e && (t.catchLoc = e[1]), 2 in e && (t.finallyLoc = e[2], t.afterLoc = e[3]), this.tryEntries.push(t)
+                    }
 
-                        function x(e) {
-                            ["next", "throw", "return"].forEach((function(t) {
-                                e[t] = function(e) {
-                                    return this._invoke(t, e)
-                                }
-                            }))
-                        }
+                    function k(e) {
+                        var t = e.completion || {};
+                        t.type = "normal", delete t.arg, e.completion = t
+                    }
 
-                        function S(e, t) {
-                            function r(n, a, o, s) {
-                                var u = l(e[n], e, a);
-                                if ("throw" !== u.type) {
-                                    var c = u.arg,
-                                        d = c.value;
-                                    return d && "object" == typeof d && i.call(d, "__await") ? t.resolve(d.__await).then((function(e) {
-                                        r("next", e, o, s)
-                                    }), (function(e) {
-                                        r("throw", e, o, s)
-                                    })) : t.resolve(d).then((function(e) {
-                                        c.value = e, o(c)
-                                    }), (function(e) {
-                                        return r("throw", e, o, s)
-                                    }))
-                                }
-                                s(u.arg)
-                            }
-                            var n;
-                            this._invoke = function(e, i) {
-                                function a() {
-                                    return new t((function(t, n) {
-                                        r(e, i, t, n)
-                                    }))
-                                }
-                                return n = n ? n.then(a, a) : a()
+                    function O(e) {
+                        this.tryEntries = [{
+                            tryLoc: "root"
+                        }], e.forEach(A, this), this.reset(!0)
+                    }
+
+                    function T(e) {
+                        if (e) {
+                            var r = e[a];
+                            if (r) return r.call(e);
+                            if ("function" == typeof e.next) return e;
+                            if (!isNaN(e.length)) {
+                                var i = -1,
+                                    o = function r() {
+                                        for (; ++i < e.length;)
+                                            if (n.call(e, i)) return r.value = e[i], r.done = !1, r;
+                                        return r.value = t, r.done = !0, r
+                                    };
+                                return o.next = o
                             }
                         }
+                        return {
+                            next: C
+                        }
+                    }
 
-                        function A(e, r) {
-                            var n = e.iterator[r.method];
-                            if (n === t) {
-                                if (r.delegate = null, "throw" === r.method) {
-                                    if (e.iterator.return && (r.method = "return", r.arg = t, A(e, r), "throw" === r.method)) return m;
-                                    r.method = "throw", r.arg = new TypeError("The iterator does not provide a 'throw' method")
+                    function C() {
+                        return {
+                            value: t,
+                            done: !0
+                        }
+                    }
+                    return _.prototype = w.constructor = g, g.constructor = _, g[s] = _.displayName = "GeneratorFunction", e.isGeneratorFunction = function(e) {
+                        var t = "function" == typeof e && e.constructor;
+                        return !!t && (t === _ || "GeneratorFunction" === (t.displayName || t.name))
+                    }, e.mark = function(e) {
+                        return Object.setPrototypeOf ? Object.setPrototypeOf(e, g) : (e.__proto__ = g, s in e || (e[s] = "GeneratorFunction")), e.prototype = Object.create(w), e
+                    }, e.awrap = function(e) {
+                        return {
+                            __await: e
+                        }
+                    }, E(x.prototype), x.prototype[o] = function() {
+                        return this
+                    }, e.AsyncIterator = x, e.async = function(t, r, n, i, a) {
+                        void 0 === a && (a = Promise);
+                        var o = new x(u(t, r, n, i), a);
+                        return e.isGeneratorFunction(r) ? o : o.next().then((function(e) {
+                            return e.done ? e.value : o.next()
+                        }))
+                    }, E(w), w[s] = "Generator", w[a] = function() {
+                        return this
+                    }, w.toString = function() {
+                        return "[object Generator]"
+                    }, e.keys = function(e) {
+                        var t = [];
+                        for (var r in e) t.push(r);
+                        return t.reverse(),
+                            function r() {
+                                for (; t.length;) {
+                                    var n = t.pop();
+                                    if (n in e) return r.value = n, r.done = !1, r
                                 }
-                                return m
+                                return r.done = !0, r
                             }
-                            var i = l(n, e.iterator, r.arg);
-                            if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, m;
-                            var a = i.arg;
-                            return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, m) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, m)
-                        }
+                    }, e.values = T, O.prototype = {
+                        constructor: O,
+                        reset: function(e) {
+                            if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(k), !e)
+                                for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t)
+                        },
+                        stop: function() {
+                            this.done = !0;
+                            var e = this.tryEntries[0].completion;
+                            if ("throw" === e.type) throw e.arg;
+                            return this.rval
+                        },
+                        dispatchException: function(e) {
+                            if (this.done) throw e;
+                            var r = this;
 
-                        function k(e) {
-                            var t = {
-                                tryLoc: e[0]
-                            };
-                            1 in e && (t.catchLoc = e[1]), 2 in e && (t.finallyLoc = e[2], t.afterLoc = e[3]), this.tryEntries.push(t)
-                        }
-
-                        function O(e) {
-                            var t = e.completion || {};
-                            t.type = "normal", delete t.arg, e.completion = t
-                        }
-
-                        function T(e) {
-                            this.tryEntries = [{
-                                tryLoc: "root"
-                            }], e.forEach(k, this), this.reset(!0)
-                        }
-
-                        function C(e) {
-                            if (e) {
-                                var r = e[o];
-                                if (r) return r.call(e);
-                                if ("function" == typeof e.next) return e;
-                                if (!isNaN(e.length)) {
-                                    var n = -1,
-                                        a = function r() {
-                                            for (; ++n < e.length;)
-                                                if (i.call(e, n)) return r.value = e[n], r.done = !1, r;
-                                            return r.value = t, r.done = !0, r
-                                        };
-                                    return a.next = a
-                                }
+                            function i(n, i) {
+                                return s.type = "throw", s.arg = e, r.next = n, i && (r.method = "next", r.arg = t), !!i
                             }
-                            return {
-                                next: N
-                            }
-                        }
-
-                        function N() {
-                            return {
-                                value: t,
-                                done: !0
-                            }
-                        }
-                        return g.prototype = E.constructor = v, v.constructor = g, v[u] = g.displayName = "GeneratorFunction", e.isGeneratorFunction = function(e) {
-                            var t = "function" == typeof e && e.constructor;
-                            return !!t && (t === g || "GeneratorFunction" === (t.displayName || t.name))
-                        }, e.mark = function(e) {
-                            return Object.setPrototypeOf ? Object.setPrototypeOf(e, v) : (e.__proto__ = v, u in e || (e[u] = "GeneratorFunction")), e.prototype = Object.create(E), e
-                        }, e.awrap = function(e) {
-                            return {
-                                __await: e
-                            }
-                        }, x(S.prototype), S.prototype[s] = function() {
-                            return this
-                        }, e.AsyncIterator = S, e.async = function(t, r, i, a, o) {
-                            void 0 === o && (o = n);
-                            var s = new S(c(t, r, i, a), o);
-                            return e.isGeneratorFunction(r) ? s : s.next().then((function(e) {
-                                return e.done ? e.value : s.next()
-                            }))
-                        }, x(E), E[u] = "Generator", E[o] = function() {
-                            return this
-                        }, E.toString = function() {
-                            return "[object Generator]"
-                        }, e.keys = function(e) {
-                            var t = [];
-                            for (var r in e) t.push(r);
-                            return t.reverse(),
-                                function r() {
-                                    for (; t.length;) {
-                                        var n = t.pop();
-                                        if (n in e) return r.value = n, r.done = !1, r
-                                    }
-                                    return r.done = !0, r
-                                }
-                        }, e.values = C, T.prototype = {
-                            constructor: T,
-                            reset: function(e) {
-                                if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(O), !e)
-                                    for (var r in this) "t" === r.charAt(0) && i.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t)
-                            },
-                            stop: function() {
-                                this.done = !0;
-                                var e = this.tryEntries[0].completion;
-                                if ("throw" === e.type) throw e.arg;
-                                return this.rval
-                            },
-                            dispatchException: function(e) {
-                                if (this.done) throw e;
-                                var r = this;
-
-                                function n(n, i) {
-                                    return s.type = "throw", s.arg = e, r.next = n, i && (r.method = "next", r.arg = t), !!i
-                                }
-                                for (var a = this.tryEntries.length - 1; a >= 0; --a) {
-                                    var o = this.tryEntries[a],
-                                        s = o.completion;
-                                    if ("root" === o.tryLoc) return n("end");
-                                    if (o.tryLoc <= this.prev) {
-                                        var u = i.call(o, "catchLoc"),
-                                            c = i.call(o, "finallyLoc");
-                                        if (u && c) {
-                                            if (this.prev < o.catchLoc) return n(o.catchLoc, !0);
-                                            if (this.prev < o.finallyLoc) return n(o.finallyLoc)
-                                        } else if (u) {
-                                            if (this.prev < o.catchLoc) return n(o.catchLoc, !0)
-                                        } else {
-                                            if (!c) throw new Error("try statement without catch or finally");
-                                            if (this.prev < o.finallyLoc) return n(o.finallyLoc)
-                                        }
+                            for (var a = this.tryEntries.length - 1; a >= 0; --a) {
+                                var o = this.tryEntries[a],
+                                    s = o.completion;
+                                if ("root" === o.tryLoc) return i("end");
+                                if (o.tryLoc <= this.prev) {
+                                    var u = n.call(o, "catchLoc"),
+                                        c = n.call(o, "finallyLoc");
+                                    if (u && c) {
+                                        if (this.prev < o.catchLoc) return i(o.catchLoc, !0);
+                                        if (this.prev < o.finallyLoc) return i(o.finallyLoc)
+                                    } else if (u) {
+                                        if (this.prev < o.catchLoc) return i(o.catchLoc, !0)
+                                    } else {
+                                        if (!c) throw new Error("try statement without catch or finally");
+                                        if (this.prev < o.finallyLoc) return i(o.finallyLoc)
                                     }
                                 }
-                            },
-                            abrupt: function(e, t) {
-                                for (var r = this.tryEntries.length - 1; r >= 0; --r) {
-                                    var n = this.tryEntries[r];
-                                    if (n.tryLoc <= this.prev && i.call(n, "finallyLoc") && this.prev < n.finallyLoc) {
-                                        var a = n;
-                                        break
-                                    }
-                                }
-                                a && ("break" === e || "continue" === e) && a.tryLoc <= t && t <= a.finallyLoc && (a = null);
-                                var o = a ? a.completion : {};
-                                return o.type = e, o.arg = t, a ? (this.method = "next", this.next = a.finallyLoc, m) : this.complete(o)
-                            },
-                            complete: function(e, t) {
-                                if ("throw" === e.type) throw e.arg;
-                                return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg, this.method = "return", this.next = "end") : "normal" === e.type && t && (this.next = t), m
-                            },
-                            finish: function(e) {
-                                for (var t = this.tryEntries.length - 1; t >= 0; --t) {
-                                    var r = this.tryEntries[t];
-                                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), O(r), m
-                                }
-                            },
-                            catch: function(e) {
-                                for (var t = this.tryEntries.length - 1; t >= 0; --t) {
-                                    var r = this.tryEntries[t];
-                                    if (r.tryLoc === e) {
-                                        var n = r.completion;
-                                        if ("throw" === n.type) {
-                                            var i = n.arg;
-                                            O(r)
-                                        }
-                                        return i
-                                    }
-                                }
-                                throw new Error("illegal catch attempt")
-                            },
-                            delegateYield: function(e, r, n) {
-                                return this.delegate = {
-                                    iterator: C(e),
-                                    resultName: r,
-                                    nextLoc: n
-                                }, "next" === this.method && (this.arg = t), m
                             }
-                        }, e
-                    }(e.exports);
+                        },
+                        abrupt: function(e, t) {
+                            for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+                                var i = this.tryEntries[r];
+                                if (i.tryLoc <= this.prev && n.call(i, "finallyLoc") && this.prev < i.finallyLoc) {
+                                    var a = i;
+                                    break
+                                }
+                            }
+                            a && ("break" === e || "continue" === e) && a.tryLoc <= t && t <= a.finallyLoc && (a = null);
+                            var o = a ? a.completion : {};
+                            return o.type = e, o.arg = t, a ? (this.method = "next", this.next = a.finallyLoc, h) : this.complete(o)
+                        },
+                        complete: function(e, t) {
+                            if ("throw" === e.type) throw e.arg;
+                            return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg, this.method = "return", this.next = "end") : "normal" === e.type && t && (this.next = t), h
+                        },
+                        finish: function(e) {
+                            for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+                                var r = this.tryEntries[t];
+                                if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), k(r), h
+                            }
+                        },
+                        catch: function(e) {
+                            for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+                                var r = this.tryEntries[t];
+                                if (r.tryLoc === e) {
+                                    var n = r.completion;
+                                    if ("throw" === n.type) {
+                                        var i = n.arg;
+                                        k(r)
+                                    }
+                                    return i
+                                }
+                            }
+                            throw new Error("illegal catch attempt")
+                        },
+                        delegateYield: function(e, r, n) {
+                            return this.delegate = {
+                                iterator: T(e),
+                                resultName: r,
+                                nextLoc: n
+                            }, "next" === this.method && (this.arg = t), h
+                        }
+                    }, e
+                }(e.exports);
                 try {
-                    regeneratorRuntime = i
+                    regeneratorRuntime = t
                 } catch (e) {
-                    Function("r", "regeneratorRuntime = r")(i)
+                    Function("r", "regeneratorRuntime = r")(t)
                 }
             },
             26299: (e, t, r) => {
@@ -805,31 +802,29 @@
                     return e
                 }, e.exports.__esModule = !0, e.exports.default = e.exports
             },
-            19882: (e, t, r) => {
-                var n = r(36953).default;
-
-                function i(e, t, r, i, a, o, s) {
+            19882: e => {
+                function t(e, t, r, n, i, a, o) {
                     try {
-                        var u = e[o](s),
-                            c = u.value
+                        var s = e[a](o),
+                            u = s.value
                     } catch (e) {
                         return void r(e)
                     }
-                    u.done ? t(c) : n.resolve(c).then(i, a)
+                    s.done ? t(u) : Promise.resolve(u).then(n, i)
                 }
                 e.exports = function(e) {
                     return function() {
-                        var t = this,
-                            r = arguments;
-                        return new n((function(n, a) {
-                            var o = e.apply(t, r);
+                        var r = this,
+                            n = arguments;
+                        return new Promise((function(i, a) {
+                            var o = e.apply(r, n);
 
                             function s(e) {
-                                i(o, n, a, s, u, "next", e)
+                                t(o, i, a, s, u, "next", e)
                             }
 
                             function u(e) {
-                                i(o, n, a, s, u, "throw", e)
+                                t(o, i, a, s, u, "throw", e)
                             }
                             s(void 0)
                         }))
@@ -1051,26 +1046,25 @@
                 }, e.exports.__esModule = !0, e.exports.default = e.exports
             },
             66269: (e, t, r) => {
-                var n = r(36953).default,
-                    i = r(16153).default;
+                var n = r(16153).default;
 
-                function a() {
+                function i() {
                     "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
-                    e.exports = a = function() {
+                    e.exports = i = function() {
                         return t
                     }, e.exports.__esModule = !0, e.exports.default = e.exports;
                     var t = {},
                         r = Object.prototype,
-                        o = r.hasOwnProperty,
-                        s = Object.defineProperty || function(e, t, r) {
+                        a = r.hasOwnProperty,
+                        o = Object.defineProperty || function(e, t, r) {
                             e[t] = r.value
                         },
-                        u = "function" == typeof Symbol ? Symbol : {},
-                        c = u.iterator || "@@iterator",
-                        l = u.asyncIterator || "@@asyncIterator",
-                        d = u.toStringTag || "@@toStringTag";
+                        s = "function" == typeof Symbol ? Symbol : {},
+                        u = s.iterator || "@@iterator",
+                        c = s.asyncIterator || "@@asyncIterator",
+                        l = s.toStringTag || "@@toStringTag";
 
-                    function f(e, t, r) {
+                    function d(e, t, r) {
                         return Object.defineProperty(e, t, {
                             value: r,
                             enumerable: !0,
@@ -1079,23 +1073,23 @@
                         }), e[t]
                     }
                     try {
-                        f({}, "")
+                        d({}, "")
                     } catch (e) {
-                        f = function(e, t, r) {
+                        d = function(e, t, r) {
                             return e[t] = r
                         }
                     }
 
-                    function p(e, t, r, n) {
-                        var i = t && t.prototype instanceof _ ? t : _,
+                    function f(e, t, r, n) {
+                        var i = t && t.prototype instanceof m ? t : m,
                             a = Object.create(i.prototype),
-                            o = new C(n || []);
-                        return s(a, "_invoke", {
-                            value: A(e, r, o)
+                            s = new T(n || []);
+                        return o(a, "_invoke", {
+                            value: S(e, r, s)
                         }), a
                     }
 
-                    function h(e, t, r) {
+                    function p(e, t, r) {
                         try {
                             return {
                                 type: "normal",
@@ -1108,38 +1102,38 @@
                             }
                         }
                     }
-                    t.wrap = p;
-                    var m = {};
+                    t.wrap = f;
+                    var h = {};
+
+                    function m() {}
 
                     function _() {}
 
                     function g() {}
-
-                    function v() {}
-                    var b = {};
-                    f(b, c, (function() {
+                    var v = {};
+                    d(v, u, (function() {
                         return this
                     }));
-                    var y = Object.getPrototypeOf,
-                        w = y && y(y(N([])));
-                    w && w !== r && o.call(w, c) && (b = w);
-                    var E = v.prototype = _.prototype = Object.create(b);
+                    var b = Object.getPrototypeOf,
+                        y = b && b(b(C([])));
+                    y && y !== r && a.call(y, u) && (v = y);
+                    var w = g.prototype = m.prototype = Object.create(v);
 
-                    function x(e) {
+                    function E(e) {
                         ["next", "throw", "return"].forEach((function(t) {
-                            f(e, t, (function(e) {
+                            d(e, t, (function(e) {
                                 return this._invoke(t, e)
                             }))
                         }))
                     }
 
-                    function S(e, t) {
-                        function r(n, a, s, u) {
-                            var c = h(e[n], e, a);
+                    function x(e, t) {
+                        function r(i, o, s, u) {
+                            var c = p(e[i], e, o);
                             if ("throw" !== c.type) {
                                 var l = c.arg,
                                     d = l.value;
-                                return d && "object" == i(d) && o.call(d, "__await") ? t.resolve(d.__await).then((function(e) {
+                                return d && "object" == n(d) && a.call(d, "__await") ? t.resolve(d.__await).then((function(e) {
                                     r("next", e, s, u)
                                 }), (function(e) {
                                     r("throw", e, s, u)
@@ -1151,33 +1145,33 @@
                             }
                             u(c.arg)
                         }
-                        var n;
-                        s(this, "_invoke", {
-                            value: function(e, i) {
+                        var i;
+                        o(this, "_invoke", {
+                            value: function(e, n) {
                                 function a() {
-                                    return new t((function(t, n) {
-                                        r(e, i, t, n)
+                                    return new t((function(t, i) {
+                                        r(e, n, t, i)
                                     }))
                                 }
-                                return n = n ? n.then(a, a) : a()
+                                return i = i ? i.then(a, a) : a()
                             }
                         })
                     }
 
-                    function A(e, t, r) {
+                    function S(e, t, r) {
                         var n = "suspendedStart";
                         return function(i, a) {
                             if ("executing" === n) throw new Error("Generator is already running");
                             if ("completed" === n) {
                                 if ("throw" === i) throw a;
-                                return M()
+                                return N()
                             }
                             for (r.method = i, r.arg = a;;) {
                                 var o = r.delegate;
                                 if (o) {
-                                    var s = k(o, r);
+                                    var s = A(o, r);
                                     if (s) {
-                                        if (s === m) continue;
+                                        if (s === h) continue;
                                         return s
                                     }
                                 }
@@ -1187,9 +1181,9 @@
                                     r.dispatchException(r.arg)
                                 } else "return" === r.method && r.abrupt("return", r.arg);
                                 n = "executing";
-                                var u = h(e, t, r);
+                                var u = p(e, t, r);
                                 if ("normal" === u.type) {
-                                    if (n = r.done ? "completed" : "suspendedYield", u.arg === m) continue;
+                                    if (n = r.done ? "completed" : "suspendedYield", u.arg === h) continue;
                                     return {
                                         value: u.arg,
                                         done: r.done
@@ -1200,86 +1194,86 @@
                         }
                     }
 
-                    function k(e, t) {
+                    function A(e, t) {
                         var r = t.method,
                             n = e.iterator[r];
-                        if (void 0 === n) return t.delegate = null, "throw" === r && e.iterator.return && (t.method = "return", t.arg = void 0, k(e, t), "throw" === t.method) || "return" !== r && (t.method = "throw", t.arg = new TypeError("The iterator does not provide a '" + r + "' method")), m;
-                        var i = h(n, e.iterator, t.arg);
-                        if ("throw" === i.type) return t.method = "throw", t.arg = i.arg, t.delegate = null, m;
+                        if (void 0 === n) return t.delegate = null, "throw" === r && e.iterator.return && (t.method = "return", t.arg = void 0, A(e, t), "throw" === t.method) || "return" !== r && (t.method = "throw", t.arg = new TypeError("The iterator does not provide a '" + r + "' method")), h;
+                        var i = p(n, e.iterator, t.arg);
+                        if ("throw" === i.type) return t.method = "throw", t.arg = i.arg, t.delegate = null, h;
                         var a = i.arg;
-                        return a ? a.done ? (t[e.resultName] = a.value, t.next = e.nextLoc, "return" !== t.method && (t.method = "next", t.arg = void 0), t.delegate = null, m) : a : (t.method = "throw", t.arg = new TypeError("iterator result is not an object"), t.delegate = null, m)
+                        return a ? a.done ? (t[e.resultName] = a.value, t.next = e.nextLoc, "return" !== t.method && (t.method = "next", t.arg = void 0), t.delegate = null, h) : a : (t.method = "throw", t.arg = new TypeError("iterator result is not an object"), t.delegate = null, h)
                     }
 
-                    function O(e) {
+                    function k(e) {
                         var t = {
                             tryLoc: e[0]
                         };
                         1 in e && (t.catchLoc = e[1]), 2 in e && (t.finallyLoc = e[2], t.afterLoc = e[3]), this.tryEntries.push(t)
                     }
 
-                    function T(e) {
+                    function O(e) {
                         var t = e.completion || {};
                         t.type = "normal", delete t.arg, e.completion = t
                     }
 
-                    function C(e) {
+                    function T(e) {
                         this.tryEntries = [{
                             tryLoc: "root"
-                        }], e.forEach(O, this), this.reset(!0)
+                        }], e.forEach(k, this), this.reset(!0)
                     }
 
-                    function N(e) {
+                    function C(e) {
                         if (e) {
-                            var t = e[c];
+                            var t = e[u];
                             if (t) return t.call(e);
                             if ("function" == typeof e.next) return e;
                             if (!isNaN(e.length)) {
                                 var r = -1,
                                     n = function t() {
                                         for (; ++r < e.length;)
-                                            if (o.call(e, r)) return t.value = e[r], t.done = !1, t;
+                                            if (a.call(e, r)) return t.value = e[r], t.done = !1, t;
                                         return t.value = void 0, t.done = !0, t
                                     };
                                 return n.next = n
                             }
                         }
                         return {
-                            next: M
+                            next: N
                         }
                     }
 
-                    function M() {
+                    function N() {
                         return {
                             value: void 0,
                             done: !0
                         }
                     }
-                    return g.prototype = v, s(E, "constructor", {
-                        value: v,
-                        configurable: !0
-                    }), s(v, "constructor", {
+                    return _.prototype = g, o(w, "constructor", {
                         value: g,
                         configurable: !0
-                    }), g.displayName = f(v, d, "GeneratorFunction"), t.isGeneratorFunction = function(e) {
+                    }), o(g, "constructor", {
+                        value: _,
+                        configurable: !0
+                    }), _.displayName = d(g, l, "GeneratorFunction"), t.isGeneratorFunction = function(e) {
                         var t = "function" == typeof e && e.constructor;
-                        return !!t && (t === g || "GeneratorFunction" === (t.displayName || t.name))
+                        return !!t && (t === _ || "GeneratorFunction" === (t.displayName || t.name))
                     }, t.mark = function(e) {
-                        return Object.setPrototypeOf ? Object.setPrototypeOf(e, v) : (e.__proto__ = v, f(e, d, "GeneratorFunction")), e.prototype = Object.create(E), e
+                        return Object.setPrototypeOf ? Object.setPrototypeOf(e, g) : (e.__proto__ = g, d(e, l, "GeneratorFunction")), e.prototype = Object.create(w), e
                     }, t.awrap = function(e) {
                         return {
                             __await: e
                         }
-                    }, x(S.prototype), f(S.prototype, l, (function() {
+                    }, E(x.prototype), d(x.prototype, c, (function() {
                         return this
-                    })), t.AsyncIterator = S, t.async = function(e, r, i, a, o) {
-                        void 0 === o && (o = n);
-                        var s = new S(p(e, r, i, a), o);
-                        return t.isGeneratorFunction(r) ? s : s.next().then((function(e) {
-                            return e.done ? e.value : s.next()
+                    })), t.AsyncIterator = x, t.async = function(e, r, n, i, a) {
+                        void 0 === a && (a = Promise);
+                        var o = new x(f(e, r, n, i), a);
+                        return t.isGeneratorFunction(r) ? o : o.next().then((function(e) {
+                            return e.done ? e.value : o.next()
                         }))
-                    }, x(E), f(E, d, "Generator"), f(E, c, (function() {
+                    }, E(w), d(w, l, "Generator"), d(w, u, (function() {
                         return this
-                    })), f(E, "toString", (function() {
+                    })), d(w, "toString", (function() {
                         return "[object Generator]"
                     })), t.keys = function(e) {
                         var t = Object(e),
@@ -1293,11 +1287,11 @@
                                 }
                                 return e.done = !0, e
                             }
-                    }, t.values = N, C.prototype = {
-                        constructor: C,
+                    }, t.values = C, T.prototype = {
+                        constructor: T,
                         reset: function(e) {
-                            if (this.prev = 0, this.next = 0, this.sent = this._sent = void 0, this.done = !1, this.delegate = null, this.method = "next", this.arg = void 0, this.tryEntries.forEach(T), !e)
-                                for (var t in this) "t" === t.charAt(0) && o.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0)
+                            if (this.prev = 0, this.next = 0, this.sent = this._sent = void 0, this.done = !1, this.delegate = null, this.method = "next", this.arg = void 0, this.tryEntries.forEach(O), !e)
+                                for (var t in this) "t" === t.charAt(0) && a.call(this, t) && !isNaN(+t.slice(1)) && (this[t] = void 0)
                         },
                         stop: function() {
                             this.done = !0;
@@ -1310,15 +1304,15 @@
                             var t = this;
 
                             function r(r, n) {
-                                return a.type = "throw", a.arg = e, t.next = r, n && (t.method = "next", t.arg = void 0), !!n
+                                return o.type = "throw", o.arg = e, t.next = r, n && (t.method = "next", t.arg = void 0), !!n
                             }
                             for (var n = this.tryEntries.length - 1; n >= 0; --n) {
                                 var i = this.tryEntries[n],
-                                    a = i.completion;
+                                    o = i.completion;
                                 if ("root" === i.tryLoc) return r("end");
                                 if (i.tryLoc <= this.prev) {
-                                    var s = o.call(i, "catchLoc"),
-                                        u = o.call(i, "finallyLoc");
+                                    var s = a.call(i, "catchLoc"),
+                                        u = a.call(i, "finallyLoc");
                                     if (s && u) {
                                         if (this.prev < i.catchLoc) return r(i.catchLoc, !0);
                                         if (this.prev < i.finallyLoc) return r(i.finallyLoc)
@@ -1334,23 +1328,23 @@
                         abrupt: function(e, t) {
                             for (var r = this.tryEntries.length - 1; r >= 0; --r) {
                                 var n = this.tryEntries[r];
-                                if (n.tryLoc <= this.prev && o.call(n, "finallyLoc") && this.prev < n.finallyLoc) {
+                                if (n.tryLoc <= this.prev && a.call(n, "finallyLoc") && this.prev < n.finallyLoc) {
                                     var i = n;
                                     break
                                 }
                             }
                             i && ("break" === e || "continue" === e) && i.tryLoc <= t && t <= i.finallyLoc && (i = null);
-                            var a = i ? i.completion : {};
-                            return a.type = e, a.arg = t, i ? (this.method = "next", this.next = i.finallyLoc, m) : this.complete(a)
+                            var o = i ? i.completion : {};
+                            return o.type = e, o.arg = t, i ? (this.method = "next", this.next = i.finallyLoc, h) : this.complete(o)
                         },
                         complete: function(e, t) {
                             if ("throw" === e.type) throw e.arg;
-                            return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg, this.method = "return", this.next = "end") : "normal" === e.type && t && (this.next = t), m
+                            return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg, this.method = "return", this.next = "end") : "normal" === e.type && t && (this.next = t), h
                         },
                         finish: function(e) {
                             for (var t = this.tryEntries.length - 1; t >= 0; --t) {
                                 var r = this.tryEntries[t];
-                                if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), T(r), m
+                                if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), O(r), h
                             }
                         },
                         catch: function(e) {
@@ -1360,7 +1354,7 @@
                                     var n = r.completion;
                                     if ("throw" === n.type) {
                                         var i = n.arg;
-                                        T(r)
+                                        O(r)
                                     }
                                     return i
                                 }
@@ -1369,14 +1363,14 @@
                         },
                         delegateYield: function(e, t, r) {
                             return this.delegate = {
-                                iterator: N(e),
+                                iterator: C(e),
                                 resultName: t,
                                 nextLoc: r
-                            }, "next" === this.method && (this.arg = void 0), m
+                            }, "next" === this.method && (this.arg = void 0), h
                         }
                     }, t
                 }
-                e.exports = a, e.exports.__esModule = !0, e.exports.default = e.exports
+                e.exports = i, e.exports.__esModule = !0, e.exports.default = e.exports
             },
             82449: e => {
                 function t(r, n) {
@@ -1620,49 +1614,48 @@
             },
             80850: function(e, t, r) {
                 "use strict";
-                var n = r(36953).default,
-                    i = this && this.__importDefault || function(e) {
-                        return e && e.__esModule ? e : {
-                            default: e
-                        }
-                    };
+                var n = this && this.__importDefault || function(e) {
+                    return e && e.__esModule ? e : {
+                        default: e
+                    }
+                };
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.initialize = t.enable = t.isRemoteModuleEnabled = void 0;
-                const a = r(28614),
-                    o = i(r(15026)),
-                    s = r(7531),
-                    u = r(58933),
-                    c = r(79589).getElectronBinding("v8_util"),
-                    l = (() => {
+                const i = r(28614),
+                    a = n(r(15026)),
+                    o = r(7531),
+                    s = r(58933),
+                    u = r(79589).getElectronBinding("v8_util"),
+                    c = (() => {
                         var e, t;
                         const r = Number(null === (t = null === (e = process.versions.electron) || void 0 === e ? void 0 : e.split(".")) || void 0 === t ? void 0 : t[0]);
                         return Number.isNaN(r) || r < 14
                     })(),
-                    d = ["length", "name", "arguments", "caller", "prototype"],
-                    f = new Map,
-                    p = new FinalizationRegistry((e => {
+                    l = ["length", "name", "arguments", "caller", "prototype"],
+                    d = new Map,
+                    f = new FinalizationRegistry((e => {
                         const t = e.id[0] + "~" + e.id[1],
-                            r = f.get(t);
-                        if (void 0 !== r && void 0 === r.deref() && (f.delete(t), !e.webContents.isDestroyed())) try {
+                            r = d.get(t);
+                        if (void 0 !== r && void 0 === r.deref() && (d.delete(t), !e.webContents.isDestroyed())) try {
                             e.webContents.sendToFrame(e.frameId, "REMOTE_RENDERER_RELEASE_CALLBACK", e.id[0], e.id[1])
                         } catch (e) {
                             console.warn(`sendToFrame() failed: ${e}`)
                         }
                     }));
 
-                function h(e) {
+                function p(e) {
                     const t = e[0] + "~" + e[1],
-                        r = f.get(t);
+                        r = d.get(t);
                     if (void 0 !== r) {
                         const e = r.deref();
                         if (void 0 !== e) return e
                     }
                 }
-                const m = new WeakMap,
-                    _ = function(e) {
+                const h = new WeakMap,
+                    m = function(e) {
                         let t = Object.getOwnPropertyNames(e);
-                        return "function" == typeof e && (t = t.filter((e => !d.includes(e)))), t.map((t => {
+                        return "function" == typeof e && (t = t.filter((e => !l.includes(e)))), t.map((t => {
                             const r = Object.getOwnPropertyDescriptor(e, t);
                             let n, i = !1;
                             return void 0 === r.get && "function" == typeof e[t] ? n = "method" : ((r.set || r.writable) && (i = !0), n = "get"), {
@@ -1673,18 +1666,18 @@
                             }
                         }))
                     },
-                    g = function(e) {
+                    _ = function(e) {
                         const t = Object.getPrototypeOf(e);
                         return null === t || t === Object.prototype ? null : {
-                            members: _(t),
-                            proto: g(t)
+                            members: m(t),
+                            proto: _(t)
                         }
                     },
-                    v = function(e, t, r, n = !1) {
+                    g = function(e, t, r, n = !1) {
                         let i;
                         switch (typeof r) {
                             case "object":
-                                i = r instanceof Buffer ? "buffer" : r && r.constructor && "NativeImage" === r.constructor.name ? "nativeimage" : Array.isArray(r) ? "array" : r instanceof Error ? "error" : s.isSerializableObject(r) ? "value" : s.isPromise(r) ? "promise" : Object.prototype.hasOwnProperty.call(r, "callee") && null != r.length ? "array" : n && c.getHiddenValue(r, "simple") ? "value" : "object";
+                                i = r instanceof Buffer ? "buffer" : r && r.constructor && "NativeImage" === r.constructor.name ? "nativeimage" : Array.isArray(r) ? "array" : r instanceof Error ? "error" : o.isSerializableObject(r) ? "value" : o.isPromise(r) ? "promise" : Object.prototype.hasOwnProperty.call(r, "callee") && null != r.length ? "array" : n && u.getHiddenValue(r, "simple") ? "value" : "object";
                                 break;
                             case "function":
                                 i = "function";
@@ -1694,22 +1687,22 @@
                         }
                         return "array" === i ? {
                             type: i,
-                            members: r.map((r => v(e, t, r, n)))
+                            members: r.map((r => g(e, t, r, n)))
                         } : "nativeimage" === i ? {
                             type: i,
-                            value: s.serialize(r)
+                            value: o.serialize(r)
                         } : "object" === i || "function" === i ? {
                             type: i,
                             name: r.constructor ? r.constructor.name : "",
-                            id: o.default.add(e, t, r),
-                            members: _(r),
-                            proto: g(r)
+                            id: a.default.add(e, t, r),
+                            members: m(r),
+                            proto: _(r)
                         } : "buffer" === i ? {
                             type: i,
                             value: r
                         } : "promise" === i ? (r.then((function() {}), (function() {})), {
                             type: i,
-                            then: v(e, t, (function(e, t) {
+                            then: g(e, t, (function(e, t) {
                                 r.then(e, t)
                             }))
                         }) : "error" === i ? {
@@ -1717,20 +1710,20 @@
                             value: r,
                             members: Object.keys(r).map((n => ({
                                 name: n,
-                                value: v(e, t, r[n])
+                                value: g(e, t, r[n])
                             })))
                         } : {
                             type: "value",
                             value: r
                         }
                     },
-                    b = function(e) {
+                    v = function(e) {
                         const t = new Error(e);
                         throw t.code = "EBADRPC", t.errno = -72, t
                     },
-                    y = (e, t) => {
-                        let r = `Attempting to call a function in a renderer window that has been closed or released.\nFunction provided here: ${m.get(t)}`;
-                        if (e instanceof a.EventEmitter) {
+                    b = (e, t) => {
+                        let r = `Attempting to call a function in a renderer window that has been closed or released.\nFunction provided here: ${h.get(t)}`;
+                        if (e instanceof i.EventEmitter) {
                             const n = e.eventNames().filter((r => e.listeners(r).includes(t)));
                             n.length > 0 && (r += `\nRemote event names: ${n.join(", ")}`, n.forEach((r => {
                                 e.removeListener(r, t)
@@ -1738,85 +1731,85 @@
                         }
                         console.warn(r)
                     },
-                    w = function(e, t, r, i) {
-                        const a = function(i) {
-                            switch (i.type) {
+                    y = function(e, t, r, n) {
+                        const i = function(n) {
+                            switch (n.type) {
                                 case "nativeimage":
-                                    return s.deserialize(i.value);
+                                    return o.deserialize(n.value);
                                 case "value":
-                                    return i.value;
+                                    return n.value;
                                 case "remote-object":
-                                    return o.default.get(i.id);
+                                    return a.default.get(n.id);
                                 case "array":
-                                    return w(e, t, r, i.value);
+                                    return y(e, t, r, n.value);
                                 case "buffer":
-                                    return Buffer.from(i.value.buffer, i.value.byteOffset, i.value.byteLength);
+                                    return Buffer.from(n.value.buffer, n.value.byteOffset, n.value.byteLength);
                                 case "promise":
-                                    return n.resolve({
-                                        then: a(i.then)
+                                    return Promise.resolve({
+                                        then: i(n.then)
                                     });
                                 case "object": {
-                                    const e = "Object" !== i.name ? Object.create({
-                                        constructor: (u = i.name, new Proxy(Object, {
-                                            get: (e, t, r) => "name" === t ? u : Reflect.get(e, t, r)
+                                    const e = "Object" !== n.name ? Object.create({
+                                        constructor: (s = n.name, new Proxy(Object, {
+                                            get: (e, t, r) => "name" === t ? s : Reflect.get(e, t, r)
                                         }))
                                     }) : {};
                                     for (const {
                                             name: t,
                                             value: r
-                                        } of i.members) e[t] = a(r);
+                                        } of n.members) e[t] = i(r);
                                     return e
                                 }
                                 case "function-with-return-value": {
-                                    const e = a(i.value);
+                                    const e = i(n.value);
                                     return function() {
                                         return e
                                     }
                                 }
                                 case "function": {
-                                    const n = [r, i.id],
-                                        a = h(n);
+                                    const i = [r, n.id],
+                                        a = p(i);
                                     if (void 0 !== a) return a;
-                                    const o = function(...n) {
+                                    const o = function(...i) {
                                         let a = !1;
                                         if (!e.isDestroyed()) try {
-                                            a = !1 !== e.sendToFrame(t, "REMOTE_RENDERER_CALLBACK", r, i.id, v(e, r, n))
+                                            a = !1 !== e.sendToFrame(t, "REMOTE_RENDERER_CALLBACK", r, n.id, g(e, r, i))
                                         } catch (e) {
                                             console.warn(`sendToFrame() failed: ${e}`)
                                         }
-                                        a || y(this, o)
+                                        a || b(this, o)
                                     };
-                                    return m.set(o, i.location), Object.defineProperty(o, "length", {
-                                            value: i.length
+                                    return h.set(o, n.location), Object.defineProperty(o, "length", {
+                                            value: n.length
                                         }),
                                         function(e, t, r, n) {
                                             const i = new WeakRef(n),
                                                 a = e[0] + "~" + e[1];
-                                            f.set(a, i), p.register(n, {
+                                            d.set(a, i), f.register(n, {
                                                 id: e,
                                                 webContents: t,
                                                 frameId: r
                                             })
-                                        }(n, e, t, o), o
+                                        }(i, e, t, o), o
                                 }
                                 default:
-                                    throw new TypeError(`Unknown type: ${i.type}`)
+                                    throw new TypeError(`Unknown type: ${n.type}`)
                             }
-                            var u
+                            var s
                         };
-                        return i.map(a)
+                        return n.map(i)
                     },
-                    E = new WeakMap;
+                    w = new WeakMap;
                 t.isRemoteModuleEnabled = function(e) {
-                    return l && !E.has(e) && E.set(e, function(e) {
+                    return c && !w.has(e) && w.set(e, function(e) {
                         const t = e.getLastWebPreferences() || {};
                         return null != t.enableRemoteModule && !!t.enableRemoteModule
-                    }(e)), E.get(e)
+                    }(e)), w.get(e)
                 }, t.enable = function(e) {
-                    E.set(e, !0)
+                    w.set(e, !0)
                 };
-                const x = function(e, r) {
-                        u.ipcMain.on(e, ((e, n, ...i) => {
+                const E = function(e, r) {
+                        s.ipcMain.on(e, ((e, n, ...i) => {
                             let a;
                             if (t.isRemoteModuleEnabled(e.sender)) {
                                 try {
@@ -1824,111 +1817,111 @@
                                 } catch (t) {
                                     a = {
                                         type: "exception",
-                                        value: v(e.sender, n, t)
+                                        value: g(e.sender, n, t)
                                     }
                                 }
                                 void 0 !== a && (e.returnValue = a)
                             } else e.returnValue = {
                                 type: "exception",
-                                value: v(e.sender, n, new Error('@electron/remote is disabled for this WebContents. Call require("@electron/remote/main").enable(webContents) to enable it.'))
+                                value: g(e.sender, n, new Error('@electron/remote is disabled for this WebContents. Call require("@electron/remote/main").enable(webContents) to enable it.'))
                             }
                         }))
                     },
-                    S = function(e, t, ...r) {
+                    x = function(e, t, ...r) {
                         const n = {
                             sender: e,
                             returnValue: void 0,
                             defaultPrevented: !1
                         };
-                        return u.app.emit(t, n, e, ...r), e.emit(t, n, ...r), n
+                        return s.app.emit(t, n, e, ...r), e.emit(t, n, ...r), n
                     },
-                    A = function(e, t, r) {
+                    S = function(e, t, r) {
                         r && console.warn(`WebContents (${e.id}): ${t}`, r)
                     };
-                let k = !1;
+                let A = !1;
                 t.initialize = function() {
-                    if (k) throw new Error("@electron/remote has already been initialized");
-                    k = !0, x("REMOTE_BROWSER_WRONG_CONTEXT_ERROR", (function(e, t, r, n) {
-                        const i = h([r, n]);
-                        void 0 !== i && y(e.sender, i)
-                    })), x("REMOTE_BROWSER_REQUIRE", (function(e, t, r, n) {
-                        A(e.sender, `remote.require('${r}')`, n);
-                        const i = S(e.sender, "remote-require", r);
+                    if (A) throw new Error("@electron/remote has already been initialized");
+                    A = !0, E("REMOTE_BROWSER_WRONG_CONTEXT_ERROR", (function(e, t, r, n) {
+                        const i = p([r, n]);
+                        void 0 !== i && b(e.sender, i)
+                    })), E("REMOTE_BROWSER_REQUIRE", (function(e, t, r, n) {
+                        S(e.sender, `remote.require('${r}')`, n);
+                        const i = x(e.sender, "remote-require", r);
                         if (void 0 === i.returnValue) {
                             if (i.defaultPrevented) throw new Error(`Blocked remote.require('${r}')`);
                             i.returnValue = process.mainModule.require(r)
                         }
-                        return v(e.sender, t, i.returnValue)
-                    })), x("REMOTE_BROWSER_GET_BUILTIN", (function(e, t, n, i) {
-                        A(e.sender, `remote.getBuiltin('${n}')`, i);
-                        const a = S(e.sender, "remote-get-builtin", n);
+                        return g(e.sender, t, i.returnValue)
+                    })), E("REMOTE_BROWSER_GET_BUILTIN", (function(e, t, n, i) {
+                        S(e.sender, `remote.getBuiltin('${n}')`, i);
+                        const a = x(e.sender, "remote-get-builtin", n);
                         if (void 0 === a.returnValue) {
                             if (a.defaultPrevented) throw new Error(`Blocked remote.getBuiltin('${n}')`);
                             a.returnValue = r(58933)[n]
                         }
-                        return v(e.sender, t, a.returnValue)
-                    })), x("REMOTE_BROWSER_GET_GLOBAL", (function(e, t, r, n) {
-                        A(e.sender, `remote.getGlobal('${r}')`, n);
-                        const i = S(e.sender, "remote-get-global", r);
+                        return g(e.sender, t, a.returnValue)
+                    })), E("REMOTE_BROWSER_GET_GLOBAL", (function(e, t, r, n) {
+                        S(e.sender, `remote.getGlobal('${r}')`, n);
+                        const i = x(e.sender, "remote-get-global", r);
                         if (void 0 === i.returnValue) {
                             if (i.defaultPrevented) throw new Error(`Blocked remote.getGlobal('${r}')`);
                             i.returnValue = global[r]
                         }
-                        return v(e.sender, t, i.returnValue)
-                    })), x("REMOTE_BROWSER_GET_CURRENT_WINDOW", (function(e, t, r) {
-                        A(e.sender, "remote.getCurrentWindow()", r);
-                        const n = S(e.sender, "remote-get-current-window");
+                        return g(e.sender, t, i.returnValue)
+                    })), E("REMOTE_BROWSER_GET_CURRENT_WINDOW", (function(e, t, r) {
+                        S(e.sender, "remote.getCurrentWindow()", r);
+                        const n = x(e.sender, "remote-get-current-window");
                         if (void 0 === n.returnValue) {
                             if (n.defaultPrevented) throw new Error("Blocked remote.getCurrentWindow()");
                             n.returnValue = e.sender.getOwnerBrowserWindow()
                         }
-                        return v(e.sender, t, n.returnValue)
-                    })), x("REMOTE_BROWSER_GET_CURRENT_WEB_CONTENTS", (function(e, t, r) {
-                        A(e.sender, "remote.getCurrentWebContents()", r);
-                        const n = S(e.sender, "remote-get-current-web-contents");
+                        return g(e.sender, t, n.returnValue)
+                    })), E("REMOTE_BROWSER_GET_CURRENT_WEB_CONTENTS", (function(e, t, r) {
+                        S(e.sender, "remote.getCurrentWebContents()", r);
+                        const n = x(e.sender, "remote-get-current-web-contents");
                         if (void 0 === n.returnValue) {
                             if (n.defaultPrevented) throw new Error("Blocked remote.getCurrentWebContents()");
                             n.returnValue = e.sender
                         }
-                        return v(e.sender, t, n.returnValue)
-                    })), x("REMOTE_BROWSER_CONSTRUCTOR", (function(e, t, r, n) {
-                        n = w(e.sender, e.frameId, t, n);
-                        const i = o.default.get(r);
-                        return null == i && b(`Cannot call constructor on missing remote object ${r}`), v(e.sender, t, new i(...n))
-                    })), x("REMOTE_BROWSER_FUNCTION_CALL", (function(e, t, r, n) {
-                        n = w(e.sender, e.frameId, t, n);
-                        const i = o.default.get(r);
-                        null == i && b(`Cannot call function on missing remote object ${r}`);
+                        return g(e.sender, t, n.returnValue)
+                    })), E("REMOTE_BROWSER_CONSTRUCTOR", (function(e, t, r, n) {
+                        n = y(e.sender, e.frameId, t, n);
+                        const i = a.default.get(r);
+                        return null == i && v(`Cannot call constructor on missing remote object ${r}`), g(e.sender, t, new i(...n))
+                    })), E("REMOTE_BROWSER_FUNCTION_CALL", (function(e, t, r, n) {
+                        n = y(e.sender, e.frameId, t, n);
+                        const i = a.default.get(r);
+                        null == i && v(`Cannot call function on missing remote object ${r}`);
                         try {
-                            return v(e.sender, t, i(...n), !0)
+                            return g(e.sender, t, i(...n), !0)
                         } catch (e) {
                             const t = new Error(`Could not call remote function '${i.name||"anonymous"}'. Check that the function signature is correct. Underlying error: ${e.message}\nUnderlying stack: ${e.stack}\n`);
                             throw t.cause = e, t
                         }
-                    })), x("REMOTE_BROWSER_MEMBER_CONSTRUCTOR", (function(e, t, r, n, i) {
-                        i = w(e.sender, e.frameId, t, i);
-                        const a = o.default.get(r);
-                        return null == a && b(`Cannot call constructor '${n}' on missing remote object ${r}`), v(e.sender, t, new a[n](...i))
-                    })), x("REMOTE_BROWSER_MEMBER_CALL", (function(e, t, r, n, i) {
-                        i = w(e.sender, e.frameId, t, i);
-                        const a = o.default.get(r);
-                        null == a && b(`Cannot call method '${n}' on missing remote object ${r}`);
+                    })), E("REMOTE_BROWSER_MEMBER_CONSTRUCTOR", (function(e, t, r, n, i) {
+                        i = y(e.sender, e.frameId, t, i);
+                        const o = a.default.get(r);
+                        return null == o && v(`Cannot call constructor '${n}' on missing remote object ${r}`), g(e.sender, t, new o[n](...i))
+                    })), E("REMOTE_BROWSER_MEMBER_CALL", (function(e, t, r, n, i) {
+                        i = y(e.sender, e.frameId, t, i);
+                        const o = a.default.get(r);
+                        null == o && v(`Cannot call method '${n}' on missing remote object ${r}`);
                         try {
-                            return v(e.sender, t, a[n](...i), !0)
+                            return g(e.sender, t, o[n](...i), !0)
                         } catch (e) {
                             const t = new Error(`Could not call remote method '${n}'. Check that the method signature is correct. Underlying error: ${e.message}\nUnderlying stack: ${e.stack}\n`);
                             throw t.cause = e, t
                         }
-                    })), x("REMOTE_BROWSER_MEMBER_SET", (function(e, t, r, n, i) {
-                        i = w(e.sender, e.frameId, t, i);
-                        const a = o.default.get(r);
-                        return null == a && b(`Cannot set property '${n}' on missing remote object ${r}`), a[n] = i[0], null
-                    })), x("REMOTE_BROWSER_MEMBER_GET", (function(e, t, r, n) {
-                        const i = o.default.get(r);
-                        return null == i && b(`Cannot get property '${n}' on missing remote object ${r}`), v(e.sender, t, i[n])
-                    })), x("REMOTE_BROWSER_DEREFERENCE", (function(e, t, r) {
-                        o.default.remove(e.sender, t, r)
-                    })), x("REMOTE_BROWSER_CONTEXT_RELEASE", ((e, t) => (o.default.clear(e.sender, t), null)))
+                    })), E("REMOTE_BROWSER_MEMBER_SET", (function(e, t, r, n, i) {
+                        i = y(e.sender, e.frameId, t, i);
+                        const o = a.default.get(r);
+                        return null == o && v(`Cannot set property '${n}' on missing remote object ${r}`), o[n] = i[0], null
+                    })), E("REMOTE_BROWSER_MEMBER_GET", (function(e, t, r, n) {
+                        const i = a.default.get(r);
+                        return null == i && v(`Cannot get property '${n}' on missing remote object ${r}`), g(e.sender, t, i[n])
+                    })), E("REMOTE_BROWSER_DEREFERENCE", (function(e, t, r) {
+                        a.default.remove(e.sender, t, r)
+                    })), E("REMOTE_BROWSER_CONTEXT_RELEASE", ((e, t) => (a.default.clear(e.sender, t), null)))
                 }
             },
             37813: (e, t, r) => {
@@ -10033,9 +10026,9 @@
             },
             53274: (e, t, r) => {
                 "use strict";
-                var n, i = r(36953).default;
+                var n;
 
-                function a(e, t, r) {
+                function i(e, t, r) {
                     return t in e ? Object.defineProperty(e, t, {
                         value: r,
                         enumerable: !0,
@@ -10043,104 +10036,104 @@
                         writable: !0
                     }) : e[t] = r, e
                 }
-                var o = r(10201),
-                    s = Symbol("lastResolve"),
-                    u = Symbol("lastReject"),
-                    c = Symbol("error"),
-                    l = Symbol("ended"),
-                    d = Symbol("lastPromise"),
-                    f = Symbol("handlePromise"),
-                    p = Symbol("stream");
+                var a = r(10201),
+                    o = Symbol("lastResolve"),
+                    s = Symbol("lastReject"),
+                    u = Symbol("error"),
+                    c = Symbol("ended"),
+                    l = Symbol("lastPromise"),
+                    d = Symbol("handlePromise"),
+                    f = Symbol("stream");
 
-                function h(e, t) {
+                function p(e, t) {
                     return {
                         value: e,
                         done: t
                     }
                 }
 
-                function m(e) {
-                    var t = e[s];
+                function h(e) {
+                    var t = e[o];
                     if (null !== t) {
-                        var r = e[p].read();
-                        null !== r && (e[d] = null, e[s] = null, e[u] = null, t(h(r, !1)))
+                        var r = e[f].read();
+                        null !== r && (e[l] = null, e[o] = null, e[s] = null, t(p(r, !1)))
                     }
                 }
 
-                function _(e) {
-                    process.nextTick(m, e)
+                function m(e) {
+                    process.nextTick(h, e)
                 }
-                var g = Object.getPrototypeOf((function() {})),
-                    v = Object.setPrototypeOf((a(n = {
+                var _ = Object.getPrototypeOf((function() {})),
+                    g = Object.setPrototypeOf((i(n = {
                         get stream() {
-                            return this[p]
+                            return this[f]
                         },
                         next: function() {
                             var e = this,
-                                t = this[c];
-                            if (null !== t) return i.reject(t);
-                            if (this[l]) return i.resolve(h(void 0, !0));
-                            if (this[p].destroyed) return new i((function(t, r) {
+                                t = this[u];
+                            if (null !== t) return Promise.reject(t);
+                            if (this[c]) return Promise.resolve(p(void 0, !0));
+                            if (this[f].destroyed) return new Promise((function(t, r) {
                                 process.nextTick((function() {
-                                    e[c] ? r(e[c]) : t(h(void 0, !0))
+                                    e[u] ? r(e[u]) : t(p(void 0, !0))
                                 }))
                             }));
-                            var r, n = this[d];
-                            if (n) r = new i(function(e, t) {
+                            var r, n = this[l];
+                            if (n) r = new Promise(function(e, t) {
                                 return function(r, n) {
                                     e.then((function() {
-                                        t[l] ? r(h(void 0, !0)) : t[f](r, n)
+                                        t[c] ? r(p(void 0, !0)) : t[d](r, n)
                                     }), n)
                                 }
                             }(n, this));
                             else {
-                                var a = this[p].read();
-                                if (null !== a) return i.resolve(h(a, !1));
-                                r = new i(this[f])
+                                var i = this[f].read();
+                                if (null !== i) return Promise.resolve(p(i, !1));
+                                r = new Promise(this[d])
                             }
-                            return this[d] = r, r
+                            return this[l] = r, r
                         }
                     }, Symbol.asyncIterator, (function() {
                         return this
-                    })), a(n, "return", (function() {
+                    })), i(n, "return", (function() {
                         var e = this;
-                        return new i((function(t, r) {
-                            e[p].destroy(null, (function(e) {
-                                e ? r(e) : t(h(void 0, !0))
+                        return new Promise((function(t, r) {
+                            e[f].destroy(null, (function(e) {
+                                e ? r(e) : t(p(void 0, !0))
                             }))
                         }))
-                    })), n), g);
+                    })), n), _);
                 e.exports = function(e) {
-                    var t, r = Object.create(v, (a(t = {}, p, {
+                    var t, r = Object.create(g, (i(t = {}, f, {
                         value: e,
                         writable: !0
-                    }), a(t, s, {
+                    }), i(t, o, {
                         value: null,
                         writable: !0
-                    }), a(t, u, {
+                    }), i(t, s, {
                         value: null,
                         writable: !0
-                    }), a(t, c, {
+                    }), i(t, u, {
                         value: null,
                         writable: !0
-                    }), a(t, l, {
+                    }), i(t, c, {
                         value: e._readableState.endEmitted,
                         writable: !0
-                    }), a(t, f, {
+                    }), i(t, d, {
                         value: function(e, t) {
-                            var n = r[p].read();
-                            n ? (r[d] = null, r[s] = null, r[u] = null, e(h(n, !1))) : (r[s] = e, r[u] = t)
+                            var n = r[f].read();
+                            n ? (r[l] = null, r[o] = null, r[s] = null, e(p(n, !1))) : (r[o] = e, r[s] = t)
                         },
                         writable: !0
                     }), t));
-                    return r[d] = null, o(e, (function(e) {
+                    return r[l] = null, a(e, (function(e) {
                         if (e && "ERR_STREAM_PREMATURE_CLOSE" !== e.code) {
-                            var t = r[u];
-                            return null !== t && (r[d] = null, r[s] = null, r[u] = null, t(e)), void(r[c] = e)
+                            var t = r[s];
+                            return null !== t && (r[l] = null, r[o] = null, r[s] = null, t(e)), void(r[u] = e)
                         }
-                        var n = r[s];
-                        null !== n && (r[d] = null, r[s] = null, r[u] = null, n(h(void 0, !0))), r[l] = !0
-                    })), e.on("readable", _.bind(null, r)), r
+                        var n = r[o];
+                        null !== n && (r[l] = null, r[o] = null, r[s] = null, n(p(void 0, !0))), r[c] = !0
+                    })), e.on("readable", m.bind(null, r)), r
                 }
             },
             61431: (e, t, r) => {
@@ -10374,38 +10367,37 @@
             },
             15108: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default;
 
-                function i(e, t, r, i, a, o, s) {
+                function n(e, t, r, n, i, a, o) {
                     try {
-                        var u = e[o](s),
-                            c = u.value
+                        var s = e[a](o),
+                            u = s.value
                     } catch (e) {
                         return void r(e)
                     }
-                    u.done ? t(c) : n.resolve(c).then(i, a)
+                    s.done ? t(u) : Promise.resolve(u).then(n, i)
                 }
 
-                function a(e) {
+                function i(e) {
                     return function() {
                         var t = this,
                             r = arguments;
-                        return new n((function(n, a) {
+                        return new Promise((function(i, a) {
                             var o = e.apply(t, r);
 
                             function s(e) {
-                                i(o, n, a, s, u, "next", e)
+                                n(o, i, a, s, u, "next", e)
                             }
 
                             function u(e) {
-                                i(o, n, a, s, u, "throw", e)
+                                n(o, i, a, s, u, "throw", e)
                             }
                             s(void 0)
                         }))
                     }
                 }
 
-                function o(e, t) {
+                function a(e, t) {
                     var r = Object.keys(e);
                     if (Object.getOwnPropertySymbols) {
                         var n = Object.getOwnPropertySymbols(e);
@@ -10416,7 +10408,7 @@
                     return r
                 }
 
-                function s(e, t, r) {
+                function o(e, t, r) {
                     return t in e ? Object.defineProperty(e, t, {
                         value: r,
                         enumerable: !0,
@@ -10424,21 +10416,21 @@
                         writable: !0
                     }) : e[t] = r, e
                 }
-                var u = r(82624).q.ERR_INVALID_ARG_TYPE;
+                var s = r(82624).q.ERR_INVALID_ARG_TYPE;
                 e.exports = function(e, t, r) {
                     var n;
                     if (t && "function" == typeof t.next) n = t;
                     else if (t && t[Symbol.asyncIterator]) n = t[Symbol.asyncIterator]();
                     else {
-                        if (!t || !t[Symbol.iterator]) throw new u("iterable", ["Iterable"], t);
+                        if (!t || !t[Symbol.iterator]) throw new s("iterable", ["Iterable"], t);
                         n = t[Symbol.iterator]()
                     }
-                    var i = new e(function(e) {
+                    var u = new e(function(e) {
                             for (var t = 1; t < arguments.length; t++) {
                                 var r = null != arguments[t] ? arguments[t] : {};
-                                t % 2 ? o(Object(r), !0).forEach((function(t) {
-                                    s(e, t, r[t])
-                                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : o(Object(r)).forEach((function(t) {
+                                t % 2 ? a(Object(r), !0).forEach((function(t) {
+                                    o(e, t, r[t])
+                                })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(r)) : a(Object(r)).forEach((function(t) {
                                     Object.defineProperty(e, t, Object.getOwnPropertyDescriptor(r, t))
                                 }))
                             }
@@ -10453,18 +10445,18 @@
                     }
 
                     function d() {
-                        return (d = a((function*() {
+                        return (d = i((function*() {
                             try {
                                 var e = yield n.next(), t = e.value;
-                                e.done ? i.push(null) : i.push(yield t) ? l() : c = !1
+                                e.done ? u.push(null) : u.push(yield t) ? l() : c = !1
                             } catch (e) {
-                                i.destroy(e)
+                                u.destroy(e)
                             }
                         }))).apply(this, arguments)
                     }
-                    return i._read = function() {
+                    return u._read = function() {
                         c || (c = !0, l())
-                    }, i
+                    }, u
                 }
             },
             44750: (e, t, r) => {
@@ -11146,31 +11138,29 @@
                     return e
                 }, e.exports.default = e.exports, e.exports.__esModule = !0
             },
-            48926: (e, t, r) => {
-                var n = r(36953).default;
-
-                function i(e, t, r, i, a, o, s) {
+            48926: e => {
+                function t(e, t, r, n, i, a, o) {
                     try {
-                        var u = e[o](s),
-                            c = u.value
+                        var s = e[a](o),
+                            u = s.value
                     } catch (e) {
                         return void r(e)
                     }
-                    u.done ? t(c) : n.resolve(c).then(i, a)
+                    s.done ? t(u) : Promise.resolve(u).then(n, i)
                 }
                 e.exports = function(e) {
                     return function() {
-                        var t = this,
-                            r = arguments;
-                        return new n((function(n, a) {
-                            var o = e.apply(t, r);
+                        var r = this,
+                            n = arguments;
+                        return new Promise((function(i, a) {
+                            var o = e.apply(r, n);
 
                             function s(e) {
-                                i(o, n, a, s, u, "next", e)
+                                t(o, i, a, s, u, "next", e)
                             }
 
                             function u(e) {
-                                i(o, n, a, s, u, "throw", e)
+                                t(o, i, a, s, u, "throw", e)
                             }
                             s(void 0)
                         }))
@@ -11397,323 +11387,322 @@
                     }
                 }, e.exports.default = e.exports, e.exports.__esModule = !0
             },
-            61553: (e, t, r) => {
-                var n = r(36953).default,
-                    i = function(e) {
-                        "use strict";
-                        var t, r = Object.prototype,
-                            i = r.hasOwnProperty,
-                            a = "function" == typeof Symbol ? Symbol : {},
-                            o = a.iterator || "@@iterator",
-                            s = a.asyncIterator || "@@asyncIterator",
-                            u = a.toStringTag || "@@toStringTag";
+            61553: e => {
+                var t = function(e) {
+                    "use strict";
+                    var t, r = Object.prototype,
+                        n = r.hasOwnProperty,
+                        i = "function" == typeof Symbol ? Symbol : {},
+                        a = i.iterator || "@@iterator",
+                        o = i.asyncIterator || "@@asyncIterator",
+                        s = i.toStringTag || "@@toStringTag";
 
-                        function c(e, t, r) {
-                            return Object.defineProperty(e, t, {
-                                value: r,
-                                enumerable: !0,
-                                configurable: !0,
-                                writable: !0
-                            }), e[t]
+                    function u(e, t, r) {
+                        return Object.defineProperty(e, t, {
+                            value: r,
+                            enumerable: !0,
+                            configurable: !0,
+                            writable: !0
+                        }), e[t]
+                    }
+                    try {
+                        u({}, "")
+                    } catch (e) {
+                        u = function(e, t, r) {
+                            return e[t] = r
                         }
+                    }
+
+                    function c(e, t, r, n) {
+                        var i = t && t.prototype instanceof _ ? t : _,
+                            a = Object.create(i.prototype),
+                            o = new T(n || []);
+                        return a._invoke = function(e, t, r) {
+                            var n = d;
+                            return function(i, a) {
+                                if (n === p) throw new Error("Generator is already running");
+                                if (n === h) {
+                                    if ("throw" === i) throw a;
+                                    return N()
+                                }
+                                for (r.method = i, r.arg = a;;) {
+                                    var o = r.delegate;
+                                    if (o) {
+                                        var s = A(o, r);
+                                        if (s) {
+                                            if (s === m) continue;
+                                            return s
+                                        }
+                                    }
+                                    if ("next" === r.method) r.sent = r._sent = r.arg;
+                                    else if ("throw" === r.method) {
+                                        if (n === d) throw n = h, r.arg;
+                                        r.dispatchException(r.arg)
+                                    } else "return" === r.method && r.abrupt("return", r.arg);
+                                    n = p;
+                                    var u = l(e, t, r);
+                                    if ("normal" === u.type) {
+                                        if (n = r.done ? h : f, u.arg === m) continue;
+                                        return {
+                                            value: u.arg,
+                                            done: r.done
+                                        }
+                                    }
+                                    "throw" === u.type && (n = h, r.method = "throw", r.arg = u.arg)
+                                }
+                            }
+                        }(e, r, o), a
+                    }
+
+                    function l(e, t, r) {
                         try {
-                            c({}, "")
+                            return {
+                                type: "normal",
+                                arg: e.call(t, r)
+                            }
                         } catch (e) {
-                            c = function(e, t, r) {
-                                return e[t] = r
+                            return {
+                                type: "throw",
+                                arg: e
                             }
                         }
+                    }
+                    e.wrap = c;
+                    var d = "suspendedStart",
+                        f = "suspendedYield",
+                        p = "executing",
+                        h = "completed",
+                        m = {};
 
-                        function l(e, t, r, n) {
-                            var i = t && t.prototype instanceof g ? t : g,
-                                a = Object.create(i.prototype),
-                                o = new C(n || []);
-                            return a._invoke = function(e, t, r) {
-                                var n = f;
-                                return function(i, a) {
-                                    if (n === h) throw new Error("Generator is already running");
-                                    if (n === m) {
-                                        if ("throw" === i) throw a;
-                                        return M()
-                                    }
-                                    for (r.method = i, r.arg = a;;) {
-                                        var o = r.delegate;
-                                        if (o) {
-                                            var s = k(o, r);
-                                            if (s) {
-                                                if (s === _) continue;
-                                                return s
-                                            }
-                                        }
-                                        if ("next" === r.method) r.sent = r._sent = r.arg;
-                                        else if ("throw" === r.method) {
-                                            if (n === f) throw n = m, r.arg;
-                                            r.dispatchException(r.arg)
-                                        } else "return" === r.method && r.abrupt("return", r.arg);
-                                        n = h;
-                                        var u = d(e, t, r);
-                                        if ("normal" === u.type) {
-                                            if (n = r.done ? m : p, u.arg === _) continue;
-                                            return {
-                                                value: u.arg,
-                                                done: r.done
-                                            }
-                                        }
-                                        "throw" === u.type && (n = m, r.method = "throw", r.arg = u.arg)
-                                    }
-                                }
-                            }(e, r, o), a
-                        }
+                    function _() {}
 
-                        function d(e, t, r) {
-                            try {
-                                return {
-                                    type: "normal",
-                                    arg: e.call(t, r)
-                                }
-                            } catch (e) {
-                                return {
-                                    type: "throw",
-                                    arg: e
-                                }
-                            }
-                        }
-                        e.wrap = l;
-                        var f = "suspendedStart",
-                            p = "suspendedYield",
-                            h = "executing",
-                            m = "completed",
-                            _ = {};
+                    function g() {}
 
-                        function g() {}
+                    function v() {}
+                    var b = {};
+                    u(b, a, (function() {
+                        return this
+                    }));
+                    var y = Object.getPrototypeOf,
+                        w = y && y(y(C([])));
+                    w && w !== r && n.call(w, a) && (b = w);
+                    var E = v.prototype = _.prototype = Object.create(b);
 
-                        function v() {}
+                    function x(e) {
+                        ["next", "throw", "return"].forEach((function(t) {
+                            u(e, t, (function(e) {
+                                return this._invoke(t, e)
+                            }))
+                        }))
+                    }
 
-                        function b() {}
-                        var y = {};
-                        c(y, o, (function() {
-                            return this
-                        }));
-                        var w = Object.getPrototypeOf,
-                            E = w && w(w(N([])));
-                        E && E !== r && i.call(E, o) && (y = E);
-                        var x = b.prototype = g.prototype = Object.create(y);
-
-                        function S(e) {
-                            ["next", "throw", "return"].forEach((function(t) {
-                                c(e, t, (function(e) {
-                                    return this._invoke(t, e)
+                    function S(e, t) {
+                        function r(i, a, o, s) {
+                            var u = l(e[i], e, a);
+                            if ("throw" !== u.type) {
+                                var c = u.arg,
+                                    d = c.value;
+                                return d && "object" == typeof d && n.call(d, "__await") ? t.resolve(d.__await).then((function(e) {
+                                    r("next", e, o, s)
+                                }), (function(e) {
+                                    r("throw", e, o, s)
+                                })) : t.resolve(d).then((function(e) {
+                                    c.value = e, o(c)
+                                }), (function(e) {
+                                    return r("throw", e, o, s)
                                 }))
-                            }))
+                            }
+                            s(u.arg)
                         }
+                        var i;
+                        this._invoke = function(e, n) {
+                            function a() {
+                                return new t((function(t, i) {
+                                    r(e, n, t, i)
+                                }))
+                            }
+                            return i = i ? i.then(a, a) : a()
+                        }
+                    }
 
-                        function A(e, t) {
-                            function r(n, a, o, s) {
-                                var u = d(e[n], e, a);
-                                if ("throw" !== u.type) {
-                                    var c = u.arg,
-                                        l = c.value;
-                                    return l && "object" == typeof l && i.call(l, "__await") ? t.resolve(l.__await).then((function(e) {
-                                        r("next", e, o, s)
-                                    }), (function(e) {
-                                        r("throw", e, o, s)
-                                    })) : t.resolve(l).then((function(e) {
-                                        c.value = e, o(c)
-                                    }), (function(e) {
-                                        return r("throw", e, o, s)
-                                    }))
+                    function A(e, r) {
+                        var n = e.iterator[r.method];
+                        if (n === t) {
+                            if (r.delegate = null, "throw" === r.method) {
+                                if (e.iterator.return && (r.method = "return", r.arg = t, A(e, r), "throw" === r.method)) return m;
+                                r.method = "throw", r.arg = new TypeError("The iterator does not provide a 'throw' method")
+                            }
+                            return m
+                        }
+                        var i = l(n, e.iterator, r.arg);
+                        if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, m;
+                        var a = i.arg;
+                        return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, m) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, m)
+                    }
+
+                    function k(e) {
+                        var t = {
+                            tryLoc: e[0]
+                        };
+                        1 in e && (t.catchLoc = e[1]), 2 in e && (t.finallyLoc = e[2], t.afterLoc = e[3]), this.tryEntries.push(t)
+                    }
+
+                    function O(e) {
+                        var t = e.completion || {};
+                        t.type = "normal", delete t.arg, e.completion = t
+                    }
+
+                    function T(e) {
+                        this.tryEntries = [{
+                            tryLoc: "root"
+                        }], e.forEach(k, this), this.reset(!0)
+                    }
+
+                    function C(e) {
+                        if (e) {
+                            var r = e[a];
+                            if (r) return r.call(e);
+                            if ("function" == typeof e.next) return e;
+                            if (!isNaN(e.length)) {
+                                var i = -1,
+                                    o = function r() {
+                                        for (; ++i < e.length;)
+                                            if (n.call(e, i)) return r.value = e[i], r.done = !1, r;
+                                        return r.value = t, r.done = !0, r
+                                    };
+                                return o.next = o
+                            }
+                        }
+                        return {
+                            next: N
+                        }
+                    }
+
+                    function N() {
+                        return {
+                            value: t,
+                            done: !0
+                        }
+                    }
+                    return g.prototype = v, u(E, "constructor", v), u(v, "constructor", g), g.displayName = u(v, s, "GeneratorFunction"), e.isGeneratorFunction = function(e) {
+                        var t = "function" == typeof e && e.constructor;
+                        return !!t && (t === g || "GeneratorFunction" === (t.displayName || t.name))
+                    }, e.mark = function(e) {
+                        return Object.setPrototypeOf ? Object.setPrototypeOf(e, v) : (e.__proto__ = v, u(e, s, "GeneratorFunction")), e.prototype = Object.create(E), e
+                    }, e.awrap = function(e) {
+                        return {
+                            __await: e
+                        }
+                    }, x(S.prototype), u(S.prototype, o, (function() {
+                        return this
+                    })), e.AsyncIterator = S, e.async = function(t, r, n, i, a) {
+                        void 0 === a && (a = Promise);
+                        var o = new S(c(t, r, n, i), a);
+                        return e.isGeneratorFunction(r) ? o : o.next().then((function(e) {
+                            return e.done ? e.value : o.next()
+                        }))
+                    }, x(E), u(E, s, "Generator"), u(E, a, (function() {
+                        return this
+                    })), u(E, "toString", (function() {
+                        return "[object Generator]"
+                    })), e.keys = function(e) {
+                        var t = [];
+                        for (var r in e) t.push(r);
+                        return t.reverse(),
+                            function r() {
+                                for (; t.length;) {
+                                    var n = t.pop();
+                                    if (n in e) return r.value = n, r.done = !1, r
                                 }
-                                s(u.arg)
+                                return r.done = !0, r
                             }
-                            var n;
-                            this._invoke = function(e, i) {
-                                function a() {
-                                    return new t((function(t, n) {
-                                        r(e, i, t, n)
-                                    }))
-                                }
-                                return n = n ? n.then(a, a) : a()
+                    }, e.values = C, T.prototype = {
+                        constructor: T,
+                        reset: function(e) {
+                            if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(O), !e)
+                                for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t)
+                        },
+                        stop: function() {
+                            this.done = !0;
+                            var e = this.tryEntries[0].completion;
+                            if ("throw" === e.type) throw e.arg;
+                            return this.rval
+                        },
+                        dispatchException: function(e) {
+                            if (this.done) throw e;
+                            var r = this;
+
+                            function i(n, i) {
+                                return s.type = "throw", s.arg = e, r.next = n, i && (r.method = "next", r.arg = t), !!i
                             }
-                        }
-
-                        function k(e, r) {
-                            var n = e.iterator[r.method];
-                            if (n === t) {
-                                if (r.delegate = null, "throw" === r.method) {
-                                    if (e.iterator.return && (r.method = "return", r.arg = t, k(e, r), "throw" === r.method)) return _;
-                                    r.method = "throw", r.arg = new TypeError("The iterator does not provide a 'throw' method")
-                                }
-                                return _
-                            }
-                            var i = d(n, e.iterator, r.arg);
-                            if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, _;
-                            var a = i.arg;
-                            return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, _) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, _)
-                        }
-
-                        function O(e) {
-                            var t = {
-                                tryLoc: e[0]
-                            };
-                            1 in e && (t.catchLoc = e[1]), 2 in e && (t.finallyLoc = e[2], t.afterLoc = e[3]), this.tryEntries.push(t)
-                        }
-
-                        function T(e) {
-                            var t = e.completion || {};
-                            t.type = "normal", delete t.arg, e.completion = t
-                        }
-
-                        function C(e) {
-                            this.tryEntries = [{
-                                tryLoc: "root"
-                            }], e.forEach(O, this), this.reset(!0)
-                        }
-
-                        function N(e) {
-                            if (e) {
-                                var r = e[o];
-                                if (r) return r.call(e);
-                                if ("function" == typeof e.next) return e;
-                                if (!isNaN(e.length)) {
-                                    var n = -1,
-                                        a = function r() {
-                                            for (; ++n < e.length;)
-                                                if (i.call(e, n)) return r.value = e[n], r.done = !1, r;
-                                            return r.value = t, r.done = !0, r
-                                        };
-                                    return a.next = a
-                                }
-                            }
-                            return {
-                                next: M
-                            }
-                        }
-
-                        function M() {
-                            return {
-                                value: t,
-                                done: !0
-                            }
-                        }
-                        return v.prototype = b, c(x, "constructor", b), c(b, "constructor", v), v.displayName = c(b, u, "GeneratorFunction"), e.isGeneratorFunction = function(e) {
-                            var t = "function" == typeof e && e.constructor;
-                            return !!t && (t === v || "GeneratorFunction" === (t.displayName || t.name))
-                        }, e.mark = function(e) {
-                            return Object.setPrototypeOf ? Object.setPrototypeOf(e, b) : (e.__proto__ = b, c(e, u, "GeneratorFunction")), e.prototype = Object.create(x), e
-                        }, e.awrap = function(e) {
-                            return {
-                                __await: e
-                            }
-                        }, S(A.prototype), c(A.prototype, s, (function() {
-                            return this
-                        })), e.AsyncIterator = A, e.async = function(t, r, i, a, o) {
-                            void 0 === o && (o = n);
-                            var s = new A(l(t, r, i, a), o);
-                            return e.isGeneratorFunction(r) ? s : s.next().then((function(e) {
-                                return e.done ? e.value : s.next()
-                            }))
-                        }, S(x), c(x, u, "Generator"), c(x, o, (function() {
-                            return this
-                        })), c(x, "toString", (function() {
-                            return "[object Generator]"
-                        })), e.keys = function(e) {
-                            var t = [];
-                            for (var r in e) t.push(r);
-                            return t.reverse(),
-                                function r() {
-                                    for (; t.length;) {
-                                        var n = t.pop();
-                                        if (n in e) return r.value = n, r.done = !1, r
-                                    }
-                                    return r.done = !0, r
-                                }
-                        }, e.values = N, C.prototype = {
-                            constructor: C,
-                            reset: function(e) {
-                                if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(T), !e)
-                                    for (var r in this) "t" === r.charAt(0) && i.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t)
-                            },
-                            stop: function() {
-                                this.done = !0;
-                                var e = this.tryEntries[0].completion;
-                                if ("throw" === e.type) throw e.arg;
-                                return this.rval
-                            },
-                            dispatchException: function(e) {
-                                if (this.done) throw e;
-                                var r = this;
-
-                                function n(n, i) {
-                                    return s.type = "throw", s.arg = e, r.next = n, i && (r.method = "next", r.arg = t), !!i
-                                }
-                                for (var a = this.tryEntries.length - 1; a >= 0; --a) {
-                                    var o = this.tryEntries[a],
-                                        s = o.completion;
-                                    if ("root" === o.tryLoc) return n("end");
-                                    if (o.tryLoc <= this.prev) {
-                                        var u = i.call(o, "catchLoc"),
-                                            c = i.call(o, "finallyLoc");
-                                        if (u && c) {
-                                            if (this.prev < o.catchLoc) return n(o.catchLoc, !0);
-                                            if (this.prev < o.finallyLoc) return n(o.finallyLoc)
-                                        } else if (u) {
-                                            if (this.prev < o.catchLoc) return n(o.catchLoc, !0)
-                                        } else {
-                                            if (!c) throw new Error("try statement without catch or finally");
-                                            if (this.prev < o.finallyLoc) return n(o.finallyLoc)
-                                        }
+                            for (var a = this.tryEntries.length - 1; a >= 0; --a) {
+                                var o = this.tryEntries[a],
+                                    s = o.completion;
+                                if ("root" === o.tryLoc) return i("end");
+                                if (o.tryLoc <= this.prev) {
+                                    var u = n.call(o, "catchLoc"),
+                                        c = n.call(o, "finallyLoc");
+                                    if (u && c) {
+                                        if (this.prev < o.catchLoc) return i(o.catchLoc, !0);
+                                        if (this.prev < o.finallyLoc) return i(o.finallyLoc)
+                                    } else if (u) {
+                                        if (this.prev < o.catchLoc) return i(o.catchLoc, !0)
+                                    } else {
+                                        if (!c) throw new Error("try statement without catch or finally");
+                                        if (this.prev < o.finallyLoc) return i(o.finallyLoc)
                                     }
                                 }
-                            },
-                            abrupt: function(e, t) {
-                                for (var r = this.tryEntries.length - 1; r >= 0; --r) {
-                                    var n = this.tryEntries[r];
-                                    if (n.tryLoc <= this.prev && i.call(n, "finallyLoc") && this.prev < n.finallyLoc) {
-                                        var a = n;
-                                        break
-                                    }
-                                }
-                                a && ("break" === e || "continue" === e) && a.tryLoc <= t && t <= a.finallyLoc && (a = null);
-                                var o = a ? a.completion : {};
-                                return o.type = e, o.arg = t, a ? (this.method = "next", this.next = a.finallyLoc, _) : this.complete(o)
-                            },
-                            complete: function(e, t) {
-                                if ("throw" === e.type) throw e.arg;
-                                return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg, this.method = "return", this.next = "end") : "normal" === e.type && t && (this.next = t), _
-                            },
-                            finish: function(e) {
-                                for (var t = this.tryEntries.length - 1; t >= 0; --t) {
-                                    var r = this.tryEntries[t];
-                                    if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), T(r), _
-                                }
-                            },
-                            catch: function(e) {
-                                for (var t = this.tryEntries.length - 1; t >= 0; --t) {
-                                    var r = this.tryEntries[t];
-                                    if (r.tryLoc === e) {
-                                        var n = r.completion;
-                                        if ("throw" === n.type) {
-                                            var i = n.arg;
-                                            T(r)
-                                        }
-                                        return i
-                                    }
-                                }
-                                throw new Error("illegal catch attempt")
-                            },
-                            delegateYield: function(e, r, n) {
-                                return this.delegate = {
-                                    iterator: N(e),
-                                    resultName: r,
-                                    nextLoc: n
-                                }, "next" === this.method && (this.arg = t), _
                             }
-                        }, e
-                    }(e.exports);
+                        },
+                        abrupt: function(e, t) {
+                            for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+                                var i = this.tryEntries[r];
+                                if (i.tryLoc <= this.prev && n.call(i, "finallyLoc") && this.prev < i.finallyLoc) {
+                                    var a = i;
+                                    break
+                                }
+                            }
+                            a && ("break" === e || "continue" === e) && a.tryLoc <= t && t <= a.finallyLoc && (a = null);
+                            var o = a ? a.completion : {};
+                            return o.type = e, o.arg = t, a ? (this.method = "next", this.next = a.finallyLoc, m) : this.complete(o)
+                        },
+                        complete: function(e, t) {
+                            if ("throw" === e.type) throw e.arg;
+                            return "break" === e.type || "continue" === e.type ? this.next = e.arg : "return" === e.type ? (this.rval = this.arg = e.arg, this.method = "return", this.next = "end") : "normal" === e.type && t && (this.next = t), m
+                        },
+                        finish: function(e) {
+                            for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+                                var r = this.tryEntries[t];
+                                if (r.finallyLoc === e) return this.complete(r.completion, r.afterLoc), O(r), m
+                            }
+                        },
+                        catch: function(e) {
+                            for (var t = this.tryEntries.length - 1; t >= 0; --t) {
+                                var r = this.tryEntries[t];
+                                if (r.tryLoc === e) {
+                                    var n = r.completion;
+                                    if ("throw" === n.type) {
+                                        var i = n.arg;
+                                        O(r)
+                                    }
+                                    return i
+                                }
+                            }
+                            throw new Error("illegal catch attempt")
+                        },
+                        delegateYield: function(e, r, n) {
+                            return this.delegate = {
+                                iterator: C(e),
+                                resultName: r,
+                                nextLoc: n
+                            }, "next" === this.method && (this.arg = t), m
+                        }
+                    }, e
+                }(e.exports);
                 try {
-                    regeneratorRuntime = i
+                    regeneratorRuntime = t
                 } catch (e) {
-                    "object" == typeof globalThis ? globalThis.regeneratorRuntime = i : Function("r", "regeneratorRuntime = r")(i)
+                    "object" == typeof globalThis ? globalThis.regeneratorRuntime = t : Function("r", "regeneratorRuntime = r")(t)
                 }
             },
             87757: (e, t, r) => {
@@ -20680,13 +20669,13 @@
                     }
                 }("object" == typeof window ? window : this)
             },
-            45707: (e, t, r) => {
+            24041: (e, t, r) => {
                 "use strict";
                 r.r(t), r.d(t, {
                     default: () => n
                 });
                 const n = [
-                    ["", "Open the product context menu", "Turn off send as sticker", "Turn on send as sticker", "__count__ @ message", "Changing __count__ label", "The label could not be updated", "__count__ label changed", "Couldn't block __participant__", "__participant__ blocked", "Blocking __participant__", "Couldn't delete broadcast list.", "Broadcast list deleted", "Deleting broadcast list", "Couldn't archive chat.", "Chat archived", "Archiving chat", "Couldn't clear chat.", "Chat cleared", "Clearing chat", "Couldn't delete chat.", "Chat deleted", "Deleting chat", "Couldn't mark chat as read.", "Couldn't mark chat as unread.", "Marked as read", "Marked as unread", "Marking as read", "Marking as unread", "Couldn't mute chat.", "Chat muted", "Muting chat", "Couldn't pin chat", "You can only pin up to 3 chats.", "Chat pinned", "Pinning chat", "Couldn't unarchive chat.", "Chat unarchived", "Unarchiving chat", "Unmute", "Couldn't unmute chat.", "Chat unmuted", "Unmuting chat", "Couldn't unpin chat", "Chat unpinned", "Unpinning chat", "Couldn't create group.", "Please enter a shorter subject.", "Can't add more than __max__ participants", "Created group", "Creating group", "Couldn't delete group.", "Group deleted", "Deleting group", "Couldn't exit group.", "Exited group", "Exiting group", "Couldn't remove group icon.", "Group icon removed", "Removing group icon", "Group icon set", "Couldn't set group icon.", "Setting group icon", "Couldn't mute group.", "Group muted", "Muting group", "Couldn't rename group.", "Group renamed to __subject__", "Renaming group", "Group subject can't be empty", "Couldn't unmute group.", "Group unmuted", "Unmuting group", "Marking as not spam", "Couldn't mark as not spam", "Marked as not spam", "Couldn't delete message because the message may have expired", "Couldn't delete message", "__count__ message deleted", "Deleting message", "Couldn't star message because the message may have expired", "Couldn't star message", "__count__ message starred", "Starring message", "Couldn't unstar all messages", "Couldn't unstar message because the message may have expired", "Couldn't unstar message", "__count__ message unstarred", "All messages unstarred", "Unstarring message", "Unstarring all messages", "Couldn't add __participantNames__.", "You added __participantNames__.", "Adding __participantNames__.", "Removing __participantNames__ as an admin failed.", "__participantNames__ is no longer a group admin.", "Removing __participantNames__ as a group admin.", "They are no longer in this group.", "You can't add this participant because they left the group recently.", "Couldn't make __participantNames__ an admin.", "__participantNames__ is now a group admin.", "Making __participantNames__ a group admin.", "Couldn't remove __participantNames__.", "You removed __participantNames__.", "Removing __participantNames__.", "Couldn't remove profile photo.", "Profile photo removed", "Removing profile photo", "Profile photo set", "Couldn't set profile photo.", "Setting profile photo", "Your name can't be empty", "Your name changed", "Couldn't change your name.", "Changing your name", "Reporting spam", "Couldn't report spam", "Reported spam", "About can't be empty", "About changed", "Couldn't change About.", "Changing About…", "Try again.", "Couldn't unblock __participant__", "__participant__ unblocked", "Unblocking __participant__", "Undo", "Add a caption…", "Blocked contacts will no longer be able to call you or send you messages", "Add blocked contact", "Add to a group", "Add group icon", "Add profile photo", "Drag the image to adjust", "Archive chat", "No archived chats", "Archived chats", "Document", "__count__ Page", "Contact", "__number__ audio file you tried adding has no content.", "Your browser doesn't support audio playback.", "__number__ audio you tried adding is larger than the __maxSize__ limit.", "__businessName__ used other companies to store and manage this message.", "__businessName__ used Facebook and other companies to store and manage this message.", "This message was delivered directly from __businessName__.", "This message was delivered directly to __businessName__.", "__businessName__ used Facebook to store and manage this message.", "List of contacts that you have blocked", "No blocked contacts yet", "Blocked contacts", "Broadcast list deleted", "Browser not supported", "End Time", "Start Time", "This verified business is not in your contact list.", "Confirmed as __businessName__", "End Time", "This name will be visible to your WhatsApp customers and can be edited from the app on your mobile device.", "Something went wrong", "An error occurred while saving.  Please try again.", "__verified__ as __businessName__", "Use Here", "__count__ message couldn't be forwarded because __contact__ is on a version of WhatsApp that doesn't support it.", "No messages could be forwarded because __contact__ is on a version of WhatsApp that doesn't support them.", "__count__ message couldn't be forwarded because the file is missing.", "__count__ message couldn't be forwarded because the file is missing or __contact__ is on a version of WhatsApp that doesn't support it.", "Can't Load WhatsApp", "Qty __quantity__", "Received cart", "__updated__ Item Updated", "View all", "Change group icon", "Change profile photo", "Charge your phone to keep using WhatsApp", "Archived", "You are not an admin", "No Internet connection", "Clear messages", "click here for group info", "click here for contact info", "Update WhatsApp", "Click to reload QR code", "Click to save, ESC to cancel", "Click to update WhatsApp", "Close chat", "__count__ item", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_unauthorized_media__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_weapons__.", "", "", 'Add __participant__ to "__subject__" group?', 'Add __participants__ to "__subject__" group?', "You are closing WhatsApp.", "Some messages can't be forwarded, do you want to forward rest of the messages?", "Can't forward all messages", "Forward to __chat__?", "Log out?", 'Make __participant__ an admin for "__subject__" group?', 'Remove __participant__ from "__subject__" group?', 'Send __count__ contact to "__chat__"?', 'Send __count__ contact to "__chat__"?', 'Send __count__ contact to "__chat__"?', "Unblock __chat__ and forward messages?", "Unblock __contact__", "Unmute this chat?", "Unmute this group?", "Connecting…", "Connecting to WhatsApp", "Connecting", "", "About and phone number", "Loading About…", "View contact", "__number__ contact that you tried to add has no content.", "The contact that you tried to add is larger than the __maxSize__ limit.", "Older messages may be available", "Use WhatsApp on your phone to search messages from before __date__.", "Use WhatsApp on your phone to see the complete chat history.", "WhatsApp message", "Default", "Delete chat", "Deleting a label removes it from all messages, contacts, and from the list of labels. Are you sure you want to delete this label?", "Delete message", "Delete message?", "Tell us about your issue", "Please Update WhatsApp", "New version available", "Desktop Settings", "Update", "To continue using WhatsApp, click Update and install the latest version.", "Couldn't Update Automatically", "Downloading an update to WhatsApp. This may take several minutes. WhatsApp will automatically update and restart when the download finishes.", "Updating WhatsApp", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they're sent. Click to learn more.", "Dismiss", "Docs", "__count__ Doc", '"__name__" downloaded.', "__number__ document you tried adding has no content.", "__number__ document you tried adding is larger than the __maxSize__ limit.", "End-to-end encrypted", "Add text to your image…", "Turn on desktop notifications", "& ", " • ", ", ", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "__name__ turned off disappearing messages.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "__name__ turned off disappearing messages. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "Turning on this setting will make new messages disappear from this chat after 7 days. Recipients can still save these messages elsewhere.", "Turning on this setting will make new messages disappear from this chat after a selected amount of time. Recipients can still save these messages elsewhere.", "All new messages will disappear from this chat __number__ day after they're sent.", "All new messages will disappear from this chat __number__ hour after they're sent.", "All new messages will disappear from this chat __number__ minute after they're sent.", "All new messages will disappear from this chat __number__ second after they're sent.", "Anyone in this chat can change this setting.", "Group admins control who can change this setting.", "This message will disappear from this chat __number__ day after it's sent.", "This message will disappear from this chat __number__ hour after it's sent.", "This message will disappear from this chat __number__ minute after it's sent.", "This message will disappear from this chat __number__ second after it's sent.", "Off", "On", "__number__ day", "__number__ hour", "__number__ minute", "__number__ second", "Wait until the message finishes sending and displays a checkmark before forwarding.", "Wait until this message is fully delivered before forwarding.", "Unable to forward unsent message.", "Can't Forward", "__number__ file you tried adding has no content.", "__count__ file failed to be downloaded because it's no longer on your phone.", "__number__ file could not be added.", "__number__ file you tried adding is not supported.", "__number__ file you tried adding is larger than the __maxSize__ limit.", "B", "GB", "kB", "MB", "Forward", "You can only share with up to __count__ chat", "Forwarded many times. You can only share with up to __count__ chat.", "Forward message", "Forward message to", "Forwarded __count__ time", "Found a contact card for this number. View contact card?", "Older results may be available", "Microsoft Edge", "Google Chrome", "Mozilla Firefox", "Opera", "Safari (macOS 11+ Only)", "Custom GIF animations are currently not supported. Please use provided GIF selection feature.", "Incoming calls off. Click to restore.", "Alerts and sounds off. Click to restore.", "Notifications enabled", "You were added by someone who's not in your contacts", "Group deleted", "Cancel", "Checking invite link", "__count__ contact", "Join group", "Anyone with WhatsApp can follow this link to join this group. Only share it with people you trust.", "__count__ participant", "You can't view this group's invite link because you're not an admin.", "This invite link doesn't match any WhatsApp groups.", "Are you sure you want to reset the invite link for __groupName__? If you reset the link, no one will be able to use it to join this group.", "Resetting the invite link for __groupName__.", "Send link to", "Joining group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Joining group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't join group", "Viewing and revoking group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Viewing and revoking group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't view group invite details", '"__A__"', '__A__"__B__" & "__C__"', '"__A__," __B__', '"__A__" & "__B__"', "Group muted", "Type contact name", "__count__ other", "View all (__more__)", "__count__ more", "Group Subject", "__number__ invited", "Couldn't add __participant__. You can invite them privately to join this group.", "Reset invite for __participant__? If you reset the invite, __participant__ won't be able to use it to join this group.", "You can't take a photo because it looks like your computer doesn't have a camera. Try connecting one or if you have one connected, try restarting your browser.", "Camera Not Found", "Allow camera", "You can't record a Voice Message because it looks like your computer doesn't have a microphone. Try connecting one or if you have one connected, try restarting your browser.", "Microphone Not Found", "Allow microphone", "Help", "Message from __author__", "__unreadCount__ New Message", "You'll be logged out after several minutes of inactivity", "__number__ image you tried adding has no content.", "__number__ image you tried adding is larger than the __maxSize__ limit.", "Check your phone to answer", "WhatsApp group video call from __name__", "WhatsApp group voice call from __name__", "WhatsApp video call from __name__", "WhatsApp voice call from __name__", "WhatsApp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.", "With this update, your phone won't need to stay online to use WhatsApp on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "With this update, your phone won't need to stay online to use WhatsApp Business on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won't need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won't need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won't need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won't need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "WhatsApp is available for Mac. __get_it_here__.", "Make calls from desktop with WhatsApp for Mac. __get_it_here__.", "WhatsApp is available for Windows. __get_it_here__.", "Make calls from desktop with WhatsApp for Windows. __get_it_here__.", "Keep your phone connected", "Expires at __time__", "Expires in __number__ day", "__count__ item", "Search in __labelName__...", "Learn more", "Links", "__count__ Link", "load earlier messages…", "load recent messages…", "Loading…", "loading messages…", "Log in", "Menu __android_menu_icon__", "Need help to get started?", "Settings __iphone_settings_icon__", "Tap __android_menu__ or __iphone_settings__ and select __whatsapp_web_menu_item__", "Tap on __login_step_3_md_link_device__", "WhatsApp Web", "More than 1GB storage usage detected. Please be aware that remaining storage is low.", "Low storage warning", "Make sure your computer has an active Internet connection.", "Manage", "Mark as read", "Mark as unread", "Downloading messages: __progress__%", "This version will expire today at __time__. Update to use WhatsApp Web without keeping your phone online.", "This version will expire today at __time__. Update to use WhatsApp Desktop without keeping your phone online.", "Media", "Add a caption", "This file was changed from original.", "Blocked", "Help", "Keep me signed in", "Log out", "Make group admin", "Notifications", "Profile", "Profile", "Remove", "Settings", "Attach", "Menu", "This audio is too large. You can send audio up to __maxSize__.", "This document is too large. You can send documents up to __maxSize__.", "This file is too large. You can send files up to __maxSize__.", "This image is too large. You can send images up to __maxSize__.", "Message info", "Delivered", "Delivered to", "Played", "Played by", "Read", "Read by", "__count__ remaining", "Couldn't find message", "The message you're pasting is too long. Try shortening it or sending it in multiple parts.", "Message Too Long", "This video is too large. You can send videos up to __maxSize__.", "Can't play this Voice Message because it's no longer on your phone.", "Voice Message Unavailable", "Can't download this document because it's no longer on your phone.", "Document Unavailable", "Can't view this GIF because it's no longer on your phone.", "GIF Unavailable", "Media Message Unavailable", "Can't view this photo because it's no longer on your phone.", "Photo Unavailable", "Can't play this video because it's no longer on your phone.", "Video Unavailable", "Phone number shared via url is invalid.", "Send message to", "__contactName__ and __count__ other contact", "__count__ contact", "You can only send up to __count__ contact", 'Mute "__name__" for…', "__A__, __B__", "__A__, and __B__", "__A__, __B__", "__A__ and __B__", "Archive Chat", "WhatsApp needed to restart because of a problem.", "Problem Detected", "Delete Chat", "Delete Group", "Exit Group", "Log Out", "Mark as Read", "Mark as Unread", "Chat", "Help", "Terms and Privacy Policy", "Next Chat", "Previous Chat", "Window", "Bring All to Front", "Minimize", "Zoom", "Mute", "New Chat", "New Group", "Profile and About", "Unarchive Chat", "Cancel Mute", "This video is unavailable. Please try again.", "New chat", "New group", "Next", "No contacts", "No Docs", "No groups", "No Links", "No Media", "No result found for '__labelName__'", "No starred messages", "Not spam", "Notifications", "__number__ of __totalNumber__", "+__number__", "OK, got it", "Start WhatsApp at Login", "Order Detail", "Your Order", "__subtotal__ (estimated)", "Qty __quantity__", "__total__ (estimated total)", "Already blocked", "Order #__order__", "Update now to use WhatsApp Web on other devices without keeping your phone online.", 'WhatsApp is open on another computer or browser. Click "Use Here" to use WhatsApp in this window.', "Pin chat", "Waiting for this message. This may take a while.", "Previous", "__count__ contact excluded", "__count__ Product", "This photo is too small. Please select a photo with height and width of at least __size__ pixel.", "Couldn't send this Voice Message.", "…", "This is not your username or pin. This name will be visible to your WhatsApp contacts.", "Group • __groupName__", "All", "__count__ reactions weren't sent", "Reconnect", "Remove", "Remove this group's icon?", 'Remove label "__labelName__" from __count__ item', "Remove photo", "Remove your profile photo?", "Report spam", "Click to resend", "Retry Now", "Retrying…", "Retrying in __duration__…", "Retrying in __number__ second…", "Save", "Scan Database Usage", "Search…", "Search contacts", "Search Emoji", "Search GIFs via __service__", "Search groups", "Search Messages", "No chats, contacts or messages found", "No contacts found", "No groups found", "No messages found", "No results found for '__keyword__'", "Search or start new chat", "Looking for chats, contacts or messages…", "Looking for messages…", "Learn which chats are end to end encrypted", "Show security notifications", "See __count__ archived chat", "__count__ selected", "Photo set to send as sticker", "Send contact", "Send contacts", "send", "Feedback/Question about WhatsApp", "Email address", "Confirm email address", "Please enter a valid email address", "The email addresses do not match", "Subject", "Feedback sent", "Please enter a subject.", "Contact us", "__count__ Screenshot Maximum", "Please add more to your description", "To verify, send a message to __name__ and try again.", "The sender is not in your contact list", "Settings", "__days__d", "__hours__h", "__minutes__m", "__seconds__s", "Some of your messages are still sending.", "Star message", "No starred messages", "Starred messages", "Created by __name__", "Subject", "This group is no longer available. Please contact __support__ for help.", "__count__ suspicious link", "Take photo", "You'll be able to use WhatsApp again in __duration__", "You're temporarily banned from WhatsApp because you sent too many messages to people who don't have __phone__ in their address books.", "You're temporarily banned from WhatsApp because you created too many groups with people who don't have __phone__ in their address books.", "__time__ left", "Maximum number of files uploaded. __number__ file has been ignored.", "Trying to reach phone", "Turn off all desktop notifications for:", "Unarchive chat", "Unblock Contact", "Unpin chat", "__count__ @ message not synced", "__count__ unread message", "Unstar", "Unstar all messages?", "Unstar message", "Until __date__ at __time__", "Until today at __time__", "Until tomorrow at __time__", "Until __day__ at __time__", "Untitled", "Download Microsoft Edge", "Update Google Chrome", "Update Mozilla Firefox", "Update Safari", "Update Samsung Internet", "WhatsApp is out of date. Updating now…", "Updating", "Your phone will no longer need to stay online to use WhatsApp on web, desktop or other devices. __learn_more__", "Your phone will no longer need to stay online to use WhatsApp Business on web, desktop or other devices. __learn_more__", "Upload photo", "__participants__ joined using your invite", "You invited __participants__", "Version __version__", "__number__ video you tried adding has no content.", "Your browser doesn't support video playback.", "__number__ video you tried adding is larger than the __maxSize__ limit.", "View Contact Card", "This view once photo has expired. Please ask __name__ to re-send it.", "This view once video has expired. Please ask __name__ to re-send it.", "View photo", "Viewed by __count__", "Stop screen sharing", "Start screen sharing", "You can turn on your camera after __callee__ answers", "Your call will end in a few seconds because your microphone and sound output device were disconnected.", "Your call will end in a few seconds because your microphone was disconnected.", "__name__'s camera and mic are off", "__name__'s camera is off", "__name__'s mic is muted", "__name__ is requesting to switch to a video call", "Your call will end in a few seconds because your sound output device was disconnected.", "You can turn off your camera after __callee__ answers", "Please contact us with the make and model of your camera. ", "Call cannot be placed for more than __count__ participant", "You can only call up to __count__ contact", "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.", "__count__ others", "__callee__ is in a country where WhatsApp Calling is unavailable", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls at this time.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is not registered on WhatsApp", "Couldn't place call: __callee__ is unable to receive WhatsApp video calls at this time.", "WhatsApp will use your computer's camera for video calls and taking photos. You can always change this later in your computer's settings.", "WhatsApp will use your computer's microphone for calls and voice messages. You can always change this later in your computer's settings.", "__contactName__ - WhatsApp voice call", "__contactName__ - WhatsApp video call", "Chat wallpaper set", "Your security code with __contactName__ changed because they registered WhatsApp on their phone again.", "Your security code with __contactName__ changed because you logged into a new device.", "Your security code with __contactName__ changed because there was a login on a new device of yours.", "Your security code with __contactName__ changed because there was a login on this device.", 'WhatsApp has verified that this is the official business account of "__businessName__".', "WhatsApp has verified that this is the official business account of __businessName__. This account is saved with a different name in your contacts.", "Your security code could not be verified with __contactName__. Click to learn more.", "Verify your security code with __contactName__ because there was an error with their list of linked devices.", "You can't send messages to this group because you're no longer a participant.", "Can't send a message to blocked contact __contact__.", "Your security code with __contactName__ changed because there was a login or logout from one or more of their devices.", "Your security code with __contactName__ changed because there was a login or logout from one or more of your devices.", "Muted", "Messages to this chat are secured with end-to-end encryption. __businessName__ may use another company to store, read and respond to your messages. Click to learn more.", "online", "last seen __date__ at __time__", "last seen today at __time__", "last seen __date__ at __time__", "last seen yesterday at __time__", "__participant__ is typing…", "__participant__ is recording audio…", "Audio", "Contact", "__count__ page", "Document", "Photo", "Location", "Video", "Voice message", "Delete group", "Delete broadcast list", 'Download "__name__"', "Exit", "Frequently Contacted", "Created __date__ at __time__", "Created __date__ at __time__", "Group created by __name__, on __date__ at __time__", "Group created by you, on __date__ at __time__", "Created today at __time__", "Created today at __time__", "Group created by __name__, today at __time__", "Group created by you, today at __time__", "Created __day__ at __time__", "Created __day__ at __time__", "Created yesterday at __time__", "Created yesterday at __time__", "Group created by __name__, yesterday at __time__", "Group created by you, yesterday at __time__", "__name__ reset this group's invite link. Click to view the new invite link.", "__name__ changed this group's settings to allow messages that have been forwarded many times.", "__name__ changed this group's settings to not allow messages that have been forwarded many times.", "__name__ changed their phone number to a new number.", "__name__ changed to __new_number__", "__name__ joined via an invite link", "You joined via an invite link", "__num__ invite sent", "Groups", "Groups in common", "Messages to this chat and calls are secured with end-to-end encryption, which means that WhatsApp and third parties can't read or listen to them. __businessName__ may use a service to store, read and respond to your messages and calls. Contact __businessName__ for information on their privacy practices.", "__name__ added to the list", "__name__ removed from the list", "__name__ and possibly other group participants are using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message this group.", "__name__ is using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message them.", "This happened likely because __contactName__ or you recently changed which devices you use WhatsApp on. Please verify the security code again.", "Your security code with __contactName__ changed", "To verify that messages and calls with __contactName__ are end-to-end encrypted, open this screen on your phone, and follow the instructions.", "To verify that messages and calls with __contactName__ are end-to-end encrypted, scan or upload this code on their device. You can also compare the number above instead.", "About", "Messages", "Missed group video call at __time__", "Missed group voice call at __time__", "Missed video call", "Missed video call at __time__", "Missed voice call", "Missed voice call at __time__", "The business account for __businessName__ has registered as a standard user account and may no longer belong to the business.", "Other contacts", "__count__ participant", "To receive a payment from __senderName__, set up your payment account on your phone.", "__contactName__ canceled their payment request for __currencyAndAmount__", "You canceled your payment request to __contactName__ for __currencyAndAmount__", "__contactName__ declined your payment request for __currencyAndAmount__.", "You declined __contactName__'s payment request for __currencyAndAmount__.", "__senderName__'s payment request for __currencyAndAmount__ to you expired.", "Your payment request to __receiverName__ for __currencyAndAmount__ expired.", "You notified __receiverName__ that you are trying to send a payment.", "You can now send __receiverName__ a payment.", "__invitee__ has set up payments", "You invited __otherUser__ to use payments", "__otherUser__ invited you to use payments", "Requested from __receiverName__", "Requested __amount__ from You", "__senderName__ requested __amount__ from You", "__senderName__ requested __amount__ from __receiverName__", "Sent __amount__ to You", "__senderName__ sent __amount__ to You", "__senderName__ sent __amount__ to __receiverName__", "Sent to __receiverName__", "Pending (expires __timeSpan__)", "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.", "__senderName__'s payment __relativeTime__ is complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__  was refunded __relativeTime__.", "on __date__", "Preview", "OFFICIAL ANNOUNCEMENTS", "Recent chats", "__count__ recipient", "Your security code with __contactName__ changed because there was a logout from one of their devices.", "Your security code with __contactName__ changed because there was a logout from one of your devices.", "Your security code with __contactName__ changed. Click to learn more.", "Your security code with __name__ changed because they registered WhatsApp on their phone again.", "Your security code with __name__ changed because there was a registration on a new device of yours.", "Select messages", 'WhatsApp has verified that this is the official business account of "__businessName__". This business uses WhatsApp Business, which allows them to add their opening hours, address, website and catalog of products or services.', 'This chat is with the verified business account for "__businessName__". Click for more info.', 'This chat is with the business account for "__businessName__". Click for more info.', "__businessName__ may be a business account, but WhatsApp hasn't verified their name yet.", 'The business account you\'re chatting with is now verified as "__businessName__". Click for more info.', 'The business account you\'re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you\'re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you\'re chatting with is no longer confirmed as "__businessName__". Click for more info.', 'WhatsApp is no longer able to confirm that this is the account for "__businessName__".', 'This account has registered as a business account and WhatsApp has confirmed that this is the account for "__businessName__".', "__businessName__ registered as a business account, but WhatsApp hasn't verified their name yet.", 'The business account you\'re chatting with belongs to "__businessName__".', "To chat with __contact__, review and accept WhatsApp's updated terms and privacy policy on your phone.", "__date__ at __time__", "today at __time__", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", 'You opened "Verify security code" for the wrong phone number. Open it for the correct number to verify __contact__.', '__contact__ opened "Verify security code" for the wrong phone number. Ask __contact__ to open it for your phone number.', "yesterday at __time__", "You", "You created a broadcast list with __count__ recipient", "To use WhatsApp, update __chrome_update__ or use __firefox_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Google Chrome __min_version_chrome__+", "To use WhatsApp, update __edge_homepage__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Microsoft Edge __min_version_edge__+", "To use WhatsApp, update __firefox_update__ or use __chrome_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Mozilla Firefox __min_version_firefox__+", "WhatsApp group invite", "WhatsApp", "To use WhatsApp, update __safari_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "To use all of WhatsApp's features like photo capturing and Voice Message recording, we recommend using __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "Using Safari", "WhatsApp works with Safari __min_version_safari__+", "To use WhatsApp, update __samsung_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Samsung Internet __min_version_samsung__+", "WhatsApp", "Send and receive WhatsApp messages right from your computer.", 'WhatsApp is open in another window. Click "Use Here" to use WhatsApp in this window.', "Quickly send and receive WhatsApp messages right from your computer.", "We recommend using WhatsApp with one of the following browsers:", "WhatsApp also supports:", "You can't add more than __count__ labels", "Go to Commerce Manager to update your shop."], {
+                    ["", "Open the product context menu", "Turn off send as sticker", "Turn on send as sticker", "__count__ @ message", "Changing __count__ label", "The label could not be updated", "__count__ label changed", "Couldn't block __participant__", "__participant__ blocked", "Blocking __participant__", "Couldn't delete broadcast list.", "Broadcast list deleted", "Deleting broadcast list", "Couldn't archive chat.", "Chat archived", "Archiving chat", "Couldn't clear chat.", "Chat cleared", "Clearing chat", "Couldn't delete chat.", "Chat deleted", "Deleting chat", "Couldn't mark chat as read.", "Couldn't mark chat as unread.", "Marked as read", "Marked as unread", "Marking as read", "Marking as unread", "Couldn't mute chat.", "Chat muted", "Muting chat", "Couldn't pin chat", "You can only pin up to 3 chats.", "Chat pinned", "Pinning chat", "Couldn't unarchive chat.", "Chat unarchived", "Unarchiving chat", "Unmute", "Couldn't unmute chat.", "Chat unmuted", "Unmuting chat", "Couldn't unpin chat", "Chat unpinned", "Unpinning chat", "Couldn't create group.", "Please enter a shorter subject.", "Can't add more than __max__ participants", "Created group", "Creating group", "Couldn't delete group.", "Group deleted", "Deleting group", "Couldn't exit group.", "Exited group", "Exiting group", "Couldn't remove group icon.", "Group icon removed", "Removing group icon", "Group icon set", "Couldn't set group icon.", "Setting group icon", "Couldn't mute group.", "Group muted", "Muting group", "Couldn't rename group.", "Group renamed to __subject__", "Renaming group", "Group subject can't be empty", "Couldn't unmute group.", "Group unmuted", "Unmuting group", "Marking as not spam", "Couldn't mark as not spam", "Marked as not spam", "Couldn't delete message because the message may have expired", "Couldn't delete message", "__count__ message deleted", "Deleting message", "Couldn't star message because the message may have expired", "Couldn't star message", "__count__ message starred", "Starring message", "Couldn't unstar all messages", "Couldn't unstar message because the message may have expired", "Couldn't unstar message", "__count__ message unstarred", "All messages unstarred", "Unstarring message", "Unstarring all messages", "Couldn't add __participantNames__.", "You added __participantNames__.", "Adding __participantNames__.", "Removing __participantNames__ as an admin failed.", "__participantNames__ is no longer a group admin.", "Removing __participantNames__ as a group admin.", "They are no longer in this group.", "You can't add this participant because they left the group recently.", "Couldn't make __participantNames__ an admin.", "__participantNames__ is now a group admin.", "Making __participantNames__ a group admin.", "Couldn't remove __participantNames__.", "You removed __participantNames__.", "Removing __participantNames__.", "Couldn't remove profile photo.", "Profile photo removed", "Removing profile photo", "Profile photo set", "Couldn't set profile photo.", "Setting profile photo", "Your name can't be empty", "Your name changed", "Couldn't change your name.", "Changing your name", "Reporting spam", "Couldn't report spam", "Reported spam", "About can't be empty", "About changed", "Couldn't change About.", "Changing About…", "Try again.", "Couldn't unblock __participant__", "__participant__ unblocked", "Unblocking __participant__", "Undo", "Add a caption…", "Blocked contacts will no longer be able to call you or send you messages", "Add blocked contact", "Add to a group", "Add group icon", "Add profile photo", "Drag the image to adjust", "Archive chat", "No archived chats", "Archived chats", "Document", "__count__ Page", "Contact", "__number__ audio file you tried adding has no content.", "Your browser doesn't support audio playback.", "__number__ audio you tried adding is larger than the __maxSize__ limit.", "__businessName__ used other companies to store and manage this message.", "__businessName__ used Facebook and other companies to store and manage this message.", "This message was delivered directly from __businessName__.", "This message was delivered directly to __businessName__.", "__businessName__ used Facebook to store and manage this message.", "List of contacts that you have blocked", "No blocked contacts yet", "Blocked contacts", "Broadcast list deleted", "Browser not supported", "End Time", "Start Time", "This verified business is not in your contact list.", "Confirmed as __businessName__", "End Time", "This name will be visible to your WhatsApp customers and can be edited from the app on your mobile device.", "Something went wrong", "An error occurred while saving.  Please try again.", "__verified__ as __businessName__", "Use Here", "__count__ message couldn't be forwarded because __contact__ is on a version of WhatsApp that doesn't support it.", "No messages could be forwarded because __contact__ is on a version of WhatsApp that doesn't support them.", "__count__ message couldn't be forwarded because the file is missing.", "__count__ message couldn't be forwarded because the file is missing or __contact__ is on a version of WhatsApp that doesn't support it.", "Can't Load WhatsApp", "Qty __quantity__", "Received cart", "__updated__ Item Updated", "View all", "Change group icon", "Change profile photo", "Charge your phone to keep using WhatsApp", "Archived", "You are not an admin", "No Internet connection", "Clear messages", "click here for group info", "click here for contact info", "Update WhatsApp", "Click to reload QR code", "Click to save, ESC to cancel", "Click to update WhatsApp", "Close chat", "__count__ item", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_unauthorized_media__.", "We reviewed this collection again and confirmed its name violates __collections_rejected_policy_weapons__.", "", "", 'Add __participant__ to "__subject__" group?', 'Add __participants__ to "__subject__" group?', "You are closing WhatsApp.", "Some messages can't be forwarded, do you want to forward rest of the messages?", "Can't forward all messages", "Forward to __chat__?", "Log out?", 'Make __participant__ an admin for "__subject__" group?', 'Remove __participant__ from "__subject__" group?', 'Send __count__ contact to "__chat__"?', 'Send __count__ contact to "__chat__"?', 'Send __count__ contact to "__chat__"?', "Unblock __chat__ and forward messages?", "Unblock __contact__", "Unmute this chat?", "Unmute this group?", "Connecting…", "Connecting to WhatsApp", "Connecting", "", "About and phone number", "Loading About…", "View contact", "__number__ contact that you tried to add has no content.", "The contact that you tried to add is larger than the __maxSize__ limit.", "Older messages may be available", "Use WhatsApp on your phone to search messages from before __date__.", "Use WhatsApp on your phone to see the complete chat history.", "WhatsApp message", "Default", "Delete chat", "Deleting a label removes it from all messages, contacts, and from the list of labels. Are you sure you want to delete this label?", "Delete", "Delete message?", "Tell us about your issue", "Please Update WhatsApp", "New version available", "Desktop Settings", "Update", "To continue using WhatsApp, click Update and install the latest version.", "Couldn't Update Automatically", "Downloading an update to WhatsApp. This may take several minutes. WhatsApp will automatically update and restart when the download finishes.", "Updating WhatsApp", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they're sent. Click to learn more.", "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ day after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hour after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ minute after they're sent. Click to learn more.", "You use a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ second after they're sent. Click to learn more.", "Dismiss", "Docs", "__count__ Doc", '"__name__" downloaded.', "__number__ document you tried adding has no content.", "__number__ document you tried adding is larger than the __maxSize__ limit.", "End-to-end encrypted", "Add text to your image…", "Turn on desktop notifications", "& ", " • ", ", ", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "__name__ turned off disappearing messages.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "Disappearing messages were turned on. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "You turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "__name__ turned off disappearing messages. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ day after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ hour after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ minute after they're sent. Click to change.", "__name__ turned on disappearing messages. All new messages will disappear from this chat __number__ second after they're sent. Click to change.", "Turning on this setting will make new messages disappear from this chat after 7 days. Recipients can still save these messages elsewhere.", "Turning on this setting will make new messages disappear from this chat after a selected amount of time. Recipients can still save these messages elsewhere.", "All new messages will disappear from this chat __number__ day after they're sent.", "All new messages will disappear from this chat __number__ hour after they're sent.", "All new messages will disappear from this chat __number__ minute after they're sent.", "All new messages will disappear from this chat __number__ second after they're sent.", "Anyone in this chat can change this setting.", "Group admins control who can change this setting.", "This message will disappear from this chat __number__ day after it's sent.", "This message will disappear from this chat __number__ hour after it's sent.", "This message will disappear from this chat __number__ minute after it's sent.", "This message will disappear from this chat __number__ second after it's sent.", "Off", "On", "__number__ day", "__number__ hour", "__number__ minute", "__number__ second", "Wait until the message finishes sending and displays a checkmark before forwarding.", "Wait until this message is fully delivered before forwarding.", "Unable to forward unsent message.", "Can't Forward", "__number__ file you tried adding has no content.", "__count__ file failed to be downloaded because it's no longer on your phone.", "__number__ file could not be added.", "__number__ file you tried adding is not supported.", "__number__ file you tried adding is larger than the __maxSize__ limit.", "B", "GB", "kB", "MB", "Forward", "You can only share with up to __count__ chat", "Forwarded many times. You can only share with up to __count__ chat.", "Forward", "Forward message to", "Forwarded __count__ time", "Found a contact card for this number. View contact card?", "Older results may be available", "Microsoft Edge", "Google Chrome", "Mozilla Firefox", "Opera", "Safari (macOS 11+ Only)", "Custom GIF animations are currently not supported. Please use provided GIF selection feature.", "Incoming calls off. Click to restore.", "Alerts and sounds off. Click to restore.", "Notifications enabled", "You were added by someone who's not in your contacts", "Group deleted", "Cancel", "Checking invite link", "__count__ contact", "Join group", "Anyone with WhatsApp can follow this link to join this group. Only share it with people you trust.", "__count__ participant", "You can't view this group's invite link because you're not an admin.", "This invite link doesn't match any WhatsApp groups.", "Are you sure you want to reset the invite link for __groupName__? If you reset the link, no one will be able to use it to join this group.", "Resetting the invite link for __groupName__.", "Send link to", "Joining group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Joining group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't join group", "Viewing and revoking group invites from Desktop is not yet available on the multi-device beta. Use your phone instead.", "Viewing and revoking group invites from Web is not yet available on the multi-device beta. Use your phone instead.", "Can't view group invite details", '"__A__"', '__A__"__B__" & "__C__"', '"__A__," __B__', '"__A__" & "__B__"', "Group muted", "Type contact name", "__count__ other", "View all (__more__)", "__count__ more", "Group Subject", "__number__ invited", "Couldn't add __participant__. You can invite them privately to join this group.", "Reset invite for __participant__? If you reset the invite, __participant__ won't be able to use it to join this group.", "You can't take a photo because it looks like your computer doesn't have a camera. Try connecting one or if you have one connected, try restarting your browser.", "Camera Not Found", "Allow camera", "You can't record a Voice Message because it looks like your computer doesn't have a microphone. Try connecting one or if you have one connected, try restarting your browser.", "Microphone Not Found", "Allow microphone", "Help", "Message from __author__", "__unreadCount__ New Message", "You'll be logged out after several minutes of inactivity", "__number__ image you tried adding has no content.", "__number__ image you tried adding is larger than the __maxSize__ limit.", "Check your phone to answer", "WhatsApp group video call from __name__", "WhatsApp group voice call from __name__", "WhatsApp video call from __name__", "WhatsApp voice call from __name__", "WhatsApp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.", "With this update, your phone won't need to stay online to use WhatsApp on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "With this update, your phone won't need to stay online to use WhatsApp Business on web, desktop or other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won't need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version expires in __num_days__ day. With the update, your phone won't need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won't need to stay online to use WhatsApp on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "This version will expire today at __time__. With the update, your phone won't need to stay online to use WhatsApp Business on other devices. Up to 4 linked devices and 1 phone can be used at the same time. __learn_more__", "WhatsApp is available for Mac. __get_it_here__.", "Make calls from desktop with WhatsApp for Mac. __get_it_here__.", "WhatsApp is available for Windows. __get_it_here__.", "Make calls from desktop with WhatsApp for Windows. __get_it_here__.", "Keep your phone connected", "Expires at __time__", "Expires in __number__ day", "__count__ item", "Search in __labelName__...", "Learn more", "Links", "__count__ Link", "load earlier messages…", "load recent messages…", "Loading…", "loading messages…", "Log in", "Menu __android_menu_icon__", "Need help to get started?", "Settings __iphone_settings_icon__", "Tap __android_menu__ or __iphone_settings__ and select __whatsapp_web_menu_item__", "Tap on __login_step_3_md_link_device__", "WhatsApp Web", "More than 1GB storage usage detected. Please be aware that remaining storage is low.", "Low storage warning", "Make sure your computer has an active Internet connection.", "Manage", "Mark as read", "Mark as unread", "Downloading messages: __progress__%", "This version will expire today at __time__. Update to use WhatsApp Web without keeping your phone online.", "This version will expire today at __time__. Update to use WhatsApp Desktop without keeping your phone online.", "Media", "Add a caption", "This file was changed from original.", "Blocked", "Help", "Keep me signed in", "Log out", "Make group admin", "Notifications", "Profile", "Profile", "Remove", "Settings", "Attach", "Menu", "This audio is too large. You can send audio up to __maxSize__.", "This document is too large. You can send documents up to __maxSize__.", "This file is too large. You can send files up to __maxSize__.", "This image is too large. You can send images up to __maxSize__.", "Message info", "Delivered", "Delivered to", "Played", "Played by", "Read", "Read by", "__count__ remaining", "Couldn't find message", "The message you're pasting is too long. Try shortening it or sending it in multiple parts.", "Message Too Long", "This video is too large. You can send videos up to __maxSize__.", "Can't play this Voice Message because it's no longer on your phone.", "Voice Message Unavailable", "Can't download this document because it's no longer on your phone.", "Document Unavailable", "Can't view this GIF because it's no longer on your phone.", "GIF Unavailable", "Media Message Unavailable", "Can't view this photo because it's no longer on your phone.", "Photo Unavailable", "Can't play this video because it's no longer on your phone.", "Video Unavailable", "Phone number shared via url is invalid.", "Send message to", "__contactName__ and __count__ other contact", "__count__ contact", "You can only send up to __count__ contact", 'Mute "__name__" for…', "__A__, __B__", "__A__, and __B__", "__A__, __B__", "__A__ and __B__", "Archive Chat", "WhatsApp needed to restart because of a problem.", "Problem Detected", "Delete Chat", "Delete Group", "Exit Group", "Log Out", "Mark as Read", "Mark as Unread", "Chat", "Help", "Terms and Privacy Policy", "Next Chat", "Previous Chat", "Window", "Bring All to Front", "Minimize", "Zoom", "Mute", "New Chat", "New Group", "Profile and About", "Unarchive Chat", "Cancel Mute", "This video is unavailable. Please try again.", "New chat", "New group", "Next", "No contacts", "No Docs", "No groups", "No Links", "No Media", "No result found for '__labelName__'", "No starred messages", "Not spam", "Notifications", "__number__ of __totalNumber__", "+__number__", "OK, got it", "Start WhatsApp at Login", "Order Detail", "Your Order", "__subtotal__ (estimated)", "Qty __quantity__", "__total__ (estimated total)", "Already blocked", "Order #__order__", "Update now to use WhatsApp Web on other devices without keeping your phone online.", 'WhatsApp is open on another computer or browser. Click "Use Here" to use WhatsApp in this window.', "Pin chat", "Waiting for this message. This may take a while.", "Previous", "__count__ contact excluded", "__count__ Product", "This photo is too small. Please select a photo with height and width of at least __size__ pixel.", "Couldn't send this Voice Message.", "…", "This is not your username or pin. This name will be visible to your WhatsApp contacts.", "Group • __groupName__", "All", "__count__ reactions weren't sent", "Reconnect", "Remove", "Remove this group's icon?", 'Remove label "__labelName__" from __count__ item', "Remove photo", "Remove your profile photo?", "Report spam", "Click to resend", "Retry Now", "Retrying…", "Retrying in __duration__…", "Retrying in __number__ second…", "Save", "Scan Database Usage", "Search…", "Search contacts", "Search Emoji", "Search GIFs via __service__", "Search groups", "Search Messages", "No chats, contacts or messages found", "No contacts found", "No groups found", "No messages found", "No results found for '__keyword__'", "Search or start new chat", "Looking for chats, contacts or messages…", "Looking for messages…", "Learn which chats are end to end encrypted", "Show security notifications", "See __count__ archived chat", "__count__ selected", "Photo set to send as sticker", "Send contact", "Send contacts", "send", "Feedback/Question about WhatsApp", "Email address", "Confirm email address", "Please enter a valid email address", "The email addresses do not match", "Subject", "Feedback sent", "Please enter a subject.", "Contact us", "__count__ Screenshot Maximum", "Please add more to your description", "To verify, send a message to __name__ and try again.", "The sender is not in your contact list", "Settings", "__days__d", "__hours__h", "__minutes__m", "__seconds__s", "Some of your messages are still sending.", "Star", "No starred messages", "Starred messages", "Created by __name__", "Subject", "This group is no longer available. Please contact __support__ for help.", "__count__ suspicious link", "Take photo", "You'll be able to use WhatsApp again in __duration__", "You're temporarily banned from WhatsApp because you sent too many messages to people who don't have __phone__ in their address books.", "You're temporarily banned from WhatsApp because you created too many groups with people who don't have __phone__ in their address books.", "__time__ left", "Maximum number of files uploaded. __number__ file has been ignored.", "Trying to reach phone", "Turn off all desktop notifications for:", "Unarchive chat", "Unblock Contact", "Unpin chat", "__count__ @ message not synced", "__count__ unread message", "Unstar", "Unstar all messages?", "Unstar message", "Until __date__ at __time__", "Until today at __time__", "Until tomorrow at __time__", "Until __day__ at __time__", "Untitled", "Download Microsoft Edge", "Update Google Chrome", "Update Mozilla Firefox", "Update Meta Quest Browser", "Update Safari", "Update Samsung Internet", "WhatsApp is out of date. Updating now…", "Updating", "Your phone will no longer need to stay online to use WhatsApp on web, desktop or other devices. __learn_more__", "Your phone will no longer need to stay online to use WhatsApp Business on web, desktop or other devices. __learn_more__", "Upload photo", "__participants__ joined using your invite", "You invited __participants__", "Version __version__", "__number__ video you tried adding has no content.", "Your browser doesn't support video playback.", "__number__ video you tried adding is larger than the __maxSize__ limit.", "View Contact Card", "This view once photo has expired. Please ask __name__ to re-send it.", "This view once video has expired. Please ask __name__ to re-send it.", "View photo", "Viewed by __count__", "Stop screen sharing", "Start screen sharing", "You can turn on your camera after __callee__ answers", "Your call will end in a few seconds because your microphone and sound output device were disconnected.", "Your call will end in a few seconds because your microphone was disconnected.", "__name__'s camera and mic are off", "__name__'s camera is off", "__name__'s mic is muted", "__name__ is requesting to switch to a video call", "Your call will end in a few seconds because your sound output device was disconnected.", "You can turn off your camera after __callee__ answers", "Please contact us with the make and model of your camera. ", "Call cannot be placed for more than __count__ participant", "You can only call up to __count__ contact", "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.", "__count__ others", "__callee__ is in a country where WhatsApp Calling is unavailable", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls at this time.", "Couldn't place call: __callee__ is unable to receive WhatsApp calls.", "Couldn't place call: __callee__ is not registered on WhatsApp", "Couldn't place call: __callee__ is unable to receive WhatsApp video calls at this time.", "WhatsApp will use your computer's camera for video calls and taking photos. You can always change this later in your computer's settings.", "WhatsApp will use your computer's microphone for calls and voice messages. You can always change this later in your computer's settings.", "__contactName__ - WhatsApp voice call", "__contactName__ - WhatsApp video call", "Chat wallpaper set", "Your security code with __contactName__ changed because they registered WhatsApp on their phone again.", "Your security code with __contactName__ changed because you logged into a new device.", "Your security code with __contactName__ changed because there was a login on a new device of yours.", "Your security code with __contactName__ changed because there was a login on this device.", 'WhatsApp has verified that this is the official business account of "__businessName__".', "WhatsApp has verified that this is the official business account of __businessName__. This account is saved with a different name in your contacts.", "Your security code could not be verified with __contactName__. Click to learn more.", "Verify your security code with __contactName__ because there was an error with their list of linked devices.", "You can't send messages to this group because you're no longer a participant.", "Can't send a message to blocked contact __contact__.", "Your security code with __contactName__ changed because there was a login or logout from one or more of their devices.", "Your security code with __contactName__ changed because there was a login or logout from one or more of your devices.", "Muted", "Messages to this chat are secured with end-to-end encryption. __businessName__ may use another company to store, read and respond to your messages. Click to learn more.", "online", "last seen __date__ at __time__", "last seen today at __time__", "last seen __date__ at __time__", "last seen yesterday at __time__", "__participant__ is typing…", "__participant__ is recording audio…", "Audio", "Contact", "__count__ page", "Document", "Photo", "Location", "Video", "Voice message", "Delete group", "Delete broadcast list", 'Download "__name__"', "Exit", "Frequently Contacted", "Created __date__ at __time__", "Created __date__ at __time__", "Group created by __name__, on __date__ at __time__", "Group created by you, on __date__ at __time__", "Created today at __time__", "Created today at __time__", "Group created by __name__, today at __time__", "Group created by you, today at __time__", "Created __day__ at __time__", "Created __day__ at __time__", "Created yesterday at __time__", "Created yesterday at __time__", "Group created by __name__, yesterday at __time__", "Group created by you, yesterday at __time__", "__name__ reset this group's invite link. Click to view the new invite link.", "__name__ changed this group's settings to allow messages that have been forwarded many times.", "__name__ changed this group's settings to not allow messages that have been forwarded many times.", "__name__ changed their phone number to a new number.", "__name__ changed to __new_number__", "__name__ joined via an invite link", "You joined via an invite link", "__num__ invite sent", "Groups", "Groups in common", "Messages to this chat and calls are secured with end-to-end encryption, which means that WhatsApp and third parties can't read or listen to them. __businessName__ may use a service to store, read and respond to your messages and calls. Contact __businessName__ for information on their privacy practices.", "__name__ added to the list", "__name__ removed from the list", "__name__ and possibly other group participants are using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message this group.", "__name__ is using an old version of WhatsApp that cannot receive messages sent from web/desktop using the multi-device beta. Use your phone to message them.", "This happened likely because __contactName__ or you recently changed which devices you use WhatsApp on. Please verify the security code again.", "Your security code with __contactName__ changed", "To verify that messages and calls with __contactName__ are end-to-end encrypted, open this screen on your phone, and follow the instructions.", "To verify that messages and calls with __contactName__ are end-to-end encrypted, scan or upload this code on their device. You can also compare the number above instead.", "About", "Messages", "Missed group video call at __time__", "Missed group voice call at __time__", "Missed video call", "Missed video call at __time__", "Missed voice call", "Missed voice call at __time__", "The business account for __businessName__ has registered as a standard user account and may no longer belong to the business.", "Other contacts", "__count__ participant", "To receive a payment from __senderName__, set up your payment account on your phone.", "__contactName__ canceled their payment request for __currencyAndAmount__", "You canceled your payment request to __contactName__ for __currencyAndAmount__", "__contactName__ declined your payment request for __currencyAndAmount__.", "You declined __contactName__'s payment request for __currencyAndAmount__.", "__senderName__'s payment request for __currencyAndAmount__ to you expired.", "Your payment request to __receiverName__ for __currencyAndAmount__ expired.", "You notified __receiverName__ that you are trying to send a payment.", "You can now send __receiverName__ a payment.", "__invitee__ has set up payments", "You invited __otherUser__ to use payments", "__otherUser__ invited you to use payments", "Requested from __receiverName__", "Requested __amount__ from You", "__senderName__ requested __amount__ from You", "__senderName__ requested __amount__ from __receiverName__", "Sent __amount__ to You", "__senderName__ sent __amount__ to You", "__senderName__ sent __amount__ to __receiverName__", "Sent to __receiverName__", "Pending (expires __timeSpan__)", "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.", "__senderName__'s payment __relativeTime__ is complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__ __relativeTime__ couldn't complete.", "Your payment to __receiverName__  was refunded __relativeTime__.", "on __date__", "Preview", "OFFICIAL ANNOUNCEMENTS", "Recent chats", "__count__ recipient", "Your security code with __contactName__ changed because there was a logout from one of their devices.", "Your security code with __contactName__ changed because there was a logout from one of your devices.", "Your security code with __contactName__ changed. Click to learn more.", "Your security code with __name__ changed because they registered WhatsApp on their phone again.", "Your security code with __name__ changed because there was a registration on a new device of yours.", "Select messages", 'WhatsApp has verified that this is the official business account of "__businessName__". This business uses WhatsApp Business, which allows them to add their opening hours, address, website and catalog of products or services.', 'This chat is with the verified business account for "__businessName__". Click for more info.', 'This chat is with the business account for "__businessName__". Click for more info.', "__businessName__ may be a business account, but WhatsApp hasn't verified their name yet.", 'The business account you\'re chatting with is now verified as "__businessName__". Click for more info.', 'The business account you\'re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you\'re chatting with is no longer verified as "__businessName__". Click for more info.', 'WhatsApp is no longer able to verify that this is the account for "__businessName__".', 'The business account you\'re chatting with is no longer confirmed as "__businessName__". Click for more info.', 'WhatsApp is no longer able to confirm that this is the account for "__businessName__".', 'This account has registered as a business account and WhatsApp has confirmed that this is the account for "__businessName__".', "__businessName__ registered as a business account, but WhatsApp hasn't verified their name yet.", 'The business account you\'re chatting with belongs to "__businessName__".', "To chat with __contact__, review and accept WhatsApp's updated terms and privacy policy on your phone.", "__date__ at __time__", "today at __time__", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", "The business account you're chatting with may belong to __businessName__. WhatsApp hasn't verified their name yet.", "To help you connect with businesses, we have verified that the business account you're chatting with belongs to __businessName__.", 'You opened "Verify security code" for the wrong phone number. Open it for the correct number to verify __contact__.', '__contact__ opened "Verify security code" for the wrong phone number. Ask __contact__ to open it for your phone number.', "yesterday at __time__", "You", "You created a broadcast list with __count__ recipient", "To use WhatsApp, update __chrome_update__ or use __firefox_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Google Chrome __min_version_chrome__+", "To use WhatsApp, update __edge_homepage__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Microsoft Edge __min_version_edge__+", "To use WhatsApp, update __firefox_update__ or use __chrome_homepage__, __safari_homepage__, __edge_homepage__ or __opera_homepage__.", "WhatsApp works with Mozilla Firefox __min_version_firefox__+", "WhatsApp group invite", "To use WhatsApp, update __oculus_homepage__.", "WhatsApp works with Meta Quest Browser __min_version_oculus__+", "WhatsApp", "To use WhatsApp, update __safari_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "To use all of WhatsApp's features like photo capturing and Voice Message recording, we recommend using __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "Using Safari", "WhatsApp works with Safari __min_version_safari__+", "To use WhatsApp, update __samsung_update__ or use __chrome_homepage__, __firefox_homepage__ or __opera_homepage__.", "WhatsApp works with Samsung Internet __min_version_samsung__+", "WhatsApp", "Send and receive WhatsApp messages right from your computer.", 'WhatsApp is open in another window. Click "Use Here" to use WhatsApp in this window.', "Quickly send and receive WhatsApp messages right from your computer.", "We recommend using WhatsApp with one of the following browsers:", "WhatsApp also supports:", "You can't add more than __count__ labels", "Go to Commerce Manager to update your shop."], {
                         4: "__count__ @ messages",
                         5: "Changing __count__ labels",
                         6: "Some labels could not be updated",
@@ -20732,7 +20721,7 @@
                         214: "__number__ contacts that you tried to add have no content.",
                         215: "The contacts that you tried to add are larger than the __maxSize__ limit.",
                         222: "Deleting a label removes it from all messages, contacts, and from the list of labels. Are you sure you want to delete these labels?",
-                        223: "Delete messages",
+                        223: "Delete",
                         224: "Delete messages?",
                         234: "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ days after they're sent. Click to learn more.",
                         235: "__name__ uses a default timer for disappearing messages in new chats. All new messages will disappear from this chat __number__ hours after they're sent. Click to learn more.",
@@ -20824,459 +20813,48 @@
                         581: "__hours__h",
                         582: "__minutes__m",
                         583: "__seconds__s",
-                        585: "Star messages",
+                        585: "Star",
                         591: "__count__ suspicious links",
                         596: "__time__ left",
                         597: "Maximum number of files uploaded. __number__ files have been ignored.",
                         603: "__count__ @ messages not synced",
                         604: "__count__ unread messages",
                         607: "Unstar messages",
-                        623: "__participants__ joined using your invite",
-                        624: "You invited __participants__",
-                        626: "__number__ videos you tried adding have no content.",
-                        628: "__number__ videos you tried adding are larger than the __maxSize__ limit.",
-                        629: "View Contact Cards",
-                        646: "Call cannot be placed for more than __count__ participants",
-                        647: "You can only call up to __count__ contacts",
-                        648: "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.",
-                        649: "__count__ others",
-                        684: "__count__ pages",
-                        716: "__num__ invites sent",
-                        720: "__name__ were added to the list",
-                        721: "__name__ were removed from the list",
-                        730: "Missed group video call at __time__",
-                        731: "Missed group voice call at __time__",
-                        733: "Missed video call at __time__",
-                        735: "Missed voice call at __time__",
-                        738: "__count__ participants",
-                        740: "__contactName__ canceled their payment request for __currencyAndAmount__",
-                        741: "You canceled your payment request to __contactName__ for __currencyAndAmount__",
-                        742: "__contactName__ declined your payment request for __currencyAndAmount__.",
-                        743: "You declined __contactName__'s payment request for __currencyAndAmount__.",
-                        744: "__senderName__'s payment request for __currencyAndAmount__ to you expired.",
-                        745: "Your payment request to __receiverName__ for __currencyAndAmount__ expired.",
-                        752: "Requested __amount__ from You",
-                        753: "__senderName__ requested __amount__ from You",
-                        754: "__senderName__ requested __amount__ from __receiverName__",
-                        755: "Sent __amount__ to You",
-                        756: "__senderName__ sent __amount__ to You",
-                        757: "__senderName__ sent __amount__ to __receiverName__",
-                        760: "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.",
-                        769: "__count__ recipients",
-                        801: "You created a broadcast list with __count__ recipients"
+                        624: "__participants__ joined using your invite",
+                        625: "You invited __participants__",
+                        627: "__number__ videos you tried adding have no content.",
+                        629: "__number__ videos you tried adding are larger than the __maxSize__ limit.",
+                        630: "View Contact Cards",
+                        647: "Call cannot be placed for more than __count__ participants",
+                        648: "You can only call up to __count__ contacts",
+                        649: "__callee__ couldn't be added to the call, because they are using an old version of WhatsApp or an incompatible device.",
+                        650: "__count__ others",
+                        685: "__count__ pages",
+                        717: "__num__ invites sent",
+                        721: "__name__ were added to the list",
+                        722: "__name__ were removed from the list",
+                        731: "Missed group video call at __time__",
+                        732: "Missed group voice call at __time__",
+                        734: "Missed video call at __time__",
+                        736: "Missed voice call at __time__",
+                        739: "__count__ participants",
+                        741: "__contactName__ canceled their payment request for __currencyAndAmount__",
+                        742: "You canceled your payment request to __contactName__ for __currencyAndAmount__",
+                        743: "__contactName__ declined your payment request for __currencyAndAmount__.",
+                        744: "You declined __contactName__'s payment request for __currencyAndAmount__.",
+                        745: "__senderName__'s payment request for __currencyAndAmount__ to you expired.",
+                        746: "Your payment request to __receiverName__ for __currencyAndAmount__ expired.",
+                        753: "Requested __amount__ from You",
+                        754: "__senderName__ requested __amount__ from You",
+                        755: "__senderName__ requested __amount__ from __receiverName__",
+                        756: "Sent __amount__ to You",
+                        757: "__senderName__ sent __amount__ to You",
+                        758: "__senderName__ sent __amount__ to __receiverName__",
+                        761: "__senderName__ sent you __currencyAndAmount__. Use WhatsApp on your phone to accept this transaction.",
+                        770: "__count__ recipients",
+                        802: "You created a broadcast list with __count__ recipients"
                     }
                 ]
-            },
-            36953: (e, t, r) => {
-                "use strict";
-                var n = r(36953).default,
-                    i = r(7914);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.default = T;
-                var a, o, s = i(r(89372)),
-                    u = i(r(94647)),
-                    c = i(r(44422)),
-                    l = i(r(79484)),
-                    d = i(r(64885)),
-                    f = void 0 !== n ? n : null,
-                    p = "function" == typeof setImmediate ? setImmediate : null,
-                    h = 0,
-                    m = [],
-                    _ = [],
-                    g = [],
-                    v = {
-                        sentinel: "CONTINUE_AS_IF_NO_HANDLER"
-                    },
-                    b = {
-                        sentinel: "RETRY_ASYNCHRONOUSLY"
-                    },
-                    y = {
-                        sentinel: "TO_STRING"
-                    },
-                    w = {
-                        sentinel: "DID_ERROR"
-                    },
-                    E = null,
-                    x = [],
-                    S = 64,
-                    A = 128,
-                    k = 512,
-                    O = "undefined" == typeof self ? void 0 : self;
-
-                function T(e, t) {
-                    var r = this;
-                    this._flags = 0, this._value = void 0, this._onFulfilled = void 0, this._onRejected = void 0, this._context = void 0, this._resolveLevel = 0, this._control = void 0, this.x = void 0, this._thenableParent = null, this._parent = void 0, this._child = void 0, this._children = void 0, this.control = void 0, t && (this._context = t.this), "function" == typeof e && (this._onFulfilled = e, this._flags |= 4, this._flags |= 256, Z(e, this._context, (function(e) {
-                        return W(r, 0, !0, !1, e)
-                    }), (function(e) {
-                        return W(r, 0, !1, !1, e)
-                    })))
-                }
-
-                function C(e) {
-                    if (void 0 === e) return a;
-                    if (j(e)) return e;
-                    var t = new T;
-                    return W(t, 0, !0, !1, e), X(t, k), t
-                }
-
-                function N(e) {
-                    var t = new T;
-                    return t._value = e, X(t, 514), x.push(t), t
-                }
-
-                function M(e) {
-                    var t = "";
-                    if (e._flags & A) t = (e._onFulfilled || e._onRejected).call(e._context, y);
-                    else if (e._control) t = `.addRawControl(${e._control.name}, ${e._control.foo})`;
-                    else if (16 & e._flags) t = `.endWithControls(${Object.keys(e.control)})`;
-                    else if (e._flags & k) t = 1 & e._flags ? `Promise.resolve(${void 0===e._value?"":e._value})` : `Promise.reject(${void 0===e._value?"":e._value})`;
-                    else if (256 & e._flags) switch (3 & e._flags) {
-                        case 2:
-                        case 0:
-                        case 1:
-                            t = `new Promise(${e._onFulfilled})`
-                    } else e._onFulfilled && e._onRejected ? t = `.then(${e._onFulfilled}, ${e._onRejected})` : e._onFulfilled ? t = `.then(${e._onFulfilled})` : e._onRejected && (t = `.catch(${e._onRejected})`);
-                    return t
-                }
-
-                function D(e) {
-                    this.message = e, this.stack = new Error(e || this.name).stack
-                }
-
-                function L() {
-                    var e, t;
-                    0 === h && (_.length || x.length) && (h = 1, o || (t = 0, o = "undefined" == typeof MutationObserver || O && O.navigator && O.navigator.standalone ? f ? function() {
-                        f.resolve().then(H)
-                    } : "function" == typeof p ? function() {
-                        p(H)
-                    } : function() {
-                        setTimeout(H, 0)
-                    } : (e = document.createTextNode(""), new MutationObserver(H).observe(e, {
-                        characterData: !0
-                    }), function() {
-                        e.data = t = 1 - t
-                    })), o())
-                }
-
-                function R(e, t) {
-                    X(e, 8), t._parent = e, e._children ? e._children.push(t) : e._child ? (e._children = [e._child, t], e._child = void 0) : e._child = t
-                }
-
-                function I(e) {
-                    if (e && ("object" == typeof e || "function" == typeof e)) {
-                        var t;
-                        try {
-                            t = e.then
-                        } catch (e) {
-                            return E = e, w
-                        }
-                        if ("function" == typeof t) return t
-                    }
-                }
-
-                function P(e) {
-                    if (!e || j(e)) return e;
-                    var t = I(e);
-                    if (t === w) return N(E);
-                    if (t) {
-                        var r = new T((function(r, n) {
-                            t.call(e, r, n)
-                        }));
-                        return r._thenableParent = e, r
-                    }
-                    return e
-                }
-
-                function j(e) {
-                    return e instanceof T
-                }
-
-                function U(e, t, r) {
-                    var n, i, a, o, s = j(e = P(e)),
-                        u = !1;
-                    if (s) {
-                        if (!(3 & e._flags)) return X(e.then(t, r), 32);
-                        X(e, 8), u = !!(e._flags & S), a = e._context, n = 1 & e._flags ? t : r, i = e._value
-                    } else n = t, i = e;
-                    if (!n) return C(e).then();
-                    if ((i = J(n, a, i, !0)) === w) o = N(E);
-                    else {
-                        if (i === b) return C(e).then(t, r);
-                        if (i === v) return s ? e.then() : C(e);
-                        o = C(i)
-                    }
-                    return u && (o = o.cancellable()), void 0 !== a && ((o = o.then())._context = a), o
-                }
-
-                function W(e, t, r, n, i) {
-                    if (t === e._resolveLevel) {
-                        var a = ++e._resolveLevel;
-                        if (X(e, 4), e._thenableParent = null, r)
-                            if (i === e) e._parent = void 0, G(e, !1, n, new TypeError("promise resolved to itself"));
-                            else if (j(i)) {
-                            var o = 3 & i._flags;
-                            0 === o ? R(i, e) : (e._parent = i, X(e, 1024), X(i, 8), G(e, 1 === o, n, i._value))
-                        } else {
-                            var s = I(i);
-                            s === w ? (e._parent = void 0, G(e, !1, n, E)) : s ? (e._parent = void 0, e._thenableParent = i, Z(s, i, (function(t) {
-                                return W(e, a, !0, !1, t)
-                            }), (function(t) {
-                                return W(e, a, !1, !1, t)
-                            }))) : G(e, !0, n, i)
-                        } else G(e, !1, n, i)
-                    }
-                }
-
-                function B(e, t, r, n, i) {
-                    t === e._resolveLevel && (F(e), W(e, t, r, n, i))
-                }
-
-                function F(e) {
-                    if (e._parent) {
-                        var t = e._parent;
-                        if (e._parent = void 0, t._child === e) t._child = void 0;
-                        else if (t._children) {
-                            for (var r = t._children, n = 0; n < r.length; n++)
-                                if (r[n] === e) {
-                                    r.splice(n, 1);
-                                    break
-                                } 0 === r.length && (t._children = void 0)
-                        }
-                    }
-                }
-
-                function V(e) {
-                    if (null == e) throw new Error(`Invalid .catch guard ${e}`);
-                    if ("function" == typeof e) return e;
-                    if ("object" == typeof e) throw new Error("Object guards in .catch are currently unsupported");
-                    return function(t) {
-                        return t === e
-                    }
-                }
-
-                function q(e, t) {
-                    return function(r, n) {
-                        return r === y ? `.catch(..., ${t})` : e && ! function(e, t) {
-                            for (var r = 0; r < e.length; r++) {
-                                var n = e[r];
-                                if (n === Error || n.prototype instanceof Error) {
-                                    if (t instanceof n) return !0
-                                } else if (n(t)) return !0
-                            }
-                            return !1
-                        }(e, r) ? v : n ? b : t.call(this, r)
-                    }
-                }
-
-                function G(e, t, r, n) {
-                    if (X(e, 4 | (t ? 1 : 2)), e._value = n, e._child) z(e._child, t, r, n), e._child = void 0;
-                    else if (e._children) {
-                        var i = e._children;
-                        e._children = void 0;
-                        for (var a = 0; a < i.length; a++) z(i[a], t, r, n)
-                    } else t || 8 & e._flags || x.push(e)
-                }
-
-                function z(e, t, r, n) {
-                    e._resolveLevel++;
-                    var i = Q(e, t);
-                    if (i && 32 & e._flags) {
-                        X(e, 4);
-                        var a = J(i, e._context, n, !0);
-                        if (a !== b) return void(a === w ? (e._parent = void 0, G(e, !1, r, E)) : a === v ? G(e, t, r, n) : (e._parent = void 0, W(e, e._resolveLevel, !0, r, a)));
-                        e._flags &= -5
-                    }
-                    i ? ((r ? g : _).push(e), L()) : G(e, t, r, n)
-                }
-
-                function $(e, t) {
-                    for (; 0 !== e.length;) t.push(e.pop())
-                }
-
-                function H() {
-                    for (; 0 !== m.length || 0 !== _.length;) {
-                        0 === m.length && $(_, m);
-                        var e = m.pop(),
-                            t = e._parent,
-                            r = !!(t && 1 & t._flags),
-                            n = t && t._value,
-                            i = Q(e, r);
-                        if (X(e, 4), i) {
-                            var a = void 0;
-                            do {
-                                a = J(i, e._context, n, !1)
-                            } while (a === b);
-                            a === w ? (n = E, r = !1, e._parent = void 0) : a !== v && (n = a, r = !0, e._parent = void 0)
-                        }
-                        3 & e._flags || (W(e, e._resolveLevel, r, !0, n), $(g, m))
-                    }
-                    for (h--; 0 !== x.length;) {
-                        var o = x.pop();
-                        8 & o._flags || K(o, o._value)
-                    }
-                }
-                T.resolve = C, T.reject = N, T.prototype.then = function(e, t) {
-                    "function" != typeof e && (e = void 0), "function" != typeof t && (t = void 0);
-                    var r = new T;
-                    r._onFulfilled = e, r._onRejected = t, r._context = this._context, this._flags & S && X(r, S);
-                    var n = 3 & this._flags;
-                    return 0 === n ? R(this, r) : (X(this, 8), (1 === n ? e : t) ? (r._parent = this, _.push(r), L()) : (r._parent = this, X(r, n), r._value = this._value, 2 === n && x.push(r))), r
-                }, T.prototype.catch = function(e) {
-                    var t = arguments.length - 1;
-                    if (0 === t) return this.then(void 0, e);
-                    for (var r = new Array(t), n = 0; n < t; n++) r[n] = V(arguments[n]);
-                    var i = q(r, arguments[t]),
-                        a = U(this, void 0, i);
-                    return a._onRejected && X(a, A), a
-                }, T.all = function(e) {
-                    return new T((function(t, r) {
-                        var n = e.length;
-                        if (0 !== n)
-                            for (var i = new Array(e.length), a = 0; a < e.length; a++) i[a] = U(e[a], o, r);
-                        else t([]);
-
-                        function o(e) {
-                            if (0 == --n) {
-                                for (var r = [], a = 0; a < i.length; a++) {
-                                    var o = i[a];
-                                    r.push(o && 3 & o._flags ? o._value : e)
-                                }
-                                t(r)
-                            }
-                            return e
-                        }
-                    }))
-                }, T.allSettled = function(e) {
-                    return new T((function(t) {
-                        var r = Array.from(e),
-                            n = r.length;
-                        if (0 !== n)
-                            for (var i = new Array(r.length), a = u(!1), o = u(!0), s = 0; s < r.length; s++) i[s] = U(r[s], a, o);
-                        else t([]);
-
-                        function u(e) {
-                            return function(r) {
-                                var a = e ? {
-                                    status: "rejected",
-                                    reason: r
-                                } : {
-                                    status: "fulfilled",
-                                    value: r
-                                };
-                                if (0 == --n) {
-                                    for (var o = [], s = 0; s < i.length; s++) {
-                                        var u = i[s];
-                                        o.push(u && 3 & u._flags ? u._value : a)
-                                    }
-                                    t(o)
-                                }
-                                return a
-                            }
-                        }
-                    }))
-                }, T.race = function(e) {
-                    var t = P(e);
-                    if (j(t)) {
-                        var r = t.then((function(e) {
-                            return T.race(e)
-                        }));
-                        return r._context = void 0, r._flags &= -65, r
-                    }
-                    return new T((function(e, r) {
-                        for (var n = 0; n < t.length; n++) {
-                            var i = P(t[n]);
-                            if (!j(i) || 3 & i._flags)
-                                for (e(i), n++; n < t.length; n++) {
-                                    var a = t[n];
-                                    j(a) && X(a, 8)
-                                } else i.then(e, r)
-                        }
-                    }))
-                }, T.prototype.toString = function() {
-                    for (var e, t = [], r = this, n = !1; r; r = r._parent) {
-                        e = r, !n && 3 & r._flags && (n = !0, r._flags & k || (1 & r._flags ? t.push(`[resolved value: ${r._value}]`) : t.push(`[rejected reason: ${r._value}]`)));
-                        var i = M(r);
-                        1024 & r._flags && (i = `~${i}`), t.push(i)
-                    }
-                    return t.reverse(), 768 & e._flags || (t[0] = `[Promise]${t[0]}`), t.join("\n")
-                }, T.prototype.finally = function(e) {
-                    function t(t) {
-                        return t === y ? `.finally(${e})` : (e.call(this), v)
-                    }
-                    return X(this.then(t, t), A)
-                }, D.prototype = Object.create(Error.prototype, {
-                    name: {
-                        value: "AbortError"
-                    }
-                }), T.CancellationError = D, T.prototype.cancellable = function() {
-                    return X(this.then(), S)
-                }, T.prototype.cancel = function(e) {
-                    for (var t, r = this; r && !(3 & r._flags); r = r._parent) r._flags & S && (t = r);
-                    if (t)
-                        if (void 0 === e && (e = new D), Q(t, !1)) {
-                            var n = new T;
-                            F(t), R(n, t), B(n, 0, !1, !1, e)
-                        } else B(t, t._resolveLevel, !1, !1, e)
-                };
-                var Y = null == (null == O ? void 0 : O.dispatchEvent) ? null : function(e) {
-                    (0, c.default)(r, e);
-                    var t = (0, l.default)(r);
-
-                    function r(e, n) {
-                        var i;
-                        return (0, s.default)(this, r), i = t.call(this, e, {
-                            cancelable: !0
-                        }), Object.defineProperties((0, u.default)(i), {
-                            promise: {
-                                value: n.promise,
-                                enumerable: !0
-                            },
-                            reason: {
-                                value: n.reason,
-                                enumerable: !0
-                            }
-                        }), i
-                    }
-                    return r
-                }((0, d.default)(Event));
-
-                function K(e, t) {
-                    if (null != (null == O ? void 0 : O.dispatchEvent)) {
-                        var r = new Y("unhandledrejection", {
-                            promise: e,
-                            reason: t
-                        });
-                        if (O.dispatchEvent(r), !O.PromiseRejectionEvent && O.onunhandledrejection) try {
-                            O.onunhandledrejection(r)
-                        } catch (e) {}
-                    } else "undefined" != typeof process && null != process.emit ? process.emit("unhandledRejection", t, e) : console.error(`StackPromise did not catch ${t}`, e, t)
-                }
-
-                function Z(e, t, r, n) {
-                    try {
-                        e.call(t, r, n)
-                    } catch (e) {
-                        n(e)
-                    }
-                }
-
-                function Q(e, t) {
-                    if (!(4 & e._flags)) return t ? e._onFulfilled : e._onRejected
-                }
-
-                function J(e, t, r, n) {
-                    try {
-                        return n ? e.call(t, r, !0) : e.call(t, r)
-                    } catch (e) {
-                        return E = e, w
-                    }
-                }
-
-                function X(e, t) {
-                    return e._flags |= t, e
-                }
-                W(a = new T, 0, !0, !1, void 0)
             },
             31267: (e, t, r) => {
                 "use strict";
@@ -21305,39 +20883,37 @@
                 var u = "AbortError";
                 t.ABORT_ERROR = u
             },
-            16004: (e, t, r) => {
+            16004: (e, t) => {
                 "use strict";
-                var n = r(36953).default;
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.promiseCallSync = function(e, t) {
                     try {
-                        for (var r = arguments.length, i = new Array(r > 2 ? r - 2 : 0), a = 2; a < r; a++) i[a - 2] = arguments[a];
-                        return n.resolve(e.apply(t, i))
+                        for (var r = arguments.length, n = new Array(r > 2 ? r - 2 : 0), i = 2; i < r; i++) n[i - 2] = arguments[i];
+                        return Promise.resolve(e.apply(t, n))
                     } catch (e) {
-                        return n.reject(e)
+                        return Promise.reject(e)
                     }
                 }
             },
             97482: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default;
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.delayMs = function(e, t) {
-                    return new n((function(r, n) {
-                        if (null == t ? void 0 : t.aborted) throw new i.AbortError;
+                    return new Promise((function(r, i) {
+                        if (null == t ? void 0 : t.aborted) throw new n.AbortError;
                         var a = setTimeout((function() {
                             null == t || t.removeEventListener("abort", o), r()
                         }), e);
 
                         function o() {
-                            null == t || t.removeEventListener("abort", o), clearTimeout(a), n(new i.AbortError)
+                            null == t || t.removeEventListener("abort", o), clearTimeout(a), i(new n.AbortError)
                         }
                         null == t || t.addEventListener("abort", o)
                     }))
                 }, t.withTimeout = function(e, t, r) {
-                    return new n((function(n, i) {
+                    return new Promise((function(n, i) {
                         var a = setTimeout((function() {
                             try {
                                 n(r())
@@ -21352,7 +20928,7 @@
                         }))
                     }))
                 };
-                var i = r(31267)
+                var n = r(31267)
             },
             16637: (e, t, r) => {
                 "use strict";
@@ -21395,19 +20971,18 @@
             },
             15340: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(7914);
+                var n = r(7914);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.PromiseQueueMap = t.PromiseQueue = void 0;
-                var a = i(r(89372)),
-                    o = i(r(5816)),
-                    s = function() {
+                var i = n(r(89372)),
+                    a = n(r(5816)),
+                    o = function() {
                         function e() {
                             var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : -1;
-                            (0, a.default)(this, e), this._promise = n.resolve(), this._maxDelay = t
+                            (0, i.default)(this, e), this._promise = Promise.resolve(), this._maxDelay = t
                         }
-                        return (0, o.default)(e, [{
+                        return (0, a.default)(e, [{
                             key: "wait",
                             value: function() {
                                 return this._promise
@@ -21419,24 +20994,24 @@
                                         return e
                                     })).then(t, r),
                                     i = n.then();
-                                return this._promise = c(n, this._maxDelay), i
+                                return this._promise = u(n, this._maxDelay), i
                             }
                         }, {
                             key: "enqueue",
                             value: function(e) {
                                 var t = this._promise.then(e),
                                     r = t.then();
-                                return this._promise = c(t, this._maxDelay), r
+                                return this._promise = u(t, this._maxDelay), r
                             }
                         }]), e
                     }();
-                t.PromiseQueue = s;
-                var u = function() {
+                t.PromiseQueue = o;
+                var s = function() {
                     function e() {
                         var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : -1;
-                        (0, a.default)(this, e), this._map = new Map, this._maxDelay = t
+                        (0, i.default)(this, e), this._map = new Map, this._maxDelay = t
                     }
-                    return (0, o.default)(e, [{
+                    return (0, a.default)(e, [{
                         key: "waitIfPending",
                         value: function(e) {
                             return this._map.get(e)
@@ -21444,7 +21019,7 @@
                     }, {
                         key: "wait",
                         value: function(e) {
-                            return this._map.get(e) || n.resolve()
+                            return this._map.get(e) || Promise.resolve()
                         }
                     }, {
                         key: "enqueueHandlers",
@@ -21468,22 +21043,22 @@
                                 a = function() {
                                     n._map.get(e) === r && n._map.delete(e)
                                 };
-                            return r = c(t, this._maxDelay).then(a, a), this._map.set(e, r), i
+                            return r = u(t, this._maxDelay).then(a, a), this._map.set(e, r), i
                         }
                     }]), e
                 }();
 
-                function c(e, t) {
-                    return t >= 0 ? new n((function(r) {
+                function u(e, t) {
+                    return t >= 0 ? new Promise((function(r) {
                         var n = function() {
                             r()
                         };
                         e.then(n, n), setTimeout(n, t)
-                    })) : e.then(l, l)
+                    })) : e.then(c, c)
                 }
 
-                function l() {}
-                t.PromiseQueueMap = u
+                function c() {}
+                t.PromiseQueueMap = s
             },
             34652: (e, t, r) => {
                 "use strict";
@@ -21643,119 +21218,6 @@
                     return r
                 }
             },
-            62569: (e, t, r) => {
-                "use strict";
-                var n = r(7914);
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.default = void 0;
-                var i = n(r(5816)),
-                    a = n(r(89372)),
-                    o = n(r(79386)),
-                    s = function e(t, r, n) {
-                        (0, a.default)(this, e), this.key = t, this.value = r, this.timestamp = null != n ? n : Date.now(), this.prev = void 0, this.next = void 0
-                    },
-                    u = function() {
-                        function e() {
-                            (0, a.default)(this, e), this.start = new s(null, null), this.end = new s(null, null), this.start.next = this.end, this.end.prev = this.start
-                        }
-                        return (0, i.default)(e, [{
-                            key: "append",
-                            value: function(e, t) {
-                                var r = new s(e, t),
-                                    n = this.end,
-                                    i = (0, o.default)(this.end.prev, "this.end.prev");
-                                return r.next = n, r.prev = i, n.prev = r, i.next = r, r
-                            }
-                        }, {
-                            key: "prepend",
-                            value: function(e, t) {
-                                var r = new s(e, t),
-                                    n = this.start,
-                                    i = (0, o.default)(this.start.next, "this.start.next");
-                                return r.prev = n, r.next = i, n.next = r, i.prev = r, r
-                            }
-                        }, {
-                            key: "popEnd",
-                            value: function() {
-                                var e = (0, o.default)(this.end.prev, "this.end.prev");
-                                if (e !== this.start) {
-                                    var t = (0, o.default)(e.prev, "entry.prev"),
-                                        r = (0, o.default)(e.next, "entry.next");
-                                    return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
-                                }
-                            }
-                        }, {
-                            key: "popFront",
-                            value: function() {
-                                var e = (0, o.default)(this.start.next, "this.start.next");
-                                if (e !== this.end) {
-                                    var t = (0, o.default)(e.prev, "entry.prev"),
-                                        r = (0, o.default)(e.next, "entry.next");
-                                    return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
-                                }
-                            }
-                        }, {
-                            key: "peekFront",
-                            value: function() {
-                                var e = (0, o.default)(this.start.next, "this.start.next");
-                                if (e !== this.end) return e
-                            }
-                        }, {
-                            key: "peekEnd",
-                            value: function() {
-                                var e = (0, o.default)(this.end.prev, "this.end.prev");
-                                if (e !== this.start) return e
-                            }
-                        }, {
-                            key: "remove",
-                            value: function(e) {
-                                var t = (0, o.default)(e.prev, "entry.prev"),
-                                    r = (0, o.default)(e.next, "entry.next");
-                                return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
-                            }
-                        }, {
-                            key: "stats",
-                            value: function() {
-                                for (var e = this.start, t = 0; e !== this.end;) e = (0, o.default)(e.next, "entry.next"), t += 1;
-                                return t - 1
-                            }
-                        }]), e
-                    }(),
-                    c = function() {
-                        function e() {
-                            (0, a.default)(this, e), this.keyMap = new Map, this.entryList = new u
-                        }
-                        return (0, i.default)(e, [{
-                            key: "lookup",
-                            value: function(e) {
-                                var t = this.keyMap.get(e);
-                                if (t) {
-                                    this.entryList.remove(t);
-                                    var r = this.entryList.append(t.key, t.value);
-                                    return this.keyMap.set(r.key, r), t.value
-                                }
-                            }
-                        }, {
-                            key: "add",
-                            value: function(e, t) {
-                                var r = this.keyMap.get(e);
-                                return r ? r.value = t : (r = this.entryList.append(e, t), this.keyMap.set(e, r)), t
-                            }
-                        }, {
-                            key: "expireKeys",
-                            value: function(e) {
-                                for (var t = this.entryList.peekFront(); t && t.timestamp < e;) this.entryList.popFront(), this.keyMap.delete(t.key), t = this.entryList.peekFront()
-                            }
-                        }, {
-                            key: "printStats",
-                            value: function() {
-                                console.log("========================== STATS ============================="), console.log("entry list: ", this.entryList.stats()), console.log("map keys: ", this.keyMap.size)
-                            }
-                        }]), e
-                    }();
-                t.default = c
-            },
             98151: (e, t) => {
                 "use strict";
                 Object.defineProperty(t, "__esModule", {
@@ -21810,7 +21272,8 @@
                     PRODUCT: "PRODUCT",
                     PUSH_NOTIFICATION: "PUSH_NOTIFICATION",
                     CREATE_COMMUNITY: "CREATE_COMMUNITY",
-                    NEWSLETTER: "NEWSLETTER"
+                    NEWSLETTER: "NEWSLETTER",
+                    AVATAR_STICKERPACK: "AVATAR_STICKERPACK"
                 };
                 var r = /^whatsapp:\/\/.*/i
             },
@@ -21865,21 +21328,20 @@
             19666: (e, t, r) => {
                 "use strict";
                 var n, i = r(66849).log,
-                    a = r(36953).default,
-                    o = r(95318),
-                    s = o(r(87757)),
-                    u = o(r(48926)),
-                    c = o(r(34575)),
-                    l = o(r(93913)),
-                    d = r(15340),
-                    f = r(2741),
-                    p = o(r(61048)),
-                    h = function(e, t) {
+                    a = r(95318),
+                    o = a(r(87757)),
+                    s = a(r(48926)),
+                    u = a(r(34575)),
+                    c = a(r(93913)),
+                    l = r(15340),
+                    d = r(2741),
+                    f = a(r(61048)),
+                    p = function(e, t) {
                         if (!t && e && e.__esModule) return e;
                         if (null === e || "object" != typeof e && "function" != typeof e) return {
                             default: e
                         };
-                        var r = g(t);
+                        var r = _(t);
                         if (r && r.has(e)) return r.get(e);
                         var n = {},
                             i = Object.defineProperty && Object.getOwnPropertyDescriptor;
@@ -21890,42 +21352,42 @@
                             } n.default = e, r && r.set(e, n);
                         return n
                     }(r(52966)),
-                    m = o(r(62570)),
-                    _ = r(93828);
+                    h = a(r(62570)),
+                    m = r(93828);
 
-                function g(e) {
+                function _(e) {
                     if ("function" != typeof WeakMap) return null;
                     var t = new WeakMap,
                         r = new WeakMap;
-                    return (g = function(e) {
+                    return (_ = function(e) {
                         return e ? r : t
                     })(e)
                 }
-                var v = [f.AVDeviceStatusCode.VideoDeviceInUse, f.AVDeviceStatusCode.AudioDeviceInUse, f.AVDeviceStatusCode.AudioCaptureDeviceInUse, f.AVDeviceStatusCode.AudioPlaybackDeviceInUse, f.AVDeviceStatusCode.VideoDeviceOther, f.AVDeviceStatusCode.AudioCaptureDeviceOther, f.AVDeviceStatusCode.AudioPlaybackDeviceOther, f.AVDeviceStatusCode.AudioDeviceOther],
-                    b = function() {
+                var g = [d.AVDeviceStatusCode.VideoDeviceInUse, d.AVDeviceStatusCode.AudioDeviceInUse, d.AVDeviceStatusCode.AudioCaptureDeviceInUse, d.AVDeviceStatusCode.AudioPlaybackDeviceInUse, d.AVDeviceStatusCode.VideoDeviceOther, d.AVDeviceStatusCode.AudioCaptureDeviceOther, d.AVDeviceStatusCode.AudioPlaybackDeviceOther, d.AVDeviceStatusCode.AudioDeviceOther],
+                    v = function() {
                         function e() {
                             var t = this;
-                            (0, c.default)(this, e), this._devices = [], this._queue = new d.PromiseQueue, this._handleDeviceStatusChanged = function() {
-                                var e = (0, u.default)(s.default.mark((function e(r, n, a, o) {
+                            (0, u.default)(this, e), this._devices = [], this._queue = new l.PromiseQueue, this._handleDeviceStatusChanged = function() {
+                                var e = (0, s.default)(o.default.mark((function e(r, n, a, s) {
                                     var u;
-                                    return s.default.wrap((function(e) {
+                                    return o.default.wrap((function(e) {
                                         for (;;) switch (e.prev = e.next) {
                                             case 0:
-                                                if (i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`DeviceId: ${a}, Type: ${r}, Code: ${n}, Context: ${o}`, (u = h.getSelectedDevice(t._devices, r)) && u.uid === a) {
+                                                if (i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`DeviceId: ${a}, Type: ${r}, Code: ${n}, Context: ${s}`, (u = p.getSelectedDevice(t._devices, r)) && u.uid === a) {
                                                     e.next = 5;
                                                     break
                                                 }
                                                 return i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`ignoring event for deviceId: ${a} as it is not currently selected`, e.abrupt("return");
                                             case 5:
-                                                if (n !== f.AVDeviceStatusCode.DeviceSuccess) {
+                                                if (n !== d.AVDeviceStatusCode.DeviceSuccess) {
                                                     e.next = 8;
                                                     break
                                                 }
                                                 return i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`ignoring status code: ${n} as not critical`, e.abrupt("return");
                                             case 8:
-                                                v.some((function(e) {
+                                                g.some((function(e) {
                                                     return e === n
-                                                })) && t._deviceStatusChangeToast(a, r, n), e.t0 = o, e.next = e.t0 === f.AVDeviceStatusContext.DeviceSelection ? 12 : e.t0 === f.AVDeviceStatusContext.DeviceMidstream || e.t0 === f.AVDeviceStatusContext.DeviceSetup || e.t0 === f.AVDeviceStatusContext.DeviceStop ? 15 : e.t0 === f.AVDeviceStatusContext.DeviceOther ? 17 : 18;
+                                                })) && t._deviceStatusChangeToast(a, r, n), e.t0 = s, e.next = e.t0 === d.AVDeviceStatusContext.DeviceSelection ? 12 : e.t0 === d.AVDeviceStatusContext.DeviceMidstream || e.t0 === d.AVDeviceStatusContext.DeviceSetup || e.t0 === d.AVDeviceStatusContext.DeviceStop ? 15 : e.t0 === d.AVDeviceStatusContext.DeviceOther ? 17 : 18;
                                                 break;
                                             case 12:
                                                 return e.next = 14, t._handleAVDeviceSelectionError(a, r, n);
@@ -21950,19 +21412,19 @@
                                 }))
                             }
                         }
-                        var t, o, g, b, y;
-                        return (0, l.default)(e, [{
+                        var t, a, _, v, b;
+                        return (0, c.default)(e, [{
                             key: "init",
                             value: function() {
                                 var e = this;
                                 n = r(65717), this._getOrderedDeviceList().then((function() {
-                                    e._queue.enqueue((0, u.default)(s.default.mark((function t() {
-                                        return s.default.wrap((function(t) {
+                                    e._queue.enqueue((0, s.default)(o.default.mark((function t() {
+                                        return o.default.wrap((function(t) {
                                             for (;;) switch (t.prev = t.next) {
                                                 case 0:
                                                     return t.next = 2, e._refreshDeviceList(!0);
                                                 case 2:
-                                                    return t.next = 4, a.all([e._initCameraPerUserPref(), e._initAudioPerUserPref()]);
+                                                    return t.next = 4, Promise.all([e._initCameraPerUserPref(), e._initAudioPerUserPref()]);
                                                 case 4:
                                                     e._notify();
                                                 case 5:
@@ -21983,19 +21445,19 @@
                         }, {
                             key: "getDeviceListAsync",
                             value: function() {
-                                return a.resolve(this._devices)
+                                return Promise.resolve(this._devices)
                             }
                         }, {
                             key: "selectCameraDevice",
                             value: function(e) {
                                 var t = this;
-                                this._queue.enqueue((0, u.default)(s.default.mark((function r() {
-                                    return s.default.wrap((function(r) {
+                                this._queue.enqueue((0, s.default)(o.default.mark((function r() {
+                                    return o.default.wrap((function(r) {
                                         for (;;) switch (r.prev = r.next) {
                                             case 0:
                                                 return i(2, void 0, void 0, void 0, ["device-manager"])`user selected camera with uid: ${e}`, r.next = 3, t._selectCameraDevice(t._devices, e);
                                             case 3:
-                                                r.sent ? (p.default.clearPreferences(f.AVDeviceType.Video), p.default.selectDevice(f.AVDeviceType.Video, e), t._notify()) : t._requestDeviceListRefreshAndNotify();
+                                                r.sent ? (f.default.clearPreferences(d.AVDeviceType.Video), f.default.selectDevice(d.AVDeviceType.Video, e), t._notify()) : t._requestDeviceListRefreshAndNotify();
                                             case 5:
                                             case "end":
                                                 return r.stop()
@@ -22007,14 +21469,14 @@
                             key: "selectAudioDevice",
                             value: function(e, t, r) {
                                 var n = this;
-                                this._queue.enqueue((0, u.default)(s.default.mark((function a() {
-                                    var o, u;
-                                    return s.default.wrap((function(a) {
+                                this._queue.enqueue((0, s.default)(o.default.mark((function a() {
+                                    var s, u;
+                                    return o.default.wrap((function(a) {
                                         for (;;) switch (a.prev = a.next) {
                                             case 0:
-                                                return i(2, void 0, void 0, void 0, ["device-manager"])`user selected audio with uid: ${t} and type: ${e}`, o = e === f.AVDeviceType.AudioInput ? t : h.getSelectedDeviceIdOrDefault(n._devices, f.AVDeviceType.AudioInput), u = e === f.AVDeviceType.AudioOutput ? t : h.getSelectedDeviceIdOrDefault(n._devices, f.AVDeviceType.AudioOutput), a.next = 5, n._selectAudioDevices(n._devices, o, u);
+                                                return i(2, void 0, void 0, void 0, ["device-manager"])`user selected audio with uid: ${t} and type: ${e}`, s = e === d.AVDeviceType.AudioInput ? t : p.getSelectedDeviceIdOrDefault(n._devices, d.AVDeviceType.AudioInput), u = e === d.AVDeviceType.AudioOutput ? t : p.getSelectedDeviceIdOrDefault(n._devices, d.AVDeviceType.AudioOutput), a.next = 5, n._selectAudioDevices(n._devices, s, u);
                                             case 5:
-                                                a.sent ? (e === f.AVDeviceType.AudioInput ? (n._isDefaultMicrophoneOverriden = !!r, n.isDefaultMicrophoneOverriden() ? p.default.selectDevice(e, t) : p.default.clearPreferences(e)) : e === f.AVDeviceType.AudioOutput && (n._isDefaultSpeakerOverriden = !!r, n.isDefaultSpeakerOverriden() ? p.default.selectDevice(e, t) : p.default.clearPreferences(e)), n._notify()) : n._requestDeviceListRefreshAndNotify();
+                                                a.sent ? (e === d.AVDeviceType.AudioInput ? (n._isDefaultMicrophoneOverriden = !!r, n.isDefaultMicrophoneOverriden() ? f.default.selectDevice(e, t) : f.default.clearPreferences(e)) : e === d.AVDeviceType.AudioOutput && (n._isDefaultSpeakerOverriden = !!r, n.isDefaultSpeakerOverriden() ? f.default.selectDevice(e, t) : f.default.clearPreferences(e)), n._notify()) : n._requestDeviceListRefreshAndNotify();
                                             case 7:
                                             case "end":
                                                 return a.stop()
@@ -22042,9 +21504,9 @@
                             }
                         }, {
                             key: "_handleAVDeviceSelectionError",
-                            value: (y = (0, u.default)(s.default.mark((function e(t, r, n) {
-                                var a, o, u;
-                                return s.default.wrap((function(e) {
+                            value: (b = (0, s.default)(o.default.mark((function e(t, r, n) {
+                                var a, s, u;
+                                return o.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             if ((a = this._getPrevSelectedDevice(r)) && a.uid !== t) {
@@ -22053,18 +21515,18 @@
                                             }
                                             return this._handleAVDeviceError(t, r, n), e.abrupt("return");
                                         case 4:
-                                            i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`falling back to deviceId: ${a.uid}`, e.t0 = r, e.next = e.t0 === f.AVDeviceType.Video ? 8 : e.t0 === f.AVDeviceType.AudioOutput || e.t0 === f.AVDeviceType.AudioInput ? 11 : 17;
+                                            i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`falling back to deviceId: ${a.uid}`, e.t0 = r, e.next = e.t0 === d.AVDeviceType.Video ? 8 : e.t0 === d.AVDeviceType.AudioOutput || e.t0 === d.AVDeviceType.AudioInput ? 11 : 17;
                                             break;
                                         case 8:
                                             return e.next = 10, this._selectCameraDevice(this._devices, a.uid, !0);
                                         case 10:
                                             return e.abrupt("break", 17);
                                         case 11:
-                                            if (o = r === f.AVDeviceType.AudioOutput ? a : h.getSelectedDevice(this._devices, f.AVDeviceType.AudioOutput), !(u = r === f.AVDeviceType.AudioInput ? a : h.getSelectedDevice(this._devices, f.AVDeviceType.AudioInput)) || !o) {
+                                            if (s = r === d.AVDeviceType.AudioOutput ? a : p.getSelectedDevice(this._devices, d.AVDeviceType.AudioOutput), !(u = r === d.AVDeviceType.AudioInput ? a : p.getSelectedDevice(this._devices, d.AVDeviceType.AudioInput)) || !s) {
                                                 e.next = 16;
                                                 break
                                             }
-                                            return e.next = 16, this._selectAudioDevices(this._devices, u.uid, o.uid, !0);
+                                            return e.next = 16, this._selectAudioDevices(this._devices, u.uid, s.uid, !0);
                                         case 16:
                                             return e.abrupt("break", 17);
                                         case 17:
@@ -22075,17 +21537,17 @@
                                     }
                                 }), e, this)
                             }))), function() {
-                                return y.apply(this, arguments)
+                                return b.apply(this, arguments)
                             })
                         }, {
                             key: "_getPrevSelectedDevice",
                             value: function(e) {
                                 switch (e) {
-                                    case f.AVDeviceType.Video:
+                                    case d.AVDeviceType.Video:
                                         return this._prevSelectedCamera;
-                                    case f.AVDeviceType.AudioInput:
+                                    case d.AVDeviceType.AudioInput:
                                         return this._prevSelectedMicrophone;
-                                    case f.AVDeviceType.AudioOutput:
+                                    case d.AVDeviceType.AudioOutput:
                                         return this._prevSelectedSpeaker;
                                     default:
                                         return
@@ -22095,11 +21557,11 @@
                             key: "_handleAVDeviceError",
                             value: function(e, t, r) {
                                 switch (t) {
-                                    case f.AVDeviceType.Video:
+                                    case d.AVDeviceType.Video:
                                         var a;
                                         i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`turnOff camera because of deviceId: ${e}`, null === (a = n) || void 0 === a || a.videoTurnCameraOff();
                                         break;
-                                    case f.AVDeviceType.AudioInput:
+                                    case d.AVDeviceType.AudioInput:
                                         var o;
                                         i(2, void 0, void 0, void 0, ["device-manager", "device-status-event"])`mute microphone because of deviceId: ${e}`, null === (o = n) || void 0 === o || o.mute(!0)
                                 }
@@ -22107,44 +21569,44 @@
                             }
                         }, {
                             key: "_selectAudioDevices",
-                            value: (b = (0, u.default)(s.default.mark((function e(t, r, n, a) {
-                                var o, u;
-                                return s.default.wrap((function(e) {
+                            value: (v = (0, s.default)(o.default.mark((function e(t, r, n, a) {
+                                var s, u;
+                                return o.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
-                                            return a || (this._prevSelectedMicrophone = h.getSelectedDevice(t, f.AVDeviceType.AudioInput), this._prevSelectedSpeaker = h.getSelectedDevice(t, f.AVDeviceType.AudioOutput)), e.next = 3, this._selectAudioWrapper(r, n);
+                                            return a || (this._prevSelectedMicrophone = p.getSelectedDevice(t, d.AVDeviceType.AudioInput), this._prevSelectedSpeaker = p.getSelectedDevice(t, d.AVDeviceType.AudioOutput)), e.next = 3, this._selectAudioWrapper(r, n);
                                         case 3:
-                                            return o = e.sent, i(2, void 0, void 0, void 0, ["device-manager"])`select_audio_device: (${r}), (${n}) finished: ${String(o)}`, u = !1, o && (u = this._updateSelectedAudioDevices(t, r, n)), i(2, void 0, void 0, void 0, ["device-manager"])`select_audio_device: (${r}), (${n}) updated: ${String(u)}`, e.abrupt("return", u);
+                                            return s = e.sent, i(2, void 0, void 0, void 0, ["device-manager"])`select_audio_device: (${r}), (${n}) finished: ${String(s)}`, u = !1, s && (u = this._updateSelectedAudioDevices(t, r, n)), i(2, void 0, void 0, void 0, ["device-manager"])`select_audio_device: (${r}), (${n}) updated: ${String(u)}`, e.abrupt("return", u);
                                         case 9:
                                         case "end":
                                             return e.stop()
                                     }
                                 }), e, this)
                             }))), function() {
-                                return b.apply(this, arguments)
+                                return v.apply(this, arguments)
                             })
                         }, {
                             key: "_selectCameraDevice",
-                            value: (g = (0, u.default)(s.default.mark((function e(t, r, n) {
-                                var a, o;
-                                return s.default.wrap((function(e) {
+                            value: (_ = (0, s.default)(o.default.mark((function e(t, r, n) {
+                                var a, s;
+                                return o.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
-                                            return n || (this._prevSelectedCamera = h.getSelectedDevice(t, f.AVDeviceType.Video)), e.next = 3, this._selectCameraWrapper(r);
+                                            return n || (this._prevSelectedCamera = p.getSelectedDevice(t, d.AVDeviceType.Video)), e.next = 3, this._selectCameraWrapper(r);
                                         case 3:
-                                            return a = e.sent, o = !1, i(2, void 0, void 0, void 0, ["device-manager"])`select_camera: (${r}), finished: ${String(a)}`, a && (o = this._updateSelectedDevice(t, f.AVDeviceType.Video, r)), i(2, void 0, void 0, void 0, ["device-manager"])`select_camera: (${r}), updated: ${String(o)}`, e.abrupt("return", o);
+                                            return a = e.sent, s = !1, i(2, void 0, void 0, void 0, ["device-manager"])`select_camera: (${r}), finished: ${String(a)}`, a && (s = this._updateSelectedDevice(t, d.AVDeviceType.Video, r)), i(2, void 0, void 0, void 0, ["device-manager"])`select_camera: (${r}), updated: ${String(s)}`, e.abrupt("return", s);
                                         case 9:
                                         case "end":
                                             return e.stop()
                                     }
                                 }), e, this)
                             }))), function() {
-                                return g.apply(this, arguments)
+                                return _.apply(this, arguments)
                             })
                         }, {
                             key: "_selectCameraWrapper",
                             value: function(e) {
-                                return new a((function(t) {
+                                return new Promise((function(t) {
                                     var r;
                                     null === (r = n) || void 0 === r || r.selectCamera(e, (function() {})), t(!0)
                                 }))
@@ -22152,7 +21614,7 @@
                         }, {
                             key: "_selectAudioWrapper",
                             value: function(e, t) {
-                                return new a((function(r) {
+                                return new Promise((function(r) {
                                     var i;
                                     null === (i = n) || void 0 === i || i.selectAudio(e, t, (function() {})), r(!0)
                                 }))
@@ -22160,7 +21622,7 @@
                         }, {
                             key: "_updateSelectedAudioDevices",
                             value: function(e, t, r) {
-                                return this._updateSelectedDevice(e, f.AVDeviceType.AudioInput, t) && this._updateSelectedDevice(e, f.AVDeviceType.AudioOutput, r)
+                                return this._updateSelectedDevice(e, d.AVDeviceType.AudioInput, t) && this._updateSelectedDevice(e, d.AVDeviceType.AudioOutput, r)
                             }
                         }, {
                             key: "_updateSelectedDevice",
@@ -22171,12 +21633,12 @@
                                     i = e.find((function(e) {
                                         return e.uid === r && e.isConnected && e.deviceType === t
                                     }));
-                                return !(!i && r !== h.DEFAULT_AV_DEVICE_ID) && (n && (n.isSelected = !1), i && (i.isSelected = !0, this._deviceChangeToast(i)), !0)
+                                return !(!i && r !== p.DEFAULT_AV_DEVICE_ID) && (n && (n.isSelected = !1), i && (i.isSelected = !0, this._deviceChangeToast(i)), !0)
                             }
                         }, {
                             key: "_refreshDeviceListAndNotify",
-                            value: (o = (0, u.default)(s.default.mark((function e(t) {
-                                return s.default.wrap((function(e) {
+                            value: (a = (0, s.default)(o.default.mark((function e(t) {
+                                return o.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             return e.next = 2, this._refreshDeviceList(t);
@@ -22188,12 +21650,12 @@
                                     }
                                 }), e, this)
                             }))), function() {
-                                return o.apply(this, arguments)
+                                return a.apply(this, arguments)
                             })
                         }, {
                             key: "_findDevicePerUserPref",
                             value: function(e, t) {
-                                return p.default.getPreferences(e).find((function(r) {
+                                return f.default.getPreferences(e).find((function(r) {
                                     return t.some((function(t) {
                                         return t.uid === r && t.isConnected && t.deviceType === e
                                     }))
@@ -22202,34 +21664,34 @@
                         }, {
                             key: "_initCameraPerUserPref",
                             value: function() {
-                                var e = this._findDevicePerUserPref(f.AVDeviceType.Video, this._devices);
-                                return null != e ? (i(2, void 0, void 0, void 0, ["device-manager"])`initializing camera with ${e}`, this._selectCameraDevice(this._devices, e)) : a.resolve(!1)
+                                var e = this._findDevicePerUserPref(d.AVDeviceType.Video, this._devices);
+                                return null != e ? (i(2, void 0, void 0, void 0, ["device-manager"])`initializing camera with ${e}`, this._selectCameraDevice(this._devices, e)) : Promise.resolve(!1)
                             }
                         }, {
                             key: "_initAudioPerUserPref",
                             value: function() {
-                                var e = this._findDevicePerUserPref(f.AVDeviceType.AudioInput, this._devices),
-                                    t = this._findDevicePerUserPref(f.AVDeviceType.AudioOutput, this._devices);
-                                return null == e && null == t ? a.resolve(!1) : (null != e ? this._isDefaultMicrophoneOverriden = !0 : e = h.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioInput), null != t ? this._isDefaultSpeakerOverriden = !0 : t = h.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioOutput), i(2, void 0, void 0, void 0, ["device-manager"])`initializing audio with (${e}  ${t})`, this._selectAudioDevices(this._devices, e, t))
+                                var e = this._findDevicePerUserPref(d.AVDeviceType.AudioInput, this._devices),
+                                    t = this._findDevicePerUserPref(d.AVDeviceType.AudioOutput, this._devices);
+                                return null == e && null == t ? Promise.resolve(!1) : (null != e ? this._isDefaultMicrophoneOverriden = !0 : e = p.getSelectedDeviceIdOrDefault(this._devices, d.AVDeviceType.AudioInput), null != t ? this._isDefaultSpeakerOverriden = !0 : t = p.getSelectedDeviceIdOrDefault(this._devices, d.AVDeviceType.AudioOutput), i(2, void 0, void 0, void 0, ["device-manager"])`initializing audio with (${e}  ${t})`, this._selectAudioDevices(this._devices, e, t))
                             }
                         }, {
                             key: "_autoSelectCameraIfNeeded",
                             value: function(e, t) {
-                                var r = this._getAutoSelectDeviceId(f.AVDeviceType.Video, e, t);
-                                return null != r ? this._selectCameraDevice(e, r) : a.resolve(!0)
+                                var r = this._getAutoSelectDeviceId(d.AVDeviceType.Video, e, t);
+                                return null != r ? this._selectCameraDevice(e, r) : Promise.resolve(!0)
                             }
                         }, {
                             key: "_autoSelectAudioIfNeeded",
                             value: function(e, t) {
-                                var r, n, i = this._getAutoSelectDeviceId(f.AVDeviceType.AudioInput, e, t),
-                                    o = this._getAutoSelectDeviceId(f.AVDeviceType.AudioOutput, e, t);
-                                return null != i || null != o ? (i = null !== (r = i) && void 0 !== r ? r : h.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioInput), o = null !== (n = o) && void 0 !== n ? n : h.getSelectedDeviceIdOrDefault(this._devices, f.AVDeviceType.AudioOutput), this._selectAudioDevices(e, i, o)) : a.resolve(!0)
+                                var r, n, i = this._getAutoSelectDeviceId(d.AVDeviceType.AudioInput, e, t),
+                                    a = this._getAutoSelectDeviceId(d.AVDeviceType.AudioOutput, e, t);
+                                return null != i || null != a ? (i = null !== (r = i) && void 0 !== r ? r : p.getSelectedDeviceIdOrDefault(this._devices, d.AVDeviceType.AudioInput), a = null !== (n = a) && void 0 !== n ? n : p.getSelectedDeviceIdOrDefault(this._devices, d.AVDeviceType.AudioOutput), this._selectAudioDevices(e, i, a)) : Promise.resolve(!0)
                             }
                         }, {
                             key: "_refreshDeviceList",
-                            value: (t = (0, u.default)(s.default.mark((function e(t) {
+                            value: (t = (0, s.default)(o.default.mark((function e(t) {
                                 var r, n;
-                                return s.default.wrap((function(e) {
+                                return o.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             return e.next = 2, this._getOrderedDeviceList();
@@ -22238,7 +21700,7 @@
                                                 e.next = 8;
                                                 break
                                             }
-                                            return n = h.getDiff(this._devices, r), e.next = 8, a.all([this._autoSelectCameraIfNeeded(r, n), this._autoSelectAudioIfNeeded(r, n)]);
+                                            return n = p.getDiff(this._devices, r), e.next = 8, Promise.all([this._autoSelectCameraIfNeeded(r, n), this._autoSelectAudioIfNeeded(r, n)]);
                                         case 8:
                                             this._devices = r;
                                         case 9:
@@ -22252,18 +21714,18 @@
                         }, {
                             key: "_notify",
                             value: function() {
-                                var e, t = null === (e = m.default.getWindow()) || void 0 === e ? void 0 : e.getBrowserWindow();
-                                t && !t.isDestroyed() && (t.webContents.send(_.MAIN_IPC_EVENTS.AV_EVENT), m.default.renderMenu())
+                                var e, t = null === (e = h.default.getWindow()) || void 0 === e ? void 0 : e.getBrowserWindow();
+                                t && !t.isDestroyed() && (t.webContents.send(m.MAIN_IPC_EVENTS.AV_EVENT), h.default.renderMenu())
                             }
                         }, {
                             key: "_getOrderedDeviceList",
                             value: function() {
-                                return new a((function(e) {
+                                return new Promise((function(e) {
                                     var t;
                                     null === (t = n) || void 0 === t || t.getAVDevices((function(t) {
                                         if (t) {
-                                            var r = h.getSanitizedDevices(t);
-                                            e(r.sort(h.deviceInfoComparator))
+                                            var r = p.getSanitizedDevices(t);
+                                            e(r.sort(p.deviceInfoComparator))
                                         } else e([])
                                     }))
                                 }))
@@ -22273,45 +21735,45 @@
                             value: function(e, t, r) {
                                 var n = this._devices,
                                     a = t,
-                                    o = h.getSelectedDevice(n, e),
-                                    s = h.getSystemDefaultDevice(n, e),
-                                    u = h.getSystemDefaultDevice(a, e);
+                                    o = p.getSelectedDevice(n, e),
+                                    s = p.getSystemDefaultDevice(n, e),
+                                    u = p.getSystemDefaultDevice(a, e);
                                 if (u && (!o || !a.some((function(e) {
                                         return e.uid === o.uid && e.isConnected && e.isSelected
                                     })))) return i(2, void 0, void 0, void 0, ["device-manager", "ads"])`prev device unavailable. Switching to: ${u.uid}-${u.name}`, u.uid;
-                                if (u && !p.default.contains(null == o ? void 0 : o.uid) && (null == s ? void 0 : s.uid) !== u.uid) return i(2, void 0, void 0, void 0, ["device-manager", "ads"])`system default changed. Switching to: ${u.uid}-${u.name}`, u.uid;
+                                if (u && !f.default.contains(null == o ? void 0 : o.uid) && (null == s ? void 0 : s.uid) !== u.uid) return i(2, void 0, void 0, void 0, ["device-manager", "ads"])`system default changed. Switching to: ${u.uid}-${u.name}`, u.uid;
                                 var c = r.added.filter((function(t) {
                                     return t.deviceType === e
                                 }));
-                                if (c.length > 0 && !p.default.contains(null == o ? void 0 : o.uid)) {
-                                    if (e === f.AVDeviceType.Video) return i(2, void 0, void 0, void 0, ["device-manager", "ads"])`new camera detected. Switching to: ${c[0].uid}-${c[0].name}`, c[0].uid;
+                                if (c.length > 0 && !f.default.contains(null == o ? void 0 : o.uid)) {
+                                    if (e === d.AVDeviceType.Video) return i(2, void 0, void 0, void 0, ["device-manager", "ads"])`new camera detected. Switching to: ${c[0].uid}-${c[0].name}`, c[0].uid;
                                     var l = this._findDevicePerUserPref(e, c);
                                     if (l) return i(2, void 0, void 0, void 0, ["device-manager", "ads"])`new audio detected. Switching to: ${c[0].uid}-${c[0].name}`, l
                                 }
                                 return a.some((function(t) {
                                     return t.isConnected && t.deviceType === e
-                                })) ? (i(2, void 0, void 0, void 0, ["device-manager", "ads"])`no changes for ${e}`, null) : (i(2, void 0, void 0, void 0, ["device-manager", "ads"])`no other device detected. Switching to EMPTY`, h.DEFAULT_AV_DEVICE_ID)
+                                })) ? (i(2, void 0, void 0, void 0, ["device-manager", "ads"])`no changes for ${e}`, null) : (i(2, void 0, void 0, void 0, ["device-manager", "ads"])`no other device detected. Switching to EMPTY`, p.DEFAULT_AV_DEVICE_ID)
                             }
                         }, {
                             key: "_deviceChangeToast",
                             value: function(e) {
-                                var t, r = null === (t = m.default.getWindow()) || void 0 === t ? void 0 : t.getBrowserWindow();
-                                r && !r.isDestroyed() && r.webContents.send(_.MAIN_IPC_EVENTS.AV_DEVICE_CHANGE_TOAST, e)
+                                var t, r = null === (t = h.default.getWindow()) || void 0 === t ? void 0 : t.getBrowserWindow();
+                                r && !r.isDestroyed() && r.webContents.send(m.MAIN_IPC_EVENTS.AV_DEVICE_CHANGE_TOAST, e)
                             }
                         }, {
                             key: "_deviceStatusChangeToast",
                             value: function(e, t, r) {
-                                var n, a = null === (n = m.default.getWindow()) || void 0 === n ? void 0 : n.getBrowserWindow();
+                                var n, a = null === (n = h.default.getWindow()) || void 0 === n ? void 0 : n.getBrowserWindow();
                                 if (a && !a.isDestroyed()) {
                                     var o = this._devices.find((function(r) {
                                         return r.uid === e && r.deviceType === t
                                     }));
-                                    o ? a.webContents.send(_.MAIN_IPC_EVENTS.AV_DEVICE_STATUS_CHANGE, o, r) : i(2, void 0, void 0, void 0, ["device-manager"])`received event for deviceId ${e} with statusCode ${r} but didn't find device locally.`
+                                    o ? a.webContents.send(m.MAIN_IPC_EVENTS.AV_DEVICE_STATUS_CHANGE, o, r) : i(2, void 0, void 0, void 0, ["device-manager"])`received event for deviceId ${e} with statusCode ${r} but didn't find device locally.`
                                 }
                             }
                         }]), e
                     }();
-                e.exports = new b
+                e.exports = new v
             },
             61048: (e, t, r) => {
                 "use strict";
@@ -22573,13 +22035,19 @@
                 }, t.getLinkDeviceFaqUrl = function() {
                     return u("web/download-and-installation/how-to-link-a-device")
                 }, t.getLoginFaqUrl = function() {
-                    return u("web/download-and-installation/how-to-log-in-or-out")
+                    return u("1317564962315842")
                 }, t.getMDCodeChangeFaqUrl = function() {
                     return `${o}/${i.default.getLocale()}/web/26000361`
+                }, t.getMemberAddedGroupsUrl = function() {
+                    return u("205306122327447")
                 }, t.getMembershipApprovalModeFaqUrl = function() {
                     return u("1110600769849613")
                 }, t.getMessageEditFaqUrl = function() {
-                    return u("web/chats/how-to-delete-messages")
+                    return u("6614640168569481")
+                }, t.getNewsletterGuidelinesFaqUrl = function() {
+                    return u("245599461477281")
+                }, t.getNewsletterPrivacyFaqUrl = function() {
+                    return u("1318001139066835")
                 }, t.getNonVerifiedTransitionFaqUrl = function() {
                     return u("general/business-account-becomes-a-standard-account")
                 }, t.getNotificationChromeFaqUrl = function() {
@@ -22592,12 +22060,18 @@
                     return u("web/troubleshooting/cant-receive-notifications-on-opera")
                 }, t.getNotificationSafariFaqUrl = function() {
                     return u("web/troubleshooting/cant-receive-notifications-on-safari")
+                }, t.getOrderEphemeralExemptionUrl = function() {
+                    return u("673193694148537")
                 }, t.getPhoneNumberHidingFaqUrl = function() {
                     return u("626403979060997")
                 }, t.getRemoveFromCommunityFaqUrl = function() {
                     return u("1874151452788882")
+                }, t.getReportToAdminFaqUrl = function() {
+                    return u("919039336073667")
                 }, t.getRevokeFaqUrl = function() {
                     return u("web/chats/how-to-delete-messages")
+                }, t.getSafetyTipsFaqUrl = function() {
+                    return u("1313491802751163")
                 }, t.getSupportChatFaqUrl = function() {
                     return u("general/what-information-does-whatsapp-collect-when-you-contact-support")
                 }, t.getSupportChatSafetyFaqUrl = function() {
@@ -22608,8 +22082,6 @@
                     return `${a}/legal/terms-of-service?lang=${i.default.getLocale()}`
                 }, t.getUnverifiedTransitionFaqUrl = function() {
                     return u("general/business-account-becomes-unverified")
-                }, t.getUpdatePrimaryDeviceFaqUrl = function() {
-                    return u("general/download-and-installation/how-to-update-whatsapp")
                 }, t.getVerifiedHighFaqUrl = function() {
                     return u("general/verified-business-account")
                 }, t.getVerifiedLowUnknownFaqUrl = function() {
@@ -22653,25 +22125,26 @@
                     p = i(r(11172)),
                     h = i(r(17668)),
                     m = i(r(62669)),
-                    _ = i(r(92507)),
-                    g = i(r(97331)),
-                    v = i(r(30381)),
-                    b = new Set(["⁦", "‪"]),
-                    y = new Set(["ar", "ar-XB", "fa", "ur", "he", "dv", "ku"]),
-                    w = new Set(["fa"]),
-                    E = "٠١٢٣٤٥٦٧٨٩".split("");
+                    _ = i(r(71971)),
+                    g = i(r(92507)),
+                    v = i(r(97331)),
+                    b = i(r(30381)),
+                    y = new Set(["⁦", "‪"]),
+                    w = new Set(["ar", "ar-XB", "fa", "ur", "he", "dv", "ku"]),
+                    E = new Set(["fa"]),
+                    x = "٠١٢٣٤٥٦٧٨٩".split("");
 
-                function x(e) {
-                    return E[parseInt(e, 10)]
+                function S(e) {
+                    return x[parseInt(e, 10)]
                 }
-                var S = new Error("Unimplemented method"),
-                    A = function(e) {
+                var A = (0, _.default)("Unimplemented method"),
+                    k = function(e) {
                         (0, u.default)(r, e);
                         var t = (0, c.default)(r);
 
                         function r(e, n, i) {
                             var a;
-                            if ((0, o.default)(this, r), a = t.call(this), !e || !n) throw S;
+                            if ((0, o.default)(this, r), a = t.call(this), !e || !n) throw A;
                             return a._locale = e, a.localeStrings = {}, a.localeStrings[d.DEFAULT_LOCALE] = n, a.fbtStrings = {}, a.fbtStrings[d.DEFAULT_LOCALE] = {
                                 en_GB: {}
                             }, a.markTranslations = i, a.customizeMoment(), a
@@ -22679,17 +22152,17 @@
                         return (0, s.default)(r, [{
                             key: "getLocale",
                             value: function() {
-                                throw S
+                                throw A
                             }
                         }, {
                             key: "getFbtTranslations",
                             value: function() {
-                                throw S
+                                throw A
                             }
                         }, {
                             key: "setLocale",
                             value: function() {
-                                throw S
+                                throw A
                             }
                         }, {
                             key: "normalizeLocale",
@@ -22717,7 +22190,7 @@
                             key: "isRTL",
                             value: function() {
                                 var e = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : this.getLocale();
-                                return y.has(e)
+                                return w.has(e)
                             }
                         }, {
                             key: "LR",
@@ -22773,15 +22246,15 @@
                                     if (t.hasOwnProperty(u) && "_plural" !== u) {
                                         var c = new RegExp("__" + u + "__", "g"),
                                             l = void 0;
-                                        l = "string" == typeof t[u] && b.has(t[u].slice(0, 1)) ? t[u] : this.n(t[u], o), s = s.replace(c, l)
+                                        l = "string" == typeof t[u] && y.has(t[u].slice(0, 1)) ? t[u] : this.n(t[u], o), s = s.replace(c, l)
                                     } return s
                             }
                         }, {
                             key: "_getString",
                             value: function(e, t, r) {
                                 var n = this.localeStrings[t] || this.localeStrings[d.DEFAULT_LOCALE];
-                                if (null == n) throw new Error(`Couldn't find translations for locale ${t} or default (${d.DEFAULT_LOCALE})`);
-                                if (!Array.isArray(n)) throw new Error("Unexpected locale format.");
+                                if (null == n) throw (0, _.default)(`Couldn't find translations for locale ${t} or default (${d.DEFAULT_LOCALE})`);
+                                if (!Array.isArray(n)) throw (0, _.default)("Unexpected locale format.");
                                 var i = (0, a.default)(n, 2),
                                     o = i[0],
                                     s = i[1],
@@ -22795,18 +22268,18 @@
                         }, {
                             key: "useArabicScriptDigits",
                             value: function(e) {
-                                return w.has(e || this.getLocale())
+                                return E.has(e || this.getLocale())
                             }
                         }, {
                             key: "isLatinAlphabetLanguage",
                             value: function(e) {
-                                return g.default.isLatin(this.removeAccents(e))
+                                return v.default.isLatin(this.removeAccents(e))
                             }
                         }, {
                             key: "n",
                             value: function(e, t) {
                                 var r = e;
-                                return "number" == typeof r && (r = Intl.NumberFormat(this.getLocale()).format(r)), this.useArabicScriptDigits(t) ? r.toString().replace(/[0-9]/g, x) : r
+                                return "number" == typeof r && (r = Intl.NumberFormat(this.getLocale()).format(r)), this.useArabicScriptDigits(t) ? r.toString().replace(/[0-9]/g, S) : r
                             }
                         }, {
                             key: "filesize",
@@ -22814,7 +22287,7 @@
                                 var t = this,
                                     r = e > 1073741824 ? 1 : 0,
                                     n = this.getLocale();
-                                return this.n((0, _.default)(e, {
+                                return this.n((0, g.default)(e, {
                                     base: 2,
                                     round: r,
                                     locale: n,
@@ -22850,42 +22323,156 @@
                         }, {
                             key: "customizeMoment",
                             value: function() {
-                                v.default.relativeTimeRounding(Math.floor), v.default.relativeTimeThreshold("s", 60), v.default.relativeTimeThreshold("m", 60), v.default.relativeTimeThreshold("h", 24)
+                                b.default.relativeTimeRounding(Math.floor), b.default.relativeTimeThreshold("s", 60), b.default.relativeTimeThreshold("m", 60), b.default.relativeTimeThreshold("h", 24)
                             }
                         }]), r
                     }(l.default);
-                t.L10n = A
+                t.L10n = k
+            },
+            77587: (e, t, r) => {
+                "use strict";
+                var n = r(66849).log,
+                    i = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = void 0;
+                var a = i(r(93913)),
+                    o = i(r(34575)),
+                    s = i(r(79386)),
+                    u = function e(t, r, n) {
+                        (0, o.default)(this, e), this.key = t, this.value = r, this.timestamp = null != n ? n : Date.now(), this.prev = void 0, this.next = void 0
+                    },
+                    c = function() {
+                        function e() {
+                            (0, o.default)(this, e), this.start = new u(null, null), this.end = new u(null, null), this.start.next = this.end, this.end.prev = this.start
+                        }
+                        return (0, a.default)(e, [{
+                            key: "append",
+                            value: function(e, t) {
+                                var r = new u(e, t),
+                                    n = this.end,
+                                    i = (0, s.default)(this.end.prev, "this.end.prev");
+                                return r.next = n, r.prev = i, n.prev = r, i.next = r, r
+                            }
+                        }, {
+                            key: "prepend",
+                            value: function(e, t) {
+                                var r = new u(e, t),
+                                    n = this.start,
+                                    i = (0, s.default)(this.start.next, "this.start.next");
+                                return r.prev = n, r.next = i, n.next = r, i.prev = r, r
+                            }
+                        }, {
+                            key: "popEnd",
+                            value: function() {
+                                var e = (0, s.default)(this.end.prev, "this.end.prev");
+                                if (e !== this.start) {
+                                    var t = (0, s.default)(e.prev, "entry.prev"),
+                                        r = (0, s.default)(e.next, "entry.next");
+                                    return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
+                                }
+                            }
+                        }, {
+                            key: "popFront",
+                            value: function() {
+                                var e = (0, s.default)(this.start.next, "this.start.next");
+                                if (e !== this.end) {
+                                    var t = (0, s.default)(e.prev, "entry.prev"),
+                                        r = (0, s.default)(e.next, "entry.next");
+                                    return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
+                                }
+                            }
+                        }, {
+                            key: "peekFront",
+                            value: function() {
+                                var e = (0, s.default)(this.start.next, "this.start.next");
+                                if (e !== this.end) return e
+                            }
+                        }, {
+                            key: "peekEnd",
+                            value: function() {
+                                var e = (0, s.default)(this.end.prev, "this.end.prev");
+                                if (e !== this.start) return e
+                            }
+                        }, {
+                            key: "remove",
+                            value: function(e) {
+                                var t = (0, s.default)(e.prev, "entry.prev"),
+                                    r = (0, s.default)(e.next, "entry.next");
+                                return t.next = r, r.prev = t, e.next = void 0, e.prev = void 0, e
+                            }
+                        }, {
+                            key: "stats",
+                            value: function() {
+                                for (var e = this.start, t = 0; e !== this.end;) e = (0, s.default)(e.next, "entry.next"), t += 1;
+                                return t - 1
+                            }
+                        }]), e
+                    }(),
+                    l = function() {
+                        function e() {
+                            (0, o.default)(this, e), this.keyMap = new Map, this.entryList = new c
+                        }
+                        return (0, a.default)(e, [{
+                            key: "lookup",
+                            value: function(e) {
+                                var t = this.keyMap.get(e);
+                                if (t) {
+                                    this.entryList.remove(t);
+                                    var r = this.entryList.append(t.key, t.value);
+                                    return this.keyMap.set(r.key, r), t.value
+                                }
+                            }
+                        }, {
+                            key: "add",
+                            value: function(e, t) {
+                                var r = this.keyMap.get(e);
+                                return r ? r.value = t : (r = this.entryList.append(e, t), this.keyMap.set(e, r)), t
+                            }
+                        }, {
+                            key: "expireKeys",
+                            value: function(e) {
+                                for (var t = this.entryList.peekFront(); t && t.timestamp < e;) this.entryList.popFront(), this.keyMap.delete(t.key), t = this.entryList.peekFront()
+                            }
+                        }, {
+                            key: "printStats",
+                            value: function() {
+                                n(2)`========================== STATS =============================`, n(2)`entry list: ${this.entryList.stats()}`, n(2)`map keys: ${this.keyMap.size}`
+                            }
+                        }]), e
+                    }();
+                t.default = l
             },
             28929: (e, t, r) => {
                 "use strict";
                 var n = r(66849).log,
-                    i = r(36953).default,
-                    a = r(66849).sendLogs,
-                    o = r(95318);
+                    i = r(66849).sendLogs,
+                    a = r(95318);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.default = void 0;
-                var s = o(r(319)),
-                    u = o(r(87757)),
-                    c = o(r(63038)),
-                    l = o(r(48926)),
-                    d = o(r(34575)),
-                    f = o(r(93913)),
-                    p = (o(r(78585)), o(r(16525))),
-                    h = o(r(29754)),
-                    m = o(r(19793)),
-                    _ = o(r(99842)),
-                    g = (o(r(35161)), r(34652)),
-                    v = (o(r(62569)), r(97482)),
-                    b = r(16637),
-                    y = r(93629),
+                var o = a(r(319)),
+                    s = a(r(87757)),
+                    u = a(r(63038)),
+                    c = a(r(48926)),
+                    l = a(r(34575)),
+                    d = a(r(93913)),
+                    f = (a(r(78585)), a(r(16525))),
+                    p = a(r(29754)),
+                    h = a(r(19793)),
+                    m = a(r(99842)),
+                    _ = (a(r(35161)), r(34652)),
+                    g = r(97482),
+                    v = r(16637),
+                    b = r(93629),
+                    y = (a(r(77587)), a(r(62904))),
                     w = r(30916),
                     E = r(16186),
                     x = r(36855),
-                    S = o(r(75184)),
+                    S = a(r(75184)),
                     A = (r(51949), r(21370)),
                     k = r(48360),
-                    O = o(r(30381)),
+                    O = a(r(30381)),
                     T = "en-GB",
                     C = {
                         LTR: "LTR",
@@ -22897,22 +22484,22 @@
                     },
                     M = w.L10N_PRIORITY;
                 var D = function(e) {
-                    (0, m.default)(D, e);
-                    var t, o, y = (0, _.default)(D);
+                    (0, h.default)(D, e);
+                    var t, a, b = (0, m.default)(D);
 
                     function D() {
                         var e;
-                        (0, d.default)(this, D);
+                        (0, l.default)(this, D);
                         var t = {
                             l: w.DEFAULT_LOCALE,
                             priority: M.DEFAULT,
                             loc: w.DEFAULT_LOCALE
                         };
-                        return (e = y.call(this, t, r(45707).default, w.MARK_TRANSLATIONS))._locale = t, r(58933).ipcMain.on("change:locale", (function(t, r) {
+                        return (e = b.call(this, t, (0, y.default)(r(24041)), w.MARK_TRANSLATIONS))._locale = t, r(58933).ipcMain.on("change:locale", (function(t, r) {
                             n(2)`Setting Locale: ${r}`, e.setLocale(r, M.DEFAULT)
                         })), e
                     }
-                    return (0, f.default)(D, [{
+                    return (0, d.default)(D, [{
                         key: "getLocale",
                         value: function() {
                             return this._locale.l
@@ -22955,32 +22542,32 @@
                         }
                     }, {
                         key: "setLocale",
-                        value: (o = (0, l.default)(u.default.mark((function e(t) {
-                            var n, a, o = this;
-                            return u.default.wrap((function(e) {
+                        value: (a = (0, c.default)(s.default.mark((function e(t) {
+                            var n, i, a, o = this;
+                            return s.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
                                         if (n = null == t ? null : this.normalizeLocale(t), t && n && this.isLocaleSupported(n) && t !== this.getLocale()) {
                                             e.next = 3;
                                             break
                                         }
-                                        return e.abrupt("return", i.resolve());
+                                        return e.abrupt("return", Promise.resolve());
                                     case 3:
                                         return e.next = 5, r(26299)(`./${n}`);
                                     case 5:
-                                        return a = e.sent, e.abrupt("return", i.resolve(a.default()).then(function() {
-                                            var e = (0, l.default)(u.default.mark((function e(r) {
-                                                var i, a, s;
-                                                return u.default.wrap((function(e) {
+                                        return i = e.sent, a = (0, y.default)(i), e.abrupt("return", Promise.resolve(a()).then(function() {
+                                            var e = (0, c.default)(s.default.mark((function e(r) {
+                                                var i, a, c;
+                                                return s.default.wrap((function(e) {
                                                     for (;;) switch (e.prev = e.next) {
                                                         case 0:
-                                                            return i = (0, c.default)(r, 2), a = i[0], s = i[1], o._locale = {
+                                                            return i = (0, u.default)(r, 2), a = i[0], c = i[1], o._locale = {
                                                                 l: n,
                                                                 loc: t,
                                                                 priority: 1
                                                             }, o.localeStrings[n] = a, e.next = 5, o.downloadFbtLocaleAndSetCache(n);
                                                         case 5:
-                                                            o.updateFbtContext(s), o.trigger("locale_change", {
+                                                            o.updateFbtContext(c), o.trigger("locale_change", {
                                                                 l: n,
                                                                 loc: t
                                                             });
@@ -22994,21 +22581,21 @@
                                                 return e.apply(this, arguments)
                                             }
                                         }()));
-                                    case 10:
-                                        return e.abrupt("return", this.downloadAndSetTranslation(void 0));
                                     case 11:
+                                        return e.abrupt("return", this.downloadAndSetTranslation(void 0));
+                                    case 12:
                                     case "end":
                                         return e.stop()
                                 }
                             }), e, this)
                         }))), function() {
-                            return o.apply(this, arguments)
+                            return a.apply(this, arguments)
                         })
                     }, {
                         key: "isLocaleSupported",
                         value: function(e) {
                             try {
-                                return (0, p.default)((0, h.default)(D.prototype), "isLocaleSupported", this).call(this, e)
+                                return (0, f.default)((0, p.default)(D.prototype), "isLocaleSupported", this).call(this, e)
                             } catch (e) {
                                 return !1
                             }
@@ -23023,7 +22610,7 @@
                         value: function() {
                             var e = this,
                                 t = this.markTranslations ? function(t) {
-                                    return e.getLocale() === w.DEFAULT_LOCALE ? new k.FbtResult(["{"].concat((0, s.default)(t.contents), ["}"])) : new k.FbtResult(t.contents)
+                                    return e.getLocale() === w.DEFAULT_LOCALE ? new k.FbtResult(["{"].concat((0, o.default)(t.contents), ["}"])) : new k.FbtResult(t.contents)
                                 } : void 0;
                             (0, k.init)({
                                 translations: this.getFbtTranslations(),
@@ -23061,25 +22648,25 @@
                     }, {
                         key: "downloadAppLocale",
                         value: function(e) {
-                            return this.localeStrings[e] ? i.resolve(this.localeStrings[e]) : (0, b.promiseLoop)(function() {
-                                var t = (0, l.default)(u.default.mark((function t(i, o, s) {
-                                    var l, d, f, p, h;
-                                    return u.default.wrap((function(t) {
+                            return this.localeStrings[e] ? Promise.resolve(this.localeStrings[e]) : (0, v.promiseLoop)(function() {
+                                var t = (0, c.default)(s.default.mark((function t(a, o, c) {
+                                    var l, d, f, p, h, m;
+                                    return s.default.wrap((function(t) {
                                         for (;;) switch (t.prev = t.next) {
                                             case 0:
-                                                return l = (0, v.delayMs)((0, g.expBackoff)(s, 12e4, 1e3, .1)), t.next = 3, r(26299)(`./${e}`);
+                                                return l = (0, g.delayMs)((0, _.expBackoff)(c, 12e4, 1e3, .1)), t.next = 3, r(26299)(`./${e}`);
                                             case 3:
-                                                return d = t.sent, t.prev = 4, t.next = 7, d.default();
-                                            case 7:
-                                                return f = t.sent, p = (0, c.default)(f, 1), h = p[0], t.abrupt("return", i(h));
-                                            case 13:
-                                                return t.prev = 13, t.t0 = t.catch(4), 10 === s && (n(4, void 0, new Error, !0)`${s} times, locale is ${e}`, a("downadAppLocale failure")), t.abrupt("return", l);
-                                            case 17:
+                                                return d = t.sent, t.prev = 4, f = (0, y.default)(d), t.next = 8, f();
+                                            case 8:
+                                                return p = t.sent, h = (0, u.default)(p, 1), m = h[0], t.abrupt("return", a(m));
+                                            case 14:
+                                                return t.prev = 14, t.t0 = t.catch(4), 10 === c && (n(4, void 0, new Error, !0)`${c} times, locale is ${e}`, i("downadAppLocale failure")), t.abrupt("return", l);
+                                            case 18:
                                             case "end":
                                                 return t.stop()
                                         }
                                     }), t, null, [
-                                        [4, 13]
+                                        [4, 14]
                                     ])
                                 })));
                                 return function() {
@@ -23091,42 +22678,42 @@
                         key: "downloadFbtLocaleAndSetCache",
                         value: function(e) {
                             var t = this;
-                            return this.fbtStrings[e] ? i.resolve(this.fbtStrings[e]) : (0, b.promiseLoop)(function() {
-                                var i = (0, l.default)(u.default.mark((function i(o, s, l) {
-                                    var d, f, p, h, m;
-                                    return u.default.wrap((function(i) {
-                                        for (;;) switch (i.prev = i.next) {
+                            return this.fbtStrings[e] ? Promise.resolve(this.fbtStrings[e]) : (0, v.promiseLoop)(function() {
+                                var a = (0, c.default)(s.default.mark((function a(o, c, l) {
+                                    var d, f, p, h, m, v;
+                                    return s.default.wrap((function(a) {
+                                        for (;;) switch (a.prev = a.next) {
                                             case 0:
-                                                return d = (0, v.delayMs)((0, g.expBackoff)(l, 12e4, 1e3, .1)), i.next = 3, r(26299)(`./${e}`);
+                                                return d = (0, g.delayMs)((0, _.expBackoff)(l, 12e4, 1e3, .1)), a.next = 3, r(26299)(`./${e}`);
                                             case 3:
-                                                return f = i.sent, i.prev = 4, i.next = 7, f.default();
-                                            case 7:
-                                                return p = i.sent, h = (0, c.default)(p, 2), m = h[1], t.fbtStrings[e] = m, i.abrupt("return", o(m));
-                                            case 14:
-                                                return i.prev = 14, i.t0 = i.catch(4), 10 === l && (n(4, void 0, new Error, !0)`${l} times, locale is ${e}`, a("downadAppLocale failure")), i.abrupt("return", d);
-                                            case 18:
+                                                return f = a.sent, p = (0, y.default)(f), a.prev = 5, a.next = 8, p();
+                                            case 8:
+                                                return h = a.sent, m = (0, u.default)(h, 2), v = m[1], t.fbtStrings[e] = v, a.abrupt("return", o(v));
+                                            case 15:
+                                                return a.prev = 15, a.t0 = a.catch(5), 10 === l && (n(4, void 0, new Error, !0)`${l} times, locale is ${e}`, i("downadAppLocale failure")), a.abrupt("return", d);
+                                            case 19:
                                             case "end":
-                                                return i.stop()
+                                                return a.stop()
                                         }
-                                    }), i, null, [
-                                        [4, 14]
+                                    }), a, null, [
+                                        [5, 15]
                                     ])
                                 })));
                                 return function() {
-                                    return i.apply(this, arguments)
+                                    return a.apply(this, arguments)
                                 }
                             }())
                         }
                     }, {
                         key: "_downloadMomentResourceFile",
-                        value: (t = (0, l.default)(u.default.mark((function e(t) {
+                        value: (t = (0, c.default)(s.default.mark((function e(t) {
                             var i;
-                            return u.default.wrap((function(e) {
+                            return s.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
                                         return e.prev = 0, e.next = 3, r(19922)(`./${t}`);
                                     case 3:
-                                        return i = e.sent, e.abrupt("return", i.default);
+                                        return i = e.sent, e.abrupt("return", (0, y.default)(i));
                                     case 7:
                                         e.prev = 7, e.t0 = e.catch(0), n(2)`l10n:_downloadMomentResourceFile failed to download resource ${t}`;
                                     case 10:
@@ -23144,48 +22731,48 @@
                         value: function(e) {
                             var t = this,
                                 r = e.l,
-                                o = e.loc;
-                            return O.default.locale() === o ? i.resolve() : (0, b.promiseLoop)(function() {
-                                var e = (0, l.default)(u.default.mark((function e(s, c, l) {
-                                    var d, f, p, h, m, _, b;
-                                    return u.default.wrap((function(e) {
+                                a = e.loc;
+                            return O.default.locale() === a ? Promise.resolve() : (0, v.promiseLoop)(function() {
+                                var e = (0, c.default)(s.default.mark((function e(o, u, c) {
+                                    var l, d, f, p, h, m, v;
+                                    return s.default.wrap((function(e) {
                                         for (;;) switch (e.prev = e.next) {
                                             case 0:
-                                                if (d = (0, v.delayMs)((0, g.expBackoff)(l, 12e4, 1e3, .1)), (f = o.replace(/_/g, "-")) !== w.DEFAULT_MOMENT_LOCALE) {
+                                                if (l = (0, g.delayMs)((0, _.expBackoff)(c, 12e4, 1e3, .1)), (d = a.replace(/_/g, "-")) !== w.DEFAULT_MOMENT_LOCALE) {
                                                     e.next = 7;
                                                     break
                                                 }
-                                                p = function() {
-                                                    return i.resolve()
-                                                }, h = w.DEFAULT_MOMENT_LOCALE, e.next = 23;
+                                                f = function() {
+                                                    return Promise.resolve()
+                                                }, p = w.DEFAULT_MOMENT_LOCALE, e.next = 23;
                                                 break;
                                             case 7:
-                                                (m = []).push(f), r === w.DEFAULT_LOCALE ? m.push(T) : (_ = r.replace(/_/g, "-"), m.push(_), null != S.default[_] && m.push(S.default[_])), m.push(T), b = 0;
+                                                (h = []).push(d), r === w.DEFAULT_LOCALE ? h.push(T) : (m = r.replace(/_/g, "-"), h.push(m), null != S.default[m] && h.push(S.default[m])), h.push(T), v = 0;
                                             case 12:
-                                                if (!(b < m.length)) {
+                                                if (!(v < h.length)) {
                                                     e.next = 22;
                                                     break
                                                 }
-                                                return e.next = 15, t._downloadMomentResourceFile(m[b]);
+                                                return e.next = 15, t._downloadMomentResourceFile(h[v]);
                                             case 15:
-                                                if (null == (p = e.sent)) {
+                                                if (null == (f = e.sent)) {
                                                     e.next = 19;
                                                     break
                                                 }
-                                                return h = m[b], e.abrupt("break", 22);
+                                                return p = h[v], e.abrupt("break", 22);
                                             case 19:
-                                                ++b, e.next = 12;
+                                                ++v, e.next = 12;
                                                 break;
                                             case 22:
-                                                null == p && (n(3)`Could not fetch moment locales, using default en-US`, p = function() {
-                                                    return i.resolve()
-                                                }, h = w.DEFAULT_MOMENT_LOCALE);
+                                                null == f && (n(3)`Could not fetch moment locales, using default en-US`, f = function() {
+                                                    return Promise.resolve()
+                                                }, p = w.DEFAULT_MOMENT_LOCALE);
                                             case 23:
-                                                return e.prev = 23, e.next = 26, p();
+                                                return e.prev = 23, e.next = 26, f();
                                             case 26:
-                                                return e.abrupt("return", s(h));
+                                                return e.abrupt("return", o(p));
                                             case 29:
-                                                return e.prev = 29, e.t0 = e.catch(23), 10 === l && (n(4, void 0, new Error, !0)`${l} times, locale is (${r}, ${o})`, a("downloadMomentLocale failure")), e.abrupt("return", d);
+                                                return e.prev = 29, e.t0 = e.catch(23), 10 === c && (n(4, void 0, new Error, !0)`${c} times, locale is (${r}, ${a})`, i("downloadMomentLocale failure")), e.abrupt("return", l);
                                             case 33:
                                             case "end":
                                                 return e.stop()
@@ -23209,26 +22796,26 @@
                         value: function(e) {
                             var t = this,
                                 r = this._locale,
-                                a = r.l,
-                                o = r.loc,
-                                s = e.l,
-                                u = e.loc,
-                                l = this.isRTL(s) ? C.RTL : C.LTR;
-                            if (document.getElementById(N[l]) && u === o) return i.resolve();
-                            var d, f, p = self.performance.now();
-                            return this._fetchPromise = i.all([this.downloadAppLocale(s), this.downloadFbtLocaleAndSetCache(s), this.downloadMomentLocale(e)]).then((function(r) {
-                                var i = (0, c.default)(r, 3),
+                                i = r.l,
+                                a = r.loc,
+                                o = e.l,
+                                s = e.loc,
+                                c = this.isRTL(o) ? C.RTL : C.LTR;
+                            if (document.getElementById(N[c]) && s === a) return Promise.resolve();
+                            var l, d, f = self.performance.now();
+                            return this._fetchPromise = Promise.all([this.downloadAppLocale(o), this.downloadFbtLocaleAndSetCache(o), this.downloadMomentLocale(e)]).then((function(r) {
+                                var i = (0, u.default)(r, 3),
                                     a = i[0],
-                                    o = i[1],
+                                    d = i[1],
                                     f = i[2];
-                                d = self.performance.now(), t.localeStrings[s] = a, t._locale = e, t.trigger("set_collator", s), f && (O.default.locale(f), n(2)`l10n:moment locale updated to: ${f}`), t.customizeMomentLocale(O.default.locale()), document.documentElement && document.documentElement.setAttribute("lang", e.l), document.documentElement && document.documentElement.setAttribute("dir", l), t.updateFbtContext(o), t.trigger("locale_change", {
-                                    l: s,
-                                    loc: u
+                                l = self.performance.now(), t.localeStrings[o] = a, t._locale = e, t.trigger("set_collator", o), f && (O.default.locale(f), n(2)`l10n:moment locale updated to: ${f}`), t.customizeMomentLocale(O.default.locale()), document.documentElement && document.documentElement.setAttribute("lang", e.l), document.documentElement && document.documentElement.setAttribute("dir", c), t.updateFbtContext(d), t.trigger("locale_change", {
+                                    l: o,
+                                    loc: s
                                 })
                             })).then((function() {
-                                f = self.performance.now(), n(2)`l10n:locale updated: (${a}, ${o}) > (${s}, ${u}), Fetch: ${d-p}ms, Apply: ${f-d}ms`
+                                d = self.performance.now(), n(2)`l10n:locale updated: (${i}, ${a}) > (${o}, ${s}), Fetch: ${l-f}ms, Apply: ${d-l}ms`
                             })).catch((function() {
-                                return n(2)`l10n:locale update error: (${a}, ${o}) > (${s}, ${u})`, t.downloadAndSetTranslation({
+                                return n(2)`l10n:locale update error: (${i}, ${a}) > (${o}, ${s})`, t.downloadAndSetTranslation({
                                     l: w.DEFAULT_LOCALE,
                                     priority: M.DEFAULT,
                                     loc: w.DEFAULT_LOCALE
@@ -23248,7 +22835,7 @@
                             t && O.default.locale(e, t)
                         }
                     }]), D
-                }(y.L10n);
+                }(b.L10n);
                 D.Dir = C;
                 var L = new D;
                 t.default = L
@@ -25728,7 +25315,7 @@
                 var n, i = "";
 
                 function a(e) {
-                    clearTimeout(n), document.title += " ", n = setTimeout((function() {
+                    self.clearTimeout(n), document.title += " ", n = self.setTimeout((function() {
                         document.title = e
                     }), 0)
                 }
@@ -25736,60 +25323,6 @@
                 function o() {
                     return !1
                 }
-            },
-            53529: (e, t, r) => {
-                "use strict";
-                var n = r(95318);
-                t.Z = void 0;
-                var i = n(r(63038)),
-                    a = n(r(87757)),
-                    o = n(r(48926)),
-                    s = n(r(34575)),
-                    u = n(r(93913)),
-                    c = r(6823),
-                    l = r(12087),
-                    d = new(function() {
-                        function e() {
-                            (0, s.default)(this, e)
-                        }
-                        var t;
-                        return (0, u.default)(e, [{
-                            key: "getInfoAsync",
-                            value: (t = (0, o.default)(a.default.mark((function e() {
-                                var t;
-                                return a.default.wrap((function(e) {
-                                    for (;;) switch (e.prev = e.next) {
-                                        case 0:
-                                            return e.next = 2, c.system();
-                                        case 2:
-                                            return t = e.sent, e.abrupt("return", {
-                                                arch: l.arch(),
-                                                osRelease: l.release(),
-                                                osPlatform: l.platform(),
-                                                deviceManufacturer: t.manufacturer,
-                                                deviceModel: t.model
-                                            });
-                                        case 4:
-                                        case "end":
-                                            return e.stop()
-                                    }
-                                }), e)
-                            }))), function() {
-                                return t.apply(this, arguments)
-                            })
-                        }, {
-                            key: "getDeviceInfoSync",
-                            value: function() {
-                                var e = c.getDeviceModelAndOsRelease(),
-                                    t = (0, i.default)(e, 2);
-                                return {
-                                    deviceModel: t[0],
-                                    osRelease: t[1]
-                                }
-                            }
-                        }]), e
-                    }());
-                t.Z = d
             },
             51949: (e, t) => {
                 "use strict";
@@ -26418,8 +25951,9 @@
                     s = n(r(73955)),
                     u = n(r(41609)),
                     c = n(r(51463)),
-                    l = /\s+/,
-                    d = function() {
+                    l = n(r(71971)),
+                    d = /\s+/,
+                    f = function() {
                         function e() {
                             (0, a.default)(this, e)
                         }
@@ -26427,7 +25961,7 @@
                             key: "on",
                             value: function(e, t, r) {
                                 if (!t) return this;
-                                if ("function" != typeof t) throw new Error("Callback parameter passed is not a function");
+                                if ("function" != typeof t) throw (0, l.default)("Callback parameter passed is not a function");
                                 return this._multiEvent.apply(this, [this.on].concat(Array.prototype.slice.call(arguments))) || this._getOrCreateEvents(e).push({
                                     callback: t,
                                     context: r,
@@ -26532,8 +26066,8 @@
                         }, {
                             key: "_multiEvent",
                             value: function(e, t) {
-                                if (l.test(t)) {
-                                    for (var r = t.split(l), n = arguments.length, i = new Array(n > 2 ? n - 2 : 0), a = 2; a < n; a++) i[a - 2] = arguments[a];
+                                if (d.test(t)) {
+                                    for (var r = t.split(d), n = arguments.length, i = new Array(n > 2 ? n - 2 : 0), a = 2; a < n; a++) i[a - 2] = arguments[a];
                                     for (var o = 0; o < r.length; o++) e.call.apply(e, [this, r[o]].concat(i));
                                     return !0
                                 }
@@ -26592,7 +26126,7 @@
                             }
                         }]), e
                     }();
-                t.default = d
+                t.default = f
             },
             21370: (e, t, r) => {
                 "use strict";
@@ -26695,8 +26229,7 @@
             },
             5781: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(95318);
+                var n = r(95318);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.FILETYPE = void 0, t.blobToArrayBuffer = d, t.blobToText = function() {
@@ -26706,9 +26239,9 @@
                     return n.name = t, n
                 }, t.getAudioDuration = function(e) {
                     var t, r;
-                    return new n((function(n, i) {
+                    return new Promise((function(n, i) {
                         (t = document.createElement("audio")).addEventListener("loadeddata", n), t.addEventListener("error", (function() {
-                            i(new Error("getAudioDuration: error loading audio"))
+                            i((0, u.default)("getAudioDuration: error loading audio"))
                         })), t.src = r = URL.createObjectURL(e)
                     })).then((function() {
                         return ~~t.seekable.end(0)
@@ -26717,7 +26250,7 @@
                     }))
                 }, t.getFileExtension = p, t.getMimeTypeForFilepath = function(e) {
                     var t = p(e),
-                        r = (0, s.isAllowedDocumentMimetype)(s.EXT_TO_MIME && t && s.EXT_TO_MIME[t], e, !1);
+                        r = (0, o.isAllowedDocumentMimetype)(o.EXT_TO_MIME && t && o.EXT_TO_MIME[t], e, !1);
                     if (r) return r
                 }, t.removeTrailingDots = f, t.typeFromMimetype = function(e) {
                     var t = e.split("/")[0];
@@ -26736,10 +26269,11 @@
                         return !1
                     }))
                 };
-                var a = i(r(87757)),
-                    o = i(r(48926)),
-                    s = r(60706),
-                    u = r(79334),
+                var i = n(r(87757)),
+                    a = n(r(48926)),
+                    o = r(60706),
+                    s = r(79334),
+                    u = n(r(71971)),
                     c = Object.freeze({
                         IMAGE: "image",
                         VIDEO: "video",
@@ -26755,12 +26289,12 @@
 
                 function d(e) {
                     var t;
-                    return new n((function(r, n) {
+                    return new Promise((function(r, n) {
                         (t = new FileReader).onload = r, t.onerror = function() {
                             var e;
-                            n("NotReadableError" === (null === (e = t.error) || void 0 === e ? void 0 : e.name) ? new u.FileNotReadableError(`blobToArrayBuffer error: ${l(t.error)}`) : new Error(`blobToArrayBuffer error: ${l(t.error)}`))
+                            n("NotReadableError" === (null === (e = t.error) || void 0 === e ? void 0 : e.name) ? new s.FileNotReadableError(`blobToArrayBuffer error: ${l(t.error)}`) : (0, u.default)(`blobToArrayBuffer error: ${l(t.error)}`))
                         }, t.onabort = function() {
-                            n(new Error(`blobToArrayBuffer abort: ${l(t.error)}`))
+                            n((0, u.default)(`blobToArrayBuffer abort: ${l(t.error)}`))
                         }, t.readAsArrayBuffer(e)
                     })).then((function() {
                         return t.result
@@ -26777,9 +26311,9 @@
                 }
 
                 function h() {
-                    return (h = (0, o.default)(a.default.mark((function e(t) {
+                    return (h = (0, a.default)(i.default.mark((function e(t) {
                         var r;
-                        return a.default.wrap((function(e) {
+                        return i.default.wrap((function(e) {
                             for (;;) switch (e.prev = e.next) {
                                 case 0:
                                     if ("function" != typeof t.text) {
@@ -26788,11 +26322,11 @@
                                     }
                                     return e.abrupt("return", t.text());
                                 case 2:
-                                    return r = new FileReader, e.next = 5, new n((function(e, n) {
+                                    return r = new FileReader, e.next = 5, new Promise((function(e, n) {
                                         r.onload = e, r.onerror = function(e) {
-                                            n(new Error(`blobToText error: ${String(e)}`))
+                                            n((0, u.default)(`blobToText error: ${String(e)}`))
                                         }, r.onabort = function(e) {
-                                            n(new Error(`blobToText abort: ${String(e)}`))
+                                            n((0, u.default)(`blobToText abort: ${String(e)}`))
                                         }, r.readAsText(t)
                                     }));
                                 case 5:
@@ -27098,24 +26632,24 @@
             50654: (e, t, r) => {
                 "use strict";
                 var n = r(66849).log,
-                    i = r(36953).default,
-                    a = r(85473),
-                    o = a(r(54815)),
-                    s = a(r(19882)),
-                    u = a(r(10178)),
-                    c = a(r(57616)),
-                    l = (a(r(36060)), a(r(71100))),
+                    i = r(85473),
+                    a = i(r(54815)),
+                    o = i(r(19882)),
+                    s = i(r(10178)),
+                    u = i(r(57616)),
+                    c = (i(r(36060)), i(r(71100))),
+                    l = i(r(71971)),
                     d = r(34652),
                     f = r(61156),
                     p = r(97482),
                     h = r(16637),
-                    m = a(r(86061)),
+                    m = i(r(86061)),
                     _ = r(97153),
-                    g = a(r(42828)),
-                    v = a(r(58812)),
+                    g = i(r(42828)),
+                    v = i(r(58812)),
                     b = r(58933),
-                    y = a(r(57211)),
-                    w = a(r(78835)),
+                    y = i(r(57211)),
+                    w = i(r(78835)),
                     E = 72e5;
                 v.default.isUpgradeTest && (E = 6e4);
                 var x = "IDLE",
@@ -27125,9 +26659,9 @@
                     O = "ERROR",
                     T = function() {
                         function e() {
-                            (0, u.default)(this, e)
+                            (0, s.default)(this, e)
                         }
-                        return (0, c.default)(e, [{
+                        return (0, u.default)(e, [{
                             key: "init",
                             value: function(e, t) {
                                 (this._webContents || this._whatsappWindow) && this.destructor(), this._webContents = e, this._whatsappWindow = t, this._onErrorHandler = this._handleError.bind(this), this._onCheckingHandler = this._handleChecking.bind(this), this._onAvailableHandler = this._handleAvailable.bind(this), this._onNotAvailableHandler = this._handleNotAvailable.bind(this), this._onDownloadedHandler = this._handleDownloaded.bind(this), b.autoUpdater.on("error", this._onErrorHandler), b.autoUpdater.on("checking-for-update", this._onCheckingHandler), b.autoUpdater.on("update-available", this._onAvailableHandler), b.autoUpdater.on("update-not-available", this._onNotAvailableHandler), b.autoUpdater.on("update-downloaded", this._onDownloadedHandler), n(2)`Update from ${b.autoUpdater.getFeedURL()}`, this._mode = x, this._updateVersion = void 0, this.setUpdateInterval(E)
@@ -27208,14 +26742,14 @@
                         }, {
                             key: "versionLt",
                             value: function(e, t) {
-                                return !(!e || !t) && (!(0, l.default)(t) && (!!(0, l.default)(e) || (e[0] === t[0] ? this.versionLt(e.slice(1), t.slice(1)) : e[0] < t[0])))
+                                return !(!e || !t) && (!(0, c.default)(t) && (!!(0, c.default)(e) || (e[0] === t[0] ? this.versionLt(e.slice(1), t.slice(1)) : e[0] < t[0])))
                             }
                         }, {
                             key: "tryUpdate",
                             value: function() {
                                 var e = this,
-                                    t = i.resolve(!1);
-                                if (this.mode === x || this.mode === O) b.autoUpdater.checkForUpdates(), n(2)`Update from ${b.autoUpdater.getFeedURL()}`, t = i.resolve(!0);
+                                    t = Promise.resolve(!1);
+                                if (this.mode === x || this.mode === O) b.autoUpdater.checkForUpdates(), n(2)`Update from ${b.autoUpdater.getFeedURL()}`, t = Promise.resolve(!0);
                                 else if (this.mode === k) {
                                     var r = this.getBeta();
                                     t = this.getSetVersion(r).then((function(t) {
@@ -27231,9 +26765,9 @@
                                     })).catch((function() {
                                         return n(2)`Something went wrong, falling back`, b.autoUpdater.checkForUpdates(), n(2)`Update from ${b.autoUpdater.getFeedURL()}`, !0
                                     }))
-                                } else n(2)`Updater state: ${this.mode}, skipping update check`, t = i.resolve(!0);
-                                var a = Date.now();
-                                return this.setLastUpdateCheck(a), this.scheduleUpdateCheck(), t
+                                } else n(2)`Updater state: ${this.mode}, skipping update check`, t = Promise.resolve(!0);
+                                var i = Date.now();
+                                return this.setLastUpdateCheck(i), this.scheduleUpdateCheck(), t
                             }
                         }, {
                             key: "setUpdateInterval",
@@ -27279,9 +26813,9 @@
                             value: function(e) {
                                 var t = this;
                                 return (0, h.promiseLoop)(function() {
-                                    var r = (0, s.default)(o.default.mark((function r(i, a, s) {
+                                    var r = (0, o.default)(a.default.mark((function r(i, o, s) {
                                         var u, c;
-                                        return o.default.wrap((function(r) {
+                                        return a.default.wrap((function(r) {
                                             for (;;) switch (r.prev = r.next) {
                                                 case 0:
                                                     return u = (0, p.delayMs)(1e3 * (0, d.expBackoff)(s, 300, 1, .1)), r.prev = 1, r.next = 4, t._getSetVersion(e);
@@ -27312,21 +26846,21 @@
                         }, {
                             key: "_getSetVersion",
                             value: function(e) {
-                                return new i(function() {
-                                    var t = (0, s.default)(o.default.mark((function t(r, i) {
-                                        var a, s, u, c, l, d, p;
-                                        return o.default.wrap((function(t) {
+                                return new Promise(function() {
+                                    var t = (0, o.default)(a.default.mark((function t(r, i) {
+                                        var o, s, u, c, d, p, h;
+                                        return a.default.wrap((function(t) {
                                             for (;;) switch (t.prev = t.next) {
                                                 case 0:
                                                     if ("darwin" !== process.platform) {
                                                         t.next = 10;
                                                         break
                                                     }
-                                                    if (a = w.default.parse(m.default.getFeedUrl(e, !1)), s = a.host, u = a.path, null != s && null != u) {
+                                                    if (o = w.default.parse(m.default.getFeedUrl(e, !1)), s = o.host, u = o.path, null != s && null != u) {
                                                         t.next = 5;
                                                         break
                                                     }
-                                                    return t.abrupt("return", i(new Error(`Invalid host/path ${String(s)}/${String(u)}`)));
+                                                    return t.abrupt("return", i((0, l.default)(`Invalid host/path ${String(s)}/${String(u)}`)));
                                                 case 5:
                                                     (c = {})["Content-type"] = "application/json", y.default.get({
                                                         host: s,
@@ -27340,7 +26874,7 @@
                                                         })), e.on("end", (function() {
                                                             return r(JSON.parse(t).name)
                                                         })), e.on("aborted", (function() {
-                                                            return i(new Error("Aborted while reading update feed"))
+                                                            return i((0, l.default)("Aborted while reading update feed"))
                                                         }))
                                                     })).on("error", (function(e) {
                                                         return n(2)`AutoUpdater:tryUpdate:Error Fetching update ${e}`, i(e)
@@ -27351,15 +26885,15 @@
                                                         t.next = 18;
                                                         break
                                                     }
-                                                    if (l = w.default.parse(m.default.getFeedFileUrl(e, !1)), d = l.host, p = l.path, null != d && null != p) {
+                                                    if (d = w.default.parse(m.default.getFeedFileUrl(e, !1)), p = d.host, h = d.path, null != p && null != h) {
                                                         t.next = 15;
                                                         break
                                                     }
-                                                    return t.abrupt("return", i(new Error(`Invalid host/path ${String(d)}/${String(p)}`)));
+                                                    return t.abrupt("return", i((0, l.default)(`Invalid host/path ${String(p)}/${String(h)}`)));
                                                 case 15:
                                                     y.default.get({
-                                                        host: d,
-                                                        path: p
+                                                        host: p,
+                                                        path: h
                                                     }, (function(e) {
                                                         if (200 !== e.statusCode) return n(2)`AutoUpdater:tryUpdate:Error Fetching update: ${e.statusCode}`, i(new f.HttpError(`get version for update error code: ${e.statusCode}`, e.statusCode));
                                                         var t = "";
@@ -27368,16 +26902,16 @@
                                                         })), e.on("end", (function() {
                                                             var e = t.split("\n"),
                                                                 n = e[e.length - 1].match(/\d+\.\d+\.\d+/);
-                                                            return n ? r(n[0]) : i(new Error("Error while parsing update feed: no matching version found"))
+                                                            return n ? r(n[0]) : i((0, l.default)("Error while parsing update feed: no matching version found"))
                                                         })), e.on("aborted", (function() {
-                                                            return i(new Error("Aborted while reading update feed"))
+                                                            return i((0, l.default)("Aborted while reading update feed"))
                                                         }))
                                                     })).on("error", (function(e) {
                                                         return n(2)`AutoUpdater:tryUpdate:Error Fetching update ${e}`, i(e)
                                                     })), t.next = 19;
                                                     break;
                                                 case 18:
-                                                    return t.abrupt("return", i(new Error("Not implemented")));
+                                                    return t.abrupt("return", i((0, l.default)("Not implemented")));
                                                 case 19:
                                                 case "end":
                                                     return t.stop()
@@ -27422,7 +26956,7 @@
                         if (null === e || "object" != typeof e && "function" != typeof e) return {
                             default: e
                         };
-                        var r = O(t);
+                        var r = T(t);
                         if (r && r.has(e)) return r.get(e);
                         var n = {},
                             i = Object.defineProperty && Object.getOwnPropertyDescriptor;
@@ -27433,27 +26967,28 @@
                             } n.default = e, r && r.set(e, n);
                         return n
                     }(r(65314)),
-                    k = r(29914);
+                    k = r(29914),
+                    O = i(r(70123));
 
-                function O(e) {
+                function T(e) {
                     if ("function" != typeof WeakMap) return null;
                     var t = new WeakMap,
                         r = new WeakMap;
-                    return (O = function(e) {
+                    return (T = function(e) {
                         return e ? r : t
                     })(e)
                 }
-                var T = y.default.app,
-                    C = y.default.BrowserWindow,
-                    N = y.default.ipcMain,
-                    M = ["www.facebook.com", "dev-web.whatsapp.com"],
-                    D = function(e) {
+                var C = y.default.app,
+                    N = y.default.BrowserWindow,
+                    M = y.default.ipcMain,
+                    D = ["www.facebook.com", "dev-web.whatsapp.com"],
+                    L = function(e) {
                         (0, c.default)(i, e);
                         var t = (0, l.default)(i);
 
                         function i(e) {
                             var s;
-                            (0, o.default)(this, i), (s = t.call(this)).isClosed = !1, s._forceQuit = !1, m.default.addListener(), s.launchURL = e.launchURL, "darwin" === process.platform ? s._forceQuit = !1 : s._forceQuit = !0;
+                            (0, o.default)(this, i), (s = t.call(this)).isClosed = !1, s._forceQuit = !1, m.default.addListener(), O.default.addListener(), s.launchURL = e.launchURL, "darwin" === process.platform ? s._forceQuit = !1 : s._forceQuit = !0;
                             var c = (0, p.default)(v.default.get("windowState"), ["x", "y", "width", "height"]),
                                 l = (0, a.default)((0, a.default)({
                                     preload: E.default.resolve(__dirname, "WAWebElectronPreload.js")
@@ -27465,7 +27000,7 @@
                                     enableRemoteModule: !0,
                                     contextIsolation: !1
                                 });
-                            e.backgroundColor = "#00FFFFFF", s.browserWindow = new C(Object.assign(e, c, {
+                            e.backgroundColor = "#00FFFFFF", s.browserWindow = new N(Object.assign(e, c, {
                                 minWidth: 750,
                                 minHeight: 512
                             }, {
@@ -27481,13 +27016,13 @@
                                 var t, r
                             })) && s.browserWindow.center();
                             var w = v.default.get("windowState");
-                            return (null == w ? void 0 : w.isMaximized) && "win32" === process.platform && s.browserWindow.maximize(), (null == w ? void 0 : w.isFullScreen) && s.browserWindow.setFullScreen(!0), s.requestInterceptor = new b.default(s._webContents, (0, u.default)(s)), _.rendererStream.setWebContents(s._webContents), process.mas || process.windowsStore || (s.autoUpdater = r(50654), s.autoUpdater.init(s._webContents, (0, u.default)(s))), s.onUpdateBounds = (0, f.default)(s._handleUpdateBounds.bind((0, u.default)(s)), 1e3), s.onBeforeQuit = s._handleBeforeQuit.bind((0, u.default)(s)), s.onOpenUrl = s._handleOpenUrl.bind((0, u.default)(s)), s.onLaunch = s._handleLaunch.bind((0, u.default)(s)), s.onLoggedOut = s._handleLoggedOut.bind((0, u.default)(s)), s._addListeners(), s.additionalShortcuts = new h.default(s.browserWindow, s._webContents, A.getAdditionalShortcuts()), s.browserWindow.loadURL(`file://${__dirname}/index.html`), s._initRefreshWindowOnlogOutListener(), s._initRefreshWindowOnRefreshRequestListener(), s._initRefreshWindowWhenActiveRequestListener(), n(2)`windowState: ${v.default.get("windowState")}`, s
+                            return (null == w ? void 0 : w.isMaximized) && "win32" === process.platform && s.browserWindow.maximize(), (null == w ? void 0 : w.isFullScreen) && s.browserWindow.setFullScreen(!0), s.requestInterceptor = new b.default(s._webContents, (0, u.default)(s)), _.rendererStream.setWebContents(s._webContents), process.mas || process.windowsStore || (s.autoUpdater = r(50654), s.autoUpdater.init(s._webContents, (0, u.default)(s))), s.onUpdateBounds = (0, f.default)(s._handleUpdateBounds.bind((0, u.default)(s)), 1e3), s.onBeforeQuit = s._handleBeforeQuit.bind((0, u.default)(s)), s.onOpenUrl = s._handleOpenUrl.bind((0, u.default)(s)), s.onLaunch = s._handleLaunch.bind((0, u.default)(s)), s.onLoggedOut = s._handleLoggedOut.bind((0, u.default)(s)), s._addListeners(), s.additionalShortcuts = new h.default(s.browserWindow, s._webContents, A.getAdditionalShortcuts()), s.browserWindow.loadURL(`file://${__dirname}/index.html`), s._initRefreshWindowOnlogOutListener(), s._initRefreshWindowOnRefreshRequestListener(), s._initRefreshWindowWhenActiveRequestListener(), s._initElectronUwpUpsellExitAppListener(), n(2)`windowState: ${v.default.get("windowState")}`, s
                         }
                         return (0, s.default)(i, [{
                             key: "destructor",
                             value: function() {
                                 var e;
-                                this.requestInterceptor.destructor(), this.additionalShortcuts.destructor(), T.removeListener("open-url", this.onOpenUrl), T.removeListener("before-quit", this.onBeforeQuit), N.removeAllListeners(`${S.default.Event}:${S.default.Events.LAUNCH}`), N.removeHandler("refresh-electron-window-on-logout"), N.removeHandler("refresh-electron-window-for-refresh"), N.removeHandler("refresh-electron-window-when-active"), _.rendererStream.setWebContents(null), null === (e = this.autoUpdater) || void 0 === e || e.destructor()
+                                this.requestInterceptor.destructor(), this.additionalShortcuts.destructor(), C.removeListener("open-url", this.onOpenUrl), C.removeListener("before-quit", this.onBeforeQuit), M.removeAllListeners(`${S.default.Event}:${S.default.Events.LAUNCH}`), M.removeHandler("refresh-electron-window-on-logout"), M.removeHandler("refresh-electron-window-for-refresh"), M.removeHandler("refresh-electron-window-when-active"), M.removeHandler("electron-uwp-upsell-exit-app"), _.rendererStream.setWebContents(null), null === (e = this.autoUpdater) || void 0 === e || e.destructor()
                             }
                         }, {
                             key: "destroy",
@@ -27519,7 +27054,7 @@
                             key: "_initRefreshWindowOnlogOutListener",
                             value: function() {
                                 var e = this;
-                                N.handle("refresh-electron-window-on-logout", (function() {
+                                M.handle("refresh-electron-window-on-logout", (function() {
                                     e._webContents.session.clearStorageData({
                                         storages: ["indexdb"]
                                     }).then((function() {
@@ -27531,7 +27066,7 @@
                             key: "_initRefreshWindowOnRefreshRequestListener",
                             value: function() {
                                 var e = this;
-                                N.handle("refresh-electron-window-for-refresh", (function() {
+                                M.handle("refresh-electron-window-for-refresh", (function() {
                                     e.reloadHelper.reload()
                                 }))
                             }
@@ -27539,8 +27074,15 @@
                             key: "_initRefreshWindowWhenActiveRequestListener",
                             value: function() {
                                 var e = this;
-                                N.handle("refresh-electron-window-when-active", (function() {
+                                M.handle("refresh-electron-window-when-active", (function() {
                                     e.reloadHelper.reloadOnActive()
+                                }))
+                            }
+                        }, {
+                            key: "_initElectronUwpUpsellExitAppListener",
+                            value: function() {
+                                M.handle("electron-uwp-upsell-exit-app", (function() {
+                                    n(2)`Electron WhatsApp window: Exiting app because received electron-uwp-upsell-exit-app event from renderer process`, C.exit()
                                 }))
                             }
                         }, {
@@ -27549,11 +27091,11 @@
                                 var e = this;
                                 this.browserWindow.on("page-title-updated", (function(e) {
                                     e.preventDefault()
-                                })), this.browserWindow.on("resize", this.onUpdateBounds), this.browserWindow.on("move", this.onUpdateBounds), this.browserWindow.on("show", this._handleShow), this.browserWindow.on("hide", this._handleHide), N.on(`${S.default.Event}:${S.default.Events.LAUNCH}`, this.onLaunch), N.on(`${S.default.Event}:${S.default.Events.LOGGED_OUT}`, this.onLoggedOut), this.browserWindow.on("close", (function(t) {
+                                })), this.browserWindow.on("resize", this.onUpdateBounds), this.browserWindow.on("move", this.onUpdateBounds), this.browserWindow.on("show", this._handleShow), this.browserWindow.on("hide", this._handleHide), M.on(`${S.default.Event}:${S.default.Events.LAUNCH}`, this.onLaunch), M.on(`${S.default.Event}:${S.default.Events.LOGGED_OUT}`, this.onLoggedOut), this.browserWindow.on("close", (function(t) {
                                     v.default.flush(), e._forceQuit ? e.destructor() : (t.preventDefault(), e.browserWindow.isFullScreen() && e.browserWindow.setFullScreen(!1), e.browserWindow.hide())
                                 })), this.browserWindow.on("closed", (function(t) {
                                     n(2)`App closed`, e._webContents.removeAllListeners(), e.browserWindow.removeAllListeners(), e.emit("closed", t)
-                                })), T.on("open-url", this.onOpenUrl), T.on("before-quit", this.onBeforeQuit), this.browserWindow.on("unresponsive", (function(t) {
+                                })), C.on("open-url", this.onOpenUrl), C.on("before-quit", this.onBeforeQuit), this.browserWindow.on("unresponsive", (function(t) {
                                     var r, i = function() {
                                         r && (clearTimeout(r), r = void 0), e.browserWindow.removeListener("responsive", i)
                                     };
@@ -27563,7 +27105,7 @@
                                 })), this._webContents.on("render-process-gone", (function(t, r) {
                                     n(2)`App Render Process Gone:${t}, ${r}`, e.emit("render-process-gone", t, r)
                                 })), this._webContents.on("will-navigate", (function(t, r) {
-                                    n(2)`will navigate with url: ${r}`, M.includes(x.default.parse(r).host) || e._webContents.getURL() !== r && t.preventDefault()
+                                    n(2)`will navigate with url: ${r}`, D.includes(x.default.parse(r).host) || e._webContents.getURL() !== r && t.preventDefault()
                                 })), this._webContents.on("new-window", (function(e, t) {
                                     e.preventDefault(), (0, g.openExternal)(t)
                                 }))
@@ -27622,7 +27164,7 @@
                             }
                         }]), i
                     }(w.default.EventEmitter);
-                e.exports = D
+                e.exports = L
             },
             79548: (e, t, r) => {
                 "use strict";
@@ -27840,14 +27382,12 @@
                                 n.loggedIn = !0, n.requestRender()
                             }, this._handleLoggedOut = function() {
                                 n.loggedIn = !1, n.requestRender()
-                            }, this._handleAbPropsUpdate = function(e, t) {
-                                n.commandPaletteEnabled = t.commandPaletteEnabled, n.requestRender()
-                            }, this.webContents = t, this.requestRender = r, this.loggedIn = !1, this.commandPaletteEnabled = !1, u.ipcMain.on(`${l.default.Event}:${l.default.Events.LOGGED_IN}`, this._handleLoggedIn), u.ipcMain.on(`${l.default.Event}:${l.default.Events.LOGGED_OUT}`, this._handleLoggedOut), u.ipcMain.on(`${l.default.Event}:${l.default.Events.AB_PROPS_UPDATE}`, this._handleAbPropsUpdate)
+                            }, this.webContents = t, this.requestRender = r, this.loggedIn = !1, u.ipcMain.on(`${l.default.Event}:${l.default.Events.LOGGED_IN}`, this._handleLoggedIn), u.ipcMain.on(`${l.default.Event}:${l.default.Events.LOGGED_OUT}`, this._handleLoggedOut)
                         }
                         return (0, o.default)(e, [{
                             key: "destructor",
                             value: function() {
-                                u.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.LOGGED_IN}`, this._handleLoggedIn), u.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.LOGGED_OUT}`, this._handleLoggedOut), u.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.AB_PROPS_UPDATE}`, this._handleAbPropsUpdate)
+                                u.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.LOGGED_IN}`, this._handleLoggedIn), u.ipcMain.removeListener(`${l.default.Event}:${l.default.Events.LOGGED_OUT}`, this._handleLoggedOut)
                             }
                         }, {
                             key: "render",
@@ -27908,7 +27448,6 @@
                                         }).toString(),
                                         enabled: this.loggedIn,
                                         accelerator: (0, d.getKey)(s.Action.TOGGLE_COMMAND_PALETTE),
-                                        visible: this.commandPaletteEnabled,
                                         click: function() {
                                             e.webContents.send(l.default.Action, s.Action.TOGGLE_COMMAND_PALETTE)
                                         }
@@ -28482,7 +28021,7 @@ listener from browserWindow: ${e}`
                                     }, {
                                         type: "separator"
                                     }, {
-                                        label: c.default.t(816),
+                                        label: c.default.t(819),
                                         enabled: !0,
                                         click: function() {
                                             e.browserWindow.show()
@@ -28726,30 +28265,29 @@ listener from browserWindow: ${e}`
             57191: (e, t, r) => {
                 "use strict";
                 var n, i, a = r(66849).log,
-                    o = r(36953).default,
-                    s = r(85473),
-                    u = s(r(10178)),
-                    c = s(r(57616)),
-                    l = s(r(64995)),
-                    d = r(58933),
-                    f = s(r(85622));
+                    o = r(85473),
+                    s = o(r(10178)),
+                    u = o(r(57616)),
+                    c = o(r(64995)),
+                    l = r(58933),
+                    d = o(r(85622));
                 if ("win32" === process.platform) {
-                    var p = f.default.dirname(process.execPath),
-                        h = f.default.basename(process.execPath);
-                    n = f.default.resolve(p, "..", "Update.exe"), i = ["--processStart", `"${h}"`]
+                    var f = d.default.dirname(process.execPath),
+                        p = d.default.basename(process.execPath);
+                    n = d.default.resolve(f, "..", "Update.exe"), i = ["--processStart", `"${p}"`]
                 }
-                var m = function() {
+                var h = function() {
                     function e() {
-                        (0, u.default)(this, e)
+                        (0, s.default)(this, e)
                     }
-                    return (0, c.default)(e, [{
+                    return (0, u.default)(e, [{
                         key: "isEnabled",
                         value: function() {
                             var e, t;
-                            return t = "win32" === process.platform ? d.app.getLoginItemSettings({
+                            return t = "win32" === process.platform ? l.app.getLoginItemSettings({
                                 path: n,
                                 args: i
-                            }) : d.app.getLoginItemSettings(), a(2)`loginItem: ${t}`, o.resolve(null === (e = t) || void 0 === e ? void 0 : e.openAtLogin)
+                            }) : l.app.getLoginItemSettings(), a(2)`loginItem: ${t}`, Promise.resolve(null === (e = t) || void 0 === e ? void 0 : e.openAtLogin)
                         }
                     }, {
                         key: "enable",
@@ -28760,11 +28298,11 @@ listener from browserWindow: ${e}`
                                     path: n,
                                     args: i
                                 };
-                                d.app.setLoginItemSettings(e)
-                            } else d.app.setLoginItemSettings({
+                                l.app.setLoginItemSettings(e)
+                            } else l.app.setLoginItemSettings({
                                 openAtLogin: !0
                             });
-                            l.default.emit("AutoLauncher:toggle", !0)
+                            c.default.emit("AutoLauncher:toggle", !0)
                         }
                     }, {
                         key: "disable",
@@ -28774,15 +28312,15 @@ listener from browserWindow: ${e}`
                                     openAtLogin: !1,
                                     path: n
                                 };
-                                d.app.setLoginItemSettings(e)
-                            } else d.app.setLoginItemSettings({
+                                l.app.setLoginItemSettings(e)
+                            } else l.app.setLoginItemSettings({
                                 openAtLogin: !1
                             });
-                            l.default.emit("AutoLauncher:toggle", !1)
+                            c.default.emit("AutoLauncher:toggle", !1)
                         }
                     }]), e
                 }();
-                e.exports = new m
+                e.exports = new h
             },
             54129: (e, t, r) => {
                 var n = r(10178),
@@ -28825,38 +28363,38 @@ listener from browserWindow: ${e}`
             },
             83300: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(85473),
-                    a = i(r(34085)),
-                    o = i(r(54815)),
-                    s = i(r(19882)),
-                    u = i(r(10178)),
-                    c = i(r(57616)),
-                    l = i(r(76013)),
-                    d = i(r(60496)),
-                    f = i(r(71100)),
-                    p = i(r(83544)),
+                var n = r(85473),
+                    i = n(r(34085)),
+                    a = n(r(54815)),
+                    o = n(r(19882)),
+                    s = n(r(10178)),
+                    u = n(r(57616)),
+                    c = n(r(76013)),
+                    l = n(r(60496)),
+                    d = n(r(71100)),
+                    f = n(r(71971)),
+                    p = n(r(83544)),
                     h = r(58933),
                     m = r(48360),
                     _ = function() {
                         function e() {
                             var t = this;
-                            (0, u.default)(this, e), h.app.addListener("browser-window-created", (function(e, r) {
+                            (0, s.default)(this, e), h.app.addListener("browser-window-created", (function(e, r) {
                                 r.webContents.on("context-menu", (function() {
                                     for (var e = arguments.length, n = new Array(e), i = 0; i < e; i++) n[i] = arguments[i];
                                     return t._handleContextMenu.apply(t, [r].concat(n))
                                 }))
                             }))
                         }
-                        var t, r, i, _;
-                        return (0, c.default)(e, [{
+                        var t, r, n, _;
+                        return (0, u.default)(e, [{
                             key: "_handleContextMenu",
                             value: function(e, t, r) {
                                 t.preventDefault(), this.buildMenu(e, r).then((function(t) {
                                     var n = t.filter((function(e) {
                                         return e.visible
                                     }));
-                                    if (!(0, f.default)(n)) {
+                                    if (!(0, d.default)(n)) {
                                         var i = h.Menu.buildFromTemplate(t);
                                         setTimeout((function() {
                                             return i.popup({
@@ -28876,19 +28414,19 @@ listener from browserWindow: ${e}`
                                     hk: "pXI9I"
                                 }) : m.fbt._("Copy Link", null, {
                                     hk: "2MkRs6"
-                                }), e.linkURL && "none" === e.mediaType ? n.resolve({
+                                }), e.linkURL && "none" === e.mediaType ? Promise.resolve({
                                     label: t.toString(),
                                     click: function() {
                                         "darwin" === process.platform ? h.clipboard.writeBookmark(e.linkText, e.linkURL) : "win32" === process.platform && h.clipboard.writeText(e.linkURL)
                                     },
                                     visible: !0
-                                }) : n.reject(new Error("No Link"))
+                                }) : Promise.reject((0, f.default)("No Link"))
                             }
                         }, {
                             key: "loadImage",
-                            value: (_ = (0, s.default)(o.default.mark((function e(t, r) {
+                            value: (_ = (0, o.default)(a.default.mark((function e(t, r) {
                                 var n;
-                                return o.default.wrap((function(e) {
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             return e.next = 2, p.default.send(t, "imageToDataURL", r);
@@ -28904,27 +28442,27 @@ listener from browserWindow: ${e}`
                             })
                         }, {
                             key: "buildCopyImageMenu",
-                            value: (i = (0, s.default)(o.default.mark((function e(t, r) {
-                                var i, a;
-                                return o.default.wrap((function(e) {
+                            value: (n = (0, o.default)(a.default.mark((function e(t, r) {
+                                var n, i;
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             if ("image" !== !r.mediaType && r.hasImageContents) {
                                                 e.next = 2;
                                                 break
                                             }
-                                            return e.abrupt("return", n.reject(new Error("No Image")));
+                                            return e.abrupt("return", Promise.reject((0, f.default)("No Image")));
                                         case 2:
-                                            return i = "darwin" === process.platform ? m.fbt._("Copy Image", null, {
+                                            return n = "darwin" === process.platform ? m.fbt._("Copy Image", null, {
                                                 hk: "1uGr9w"
                                             }) : m.fbt._("Copy Image", null, {
                                                 hk: "4mfnD0"
                                             }), e.next = 5, this.loadImage(t, r.srcURL);
                                         case 5:
-                                            return a = e.sent, e.abrupt("return", {
-                                                label: i.toString(),
+                                            return i = e.sent, e.abrupt("return", {
+                                                label: n.toString(),
                                                 click: function() {
-                                                    h.clipboard.writeImage(a)
+                                                    h.clipboard.writeImage(i)
                                                 },
                                                 visible: !0
                                             });
@@ -28934,13 +28472,13 @@ listener from browserWindow: ${e}`
                                     }
                                 }), e, this)
                             }))), function() {
-                                return i.apply(this, arguments)
+                                return n.apply(this, arguments)
                             })
                         }, {
                             key: "buildEditMenu",
-                            value: (r = (0, s.default)(o.default.mark((function e(t, r) {
-                                var n, i, a, s, u, c, l, d = this;
-                                return o.default.wrap((function(e) {
+                            value: (r = (0, o.default)(a.default.mark((function e(t, r) {
+                                var n, i, o, s, u, c, l, d = this;
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             return "darwin" === process.platform ? (u = m.fbt._("Undo", null, {
@@ -28951,7 +28489,7 @@ listener from browserWindow: ${e}`
                                                 hk: "48OH3y"
                                             }), i = m.fbt._("Copy", null, {
                                                 hk: "2j07Ag"
-                                            }), a = m.fbt._("Paste", null, {
+                                            }), o = m.fbt._("Paste", null, {
                                                 hk: "136Ebf"
                                             }), s = m.fbt._("Select All", null, {
                                                 hk: "1xpDOg"
@@ -28963,7 +28501,7 @@ listener from browserWindow: ${e}`
                                                 hk: "2WZRrD"
                                             }), i = m.fbt._("Copy", null, {
                                                 hk: "4FMvNk"
-                                            }), a = m.fbt._("Paste", null, {
+                                            }), o = m.fbt._("Paste", null, {
                                                 hk: "2qs8Nf"
                                             }), s = m.fbt._("Select All", null, {
                                                 hk: "2r3lIW"
@@ -28984,7 +28522,7 @@ listener from browserWindow: ${e}`
                                                 enabled: r.isEditable && r.editFlags.canCut,
                                                 visible: r.isEditable
                                             }, l, {
-                                                label: a.toString(),
+                                                label: o.toString(),
                                                 role: r.isEditable && r.editFlags.canPaste ? "paste" : void 0,
                                                 enabled: r.isEditable && r.editFlags.canPaste,
                                                 visible: r.isEditable
@@ -29015,14 +28553,14 @@ listener from browserWindow: ${e}`
                         }, {
                             key: "buildSuggestionsMenu",
                             value: function(e, t) {
-                                var r, i = [],
-                                    o = t.dictionarySuggestions.slice(0, 5),
-                                    s = (0, a.default)(o);
+                                var r, n = [],
+                                    a = t.dictionarySuggestions.slice(0, 5),
+                                    o = (0, i.default)(a);
                                 try {
-                                    for (s.s(); !(r = s.n()).done;) {
-                                        var u = r.value;
-                                        i.push({
-                                            label: u,
+                                    for (o.s(); !(r = o.n()).done;) {
+                                        var s = r.value;
+                                        n.push({
+                                            label: s,
                                             click: function(t) {
                                                 t && e.webContents.replaceMisspelling(t.label)
                                             },
@@ -29030,11 +28568,11 @@ listener from browserWindow: ${e}`
                                         })
                                     }
                                 } catch (e) {
-                                    s.e(e)
+                                    o.e(e)
                                 } finally {
-                                    s.f()
+                                    o.f()
                                 }
-                                return t.misspelledWord && i.push({
+                                return t.misspelledWord && n.push({
                                     label: m.fbt._("Add to dictionary", null, {
                                         hk: "43nxNW"
                                     }).toString(),
@@ -29042,13 +28580,13 @@ listener from browserWindow: ${e}`
                                         e.webContents.session.addWordToSpellCheckerDictionary(t.misspelledWord)
                                     },
                                     visible: !0
-                                }), n.resolve(i)
+                                }), Promise.resolve(n)
                             }
                         }, {
                             key: "intersperse",
                             value: function(e, t) {
                                 if (Array.isArray(e)) {
-                                    if (!(0, f.default)(e)) {
+                                    if (!(0, d.default)(e)) {
                                         for (var r = [], n = 0; n < e.length - 1; ++n) r.push(e[n]), r.push(t);
                                         return r.push(e[e.length - 1]), r
                                     }
@@ -29058,16 +28596,16 @@ listener from browserWindow: ${e}`
                             }
                         }, {
                             key: "buildMenu",
-                            value: (t = (0, s.default)(o.default.mark((function e(t, r) {
-                                var i, a;
-                                return o.default.wrap((function(e) {
+                            value: (t = (0, o.default)(a.default.mark((function e(t, r) {
+                                var n, i;
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
-                                            return e.next = 2, n.all([this.buildSuggestionsMenu(t, r), this.buildEditMenu(t, r)]);
+                                            return e.next = 2, Promise.all([this.buildSuggestionsMenu(t, r), this.buildEditMenu(t, r)]);
                                         case 2:
-                                            return i = e.sent, a = (0, d.default)(i, (function(e) {
-                                                return !(0, f.default)(e)
-                                            })), e.abrupt("return", (0, l.default)(this.intersperse(a, {
+                                            return n = e.sent, i = (0, l.default)(n, (function(e) {
+                                                return !(0, d.default)(e)
+                                            })), e.abrupt("return", (0, c.default)(this.intersperse(i, {
                                                 type: "separator"
                                             })));
                                         case 5:
@@ -29084,108 +28622,96 @@ listener from browserWindow: ${e}`
             },
             4534: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(85473),
-                    a = r(19811),
-                    o = i(r(58933)),
-                    s = i(r(12087)),
-                    u = i(r(85622)),
-                    c = "WhatsApp/2.2313.8 Web/" + [s.default.type(), s.default.release().slice(0, 5), s.default.arch()].join("-") + " Device/Electron",
-                    l = {
+                var n = r(85473),
+                    i = r(16386),
+                    a = n(r(58933)),
+                    o = n(r(12087)),
+                    s = n(r(85622)),
+                    u = "WhatsApp/2.2327.5 Web/" + [o.default.type(), o.default.release().slice(0, 5), o.default.arch()].join("-") + " Device/Electron",
+                    c = {
                         from_jid: "",
                         type: "crashlog",
-                        agent: c,
+                        agent: u,
                         tags: "electron_native"
                     };
-                l.tags += ",main_process";
-                var d = "https://crashlogs.whatsapp.net/wa_clb_data?access_token=" + encodeURIComponent("1063127757113399|745146ffa34413f9dbb5469f5370b7af"),
-                    f = o.default.crashReporter;
-                f && f.start({
-                    submitURL: d,
+                c.tags += ",main_process";
+                var l = "https://crashlogs.whatsapp.net/wa_clb_data?access_token=" + encodeURIComponent("1063127757113399|745146ffa34413f9dbb5469f5370b7af"),
+                    d = a.default.crashReporter;
+                d && d.start({
+                    submitURL: l,
                     productName: "WhatsApp",
-                    extra: l,
+                    extra: c,
                     compress: !1
                 });
 
-                function p() {
-                    var e, t, i, a, o, s = r(35747);
-                    "win32" === process.platform ? (e = null !== (i = process.env.USERPROFILE) && void 0 !== i ? i : "", t = u.default.join(e, "AppData", "Roaming", "WhatsApp", "voip_crash_log.txt")) : (e = null !== (a = process.env.HOME) && void 0 !== a ? a : "", t = u.default.join(e, "Library", "Application Support", "WhatsApp", "voip_crash_log.txt"));
-                    return s.existsSync(t) && (o = new n((function(e) {
+                function f() {
+                    var e, t, n, i, a, o = r(35747);
+                    "win32" === process.platform ? (e = null !== (n = process.env.USERPROFILE) && void 0 !== n ? n : "", t = s.default.join(e, "AppData", "Roaming", "WhatsApp", "voip_crash_log.txt")) : (e = null !== (i = process.env.HOME) && void 0 !== i ? i : "", t = s.default.join(e, "Library", "Application Support", "WhatsApp", "voip_crash_log.txt"));
+                    return o.existsSync(t) && (a = new Promise((function(e) {
                         var r = [],
-                            n = s.createReadStream(t);
+                            n = o.createReadStream(t);
                         n.on("data", (function(e) {
                             return r.push(e)
                         })), n.on("end", (function() {
                             var n = {
                                 contents: Buffer.concat(r),
-                                filename: u.default.basename(t)
+                                filename: s.default.basename(t)
                             };
                             e(n)
                         }))
-                    }))), o
+                    }))), a
                 }
-                o.default.ipcMain.on(a.CRASH_REPORTER_EVENTS.LOGGED_IN, (function(e, t) {
-                    f.addExtraParameter("from_jid", t);
-                    var i = o.default.app,
-                        s = function(e) {
+                a.default.ipcMain.on(i.CRASH_REPORTER_EVENTS.LOGGED_IN, (function(e, t) {
+                    d.addExtraParameter("from_jid", t);
+                    var n = a.default.app,
+                        o = function(e) {
                             var t = r(35747);
                             if (t.existsSync(e)) {
                                 var n = t.readdirSync(e).filter((function(r) {
-                                    return t.lstatSync(u.default.join(e, r)).isFile()
+                                    return t.lstatSync(s.default.join(e, r)).isFile()
                                 })).map((function(r) {
                                     return {
                                         name: r,
-                                        path: u.default.join(e, r),
-                                        mtime: t.lstatSync(u.default.join(e, r)).mtime.getTime()
+                                        path: s.default.join(e, r),
+                                        mtime: t.lstatSync(s.default.join(e, r)).mtime.getTime()
                                     }
                                 })).sort((function(e, t) {
                                     return t.mtime - e.mtime
                                 }));
                                 return n.length ? n[0] : void 0
                             }
-                        }(u.default.resolve(i.getPath("crashDumps"), "darwin" === process.platform ? "completed" : "reports"));
-                    if (s && function(e) {
+                        }(s.default.resolve(n.getPath("crashDumps"), "darwin" === process.platform ? "completed" : "reports"));
+                    if (o && function(e) {
                             var t = r(42828),
                                 n = t.get("lastNativeLogUpload"),
                                 i = e.mtime;
                             if (i && n !== i) return t.set("lastNativeLogUpload", i), !0;
                             return !1
-                        }(s)) {
-                        var l = r(35747),
-                            d = new n((function(e) {
+                        }(o)) {
+                        var c = r(35747),
+                            l = new Promise((function(e) {
                                 var t = [],
-                                    r = l.createReadStream(s.path);
+                                    r = c.createReadStream(o.path);
                                 r.on("data", (function(e) {
                                     return t.push(e)
                                 })), r.on("end", (function() {
                                     var r = {
                                         contents: Buffer.concat(t),
-                                        filename: s.name,
-                                        agent: c
+                                        filename: o.name,
+                                        agent: u
                                     };
                                     e(r)
                                 }))
                             }));
-                        n.all([d, p()]).then((function(t) {
+                        Promise.all([l, f()]).then((function(t) {
                             var r = t[0],
                                 n = t[1];
-                            e.reply(a.CRASH_REPORTER_EVENTS.UPLOAD_NATIVE_CRASH, r, n)
+                            e.reply(i.CRASH_REPORTER_EVENTS.UPLOAD_NATIVE_CRASH, r, n)
                         }))
                     }
-                })), o.default.ipcMain.on(a.CRASH_REPORTER_EVENTS.LOGGED_OUT, (function() {
-                    f.addExtraParameter("from_jid", "")
+                })), a.default.ipcMain.on(i.CRASH_REPORTER_EVENTS.LOGGED_OUT, (function() {
+                    d.addExtraParameter("from_jid", "")
                 }))
-            },
-            19811: (e, t) => {
-                "use strict";
-                Object.defineProperty(t, "__esModule", {
-                    value: !0
-                }), t.CRASH_REPORTER_EVENTS = void 0, t.updateCrashReporter = function() {};
-                t.CRASH_REPORTER_EVENTS = {
-                    LOGGED_IN: "USER_LOGGED_IN",
-                    LOGGED_OUT: "USER_LOGGED_OUT",
-                    UPLOAD_NATIVE_CRASH: "UPLOAD_NATIVE_CRASH"
-                }
             },
             26498: (e, t, r) => {
                 "use strict";
@@ -29259,26 +28785,26 @@ listener from browserWindow: ${e}`
             48090: (e, t, r) => {
                 "use strict";
                 var n = r(66849).log,
-                    i = r(36953).default,
-                    a = r(85473),
-                    o = a(r(54815)),
-                    s = a(r(19882)),
-                    u = a(r(10178)),
-                    c = a(r(57616)),
-                    l = a(r(64995)),
-                    d = a(r(42828)),
-                    f = a(r(62570)),
+                    i = r(85473),
+                    a = i(r(54815)),
+                    o = i(r(19882)),
+                    s = i(r(10178)),
+                    u = i(r(57616)),
+                    c = i(r(71971)),
+                    l = i(r(64995)),
+                    d = i(r(42828)),
+                    f = i(r(62570)),
                     p = r(5781),
                     h = r(58933),
-                    m = a(r(35747)),
-                    _ = a(r(50229)),
-                    g = a(r(85622)),
+                    m = i(r(35747)),
+                    _ = i(r(50229)),
+                    g = i(r(85622)),
                     v = "lastSavedLocation",
                     b = ["txt", "rtf", "vcf", "zip", "pdf", "doc", "xls", "ppt", "docx", "pptx", "xlsx", "aac", "mp4", "amr", "mpeg", "ogg", "3gpp", "png", "jpg", "jpeg"],
                     y = function() {
                         function e() {
                             var t = this;
-                            (0, u.default)(this, e), this._handleWillDownload = function(e, r) {
+                            (0, s.default)(this, e), this._handleWillDownload = function(e, r) {
                                 var i = r.getFilename().split(".")[0],
                                     a = t.paths[i];
                                 if (!a) return e.preventDefault(), void r.cancel();
@@ -29291,8 +28817,8 @@ listener from browserWindow: ${e}`
                             var r = f.default.getWindow();
                             r && r.getBrowserWindow().webContents.session.on("will-download", this._handleWillDownload)
                         }
-                        var t, r, a, y;
-                        return (0, c.default)(e, [{
+                        var t, r, i, y;
+                        return (0, u.default)(e, [{
                             key: "handleRequest",
                             value: function(e, t, r) {
                                 var n = this,
@@ -29312,9 +28838,9 @@ listener from browserWindow: ${e}`
                             }
                         }, {
                             key: "validateFilename",
-                            value: (y = (0, s.default)(o.default.mark((function e(t) {
+                            value: (y = (0, o.default)(a.default.mark((function e(t) {
                                 var r, n, i;
-                                return o.default.wrap((function(e) {
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             return e.next = 2, this.getDownloadFolder();
@@ -29331,9 +28857,9 @@ listener from browserWindow: ${e}`
                         }, {
                             key: "folderExists",
                             value: function(e) {
-                                if (!e) return i.resolve(!1);
+                                if (!e) return Promise.resolve(!1);
                                 var t = m.default.constants.R_OK | m.default.constants.W_OK;
-                                return new i((function(r) {
+                                return new Promise((function(r) {
                                     return m.default.access(e, t, (function(e) {
                                         return r(!e)
                                     }))
@@ -29341,16 +28867,16 @@ listener from browserWindow: ${e}`
                             }
                         }, {
                             key: "getDownloadFolder",
-                            value: (a = (0, s.default)(o.default.mark((function e() {
+                            value: (i = (0, o.default)(a.default.mark((function e() {
                                 var t, r, n;
-                                return o.default.wrap((function(e) {
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             if (t = h.app.getPath("downloads"), !process.mas) {
                                                 e.next = 3;
                                                 break
                                             }
-                                            return e.abrupt("return", i.resolve(t));
+                                            return e.abrupt("return", Promise.resolve(t));
                                         case 3:
                                             return r = d.default.get(v), e.next = 6, this.folderExists(r);
                                         case 6:
@@ -29361,12 +28887,12 @@ listener from browserWindow: ${e}`
                                     }
                                 }), e, this)
                             }))), function() {
-                                return a.apply(this, arguments)
+                                return i.apply(this, arguments)
                             })
                         }, {
                             key: "findAvailablePath",
                             value: function(e, t, r) {
-                                return new i((function(n) {
+                                return new Promise((function(n) {
                                     return m.default.readdir(e, (function(i, a) {
                                         var o = `${t}${r}`;
                                         if (i || a.length > 1e4) n(g.default.join(e, o));
@@ -29384,26 +28910,26 @@ listener from browserWindow: ${e}`
                             }
                         }, {
                             key: "showSaveDialog",
-                            value: (r = (0, s.default)(o.default.mark((function e(t) {
-                                var r, n, a, s, u, c, l;
-                                return o.default.wrap((function(e) {
+                            value: (r = (0, o.default)(a.default.mark((function e(t) {
+                                var r, n, i, o, s, u, l;
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             if (r = f.default.getWindow()) {
                                                 e.next = 3;
                                                 break
                                             }
-                                            return e.abrupt("return", i.reject(new Error("Main Window is not available")));
+                                            return e.abrupt("return", Promise.reject((0, c.default)("Main Window is not available")));
                                         case 3:
-                                            return n = r.getBrowserWindow(), a = (0, p.getFileExtension)(t), s = b.indexOf(a) > 0 ? [{
-                                                name: null != a ? a : "",
-                                                extensions: [null != a ? a : ""]
+                                            return n = r.getBrowserWindow(), i = (0, p.getFileExtension)(t), o = b.indexOf(i) > 0 ? [{
+                                                name: null != i ? i : "",
+                                                extensions: [null != i ? i : ""]
                                             }] : [], e.next = 8, h.dialog.showSaveDialog(n, {
                                                 defaultPath: t,
-                                                filters: s
+                                                filters: o
                                             });
                                         case 8:
-                                            return u = e.sent, c = u.filePath, (l = void 0 === c ? "" : c) && d.default.set(v, g.default.dirname(l)), e.abrupt("return", l);
+                                            return s = e.sent, u = s.filePath, (l = void 0 === u ? "" : u) && d.default.set(v, g.default.dirname(l)), e.abrupt("return", l);
                                         case 13:
                                         case "end":
                                             return e.stop()
@@ -29420,8 +28946,8 @@ listener from browserWindow: ${e}`
                             }
                         }, {
                             key: "openFile",
-                            value: (t = (0, s.default)(o.default.mark((function e(t) {
-                                return o.default.wrap((function(e) {
+                            value: (t = (0, o.default)(a.default.mark((function e(t) {
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
                                             return e.next = 2, h.shell.openPath(t);
@@ -29616,81 +29142,81 @@ listener from browserWindow: ${e}`
             },
             8936: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(85473),
-                    a = i(r(93492)),
-                    o = i(r(35325)),
-                    s = i(r(37811)),
-                    u = i(r(56247)),
-                    c = i(r(98605)),
-                    l = i(r(57211)),
-                    d = i(r(38009)),
-                    f = i(r(78761)),
+                var n = r(85473),
+                    i = n(r(93492)),
+                    a = n(r(71971)),
+                    o = n(r(35325)),
+                    s = n(r(37811)),
+                    u = n(r(56247)),
+                    c = n(r(98605)),
+                    l = n(r(57211)),
+                    d = n(r(38009)),
+                    f = n(r(78761)),
                     p = 102400;
                 e.exports = function e(t) {
-                    return new n((function(r, n) {
-                        var i;
-                        t.url || n(new Error("No URL provided to scrape"));
-                        var h, m = null,
-                            _ = !1,
+                    return new Promise((function(r, n) {
+                        var h;
+                        t.url || n((0, a.default)("No URL provided to scrape"));
+                        var m, _ = null,
                             g = !1,
-                            v = [],
-                            b = new u.default.WritableStream({
+                            v = !1,
+                            b = [],
+                            y = new u.default.WritableStream({
                                 onopentag: function(e, t) {
-                                    g || ("meta" === e ? (t.property || t.name) && v.push(t) : "title" === e ? _ = !0 : "link" === e && t.rel && o.default.hasOwnProperty(t.rel) && v.push(t), "body" === e && (g = !0, b.end()))
+                                    v || ("meta" === e ? (t.property || t.name) && b.push(t) : "title" === e ? g = !0 : "link" === e && t.rel && o.default.hasOwnProperty(t.rel) && b.push(t), "body" === e && (v = !0, y.end()))
                                 },
                                 ontext: function(e) {
-                                    g || !v.some((function(e) {
+                                    v || !b.some((function(e) {
                                         return "og:title" === e.name
-                                    })) && _ && v.push({
+                                    })) && g && b.push({
                                         name: "og:title",
                                         content: e
                                     })
                                 },
                                 onclosetag: function(e) {
                                     var t;
-                                    g || ("head" === e ? (g = !0, null === (t = m) || void 0 === t || t.destroy(), b.end(), r(v)) : "title" === e && (_ = !1))
+                                    v || ("head" === e ? (v = !0, null === (t = _) || void 0 === t || t.destroy(), y.end(), r(b)) : "title" === e && (g = !1))
                                 }
                             }, {
                                 decodeEntities: !0
                             }),
-                            y = null == t.fetchMaxSize ? p : Math.max(t.fetchMaxSize, p),
-                            w = (null === (i = t.headers) || void 0 === i ? void 0 : i["Accept-Encoding"]) || "br, gzip, deflate, none",
-                            E = {
-                                headers: (0, a.default)({
-                                    Range: `bytes=0-${y}`,
-                                    "Accept-Encoding": w
+                            w = null == t.fetchMaxSize ? p : Math.max(t.fetchMaxSize, p),
+                            E = (null === (h = t.headers) || void 0 === h ? void 0 : h["Accept-Encoding"]) || "br, gzip, deflate, none",
+                            x = {
+                                headers: (0, i.default)({
+                                    Range: `bytes=0-${w}`,
+                                    "Accept-Encoding": E
                                 }, t.headers),
                                 timeout: t.timeout
                             };
-                        (h = t.url, "https:" === new URL(h).protocol ? l.default : c.default).get(t.url, E, (function(i) {
-                            if (i.headers.location && i.headers.location !== t.url) {
-                                i.destroy();
+                        (m = t.url, "https:" === new URL(m).protocol ? l.default : c.default).get(t.url, x, (function(a) {
+                            if (a.headers.location && a.headers.location !== t.url) {
+                                a.destroy();
                                 try {
-                                    if (i.headers.location.startsWith("/")) {
-                                        var o = `${new URL(t.url).origin}${i.headers.location}`;
-                                        r(e((0, a.default)((0, a.default)({}, t), {}, {
+                                    if (a.headers.location.startsWith("/")) {
+                                        var o = `${new URL(t.url).origin}${a.headers.location}`;
+                                        r(e((0, i.default)((0, i.default)({}, t), {}, {
                                             url: o
                                         })))
-                                    } else r(e((0, a.default)((0, a.default)({}, t), {}, {
-                                        url: i.headers.location
+                                    } else r(e((0, i.default)((0, i.default)({}, t), {}, {
+                                        url: a.headers.location
                                     })))
                                 } catch (e) {
                                     n(e)
                                 }
                             } else {
-                                m = i;
+                                _ = a;
                                 var u = t.encoding || "utf8";
-                                if (i.headers["content-type"]) {
-                                    var c, l = s.default.parse(i.headers["content-type"]);
-                                    if ("text/html" !== (null == l ? void 0 : l.type)) return i.destroy(), r([]);
+                                if (a.headers["content-type"]) {
+                                    var c, l = s.default.parse(a.headers["content-type"]);
+                                    if ("text/html" !== (null == l ? void 0 : l.type)) return a.destroy(), r([]);
                                     null != (null == l || null === (c = l.parameters) || void 0 === c ? void 0 : c.charset) && (u = l.parameters.charset)
                                 }
                                 var p, h = d.default.decodeStream(u);
-                                "br" === i.headers["content-encoding"] ? p = f.default.createBrotliDecompress() : "gzip" === i.headers["content-encoding"] ? p = f.default.createGunzip() : "deflate" === i.headers["content-encoding"] && (p = f.default.createInflate()), (p ? i.pipe(p, {
+                                "br" === a.headers["content-encoding"] ? p = f.default.createBrotliDecompress() : "gzip" === a.headers["content-encoding"] ? p = f.default.createGunzip() : "deflate" === a.headers["content-encoding"] && (p = f.default.createInflate()), (p ? a.pipe(p, {
                                     end: !1
-                                }) : i).pipe(h).pipe(b).on("finish", (function() {
-                                    r(v)
+                                }) : a).pipe(h).pipe(y).on("finish", (function() {
+                                    r(b)
                                 })).on("error", (function(e) {
                                     return n(e)
                                 }))
@@ -29703,19 +29229,19 @@ listener from browserWindow: ${e}`
             },
             23479: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(66849).log,
-                    a = r(85473);
+                var n = r(66849).log,
+                    i = r(85473);
                 t.Z = void 0;
-                var o = a(r(54815)),
-                    s = a(r(19882)),
-                    u = a(r(10178)),
-                    c = a(r(57616)),
-                    l = a(r(83544)),
-                    d = a(r(62570)),
+                var a = i(r(54815)),
+                    o = i(r(19882)),
+                    s = i(r(10178)),
+                    u = i(r(57616)),
+                    c = i(r(71971)),
+                    l = i(r(83544)),
+                    d = i(r(62570)),
                     f = r(58933),
-                    p = a(r(35747)),
-                    h = a(r(85622)),
+                    p = i(r(35747)),
+                    h = i(r(85622)),
                     m = f.app.getPath("temp"),
                     _ = new Set,
                     g = function(e) {
@@ -29726,35 +29252,35 @@ listener from browserWindow: ${e}`
                     },
                     v = new(function() {
                         function e() {
-                            (0, u.default)(this, e)
+                            (0, s.default)(this, e)
                         }
                         var t;
-                        return (0, c.default)(e, [{
+                        return (0, u.default)(e, [{
                             key: "saveImage",
-                            value: (t = (0, s.default)(o.default.mark((function e(t) {
-                                var r, a, s, u, c;
-                                return o.default.wrap((function(e) {
+                            value: (t = (0, o.default)(a.default.mark((function e(t) {
+                                var r, i, o, s, u;
+                                return a.default.wrap((function(e) {
                                     for (;;) switch (e.prev = e.next) {
                                         case 0:
-                                            if (r = g(t), a = h.default.join(m, "entry_" + r), s = d.default.getWindow()) {
+                                            if (r = g(t), i = h.default.join(m, "entry_" + r), o = d.default.getWindow()) {
                                                 e.next = 5;
                                                 break
                                             }
-                                            return e.abrupt("return", n.reject(new Error("Main Window is not available")));
+                                            return e.abrupt("return", Promise.reject((0, c.default)("Main Window is not available")));
                                         case 5:
-                                            return u = s.getBrowserWindow(), e.next = 8, l.default.send(u, "imageToDataURL", t).then((function(e) {
+                                            return s = o.getBrowserWindow(), e.next = 8, l.default.send(s, "imageToDataURL", t).then((function(e) {
                                                 return f.nativeImage.createFromDataURL(e)
                                             })).then((function(e) {
                                                 return e.toPNG()
                                             }));
                                         case 8:
-                                            return c = e.sent, e.abrupt("return", new n((function(e, r) {
-                                                p.default.open(a, "w", (function(n, o) {
-                                                    if (n) return i(2)`FileManager:Unable to open temp filepath: ${a}`, r(n);
-                                                    p.default.write(o, Buffer.from(c), 0, c.length, (function(n) {
-                                                        if (n) return i(2)`FileManager:Unable to write image: ${t} to filepath: ${a}`, r(n);
-                                                        _.add(a), p.default.close(o, (function() {
-                                                            return e(a)
+                                            return u = e.sent, e.abrupt("return", new Promise((function(e, r) {
+                                                p.default.open(i, "w", (function(a, o) {
+                                                    if (a) return n(2)`FileManager:Unable to open temp filepath: ${i}`, r(a);
+                                                    p.default.write(o, Buffer.from(u), 0, u.length, (function(a) {
+                                                        if (a) return n(2)`FileManager:Unable to write image: ${t} to filepath: ${i}`, r(a);
+                                                        _.add(i), p.default.close(o, (function() {
+                                                            return e(i)
                                                         }))
                                                     }))
                                                 }))
@@ -29780,19 +29306,19 @@ listener from browserWindow: ${e}`
             },
             41480: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(66849).log,
-                    a = r(85473),
-                    o = a(r(93492)),
-                    s = a(r(54815)),
-                    u = a(r(19882)),
-                    c = a(r(10178)),
-                    l = a(r(57616)),
-                    d = a(r(37811)),
+                var n = r(66849).log,
+                    i = r(85473),
+                    a = i(r(93492)),
+                    o = i(r(54815)),
+                    s = i(r(19882)),
+                    u = i(r(10178)),
+                    c = i(r(57616)),
+                    l = i(r(71971)),
+                    d = i(r(37811)),
                     f = r(58933),
                     p = g(r(98605)),
                     h = g(r(57211)),
-                    m = a(r(78835));
+                    m = i(r(78835));
 
                 function _(e) {
                     if ("function" != typeof WeakMap) return null;
@@ -29836,50 +29362,50 @@ listener from browserWindow: ${e}`
                 }
                 var E = function() {
                     function e() {
-                        (0, c.default)(this, e)
+                        (0, u.default)(this, e)
                     }
                     var t;
-                    return (0, l.default)(e, [{
+                    return (0, c.default)(e, [{
                         key: "generateLinkPreview",
-                        value: (t = (0, u.default)(s.default.mark((function e(t) {
-                            var r, a, o, u, c, l, p, h, _, g, E = arguments;
-                            return s.default.wrap((function(e) {
+                        value: (t = (0, s.default)(o.default.mark((function e(t) {
+                            var r, i, a, s, u, c, p, h, _, g, E = arguments;
+                            return o.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
-                                        return r = E.length > 1 && void 0 !== E[1] && E[1], a = new m.default.URL(t), o = {
+                                        return r = E.length > 1 && void 0 !== E[1] && E[1], i = new m.default.URL(t), a = {
                                             timeout: 6e4,
-                                            host: a.host,
-                                            path: `${a.pathname}${a.search}`
-                                        }, e.next = 5, new n((function(e, t) {
-                                            x(a.protocol, o, (function(r) {
-                                                if (200 !== r.statusCode) return t(new Error(`Failed to get image, status code: ${r.statusCode}`));
-                                                var n;
-                                                r.setEncoding("binary"), i(2)`generateLinkPreview: content-type: ${r.headers["content-type"]}`;
+                                            host: i.host,
+                                            path: `${i.pathname}${i.search}`
+                                        }, e.next = 5, new Promise((function(e, t) {
+                                            x(i.protocol, a, (function(r) {
+                                                if (200 !== r.statusCode) return t((0, l.default)(`Failed to get image, status code: ${r.statusCode}`));
+                                                var i;
+                                                r.setEncoding("binary"), n(2)`generateLinkPreview: content-type: ${r.headers["content-type"]}`;
                                                 try {
-                                                    n = d.default.parse(r.headers["content-type"]).type
+                                                    i = d.default.parse(r.headers["content-type"]).type
                                                 } catch (e) {
-                                                    return t(new Error(`Invalid content-type: ${r.headers["content-type"]}`))
+                                                    return t((0, l.default)(`Invalid content-type: ${r.headers["content-type"]}`))
                                                 }
-                                                if ("image/jpeg" !== n && "image/png" !== n) return t(new Error(`Image format not supported: ${n}`));
+                                                if ("image/jpeg" !== i && "image/png" !== i) return t((0, l.default)(`Image format not supported: ${i}`));
                                                 var a = r.headers["content-length"];
-                                                if (i(2)`generateLinkPreview: content-length: ${a}`, a > v) return t(new Error(`Image is too large: ${a}`));
+                                                if (n(2)`generateLinkPreview: content-length: ${a}`, a > v) return t((0, l.default)(`Image is too large: ${a}`));
                                                 var o = "",
                                                     s = !1;
                                                 r.on("data", (function(e) {
-                                                    (o += e).length > v && (s = !0, r.destroy(), t(new Error(`Downloaded image is too large: ${o.length}`)))
+                                                    (o += e).length > v && (s = !0, r.destroy(), t((0, l.default)(`Downloaded image is too large: ${o.length}`)))
                                                 })), r.on("end", (function() {
                                                     s || e(o)
                                                 }))
                                             }))
                                         }));
                                     case 5:
-                                        if (u = e.sent, i(2)`generateLinkPreview: Response body length: ${u.length}`, c = Buffer.from(u, "binary"), i(2)`generateLinkPreview: Buffer size: ${c.length}`, l = f.nativeImage.createFromBuffer(c), !((p = l.getSize()).height < b || p.width < b)) {
+                                        if (s = e.sent, n(2)`generateLinkPreview: Response body length: ${s.length}`, u = Buffer.from(s, "binary"), n(2)`generateLinkPreview: Buffer size: ${u.length}`, c = f.nativeImage.createFromBuffer(u), !((p = c.getSize()).height < b || p.width < b)) {
                                             e.next = 13;
                                             break
                                         }
-                                        return e.abrupt("return", n.reject(new Error(`Image size ${p.height}, ${p.width} too small for link preview`)));
+                                        return e.abrupt("return", Promise.reject((0, l.default)(`Image size ${p.height}, ${p.width} too small for link preview`)));
                                     case 13:
-                                        if (h = w(l, p, {
+                                        if (h = w(c, p, {
                                                 maxImageEdge: 140,
                                                 minWidth: 25,
                                                 minHeight: 25
@@ -29895,7 +29421,7 @@ listener from browserWindow: ${e}`
                                         }
                                         return e.abrupt("return", _);
                                     case 17:
-                                        return g = w(l, p, {
+                                        return g = w(c, p, {
                                             maxImageEdge: 1024,
                                             minWidth: y,
                                             minHeight: 75
@@ -29918,11 +29444,11 @@ listener from browserWindow: ${e}`
                 function x(e, t, r) {
                     switch (e) {
                         case "https:":
-                            return h.default.get((0, o.default)({}, t), r);
+                            return h.default.get((0, a.default)({}, t), r);
                         case "http:":
-                            return p.default.get((0, o.default)({}, t), r);
+                            return p.default.get((0, a.default)({}, t), r);
                         default:
-                            throw new Error(`Invalid protocol: ${e}`)
+                            throw (0, l.default)(`Invalid protocol: ${e}`)
                     }
                 }
                 e.exports = new E
@@ -29937,13 +29463,14 @@ listener from browserWindow: ${e}`
                 var a = i(r(93492)),
                     o = i(r(10178)),
                     s = i(r(57616)),
-                    u = i(r(58812)),
-                    c = i(r(58933)),
-                    l = i(r(78835)),
-                    d = c.default.autoUpdater,
-                    f = new(function() {
+                    u = i(r(71971)),
+                    c = i(r(58812)),
+                    l = i(r(58933)),
+                    d = i(r(78835)),
+                    f = l.default.autoUpdater,
+                    p = new(function() {
                         function e() {
-                            (0, o.default)(this, e), this.headers = void 0, this.isBeta = !1, d.on("error", (function(e) {
+                            (0, o.default)(this, e), this.headers = void 0, this.isBeta = !1, f.on("error", (function(e) {
                                 n(3)`Auto updater: error ${e}`
                             }))
                         }
@@ -29957,11 +29484,11 @@ listener from browserWindow: ${e}`
                             value: function(e, t) {
                                 if ("darwin" === process.platform) {
                                     var r = (0, a.default)({}, Object.freeze({}));
-                                    return t && (r.version = "2.2313.8"), e && (r.beta = !0), u.default.isUpgradeTest && (r.upgrade_test = !0), r
+                                    return t && (r.version = "2.2327.5"), e && (r.beta = !0), c.default.isUpgradeTest && (r.upgrade_test = !0), r
                                 }
                                 if ("win32" === process.platform) {
                                     var n = (0, a.default)({}, Object.freeze({}));
-                                    return t && (n.version = "2.2313.8"), e && (n.beta = !0), n
+                                    return t && (n.version = "2.2327.5"), e && (n.beta = !0), n
                                 }
                             }
                         }, {
@@ -29970,14 +29497,14 @@ listener from browserWindow: ${e}`
                                 if ("darwin" === process.platform) return "desktop/mac/releases";
                                 if ("win32" === process.platform) {
                                     var e = "desktop/windows/release/";
-                                    return e += process.arch, u.default.isUpgradeTest && (e += "/upgrade_test"), e
+                                    return e += process.arch, c.default.isUpgradeTest && (e += "/upgrade_test"), e
                                 }
-                                throw new Error(`Unknown platform: ${process.platform}`)
+                                throw (0, u.default)(`Unknown platform: ${process.platform}`)
                             }
                         }, {
                             key: "getFeedUrl",
                             value: function(e, t) {
-                                return l.default.format({
+                                return d.default.format({
                                     protocol: "https",
                                     hostname: this.getHostname(),
                                     pathname: this.getPathname(),
@@ -29987,7 +29514,7 @@ listener from browserWindow: ${e}`
                         }, {
                             key: "getFeedFileUrl",
                             value: function(e, t) {
-                                return "darwin" === process.platform ? this.getFeedUrl(e, t) : l.default.format({
+                                return "darwin" === process.platform ? this.getFeedUrl(e, t) : d.default.format({
                                     protocol: "https",
                                     hostname: this.getHostname(),
                                     pathname: this.getPathname() + "/RELEASES",
@@ -30000,11 +29527,11 @@ listener from browserWindow: ${e}`
                                 var e = {
                                     url: this.getFeedUrl(!1, !0)
                                 };
-                                if (this.headers && (e.headers = this.headers), d.setFeedURL(e), "darwin" === process.platform) d.checkForUpdates();
+                                if (this.headers && (e.headers = this.headers), f.setFeedURL(e), "darwin" === process.platform) f.checkForUpdates();
                                 else if ("win32" === process.platform) {
                                     var t = process.argv[1];
-                                    "--squirrel-install" !== t && "--squirrel-updated" !== t && "--squirrel-uninstall" !== t && "--squirrel-obsolete" !== t && "--squirrel-firstrun" !== t && d.checkForUpdates(), "--squirrel-firstrun" === t && setTimeout((function() {
-                                        d.checkForUpdates()
+                                    "--squirrel-install" !== t && "--squirrel-updated" !== t && "--squirrel-uninstall" !== t && "--squirrel-obsolete" !== t && "--squirrel-firstrun" !== t && f.checkForUpdates(), "--squirrel-firstrun" === t && setTimeout((function() {
+                                        f.checkForUpdates()
                                     }), 15e3)
                                 }
                             }
@@ -30014,7 +29541,7 @@ listener from browserWindow: ${e}`
                                 var t = {
                                     url: this.getFeedUrl(e, !0)
                                 };
-                                this.headers && (t.headers = this.headers), d.setFeedURL(t), this.isBeta = e
+                                this.headers && (t.headers = this.headers), f.setFeedURL(t), this.isBeta = e
                             }
                         }, {
                             key: "getBeta",
@@ -30025,48 +29552,47 @@ listener from browserWindow: ${e}`
                             key: "setHeaders",
                             value: function(e) {
                                 var t = {
-                                    url: d.getFeedURL()
+                                    url: f.getFeedURL()
                                 };
-                                this.headers = e, this.headers && (t.headers = this.headers), d.setFeedURL(t)
+                                this.headers = e, this.headers && (t.headers = this.headers), f.setFeedURL(t)
                             }
                         }]), e
                     }());
-                t.default = f
+                t.default = p
             },
             83544: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(66849).log,
-                    a = r(85473),
-                    o = a(r(97463)),
-                    s = a(r(84283)),
-                    u = a(r(10178)),
-                    c = a(r(57616)),
-                    l = r(16004),
-                    d = r(58933),
-                    f = function() {
+                var n = r(66849).log,
+                    i = r(85473),
+                    a = i(r(97463)),
+                    o = i(r(84283)),
+                    s = i(r(10178)),
+                    u = i(r(57616)),
+                    c = r(16004),
+                    l = r(58933),
+                    d = function() {
                         function e() {
                             var t = this;
-                            (0, u.default)(this, e), this.eventHandlers = new Map, this.idCounter = 1, this.promiseCallbacks = new Map, d.ipcMain.on("__ipc_bridge_response__", (function(e, r) {
+                            (0, s.default)(this, e), this.eventHandlers = new Map, this.idCounter = 1, this.promiseCallbacks = new Map, l.ipcMain.on("__ipc_bridge_response__", (function(e, r) {
                                 r.eventName;
                                 var n = r.id,
                                     i = r.payload,
                                     a = r.__IPC_BRIDGE_ERROR__,
-                                    o = t.promiseCallbacks.get(n);
-                                if (o) {
-                                    var u = (0, s.default)(o, 2),
+                                    s = t.promiseCallbacks.get(n);
+                                if (s) {
+                                    var u = (0, o.default)(s, 2),
                                         c = u[0],
                                         l = u[1];
                                     a ? l(i) : c(i), t.promiseCallbacks.delete(n)
                                 }
-                            })), d.ipcMain.on("__ipc_bridge_send__", (function(e, r, n, i, a) {
+                            })), l.ipcMain.on("__ipc_bridge_send__", (function(e, r, n, i, o) {
                                 var s = t.eventHandlers.get(r);
                                 if (s) {
                                     var u = function(t) {
                                         return n ? e.sender.send("__ipc_bridge_response__", t) : e.returnValue = t
                                     };
-                                    (0, l.promiseCallSync)((function() {
-                                        return s.apply(void 0, (0, o.default)(a))
+                                    (0, c.promiseCallSync)((function() {
+                                        return s.apply(void 0, (0, a.default)(o))
                                     })).then((function(e) {
                                         return u({
                                             eventName: r,
@@ -30085,19 +29611,19 @@ listener from browserWindow: ${e}`
                                 }
                             }))
                         }
-                        return (0, c.default)(e, [{
+                        return (0, u.default)(e, [{
                             key: "send",
                             value: function(e, t) {
-                                for (var r = this, i = arguments.length, a = new Array(i > 2 ? i - 2 : 0), o = 2; o < i; o++) a[o - 2] = arguments[o];
-                                return new n((function(n, i) {
+                                for (var r = this, n = arguments.length, i = new Array(n > 2 ? n - 2 : 0), a = 2; a < n; a++) i[a - 2] = arguments[a];
+                                return new Promise((function(n, a) {
                                     var o = r.idCounter++;
-                                    r.promiseCallbacks.set(o, [n, i]), e.webContents.send("__ipc_bridge_send__", t, o, a)
+                                    r.promiseCallbacks.set(o, [n, a]), e.webContents.send("__ipc_bridge_send__", t, o, i)
                                 }))
                             }
                         }, {
                             key: "receive",
                             value: function(e, t) {
-                                this.eventHandlers.has(e) && i(3)`IpcBridge: Replacing '${e}' handler`, this.eventHandlers.set(e, t)
+                                this.eventHandlers.has(e) && n(3)`IpcBridge: Replacing '${e}' handler`, this.eventHandlers.set(e, t)
                             }
                         }, {
                             key: "removeListener",
@@ -30106,7 +29632,7 @@ listener from browserWindow: ${e}`
                             }
                         }]), e
                     }();
-                e.exports = new f
+                e.exports = new d
             },
             7197: (e, t, r) => {
                 var n = r(10178),
@@ -30166,7 +29692,7 @@ listener from browserWindow: ${e}`
                             return r(84508).AVDeviceManager
                         },
                         sysInfo: function() {
-                            return r(53529).Z
+                            return r(70123).default
                         }
                     },
                     s = function() {
@@ -30290,8 +29816,9 @@ listener from browserWindow: ${e}`
                     }
                 }
             },
-            79688: (e, t) => {
+            79688: (e, t, r) => {
                 "use strict";
+                var n = r(85473);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.getBunyanLoggerMethod = function(e) {
@@ -30305,7 +29832,7 @@ listener from browserWindow: ${e}`
                         case 4:
                             return "error";
                         default:
-                            throw new Error(`Invalid level: ${e}`)
+                            throw (0, i.default)(`Invalid level: ${e}`)
                     }
                 }, t.getNumericLogLevel = function(e) {
                     switch (e) {
@@ -30318,7 +29845,8 @@ listener from browserWindow: ${e}`
                         default:
                             return 1
                     }
-                }
+                };
+                var i = n(r(71971))
             },
             97153: (e, t, r) => {
                 "use strict";
@@ -30326,8 +29854,8 @@ listener from browserWindow: ${e}`
                     i = r(85473);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
-                }), t.WINDOWS_STORE_URI = void 0, t.openExternal = function(e, t) {
-                    if (e === s || u.some((function(t) {
+                }), t.WINDOWS_STORE_URI = t.WHATSAPP_PROTOCOL_SEND_URI = t.MAC_INTERNAL_SIDELOAD_URI = t.MAC_INTERNAL_MSC_STORE_URI = void 0, t.openExternal = function(e, t) {
+                    if (d.includes(e) || f.some((function(t) {
                             return e.startsWith(t)
                         }))) o.shell.openExternal(e, t ? (0, a.default)((0, a.default)({}, t), {}, {
                         workingDirectory: void 0
@@ -30342,7 +29870,14 @@ listener from browserWindow: ${e}`
                     o = r(58933),
                     s = "ms-windows-store://pdp/?productid=9NKSQGP7F2NH&mode=mini";
                 t.WINDOWS_STORE_URI = s;
-                var u = ["irc://", "ftp://", "mailto:", "http://", "https://"]
+                var u = "munki://detail-WhatsAppCatalyst.html";
+                t.MAC_INTERNAL_MSC_STORE_URI = u;
+                var c = "https://web.whatsapp.com/desktop/mac_native/release/";
+                t.MAC_INTERNAL_SIDELOAD_URI = c;
+                var l = "whatsapp://send/";
+                t.WHATSAPP_PROTOCOL_SEND_URI = l;
+                var d = [s, u, c, l],
+                    f = ["irc://", "ftp://", "mailto:", "http://", "https://"]
             },
             3891: (e, t, r) => {
                 "use strict";
@@ -30394,17 +29929,17 @@ listener from browserWindow: ${e}`
             42828: (e, t, r) => {
                 "use strict";
                 var n = r(66849).log,
-                    i = r(36953).default,
-                    a = r(85473),
-                    o = a(r(84283)),
-                    s = a(r(10178)),
-                    u = a(r(57616)),
-                    c = a(r(45705)),
-                    l = a(r(20619)),
-                    d = a(r(58933)),
-                    f = a(r(35747)),
-                    p = a(r(56531)),
-                    h = a(r(85622)),
+                    i = r(85473),
+                    a = i(r(84283)),
+                    o = i(r(10178)),
+                    s = i(r(57616)),
+                    u = i(r(45705)),
+                    c = i(r(20619)),
+                    l = i(r(71971)),
+                    d = i(r(58933)),
+                    f = i(r(35747)),
+                    p = i(r(56531)),
+                    h = i(r(85622)),
                     m = d.default.app,
                     _ = p.default.Validator,
                     g = h.default.join(m.getPath("userData"), "settings.json"),
@@ -30413,20 +29948,20 @@ listener from browserWindow: ${e}`
                     y = function() {
                         function e() {
                             var t = this;
-                            (0, s.default)(this, e), this.isSaving = !1, this.validator = new _, this.save = (0, l.default)((function() {
+                            (0, o.default)(this, e), this.isSaving = !1, this.validator = new _, this.save = (0, c.default)((function() {
                                 if (t.isSaving) return t.save();
                                 t.isSaving = !0, f.default.writeFile(g, JSON.stringify(t._prefs), (function(e) {
                                     e && n(4, void 0, new Error)`Preferences:${String(e)}`, t.isSaving = !1
                                 }))
                             }), 500)
                         }
-                        return (0, u.default)(e, [{
+                        return (0, s.default)(e, [{
                             key: "initialize",
                             value: function() {
                                 var e = this;
-                                return this.initializePromise ? this.initializePromise : this.initializePromise = new i((function(e, t) {
+                                return this.initializePromise ? this.initializePromise : this.initializePromise = new Promise((function(e, t) {
                                     var r = setTimeout((function() {
-                                        t(new Error("File IO Error"))
+                                        t((0, l.default)("File IO Error"))
                                     }), 1e4);
                                     f.default.readFile(g, "utf8", (function(n, i) {
                                         clearTimeout(r), n ? t(n) : e(i)
@@ -30434,19 +29969,19 @@ listener from browserWindow: ${e}`
                                 })).then((function(t) {
                                     var r = JSON.parse(t),
                                         i = v[Math.ceil(r.version)].Schema;
-                                    if (!e.validator.validate(r, i).valid) throw new Error("Preferences do not match provided Schema.");
+                                    if (!e.validator.validate(r, i).valid) throw (0, l.default)("Preferences do not match provided Schema.");
                                     var a = r.version !== b.Defaults.version;
                                     if (a) {
                                         var o = r.version;
-                                        if (r = e.migrate(r, b), !e.validator.validate(r, b.Schema).valid) throw new Error(`Migration failed from:${o}-${b.Defaults.version}`);
+                                        if (r = e.migrate(r, b), !e.validator.validate(r, b.Schema).valid) throw (0, l.default)(`Migration failed from:${o}-${b.Defaults.version}`);
                                         n(2)`Preferences:Successfully migrated from ${o} to ${b.Defaults.version}`
                                     }
                                     return [r, a]
                                 })).catch((function(t) {
-                                    if (n(4, void 0, new Error)`Preferences:Fail to read existing prefs:${t}`, !e.validator.validate(b.Defaults, b.Schema).valid) throw new Error("Invalid default schema!");
+                                    if (n(4, void 0, new Error)`Preferences:Fail to read existing prefs:${t}`, !e.validator.validate(b.Defaults, b.Schema).valid) throw (0, l.default)("Invalid default schema!");
                                     return [b.Defaults, !0]
                                 })).then((function(t) {
-                                    var r = (0, o.default)(t, 2),
+                                    var r = (0, a.default)(t, 2),
                                         n = r[0],
                                         i = r[1];
                                     e._prefs = n, i && e.save()
@@ -30455,16 +29990,16 @@ listener from browserWindow: ${e}`
                         }, {
                             key: "migrate",
                             value: function(e, t) {
-                                for (var r = Math.ceil(e.version) + 1, n = (0, c.default)(e), i = r; i <= t.Defaults.version; i++) n = v[i].migrate(n);
+                                for (var r = Math.ceil(e.version) + 1, n = (0, u.default)(e), i = r; i <= t.Defaults.version; i++) n = v[i].migrate(n);
                                 return n
                             }
                         }, {
                             key: "set",
                             value: function(e, t, r) {
-                                if (!this._prefs) throw new Error("Preferences: Trying to set preference before initializing!");
+                                if (!this._prefs) throw (0, l.default)("Preferences: Trying to set preference before initializing!");
                                 if (!(e in b.Schema.properties)) return n(3)`Invalid Prefences Key: ${e}`, !1;
                                 try {
-                                    var i = (0, c.default)(this._prefs);
+                                    var i = (0, u.default)(this._prefs);
                                     return this._prefs[e] = t, this.validator.validate(this._prefs, b.Schema).valid ? (this.save(), !0) : (n(3)`Preferences: Value: ${t} at key: ${e} does not follow Schema: ${String(b.Schema)}`, this._prefs = i, !1)
                                 } catch (i) {
                                     return n(4, void 0, new Error)`Preferences: Unknown error while updating schema. ${i.message}`, !!r && this.set(e, t, !1)
@@ -30560,7 +30095,7 @@ listener from browserWindow: ${e}`
                                     Windows_NT: "win_desktop",
                                     Linux: "linux_desktop"
                                 } [o.default.type()],
-                                s = ["WhatsApp/2.2313.8", "webclient/" + o.default.release(), "Device/" + a].join(" ");
+                                s = ["WhatsApp/2.2327.5", "webclient/" + o.default.release(), "Device/" + a].join(" ");
                             this.webContents.session.webRequest.onBeforeSendHeaders(u, (function(e, t) {
                                 if (e.requestHeaders.Origin = "whatsapp_darwin", n.isEmojiRequest(e.url)) {
                                     var r = "https://web.whatsapp.com/";
@@ -30607,19 +30142,18 @@ listener from browserWindow: ${e}`
             },
             33586: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(66849).log,
-                    a = r(85473);
+                var n = r(66849).log,
+                    i = r(85473);
                 t.Z = void 0;
-                var o = a(r(54815)),
-                    s = a(r(19882)),
-                    u = r(63129),
-                    c = function(e, t) {
+                var a = i(r(54815)),
+                    o = i(r(19882)),
+                    s = r(63129),
+                    u = function(e, t) {
                         if (!t && e && e.__esModule) return e;
                         if (null === e || "object" != typeof e && "function" != typeof e) return {
                             default: e
                         };
-                        var r = p(t);
+                        var r = f(t);
                         if (r && r.has(e)) return r.get(e);
                         var n = {},
                             i = Object.defineProperty && Object.getOwnPropertyDescriptor;
@@ -30630,36 +30164,36 @@ listener from browserWindow: ${e}`
                             } n.default = e, r && r.set(e, n);
                         return n
                     }(r(58933)),
-                    l = a(r(35747)),
-                    d = a(r(85622)),
-                    f = a(r(12004));
+                    c = i(r(35747)),
+                    l = i(r(85622)),
+                    d = i(r(12004));
 
-                function p(e) {
+                function f(e) {
                     if ("function" != typeof WeakMap) return null;
                     var t = new WeakMap,
                         r = new WeakMap;
-                    return (p = function(e) {
+                    return (f = function(e) {
                         return e ? r : t
                     })(e)
                 }
-                var h = c.default.session,
-                    m = function(e) {
-                        return new n((function(t, r) {
-                            var n = d.default.resolve(d.default.dirname(process.execPath), "..", "Update.exe"),
-                                i = (0, u.spawn)(n, e, {
+                var p = u.default.session,
+                    h = function(e) {
+                        return new Promise((function(t, r) {
+                            var n = l.default.resolve(l.default.dirname(process.execPath), "..", "Update.exe"),
+                                i = (0, s.spawn)(n, e, {
                                     detached: !0
                                 });
                             i.on("close", t), i.on("exit", t), i.on("disconnecct", t), i.on("error", r)
                         }))
                     };
 
-                function _(e, t) {
-                    return m(["--createShortcut=" + e, "--shortcut-locations=" + t])
+                function m(e, t) {
+                    return h(["--createShortcut=" + e, "--shortcut-locations=" + t])
                 }
-                var g = function(e) {
-                        return new n((function(t, r) {
-                            var n = new f.default({
-                                hive: f.default.HKCU,
+                var _ = function(e) {
+                        return new Promise((function(t, r) {
+                            var n = new d.default({
+                                hive: d.default.HKCU,
                                 key: `\\Software\\Classes\\whatsapp${e}`
                             });
                             n.create((function(e) {
@@ -30667,15 +30201,15 @@ listener from browserWindow: ${e}`
                             }))
                         }))
                     },
-                    v = function() {
-                        var e = (0, s.default)(o.default.mark((function e() {
-                            return o.default.wrap((function(e) {
+                    g = function() {
+                        var e = (0, o.default)(a.default.mark((function e() {
+                            return a.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
-                                        return e.next = 2, g("");
+                                        return e.next = 2, _("");
                                     case 2:
                                         e.sent.destroy((function(e) {
-                                            i(2)`Removed Registry Keys. ${e}`
+                                            n(2)`Removed Registry Keys. ${e}`
                                         }));
                                     case 4:
                                     case "end":
@@ -30687,50 +30221,50 @@ listener from browserWindow: ${e}`
                             return e.apply(this, arguments)
                         }
                     }(),
-                    b = function() {
-                        return v()
+                    v = function() {
+                        return g()
                     },
-                    y = {
+                    b = {
                         shouldQuit: function(e) {
                             if ("win32" === process.platform) {
                                 var t = process.argv[1],
-                                    r = d.default.basename(process.execPath);
-                                if ("--squirrel-install" === t) return b().then((function() {
-                                    m(["--createShortcut=" + r]).finally((function() {
+                                    r = l.default.basename(process.execPath);
+                                if ("--squirrel-install" === t) return v().then((function() {
+                                    h(["--createShortcut=" + r]).finally((function() {
                                         e(!0)
                                     }))
-                                })), i(2)`WhatsApp installed`, !0;
-                                if ("--squirrel-updated" === t) return b().then((function() {
-                                    return _(r, "StartMenu").then((function() {
-                                        var e = d.default.join(c.app.getPath("home"), "Desktop", "WhatsApp.lnk");
-                                        return new n((function(t) {
-                                            l.default.access(e, l.default.constants.F_OK, (function(e) {
+                                })), n(2)`WhatsApp installed`, !0;
+                                if ("--squirrel-updated" === t) return v().then((function() {
+                                    return m(r, "StartMenu").then((function() {
+                                        var e = l.default.join(u.app.getPath("home"), "Desktop", "WhatsApp.lnk");
+                                        return new Promise((function(t) {
+                                            c.default.access(e, c.default.constants.F_OK, (function(e) {
                                                 t(!e)
                                             }))
                                         }))
                                     })).then((function(e) {
-                                        if (e) return _(r, "Desktop")
+                                        if (e) return m(r, "Desktop")
                                     })).finally((function() {
                                         e(!0)
                                     }))
-                                })), i(2)`WhatsApp updated`, !0;
+                                })), n(2)`WhatsApp updated`, !0;
                                 if ("--squirrel-uninstall" === t) {
-                                    var a = {
+                                    var i = {
                                         origin: "file://",
                                         storages: ["appcache", "cookies", "filesystem", "indexdb", "localstorage", "shadercache", "websql", "serviceworkers"],
                                         quotas: ["temporary", "persistent", "syncable"]
                                     };
-                                    return v().then((0, s.default)(o.default.mark((function e() {
-                                        return o.default.wrap((function(e) {
+                                    return g().then((0, o.default)(a.default.mark((function e() {
+                                        return a.default.wrap((function(e) {
                                             for (;;) switch (e.prev = e.next) {
                                                 case 0:
-                                                    return e.next = 2, m(["--removeShortcut=" + r]).then((function() {
-                                                        return h.defaultSession.clearCache()
+                                                    return e.next = 2, h(["--removeShortcut=" + r]).then((function() {
+                                                        return p.defaultSession.clearCache()
                                                     })).then((function() {
-                                                        return h.defaultSession.clearStorageData(a)
+                                                        return p.defaultSession.clearStorageData(i)
                                                     }));
                                                 case 2:
-                                                    return a.origin = "whatsapp_darwin", e.abrupt("return", h.defaultSession.clearStorageData(a));
+                                                    return i.origin = "whatsapp_darwin", e.abrupt("return", p.defaultSession.clearStorageData(i));
                                                 case 4:
                                                 case "end":
                                                     return e.stop()
@@ -30738,16 +30272,16 @@ listener from browserWindow: ${e}`
                                         }), e)
                                     })))).finally((function() {
                                         e(!0)
-                                    })), i(2)`WhatsApp uninstalled`, !0
+                                    })), n(2)`WhatsApp uninstalled`, !0
                                 }
                                 if ("--squirrel-obsolete" === t) return e(!0), !0
                             }
                             return e(!1), !1
                         }((function(e) {
-                            e && c.app.quit()
+                            e && u.app.quit()
                         }))
                     };
-                t.Z = y
+                t.Z = b
             },
             97866: (e, t, r) => {
                 "use strict";
@@ -30946,30 +30480,29 @@ listener from browserWindow: ${e}`
             84508: (e, t, r) => {
                 "use strict";
                 var n = r(66849).log,
-                    i = r(36953).default,
-                    a = r(85473),
-                    o = a(r(93492)),
-                    s = a(r(19666)),
-                    u = a(r(83544)),
-                    c = a(r(62570)),
-                    l = a(r(76417)),
-                    d = r(33838),
-                    f = a(r(85622)),
-                    p = a(r(65717)),
-                    h = r(93828),
-                    m = 2764800;
+                    i = r(85473),
+                    a = i(r(93492)),
+                    o = i(r(19666)),
+                    s = i(r(83544)),
+                    u = i(r(62570)),
+                    c = i(r(76417)),
+                    l = r(33838),
+                    d = i(r(85622)),
+                    f = i(r(65717)),
+                    p = r(93828),
+                    h = 2764800;
 
-                function _(e) {
-                    return l.default.randomBytes(e).toString("hex")
+                function m(e) {
+                    return c.default.randomBytes(e).toString("hex")
                 }
-                var g = [];
+                var _ = [];
 
-                function v(e, t) {
+                function g(e, t) {
                     var r, i;
                     try {
-                        var a = new d.SharedMemory(e, m, !0),
-                            o = new d.SharedMemory(t, 40, !0);
-                        return r = new Uint8Array(a.buffer), i = new Int32Array(o.buffer), g.push(a), g.push(o), {
+                        var a = new l.SharedMemory(e, h, !0),
+                            o = new l.SharedMemory(t, 40, !0);
+                        return r = new Uint8Array(a.buffer), i = new Int32Array(o.buffer), _.push(a), _.push(o), {
                             output: r,
                             stats: i,
                             outputHandler: e,
@@ -30985,83 +30518,83 @@ listener from browserWindow: ${e}`
                         statsHandler: t
                     }
                 }
-                var b = {
+                var v = {
                         registerVideoPreviewBuffer: function() {
-                            var e = v(_(10), _(10)),
+                            var e = g(m(10), m(10)),
                                 t = e.output,
                                 r = e.stats,
                                 n = e.outputHandler,
                                 i = e.statsHandler;
-                            return t && r && p.default.registerVideoPreviewBuffer(t, r), {
-                                outputSegmentElements: m,
+                            return t && r && f.default.registerVideoPreviewBuffer(t, r), {
+                                outputSegmentElements: h,
                                 statsSegmentElements: 40,
                                 outputHandler: n,
                                 statsHandler: i
                             }
                         },
                         registerVideoBuffer: function(e) {
-                            var t = v(_(10), _(10)),
+                            var t = g(m(10), m(10)),
                                 r = t.output,
                                 n = t.stats,
                                 i = t.outputHandler,
                                 a = t.statsHandler;
-                            return r && n && p.default.registerVideoBuffer(e, r, n), {
-                                outputSegmentElements: m,
+                            return r && n && f.default.registerVideoBuffer(e, r, n), {
+                                outputSegmentElements: h,
                                 statsSegmentElements: 40,
                                 outputHandler: i,
                                 statsHandler: a
                             }
                         },
                         cleanupVideoBuffer: function() {
-                            p.default.cleanupVideoBuffer(),
+                            f.default.cleanupVideoBuffer(),
                                 function(e) {
                                     for (; e.length;) n(2)`voip: Video buffer: Shared memory buffer cleaned`, e.pop().close()
-                                }(g)
+                                }(_)
                         },
                         debugGetStatisticString: function() {
-                            return p.default.debugGetStatisticString()
+                            return f.default.debugGetStatisticString()
                         }
                     },
-                    y = (0, o.default)((0, o.default)({}, p.default ? p.default : {}), {}, {
-                        init: function(e, t, a, o, u) {
-                            var l, d, m = r(65935);
-                            null === (l = c.default.getVoipWindowManager()) || void 0 === l || l.destructor(), p.default.init(e, t, a, o, u), s.default.init(), c.default.setVoipWindowManager(new m);
-                            var _, g, v, b, y = null === (d = c.default.getWindow()) || void 0 === d ? void 0 : d.getBrowserWindow();
-                            return !y || y.isDestroyed() || (p.default.registerEventCallback((function(e, t, r) {
-                                var n = p.default.eventToStr(e);
-                                y.webContents.send(h.MAIN_IPC_EVENTS.EVENT, {
+                    b = (0, a.default)((0, a.default)({}, f.default ? f.default : {}), {}, {
+                        init: function(e, t, i, a, s) {
+                            var c, l, h = r(65935);
+                            null === (c = u.default.getVoipWindowManager()) || void 0 === c || c.destructor(), f.default.init(e, t, i, a, s), o.default.init(), u.default.setVoipWindowManager(new h);
+                            var m, _, g, v, b = null === (l = u.default.getWindow()) || void 0 === l ? void 0 : l.getBrowserWindow();
+                            return !b || b.isDestroyed() || (f.default.registerEventCallback((function(e, t, r) {
+                                var n = f.default.eventToStr(e);
+                                b.webContents.send(p.MAIN_IPC_EVENTS.EVENT, {
                                     event: e,
                                     eventStr: n,
                                     eventData: t,
                                     callInfo: r
                                 })
-                            })), p.default.registerSignalingXmppCallback((function(e, t, r) {
-                                y.webContents.send(h.MAIN_IPC_EVENTS.SIGNALING, {
+                            })), f.default.registerSignalingXmppCallback((function(e, t, r) {
+                                b.webContents.send(p.MAIN_IPC_EVENTS.SIGNALING, {
                                     callId: e,
                                     peerJid: t,
                                     payload: r
                                 })
-                            })), p.default.registerLoggingCallback((function(e, t) {
+                            })), f.default.registerLoggingCallback((function(e, t) {
                                 var r = t.trimEnd();
                                 n(2, void 0, void 0, void 0, ["voip-native"])`voip:${r}`
-                            })), y.webContents.send(h.MAIN_IPC_EVENTS.LOG_PATH, ("win32" === process.platform ? (_ = null !== (v = process.env.USERPROFILE) && void 0 !== v ? v : "", g = f.default.join(_, "AppData", "Roaming", "WhatsApp", "voip_crash_log.txt")) : (_ = null !== (b = process.env.HOME) && void 0 !== b ? b : "", g = f.default.join(_, "Library", "Application Support", "WhatsApp", "voip_crash_log.txt")), g))), i.resolve()
+                            })), b.webContents.send(p.MAIN_IPC_EVENTS.LOG_PATH, ("win32" === process.platform ? (m = null !== (g = process.env.USERPROFILE) && void 0 !== g ? g : "", _ = d.default.join(m, "AppData", "Roaming", "WhatsApp", "voip_crash_log.txt")) : (m = null !== (v = process.env.HOME) && void 0 !== v ? v : "", _ = d.default.join(m, "Library", "Application Support", "WhatsApp", "voip_crash_log.txt")), _))), Promise.resolve()
                         },
                         cleanup: function() {
                             var e;
-                            return null === (e = c.default.getVoipWindowManager()) || void 0 === e || e.destructor(), c.default.clearVoipWindowManager(), p.default.cleanup()
+                            return null === (e = u.default.getVoipWindowManager()) || void 0 === e || e.destructor(), u.default.clearVoipWindowManager(), f.default.cleanup()
                         }
                     });
-                u.default.receive(h.RENDERER_IPC_EVENTS.REQUEST_NUM_PARTICIPANTS, (function(e) {
-                    return new i((function(t) {
-                        p.default.getNumParticipantsFromCallOffer(e, t)
+                s.default.receive(p.RENDERER_IPC_EVENTS.REQUEST_NUM_PARTICIPANTS, (function(e) {
+                    return new Promise((function(t) {
+                        f.default.getNumParticipantsFromCallOffer(e, t)
                     }))
                 }));
-                var w = {
-                    wavoip: y,
-                    wavoipVideoBuffer: b,
-                    AVDeviceManager: s.default
+                var y = {
+                    wavoip: b,
+                    wavoipVideoBuffer: v,
+                    AVDeviceManager: o.default
                 };
-                e.exports = w
+                e.exports = y
             },
             62570: (e, t, r) => {
                 "use strict";
@@ -31691,25 +31224,24 @@ listener from browserWindow: ${e}`
                     }
                 }
             },
-            6823: (e, t, r) => {
+            6375: (e, t, r) => {
                 var n = r(9534);
                 t.system = n.system, t.getDeviceModelAndOsRelease = n.getDeviceModelAndOsRelease
             },
             9534: (e, t, r) => {
-                var n = r(36953).default,
-                    i = r(63129).exec,
-                    a = r(63129).execSync,
-                    o = r(35747),
-                    s = r(55748),
-                    u = process.platform,
-                    c = "linux" === u,
-                    l = "darwin" === u,
-                    d = "win32" === u,
-                    f = "freebsd" === u,
-                    p = "openbsd" === u,
-                    h = "netbsd" === u;
+                var n = r(63129).exec,
+                    i = r(63129).execSync,
+                    a = r(35747),
+                    o = r(55748),
+                    s = process.platform,
+                    u = "linux" === s,
+                    c = "darwin" === s,
+                    l = "win32" === s,
+                    d = "freebsd" === s,
+                    f = "openbsd" === s,
+                    p = "netbsd" === s;
                 t.system = function() {
-                    return new n((function(e) {
+                    return new Promise((function(e) {
                         process.nextTick((function() {
                             var t = {
                                 manufacturer: "",
@@ -31719,35 +31251,35 @@ listener from browserWindow: ${e}`
                                 uuid: "-",
                                 sku: "-"
                             };
-                            if ((c || f || p || h) && i("export LC_ALL=C; dmidecode -t system 2>/dev/null; unset LC_ALL", void 0, (function(r, n) {
-                                    var u = n.toString().split("\n");
-                                    t.manufacturer = s.getValue(u, "manufacturer"), t.model = s.getValue(u, "product name"), t.version = s.getValue(u, "version"), t.serial = s.getValue(u, "serial number"), t.uuid = s.getValue(u, "uuid"), t.sku = s.getValue(u, "sku number");
+                            if ((u || d || f || p) && n("export LC_ALL=C; dmidecode -t system 2>/dev/null; unset LC_ALL", void 0, (function(r, s) {
+                                    var u = s.toString().split("\n");
+                                    t.manufacturer = o.getValue(u, "manufacturer"), t.model = o.getValue(u, "product name"), t.version = o.getValue(u, "version"), t.serial = o.getValue(u, "serial number"), t.uuid = o.getValue(u, "uuid"), t.sku = o.getValue(u, "sku number");
                                     try {
-                                        u = a('echo -n "product_name: "; cat /sys/devices/virtual/dmi/id/product_name 2>/dev/null; echo;\n            echo -n "product_serial: "; cat /sys/devices/virtual/dmi/id/product_serial 2>/dev/null; echo;\n            echo -n "product_uuid: "; cat /sys/devices/virtual/dmi/id/product_uuid 2>/dev/null; echo;\n            echo -n "product_version: "; cat /sys/devices/virtual/dmi/id/product_version 2>/dev/null; echo;\n            echo -n "sys_vendor: "; cat /sys/devices/virtual/dmi/id/sys_vendor 2>/dev/null; echo;').toString().split("\n"), t.manufacturer = "" === t.manufacturer ? s.getValue(u, "sys_vendor") : t.manufacturer, t.model = "" === t.model ? s.getValue(u, "product_name") : t.model, t.version = "" === t.version ? s.getValue(u, "product_version") : t.version, t.serial = "" === t.serial ? s.getValue(u, "product_serial") : t.serial, t.uuid = "" === t.uuid ? s.getValue(u, "product_uuid") : t.uuid
+                                        u = i('echo -n "product_name: "; cat /sys/devices/virtual/dmi/id/product_name 2>/dev/null; echo;\n            echo -n "product_serial: "; cat /sys/devices/virtual/dmi/id/product_serial 2>/dev/null; echo;\n            echo -n "product_uuid: "; cat /sys/devices/virtual/dmi/id/product_uuid 2>/dev/null; echo;\n            echo -n "product_version: "; cat /sys/devices/virtual/dmi/id/product_version 2>/dev/null; echo;\n            echo -n "sys_vendor: "; cat /sys/devices/virtual/dmi/id/sys_vendor 2>/dev/null; echo;').toString().split("\n"), t.manufacturer = "" === t.manufacturer ? o.getValue(u, "sys_vendor") : t.manufacturer, t.model = "" === t.model ? o.getValue(u, "product_name") : t.model, t.version = "" === t.version ? o.getValue(u, "product_version") : t.version, t.serial = "" === t.serial ? o.getValue(u, "product_serial") : t.serial, t.uuid = "" === t.uuid ? o.getValue(u, "product_uuid") : t.uuid
                                     } catch (e) {
-                                        s.noop()
+                                        o.noop()
                                     }
-                                    t.serial && !t.serial.toLowerCase().includes("o.e.m.") || (t.serial = "-"), t.manufacturer && !t.manufacturer.toLowerCase().includes("o.e.m.") || (t.manufacturer = ""), t.model && !t.model.toLowerCase().includes("o.e.m.") || (t.model = "Computer"), t.version && !t.version.toLowerCase().includes("o.e.m.") || (t.version = ""), t.sku && !t.sku.toLowerCase().includes("o.e.m.") || (t.sku = "-"), (o.existsSync("/.dockerenv") || o.existsSync("/.dockerinit")) && (t.model = "Docker Container"), "" === t.manufacturer && "Computer" === t.model && "" === t.version ? i('dmesg | grep -i virtual | grep -iE "vmware|qemu|kvm|xen"', void 0, (function(r, n) {
+                                    t.serial && !t.serial.toLowerCase().includes("o.e.m.") || (t.serial = "-"), t.manufacturer && !t.manufacturer.toLowerCase().includes("o.e.m.") || (t.manufacturer = ""), t.model && !t.model.toLowerCase().includes("o.e.m.") || (t.model = "Computer"), t.version && !t.version.toLowerCase().includes("o.e.m.") || (t.version = ""), t.sku && !t.sku.toLowerCase().includes("o.e.m.") || (t.sku = "-"), (a.existsSync("/.dockerenv") || a.existsSync("/.dockerinit")) && (t.model = "Docker Container"), "" === t.manufacturer && "Computer" === t.model && "" === t.version ? n('dmesg | grep -i virtual | grep -iE "vmware|qemu|kvm|xen"', void 0, (function(r, n) {
                                         r || n.toString().split("\n").length > 0 && (t.model = "Virtual machine");
                                         e(t)
                                     })) : e(t)
-                                })), l && i("ioreg -c IOPlatformExpertDevice -d 2", void 0, (function(r, n) {
+                                })), c && n("ioreg -c IOPlatformExpertDevice -d 2", void 0, (function(r, n) {
                                     if (!r) {
                                         var i = n.toString().replace(/[<>"]/g, "").split("\n");
-                                        t.manufacturer = s.getValue(i, "manufacturer", "=", !0), t.model = s.getValue(i, "model", "=", !0).replace(",", "."), t.version = s.getValue(i, "version", "=", !0), t.serial = s.getValue(i, "ioplatformserialnumber", "=", !0), t.uuid = s.getValue(i, "ioplatformuuid", "=", !0), t.sku = s.getValue(i, "board-id", "=", !0)
+                                        t.manufacturer = o.getValue(i, "manufacturer", "=", !0), t.model = o.getValue(i, "model", "=", !0).replace(",", "."), t.version = o.getValue(i, "version", "=", !0), t.serial = o.getValue(i, "ioplatformserialnumber", "=", !0), t.uuid = o.getValue(i, "ioplatformuuid", "=", !0), t.sku = o.getValue(i, "board-id", "=", !0)
                                     }
                                     e(t)
-                                })), d) try {
-                                s.wmic("csproduct get /value").then((function(r) {
+                                })), l) try {
+                                o.wmic("csproduct get /value").then((function(r) {
                                     var n = r.stdout;
                                     if (r.stderr) e(t);
                                     else {
                                         var i = n.toString().split("\r\n");
-                                        t.manufacturer = s.getValue(i, "vendor", "="), t.model = s.getValue(i, "name", "="), t.version = s.getValue(i, "version", "="), t.serial = s.getValue(i, "identifyingnumber", "="), t.uuid = s.getValue(i, "uuid", "="), s.wmic("/namespace:\\\\root\\wmi path MS_SystemInformation get /value").then((function(r) {
+                                        t.manufacturer = o.getValue(i, "vendor", "="), t.model = o.getValue(i, "name", "="), t.version = o.getValue(i, "version", "="), t.serial = o.getValue(i, "identifyingnumber", "="), t.uuid = o.getValue(i, "uuid", "="), o.wmic("/namespace:\\\\root\\wmi path MS_SystemInformation get /value").then((function(r) {
                                             var n = r.stdout;
                                             if (!r.stderr) {
                                                 var i = n.toString().split("\r\n");
-                                                t.sku = s.getValue(i, "systemsku", "=")
+                                                t.sku = o.getValue(i, "systemsku", "=")
                                             }
                                             e(t)
                                         }))
@@ -31761,8 +31293,8 @@ listener from browserWindow: ${e}`
                 }, t.getDeviceModelAndOsRelease = function() {
                     var e = "Unknown",
                         t = "Unknown";
-                    if (l) try {
-                        a("sysctl hw.model kern.osrelease").toString().split("\n").forEach((function(r) {
+                    if (c) try {
+                        i("sysctl hw.model kern.osrelease").toString().split("\n").forEach((function(r) {
                             r.includes("hw.model:") ? e = r.replace("hw.model:", "").trim().toLowerCase() : r.includes("kern.osrelease:") && (t = r.replace("kern.osrelease:", "").trim().toLowerCase())
                         }))
                     } catch (e) {}
@@ -31770,30 +31302,29 @@ listener from browserWindow: ${e}`
                 }
             },
             55748: (e, t, r) => {
-                var n = r(36953).default,
-                    i = r(93492),
-                    a = r(12087),
-                    o = r(35747),
-                    s = r(63129).exec,
-                    u = r(63129).execSync,
-                    c = "",
-                    l = {
+                var n = r(93492),
+                    i = r(12087),
+                    a = r(35747),
+                    o = r(63129).exec,
+                    s = r(63129).execSync,
+                    u = "",
+                    c = {
                         windowsHide: !0,
                         maxBuffer: 2048e4,
                         encoding: "UTF-8",
-                        env: i(i({}, process.env), {}, {
+                        env: n(n({}, process.env), {}, {
                             LANG: "en_US.UTF-8"
                         })
                     };
 
-                function d() {
-                    if ("Windows_NT" === a.type() && !c && process.env.WINDIR && (c = process.env.WINDIR + "\\system32\\wbem\\wmic.exe", !o.existsSync(c))) try {
-                        var e = u("WHERE WMIC").toString().split("\r\n");
-                        c = (null == e ? void 0 : e.length) ? e[0] : "wmic"
+                function l() {
+                    if ("Windows_NT" === i.type() && !u && process.env.WINDIR && (u = process.env.WINDIR + "\\system32\\wbem\\wmic.exe", !a.existsSync(u))) try {
+                        var e = s("WHERE WMIC").toString().split("\r\n");
+                        u = (null == e ? void 0 : e.length) ? e[0] : "wmic"
                     } catch (e) {
-                        c = "wmic"
+                        u = "wmic"
                     }
-                    return c
+                    return u
                 }
                 t.getValue = function(e, t, r, n) {
                     for (var i = r || ":", a = t.toLowerCase(), o = 0; o < e.length; o++) {
@@ -31804,11 +31335,11 @@ listener from browserWindow: ${e}`
                         }
                     }
                     return ""
-                }, t.getWmic = d, t.wmic = function(e, t) {
-                    return new n((function(r) {
+                }, t.getWmic = l, t.wmic = function(e, t) {
+                    return new Promise((function(r) {
                         process.nextTick((function() {
                             try {
-                                s(d() + " " + e, t || l, (function(e, t, n) {
+                                o(l() + " " + e, t || c, (function(e, t, n) {
                                     r({
                                         stdout: t,
                                         stderr: n
@@ -31972,54 +31503,53 @@ listener from browserWindow: ${e}`
                 "use strict";
                 var n = r(66849).log,
                     i = r(66849).sendLogs,
-                    a = r(36953).default,
-                    o = r(85473);
+                    a = r(85473);
                 Object.defineProperty(t, "__esModule", {
                     value: !0
                 }), t.VoipWindowState = t.VoipWindow = void 0;
-                var s = o(r(54815)),
-                    u = o(r(19882)),
-                    c = o(r(10178)),
-                    l = o(r(57616)),
-                    d = o(r(20619)),
-                    f = r(97482),
-                    p = o(r(62570)),
-                    h = r(47967),
-                    m = r(7315),
-                    _ = r(58933),
-                    g = r(48360),
-                    v = r(84508),
-                    b = r(93828),
-                    y = r(76672).Mirrored(["NONE", "INCOMING", "ACTIVE_VOICE", "ACTIVE_VIDEO"]);
-                t.VoipWindowState = y;
-                var w = "darwin" === process.platform,
-                    E = "win32" === process.platform;
+                var o = a(r(54815)),
+                    s = a(r(19882)),
+                    u = a(r(10178)),
+                    c = a(r(57616)),
+                    l = a(r(20619)),
+                    d = r(97482),
+                    f = a(r(62570)),
+                    p = r(47967),
+                    h = r(7315),
+                    m = r(58933),
+                    _ = r(48360),
+                    g = r(84508),
+                    v = r(93828),
+                    b = r(76672).Mirrored(["NONE", "INCOMING", "ACTIVE_VOICE", "ACTIVE_VIDEO"]);
+                t.VoipWindowState = b;
+                var y = "darwin" === process.platform,
+                    w = "win32" === process.platform;
 
-                function x(e) {
+                function E(e) {
                     var t = e.callState,
                         r = e.callInfo;
                     switch (t) {
-                        case b.CALL_STATES.INCOMING_RING:
-                            return y.INCOMING;
-                        case b.CALL_STATES.OUTGOING_RING:
-                        case b.CALL_STATES.OUTGOING_CALLING:
-                        case b.CALL_STATES.CONNECTING:
-                        case b.CALL_STATES.CONNECTION_LOST:
-                        case b.CALL_STATES.ACTIVE:
-                            return r.videoEnabled ? y.ACTIVE_VIDEO : y.ACTIVE_VOICE;
-                        case b.CALL_STATES.HANDLED_REMOTELY:
-                        case b.CALL_STATES.ENDED:
-                        case b.CALL_STATES.REJECTED:
-                        case b.CALL_STATES.REMOTE_CALL_IN_PROGRESS:
-                        case b.CALL_STATES.FAILED:
+                        case v.CALL_STATES.INCOMING_RING:
+                            return b.INCOMING;
+                        case v.CALL_STATES.OUTGOING_RING:
+                        case v.CALL_STATES.OUTGOING_CALLING:
+                        case v.CALL_STATES.CONNECTING:
+                        case v.CALL_STATES.CONNECTION_LOST:
+                        case v.CALL_STATES.ACTIVE:
+                            return r.videoEnabled ? b.ACTIVE_VIDEO : b.ACTIVE_VOICE;
+                        case v.CALL_STATES.HANDLED_REMOTELY:
+                        case v.CALL_STATES.ENDED:
+                        case v.CALL_STATES.REJECTED:
+                        case v.CALL_STATES.REMOTE_CALL_IN_PROGRESS:
+                        case v.CALL_STATES.FAILED:
                         default:
-                            return y.NONE
+                            return b.NONE
                     }
                 }
 
-                function S(e, t) {
+                function x(e, t) {
                     switch (e) {
-                        case y.INCOMING:
+                        case b.INCOMING:
                             return function(e) {
                                 var t = e.callInfo,
                                     r = e.deviceCapabilities,
@@ -32027,52 +31557,52 @@ listener from browserWindow: ${e}`
                                         return e.isSelf
                                     })),
                                     i = t.videoEnabled && t.videoPreviewStarted && r.isVideoAvailable;
-                                if (!n || !i) return m.VoipWindowConfig.INCOMING_WINDOW_PORTRAIT;
-                                return n.videoOrientation % 2 ? m.VoipWindowConfig.INCOMING_WINDOW_PORTRAIT : m.VoipWindowConfig.INCOMING_WINDOW_LANDSCAPE
+                                if (!n || !i) return h.VoipWindowConfig.INCOMING_WINDOW_PORTRAIT;
+                                return n.videoOrientation % 2 ? h.VoipWindowConfig.INCOMING_WINDOW_PORTRAIT : h.VoipWindowConfig.INCOMING_WINDOW_LANDSCAPE
                             }(t);
-                        case y.ACTIVE_VOICE:
-                            return t.privacyNarrativeEnabled ? m.VoipWindowConfig.ACTIVE_VOICE_WINDOW_WITH_PRINA : m.VoipWindowConfig.ACTIVE_VOICE_WINDOW;
-                        case y.ACTIVE_VIDEO:
+                        case b.ACTIVE_VOICE:
+                            return t.privacyNarrativeEnabled ? h.VoipWindowConfig.ACTIVE_VOICE_WINDOW_WITH_PRINA : h.VoipWindowConfig.ACTIVE_VOICE_WINDOW;
+                        case b.ACTIVE_VIDEO:
                             return function(e, t) {
                                 var r = t.callInfo,
                                     n = r.participants.find((function(e) {
                                         return !e.isSelf
                                     }));
-                                if (!r.isGroupCall && (null == n ? void 0 : n.videoRenderStarted)) return n.videoOrientation % 2 ? m.VoipWindowConfig.ACTIVE_VIDEO_WINDOW_PORTRAIT : m.VoipWindowConfig.ACTIVE_VIDEO_WINDOW_LANDSCAPE;
-                                return m.VoipWindowConfig.ACTIVE_VIDEO_WINDOW_LANDSCAPE
+                                if (!r.isGroupCall && (null == n ? void 0 : n.videoRenderStarted)) return n.videoOrientation % 2 ? h.VoipWindowConfig.ACTIVE_VIDEO_WINDOW_PORTRAIT : h.VoipWindowConfig.ACTIVE_VIDEO_WINDOW_LANDSCAPE;
+                                return h.VoipWindowConfig.ACTIVE_VIDEO_WINDOW_LANDSCAPE
                             }(0, t);
                         default:
                             return null
                     }
                 }
-                var A = function() {
+                var S = function() {
                     function e(t, r, a) {
-                        var o, s, u, l, f, m, x, S, A = this;
-                        ((0, c.default)(this, e), this.state = y.NONE, this._settings = {
+                        var o, s, c, d, h, E, x, S, A = this;
+                        ((0, u.default)(this, e), this.state = b.NONE, this._settings = {
                             isRTL: !1,
                             enableVoipGroupFeatures: !1
                         }, this._panel = null, this._data = null, this._callMenu = null, this._previousSize = null, this._appliedSize = null, this._minimumSizeToRestore = null, this._setFocusable = function() {
                             if (A._panel) {
                                 var e = !1;
-                                if (w && _.systemPreferences.getUserDefault) e = "0" !== _.systemPreferences.getUserDefault("AppleKeyboardUIMode", "string");
-                                var t = E || !A._panel.isPanel() || e || _.app.isAccessibilitySupportEnabled();
+                                if (y && m.systemPreferences.getUserDefault) e = "0" !== m.systemPreferences.getUserDefault("AppleKeyboardUIMode", "string");
+                                var t = w || !A._panel.isPanel() || e || m.app.isAccessibilitySupportEnabled();
                                 A._panel.setFocusable(t)
                             }
                         }, this._handleIpcOpenInCallMenu = function(e, t) {
                             if (A._panel && !A._panel.isDestroyed()) {
-                                A._callMenu = (0, h.createCallMenu)(t.coords, A._settings.enableVoipGroupFeatures ? t.menuItems : [], A._panel, A.state === y.ACTIVE_VIDEO);
+                                A._callMenu = (0, p.createCallMenu)(t.coords, A._settings.enableVoipGroupFeatures ? t.menuItems : [], A._panel, A.state === b.ACTIVE_VIDEO);
                                 var r = {
                                     callback: A._handleInCallMenuClosed
                                 };
-                                A._panel && (r.window = A._panel.getBrowserWindow()), (w || t.isKeyboardActivation) && (r.x = Math.floor(t.coords.x), r.y = Math.floor(t.coords.y)), A._callMenu.popup(r)
+                                A._panel && (r.window = A._panel.getBrowserWindow()), (y || t.isKeyboardActivation) && (r.x = Math.floor(t.coords.x), r.y = Math.floor(t.coords.y)), A._callMenu.popup(r)
                             }
                         }, this._handleIpcWindowEscPress = function() {
                             var e = A._panel;
                             e && !e.isDestroyed() && e.isFullScreen() && e.setFullScreen(!1)
                         }, this._handleInCallMenuClosed = function() {
-                            A._panel && !A._panel.isDestroyed() && A._panel.webContents.send(b.VOIP_WINDOW_IPC_EVENTS.CLOSE_IN_CALL_MENU)
+                            A._panel && !A._panel.isDestroyed() && A._panel.webContents.send(v.VOIP_WINDOW_IPC_EVENTS.CLOSE_IN_CALL_MENU)
                         }, this._handleIpcIgnoreClick = function() {
-                            null === v.wavoip || void 0 === v.wavoip || v.wavoip.end(!1)
+                            null === g.wavoip || void 0 === g.wavoip || g.wavoip.end(!1)
                         }, this._handleAccessibilitySupportChanged = function() {
                             A._setFocusable()
                         }, this._handlePanelLeaveFullScreen = function() {
@@ -32080,7 +31610,7 @@ listener from browserWindow: ${e}`
                             A._minimumSizeToRestore && (null === (e = A._panel) || void 0 === e || e.setMinimumSize(A._minimumSizeToRestore.width, A._minimumSizeToRestore.height))
                         }, this._handlePanelAlwaysOnTopChange = function(e, t) {
                             var r;
-                            null === (r = A._panel) || void 0 === r || r.webContents.send(b.VOIP_WINDOW_IPC_EVENTS.WINDOW_ALWAYS_ON_TOP_CHANGED, t)
+                            null === (r = A._panel) || void 0 === r || r.webContents.send(v.VOIP_WINDOW_IPC_EVENTS.WINDOW_ALWAYS_ON_TOP_CHANGED, t)
                         }, this._handlePanelExternalChange = function() {
                             A._data && A._updatePanelConfig(A.state, A._data)
                         }, this._handlePanelResize = function() {
@@ -32092,42 +31622,42 @@ listener from browserWindow: ${e}`
                                 (null === (e = A._appliedSize) || void 0 === e ? void 0 : e.width) === n && (null === (t = A._appliedSize) || void 0 === t ? void 0 : t.height) === i || (A._previousSize = null)
                             }
                         }, this._handlePanelClose = function(e) {
-                            var t = p.default.getWindow();
-                            !t || t.getBrowserWindow().isDestroyed() || t.getForceQuit() && w ? n(2)`VoipWindow:_handlePanelClose(), id: '${A.id}', skip dialog` : (e.preventDefault(), A._panel && !A._panel.isDestroyed() && (n(2)`VoipWindow:_handlePanelClose(), id: '${A.id}', show dialog`, _.dialog.showMessageBox(A._panel.getBrowserWindow(), {
+                            var t = f.default.getWindow();
+                            !t || t.getBrowserWindow().isDestroyed() || t.getForceQuit() && y ? n(2)`VoipWindow:_handlePanelClose(), id: '${A.id}', skip dialog` : (e.preventDefault(), A._panel && !A._panel.isDestroyed() && (n(2)`VoipWindow:_handlePanelClose(), id: '${A.id}', show dialog`, m.dialog.showMessageBox(A._panel.getBrowserWindow(), {
                                 type: "warning",
-                                message: g.fbt._("Are you sure you want to end the current call?", null, {
+                                message: _.fbt._("Are you sure you want to end the current call?", null, {
                                     hk: "vZC2W"
                                 }).toString(),
                                 noLink: !0,
                                 cancelId: 1,
-                                buttons: [g.fbt._("End Call", null, {
+                                buttons: [_.fbt._("End Call", null, {
                                     hk: "PnBdv"
-                                }).toString(), g.fbt._("Cancel", null, {
+                                }).toString(), _.fbt._("Cancel", null, {
                                     hk: "1enf5u"
                                 }).toString()]
                             }).then((function(e) {
                                 if (0 === e.response) {
                                     var r = null == t ? void 0 : t.getBrowserWindow();
-                                    null == r || r.webContents.send(b.VOIP_WINDOW_IPC_EVENTS.END)
+                                    null == r || r.webContents.send(v.VOIP_WINDOW_IPC_EVENTS.END)
                                 }
                             })).catch((function(e) {
                                 n(4, void 0, new Error, !0, ["voip", "voip-window"])`VoipWindow:_handlePanelClose(), id: '${A.id}', failed to show \
 end call confirmation dialog: ${e}`, i("voip-window-message-box-failed", 1, "voip", "voip-window");
                                 var r = null == t ? void 0 : t.getBrowserWindow();
-                                null == r || r.webContents.send(b.VOIP_WINDOW_IPC_EVENTS.END)
+                                null == r || r.webContents.send(v.VOIP_WINDOW_IPC_EVENTS.END)
                             }))))
-                        }, n(2)`VoipWindow:constructor(), id: '${t}'`, this.id = t, this._settings = r, this._panel = a, this._powerSaveBlockerId = _.powerSaveBlocker.start("prevent-display-sleep"), null === (o = this._panel) || void 0 === o || o.setMinimizable(!1), null === (s = this._panel) || void 0 === s || s.setAlwaysOnTop(!0), _.ipcMain.on(b.VOIP_WINDOW_IPC_EVENTS.IGNORE, this._handleIpcIgnoreClick), _.ipcMain.on(b.VOIP_WINDOW_IPC_EVENTS.OPEN_IN_CALL_MENU, this._handleIpcOpenInCallMenu), _.ipcMain.on(b.VOIP_WINDOW_IPC_EVENTS.WINDOW_ESC_PRESS, this._handleIpcWindowEscPress), _.app.on("accessibility-support-changed", this._handleAccessibilitySupportChanged), null === (u = this._panel) || void 0 === u || u.on("leave-full-screen", this._handlePanelLeaveFullScreen), null === (l = this._panel) || void 0 === l || l.on("close", this._handlePanelClose), null === (f = this._panel) || void 0 === f || f.on("always-on-top-changed", this._handlePanelAlwaysOnTopChange), this._handlePanelResizeDebounced = (0, d.default)(this._handlePanelResize, 250), null === (m = this._panel) || void 0 === m || m.on("resize", this._handlePanelResizeDebounced), E) && (this._handlePanelExternalChangeDebounced = (0, d.default)(this._handlePanelExternalChange, 250), null === (x = this._panel) || void 0 === x || x.on("move", this._handlePanelExternalChangeDebounced), null === (S = this._panel) || void 0 === S || S.on("unmaximize", this._handlePanelExternalChangeDebounced))
+                        }, n(2)`VoipWindow:constructor(), id: '${t}'`, this.id = t, this._settings = r, this._panel = a, this._powerSaveBlockerId = m.powerSaveBlocker.start("prevent-display-sleep"), null === (o = this._panel) || void 0 === o || o.setMinimizable(!1), null === (s = this._panel) || void 0 === s || s.setAlwaysOnTop(!0), m.ipcMain.on(v.VOIP_WINDOW_IPC_EVENTS.IGNORE, this._handleIpcIgnoreClick), m.ipcMain.on(v.VOIP_WINDOW_IPC_EVENTS.OPEN_IN_CALL_MENU, this._handleIpcOpenInCallMenu), m.ipcMain.on(v.VOIP_WINDOW_IPC_EVENTS.WINDOW_ESC_PRESS, this._handleIpcWindowEscPress), m.app.on("accessibility-support-changed", this._handleAccessibilitySupportChanged), null === (c = this._panel) || void 0 === c || c.on("leave-full-screen", this._handlePanelLeaveFullScreen), null === (d = this._panel) || void 0 === d || d.on("close", this._handlePanelClose), null === (h = this._panel) || void 0 === h || h.on("always-on-top-changed", this._handlePanelAlwaysOnTopChange), this._handlePanelResizeDebounced = (0, l.default)(this._handlePanelResize, 250), null === (E = this._panel) || void 0 === E || E.on("resize", this._handlePanelResizeDebounced), w) && (this._handlePanelExternalChangeDebounced = (0, l.default)(this._handlePanelExternalChange, 250), null === (x = this._panel) || void 0 === x || x.on("move", this._handlePanelExternalChangeDebounced), null === (S = this._panel) || void 0 === S || S.on("unmaximize", this._handlePanelExternalChangeDebounced))
                     }
-                    var t, r, o, A, k, O;
-                    return (0, l.default)(e, [{
+                    var t, r, a, S, A, k;
+                    return (0, c.default)(e, [{
                         key: "updateVoipGroupFeaturesEnabled",
                         value: function(e) {
                             this._settings.enableVoipGroupFeatures = e
                         }
                     }, {
                         key: "update",
-                        value: (O = (0, u.default)(s.default.mark((function e(t) {
-                            return s.default.wrap((function(e) {
+                        value: (k = (0, s.default)(o.default.mark((function e(t) {
+                            return o.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
                                         return n(2)`VoipWindow:update(), id: '${this.id}', state: '${this.state}', \
@@ -32138,7 +31668,7 @@ callState: '${t.callState}'`, this._data = t, this._updateData(t), e.next = 5, t
                                 }
                             }), e, this)
                         }))), function() {
-                            return O.apply(this, arguments)
+                            return k.apply(this, arguments)
                         })
                     }, {
                         key: "destroy",
@@ -32146,7 +31676,7 @@ callState: '${t.callState}'`, this._data = t, this._updateData(t), e.next = 5, t
                             var e, t, r, i;
                             if (n(2)`VoipWindow:destroy(), id: '${this.id}', state: '${this.state}'`, this._panel) {
                                 var a, o;
-                                if (_.powerSaveBlocker.stop(this._powerSaveBlockerId), _.ipcMain.removeListener(b.VOIP_WINDOW_IPC_EVENTS.IGNORE, this._handleIpcIgnoreClick), _.ipcMain.removeListener(b.VOIP_WINDOW_IPC_EVENTS.OPEN_IN_CALL_MENU, this._handleIpcOpenInCallMenu), _.ipcMain.removeListener(b.VOIP_WINDOW_IPC_EVENTS.WINDOW_ESC_PRESS, this._handleIpcWindowEscPress), _.app.removeListener("accessibility-support-changed", this._handleAccessibilitySupportChanged), null === (e = this._panel) || void 0 === e || e.removeListener("leave-full-screen", this._handlePanelLeaveFullScreen), null === (t = this._panel) || void 0 === t || t.removeListener("always-on-top-changed", this._handlePanelAlwaysOnTopChange), null === (r = this._panel) || void 0 === r || r.removeListener("close", this._handlePanelClose), this._handlePanelResizeDebounced.cancel(), null === (i = this._panel) || void 0 === i || i.removeListener("resize", this._handlePanelResizeDebounced), this._callMenu && (this._callMenu.clear(), this._callMenu = null), E) this._handlePanelExternalChangeDebounced.cancel(), null === (a = this._panel) || void 0 === a || a.removeListener("move", this._handlePanelExternalChangeDebounced), null === (o = this._panel) || void 0 === o || o.removeListener("unmaximize", this._handlePanelExternalChangeDebounced);
+                                if (m.powerSaveBlocker.stop(this._powerSaveBlockerId), m.ipcMain.removeListener(v.VOIP_WINDOW_IPC_EVENTS.IGNORE, this._handleIpcIgnoreClick), m.ipcMain.removeListener(v.VOIP_WINDOW_IPC_EVENTS.OPEN_IN_CALL_MENU, this._handleIpcOpenInCallMenu), m.ipcMain.removeListener(v.VOIP_WINDOW_IPC_EVENTS.WINDOW_ESC_PRESS, this._handleIpcWindowEscPress), m.app.removeListener("accessibility-support-changed", this._handleAccessibilitySupportChanged), null === (e = this._panel) || void 0 === e || e.removeListener("leave-full-screen", this._handlePanelLeaveFullScreen), null === (t = this._panel) || void 0 === t || t.removeListener("always-on-top-changed", this._handlePanelAlwaysOnTopChange), null === (r = this._panel) || void 0 === r || r.removeListener("close", this._handlePanelClose), this._handlePanelResizeDebounced.cancel(), null === (i = this._panel) || void 0 === i || i.removeListener("resize", this._handlePanelResizeDebounced), this._callMenu && (this._callMenu.clear(), this._callMenu = null), w) this._handlePanelExternalChangeDebounced.cancel(), null === (a = this._panel) || void 0 === a || a.removeListener("move", this._handlePanelExternalChangeDebounced), null === (o = this._panel) || void 0 === o || o.removeListener("unmaximize", this._handlePanelExternalChangeDebounced);
                                 this._panel = null
                             }
                         }
@@ -32154,8 +31684,8 @@ callState: '${t.callState}'`, this._data = t, this._updateData(t), e.next = 5, t
                         key: "updateMenu",
                         value: function(e) {
                             try {
-                                p.default.renderMenu({
-                                    callAlwaysOnTopEnabled: e === y.ACTIVE_VIDEO
+                                f.default.renderMenu({
+                                    callAlwaysOnTopEnabled: e === b.ACTIVE_VIDEO
                                 })
                             } catch (e) {
                                 n(4, void 0, new Error, !0, ["voip", "voip-window"])`VoipWindow:updateMenu(), id: '${this.id}', failed to update \
@@ -32164,25 +31694,25 @@ menu: ${e}`, i("voip-window-menu-update-failed", 1, "voip", "voip-window")
                         }
                     }, {
                         key: "_updatePanel",
-                        value: (k = (0, u.default)(s.default.mark((function e(t) {
-                            var r, i, a, o, u, c;
-                            return s.default.wrap((function(e) {
+                        value: (A = (0, s.default)(o.default.mark((function e(t) {
+                            var r, i, a, s, u, c;
+                            return o.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
-                                        if (r = t.callState, i = x(t), this.state !== i) {
+                                        if (r = t.callState, i = E(t), this.state !== i) {
                                             e.next = 5;
                                             break
                                         }
                                         return this._updatePanelConfig(i, t), e.abrupt("return");
                                     case 5:
-                                        if (i !== y.NONE) {
+                                        if (i !== b.NONE) {
                                             e.next = 13;
                                             break
                                         }
-                                        return o = this.state === y.ACTIVE_VOICE || this.state === y.ACTIVE_VIDEO && (r === b.CALL_STATES.FAILED || r === b.CALL_STATES.REJECTED || r === b.CALL_STATES.HANDLED_REMOTELY), null === (a = this._callMenu) || void 0 === a || a.closePopup(), e.next = 10, this._closePanel(o);
+                                        return s = this.state === b.ACTIVE_VOICE || this.state === b.ACTIVE_VIDEO && (r === v.CALL_STATES.FAILED || r === v.CALL_STATES.REJECTED || r === v.CALL_STATES.HANDLED_REMOTELY), null === (a = this._callMenu) || void 0 === a || a.closePopup(), e.next = 10, this._closePanel(s);
                                     case 10:
-                                        r !== b.CALL_STATES.ENDED && (n(2)`VoipWindow:_updatePanel(), id: '${this.id}', ending the call based \
-on its state: ${r}`, null == (c = null === (u = p.default.getWindow()) || void 0 === u ? void 0 : u.getBrowserWindow()) || c.webContents.send(b.VOIP_WINDOW_IPC_EVENTS.END)), e.next = 15;
+                                        r !== v.CALL_STATES.ENDED && (n(2)`VoipWindow:_updatePanel(), id: '${this.id}', ending the call based \
+on its state: ${r}`, null == (c = null === (u = f.default.getWindow()) || void 0 === u ? void 0 : u.getBrowserWindow()) || c.webContents.send(v.VOIP_WINDOW_IPC_EVENTS.END)), e.next = 15;
                                         break;
                                     case 13:
                                         return e.next = 15, this._updatePanelState(i, t);
@@ -32194,13 +31724,13 @@ on its state: ${r}`, null == (c = null === (u = p.default.getWindow()) || void 0
                                 }
                             }), e, this)
                         }))), function() {
-                            return k.apply(this, arguments)
+                            return A.apply(this, arguments)
                         })
                     }, {
                         key: "_updatePanelState",
-                        value: (A = (0, u.default)(s.default.mark((function e(t, r) {
-                            var i, a, o, u, c, l, d, f, p, h, m, _;
-                            return s.default.wrap((function(e) {
+                        value: (S = (0, s.default)(o.default.mark((function e(t, r) {
+                            var i, a, s, u, c, l, d, f, p, h, m, _;
+                            return o.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
                                         if (null != (i = this._panel)) {
@@ -32209,17 +31739,17 @@ on its state: ${r}`, null == (c = null === (u = p.default.getWindow()) || void 0
                                         }
                                         return e.abrupt("return");
                                     case 3:
-                                        if (a = S(t, r)) {
+                                        if (a = x(t, r)) {
                                             e.next = 6;
                                             break
                                         }
                                         return e.abrupt("return");
                                     case 6:
-                                        return this.state = t, o = a.isPanel, u = a.size, c = a.horizontalAlign, l = a.verticalAlign, d = a.resizable, f = a.aspectRatio, p = a.fullscreenable, h = this._getMainScreenBounds(), m = u(h), _ = this._getPosition(m, c, l), e.next = 13, this._restorePanel();
+                                        return this.state = t, s = a.isPanel, u = a.size, c = a.horizontalAlign, l = a.verticalAlign, d = a.resizable, f = a.aspectRatio, p = a.fullscreenable, h = this._getMainScreenBounds(), m = u(h), _ = this._getPosition(m, c, l), e.next = 13, this._restorePanel();
                                     case 13:
                                         return e.prev = 13, n(2)`VoipWindow:_updatePanelState(), id: '${this.id}', hide panel`, e.next = 17, i.hide(!1);
                                     case 17:
-                                        o ? i.makePanel() : i.makeWindow(), this._setFocusable(), i.setResizable(d), i.setMinimumSize(m.minWidth, m.minHeight), i.setBounds({
+                                        s ? i.makePanel() : i.makeWindow(), this._setFocusable(), i.setResizable(d), i.setMinimumSize(m.minWidth, m.minHeight), i.setBounds({
                                             x: _.left,
                                             y: _.top,
                                             width: m.width,
@@ -32239,7 +31769,7 @@ configure panel: ${e.t0}`;
                                 [13, 28]
                             ])
                         }))), function() {
-                            return A.apply(this, arguments)
+                            return S.apply(this, arguments)
                         })
                     }, {
                         key: "_updatePanelConfig",
@@ -32248,8 +31778,8 @@ configure panel: ${e.t0}`;
                             if (null != r) {
                                 var a = r.isMaximized(),
                                     o = r.isFullScreen();
-                                if (!E || !r.isSnapped() && !a) {
-                                    var s = S(e, t);
+                                if (!w || !r.isSnapped() && !a) {
+                                    var s = x(e, t);
                                     if (s && s !== this._config) {
                                         var u = s.size,
                                             c = s.resizable,
@@ -32266,24 +31796,24 @@ configure panel: ${e.t0}`;
                                                 width: p.width,
                                                 height: p.height
                                             })), _ = Math.floor(h + p.width / 2 - f.width / 2), g = Math.floor(m + p.height / 2 - f.height / 2);
-                                            var v = w ? 0 : 1;
+                                            var v = y ? 0 : 1;
                                             _ < 0 ? _ = v : _ > d.width - f.width && (_ = d.width - f.width - v), g < 0 ? g = v : g > d.height - f.height && (g = d.height - f.height - v)
                                         }
                                         try {
                                             var b = Math.floor(f.width),
-                                                y = Math.floor(f.height);
-                                            o ? (r.setMinimumSize(b, y), this._minimumSizeToRestore = {
+                                                E = Math.floor(f.height);
+                                            o ? (r.setMinimumSize(b, E), this._minimumSizeToRestore = {
                                                 width: f.minWidth,
                                                 height: f.minHeight
                                             }) : (r.setMinimumSize(f.minWidth, f.minHeight), this._minimumSizeToRestore = null), r.setBounds({
                                                 x: null != _ ? Math.floor(_) : h,
                                                 y: null != g ? Math.floor(g) : m,
                                                 width: b,
-                                                height: y
+                                                height: E
                                             }, !a), r.setResizable(c), r.setAspectRatio(l);
-                                            var x = r.getBounds(),
-                                                A = x.width,
-                                                k = x.height;
+                                            var S = r.getBounds(),
+                                                A = S.width,
+                                                k = S.height;
                                             this._appliedSize = {
                                                 width: A,
                                                 height: k
@@ -32299,13 +31829,13 @@ configure panel: ${e}`, i("voip-window-panel-config-update-failed", 1, "voip", "
                     }, {
                         key: "_getMainScreenBounds",
                         value: function() {
-                            var e, t = null === (e = p.default.getWindow()) || void 0 === e ? void 0 : e.getBrowserWindow();
-                            return t ? _.screen.getDisplayMatching(t.getBounds()).bounds : _.screen.getPrimaryDisplay().bounds
+                            var e, t = null === (e = f.default.getWindow()) || void 0 === e ? void 0 : e.getBrowserWindow();
+                            return t ? m.screen.getDisplayMatching(t.getBounds()).bounds : m.screen.getPrimaryDisplay().bounds
                         }
                     }, {
                         key: "_getPanelScreenWorkArea",
                         value: function() {
-                            return this._panel ? _.screen.getDisplayMatching(this._panel.getBounds()).workArea : _.screen.getPrimaryDisplay().workArea
+                            return this._panel ? m.screen.getDisplayMatching(this._panel.getBounds()).workArea : m.screen.getPrimaryDisplay().workArea
                         }
                     }, {
                         key: "_getPosition",
@@ -32313,7 +31843,7 @@ configure panel: ${e}`, i("voip-window-panel-config-update-failed", 1, "voip", "
                             var n = 0,
                                 i = 0,
                                 a = this._getMainScreenBounds();
-                            return i = t === m.HorizontalAlign.CENTER ? a.x + a.width / 2 - e.width / 2 : this._settings.isRTL ? a.x + m.VoipWindowConfig.PADDING_X : a.x + a.width - (m.VoipWindowConfig.PADDING_X + e.width), n = r === m.VerticalAlign.MIDDLE ? a.y + a.height / 2 - e.height / 2 : r === m.VerticalAlign.MIDDLE_BOTTOM ? a.y + a.height / 2 - e.height : a.y + m.VoipWindowConfig.PADDING_Y, {
+                            return i = t === h.HorizontalAlign.CENTER ? a.x + a.width / 2 - e.width / 2 : this._settings.isRTL ? a.x + h.VoipWindowConfig.PADDING_X : a.x + a.width - (h.VoipWindowConfig.PADDING_X + e.width), n = r === h.VerticalAlign.MIDDLE ? a.y + a.height / 2 - e.height / 2 : r === h.VerticalAlign.MIDDLE_BOTTOM ? a.y + a.height / 2 - e.height : a.y + h.VoipWindowConfig.PADDING_Y, {
                                 top: Math.round(n),
                                 left: Math.round(i)
                             }
@@ -32321,13 +31851,13 @@ configure panel: ${e}`, i("voip-window-panel-config-update-failed", 1, "voip", "
                     }, {
                         key: "_updateData",
                         value: function(e) {
-                            this._panel && this._panel.webContents.send(b.VOIP_WINDOW_IPC_EVENTS.UPDATE, e)
+                            this._panel && this._panel.webContents.send(v.VOIP_WINDOW_IPC_EVENTS.UPDATE, e)
                         }
                     }, {
                         key: "_showPanel",
-                        value: (o = (0, u.default)(s.default.mark((function e(t) {
-                            var r, i, a, o, u;
-                            return s.default.wrap((function(e) {
+                        value: (a = (0, s.default)(o.default.mark((function e(t) {
+                            var r, i, a, s, u;
+                            return o.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
                                         if (n(2)`VoipWindow:_showPanel(${t}), id: '${this.id}', \
@@ -32337,19 +31867,19 @@ state: '${this.state}'`, this._panel) {
                                         }
                                         return e.abrupt("return");
                                     case 3:
-                                        if (!w || this.state !== y.ACTIVE_VIDEO) {
+                                        if (!y || this.state !== b.ACTIVE_VIDEO) {
                                             e.next = 10;
                                             break
                                         }
-                                        if (!(a = null === (i = p.default.getWindow()) || void 0 === i ? void 0 : i.getBrowserWindow()) || a.isFocused()) {
+                                        if (!(a = null === (i = f.default.getWindow()) || void 0 === i ? void 0 : i.getBrowserWindow()) || a.isFocused()) {
                                             e.next = 10;
                                             break
                                         }
                                         return e.next = 8, this._waitForAppFocus();
                                     case 8:
-                                        return e.next = 10, (0, f.delayMs)(m.VoipWindowConfig.SHOW_WINDOW_DELAY);
+                                        return e.next = 10, (0, d.delayMs)(h.VoipWindowConfig.SHOW_WINDOW_DELAY);
                                     case 10:
-                                        return e.next = 12, (0, f.delayMs)(m.VoipWindowConfig.SHOW_WINDOW_DELAY);
+                                        return e.next = 12, (0, d.delayMs)(h.VoipWindowConfig.SHOW_WINDOW_DELAY);
                                     case 12:
                                         if (n(2)`VoipWindow:_showPanel(), id: '${this.id}', state: '${this.state}', \
 show panel (timeout)`, this._panel) {
@@ -32358,37 +31888,37 @@ show panel (timeout)`, this._panel) {
                                         }
                                         return e.abrupt("return");
                                     case 15:
-                                        this._panel.isFocusable() ? null === (o = this._panel) || void 0 === o || o.show(!0) : null === (u = this._panel) || void 0 === u || u.showInactive(!0), null === (r = this._panel) || void 0 === r || r.setFullScreenable(t);
+                                        this._panel.isFocusable() ? null === (s = this._panel) || void 0 === s || s.show(!0) : null === (u = this._panel) || void 0 === u || u.showInactive(!0), null === (r = this._panel) || void 0 === r || r.setFullScreenable(t);
                                     case 17:
                                     case "end":
                                         return e.stop()
                                 }
                             }), e, this)
                         }))), function() {
-                            return o.apply(this, arguments)
+                            return a.apply(this, arguments)
                         })
                     }, {
                         key: "_waitForAppFocus",
                         value: function() {
                             var e = this;
                             return n(2)`VoipWindow:_waitForAppFocus(), id: '${this.id}', \
-state: '${this.state}'`, new a((function(t) {
-                                var r, i = null === (r = p.default.getWindow()) || void 0 === r ? void 0 : r.getBrowserWindow(),
+state: '${this.state}'`, new Promise((function(t) {
+                                var r, i = null === (r = f.default.getWindow()) || void 0 === r ? void 0 : r.getBrowserWindow(),
                                     a = null,
                                     o = function() {
                                         n(2)`VoipWindow:_waitForAppFocus(), id: '${e.id}', \
 state: '${e.state}, resolved`, clearTimeout(a), null == i || i.removeListener("focus", o), t()
                                     };
-                                a = setTimeout(o, 1e3), null == i || i.once("focus", o), _.app.focus({
+                                a = setTimeout(o, 1e3), null == i || i.once("focus", o), m.app.focus({
                                     steal: !0
                                 })
                             }))
                         }
                     }, {
                         key: "_closePanel",
-                        value: (r = (0, u.default)(s.default.mark((function e(t) {
+                        value: (r = (0, s.default)(o.default.mark((function e(t) {
                             var r;
-                            return s.default.wrap((function(e) {
+                            return o.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
                                         if (n(2)`VoipWindow:_closePanel(${t}), id: '${this.id}', \
@@ -32398,11 +31928,11 @@ state: '${this.state}'`, this._panel) {
                                         }
                                         return e.abrupt("return");
                                     case 3:
-                                        if (this.state = y.NONE, !t) {
+                                        if (this.state = b.NONE, !t) {
                                             e.next = 7;
                                             break
                                         }
-                                        return e.next = 7, (0, f.delayMs)(m.VoipWindowConfig.HIDE_WINDOW_DELAY);
+                                        return e.next = 7, (0, d.delayMs)(h.VoipWindowConfig.HIDE_WINDOW_DELAY);
                                     case 7:
                                         return e.next = 9, this._restorePanel();
                                     case 9:
@@ -32419,7 +31949,7 @@ state: '${this.state}'`, this._panel) {
                                     case 17:
                                         e.prev = 17, e.t0 = e.catch(9), n(2)`VoipWindow:_closePanel(), id: '${this.id}', hide panel failed: ${e.t0}`;
                                     case 20:
-                                        null === (r = this._panel) || void 0 === r || r.webContents.send(b.VOIP_WINDOW_IPC_EVENTS.RESET);
+                                        null === (r = this._panel) || void 0 === r || r.webContents.send(v.VOIP_WINDOW_IPC_EVENTS.RESET);
                                     case 21:
                                     case "end":
                                         return e.stop()
@@ -32432,9 +31962,9 @@ state: '${this.state}'`, this._panel) {
                         })
                     }, {
                         key: "_restorePanel",
-                        value: (t = (0, u.default)(s.default.mark((function e() {
-                            var t, r, i, o, u = this;
-                            return s.default.wrap((function(e) {
+                        value: (t = (0, s.default)(o.default.mark((function e() {
+                            var t, r, i, a, s = this;
+                            return o.default.wrap((function(e) {
                                 for (;;) switch (e.prev = e.next) {
                                     case 0:
                                         if (n(2)`VoipWindow:_restorePanel(), id: '${this.id}'`, this._panel) {
@@ -32447,12 +31977,12 @@ state: '${this.state}'`, this._panel) {
                                             e.next = 10;
                                             break
                                         }
-                                        return n(2)`VoipWindow:_restorePanel(), id: '${this.id}', exit fullscreen`, o = new a((function(e) {
+                                        return n(2)`VoipWindow:_restorePanel(), id: '${this.id}', exit fullscreen`, a = new Promise((function(e) {
                                             var t;
-                                            null === (t = u._panel) || void 0 === t || t.once("leave-full-screen", (function() {
-                                                n(2)`VoipWindow:_restorePanel(), id: '${u.id}', left fullscreen`, e()
+                                            null === (t = s._panel) || void 0 === t || t.once("leave-full-screen", (function() {
+                                                n(2)`VoipWindow:_restorePanel(), id: '${s.id}', left fullscreen`, e()
                                             }))
-                                        })), null === (i = this._panel) || void 0 === i || i.setFullScreen(!1), e.next = 10, o;
+                                        })), null === (i = this._panel) || void 0 === i || i.setFullScreen(!1), e.next = 10, a;
                                     case 10:
                                     case "end":
                                         return e.stop()
@@ -32463,7 +31993,7 @@ state: '${this.state}'`, this._panel) {
                         })
                     }]), e
                 }();
-                t.VoipWindow = A
+                t.VoipWindow = S
             },
             7315: (e, t, r) => {
                 "use strict";
@@ -32629,36 +32159,35 @@ state: '${this.state}'`, this._panel) {
             },
             65935: (e, t, r) => {
                 "use strict";
-                var n = r(36953).default,
-                    i = r(66849).log,
-                    a = r(66849).sendLogs,
-                    o = r(85473),
-                    s = o(r(54815)),
-                    u = o(r(19882)),
-                    c = o(r(10178)),
-                    l = o(r(57616)),
-                    d = o(r(62570)),
-                    f = r(32446),
-                    p = r(58933),
-                    h = r(45716),
-                    m = o(r(85622)),
-                    _ = o(r(28929)),
-                    g = r(93828);
-                var v = function() {
+                var n = r(66849).log,
+                    i = r(66849).sendLogs,
+                    a = r(85473),
+                    o = a(r(54815)),
+                    s = a(r(19882)),
+                    u = a(r(10178)),
+                    c = a(r(57616)),
+                    l = a(r(62570)),
+                    d = r(32446),
+                    f = r(58933),
+                    p = r(45716),
+                    h = a(r(85622)),
+                    m = a(r(28929)),
+                    _ = r(93828);
+                var g = function() {
                     function e() {
                         var t = this;
-                        (0, c.default)(this, e), this._settings = {
+                        (0, u.default)(this, e), this._settings = {
                             isRTL: !1,
                             enableVoipGroupFeatures: !1
-                        }, this._updateQueue = n.resolve(), this._panelBecameUnresponsiveTimeout = null, this._panelBecameUnresponsiveStartTime = 0, this._isDestroyed = !1, this.updateL10n = function(e) {
+                        }, this._updateQueue = Promise.resolve(), this._panelBecameUnresponsiveTimeout = null, this._panelBecameUnresponsiveStartTime = 0, this._isDestroyed = !1, this.updateL10n = function(e) {
                             var r = e.l;
-                            t._panel.webContents.send(g.VOIP_WINDOW_IPC_EVENTS.L10N_UPDATE, r)
+                            t._panel.webContents.send(_.VOIP_WINDOW_IPC_EVENTS.L10N_UPDATE, r)
                         }, this._handleEnableVoipGroupFeatures = function(e, r) {
                             var n;
                             t._settings.enableVoipGroupFeatures !== r && (t._settings.enableVoipGroupFeatures = r), null === (n = t._voipWindow) || void 0 === n || n.updateVoipGroupFeaturesEnabled(r)
                         }, this._handleLockScreenOrSleep = function() {
                             var e;
-                            (null === (e = t._voipWindow) || void 0 === e ? void 0 : e.state) && r(65717).end(t._voipWindow.state !== f.VoipWindowState.INCOMING)
+                            (null === (e = t._voipWindow) || void 0 === e ? void 0 : e.state) && r(65717).end(t._voipWindow.state !== d.VoipWindowState.INCOMING)
                         }, this._handleIpcInitiateWindowMove = function() {
                             t._panel.initiateWindowMove()
                         }, this._handleIpcCloseWindowClick = function() {
@@ -32670,8 +32199,8 @@ state: '${this.state}'`, this._panel) {
                         }, this._handleIpcUnmaximizeWindowClick = function() {
                             t._panel.unmaximize()
                         }, this._handleIpcWindowTitleDblClick = function() {
-                            if (p.systemPreferences.getUserDefault && t._panel) {
-                                var e = p.systemPreferences.getUserDefault("AppleActionOnDoubleClick", "string");
+                            if (f.systemPreferences.getUserDefault && t._panel) {
+                                var e = f.systemPreferences.getUserDefault("AppleActionOnDoubleClick", "string");
                                 if ("None" === e) return;
                                 if ("Minimize" === e) t._panel.isMinimizable() && !t._panel.isAlwaysOnTop() && t._handleIpcMinimizeWindowClick();
                                 else t._panel.isMaximized() ? t._handleIpcUnmaximizeWindowClick() : t._handleIpcMaximizeWindowClick()
@@ -32679,27 +32208,27 @@ state: '${this.state}'`, this._panel) {
                         }, this._handlePanelBecomesUnresponsive = function() {
                             0 === t._panelBecameUnresponsiveStartTime && (t._panelBecameUnresponsiveStartTime = Date.now(), t._panelBecameUnresponsiveTimeout = setTimeout((function() {
                                 var e = Date.now() - t._panelBecameUnresponsiveStartTime;
-                                i(3)`VoipWindowManager: panel is being unresponsive for ${e} ms...`
+                                n(3)`VoipWindowManager: panel is being unresponsive for ${e} ms...`
                             }), 2e3))
                         }, this._handlePanelBecomesResponsive = function() {
                             if (0 !== t._panelBecameUnresponsiveStartTime) {
                                 clearTimeout(t._panelBecameUnresponsiveTimeout);
                                 var e = Date.now() - t._panelBecameUnresponsiveStartTime;
-                                e > 2e3 && i(2)`VoipWindowManager: panel became responsive after ${e} ms`, t._panelBecameUnresponsiveStartTime = 0
+                                e > 2e3 && n(2)`VoipWindowManager: panel became responsive after ${e} ms`, t._panelBecameUnresponsiveStartTime = 0
                             }
-                        }, i(2)`VoipWindowManager:constructor()`, this._createPanel(), _.default.on("locale_change", this.updateL10n), p.powerMonitor.on("lock-screen", this._handleLockScreenOrSleep), p.powerMonitor.on("suspend", this._handleLockScreenOrSleep), p.ipcMain.on(g.RENDERER_IPC_EVENTS.ENABLE_VOIP_GROUP_FEATURES, this._handleEnableVoipGroupFeatures), p.ipcMain.on(g.VOIP_WINDOW_IPC_EVENTS.WINDOW_TITLE_DBL_CLICK, this._handleIpcWindowTitleDblClick)
+                        }, n(2)`VoipWindowManager:constructor()`, this._createPanel(), m.default.on("locale_change", this.updateL10n), f.powerMonitor.on("lock-screen", this._handleLockScreenOrSleep), f.powerMonitor.on("suspend", this._handleLockScreenOrSleep), f.ipcMain.on(_.RENDERER_IPC_EVENTS.ENABLE_VOIP_GROUP_FEATURES, this._handleEnableVoipGroupFeatures), f.ipcMain.on(_.VOIP_WINDOW_IPC_EVENTS.WINDOW_TITLE_DBL_CLICK, this._handleIpcWindowTitleDblClick)
                     }
-                    return (0, l.default)(e, [{
+                    return (0, c.default)(e, [{
                         key: "init",
                         value: function(e) {
-                            i(2)`VoipWindowManager:init()`, this._settings = e
+                            n(2)`VoipWindowManager:init()`, this._settings = e
                         }
                     }, {
                         key: "_createPanel",
                         value: function() {
                             var e = this;
-                            i(2)`VoipWindowManager:_createPanel()`;
-                            var t, r, a = Date.now();
+                            n(2)`VoipWindowManager:_createPanel()`;
+                            var t, r, i = Date.now();
                             this._panel = (t = {
                                 show: !1,
                                 frame: !1,
@@ -32713,45 +32242,45 @@ state: '${this.state}'`, this._panel) {
                                 },
                                 webPreferences: {
                                     nodeIntegration: !1,
-                                    preload: m.default.resolve(__dirname, "WAWebVoipCallWindowPreload.js"),
+                                    preload: h.default.resolve(__dirname, "WAWebVoipCallWindowPreload.js"),
                                     enableRemoteModule: !0,
                                     contextIsolation: !1
                                 }
-                            }, (r = new h.Panel(t)).loadURL(`file://${__dirname}/voip_index.html`), r.webContents.on("did-finish-load", (function() {
-                                var e = d.default.getWindow();
+                            }, (r = new p.Panel(t)).loadURL(`file://${__dirname}/voip_index.html`), r.webContents.on("did-finish-load", (function() {
+                                var e = l.default.getWindow();
                                 if (e) {
                                     var t = {
                                         processId: e.getBrowserWindow().webContents.id
                                     };
-                                    r.webContents.send(g.VOIP_WINDOW_IPC_EVENTS.INIT, t)
+                                    r.webContents.send(_.VOIP_WINDOW_IPC_EVENTS.INIT, t)
                                 }
-                            })), r), this._panel.on("unresponsive", this._handlePanelBecomesUnresponsive), this._panel.on("responsive", this._handlePanelBecomesResponsive), this._panelIsReady = new n((function(t) {
+                            })), r), this._panel.on("unresponsive", this._handlePanelBecomesUnresponsive), this._panel.on("responsive", this._handlePanelBecomesResponsive), this._panelIsReady = new Promise((function(t) {
                                 e._panel.webContents.on("did-finish-load", (function() {
-                                    i(2)`VoipWindowManager:_createPanel(), panel is ready, \
-took: ${Date.now()-a}ms`, t()
+                                    n(2)`VoipWindowManager:_createPanel(), panel is ready, \
+took: ${Date.now()-i}ms`, t()
                                 }))
                             }))
                         }
                     }, {
                         key: "_destroyPanel",
                         value: function() {
-                            i(2)`VoipWindowManager:_destroyPanel()`;
+                            n(2)`VoipWindowManager:_destroyPanel()`;
                             try {
                                 this._panel.removeListener("unresponsive", this._handlePanelBecomesUnresponsive), this._panel.removeListener("responsive", this._handlePanelBecomesResponsive)
                             } catch (e) {
-                                i(3)`VoipWindowManager:_destroyPanel(), failed to remove panel \
+                                n(3)`VoipWindowManager:_destroyPanel(), failed to remove panel \
 listeners: ${e}`
                             }
                             try {
                                 this._panel.destroy()
                             } catch (e) {
-                                this._panel && !this._panel.isDestroyed() && i(3)`VoipWindowManager:_destroyPanel(), failed to destroy panel: ${e}`
+                                this._panel && !this._panel.isDestroyed() && n(3)`VoipWindowManager:_destroyPanel(), failed to destroy panel: ${e}`
                             }
                         }
                     }, {
                         key: "_get",
                         value: function(e) {
-                            return this._voipWindow && this._voipWindow.id !== e && (this._voipWindow.destroy(), this._voipWindow = null), this._voipWindow = this._voipWindow || new f.VoipWindow(e, this._settings, this._panel), this._voipWindow
+                            return this._voipWindow && this._voipWindow.id !== e && (this._voipWindow.destroy(), this._voipWindow = null), this._voipWindow = this._voipWindow || new d.VoipWindow(e, this._settings, this._panel), this._voipWindow
                         }
                     }, {
                         key: "getBrowserWindow",
@@ -32762,27 +32291,27 @@ listeners: ${e}`
                         key: "update",
                         value: function(e) {
                             var t = this;
-                            this._updateQueue = this._updateQueue.then((0, u.default)(s.default.mark((function r() {
-                                var n, o, u, c;
-                                return s.default.wrap((function(r) {
+                            this._updateQueue = this._updateQueue.then((0, s.default)(o.default.mark((function r() {
+                                var a, s, u, c;
+                                return o.default.wrap((function(r) {
                                     for (;;) switch (r.prev = r.next) {
                                         case 0:
                                             if (r.prev = 0, !t._isDestroyed) {
                                                 r.next = 4;
                                                 break
                                             }
-                                            return i(3)`VoipWindowManager:update(), callId: ${null===(n=e.callInfo)||void 0===n?void 0:n.callId}, \
+                                            return n(3)`VoipWindowManager:update(), callId: ${null===(a=e.callInfo)||void 0===a?void 0:a.callId}, \
 drop update because VoipWindowManager has been destroyed`, r.abrupt("return");
                                         case 4:
                                             return r.next = 6, t._panelIsReady;
                                         case 6:
-                                            return o = e.callInfo, u = t._get(o.callId), r.next = 10, u.update(e);
+                                            return s = e.callInfo, u = t._get(s.callId), r.next = 10, u.update(e);
                                         case 10:
-                                            u.state === f.VoipWindowState.NONE && (t._voipWindow = null, u.destroy()), r.next = 17;
+                                            u.state === d.VoipWindowState.NONE && (t._voipWindow = null, u.destroy()), r.next = 17;
                                             break;
                                         case 13:
-                                            r.prev = 13, r.t0 = r.catch(0), i(4, void 0, new Error, !0, ["voip", "voip-window"])`VoipWindowManager:update(), callId: ${null===(c=e.callInfo)||void 0===c?void 0:c.callId}, \
-window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip", "voip-window"), t._isDestroyed || t._recover();
+                                            r.prev = 13, r.t0 = r.catch(0), n(4, void 0, new Error, !0, ["voip", "voip-window"])`VoipWindowManager:update(), callId: ${null===(c=e.callInfo)||void 0===c?void 0:c.callId}, \
+window update failed: ${r.t0}`, i("voip-window-manager-update-failed", 1, "voip", "voip-window"), t._isDestroyed || t._recover();
                                         case 17:
                                         case "end":
                                             return r.stop()
@@ -32795,49 +32324,49 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                     }, {
                         key: "_recover",
                         value: function() {
-                            i(2)`VoipWindowManager:_recover()`;
+                            n(2)`VoipWindowManager:_recover()`;
                             try {
-                                var e = d.default.getWindow(),
+                                var e = l.default.getWindow(),
                                     t = null == e ? void 0 : e.getBrowserWindow();
-                                null == t || t.webContents.send(g.VOIP_WINDOW_IPC_EVENTS.END)
+                                null == t || t.webContents.send(_.VOIP_WINDOW_IPC_EVENTS.END)
                             } catch (e) {
-                                i(3)`VoipWindowManager:_recover(): failed to end the call: ${e}`
+                                n(3)`VoipWindowManager:_recover(): failed to end the call: ${e}`
                             }
                             try {
                                 var r;
                                 null === (r = this._voipWindow) || void 0 === r || r.destroy()
                             } catch (e) {
-                                i(3)`VoipWindowManager:_recover(): voip window destroy failed: ${e}`
+                                n(3)`VoipWindowManager:_recover(): voip window destroy failed: ${e}`
                             }
                             this._voipWindow = null, this._destroyPanel();
                             try {
                                 this._createPanel()
                             } catch (e) {
-                                i(3)`VoipWindowManager:_recover(): failed to create new panel: ${e}`
+                                n(3)`VoipWindowManager:_recover(): failed to create new panel: ${e}`
                             }
                         }
                     }, {
                         key: "cleanup",
                         value: function() {
                             var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-                            if (i(2)`VoipWindowManager:cleanup()`, !e) try {
+                            if (n(2)`VoipWindowManager:cleanup()`, !e) try {
                                 this._panel.hide(!1)
                             } catch (e) {}
                             try {
                                 var t = r(65717);
                                 t.end(!0), t.cleanup()
                             } catch (e) {
-                                i(2)`VoipWindowManager:cleanup(), failed to end call and cleanup: ${e}`
+                                n(2)`VoipWindowManager:cleanup(), failed to end call and cleanup: ${e}`
                             }
                         }
                     }, {
                         key: "destructor",
                         value: function() {
-                            i(2)`VoipWindowManager:destructor()`, this.cleanup(!0), _.default.off("locale_change", this.updateL10n), p.powerMonitor.removeListener("lock-screen", this._handleLockScreenOrSleep), p.powerMonitor.removeListener("suspend", this._handleLockScreenOrSleep), p.ipcMain.removeListener(g.RENDERER_IPC_EVENTS.ENABLE_VOIP_GROUP_FEATURES, this._handleEnableVoipGroupFeatures), p.ipcMain.removeListener(g.VOIP_WINDOW_IPC_EVENTS.WINDOW_TITLE_DBL_CLICK, this._handleIpcWindowTitleDblClick), this._voipWindow && (this._voipWindow.destroy(), this._voipWindow = null), this._destroyPanel(), this._isDestroyed = !0
+                            n(2)`VoipWindowManager:destructor()`, this.cleanup(!0), m.default.off("locale_change", this.updateL10n), f.powerMonitor.removeListener("lock-screen", this._handleLockScreenOrSleep), f.powerMonitor.removeListener("suspend", this._handleLockScreenOrSleep), f.ipcMain.removeListener(_.RENDERER_IPC_EVENTS.ENABLE_VOIP_GROUP_FEATURES, this._handleEnableVoipGroupFeatures), f.ipcMain.removeListener(_.VOIP_WINDOW_IPC_EVENTS.WINDOW_TITLE_DBL_CLICK, this._handleIpcWindowTitleDblClick), this._voipWindow && (this._voipWindow.destroy(), this._voipWindow = null), this._destroyPanel(), this._isDestroyed = !0
                         }
                     }]), e
                 }();
-                e.exports = v
+                e.exports = g
             },
             32071: e => {
                 e.exports = {
@@ -33135,6 +32664,113 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                 var o = "https://www.whatsapp.com/legal/business-terms";
                 t.BIZ_TOS_BASE_URL = o
             },
+            16386: (e, t) => {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.CRASH_REPORTER_EVENTS = void 0, t.updateCrashReporter = function() {};
+                t.CRASH_REPORTER_EVENTS = {
+                    LOGGED_IN: "USER_LOGGED_IN",
+                    LOGGED_OUT: "USER_LOGGED_OUT",
+                    UPLOAD_NATIVE_CRASH: "UPLOAD_NATIVE_CRASH"
+                }
+            },
+            70123: (e, t, r) => {
+                "use strict";
+                var n = r(95318);
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = void 0;
+                var i = n(r(63038)),
+                    a = n(r(87757)),
+                    o = n(r(81109)),
+                    s = n(r(48926)),
+                    u = n(r(34575)),
+                    c = n(r(93913)),
+                    l = r(83544),
+                    d = r(6375),
+                    f = r(58933).ipcMain,
+                    p = r(12087),
+                    h = !1,
+                    m = new(function() {
+                        function e() {
+                            (0, u.default)(this, e)
+                        }
+                        var t;
+                        return (0, c.default)(e, [{
+                            key: "getInfoAsync",
+                            value: (t = (0, s.default)(a.default.mark((function e() {
+                                var t;
+                                return a.default.wrap((function(e) {
+                                    for (;;) switch (e.prev = e.next) {
+                                        case 0:
+                                            return e.next = 2, d.system();
+                                        case 2:
+                                            return t = e.sent, e.abrupt("return", (0, o.default)((0, o.default)({}, this.getOsInfoSync()), {}, {
+                                                deviceManufacturer: t.manufacturer,
+                                                deviceModel: t.model
+                                            }));
+                                        case 4:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e, this)
+                            }))), function() {
+                                return t.apply(this, arguments)
+                            })
+                        }, {
+                            key: "getDeviceInfoSync",
+                            value: function() {
+                                var e = d.getDeviceModelAndOsRelease(),
+                                    t = (0, i.default)(e, 2);
+                                return {
+                                    deviceModel: t[0],
+                                    osRelease: t[1]
+                                }
+                            }
+                        }, {
+                            key: "getOsInfoSync",
+                            value: function() {
+                                return {
+                                    arch: p.arch(),
+                                    osRelease: p.release(),
+                                    osPlatform: p.platform()
+                                }
+                            }
+                        }, {
+                            key: "addListener",
+                            value: function() {
+                                var e = this;
+                                h || (h = !0, f.handle("get-electron-os-model-and-release", (function() {
+                                    return e.getDeviceInfoSync().osRelease
+                                })), l.receive("get-electron-os-arch", (function() {
+                                    return e.getOsInfoSync().arch
+                                })))
+                            }
+                        }]), e
+                    }());
+                t.default = m
+            },
+            62904: (e, t) => {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = function(e) {
+                    return e.default
+                }
+            },
+            71971: (e, t) => {
+                "use strict";
+                Object.defineProperty(t, "__esModule", {
+                    value: !0
+                }), t.default = function e(t) {
+                    var r = new Error(t);
+                    if (void 0 === r.stack) try {
+                        throw e
+                    } catch (e) {}
+                    return r
+                }
+            },
             7667: e => {
                 "use strict";
                 e.exports = require("@electron/remote")
@@ -33393,38 +33029,38 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
         9995: "locales/ar-XB",
         9999: "locales/fa"
     } [e] + "." + {
-        155: "b9447f683e25ccc2b002",
-        165: "cd82b8aae7f52655a26a",
-        248: "01b604655a508623b590",
+        155: "df143eb491c31278bd2e",
+        165: "737200cd5cd219c1f1cb",
+        248: "96e994b38876b74f565c",
         319: "f111c62fcc19ccf34235",
-        673: "0bbeea349392abfd83c3",
-        792: "feeaa20a8d85b81aec18",
-        820: "5eab554498faa040d0ba",
-        906: "12860cf21d2ad02cd8e3",
-        907: "a3d6b8f6acf1216fe250",
+        673: "5c2c7b5521fa63bb08da",
+        792: "8f5fdf3e8728ed6a592b",
+        820: "35d960c748a1c0bb6e5f",
+        906: "86abae4301f8a92a6aaf",
+        907: "826ed4a0996aa2e7e50e",
         951: "8979594642e071d2f316",
         1055: "2175e8ec04a802caa0f2",
         1069: "341e75ab3709ba1773f4",
-        1081: "7274088ec2c803aa45ee",
-        1204: "a48e7ab5389221f3a1e0",
-        1248: "5974e3c1c9bb78cbd4d5",
+        1081: "93a795eb977e814a85e0",
+        1204: "5c35afbe27972533cbe1",
+        1248: "1a87bdb641789376af85",
         1381: "e3c5c5e79bb7c5078fc4",
         1473: "64c4d029384d250c72a9",
         1520: "8eef1f30deb8d71cb857",
-        1529: "20ac911500b3a38ab726",
-        1628: "50b44d0a1836d9d0c80a",
-        1770: "15d7e796b54c1fd5cd9f",
+        1529: "13285aef90b1dba31e12",
+        1628: "d3d15f6e289f5764c9d7",
+        1770: "e550cabbe2b5d2771194",
         1791: "015661e9ca3be7cd2521",
         2017: "dacdc8d80cbe60920da5",
         2023: "f16abd4d9b35f829c965",
-        2091: "933d1008f4bab5a222f0",
-        2135: "b934d201aa797c495433",
+        2091: "19b2680135c23f6c9f97",
+        2135: "856f4becd52bce14adf3",
         2394: "78e45eb419c1159cc535",
         2445: "9014f8db600a76434db3",
-        2556: "cc9dc801566926453806",
-        2739: "6569d9129eccdd9e3c04",
-        2830: "4102f2caab9a33d20c67",
-        2944: "0bfbe877f43b1619b78a",
+        2556: "6f5b248a10fc63844ed4",
+        2739: "30a37a2d688f68b446f9",
+        2830: "7deafd4b36942ad7a865",
+        2944: "1f96fce1d1129cc1f612",
         2957: "dff788db2cfc84afa5ce",
         2966: "4336d0dd5750be9a3b76",
         2979: "6c00647d156727519fa2",
@@ -33435,94 +33071,94 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
         3422: "7b83873022cf4496d676",
         3501: "9bab43e8a3a606c45928",
         3569: "bcc41e86db8f1b250db0",
-        3722: "aa6c2c42ad58cee0334c",
+        3722: "65dd88c06d1267fa6bf5",
         3748: "badb7bd7c912ca85dbc4",
         3892: "55933533870afa2aba82",
         3934: "6e869d38948542faab0c",
-        3998: "9f24c35318ade5a537cb",
-        4259: "13382136df8cc58d6034",
+        3998: "8e6894ebb072df037a7f",
+        4259: "0cdac240f7e93a92f90a",
         4339: "76418638e560abb6528d",
-        4361: "e776e379bb2f99b96bb7",
+        4361: "f9747f2f2e2b1f4c2cf5",
         4468: "35014caf533c84bb68bc",
         4473: "a8ba85eeb25f841a968b",
         4616: "975e383a8f4cee276ab3",
-        4708: "f6560044734f2b77474e",
+        4708: "1907f82c48458675f131",
         4818: "b4f3b499364eb778b6c3",
-        4873: "00f1539bac7b72e69693",
+        4873: "fbe6d4e0044f38b01e3b",
         4980: "496594af75fd05fc8ea4",
         5027: "a4a1f81fbb929fd0f968",
         5125: "8b3c382460b11de6a55b",
-        5128: "7270856b1e651ce4837f",
+        5128: "744d1401e16da0233714",
         5170: "c05a784affe0d67520f4",
-        5182: "2321b554c80b947a4696",
+        5182: "2cd322cae77533dcea99",
         5247: "633238a7bc85fd2612bc",
-        5443: "2a5ad3d231786de81a1d",
-        5632: "eb00bdc74ad94c1de0b9",
-        5650: "daf48d9b0aa9aede6d09",
+        5443: "d7f619e72d1e6afcf39d",
+        5632: "8e5f5945335b51ae83c8",
+        5650: "7bcb4040c9a9999e98fc",
         5671: "7fb9ae24d533df585d22",
-        5708: "7ff6fc16dd66dc54e6ea",
-        5729: "ee90a3198291a1bd3e48",
+        5708: "c9d2aed712c93eba2711",
+        5729: "a5539e061eab4e756ccb",
         5740: "b46ae5fc782d04450e9d",
         5790: "6ab34ee6d7b9561f5a33",
         5862: "d389085191e4dc7ceb28",
         5959: "90e2f4ab5817a22f7f4e",
         5965: "8438ab92590ce20b1275",
-        6038: "bd5ec82e3752285e1181",
+        6038: "2be221eb578f54e16ad8",
         6163: "d79d6769bff2f1e453f8",
         6282: "e45976067cd8e973dc41",
-        6293: "bfd66c6f219f3210201b",
-        6331: "1cee6ca8ac5115f65dd8",
-        6365: "4fa99eac3618c78df116",
-        6483: "a5dfb505586ac158a774",
+        6293: "9cc0dfefd7e34cf74b73",
+        6331: "0d442b42cf1b9c53c550",
+        6365: "d00ca4785dbf1a33d50c",
+        6483: "014a1202326c06936eb3",
         6496: "473771829b25fcf42736",
         6511: "70a8d5c3c55f38afb181",
         6547: "f6088675c3ff41293907",
         6568: "85a9452de036405f618a",
-        6651: "ea13ba44407bf97cb020",
-        6655: "132e87e1276f776ef87d",
+        6651: "eb349c956324711a142d",
+        6655: "42b65d6dbd8521fd8261",
         6709: "0fa07ca98db6427a89d2",
         6884: "d345743b20772128f79d",
         6920: "af65e571675c436778fd",
-        6933: "64cb38e4cad845f27824",
-        6953: "d528e8278594ea5f1e9c",
-        7072: "b793955ad84c50dd1363",
+        6933: "b477796c02d49925cfab",
+        6953: "96001c9577565141a506",
+        7072: "2cfff065a8be677744f2",
         7074: "8bdc24ef9eb89b30f3bd",
-        7102: "9b2fb4b29b33229fc2aa",
-        7162: "7920afe15efef8154be0",
-        7216: "a7edf34f72ba30ff2740",
+        7102: "5da845a0b3f756641658",
+        7162: "bcbec8cc3b7442ff642a",
+        7216: "40359141f2bddba24d84",
         7315: "efad01254e31d3b12163",
         7386: "ff1458cf069e32a1fbaf",
-        7542: "9ac9163cf7407a066e86",
+        7542: "cc5448e7e47c3a4b88b2",
         7662: "d1f1e8eef2e5d065a5c5",
         7728: "1a80c02f34d83a7b70c4",
         7739: "76dce84c6c8d22ae3a73",
-        7749: "e56df7ebec38cd444757",
-        8054: "d88b5e2e305558c9b8f0",
+        7749: "6e8433b6742766ae4915",
+        8054: "82aa143ab051d2657e88",
         8117: "f456216d84c69700e22c",
         8132: "1b15f885cb6dcbf40db5",
-        8292: "5ae09a7d31693764b9e7",
-        8598: "2bacb2ec9e1e56d5170d",
-        8628: "23c98624a1dc9fb93e2d",
+        8292: "5b911afc7805e7236099",
+        8598: "19ad036fb40f7cd2e890",
+        8628: "dc0fa5487d6ec1be48e4",
         8634: "e1af4a78fc66ea0aa9aa",
         8678: "004cf0cc6657e9d223ea",
-        8700: "93082bb5689a6afd066f",
+        8700: "ce0868d8a2710882a400",
         8799: "8c86d1e301e341297288",
         9116: "30d821c61d3662afa86a",
         9227: "42de3a69c86356f4536f",
         9289: "e5629c23a2e7dbc70426",
         9313: "a979c64fbd2f7ed4022a",
         9545: "13886c8633b6d706da79",
-        9613: "0228e6943513e6498f96",
+        9613: "fc239981ef8870dd21cd",
         9646: "fabc69ab071d15416e4e",
         9682: "17b8f1e429d5def9d8b2",
-        9719: "89488fc21c1780f21c7a",
-        9737: "5d06e83a39de2d195939",
-        9750: "36e01f758f27fb768509",
+        9719: "4e3e372f1b46d754a072",
+        9737: "7ff40e968208232f6972",
+        9750: "076c05b04b099fbaca96",
         9765: "ac982e958753be4927a9",
-        9815: "01825fd1d46687855963",
+        9815: "309098862e36a4e16d92",
         9817: "ef742466979e256bedd7",
-        9995: "a37b40671310b606971d",
-        9999: "050e22d27d1cdb4d89c0"
+        9995: "84f91bdee7cc1e1e1596",
+        9999: "24936ed7f108699b1b14"
     } [e] + ".js"), n.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t), n.r = e => {
         "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
             value: "Module"
@@ -33543,16 +33179,17 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
     }, (() => {
         "use strict";
         var e = n(66849).log,
-            t = (n(85473)(n(79386)), n(94361)),
-            r = n(48360),
-            i = ["macbookpro11,1", "macbookpro11,2", "macbookpro11,3", "macbookpro11,4", "macbookair6,1", "macbookair6,2", "imac14,2", "macmini7,1"],
-            a = ["17.", "20."];
+            t = n(85473),
+            r = (t(n(54815)), t(n(19882)), t(n(79386)), n(94361)),
+            i = n(48360),
+            a = ["macbookpro11,1", "macbookpro11,2", "macbookpro11,3", "macbookpro11,4", "macbookair6,1", "macbookair6,2", "imac14,2", "macmini7,1"],
+            o = ["17.", "20."];
         ! function() {
             try {
                 n(37813).initialize();
-                var o = n(42828);
-                o.initialize().then((function() {
-                    (o.set("betaUpdate", !1), n(4534), process.mas || process.windowsStore) || n(86061).default.initialize()
+                var t = n(42828);
+                t.initialize().then((function() {
+                    (t.set("betaUpdate", !1), n(4534), process.mas || process.windowsStore) || n(86061).default.initialize()
                 })), n(40341);
                 var s = n(58933),
                     u = s.protocol,
@@ -33573,12 +33210,12 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                     g = void 0,
                     v = !1;
                 if ("win32" === process.platform && (process.windowsStore ? c.setAppUserModelId("WhatsAppDesktop") : c.setAppUserModelId("com.squirrel.WhatsApp.WhatsApp")), process.mas) {
-                    var b = n(53529).Z.getDeviceInfoSync(),
+                    var b = n(70123).default.getDeviceInfoSync(),
                         y = b.deviceModel,
                         w = b.osRelease;
-                    e(2)`Model Identifier: ${y}`, e(2)`OS Release: ${w}`, i.some((function(e) {
+                    e(2)`Model Identifier: ${y}`, e(2)`OS Release: ${w}`, a.some((function(e) {
                         return y.startsWith(e)
-                    })) && a.some((function(e) {
+                    })) && o.some((function(e) {
                         return w.startsWith(e)
                     })) ? (e(2)`Disabling hardware acceleration`, c.disableHardwareAcceleration()) : e(2)`Hardware acceleration supported`
                 }
@@ -33615,39 +33252,39 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                         e(2)`system going to sleep`
                     })), s.powerMonitor.on("resume", (function() {
                         e(2)`system resumed`
-                    })), (0, t.installFileHandler)(c.getPath("userData"), c.getAppPath(), "win32" === process.platform), (0, t.installWebHandler)();
-                    var i = n(28929).default;
-                    o.initializePromise.then((function() {
-                        i.init(c.getLocale())
+                    })), (0, r.installFileHandler)(c.getPath("userData"), c.getAppPath(), "win32" === process.platform), (0, r.installWebHandler)();
+                    var a = n(28929).default;
+                    t.initializePromise.then((function() {
+                        a.init(c.getLocale())
                     })).then((function() {
-                        e(2)`WhatsApp Desktop ${"2.2313.8"} Ready`;
-                        var t = !0;
-                        if ("darwin" === process.platform && !process.mas && !o.get("hasLoaded") && !p.isUpgradeTest) {
-                            var a = c.getAppPath(),
-                                u = a.indexOf("/Contents/Resources/app.asar");
+                        e(2)`WhatsApp Desktop ${"2.2327.5"} Ready`;
+                        var r = !0;
+                        if ("darwin" === process.platform && !process.mas && !t.get("hasLoaded") && !p.isUpgradeTest) {
+                            var o = c.getAppPath(),
+                                u = o.indexOf("/Contents/Resources/app.asar");
                             if (u > -1) {
-                                a = a.slice(0, u);
+                                o = o.slice(0, u);
                                 var d = n(85622),
-                                    f = d.basename(a),
+                                    f = d.basename(o),
                                     h = d.join("/Applications", f);
-                                if (a !== h) t = !1, s.dialog.showMessageBox({
+                                if (o !== h) r = !1, s.dialog.showMessageBox({
                                     type: "question",
-                                    title: r.fbt._("Move WhatsApp to Applications?", null, {
+                                    title: i.fbt._("Move WhatsApp to Applications?", null, {
                                         hk: "zoOTq"
                                     }).toString(),
-                                    message: r.fbt._("You can move WhatsApp to Applications so it's easier to find.", null, {
+                                    message: i.fbt._("You can move WhatsApp to Applications so it's easier to find.", null, {
                                         hk: "1PP69T"
                                     }).toString(),
-                                    buttons: [r.fbt._("Move to Applications", null, {
+                                    buttons: [i.fbt._("Move to Applications", null, {
                                         hk: "1ypz9q"
-                                    }).toString(), r.fbt._("Do Not Move", null, {
+                                    }).toString(), i.fbt._("Do Not Move", null, {
                                         hk: "3FXZHO"
                                     }).toString()]
                                 }).then((function(e) {
                                     if (0 === e.response) {
                                         c.quit();
                                         var t = n(63129).spawnSync;
-                                        return t("rm", ["-r", h]), t("ditto", [a, h]), t("open", ["-n", h]), void t("rm", ["-r", a])
+                                        return t("rm", ["-r", h]), t("ditto", [o, h]), t("open", ["-n", h]), void t("rm", ["-r", o])
                                     }
                                     v()
                                 }))
@@ -33668,29 +33305,29 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                                     y: 23
                                 },
                                 launchURL: m,
-                                title: "WhatsApp"
+                                title: "win32" === process.platform ? "WhatsApp (Outdated)" : "WhatsApp"
                             });
                             m = void 0, _.on("unresponsive", (function() {
                                 var e = s.dialog;
                                 _ && e.showMessageBox(_.browserWindow, {
                                     type: "error",
-                                    title: i.t(470),
-                                    message: i.t(469),
-                                    buttons: [r.fbt._("OK", null, {
-                                        hk: "2KEeHb"
+                                    title: a.t(470),
+                                    message: a.t(469),
+                                    buttons: [i.fbt._("OK", null, {
+                                        hk: "4oTrfy"
                                     }).toString()]
                                 }).then((function() {
                                     _ && (t.setForceQuit(!1), t.destroy(), _ = null, g())
                                 }))
                             })), t.on("render-process-gone", (function() {
-                                var n = s.dialog;
-                                _ && n.showMessageBox(_.browserWindow, {
+                                var r = s.dialog;
+                                _ && r.showMessageBox(_.browserWindow, {
                                     browserWindow: _.browserWindow,
                                     type: "error",
-                                    title: i.t(470),
-                                    message: i.t(469),
-                                    buttons: [r.fbt._("OK", null, {
-                                        hk: "2KEeHb"
+                                    title: a.t(470),
+                                    message: a.t(469),
+                                    buttons: [i.fbt._("OK", null, {
+                                        hk: "4oTrfy"
                                     }).toString()]
                                 }).then((function() {
                                     e(2)`Application render process is gone, restart`, _ && (t.setForceQuit(!1), t.destroy(), _ = null, g())
@@ -33700,19 +33337,19 @@ window update failed: ${r.t0}`, a("voip-window-manager-update-failed", 1, "voip"
                                     var t = _;
                                     t.setForceQuit(!1), t.destroy(), _ = null, v()
                                 }
-                            })), n(62570).setWindow(t)
+                            })), n(62570).setWindow(t), n(83544)
                         }
                         c.on("activate", (function() {
                             null == _ ? (e(2)`app activated, starting app..`, v()) : (e(2)`app already started, showing main window..`, _.browserWindow.show())
-                        })), o.set("hasLoaded", !0), t && v()
+                        })), t.set("hasLoaded", !0), r && v()
                     })).catch((function(t) {
                         e(2)`Got exception: ${t}`
                     })), p.isUpgradeTest && setTimeout((function() {
-                        f.write("main_2.2313.8\n", "utf8")
+                        f.write("main_2.2327.5\n", "utf8")
                     }), 15e3)
                 })), "darwin" === process.platform && (process.versions.electron, c.setAboutPanelOptions({
                     applicationName: "WhatsApp ",
-                    applicationVersion: "2.2313.8",
+                    applicationVersion: "2.2327.5",
                     version: "",
                     copyright: " "
                 })), c.commandLine.appendSwitch("autoplay-policy", "no-user-gesture-required"))
